@@ -31,6 +31,28 @@ const T = {
     why: 'Why it matters',
     more: 'More',
     less: 'Less',
+    viewNews: 'News',
+    viewWorkflows: 'AI workflows',
+    viewsLabel: 'Pages',
+    wfTitle: 'AI workflows',
+    wfSummary: (picks, checked) => `This week: <b>${picks}</b> from ${checked} posts by designers on how they use AI. Picked every Monday.`,
+    wfQuiet: (checked) => `This week, none of ${checked} posts showed a real process worth copying. Picked every Monday.`,
+    wfNone: 'No picks yet. The first list comes with the next Monday run.',
+    wfLoading: 'Loading…',
+    wfList: 'Weekly picks',
+    wfWeek: 'Week of',
+    wfQuietRow: 'Quiet week. Nothing worth copying.',
+    wfPicks: (n) => (n === 1 ? '1 pick' : `${n} picks`),
+    wfResult: 'What came out',
+    wfCatch: 'The catch',
+    wfTryIf: 'Worth trying if',
+    wfRead: 'Read the post',
+    wfMin: (n) => `${n} min read`,
+    wfBy: (name) => `by ${name}`,
+    wfAllStages: 'All',
+    wfFilterLabel: 'Filter by stage or tool',
+    stage: { research: 'Research', ideas: 'Ideas', ux: 'UX', ui: 'UI', prototyping: 'Prototyping', systems: 'Design systems', handoff: 'Handoff', brand: 'Brand', team: 'Team' },
+    wfType: { workflow: 'Workflow', technique: 'Technique', tool: 'Tool', study: 'Study' },
     pattern: 'Pattern',
     sources: (n) => `${n} source${n === 1 ? '' : 's'}`,
     today: 'Today',
@@ -101,6 +123,28 @@ const T = {
     why: '为什么重要',
     more: '展开',
     less: '收起',
+    viewNews: '资讯',
+    viewWorkflows: 'AI 工作流',
+    viewsLabel: '页面',
+    wfTitle: 'AI 工作流',
+    wfSummary: (picks, checked) => `本周：从 ${checked} 篇设计师分享 AI 用法的文章中选出 <b>${picks}</b>。每周一更新。`,
+    wfQuiet: (checked) => `本周 ${checked} 篇文章里，没有一篇展示了值得借鉴的具体流程。每周一更新。`,
+    wfNone: '还没有内容。下周一运行后会出现第一期。',
+    wfLoading: '加载中…',
+    wfList: '每周精选',
+    wfWeek: '当周',
+    wfQuietRow: '本周很安静，没有值得借鉴的内容。',
+    wfPicks: (n) => `${n} 篇`,
+    wfResult: '成果',
+    wfCatch: '不足',
+    wfTryIf: '适合',
+    wfRead: '阅读原文',
+    wfMin: (n) => `${n} 分钟阅读`,
+    wfBy: (name) => `作者 ${name}`,
+    wfAllStages: '全部',
+    wfFilterLabel: '按阶段或工具筛选',
+    stage: { research: '调研', ideas: '构思', ux: 'UX', ui: 'UI', prototyping: '原型', systems: '设计系统', handoff: '交付', brand: '品牌', team: '团队' },
+    wfType: { workflow: '工作流', technique: '技巧', tool: '工具', study: '研究' },
     pattern: '趋势',
     sources: (n) => `${n} 个来源`,
     today: '今天',
@@ -922,7 +966,7 @@ function wireRail() {
   let queued = false;
   const update = () => {
     queued = false;
-    const days = [...document.querySelectorAll('#archive .day:not([hidden])')];
+    const days = [...document.querySelectorAll('#archive .day:not([hidden]), #wf-list .day:not([hidden])')].filter((d) => d.offsetParent);
     if (!days.length) return;
     const maxScroll = document.documentElement.scrollHeight - innerHeight;
     const nearEnd = maxScroll > 0 ? Math.max(0, (scrollY - (maxScroll - innerHeight)) / innerHeight) : 1;
@@ -948,6 +992,7 @@ function wireRail() {
   addEventListener('resize', queue);
   // Rows opening and filters changing move the days; redraw then too.
   new ResizeObserver(queue).observe($('#archive'));
+  new ResizeObserver(queue).observe($('#wf-list'));
   update();
 }
 
@@ -1142,6 +1187,147 @@ function wireLanguage() {
   });
 }
 
+/* ---------- AI workflows (trial) ---------- */
+
+let workflows = null; // data/workflows.json once loaded
+const wfFilter = { stage: null, tool: null };
+const wfTxt = (w, field) => (lang === 'zh' && w.zh?.[field]) || w[field];
+
+/** A small pixel spark: the page's mark for AI workflows. */
+const SPARK = [
+  '.....a.....',
+  '.....a.....',
+  '....aaa....',
+  'aaaaaoaaaaa',
+  '....aaa....',
+  '.....a.....',
+  '.....a..o..',
+  '.......ooo.',
+  '........o..',
+];
+const spark = () => pixels(SPARK, { a: 'var(--accent)', o: 'var(--sun)' }, 'sky');
+
+function wfRowHtml(w) {
+  const link = `href="${esc(safeUrl(w.url))}" target="_blank" rel="noopener"`;
+  const thumb = w.image
+    ? `<a class="row-thumb notch${reduced ? '' : ' pending'}" ${link} tabindex="-1" aria-hidden="true" data-mosaic="${esc(iconAt(w.icon, 16))}"><img src="${esc(w.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
+    : `<a class="row-thumb notch mosaic" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--accent)"><img src="${esc(iconAt(w.icon, 16))}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`;
+  const by = [w.author ? t().wfBy(esc(w.author)) : '', w.author_role ? esc(w.author_role) : ''].filter(Boolean).join(', ');
+  const icon = `<img class="icon notch row-icon" src="${esc(iconAt(w.icon, 16))}" alt="" width="24" height="24" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'">`;
+  const catchText = wfTxt(w, 'catch');
+  return `<li class="row wf-row reveal read" data-id="${esc(w.id)}" data-stage="${esc(w.stage)}" data-tools="${esc(w.tools.join('|'))}">
+    <div class="row-head">
+      <span class="dot" aria-hidden="true"></span>
+      ${icon}
+      <div class="row-main">
+        <p class="row-top"><span class="app">${esc(w.source)}</span><span class="kind">${t().stage[w.stage] ?? esc(w.stage)}</span><span class="wf-type">${t().wfType[w.type] ?? esc(w.type)}</span>${w.minutes ? `<span class="when">${t().wfMin(w.minutes)}</span>` : ''}</p>
+        <h3 class="row-title"><a ${link}>${esc(wfTxt(w, 'title'))}</a></h3>
+        ${by || w.tools.length ? `<p class="wf-by">${by}${by && w.tools.length ? ' · ' : ''}${w.tools.map((x) => `<span class="wf-tool">${esc(x)}</span>`).join('')}</p>` : ''}
+        <p class="what clamp">${esc(wfTxt(w, 'process'))}</p>
+      </div>
+    </div>
+    ${thumb}
+    <div class="fold row-fold">
+      <div class="more-body" id="more-wf-${esc(w.id)}" hidden>
+        <div class="more-in">
+          <dl class="wf-facts">
+            <div><dt>${t().wfResult}</dt><dd>${esc(wfTxt(w, 'result'))}</dd></div>
+            ${catchText ? `<div><dt>${t().wfCatch}</dt><dd>${esc(catchText)}</dd></div>` : ''}
+            <div><dt>${t().wfTryIf}</dt><dd>${esc(wfTxt(w, 'try_if'))}</dd></div>
+          </dl>
+          <p class="wf-read"><a class="act" ${link}>${t().wfRead} ↗</a><span class="wf-src">${esc(w.post_title)}</span></p>
+        </div>
+      </div>
+      ${moreBtn(`more-wf-${w.id}`)}
+    </div>
+  </li>`;
+}
+
+function wfWeekHtml(week) {
+  const d = fromYmd(week.week);
+  const rail = `<div class="rail"><span class="rail-fill" aria-hidden="true"></span><div class="rail-inner reveal"><span class="rail-day">${t().wfWeek}</span><span class="rail-date">${fmt(d, { day: 'numeric', month: 'short' })}</span></div></div>`;
+  if (!week.picks.length) {
+    return `<section class="day quiet-day" data-week="${week.week}">${rail}<div class="rows reveal">${t().wfQuietRow}</div></section>`;
+  }
+  return `<section class="day" data-week="${week.week}">${rail}<div><ul class="rows">${week.picks.map(wfRowHtml).join('')}</ul></div></section>`;
+}
+
+function renderWfFilters(weeks) {
+  const picks = weeks.flatMap((w) => w.picks);
+  const stages = Object.keys(t().stage).filter((s) => picks.some((p) => p.stage === s));
+  const tools = [...new Set(picks.flatMap((p) => p.tools))].sort((a, b) => picks.filter((p) => p.tools.includes(b)).length - picks.filter((p) => p.tools.includes(a)).length).slice(0, 8);
+  const n = (f) => picks.filter(f).length;
+  const box = $('#wf-filters');
+  box.setAttribute('aria-label', t().wfFilterLabel);
+  box.innerHTML = picks.length
+    ? [
+        `<button class="chip" type="button" data-wf="all" aria-pressed="${!wfFilter.stage && !wfFilter.tool}">${t().wfAllStages} <span class="n">${picks.length}</span></button>`,
+        ...stages.map((s) => `<button class="chip" type="button" data-wf="stage:${s}" aria-pressed="${wfFilter.stage === s}">${t().stage[s]} <span class="n">${n((p) => p.stage === s)}</span></button>`),
+        tools.length ? '<span class="chip-gap" aria-hidden="true"></span>' : '',
+        ...tools.map((x) => `<button class="chip kind-chip" type="button" data-wf="tool:${esc(x)}" aria-pressed="${wfFilter.tool === x}">${esc(x)} <span class="n">${n((p) => p.tools.includes(x))}</span></button>`),
+      ].join('')
+    : '';
+}
+
+function applyWfFilters() {
+  for (const day of document.querySelectorAll('#wf-list .day')) {
+    const rows = [...day.querySelectorAll('.row')];
+    let shown = 0;
+    for (const r of rows) {
+      const ok = (!wfFilter.stage || r.dataset.stage === wfFilter.stage) && (!wfFilter.tool || r.dataset.tools.split('|').includes(wfFilter.tool));
+      r.hidden = !ok;
+      if (ok) shown++;
+    }
+    // Quiet weeks and weeks with nothing matching hide while a filter is on.
+    day.hidden = (wfFilter.stage || wfFilter.tool) && !shown;
+  }
+}
+
+function renderWorkflows() {
+  $('#wf-title').innerHTML = `${spark()}<span>${t().wfTitle}</span>`;
+  $('#wf-list-title').textContent = t().wfList;
+  if (!workflows) {
+    $('#wf-summary').textContent = t().wfLoading;
+    return;
+  }
+  const weeks = workflows.weeks ?? [];
+  const latest = weeks[0];
+  $('#wf-summary').innerHTML = !latest ? t().wfNone : latest.picks.length ? t().wfSummary(t().wfPicks(latest.picks.length), latest.checked) : t().wfQuiet(latest.checked);
+  renderWfFilters(weeks);
+  $('#wf-list').innerHTML = weeks.map(wfWeekHtml).join('');
+  applyWfFilters();
+  wireImages();
+  wireReveal();
+}
+
+async function loadWorkflows() {
+  if (workflows) return;
+  try {
+    const r = await fetch('data/workflows.json', { cache: 'no-store' });
+    workflows = r.ok ? await r.json() : { weeks: [] };
+  } catch {
+    workflows = { weeks: [] };
+  }
+}
+
+/** News or AI workflows, from the address (#workflows). The tab only shows while workflows.yaml has it on. */
+async function showView() {
+  const on = !!meta.workflows;
+  $('#views').hidden = !on;
+  const view = on && location.hash === '#workflows' ? 'workflows' : 'news';
+  document.body.dataset.view = view;
+  for (const a of document.querySelectorAll('.view-tab')) {
+    a.textContent = a.dataset.view === 'news' ? t().viewNews : t().viewWorkflows;
+    if (a.dataset.view === view) a.setAttribute('aria-current', 'page');
+    else a.removeAttribute('aria-current');
+  }
+  $('#views').setAttribute('aria-label', t().viewsLabel);
+  if (view !== 'workflows') return;
+  renderWorkflows();
+  await loadWorkflows();
+  renderWorkflows();
+}
+
 /* ---------- opening a card or row ---------- */
 
 const EASE = 'cubic-bezier(0.3, 0, 0.2, 1)';
@@ -1236,6 +1422,15 @@ function wireEvents() {
 
     if (t.classList.contains('more')) toggleMore(t);
 
+    const wf = t.dataset.wf;
+    if (wf) {
+      if (wf === 'all') Object.assign(wfFilter, { stage: null, tool: null });
+      else if (wf.startsWith('stage:')) wfFilter.stage = wfFilter.stage === wf.slice(6) ? null : wf.slice(6);
+      else if (wf.startsWith('tool:')) wfFilter.tool = wfFilter.tool === wf.slice(5) ? null : wf.slice(5);
+      renderWfFilters(workflows?.weeks ?? []);
+      applyWfFilters();
+    }
+
     const f = t.dataset.filter;
     if (f) {
       if (f === 'unread') filter.unread = !filter.unread;
@@ -1292,6 +1487,7 @@ function render() {
   wireImages();
   wireReveal();
   paintDigestCount();
+  showView();
 }
 
 async function main() {
@@ -1311,6 +1507,10 @@ async function main() {
   wireRail();
   wireEvents();
   wireDigest();
+  addEventListener('hashchange', () => {
+    showView();
+    scrollTo(0, 0);
+  });
 }
 
 main();

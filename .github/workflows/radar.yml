@@ -7,7 +7,7 @@ name: Publish page
 on:
   push:
     branches: [main]
-    paths: ['data/**', 'site/**', 'src/**', 'watchlist.yaml', '.github/workflows/radar.yml']
+    paths: ['data/**', 'site/**', 'src/**', 'watchlist.yaml', 'workflows.yaml', '.github/workflows/radar.yml']
   # "Run workflow" button on the Actions tab, to republish by hand.
   workflow_dispatch:
 

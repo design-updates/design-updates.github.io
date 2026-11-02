@@ -57,6 +57,13 @@ else
     exit $code
   fi
 
+  # AI workflows (trial): add today's posts to the pool; on the first run of a week, pick that week's posts.
+  # A failure here never stops the news; tomorrow's run tries again.
+  if grep -q "^enabled: true" workflows.yaml 2>/dev/null; then
+    "$NODE" src/workflows-cli.ts >.cache/workflows-run.txt 2>&1 || echo "AI workflows step failed (see .cache/workflows-run.txt). The news is unaffected."
+    tail -n 3 .cache/workflows-run.txt
+  fi
+
   git add data/
   if git diff --cached --quiet; then
     echo "No changes to upload."

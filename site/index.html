@@ -36,22 +36,38 @@
           <button class="theme-toggle" id="theme" type="button" aria-label="Switch to dark mode"></button>
         </div>
         <div class="rule rule-heavy" aria-hidden="true"></div>
+        <nav class="views" id="views" aria-label="Pages" hidden>
+          <a class="view-tab" href="#news" data-view="news" aria-current="page">News</a>
+          <a class="view-tab" href="#workflows" data-view="workflows">AI workflows</a>
+        </nav>
       </header>
 
       <main>
-        <section class="hello" aria-labelledby="greeting">
+        <section class="hello news-only" aria-labelledby="greeting">
           <h1 id="greeting" class="hello-title"></h1>
           <p id="summary" class="hello-summary" aria-live="polite"></p>
         </section>
 
-        <section id="today" class="today" aria-label="Today"></section>
+        <section id="today" class="today news-only" aria-label="Today"></section>
 
-        <section class="archive" aria-labelledby="archive-title">
+        <section class="archive news-only" aria-labelledby="archive-title">
           <div class="archive-head">
             <h2 id="archive-title" class="section-title">Earlier</h2>
             <div class="filters" id="filters" role="group" aria-label="Filter earlier changes"></div>
           </div>
           <div id="archive"></div>
+        </section>
+
+        <section class="workflows" id="workflows" aria-labelledby="wf-title">
+          <div class="hello">
+            <h1 id="wf-title" class="hello-title"></h1>
+            <p id="wf-summary" class="hello-summary" aria-live="polite"></p>
+          </div>
+          <div class="archive-head">
+            <h2 id="wf-list-title" class="section-title"></h2>
+            <div class="filters" id="wf-filters" role="group"></div>
+          </div>
+          <div id="wf-list"></div>
         </section>
       </main>
 

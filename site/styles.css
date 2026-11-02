@@ -1488,6 +1488,106 @@ button {
   transition: none !important;
 }
 
+/* ---------- pages: News and AI workflows ---------- */
+
+.views {
+  display: flex;
+  gap: 22px;
+  padding-top: 12px;
+}
+.views[hidden] {
+  display: none;
+}
+.view-tab {
+  padding: 2px 0 6px;
+  font: 500 14px/1 var(--display);
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+  text-decoration: none;
+  box-shadow: inset 0 -3px 0 transparent;
+  transition: box-shadow 0.12s var(--step), color 0.12s var(--step);
+}
+.view-tab:hover {
+  color: var(--ink);
+}
+.view-tab[aria-current='page'] {
+  color: var(--ink);
+  box-shadow: inset 0 -3px 0 var(--accent);
+}
+.workflows {
+  display: none;
+}
+body[data-view='workflows'] .news-only {
+  display: none;
+}
+body[data-view='workflows'] .workflows {
+  display: block;
+}
+
+/* A workflow row: the same row as Earlier, with a byline, the tools, and the facts behind More. */
+.wf-type {
+  font: 500 11px/1 var(--display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  box-shadow: inset 0 0 0 1px var(--line);
+  padding: 3px 5px 2px;
+}
+.wf-by {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+.wf-tool {
+  padding: 2px 6px;
+  font: 500 11px/1.3 var(--display);
+  letter-spacing: 0.03em;
+  color: var(--ink-2);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.wf-row .what {
+  margin-top: 8px;
+}
+.wf-facts {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  max-width: 42em;
+}
+.wf-facts dt {
+  margin-bottom: 3px;
+  font: 500 12px/1.2 var(--display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+.wf-facts dd {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink);
+}
+.wf-read {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+.wf-read .act {
+  text-decoration: none;
+}
+html:lang(zh-CN) .wf-type,
+html:lang(zh-CN) .wf-facts dt,
+html:lang(zh-CN) .view-tab {
+  letter-spacing: 0;
+}
+
 /* ---------- smaller screens ---------- */
 
 /* Chinese: no capitals to transform, no wide letter-spacing, a little more line height. */

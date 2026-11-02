@@ -77,7 +77,8 @@ test('morning job: waits for 07:00, then the first hour that gets through finish
   const bin = join(dir, 'bin');
   mkdirSync(bin);
   // A fake node (the collector) and git; `pushes` says how each git push ends.
-  writeFileSync(join(bin, 'node'), `#!/bin/sh\necho collect >> "${dir}/calls"\nexit 0\n`);
+  writeFileSync(join(bin, 'node'), `#!/bin/sh\ncase "$1" in *workflows*) echo workflows >> "${dir}/calls" ;; *) echo collect >> "${dir}/calls" ;; esac\nexit 0\n`);
+  writeFileSync(join(dir, 'workflows.yaml'), 'enabled: true\n');
   writeFileSync(
     join(bin, 'git'),
     `#!/bin/sh
@@ -113,7 +114,7 @@ exit 0
 
   writeFileSync(join(dir, 'pushes'), 'reset');
   assert.equal(run(), 1, 'all five uploads dropped');
-  assert.deepEqual(calls(), ['collect', 'commit', 'push', 'push', 'push', 'push', 'push', 'notify']);
+  assert.deepEqual(calls(), ['collect', 'workflows', 'commit', 'push', 'push', 'push', 'push', 'push', 'notify']);
   assert.equal(existsSync(join(dir, '.cache/last-success')), false);
 
   writeFileSync(join(dir, 'calls'), '');

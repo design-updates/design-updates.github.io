@@ -25,18 +25,12 @@ const EXT: [RegExp, string][] = [
   [/icon/, 'ico'],
 ];
 
-export async function mirrorAssets(radar: Radar, outDir: string, fetchImpl: typeof fetch = fetch): Promise<{ radar: Radar; saved: number; failed: number }> {
-  const wanted = new Set<string>();
-  for (const d of radar.days) {
-    for (const i of d.items) {
-      if (i.icon) wanted.add(iconAt16(i.icon));
-      for (const s of i.sources) wanted.add(faviconUrl(domainOf(s.url)));
-    }
-  }
+/** Downloads each image into <outDir>/icons/ and returns original address -> local path, for those that worked. */
+export async function mirrorUrls(urls: Iterable<string>, outDir: string, fetchImpl: typeof fetch = fetch): Promise<{ local: Map<string, string>; failed: number }> {
   mkdirSync(join(outDir, 'icons'), { recursive: true });
   const local = new Map<string, string>();
   let failed = 0;
-  await mapLimit([...wanted], 6, async (url) => {
+  await mapLimit([...new Set(urls)], 6, async (url) => {
     try {
       const res = await fetchImpl(url, { signal: AbortSignal.timeout(10_000) });
       const type = res.headers.get('content-type') ?? '';
@@ -49,6 +43,18 @@ export async function mirrorAssets(radar: Radar, outDir: string, fetchImpl: type
       failed++;
     }
   });
+  return { local, failed };
+}
+
+export async function mirrorAssets(radar: Radar, outDir: string, fetchImpl: typeof fetch = fetch): Promise<{ radar: Radar; saved: number; failed: number }> {
+  const wanted = new Set<string>();
+  for (const d of radar.days) {
+    for (const i of d.items) {
+      if (i.icon) wanted.add(iconAt16(i.icon));
+      for (const s of i.sources) wanted.add(faviconUrl(domainOf(s.url)));
+    }
+  }
+  const { local, failed } = await mirrorUrls(wanted, outDir, fetchImpl);
   const out: Radar = {
     ...radar,
     days: radar.days.map((d) => ({

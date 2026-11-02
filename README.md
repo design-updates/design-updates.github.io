@@ -49,6 +49,7 @@ Other commands:
 - `npm run icons`: looks up app icons again (App Store artwork, or a favicon) and saves them to `data/icons.json`.
 - `npm run build`: builds the site into `dist/`.
 - `npm run dev`: builds and serves the site at http://localhost:5180.
+- `npm run workflows`: adds today's posts to the AI workflows pool and, on the first run of a week, picks that week's posts (see below). `-- --dry-run` reads and filters without calling the model; `-- --force` picks the current week again.
 - `npm test`: runs the tests.
 
 ### Which AI it uses
@@ -112,6 +113,17 @@ When this was set up (October 2026) there was no working public feed for the Air
 **X and LinkedIn are not read directly.** X's API is paid only (from $0.005 per post read). LinkedIn only lets you read pages you administer, and scraping it breaks its terms. Big design news posted there usually reaches the outlets and design publications in the list, so it still gets picked up. The Airbnb, Uber, Spotify and Google Design blogs on Medium were also tried; their newest posts are 1 to 8 years old.
 
 `medium.com` is in `blocked_domains` because anyone can publish there. A feed you add yourself is exempt for its own posts (the Netflix Tech Blog lives on Medium), but a Medium link reached through another feed is still blocked.
+
+## AI workflows (trial)
+
+A second page, **AI workflows**, collects posts in which designers show how they actually use AI in their work: the steps, prompts and tools, what came out, and where the AI fell short. It is a weekly list, not a daily one.
+
+- **Sources** are in `workflows.yaml`: UX Collective, UX Planet, Smashing Magazine, Nielsen Norman Group, UX Tigers, Luke Wroblewski, the Figma Blog, Lenny's Newsletter, One Useful Thing and Sidebar. X and LinkedIn are not readable for free.
+- **Every morning** the job reads those feeds and adds new posts to a pool (`.cache/workflows-pool.json`), because some feeds only hold a day or two of posts.
+- **On the first run of each week** it takes the last 7 days of posts, drops the obvious misses with rules (not about AI, listicles such as "10 AI tools…", courses, job posts), reads each remaining post in full, and asks the company Claude which ones show a real process someone could copy. Each post gets a score out of 10; at most `max_picks` (5) with at least `min_score` (7) are kept. A week where nothing is good enough is shown as quiet.
+- **Each pick** has a plain title, the author and their role when the post says, the tools, the stage of design work, the process, the result, the catch (only if the post names one) and who should try it, in English and Chinese.
+- **Output:** `data/workflows.json`. `npm run workflows` prints what was kept and dropped with the reason for each; the last report is in `.cache/workflows-last.txt`.
+- **To turn it off:** set `enabled: false` in `workflows.yaml`. The tab disappears from the page and the morning job skips it.
 
 ## The morning job (this Mac)
 

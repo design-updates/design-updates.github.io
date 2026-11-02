@@ -11,9 +11,13 @@ export interface FeedEntry {
   publishedAt: string | null;
   summary: string;
   image: string | null;
+  /** The full post text, when the feed carries it (Medium and Substack feeds do). Up to 8000 characters. */
+  content?: string;
+  /** dc:creator, or the Atom author's name. */
+  author?: string;
 }
 
-const tag = (block: string, name: string): string | null => {
+const tag =(block: string, name: string): string | null => {
   const m = block.match(new RegExp(`<${name}(?:\\s[^>]*)?>([\\s\\S]*?)</${name}>`, 'i'));
   return m ? m[1] : null;
 };
@@ -68,12 +72,16 @@ export function parseFeed(xml: string, base: string): FeedEntry[] {
     const date = parseDate(cdata(dateRaw));
     const html = cdata(isAtom ? (tag(b, 'summary') ?? tag(b, 'content')) : (tag(b, 'description') ?? tag(b, 'content:encoded')));
     const encoded = cdata(tag(b, 'content:encoded') ?? tag(b, 'content') ?? '');
+    const full = stripHtml(encoded.length > html.length ? encoded : html);
+    const author = truncate(stripHtml(cdata(tag(b, 'dc:creator') ?? tag(tag(b, 'author') ?? '', 'name') ?? '')), 80);
     out.push({
       title,
       url,
       publishedAt: date ? date.toISOString() : null,
       summary: truncate(stripHtml(html), 400),
       image: firstImage(b, `${html}${encoded}`),
+      ...(full.length > 600 ? { content: truncate(full, 8000) } : {}),
+      ...(author ? { author } : {}),
     });
   }
   return out;

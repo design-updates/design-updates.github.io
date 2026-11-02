@@ -1,0 +1,34 @@
+# AI workflows: a weekly pick of posts where designers show how they actually use AI in their work.
+# A trial (Nov 2026). To turn it off, set enabled: false (the page then hides the tab).
+# npm run workflows prints what was kept and dropped, with the reason for each.
+
+enabled: true
+# Picks per week, at most. Fewer if fewer posts are good enough.
+max_picks: 5
+# The model scores each post 1-10 for how clearly it shows a real process. Below this, it is dropped.
+min_score: 7
+
+# Read every morning; posts are pooled so a feed that only holds a day or two (UX Collective) still counts.
+# All tested from the laptop's network in Nov 2026. X and LinkedIn have no free way in.
+feeds:
+  - name: UX Collective
+    url: https://uxdesign.cc/feed
+  - name: UX Planet
+    url: https://uxplanet.org/feed
+  - name: Smashing Magazine
+    url: https://www.smashingmagazine.com/feed/
+  - name: Nielsen Norman Group
+    url: https://www.nngroup.com/feed/rss/
+  - name: UX Tigers (Jakob Nielsen)
+    url: https://www.uxtigers.com/blog-feed.xml
+  - name: Luke Wroblewski
+    url: https://www.lukew.com/ff/rss.asp
+  - name: Figma Blog
+    url: https://www.figma.com/blog/feed/atom.xml
+  - name: Lenny's Newsletter
+    url: https://www.lennysnewsletter.com/feed
+  - name: One Useful Thing
+    url: https://www.oneusefulthing.org/feed
+  # Links out to designers' own blogs; the page behind each link is read.
+  - name: Sidebar
+    url: https://sidebar.io/feed.xml

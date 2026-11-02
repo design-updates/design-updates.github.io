@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-02T13:52:24.528Z",
+  "weeks": [
+    {
+      "week": "2026-11-02",
+      "from": "2026-10-26T13:52:24.528Z",
+      "to": "2026-11-02T13:52:24.528Z",
+      "checked": 52,
+      "picks": [
+        {
+          "id": "building-production-like-prototypes-from-real-reddit-data-wi",
+          "title": "Building production-like prototypes from real Reddit data with Cursor and a design-system MCP, and turning Figma files into PRDs for handoff",
+          "post_title": "🎙️ How I AI: Claude Duet honest review + Why Reddit built its own AI prototyping tool",
+          "url": "https://lennysnewsletter.com/p/how-i-ai-claude-duet-honest-review",
+          "source": "Lenny's Newsletter",
+          "domain": "lennysnewsletter.com",
+          "author": "Blair Metcalf",
+          "author_role": "Principal UX engineer at Reddit",
+          "published_at": "2026-10-26T15:00:53.000Z",
+          "tools": [
+            "Cursor",
+            "Reddit Proto"
+          ],
+          "stage": "prototyping",
+          "type": "workflow",
+          "process": "Reddit's team built Reddit Proto, an internal desktop app that handles repositories, branches and scaffolding in the background, so designers and product managers never touch Git. People sign in to prototypes with their real Reddit accounts, so feeds, search and communities show familiar content instead of placeholders. Each annotation a designer leaves is attached to the relevant component, design-system guidance and the user's intent before it goes to Cursor, and a custom design-system MCP maps Reddit's tokens, components and workflows to production code so Cursor picks the right component. For handoff, a designer submits a Figma link and the system maps each element to production components, adds earlier engineering feedback, and generates a structured PRD with acceptance criteria.",
+          "result": "Reddit's teams have built about 700 prototypes with 100% adoption across UX and product, and the strongest users include a visual designer and an animator with no engineering background.",
+          "catch": null,
+          "try_if": "your team prototypes in code and wants prototypes built from production components and real data",
+          "score": 7,
+          "minutes": 5,
+          "image": "https://substack-post-media.s3.amazonaws.com/public/images/b3ec454d-2a57-4dac-9f09-3d0762816acf_1456x1048.png",
+          "icon": "https://www.google.com/s2/favicons?domain=lennysnewsletter.com&sz=64",
+          "zh": {
+            "title": "在 Reddit 用 Cursor 和设计系统 MCP 基于真实数据搭建接近生产环境的原型，并把 Figma 文件转成 PRD 用于交付",
+            "process": "Reddit 团队开发了内部桌面应用 Reddit Proto，由它在后台处理代码仓库、分支和脚手架，设计师和产品经理无需接触 Git。原型可以用真实的 Reddit 账号登录，信息流、搜索和社区里显示的是熟悉的真实内容，而不是占位数据。设计师写下的每条批注都会附带对应组件、设计系统规范和用户意图，再发送给 Cursor；自定义的设计系统 MCP 把 Reddit 的 token、组件和工作流程映射到生产代码，让 Cursor 选对组件。交付时，设计师提交一个 Figma 链接，系统把每个元素对应到生产组件，结合以往的工程反馈，生成带验收标准的结构化 PRD。",
+            "result": "Reddit 团队已做了约 700 个原型，UX 和产品团队的采用率达到 100%，用得最好的人里包括一位视觉设计师和一位没有工程背景的动效设计师。",
+            "catch": null,
+            "try_if": "你的团队用代码做原型，希望原型直接使用生产组件和真实数据。"
+          }
+        }
+      ],
+      "collected_at": "2026-11-02T13:52:24.528Z"
+    }
+  ]
+}

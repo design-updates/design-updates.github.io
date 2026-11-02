@@ -1,7 +1,79 @@
 {
   "version": 1,
-  "updated_at": "2026-11-02T03:27:04.617Z",
+  "updated_at": "2026-11-02T23:00:54.923Z",
   "days": [
+    {
+      "date": "2026-11-03",
+      "collected_at": "2026-11-02T23:00:54.923Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "google-messages-phone-contacts-gradient-icons",
+          "app": "Google Messages",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-02",
+          "published_at": "2026-11-02T13:35:00.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Google is rolling out gradient app icons for Messages, Phone and Contacts.",
+          "what": "Google is replacing the icons for its Contacts, Messages and Phone apps with gradient versions. The new Messages icon arrives in the app's latest update. This follows Google's gradient redesigns of its Workspace and Pixel app icons earlier this year.",
+          "why": "Google is moving its core Android apps to one icon style, so a flat travel app icon will sit next to more gradient icons on Android home screens. That is worth checking when you review how your Android icon reads beside the system apps.",
+          "sources": [
+            {
+              "title": "Google rolling out gradient icon redesigns for Contacts, Messages, and Phone",
+              "url": "https://9to5google.com/2026/11/02/google-messages-phone-icon-gradient-redesign",
+              "publisher": "9to5Google"
+            },
+            {
+              "title": "Google Messages update rolling out new app icon with gradient design",
+              "url": "https://9to5google.com/2026/11/02/google-messages-gradient-icon-beta",
+              "publisher": "9to5Google"
+            }
+          ],
+          "release": null,
+          "image": "https://i0.wp.com/9to5google.com/wp-content/uploads/sites/4/2026/11/Google-Messages-Phone-Contacts-icon-gradient-redesign.webp?w=1500&quality=82&strip=all&ssl=1",
+          "icon": "https://www.google.com/s2/favicons?domain=messages.google.com&sz=64",
+          "collected_at": "2026-11-02T23:00:54.923Z",
+          "zh": {
+            "headline": "Google 为 Messages、Phone 和 Contacts 推出渐变风格应用图标。",
+            "what": "Google 正在将 Contacts、Messages 和 Phone 三款应用的图标替换为渐变版本，Messages 的新图标已随最新版本更新出现。此前，Google 已在今年早些时候把 Workspace 和 Pixel 系列应用图标改为渐变风格。",
+            "why": "Google 正把 Android 核心应用统一为同一种图标风格，Android 桌面上的渐变图标会越来越多。评估 Android 端应用图标时，可以看看扁平风格的旅行应用图标放在这些系统应用旁边是否还够醒目。"
+          }
+        },
+        {
+          "id": "x-ios-alternate-app-icons",
+          "app": "X",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-03",
+          "published_at": "2026-11-02T18:34:37.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "X replaces its alternative app icon set on iPhone and iPad with more than a dozen new options.",
+          "what": "Today's update to X for iPhone and iPad overhauls the alternative app icons that users can pick in place of the default icon. The new set has more than a dozen options. The app has offered alternative icons since it was called Twitter.",
+          "why": "iOS alternative icons let users personalise an app without touching the core brand mark. A travel app could use the same mechanism for loyalty tiers or seasonal campaigns while keeping the default icon unchanged.",
+          "sources": [
+            {
+              "title": "X for iPhone and iPad just added over a dozen new app icon options",
+              "url": "https://9to5mac.com/2026/11/02/x-for-iphone-and-ipad-just-dropped-a-dozen-new-app-icon-options",
+              "publisher": "9to5Mac"
+            }
+          ],
+          "release": null,
+          "image": "https://9to5mac.com/wp-content/uploads/sites/6/2026/11/X.webp?resize=1200,628",
+          "icon": "https://www.google.com/s2/favicons?domain=x.com&sz=64",
+          "collected_at": "2026-11-02T23:00:54.923Z",
+          "zh": {
+            "headline": "X 在 iPhone 和 iPad 上更新了可替换图标，新增十余款选项。",
+            "what": "X 的 iPhone 和 iPad 版本在今天的更新中重做了可替换应用图标，用户可用它们替代默认图标。新图标组共有十余款。这项功能从应用还叫 Twitter 时就已存在。",
+            "why": "iOS 的可替换图标能让用户个性化应用，而不改动主品牌标识。旅行应用也可以用这一机制配合会员等级或季节性活动，同时保持默认图标不变。"
+          }
+        }
+      ]
+    },
     {
       "date": "2026-11-02",
       "collected_at": "2026-11-02T03:27:04.617Z",

@@ -96,6 +96,23 @@
       "urls": [
         "https://9to5google.com/2026/10/30/apple-music-7-0-redesign"
       ]
+    },
+    "google-messages-phone-contacts-gradient-icons": {
+      "app": "Google Messages",
+      "headline": "Google is rolling out gradient app icons for Messages, Phone and Contacts.",
+      "date": "2026-11-02",
+      "urls": [
+        "https://9to5google.com/2026/11/02/google-messages-phone-icon-gradient-redesign",
+        "https://9to5google.com/2026/11/02/google-messages-gradient-icon-beta"
+      ]
+    },
+    "x-ios-alternate-app-icons": {
+      "app": "X",
+      "headline": "X replaces its alternative app icon set on iPhone and iPad with more than a dozen new options.",
+      "date": "2026-11-03",
+      "urls": [
+        "https://9to5mac.com/2026/11/02/x-for-iphone-and-ipad-just-dropped-a-dozen-new-app-icon-options"
+      ]
     }
   }
 }

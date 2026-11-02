@@ -911,26 +911,32 @@ button {
   background: repeating-linear-gradient(90deg, var(--line) 0 var(--px), transparent var(--px) calc(var(--px) * 2)) top / 100% 2px no-repeat;
 }
 
+/* More / Less: an outlined chip in the accent colour, with a pixel chevron that flips when open. */
 .more {
-  display: block;
-  margin-top: 10px;
-  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 26px;
+  padding: 0 9px 0 10px;
   border: 0;
-  background: none;
+  background: transparent;
+  box-shadow: inset 0 0 0 2px var(--accent);
   font: 500 12px/1 var(--display);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--ink);
   cursor: pointer;
+  transition: background-color 0.12s var(--step);
 }
 .more:hover {
-  color: var(--ink);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
 }
-.more::after {
-  content: ' +';
+.chev {
+  color: var(--accent);
+  transition: transform 0.2s steps(2, end);
 }
-.more[aria-expanded='true']::after {
-  content: ' −';
+.more[aria-expanded='true'] .chev {
+  transform: rotate(180deg);
 }
 /* The summary shows two lines until the card or row is opened. overflow stays hidden while its height animates. */
 .what.clamp {
@@ -942,20 +948,36 @@ button {
 .row .what {
   overflow: hidden;
 }
-.more-body {
+/* The fold holds the opened text and, pinned to its bottom, the button, so Less always sits at the very end and
+   rides the edge while the fold grows or shrinks. Clipped only while moving, so focus rings show the rest of the time. */
+.fold {
+  --fold-end: 0px;
+  position: relative;
+  padding-bottom: calc(36px + var(--fold-end));
+}
+.fold.moving {
   overflow: hidden;
+}
+.fold > .more {
+  position: absolute;
+  left: 0;
+  bottom: var(--fold-end);
 }
 .more-body[hidden] {
   display: none;
+}
+.more-in {
+  padding: 12px 0 6px;
+}
+.more-in > :first-child {
+  margin-top: 0;
 }
 .card .what {
   margin: 10px 0 0;
   font-size: 15px;
   color: var(--ink-2);
 }
-.card .more-body .why {
-  margin-top: 12px;
-}
+
 
 /* Lift on hover: the frame steps up and its shadow grows. */
 @media (hover: hover) {
@@ -1217,10 +1239,7 @@ button {
   grid-template-columns: 12px 24px minmax(0, 1fr);
   gap: 0 14px;
   align-items: start;
-  padding: 22px 0;
-}
-.row.open .row-head {
-  padding-bottom: 0;
+  padding-top: 22px;
 }
 .dot {
   width: 8px;
@@ -1275,9 +1294,6 @@ button {
 .row.open .what {
   color: var(--ink-2);
 }
-.row .more {
-  margin-top: 8px;
-}
 .row-thumb {
   grid-column: 2;
   grid-row: 1 / span 2;
@@ -1307,17 +1323,23 @@ button {
 .row-thumb.mosaic img {
   image-rendering: pixelated;
 }
-/* Lines up with the headline: 12px dot + 24px icon + two 14px gaps. Vertical space sits on the inner box, so the
-   outer one can animate its height down to zero. */
-.row-body {
+/* Lines up with the headline: 12px dot + 24px icon + two 14px gaps. */
+.row-fold {
+  --fold-end: 20px;
   grid-column: 1;
+  margin-top: 2px;
   padding-left: 64px;
 }
-.row-body-in {
-  padding: 4px 0 24px;
+.card .fold {
+  margin-top: 4px;
 }
-.row-body .why {
-  margin-top: 10px;
+.row-fold .more {
+  left: 64px;
+}
+.row-fold .actions {
+  margin-top: 12px;
+}
+.row-fold .why {
   font-size: 15px;
 }
 
@@ -1692,7 +1714,7 @@ html:lang(zh-CN) .row-title {
   .row-head {
     grid-template-columns: 8px 24px minmax(0, 1fr);
     gap: 0 10px;
-    padding: 18px 0;
+    padding-top: 18px;
   }
   .row-thumb {
     width: 72px;
@@ -1717,12 +1739,14 @@ html:lang(zh-CN) .row-title {
   .row-thumb {
     grid-row: 1;
   }
-  .row-body {
+  /* 8px dot + 24px icon + two 10px gaps. */
+  .row-fold {
+    --fold-end: 18px;
     grid-column: 1 / -1;
     padding-left: 52px;
   }
-  .row-body-in {
-    padding-bottom: 20px;
+  .row-fold .more {
+    left: 52px;
   }
   .day.quiet-day .rows {
     padding: 16px 0 20px;

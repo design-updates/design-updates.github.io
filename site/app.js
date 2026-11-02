@@ -510,8 +510,10 @@ function cardHtml(item, i, withMedia) {
     ${metaRow(item)}
     <h3 class="headline"><a href="${esc(safeUrl(item.sources?.[0]?.url))}" target="_blank" rel="noopener" data-read="${esc(item.id)}">${esc(txt(item, 'headline'))}</a></h3>
     <p class="what clamp">${esc(txt(item, 'what'))}</p>
-    ${moreBtn(`more-${item.id}`)}
-    <div class="more-body" id="more-${esc(item.id)}" hidden>${why(item)}</div>
+    <div class="fold">
+      <div class="more-body" id="more-${esc(item.id)}" hidden><div class="more-in">${why(item)}</div></div>
+      ${moreBtn(`more-${item.id}`)}
+    </div>
     ${sources(item)}
     ${actions(item)}
   </article>`;
@@ -519,7 +521,8 @@ function cardHtml(item, i, withMedia) {
 
 /** Cards and rows open the same way: the headline goes to the source, More + shows the rest here. */
 function moreBtn(id) {
-  return `<button class="more" type="button" aria-expanded="false" aria-controls="${esc(id)}"><span class="more-label">${t().more}</span></button>`;
+  const chevron = '<svg class="chev" viewBox="0 0 7 4" width="10" height="6" aria-hidden="true" shape-rendering="crispEdges"><path d="M0 0h7v1H6v1H5v1H4v1H3V3H2V2H1V1H0z" fill="currentColor"/></svg>';
+  return `<button class="more" type="button" aria-expanded="false" aria-controls="${esc(id)}"><span class="more-label">${t().more}</span>${chevron}</button>`;
 }
 
 function patternHtml(text) {
@@ -579,16 +582,18 @@ function rowHtml(item) {
         <p class="row-top"><span class="app">${esc(item.app)}</span><span class="tag" data-cat="${esc(item.category)}"><span class="tag-label">${t().cat[item.category] ?? ''}</span></span>${kindTag(item)}${item.beta ? `<span class="beta">${t().beta}</span>` : ''}${releaseTag(item)}<span class="saved-mark" aria-hidden="true"></span><span class="when">${ago(item.published_at)}</span>${unread ? `<span class="sr-only">${t().unread}</span>` : ''}</p>
         <h3 class="row-title"><a ${link}>${esc(txt(item, 'headline'))}</a></h3>
         <p class="what clamp">${esc(txt(item, 'what'))}</p>
-        ${moreBtn(`more-${item.id}`)}
       </div>
     </div>
     ${thumb}
-    <div class="more-body row-body" id="more-${esc(item.id)}" hidden>
-      <div class="row-body-in">
-        ${why(item)}
-        ${sources(item)}
-        ${actions(item)}
+    <div class="fold row-fold">
+      <div class="more-body" id="more-${esc(item.id)}" hidden>
+        <div class="more-in">
+          ${why(item)}
+          ${sources(item)}
+          ${actions(item)}
+        </div>
       </div>
+      ${moreBtn(`more-${item.id}`)}
     </div>
   </li>`;
 }
@@ -1098,21 +1103,23 @@ function wireLanguage() {
 
 /* ---------- opening a card or row ---------- */
 
-const EASE = 'cubic-bezier(0.2, 0.7, 0.2, 1)';
+const EASE = 'cubic-bezier(0.3, 0, 0.2, 1)';
 
 /**
- * More + / Less −. The two-line summary grows to its full length, then the rest prints in from the top,
- * like the scroll reveal. Closing runs it backwards. Reduced motion just shows and hides.
+ * More / Less. The summary and the opened text grow (or shrink) together in one motion, and the button,
+ * pinned to the bottom, rides along. Opening also prints the text in from the top, like the scroll reveal.
+ * A second click mid-way starts from wherever the motion has got to. Reduced motion just shows and hides.
  */
 function toggleMore(btn) {
   const open = btn.getAttribute('aria-expanded') !== 'true';
   const host = btn.closest('.row, .card');
   const what = host.querySelector('.what');
+  const fold = btn.closest('.fold');
   const body = document.getElementById(btn.getAttribute('aria-controls'));
+  const inner = body.firstElementChild;
   btn.setAttribute('aria-expanded', String(open));
   btn.querySelector('.more-label').textContent = open ? t().less : t().more;
   host.classList.toggle('open', open);
-  for (const el of [what, body]) el.getAnimations().forEach((a) => a.cancel());
 
   if (open && host.classList.contains('unread')) {
     markRead([host.dataset.id]);
@@ -1122,30 +1129,32 @@ function toggleMore(btn) {
     renderFilters(archiveDays);
   }
 
-  if (reduced) {
-    what.classList.toggle('clamp', !open);
-    body.hidden = !open;
-    return;
-  }
+  // Where things are now, mid-motion or not, before stopping any running animation.
+  const from = [what.getBoundingClientRect().height, fold.getBoundingClientRect().height];
+  for (const el of [what, fold, inner]) el.getAnimations().forEach((a) => a.cancel());
+  fold.classList.remove('moving');
 
-  const clamped = what.offsetHeight;
-  what.classList.remove('clamp');
-  const full = what.offsetHeight;
-  body.hidden = false;
-  const bodyH = body.offsetHeight;
+  const settle = (isOpen) => {
+    what.classList.toggle('clamp', !isOpen);
+    body.hidden = !isOpen;
+  };
+  if (reduced) return settle(open);
+
+  // Measure the end state, then show the full text while moving so nothing jumps.
+  settle(open);
+  const to = [what.offsetHeight, fold.offsetHeight];
+  settle(true);
+  fold.classList.add('moving');
+  const timing = { duration: open ? 260 : 220, easing: EASE };
+  what.animate([{ height: `${from[0]}px` }, { height: `${to[0]}px` }], timing);
+  const run = fold.animate([{ height: `${from[1]}px` }, { height: `${to[1]}px` }], timing);
   if (open) {
-    what.animate([{ height: `${clamped}px` }, { height: `${full}px` }], { duration: 220, easing: EASE });
-    body.animate([{ height: '0px', opacity: 0 }, { height: `${bodyH}px`, opacity: 1 }], { duration: 260, easing: EASE });
-    body.firstElementChild?.animate(
-      [{ clipPath: 'inset(0 0 100% 0)', transform: 'translateY(-6px)' }, { clipPath: 'inset(0 0 0 0)', transform: 'none' }],
-      { duration: 360, delay: 60, easing: 'steps(6, end)', fill: 'backwards' },
-    );
-  } else {
-    const shut = body.animate([{ height: `${bodyH}px`, opacity: 1 }, { height: '0px', opacity: 0 }], { duration: 180, easing: EASE });
-    const back = what.animate([{ height: `${full}px` }, { height: `${clamped}px` }], { duration: 200, delay: 60, easing: EASE });
-    shut.onfinish = () => (body.hidden = true);
-    back.onfinish = () => what.classList.add('clamp');
+    inner.animate([{ clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0 0)' }], { duration: 320, easing: 'steps(6, end)' });
   }
+  run.onfinish = () => {
+    fold.classList.remove('moving');
+    settle(open);
+  };
 }
 
 /* ---------- events ---------- */

@@ -838,7 +838,8 @@ button {
 }
 
 .headline a,
-.lead-headline a {
+.lead-headline a,
+.row-title a {
   background-image: linear-gradient(currentColor 0 0);
   background-size: 0 2px;
   background-position: 0 100%;
@@ -846,7 +847,8 @@ button {
   transition: background-size 0.2s var(--step);
 }
 .headline a:hover,
-.lead-headline a:hover {
+.lead-headline a:hover,
+.row-title a:hover {
   background-size: 100% 2px;
 }
 
@@ -910,6 +912,7 @@ button {
 }
 
 .more {
+  display: block;
   margin-top: 10px;
   padding: 0;
   border: 0;
@@ -929,10 +932,29 @@ button {
 .more[aria-expanded='true']::after {
   content: ' −';
 }
+/* The summary shows two lines until the card or row is opened. overflow stays hidden while its height animates. */
+.what.clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.card .what,
+.row .what {
+  overflow: hidden;
+}
+.more-body {
+  overflow: hidden;
+}
+.more-body[hidden] {
+  display: none;
+}
 .card .what {
   margin: 10px 0 0;
   font-size: 15px;
   color: var(--ink-2);
+}
+.card .more-body .why {
+  margin-top: 12px;
 }
 
 /* Lift on hover: the frame steps up and its shadow grows. */
@@ -1189,23 +1211,16 @@ button {
   column-gap: 20px;
   align-items: start;
 }
-.row-btn {
+.row-head {
   grid-column: 1;
   display: grid;
   grid-template-columns: 12px 24px minmax(0, 1fr);
   gap: 0 14px;
   align-items: start;
-  width: 100%;
   padding: 22px 0;
-  border: 0;
-  background: none;
-  text-align: left;
-  cursor: pointer;
 }
-.row-btn:hover .row-title {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+.row.open .row-head {
+  padding-bottom: 0;
 }
 .dot {
   width: 8px;
@@ -1225,6 +1240,7 @@ button {
 }
 .row-top {
   display: flex;
+  margin-top: 0;
   align-items: center;
   gap: 6px 12px;
   flex-wrap: wrap;
@@ -1238,6 +1254,7 @@ button {
 }
 .row-title {
   display: block;
+  margin: 0;
   font-weight: 650;
   font-size: 17px;
   line-height: 1.35;
@@ -1248,24 +1265,28 @@ button {
   font-weight: 500;
   color: var(--ink-2);
 }
-.row-sub {
-  display: -webkit-box;
-  margin-top: 4px;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.row .what {
+  margin: 4px 0 0;
+  max-width: 42em;
   color: var(--ink-3);
   font-size: 15px;
+  transition: color 0.2s var(--step);
+}
+.row.open .what {
+  color: var(--ink-2);
+}
+.row .more {
+  margin-top: 8px;
 }
 .row-thumb {
   grid-column: 2;
   grid-row: 1 / span 2;
   position: relative;
+  display: block;
   overflow: hidden;
   width: 112px;
   aspect-ratio: 4 / 3;
   margin-top: 24px;
-  cursor: pointer;
   --n: 3px;
 }
 .row-thumb canvas {
@@ -1286,28 +1307,18 @@ button {
 .row-thumb.mosaic img {
   image-rendering: pixelated;
 }
-/* Lines up with the headline: 12px dot + 24px icon + two 14px gaps. */
+/* Lines up with the headline: 12px dot + 24px icon + two 14px gaps. Vertical space sits on the inner box, so the
+   outer one can animate its height down to zero. */
 .row-body {
   grid-column: 1;
-  padding: 0 0 26px 64px;
+  padding-left: 64px;
 }
-.row-body[hidden] {
-  display: none;
-}
-.row-body .what {
-  margin: 0;
-  color: var(--ink-2);
-  max-width: 42em;
+.row-body-in {
+  padding: 4px 0 24px;
 }
 .row-body .why {
-  margin-top: 14px;
+  margin-top: 10px;
   font-size: 15px;
-}
-.row.open .row-btn {
-  padding-bottom: 12px;
-}
-.row.open .row-sub {
-  display: none;
 }
 
 .day.quiet-day .rows {
@@ -1678,7 +1689,7 @@ html:lang(zh-CN) .row-title {
     grid-template-columns: minmax(0, 1fr) 72px;
     column-gap: 12px;
   }
-  .row-btn {
+  .row-head {
     grid-template-columns: 8px 24px minmax(0, 1fr);
     gap: 0 10px;
     padding: 18px 0;
@@ -1699,7 +1710,7 @@ html:lang(zh-CN) .row-title {
     overflow: hidden;
     clip-path: inset(50%);
   }
-  .row-sub {
+  .row .what {
     font-size: 14px;
   }
   /* On a phone the opened text uses the full width, under the thumbnail. */
@@ -1708,7 +1719,10 @@ html:lang(zh-CN) .row-title {
   }
   .row-body {
     grid-column: 1 / -1;
-    padding: 0 0 22px 52px;
+    padding-left: 52px;
+  }
+  .row-body-in {
+    padding-bottom: 20px;
   }
   .day.quiet-day .rows {
     padding: 16px 0 20px;

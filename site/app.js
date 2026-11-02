@@ -29,7 +29,8 @@ const T = {
     kind: { ui: 'UI', ux: 'UX', brand: 'Brand' },
     beta: 'Beta',
     why: 'Why it matters',
-    whatChanged: 'What changed',
+    more: 'More',
+    less: 'Less',
     pattern: 'Pattern',
     sources: (n) => `${n} source${n === 1 ? '' : 's'}`,
     today: 'Today',
@@ -98,7 +99,8 @@ const T = {
     kind: { ui: 'UI', ux: 'UX', brand: '品牌' },
     beta: '测试版',
     why: '为什么重要',
-    whatChanged: '具体变化',
+    more: '展开',
+    less: '收起',
     pattern: '趋势',
     sources: (n) => `${n} 个来源`,
     today: '今天',
@@ -507,12 +509,17 @@ function cardHtml(item, i, withMedia) {
     ${withMedia ? media(item, { reveal: true }) : ''}
     ${metaRow(item)}
     <h3 class="headline"><a href="${esc(safeUrl(item.sources?.[0]?.url))}" target="_blank" rel="noopener" data-read="${esc(item.id)}">${esc(txt(item, 'headline'))}</a></h3>
-    ${why(item)}
-    <button class="more" type="button" aria-expanded="false" aria-controls="what-${esc(item.id)}">${t().whatChanged}</button>
-    <p class="what" id="what-${esc(item.id)}" hidden>${esc(txt(item, 'what'))}</p>
+    <p class="what clamp">${esc(txt(item, 'what'))}</p>
+    ${moreBtn(`more-${item.id}`)}
+    <div class="more-body" id="more-${esc(item.id)}" hidden>${why(item)}</div>
     ${sources(item)}
     ${actions(item)}
   </article>`;
+}
+
+/** Cards and rows open the same way: the headline goes to the source, More + shows the rest here. */
+function moreBtn(id) {
+  return `<button class="more" type="button" aria-expanded="false" aria-controls="${esc(id)}"><span class="more-label">${t().more}</span></button>`;
 }
 
 function patternHtml(text) {
@@ -553,31 +560,35 @@ const filter = { cat: 'all', kind: null, unread: false };
 
 function rowHtml(item) {
   const unread = isUnread(item);
-  // The thumbnail sits beside the headline and the opened text, so opening a row adds no gap.
+  const href = esc(safeUrl(item.sources?.[0]?.url));
+  const link = `href="${href}" target="_blank" rel="noopener" data-read="${esc(item.id)}"`;
+  // The thumbnail sits beside the headline and the opened text, so opening a row adds no gap. It links to the source, like the headline.
   const c = item.compare;
   const thumb = c?.after && c.before && !c.combined
-    ? `<span class="row-thumb notch split" aria-hidden="true"><img src="${esc(c.before)}" alt="" loading="lazy" referrerpolicy="no-referrer"><img src="${esc(c.after)}" alt="" loading="lazy" referrerpolicy="no-referrer"></span>`
+    ? `<a class="row-thumb notch split" ${link} tabindex="-1" aria-hidden="true"><img src="${esc(c.before)}" alt="" loading="lazy" referrerpolicy="no-referrer"><img src="${esc(c.after)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
     : c?.after
-      ? `<span class="row-thumb notch" aria-hidden="true"><img src="${esc(c.after)}" alt="" loading="lazy" referrerpolicy="no-referrer"></span>`
+      ? `<a class="row-thumb notch" ${link} tabindex="-1" aria-hidden="true"><img src="${esc(c.after)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
       : item.image
-    ? `<span class="row-thumb notch${reduced ? '' : ' pending'}" aria-hidden="true" data-mosaic="${esc(iconAt(iconFor(item), 16))}"><img src="${esc(item.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></span>`
-    : `<span class="row-thumb notch mosaic" aria-hidden="true" style="--c: var(--${esc(item.category)})"><img src="${esc(iconAt(iconFor(item), 16))}" alt="" loading="lazy" referrerpolicy="no-referrer"></span>`;
+    ? `<a class="row-thumb notch${reduced ? '' : ' pending'}" ${link} tabindex="-1" aria-hidden="true" data-mosaic="${esc(iconAt(iconFor(item), 16))}"><img src="${esc(item.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
+    : `<a class="row-thumb notch mosaic" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--${esc(item.category)})"><img src="${esc(iconAt(iconFor(item), 16))}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`;
   return `<li class="row reveal ${unread ? 'unread' : 'read'}${isSaved(item.id) ? ' is-saved' : ''}" data-cat="${esc(item.category)}" data-kind="${esc(item.kind ?? '')}" data-id="${esc(item.id)}">
-    <button class="row-btn" type="button" aria-expanded="false" aria-controls="row-${esc(item.id)}">
+    <div class="row-head">
       <span class="dot" aria-hidden="true"></span>
       ${appIcon(item).replace('class="icon', 'class="icon row-icon')}
-      <span class="row-main">
-        <span class="row-top"><span class="app">${esc(item.app)}</span><span class="tag" data-cat="${esc(item.category)}"><span class="tag-label">${t().cat[item.category] ?? ''}</span></span>${kindTag(item)}${item.beta ? `<span class="beta">${t().beta}</span>` : ''}${releaseTag(item)}<span class="saved-mark" aria-hidden="true"></span><span class="when">${ago(item.published_at)}</span>${unread ? `<span class="sr-only">${t().unread}</span>` : ''}</span>
-        <span class="row-title">${esc(txt(item, 'headline'))}</span>
-        <span class="row-sub">${esc(txt(item, 'why'))}</span>
-      </span>
-    </button>
+      <div class="row-main">
+        <p class="row-top"><span class="app">${esc(item.app)}</span><span class="tag" data-cat="${esc(item.category)}"><span class="tag-label">${t().cat[item.category] ?? ''}</span></span>${kindTag(item)}${item.beta ? `<span class="beta">${t().beta}</span>` : ''}${releaseTag(item)}<span class="saved-mark" aria-hidden="true"></span><span class="when">${ago(item.published_at)}</span>${unread ? `<span class="sr-only">${t().unread}</span>` : ''}</p>
+        <h3 class="row-title"><a ${link}>${esc(txt(item, 'headline'))}</a></h3>
+        <p class="what clamp">${esc(txt(item, 'what'))}</p>
+        ${moreBtn(`more-${item.id}`)}
+      </div>
+    </div>
     ${thumb}
-    <div class="row-body" id="row-${esc(item.id)}" hidden>
-      <p class="what">${esc(txt(item, 'what'))}</p>
-      ${why(item)}
-      ${sources(item)}
-      ${actions(item)}
+    <div class="more-body row-body" id="more-${esc(item.id)}" hidden>
+      <div class="row-body-in">
+        ${why(item)}
+        ${sources(item)}
+        ${actions(item)}
+      </div>
     </div>
   </li>`;
 }
@@ -1085,13 +1096,62 @@ function wireLanguage() {
   });
 }
 
+/* ---------- opening a card or row ---------- */
+
+const EASE = 'cubic-bezier(0.2, 0.7, 0.2, 1)';
+
+/**
+ * More + / Less −. The two-line summary grows to its full length, then the rest prints in from the top,
+ * like the scroll reveal. Closing runs it backwards. Reduced motion just shows and hides.
+ */
+function toggleMore(btn) {
+  const open = btn.getAttribute('aria-expanded') !== 'true';
+  const host = btn.closest('.row, .card');
+  const what = host.querySelector('.what');
+  const body = document.getElementById(btn.getAttribute('aria-controls'));
+  btn.setAttribute('aria-expanded', String(open));
+  btn.querySelector('.more-label').textContent = open ? t().less : t().more;
+  host.classList.toggle('open', open);
+  for (const el of [what, body]) el.getAnimations().forEach((a) => a.cancel());
+
+  if (open && host.classList.contains('unread')) {
+    markRead([host.dataset.id]);
+    host.classList.replace('unread', 'read');
+    const day = host.closest('.day');
+    day?.classList.toggle('has-unread', !!day.querySelector('.row.unread'));
+    renderFilters(archiveDays);
+  }
+
+  if (reduced) {
+    what.classList.toggle('clamp', !open);
+    body.hidden = !open;
+    return;
+  }
+
+  const clamped = what.offsetHeight;
+  what.classList.remove('clamp');
+  const full = what.offsetHeight;
+  body.hidden = false;
+  const bodyH = body.offsetHeight;
+  if (open) {
+    what.animate([{ height: `${clamped}px` }, { height: `${full}px` }], { duration: 220, easing: EASE });
+    body.animate([{ height: '0px', opacity: 0 }, { height: `${bodyH}px`, opacity: 1 }], { duration: 260, easing: EASE });
+    body.firstElementChild?.animate(
+      [{ clipPath: 'inset(0 0 100% 0)', transform: 'translateY(-6px)' }, { clipPath: 'inset(0 0 0 0)', transform: 'none' }],
+      { duration: 360, delay: 60, easing: 'steps(6, end)', fill: 'backwards' },
+    );
+  } else {
+    const shut = body.animate([{ height: `${bodyH}px`, opacity: 1 }, { height: '0px', opacity: 0 }], { duration: 180, easing: EASE });
+    const back = what.animate([{ height: `${full}px` }, { height: `${clamped}px` }], { duration: 200, delay: 60, easing: EASE });
+    shut.onfinish = () => (body.hidden = true);
+    back.onfinish = () => what.classList.add('clamp');
+  }
+}
+
 /* ---------- events ---------- */
 
 function wireEvents() {
   document.addEventListener('click', (e) => {
-    // The thumbnail beside a row opens it too.
-    const thumb = e.target.closest('.row-thumb');
-    if (thumb) return thumb.closest('.row').querySelector('.row-btn').click();
     const t = e.target.closest('button, a');
     if (!t) return;
 
@@ -1124,26 +1184,7 @@ function wireEvents() {
     }
     if (t.dataset.noteSave) saveNoteFrom(t.closest('.note-editor').querySelector('textarea'));
 
-    if (t.classList.contains('more')) {
-      const open = t.getAttribute('aria-expanded') !== 'true';
-      t.setAttribute('aria-expanded', String(open));
-      document.getElementById(t.getAttribute('aria-controls')).hidden = !open;
-    }
-
-    if (t.classList.contains('row-btn')) {
-      const row = t.closest('.row');
-      const open = t.getAttribute('aria-expanded') !== 'true';
-      t.setAttribute('aria-expanded', String(open));
-      row.classList.toggle('open', open);
-      document.getElementById(t.getAttribute('aria-controls')).hidden = !open;
-      if (open && row.classList.contains('unread')) {
-        markRead([row.dataset.id]);
-        row.classList.replace('unread', 'read');
-        const day = row.closest('.day');
-        day.classList.toggle('has-unread', !!day.querySelector('.row.unread'));
-        renderFilters(archiveDays);
-      }
-    }
+    if (t.classList.contains('more')) toggleMore(t);
 
     const f = t.dataset.filter;
     if (f) {

@@ -378,12 +378,21 @@ button {
 }
 
 /* App icons are shown as chunky 16px sources scaled up, so they sit in the pixel world but stay recognisable. */
+/* Logos sit on a light tile in both themes: many favicons are dark ink on a transparent background (The New York
+   Times), which vanishes on the dark page. A logo that is light on transparent gets a dark tile instead (tileIcons). */
+.icon,
+.sources .stack img {
+  background: #f3efe6;
+}
+.icon.on-dark,
+.sources .stack img.on-dark {
+  background: #1d1a16;
+}
 .icon {
   flex: none;
   width: 24px;
   height: 24px;
   image-rendering: pixelated;
-  background: var(--paper-2);
   --n: 3px;
 }
 .icon-lg {
@@ -869,7 +878,6 @@ button {
   height: 16px;
   image-rendering: pixelated;
   box-shadow: 0 0 0 2px var(--paper);
-  background: var(--paper-2);
 }
 .sources .stack img + img {
   margin-left: -4px;

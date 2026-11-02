@@ -857,6 +857,47 @@ function mosaicOnError(img) {
 
 function wireImages() {
   for (const img of document.querySelectorAll('.media img, .row-thumb img')) mosaicOnError(img);
+  tileIcons();
+}
+
+/**
+ * Logos sit on a light tile (see .icon in styles.css). This finds the few that are light on a transparent
+ * background, such as a white mark, and gives them a dark tile. It reads the pixels, which works for the
+ * icons copied into the site; for one still on another server the browser forbids it, and the light tile stays.
+ */
+const tileCache = new Map(); // src -> true (dark tile) | false
+function tileIcons() {
+  for (const img of document.querySelectorAll('img.icon, .sources .stack img')) {
+    const apply = () => {
+      if (!tileCache.has(img.src)) tileCache.set(img.src, needsDarkTile(img));
+      img.classList.toggle('on-dark', tileCache.get(img.src));
+    };
+    if (img.complete && img.naturalWidth) apply();
+    else img.addEventListener('load', apply, { once: true });
+  }
+}
+
+function needsDarkTile(img) {
+  try {
+    const c = document.createElement('canvas');
+    c.width = c.height = 16;
+    const ctx = c.getContext('2d', { willReadFrequently: true });
+    ctx.drawImage(img, 0, 0, 16, 16);
+    const px = ctx.getImageData(0, 0, 16, 16).data;
+    let seen = 0, clear = 0, light = 0;
+    for (let i = 0; i < px.length; i += 4) {
+      if (px[i + 3] < 40) {
+        clear++;
+        continue;
+      }
+      seen++;
+      if (0.2126 * px[i] + 0.7152 * px[i + 1] + 0.0722 * px[i + 2] > 200) light++;
+    }
+    // A see-through logo whose ink is mostly near-white. Full-bleed icons (App Store) have no clear pixels.
+    return clear > 25 && seen > 0 && light / seen > 0.6;
+  } catch {
+    return false;
+  }
 }
 
 function wireLogo() {

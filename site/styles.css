@@ -1,25 +1,33 @@
 /* Pixel Post: a morning paper for one, set in pixels.
-   Pixelify Sans for display, Fustat for reading. Every colour comes from the reader's palette (Nov 2026):
-   pale green-white paper, black ink, forest green and grey for quieter text, one indigo accent (lavender in dark,
-   where indigo is too dark to read), one dot colour per category. Small text is at least 4.5:1 in both themes. */
+   Pixelify Sans for display, Fustat for reading. Every colour comes from the reader's palette (Nov 2026), used loud:
+   a lime page, an indigo masthead band, black rules and borders, white cards with hard indigo pixel shadows, the
+   day's first story as an indigo block with lime type. Dark: black page, lime type and borders, the same indigo
+   band and lead. All text is at least 4.5:1 against what is behind it. */
 
 :root {
-  --paper: #f5ffe5; /* cream */
-  --paper-2: #e2e2e2; /* light grey: picture frames, empty slots */
+  --paper: #e9fea3; /* lime */
+  --paper-2: #f5ffe5; /* cream: picture frames, empty slots */
   --card: #ffffff;
   --ink: #000000;
-  --ink-2: #285b38; /* forest, 7.7:1 */
-  --ink-3: #6d6e6d; /* grey, 5.0:1 */
-  --line: #9cb8ad; /* sage */
-  --accent: #4c49f3; /* indigo, 5.7:1 */
+  --ink-2: #285b38; /* forest, 7.4:1 on lime */
+  --ink-3: #285b38;
+  --line: #000000;
+  --accent: #4c49f3; /* indigo, 5.4:1 on lime */
   --accent-ink: var(--accent); /* one accent everywhere: text, cursor, timeline */
-  --sun: #b2902f; /* ochre */
+  --sun: #ee7a48; /* orange */
   --ota: #51b3f9; /* sky */
-  --rail: #61c87a; /* green */
+  --rail: #285b38; /* forest */
   --platform: #7f52f6; /* violet */
   --consumer: #ee7a48; /* orange */
-  --shadow: #000000;
+  --shadow: #4c49f3; /* hard pixel shadows are indigo */
+  --edge: #000000; /* card and frame borders */
+  --fill: #000000; /* solid buttons */
+  --on-fill: #e9fea3;
   --tile: #ffffff; /* behind logos */
+  --band: #4c49f3; /* masthead and the lead story */
+  --on-band: #e9fea3;
+  --on-band-2: #f5ffe5;
+  --on-band-mark: #ffffff;
 
   /* Pixelify Sans and Fustat have no Chinese characters; Chinese text falls back to the system's Chinese font. */
   --cjk: 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
@@ -38,19 +46,26 @@
   --paper: #000000;
   --paper-2: #2c2c2c; /* dark grey */
   --card: #2c2c2c;
-  --ink: #f5ffe5; /* cream, 20:1 */
-  --ink-2: #9cb8ad; /* sage, 9.9:1 */
-  --ink-3: #857a7a; /* taupe, 5.1:1 */
-  --line: #285b38; /* forest */
+  --ink: #e9fea3; /* lime, 19:1 */
+  --ink-2: #f5ffe5; /* cream */
+  --ink-3: #9cb8ad; /* sage, 9.9:1 */
+  --line: #e9fea3;
   --accent: #c2bafa; /* lavender, 11.7:1 */
   --accent-ink: var(--accent);
-  --sun: #e9fea3; /* lime */
+  --sun: #ee7a48;
   --ota: #51b3f9;
   --rail: #61c87a;
   --platform: #7f52f6;
   --consumer: #ee7a48;
-  --shadow: #2c2c2c;
+  --shadow: #4c49f3;
+  --edge: #e9fea3;
+  --fill: #e9fea3;
+  --on-fill: #000000;
   --tile: #f5ffe5;
+  --band: #4c49f3;
+  --on-band: #e9fea3;
+  --on-band-2: #f5ffe5;
+  --on-band-mark: #ffffff;
   color-scheme: dark;
 }
 
@@ -1586,6 +1601,175 @@ html:lang(zh-CN) .view-tab {
   letter-spacing: 0;
 }
 
+/* ---------- identity: colour blocks, black borders, hard pixel shadows ---------- */
+
+/* The masthead is an indigo band from edge to edge of the window, with lime type. */
+.masthead {
+  --ink: var(--on-band);
+  --ink-2: var(--on-band-2);
+  --ink-3: var(--on-band-2);
+  --line: var(--on-band);
+  --paper: var(--band);
+  --accent: var(--on-band-mark);
+  --accent-ink: var(--on-band);
+  position: relative;
+  padding-bottom: 0;
+  color: var(--ink);
+  background: var(--band);
+  box-shadow: 0 0 0 100vmax var(--band);
+  clip-path: inset(0 -100vmax);
+}
+.views {
+  padding: 14px 0 0;
+  gap: 4px;
+}
+.view-tab {
+  padding: 9px 14px 8px;
+  color: var(--on-band);
+  box-shadow: none;
+}
+.view-tab:hover {
+  color: var(--on-band);
+  box-shadow: inset 0 -4px 0 var(--on-band);
+}
+.view-tab[aria-current='page'] {
+  color: var(--band);
+  background: var(--on-band);
+  box-shadow: none;
+}
+.digest-btn .n {
+  color: var(--band);
+  background: var(--on-band);
+}
+
+/* Today's stories are cards: a black border and a hard indigo pixel shadow. */
+.today {
+  gap: 28px;
+}
+.story,
+.story.lead {
+  padding: clamp(20px, 2.6vw, 30px);
+  background: var(--card);
+  box-shadow:
+    inset 0 0 0 3px var(--edge),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 0 var(--shadow);
+}
+.story + .story,
+.pattern + .story {
+  background: var(--card);
+}
+.story > .frame::before {
+  background: var(--edge);
+}
+/* The first story is an indigo block with lime type. */
+.story.lead {
+  --ink: var(--on-band);
+  --ink-2: var(--on-band-2);
+  --ink-3: var(--on-band-2);
+  --line: var(--on-band);
+  --paper: var(--band);
+  --card: var(--band);
+  --accent-ink: var(--on-band);
+  --fill: var(--on-band);
+  --on-fill: var(--band);
+  color: var(--ink);
+  box-shadow:
+    inset 0 0 0 3px var(--edge),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 0 var(--edge);
+}
+.story.lead > .frame::before {
+  background: var(--on-band);
+}
+.lead-headline {
+  font-size: clamp(30px, 3.9vw, 50px);
+}
+.pattern {
+  box-shadow:
+    inset 0 0 0 3px var(--edge),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 0 var(--shadow);
+}
+
+/* Section heads: a solid black label. */
+.section-title {
+  display: inline-block;
+  padding: 8px 12px 6px;
+  color: var(--on-fill);
+  background: var(--fill);
+}
+.archive-head {
+  background: linear-gradient(var(--ink) 0 0) bottom / 100% 3px no-repeat;
+}
+
+/* Buttons and chips: black borders, solid black when on, an indigo pixel shadow when hovered. */
+.chip,
+.act,
+.lang-toggle,
+.theme-toggle,
+.digest-btn {
+  box-shadow: inset 0 0 0 2px var(--line);
+  color: var(--ink);
+}
+.chip:hover,
+.act:hover,
+.lang-toggle:hover,
+.theme-toggle:hover,
+.digest-btn:hover {
+  box-shadow:
+    inset 0 0 0 2px var(--line),
+    3px 3px 0 0 var(--shadow);
+}
+.masthead .lang-toggle:hover,
+.masthead .theme-toggle:hover,
+.masthead .digest-btn:hover {
+  box-shadow:
+    inset 0 0 0 2px var(--on-band),
+    3px 3px 0 0 #000000;
+}
+.chip {
+  background: var(--card);
+}
+.chip[aria-pressed='true'] {
+  color: var(--on-fill);
+  background: var(--fill);
+  box-shadow: inset 0 0 0 2px var(--fill);
+}
+.chip .n {
+  color: inherit;
+  opacity: 0.75;
+}
+.chip[aria-pressed='true'] .n {
+  color: inherit;
+}
+.more {
+  color: var(--ink);
+  box-shadow: inset 0 0 0 2px var(--edge);
+}
+.more:hover {
+  color: var(--on-fill);
+  background: var(--fill);
+}
+.chev {
+  color: currentColor;
+}
+.story.lead .more,
+.story.lead .act {
+  box-shadow: inset 0 0 0 2px var(--on-band);
+}
+.kind {
+  color: var(--on-fill);
+  background: var(--fill);
+}
+
+/* Earlier: thumbnails get the same black border; the timeline is thicker. */
+.row-thumb {
+  outline: 2px solid var(--edge);
+  outline-offset: -2px;
+}
+.rail-fill {
+  width: 4px;
+  right: -17px;
+}
+
 /* ---------- smaller screens ---------- */
 
 /* Chinese: no capitals to transform, no wide letter-spacing, a little more line height. */
@@ -1675,26 +1859,15 @@ html:lang(zh-CN) .row-title {
   .hello-title {
     gap: 12px;
   }
+  /* Phones: each card stacks its own picture above its own text, inside the card. */
   .story,
   .story.lead {
     grid-template-columns: minmax(0, 1fr);
-    padding: 26px 0;
-  }
-  .story.lead {
-    padding-top: 0;
+    padding: 16px 16px 20px;
   }
   .story > .frame {
     order: -1;
     margin-bottom: 18px;
-  }
-  .lead > .frame {
-    margin: 0 calc(var(--gutter) * -1) 22px;
-  }
-  .lead .frame::before {
-    display: none;
-  }
-  .lead .media.notch {
-    clip-path: none;
   }
   .lead-what {
     font-size: 16px;

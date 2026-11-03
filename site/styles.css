@@ -3,6 +3,7 @@
    a lime page, an indigo masthead band, black rules and borders, white cards with hard indigo pixel shadows,
    and every story the same card. Dark: black page, lime type and borders, the masthead a lime band with black type,
    the same indigo accent for lines, fills and shadows; small accent labels sit on indigo chips so they stay readable.
+   Reading text is plain black and dark grey in light mode, white and light grey in dark mode.
    All text is at least 4.5:1 against what is behind it. */
 
 :root {
@@ -12,6 +13,8 @@
   --ink: #000000;
   --ink-2: #000000; /* descriptions and summaries */
   --ink-3: #6d6e6d; /* grey: dates, counts, sources. 4.7:1 on lime, 5.1:1 on white */
+  --text: #000000; /* reading text: why it matters, notes */
+  --text-2: #474747; /* summaries and descriptions. 8.5:1 on lime, 9.3:1 on white */
   --line: #000000;
   --accent: #4c49f3; /* indigo, 5.4:1 on lime */
   --accent-ink: var(--accent); /* one accent everywhere: text, cursor, timeline */
@@ -51,6 +54,8 @@
   --ink: #e9fea3; /* lime, 19:1 */
   --ink-2: #f5ffe5; /* cream */
   --ink-3: #9cb8ad; /* sage, 9.9:1 */
+  --text: #ffffff; /* reading text in white, not the lime of headlines */
+  --text-2: #c4c4c4; /* 8:1 on the dark grey cards */
   --line: #e9fea3;
   --accent: #4c49f3; /* indigo, as in light mode: lines, fills, shadows. Too dark for text on black (3.6:1), */
   --accent-ink: #e9fea3; /* so accent labels become indigo chips with lime type, and accent text is lime */
@@ -340,6 +345,7 @@ button {
   font-size: 14px;
   background: var(--card);
   box-shadow: inset 2px 0 0 var(--accent);
+  color: var(--text);
 }
 .note-text[hidden] {
   display: none;
@@ -563,7 +569,7 @@ button {
 .d-why {
   margin: 0;
   font-size: 14px;
-  color: var(--ink-2);
+  color: var(--text-2);
 }
 .d-note {
   margin: 10px 0 0;
@@ -571,6 +577,7 @@ button {
   font-size: 14px;
   background: var(--card);
   box-shadow: inset 2px 0 0 var(--accent);
+  color: var(--text);
 }
 .d-note b {
   margin-right: 8px;
@@ -669,7 +676,7 @@ button {
 }
 .cursor {
   display: inline-block;
-  width: 0.5em;
+  width: 0.3em;
   height: 1.05em;
   margin-left: 3px;
   vertical-align: -0.15em;
@@ -816,7 +823,7 @@ button {
 
 .why {
   margin: 18px 0 0;
-  color: var(--ink);
+  color: var(--text);
   max-width: 40em;
 }
 .why b {
@@ -954,7 +961,7 @@ button {
 .card .what {
   margin: 10px 0 0;
   font-size: 15px;
-  color: var(--ink-2);
+  color: var(--text-2);
 }
 
 
@@ -993,6 +1000,7 @@ button {
 .pattern p {
   margin: 0;
   font: 500 clamp(18px, 2vw, 22px)/1.35 var(--display);
+  color: var(--text);
 }
 .pattern .label {
   display: block;
@@ -1019,7 +1027,7 @@ button {
 .quiet p {
   margin: 0;
   max-width: 34em;
-  color: var(--ink-2);
+  color: var(--text-2);
 }
 .quiet strong {
   display: block;
@@ -1257,12 +1265,12 @@ button {
 .row .what {
   margin: 4px 0 0;
   max-width: 42em;
-  color: var(--ink-2);
+  color: var(--text-2);
   font-size: 15px;
   transition: color 0.2s var(--step);
 }
 .row.open .what {
-  color: var(--ink-2);
+  color: var(--text-2);
 }
 /* Thumbnails get the same black border as the cards. */
 .row-thumb {
@@ -1327,6 +1335,7 @@ button {
   font: 500 15px/1.4 var(--display);
   background: repeating-conic-gradient(color-mix(in srgb, var(--accent) 8%, transparent) 0 25%, transparent 0 50%) 0 0 / 8px 8px;
   box-shadow: inset 0 0 0 1px var(--line);
+  color: var(--text);
 }
 .day-pattern b {
   color: var(--accent-ink);
@@ -1535,7 +1544,7 @@ body[data-view='workflows'] .workflows {
 .wf-facts dd {
   margin: 0;
   font-size: 15px;
-  color: var(--ink);
+  color: var(--text);
 }
 .wf-read {
   display: flex;
@@ -1602,7 +1611,7 @@ html:lang(zh-CN) .view-tab {
 [data-theme='dark'] .d-note b {
   display: inline-block;
   padding: 3px 6px 2px;
-  color: #e9fea3;
+  color: #ffffff;
   background: #4c49f3;
 }
 /* Labels that sit on their own line stay on their own line, as wide as their words. */
@@ -1615,7 +1624,7 @@ html:lang(zh-CN) .view-tab {
 }
 [data-theme='dark'] .hello-summary .count {
   padding: 0 4px;
-  color: #e9fea3;
+  color: #ffffff;
   background: #4c49f3;
 }
 /* "1 unread" sits inside the lime Earlier label: indigo on lime reads at 5.4:1. */
@@ -1711,6 +1720,9 @@ html:lang(zh-CN) .row-title {
   }
   .digest-btn .label {
     display: none;
+  }
+  .star::before {
+    font-size: 18px;
   }
   .digest {
     width: 100vw;

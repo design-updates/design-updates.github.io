@@ -63,14 +63,15 @@
             }
           ],
           "release": null,
-          "image": "https://9to5mac.com/wp-content/uploads/sites/6/2026/11/X.webp?resize=1200,628",
+          "image": "https://9to5mac.com/wp-content/uploads/sites/6/2026/11/X-icons.webp",
           "icon": "https://www.google.com/s2/favicons?domain=x.com&sz=64",
           "collected_at": "2026-11-02T23:00:54.923Z",
           "zh": {
             "headline": "X 在 iPhone 和 iPad 上更新了可替换图标，新增十余款选项。",
             "what": "X 的 iPhone 和 iPad 版本在今天的更新中重做了可替换应用图标，用户可用它们替代默认图标。新图标组共有十余款。这项功能从应用还叫 Twitter 时就已存在。",
             "why": "iOS 的可替换图标能让用户个性化应用，而不改动主品牌标识。旅行应用也可以用这一机制配合会员等级或季节性活动，同时保持默认图标不变。"
-          }
+          },
+          "compare": null
         }
       ]
     },
@@ -186,14 +187,15 @@
               "publisher": "9to5Google"
             }
           ],
-          "image": "https://9to5google.com/wp-content/uploads/sites/4/2025/10/YouTube-Google-TV-1.jpg?quality=82&strip=all&resize=1200,628",
+          "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/10/image_db41ef.png",
           "icon": "https://www.google.com/s2/favicons?domain=youtube.com&sz=64",
           "collected_at": "2026-10-30T15:45:10.721Z",
           "zh": {
             "headline": "Google TV 上的 YouTube 开始用红色标志显示 YouTube Music。",
             "what": "据 9to5Google 报道，Google TV 版 YouTube 应用的一次更新（可能正在推送，也可能仍在测试）给 YouTube Music 换上了红色标志。作者认为它和界面其他部分反差过大。",
             "why": "旅行 App 做交叉推荐时会遇到同样的问题，比如在火车票 App 里放酒店入口。一个高对比度的品牌标志放在一排中性入口里很显眼，但也可能显得突兀。交叉推荐入口和核心功能并列时，颜色和视觉权重需要专门设计。"
-          }
+          },
+          "compare": null
         }
       ]
     },
@@ -228,14 +230,15 @@
               "publisher": "9to5Mac"
             }
           ],
-          "image": "https://developer.apple.com/news/images/og/mbpt-og.jpg",
+          "image": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/10/touch-mac-apps.jpg?w=1500&quality=82&strip=all&ssl=1",
           "icon": "https://www.google.com/s2/favicons?domain=apple.com&sz=64",
           "collected_at": "2026-10-29T15:45:10.721Z",
           "zh": {
             "headline": "Apple 让 Mac 支持触控，并发布了应用适配指南。",
             "what": "Apple 于 10 月 28 日发布首款触屏 Mac，即配备 PROLED XDR 显示屏的 MacBook Pro。同时，Apple 推出了一批开发者视频、文章和资源，介绍如何让应用适配 Mac 触控，11 月起还会举办 Group Labs 线上答疑。",
             "why": "如果你们的预订应用有 Mac 版，原本为鼠标设计的控件现在也会被手指点按，日期选择器、选座图和结果列表里的小筛选标签都会受影响。建议关注这些课程中关于点击区域尺寸和悬停交互的说明。"
-          }
+          },
+          "compare": null
         },
         {
           "id": "chrome-suggested-by-gemini-autofill",

@@ -281,12 +281,8 @@ export async function collect(opts: CollectOptions): Promise<Report> {
       const rel = item.sources.map((s) => byUrl.get(s.url)?.release).find(Boolean);
       if (rel) releaseShots.set(item.id, { before: rel.previousScreenshot ?? null, after: rel.screenshot ?? null, beforeVersion: rel.previousVersion ?? null });
     }
-    const imagesFor = async (item: Item) => {
-      const found = [];
-      for (const s of item.sources) found.push(...((await getMeta(s.url))?.images ?? []));
-      return found;
-    };
-    const cmp = await addCompares(cfg, post.items, imagesFor, llm, releaseShots);
+    const imagesFor = async (item: Item) => Promise.all(item.sources.map(async (s) => (await getMeta(s.url))?.images ?? []));
+    const cmp = await addCompares(cfg, post.items, imagesFor, llm, releaseShots, fetchImpl);
     if (cmp.usage) report.usage.push(cmp.usage);
     report.warnings.push(...cmp.notes.map((n) => `before/after: ${n}`));
     items = cmp.items;

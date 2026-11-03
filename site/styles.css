@@ -688,10 +688,11 @@ button {
   display: flex;
   flex-direction: column;
 }
-/* One story per row: text left, its own picture right. A dotted rule between rows, as in Earlier. */
+/* One story per row: text left, its own picture right. A dotted rule between rows, as in Earlier. Every story's
+   picture is the same size (one column width, 16:9); only the first story's headline is larger. */
 .story {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.62fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
   gap: 0 clamp(24px, 3.5vw, 48px);
   align-items: start;
   padding: clamp(26px, 3.5vw, 40px) 0;
@@ -701,7 +702,6 @@ button {
   background: repeating-linear-gradient(90deg, var(--line) 0 var(--px), transparent var(--px) calc(var(--px) * 2)) top / 100% 2px no-repeat;
 }
 .story.lead {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
   padding-top: 0;
 }
 .story-text {
@@ -724,6 +724,15 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+/* A picture far from the frame's shape is shown whole, on a light paper (most such pictures are screenshots). */
+.media.whole,
+.row-thumb.whole {
+  background: #f3efe6;
+}
+.media.whole img,
+.row-thumb.whole img {
+  object-fit: contain;
 }
 .media canvas {
   image-rendering: pixelated;
@@ -1599,9 +1608,6 @@ html:lang(zh-CN) .row-title {
 }
 
 @media (max-width: 960px) {
-  .story.lead {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-  }
 }
 
 @media (max-width: 640px) {

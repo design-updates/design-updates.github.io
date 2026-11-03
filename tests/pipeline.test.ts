@@ -482,33 +482,64 @@ stores:
   assert.equal(again.candidates.length, 0, 'the same version is never passed on twice');
 });
 
-test('before/after: captions settle clear cases, the model handles the rest, app-store items use two versions’ screenshots', async () => {
-  const { pairFromWords, addCompares } = await import('../src/compare.ts');
+test('pictures: the model looks at the article pictures and picks the one that shows the change; captions are the fallback', async () => {
+  const { pairFromWords, addCompares, candidatePictures } = await import('../src/compare.ts');
   const img = (src: string, alt = '', caption = '') => ({ src, alt, caption });
   assert.deepEqual(pairFromWords([img('https://x/hero.jpg', 'Team photo'), img('https://x/a.png', 'The previous Mastercard logo'), img('https://x/b.png', '', 'The new wordmark')]), { before: 'https://x/a.png', after: 'https://x/b.png', from: 'article' });
   assert.deepEqual(pairFromWords([img('https://x/c.png', '', 'Before and after: the app icon')]), { before: null, after: 'https://x/c.png', combined: true, from: 'article' });
   assert.equal(pairFromWords([img('https://x/1.jpg', 'Duolingo office'), img('https://x/2.jpg', '')]), null);
 
+  // The same picture through a CDN and directly counts once; thumbnails of other articles are left out.
+  const cands = candidatePictures(
+    [[img('https://i0.wp.com/site.com/up/x.webp?w=1500'), img('https://site.com/up/x-icons.webp'), img('https://site.com/up/other.jpg?w=140')], [img('https://site.com/up/x.webp?resize=1200,628'), img('https://site.com/up/cmp.jpg')]],
+    'https://site.com/up/og.jpg',
+  );
+  assert.deepEqual(cands.map((c) => c.src), ['https://i0.wp.com/site.com/up/x.webp?w=1500', 'https://site.com/up/x-icons.webp', 'https://site.com/up/cmp.jpg', 'https://site.com/up/og.jpg']);
+  // Pictures uploaded long before the story come from other articles linked on the page.
+  const dated = candidatePictures([[img('https://site.com/wp/2026/11/new-icons.jpg'), img('https://site.com/wp/2022/10/old-article.jpg'), img('https://site.com/wp/2026/10/last-month.jpg')]], null, '2026-11-02T10:00:00Z');
+  assert.deepEqual(dated.map((c) => c.src), ['https://site.com/wp/2026/11/new-icons.jpg', 'https://site.com/wp/2026/10/last-month.jpg']);
+
   const base = { app: 'X', category: 'consumer' as const, date: '', published_at: '', beta: false, importance: 2, what: 'w', why: 'y', sources: [{ title: 't', url: 'https://x/post', publisher: 'p' }], image: 'https://x/og.jpg', icon: null, collected_at: '' };
   const items = [
-    { ...base, id: 'brand-a', kind: 'brand' as const, headline: 'A gets a new logo' },
+    { ...base, id: 'x-icons', kind: 'brand' as const, headline: 'X adds a dozen new app icons' },
+    { ...base, id: 'c-logo', kind: 'brand' as const, headline: 'C shows its old and new logo' },
     { ...base, id: 'ux-b', kind: 'ux' as const, headline: 'B changes checkout' },
+    { ...base, id: 'offline', kind: 'brand' as const, headline: 'D gets a new wordmark' },
+    { ...base, id: 'kept-pair', kind: 'ui' as const, headline: 'E redesigns its home screen', compare: { before: 'https://x/e-old.jpg', after: 'https://x/e-new.jpg', from: 'article' as const } },
     { ...base, id: 'airbnb-v', kind: 'ui' as const, headline: 'Airbnb redesign', release: { store: 'app-store' as const, version: '26.44' } },
   ];
-  const asked: string[] = [];
+  const pictures: Record<string, ReturnType<typeof img>[][]> = {
+    'x-icons': [[img('https://x/logo.jpg'), img('https://x/icon-grid.jpg')]],
+    'c-logo': [[img('https://x/cmp.jpg'), img('https://x/team.jpg')]],
+    'ux-b': [[img('https://x/office.jpg'), img('https://x/checkout.jpg')]],
+    offline: [[img('https://x/gone1.jpg'), img('https://x/gone2.jpg', '', 'The new wordmark')]],
+    'kept-pair': [[img('https://x/e-old.jpg'), img('https://x/e-new.jpg'), img('https://x/e-team.jpg')]],
+  };
+  const looked: { headline: string; pictures: number }[] = [];
   const llm: Llm = {
     mode: 'company',
     canSearch: false,
     messages: async (req) => {
-      asked.push(...(JSON.parse(req.messages[0].content as string).items as { id: string }[]).map((i) => i.id));
-      return { content: [{ type: 'text', text: '{"items":[{"id":"brand-a","before":null,"after":1,"combined":null}]}' }], stopReason: 'end_turn', usage: { input_tokens: 300, output_tokens: 20, web_searches: 0, credits: 0.01 } };
+      const blocks = req.messages[0].content as { type: string; text?: string }[];
+      const headline = (blocks[0].text ?? '').split('\n')[0].replace('Headline: ', '');
+      looked.push({ headline, pictures: blocks.filter((b) => b.type === 'image').length });
+      const answer = /dozen/.test(headline) ? { best: 1 } : /old and new/.test(headline) ? { best: 0, combined: 0 } : { best: 1, why: 'the new checkout screen' };
+      return { content: [{ type: 'text', text: JSON.stringify(answer) }], stopReason: 'end_turn', usage: { input_tokens: 1500, output_tokens: 30, web_searches: 0, credits: 0.01 } };
     },
   };
+  const fetchImpl = (async (input: string | URL | Request) =>
+    /gone/.test(String(input)) ? new Response('no', { status: 404 }) : new Response(new Uint8Array(6000), { headers: { 'content-type': 'image/jpeg' } })) as typeof fetch;
   const shots = new Map([['airbnb-v', { before: 'https://is1/old.jpg', after: 'https://is1/new.jpg', beforeVersion: '26.40' }]]);
-  const r = await addCompares(CFG, items, async () => [img('https://x/p1.jpg', 'Studio portrait'), img('https://x/p2.jpg', 'The rebrand')], llm, shots);
-  assert.deepEqual(asked, ['brand-a'], 'UX items are not given pictures; app-store items need no model');
-  assert.equal(r.items[0].compare, undefined);
-  assert.equal(r.items[0].image, 'https://x/p2.jpg', 'only the new design: it replaces the generic photo');
-  assert.deepEqual(r.items[2].compare, { before: 'https://is1/old.jpg', after: 'https://is1/new.jpg', from: 'app-store', before_version: '26.40' });
-  assert.equal(r.usage?.step, 'compare');
+  const r = await addCompares(CFG, items, async (item) => pictures[item.id] ?? [], llm, shots, fetchImpl);
+  const by = Object.fromEntries(r.items.map((i) => [i.id, i]));
+
+  assert.equal(by['x-icons'].image, 'https://x/icon-grid.jpg', 'the grid of new icons, not the bare logo');
+  assert.deepEqual(by['c-logo'].compare, { before: null, after: 'https://x/cmp.jpg', combined: true, from: 'article' });
+  assert.equal(by['ux-b'].image, 'https://x/checkout.jpg', 'UX stories get a picture too');
+  assert.deepEqual(by['kept-pair'].compare, { before: 'https://x/e-old.jpg', after: 'https://x/e-new.jpg', from: 'article' }, 'a before/after chosen earlier is kept, and the model is not asked');
+  assert.equal(by.offline.image, 'https://x/gone2.jpg', 'no picture could be downloaded: the caption decides');
+  assert.deepEqual(by['airbnb-v'].compare, { before: 'https://is1/old.jpg', after: 'https://is1/new.jpg', from: 'app-store', before_version: '26.40' });
+  assert.deepEqual(looked.map((l) => l.pictures), [3, 3, 3], 'each story sends its pictures plus its current one; offline, app-store and already-paired stories send nothing');
+  assert.equal(r.usage?.step, 'pictures');
+  assert.ok(Math.abs((r.usage?.credits ?? 0) - 0.03) < 1e-9, 'one usage line for the whole step');
 });

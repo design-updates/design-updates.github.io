@@ -15,7 +15,7 @@ Every morning from 07:00 (or as soon as the laptop is on and online after that) 
 2. **Search (Anthropic API only).** One call per app group (OTAs, rail, platforms, consumer) with the web search tool, limited to the apps' own sites and the trusted outlets list. This catches newsrooms that have no feed. The company plan and Gemini have no working web search, so with those the run uses feeds only.
 3. **Rules (no model).** Each item is dropped, with a reason, if it comes from a blocked or unknown site, has no real publish date or is older than 48 hours, has a drop word in the headline ("funding", "deals", "rumor"...), or was already reported. From news sites, an item must be about a watchlist app or have a design word in its headline (redesign, rebrand, new logo, interface, onboarding...). Everything from a design publication goes through. Search results are dated by the article page itself, not by the search engine.
 4. **One curate call.** The model gets everything that passed, plus what was reported in the last two weeks. It keeps only design changes of three kinds: **UI** (the interface: redesigns, layout, visual style, icons, platform design rules), **UX** (how a flow works: navigation, onboarding, search, checkout, sign-in) and **Brand** (logos, identity, type, colour, app icons). Feature news with no visible design angle is dropped. Watchlist apps come first, but any well-known app, site or brand counts. It merges syndicated copies of one launch into one item (keeping the two best sources), drops the rest with a reason, and writes `headline`, `what` and `why` for each item in English and in Simplified Chinese (`zh`). It adds a `pattern` note (and `pattern_zh`) only when three or more apps moved the same way.
-5. **Before and after.** For each kept UI or Brand item, the pictures in its source articles are read with their alt text, captions and file names. When those clearly say which picture is the old design and which the new ("Apple-Music-icon-old.jpg", "the previous logo"), the item gets a `compare` pair and the page shows them side by side. When only the new design is there, it replaces the generic photo. Unclear cases go to one small extra model call (`company.compare`, Haiku), which sees only those words and answers "not sure" rather than guess. Items from App Store notes show the previous version's screenshot next to the new one, when they differ.
+5. **The picture.** For each kept item, the model (`company.compare`, Haiku) looks at the pictures in its source articles, downloaded and sent with the headline, and picks the one that shows the change itself: the grid of new icons rather than the bare logo, the new screen rather than a photo of the company. If the pictures show the old design and the new, the page shows them side by side. Captions that name the old and new picture ("the previous logo", "Apple-Music-icon-old.jpg") are used as they are, without asking. Pictures uploaded more than two months before the story are left out, since they belong to older articles linked on the page. A pair chosen earlier is never replaced. Items from App Store notes show the previous version's screenshot next to the new one, when they differ. This costs about 0.01 credits per story.
 6. **Checks.** The answer is validated in code: unknown apps, missing sources and incomplete write-ups are dropped; emojis and exclamation marks are removed; hype words are flagged in the log. Each kept page is re-read for its `og:image` and to make sure it is not an old story with a new date.
 7. **Write.** `data/radar.json` gets a new day at the top. A quiet day is recorded as `"quiet": true` with no items. `data/seen.json` remembers every reported event, so a launch never shows up again on a later day. `data/runs.json` logs token use and estimated cost per run.
 
@@ -45,7 +45,7 @@ Runs the job and prints what it kept and what it dropped, with the reason for ea
 Other commands:
 
 - `npm run check-feeds`: tests every feed URL and says how fresh each one is. Run it after adding a source.
-- `npm run backfill-compare`: adds before/after pictures to items already in `radar.json` that have none, by re-reading their pages (`-- --dry-run` to only show what it would do). Only `compare` and `image` change.
+- `npm run backfill-compare`: picks the picture again for items already in `radar.json`, by re-reading their pages: items with no before/after, or with `-- --days N` every item from the last N days (`-- --dry-run` to only show what it would do). Only `compare` and `image` change.
 - `npm run icons`: looks up app icons again (App Store artwork, or a favicon) and saves them to `data/icons.json`.
 - `npm run build`: builds the site into `dist/`.
 - `npm run dev`: builds and serves the site at http://localhost:5180.
@@ -182,7 +182,7 @@ data/runs.json        per-run token use and cost
 data/icons.json       cached app icons
 data/stores.json      last App Store / Google Play version seen per app
 src/stores.ts         store version notes
-src/compare.ts        before/after pictures
+src/compare.ts        picks each item's picture (and before/after pairs)
 ```
 
 ## The page

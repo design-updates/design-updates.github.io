@@ -816,7 +816,14 @@ function pixelate(box) {
       canvas.width = w;
       canvas.height = h;
       try {
-        drawCover(ctx, img, w, h);
+        if (box.classList.contains('whole')) {
+          const k = Math.min(w / img.naturalWidth, h / img.naturalHeight);
+          const dw = img.naturalWidth * k;
+          const dh = img.naturalHeight * k;
+          ctx.fillStyle = getComputedStyle(box).backgroundColor;
+          ctx.fillRect(0, 0, w, h);
+          ctx.drawImage(img, (w - dw) / 2, (h - dh) / 2, dw, dh);
+        } else drawCover(ctx, img, w, h);
       } catch {
         return canvas.remove();
       }
@@ -897,7 +904,23 @@ function mosaicOnError(img) {
 
 function wireImages() {
   for (const img of document.querySelectorAll('.media img, .row-thumb img')) mosaicOnError(img);
+  for (const img of document.querySelectorAll('.media img, .row-thumb img')) fitWhole(img);
   tileIcons();
+}
+
+/**
+ * Pictures fill their frame, trimming the edges. A picture much wider or taller than the frame (a grid of a
+ * dozen app icons, a tall phone screen) would lose what matters, so it is shown whole on the frame's paper instead.
+ */
+function fitWhole(img) {
+  const check = () => {
+    const box = img.parentElement;
+    if (!img.naturalWidth || !box?.clientWidth || box.classList.contains('mosaic')) return;
+    const ratio = img.naturalWidth / img.naturalHeight / (box.clientWidth / box.clientHeight);
+    box.classList.toggle('whole', ratio > 1.35 || ratio < 0.74);
+  };
+  if (img.complete) check();
+  else img.addEventListener('load', check, { once: true });
 }
 
 /**

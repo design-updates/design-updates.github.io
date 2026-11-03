@@ -2,15 +2,16 @@
    Pixelify Sans for display, Fustat for reading. Every colour comes from the reader's palette (Nov 2026), used loud:
    a lime page, an indigo masthead band, black rules and borders, white cards with hard indigo pixel shadows,
    and every story the same card. Dark: black page, lime type and borders, the masthead a lime band with black type,
-   sky for the accent and the pixel shadows. All text is at least 4.5:1 against what is behind it. */
+   the same indigo accent for lines, fills and shadows; small accent labels sit on indigo chips so they stay readable.
+   All text is at least 4.5:1 against what is behind it. */
 
 :root {
   --paper: #e9fea3; /* lime */
   --paper-2: #f5ffe5; /* cream: picture frames, empty slots */
   --card: #ffffff;
   --ink: #000000;
-  --ink-2: #285b38; /* forest, 7.4:1 on lime */
-  --ink-3: #285b38;
+  --ink-2: #000000; /* descriptions and summaries */
+  --ink-3: #6d6e6d; /* grey: dates, counts, sources. 4.7:1 on lime, 5.1:1 on white */
   --line: #000000;
   --accent: #4c49f3; /* indigo, 5.4:1 on lime */
   --accent-ink: var(--accent); /* one accent everywhere: text, cursor, timeline */
@@ -50,14 +51,14 @@
   --ink-2: #f5ffe5; /* cream */
   --ink-3: #9cb8ad; /* sage, 9.9:1 */
   --line: #e9fea3;
-  --accent: #51b3f9; /* sky, 9.2:1: saturated, so it stands apart from the lime text */
-  --accent-ink: var(--accent);
+  --accent: #4c49f3; /* indigo, as in light mode: lines, fills, shadows. Too dark for text on black (3.6:1), */
+  --accent-ink: #e9fea3; /* so accent labels become indigo chips with lime type, and accent text is lime */
   --sun: #ee7a48;
   --ota: #51b3f9;
   --rail: #61c87a;
   --platform: #7f52f6;
   --consumer: #ee7a48;
-  --shadow: #51b3f9; /* hard pixel shadows are sky, like the accent */
+  --shadow: #4c49f3; /* hard pixel shadows are indigo, as in light mode */
   --edge: #e9fea3;
   --fill: #e9fea3;
   --on-fill: #000000;
@@ -1288,7 +1289,7 @@ button {
 .row .what {
   margin: 4px 0 0;
   max-width: 42em;
-  color: var(--ink-3);
+  color: var(--ink-2);
   font-size: 15px;
   transition: color 0.2s var(--step);
 }
@@ -1733,6 +1734,64 @@ html:lang(zh-CN) .view-tab {
   width: 8px;
   height: 8px;
   bottom: -4px;
+}
+
+/* ---------- dark mode: the indigo accent, kept readable ---------- */
+
+/* Indigo text would be too dark on black, so the accent labels become small indigo chips with lime type. */
+[data-theme='dark'] .why b,
+[data-theme='dark'] .wf-facts dt,
+[data-theme='dark'] .pattern .label,
+[data-theme='dark'] .day-pattern b,
+[data-theme='dark'] .note-text b,
+[data-theme='dark'] .d-note b {
+  display: inline-block;
+  padding: 3px 6px 2px;
+  color: #e9fea3;
+  background: #4c49f3;
+}
+/* Labels that sit on their own line stay on their own line, as wide as their words. */
+[data-theme='dark'] .why b,
+[data-theme='dark'] .wf-facts dt,
+[data-theme='dark'] .pattern .label {
+  display: block;
+  width: fit-content;
+  margin-bottom: 6px;
+}
+[data-theme='dark'] .hello-summary .count {
+  padding: 0 4px;
+  color: #e9fea3;
+  background: #4c49f3;
+}
+/* "1 unread" sits inside the lime Earlier label: indigo on lime reads at 5.4:1. */
+[data-theme='dark'] .section-title .count {
+  color: #4c49f3;
+}
+/* Outlines in indigo would vanish on the dark grey cards (2.4:1): lime outline, indigo pixel shadow. */
+[data-theme='dark'] .save-btn[aria-pressed='true'] {
+  box-shadow:
+    inset 0 0 0 2px var(--ink),
+    3px 3px 0 0 #4c49f3;
+}
+[data-theme='dark'] .save-btn[aria-pressed='true'] .star::before,
+[data-theme='dark'] .row.is-saved .saved-mark::before {
+  color: var(--ink);
+}
+[data-theme='dark'] .release {
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+[data-theme='dark'] .note-box:focus,
+[data-theme='dark'] .d-field textarea:focus,
+[data-theme='dark'] .d-field input:focus {
+  box-shadow:
+    inset 0 0 0 2px var(--ink),
+    3px 3px 0 0 #4c49f3;
+}
+[data-theme='dark'] .note-text {
+  box-shadow: inset 3px 0 0 #4c49f3;
+}
+[data-theme='dark'] :focus-visible {
+  outline-color: var(--ink);
 }
 
 /* ---------- smaller screens ---------- */

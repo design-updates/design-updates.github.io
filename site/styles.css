@@ -1,8 +1,8 @@
 /* Pixel Post: a morning paper for one, set in pixels.
    Pixelify Sans for display, Fustat for reading. Every colour comes from the reader's palette (Nov 2026), used loud:
-   a lime page, an indigo masthead band, black rules and borders, white cards with hard indigo pixel shadows, the
-   day's first story as an indigo block with lime type. Dark: black page, lime type and borders, the same indigo
-   band and lead. All text is at least 4.5:1 against what is behind it. */
+   a lime page, an indigo masthead band, black rules and borders, white cards with hard indigo pixel shadows,
+   and every story the same card. Dark: black page, lime type and borders, the masthead a lime band with black type,
+   sky for the accent and the pixel shadows. All text is at least 4.5:1 against what is behind it. */
 
 :root {
   --paper: #e9fea3; /* lime */
@@ -24,7 +24,7 @@
   --fill: #000000; /* solid buttons */
   --on-fill: #e9fea3;
   --tile: #ffffff; /* behind logos */
-  --band: #4c49f3; /* masthead and the lead story */
+  --band: #4c49f3; /* the masthead */
   --on-band: #e9fea3;
   --on-band-2: #f5ffe5;
   --on-band-mark: #ffffff;
@@ -50,22 +50,24 @@
   --ink-2: #f5ffe5; /* cream */
   --ink-3: #9cb8ad; /* sage, 9.9:1 */
   --line: #e9fea3;
-  --accent: #c2bafa; /* lavender, 11.7:1 */
+  --accent: #51b3f9; /* sky, 9.2:1: saturated, so it stands apart from the lime text */
   --accent-ink: var(--accent);
   --sun: #ee7a48;
   --ota: #51b3f9;
   --rail: #61c87a;
   --platform: #7f52f6;
   --consumer: #ee7a48;
-  --shadow: #4c49f3;
+  --shadow: #51b3f9; /* hard pixel shadows are sky, like the accent */
   --edge: #e9fea3;
   --fill: #e9fea3;
   --on-fill: #000000;
   --tile: #f5ffe5;
-  --band: #4c49f3;
-  --on-band: #e9fea3;
-  --on-band-2: #f5ffe5;
-  --on-band-mark: #ffffff;
+  /* The masthead turns over: a lime band with black type on the black page. */
+  --band: #e9fea3;
+  --on-band: #000000;
+  --on-band-2: #285b38; /* forest, 7.3:1 on lime */
+  --on-band-mark: #4c49f3; /* indigo: the logo square and the Saved star */
+  --band-shadow: #4c49f3;
   color-scheme: dark;
 }
 
@@ -303,6 +305,8 @@ button {
 }
 .note-editor .note-box {
   margin-top: 0;
+  /* The box fills the editor, so Save note (placed against the editor) sits inside the box's corner. */
+  max-width: none;
   padding-bottom: 46px;
   resize: none;
 }
@@ -323,10 +327,11 @@ button {
   opacity: 0.85;
 }
 .note-save:disabled {
-  background: var(--paper-2);
-  color: var(--ink-3);
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 2px var(--ink);
   cursor: default;
-  opacity: 1;
+  opacity: 0.55;
 }
 /* A saved note, shown as text under the buttons. */
 .note-text {
@@ -720,9 +725,6 @@ button {
 .pattern + .story {
   background: repeating-linear-gradient(90deg, var(--line) 0 var(--px), transparent var(--px) calc(var(--px) * 2)) top / 100% 2px no-repeat;
 }
-.story.lead {
-  padding-top: 0;
-}
 .story-text {
   min-width: 0;
 }
@@ -837,21 +839,6 @@ button {
   mix-blend-mode: multiply;
 }
 
-.lead .meta {
-  margin-bottom: 14px;
-}
-.lead-headline {
-  margin: 0;
-  font: 600 clamp(28px, 3.6vw, 44px)/1.08 var(--display);
-  letter-spacing: -0.005em;
-  text-wrap: balance;
-}
-.lead-what {
-  margin: 16px 0 0;
-  font-size: 17px;
-  color: var(--ink-2);
-  max-width: 40em;
-}
 .why {
   margin: 18px 0 0;
   color: var(--ink);
@@ -865,12 +852,8 @@ button {
   text-transform: uppercase;
   color: var(--accent-ink);
 }
-.lead .why {
-  font-size: 16.5px;
-}
 
 .headline a,
-.lead-headline a,
 .row-title a {
   background-image: linear-gradient(currentColor 0 0);
   background-size: 0 2px;
@@ -879,7 +862,6 @@ button {
   transition: background-size 0.2s var(--step);
 }
 .headline a:hover,
-.lead-headline a:hover,
 .row-title a:hover {
   background-size: 100% 2px;
 }
@@ -1002,12 +984,10 @@ button {
 
 /* Lift on hover: the frame steps up and its shadow grows. */
 @media (hover: hover) {
-  .card:hover .frame::before,
-  .lead:hover .frame::before {
+  .card:hover .frame::before {
     transform: translate(calc(var(--px) * 2.5), calc(var(--px) * 2.5));
   }
-  .card:hover .frame > .notch,
-  .lead:hover .frame > .notch {
+  .card:hover .frame > .notch {
     transform: translate(calc(var(--px) * -0.5), calc(var(--px) * -0.5));
   }
 }
@@ -1646,8 +1626,7 @@ html:lang(zh-CN) .view-tab {
 .today {
   gap: 28px;
 }
-.story,
-.story.lead {
+.story {
   padding: clamp(20px, 2.6vw, 30px);
   background: var(--card);
   box-shadow:
@@ -1661,27 +1640,10 @@ html:lang(zh-CN) .view-tab {
 .story > .frame::before {
   background: var(--edge);
 }
-/* The first story is an indigo block with lime type. */
-.story.lead {
-  --ink: var(--on-band);
-  --ink-2: var(--on-band-2);
-  --ink-3: var(--on-band-2);
-  --line: var(--on-band);
-  --paper: var(--band);
-  --card: var(--band);
-  --accent-ink: var(--on-band);
-  --fill: var(--on-band);
-  --on-fill: var(--band);
-  color: var(--ink);
-  box-shadow:
-    inset 0 0 0 3px var(--edge),
-    calc(var(--px) * 2) calc(var(--px) * 2) 0 0 var(--edge);
-}
-.story.lead > .frame::before {
-  background: var(--on-band);
-}
-.lead-headline {
-  font-size: clamp(30px, 3.9vw, 50px);
+/* The day's first story: the same card, a larger headline. */
+.story:first-child .headline {
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.12;
 }
 .pattern {
   box-shadow:
@@ -1723,7 +1685,7 @@ html:lang(zh-CN) .view-tab {
 .masthead .digest-btn:hover {
   box-shadow:
     inset 0 0 0 2px var(--on-band),
-    3px 3px 0 0 #000000;
+    3px 3px 0 0 var(--band-shadow, #000000);
 }
 .chip {
   background: var(--card);
@@ -1751,10 +1713,6 @@ html:lang(zh-CN) .view-tab {
 .chev {
   color: currentColor;
 }
-.story.lead .more,
-.story.lead .act {
-  box-shadow: inset 0 0 0 2px var(--on-band);
-}
 .kind {
   color: var(--on-fill);
   background: var(--fill);
@@ -1768,6 +1726,13 @@ html:lang(zh-CN) .view-tab {
 .rail-fill {
   width: 4px;
   right: -17px;
+}
+/* The square at the tip, centred on the 4px line (the dotted line under it is 2px, centred the same). */
+.rail-fill::after {
+  left: -2px;
+  width: 8px;
+  height: 8px;
+  bottom: -4px;
 }
 
 /* ---------- smaller screens ---------- */
@@ -1783,7 +1748,6 @@ html:lang(zh-CN) .day-pattern b,
 html:lang(zh-CN) .chip {
   letter-spacing: 0;
 }
-html:lang(zh-CN) .lead-headline,
 html:lang(zh-CN) .headline {
   line-height: 1.32;
   letter-spacing: 0;
@@ -1860,17 +1824,13 @@ html:lang(zh-CN) .row-title {
     gap: 12px;
   }
   /* Phones: each card stacks its own picture above its own text, inside the card. */
-  .story,
-  .story.lead {
+  .story {
     grid-template-columns: minmax(0, 1fr);
     padding: 16px 16px 20px;
   }
   .story > .frame {
     order: -1;
     margin-bottom: 18px;
-  }
-  .lead-what {
-    font-size: 16px;
   }
   .pattern {
     padding: 18px;

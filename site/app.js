@@ -535,35 +535,27 @@ function media(item, { reveal = false, ratio } = {}) {
 /* ---------- today ---------- */
 
 /*
- * Every story today is one row: its text on the left, its own picture on the right, so a picture can never sit
- * beside another story's text. The first story is the same row, larger. Phones stack each picture above its text.
+ * Every story today is the same card: its text on the left, its own picture on the right. The summary shows two
+ * lines; More opens why it matters, the sources and Save / Note, with Less at the very end. Phones stack each
+ * picture above its text.
  */
-function leadHtml(item) {
-  return `<article class="story lead reveal" data-id="${esc(item.id)}">
-    <div class="story-text">
-      ${metaRow(item, true)}
-      <h2 class="lead-headline"><a href="${esc(safeUrl(item.sources?.[0]?.url))}" target="_blank" rel="noopener" data-read="${esc(item.id)}">${esc(txt(item, 'headline'))}</a></h2>
-      <p class="lead-what">${esc(txt(item, 'what'))}</p>
-      ${why(item)}
-      ${sources(item)}
-      ${actions(item)}
-    </div>
-    ${media(item, { reveal: true })}
-  </article>`;
-}
-
-function cardHtml(item) {
+function cardHtml(item, i) {
+  const h = i === 0 ? 'h2' : 'h3';
   return `<article class="story card reveal" data-id="${esc(item.id)}">
     <div class="story-text">
       ${metaRow(item)}
-      <h3 class="headline"><a href="${esc(safeUrl(item.sources?.[0]?.url))}" target="_blank" rel="noopener" data-read="${esc(item.id)}">${esc(txt(item, 'headline'))}</a></h3>
+      <${h} class="headline"><a href="${esc(safeUrl(item.sources?.[0]?.url))}" target="_blank" rel="noopener" data-read="${esc(item.id)}">${esc(txt(item, 'headline'))}</a></${h}>
       <p class="what clamp">${esc(txt(item, 'what'))}</p>
       <div class="fold">
-        <div class="more-body" id="more-${esc(item.id)}" hidden><div class="more-in">${why(item)}</div></div>
+        <div class="more-body" id="more-${esc(item.id)}" hidden>
+          <div class="more-in">
+            ${why(item)}
+            ${sources(item)}
+            ${actions(item)}
+          </div>
+        </div>
         ${moreBtn(`more-${item.id}`)}
       </div>
-      ${sources(item)}
-      ${actions(item)}
     </div>
     ${media(item, { reveal: true })}
   </article>`;
@@ -593,8 +585,8 @@ function renderToday(day) {
     el.innerHTML = quietHtml(day);
     return;
   }
-  const [lead, ...rest] = day.items;
-  el.innerHTML = [leadHtml(lead), day.pattern ? patternHtml(patternOf(day)) : '', ...rest.map(cardHtml)].join('');
+  const cards = day.items.map(cardHtml);
+  el.innerHTML = [cards[0], day.pattern ? patternHtml(patternOf(day)) : '', ...cards.slice(1)].join('');
 }
 
 /* ---------- archive ---------- */

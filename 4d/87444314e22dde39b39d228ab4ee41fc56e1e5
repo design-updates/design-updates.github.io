@@ -1,0 +1,68 @@
+.github/workflows/radar.yml
+  s_54fc1ca7bb74fe::t_e8ba8b21500dad 10
+site/app.js
+  s_54fc1ca7bb74fe::t_660e3c9ab2f7fc 1351-1375,1377-1477,1479-1482,1485-1488,1492-1496
+  s_54fc1ca7bb74fe::t_4be9fe3a088aa9 1376
+  s_54fc1ca7bb74fe::t_0d9cd45b843c66 56-68,161-173,1006,1033,1602-1606
+src/workflows-cli.ts
+  s_54fc1ca7bb74fe::t_af04cac8953bdb 6-8,10-11,19,26,29-30,45,50,53
+tests/cases.test.ts
+  s_54fc1ca7bb74fe::t_0cfa9b2417d220 1-156
+  s_54fc1ca7bb74fe::t_b002b5fb19e9f2 157-162
+src/feeds.ts
+  s_54fc1ca7bb74fe::t_72f30a048bf947 63-66
+src/casestudies.ts
+  s_54fc1ca7bb74fe::t_ff56dc90c1463d 1-80,82,84-128,131-198,200-293
+  s_54fc1ca7bb74fe::t_4f95e1eb8f0103 81
+  s_54fc1ca7bb74fe::t_4be9fe3a088aa9 129-130,199
+  s_54fc1ca7bb74fe::t_54b38d8cd572d2 83
+src/weekly.ts
+  s_54fc1ca7bb74fe::t_b002b5fb19e9f2 67-69
+  s_54fc1ca7bb74fe::t_f31d534094bb45 1-66,70-185
+casestudies.yaml
+  s_54fc1ca7bb74fe::t_2409fbcd6840ce 1-74
+src/workflows.ts
+  s_54fc1ca7bb74fe::t_ab944382a33995 10,14-16,75-77,214,256,260,270-272,284
+site/index.html
+  s_54fc1ca7bb74fe::t_660e3c9ab2f7fc 41,62-74
+src/util.ts
+  s_54fc1ca7bb74fe::t_72f30a048bf947 5
+src/build.ts
+  s_54fc1ca7bb74fe::t_62b8ae06bedd82 9-11,20-25,27-31,41
+src/weekly-cli.ts
+  s_54fc1ca7bb74fe::t_321f4b5ff43a8f 1-70
+package.json
+  s_54fc1ca7bb74fe::t_98288dbe659c79 18-19
+src/cases-cli.ts
+  s_54fc1ca7bb74fe::t_838f39e6d3b15a 1-60
+src/prompts.ts
+  s_54fc1ca7bb74fe::t_4be9fe3a088aa9 122
+  s_54fc1ca7bb74fe::t_155ea33b24df90 103-113,116-121,123-136
+  s_54fc1ca7bb74fe::t_bae3023db2c9b5 114-115
+data/cases.json
+  s_54fc1ca7bb74fe::t_4be9fe3a088aa9 19
+site/styles.css
+  s_54fc1ca7bb74fe::t_660e3c9ab2f7fc 1465,1493-1494,1497-1498,1501-1502,1506
+README.md
+  s_54fc1ca7bb74fe::t_e8ba8b21500dad 53,143-151
+tests/parsers.test.ts
+  s_54fc1ca7bb74fe::t_72f30a048bf947 175-180
+scripts/daily.sh
+  s_54fc1ca7bb74fe::t_ef554ae5812ce7 67-72
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.51-trip",
+  "base_commit_sha": "4d87444314e22dde39b39d228ab4ee41fc56e1e5",
+  "prompts": {},
+  "sessions": {
+    "s_54fc1ca7bb74fe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "752feab2-5b26-4e2c-8c5b-8e100159791a",
+        "model": "claude-opus-5.5"
+      },
+      "human_author": "kashif-08 <kashif-08@users.noreply.github.com>"
+    }
+  }
+}

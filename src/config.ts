@@ -29,6 +29,9 @@ export interface Feed {
    *  design: design or branding publication, every item goes to the model, which names the brand. */
   kind: 'company' | 'outlet' | 'design';
   app: string | null;
+  /** A newsroom web page instead of a feed: its links matching this pattern (a regular expression on the path) are
+   *  the articles. Each is then read for its title, date and summary. */
+  page?: RegExp;
 }
 
 export type Provider = 'company' | 'gemini' | 'anthropic';
@@ -110,7 +113,15 @@ export function parseConfig(src: string, env: Record<string, string | undefined>
     const app = f.app ? String(f.app) : null;
     if (kind === 'company' && !app) throw new ConfigError(`feed "${f.name ?? f.url}" is kind: company, so it needs app:`);
     if (app && !seen.has(app)) throw new ConfigError(`feed "${f.name ?? f.url}" names app "${app}", which is not in groups`);
-    return { name: String(f.name ?? f.url), url: String(f.url), kind, app };
+    let page: RegExp | undefined;
+    if (f.page !== undefined) {
+      try {
+        page = new RegExp(String(f.page));
+      } catch (err) {
+        throw new ConfigError(`feed "${f.name ?? f.url}": page is not a valid pattern (${(err as Error).message})`);
+      }
+    }
+    return { name: String(f.name ?? f.url), url: String(f.url), kind, app, ...(page ? { page } : {}) };
   });
 
   const trust = isObj(y.trust) ? y.trust : {};

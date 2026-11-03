@@ -103,6 +103,16 @@ groups:
         domains: [trip.com, group.trip.com]
         play_id: ctrip.english
         appstore_id: 681752345
+      - name: Kayak
+        aliases: [KAYAK, Kayak]
+        domains: [kayak.com]
+        appstore_id: 305204535
+        play_id: com.kayak.android
+      - name: Tripadvisor
+        aliases: [Tripadvisor, TripAdvisor]
+        domains: [tripadvisor.com, tripadvisor.mediaroom.com]
+        appstore_id: 284876795
+        play_id: com.tripadvisor.tripadvisor
 
   rail:
     label: Rail and ground
@@ -204,11 +214,15 @@ groups:
 #   kind: outlet   a news site; items about a watchlist app, or with design words in the headline
 #                  (redesign, rebrand, new logo, interface, onboarding...), go to the model
 #   kind: design   a design or branding publication; every item goes to the model, which names the brand
+#   page: PATTERN  the url is a newsroom web page, not a feed: its links whose path matches PATTERN (a regular
+#                  expression) are the articles, and each is read for its title, date and summary
 # `npm run check-feeds` tests every URL below.
 #
-# No working public feed was found (Oct 2026) for: Expedia Group, Agoda, Trainline and Omio
-# newsrooms, and PhocusWire (blocks automated readers). The web search step covers them: it searches
-# each app's own domains plus the trusted outlets below.
+# Blocked for automated readers from the laptop's network (Nov 2026), even in a real Chrome: expedia.com (including
+# its product release pages, expedia.com/product/release/...), Expedia Group's newsroom, Skyscanner, Omio, Trainline
+# and PhocusWire. Their bigger releases reach the outlets below (Skift, The Verge, 9to5Mac, TechCrunch).
+# Hopper's media center (media.hopper.com) reads fine but its articles carry no machine-readable date, so the
+# 48-hour rule cannot check them; it is left out.
 # X and LinkedIn have no free way to read posts (Nov 2026). Big design news posted there is usually
 # picked up by the outlets and design publications below.
 feeds:
@@ -232,6 +246,34 @@ feeds:
     url: https://www.bookingholdings.com/feed/
     kind: company
     app: Booking.com
+  - name: Booking.com Newsroom
+    url: https://news.booking.com/feed/
+    kind: company
+    app: Booking.com
+  - name: KAYAK News
+    url: https://www.kayak.com/news/feed/
+    kind: company
+    app: Kayak
+  - name: Tripadvisor Press
+    url: https://tripadvisor.mediaroom.com/press-releases?pagetemplate=rss
+    kind: company
+    app: Tripadvisor
+  # Newsrooms with no feed: the page itself is read, and links matching `page` are its articles.
+  - name: Airbnb Newsroom
+    url: https://news.airbnb.com/
+    kind: company
+    app: Airbnb
+    page: '^/[a-z0-9]+(-[a-z0-9]+){2,}/?$'
+  - name: Agoda Newsroom
+    url: https://www.agoda.com/press/newsroom/
+    kind: company
+    app: Agoda
+    page: '^/press/(?!agoda-in-the-news)[a-z0-9]+(-[a-z0-9]+){2,}/?$'
+  - name: Trip.com Newsroom
+    url: https://www.trip.com/newsroom/
+    kind: company
+    app: Trip.com
+    page: '^/newsroom/[a-z0-9_-]{12,}/?$'
   - name: Meta Newsroom
     url: https://about.fb.com/news/feed/
     kind: outlet

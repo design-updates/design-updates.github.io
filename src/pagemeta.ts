@@ -15,6 +15,8 @@ export interface PageMeta {
   image: string | null;
   siteName: string | null;
   title: string | null;
+  /** og:description or the meta description. */
+  description?: string | null;
   /** Up to 12 images from the article body, for finding a before/after pair. */
   images?: PageImage[];
 }
@@ -95,6 +97,12 @@ export function parsePageMeta(html: string, pageUrl: string): PageMeta {
     const time = head.match(/<time\b[^>]*\sdatetime\s*=\s*["']([^"']+)["']/i);
     published = parseDate(time?.[1]);
   }
+  // A <time> with only readable text, e.g. Trip.com's <time>Jul 21, 2026</time>. Only a full date with a year counts,
+  // read as midday UTC so the day does not shift with the time zone.
+  if (!published) {
+    const text = head.match(/<time\b[^>]*>\s*([A-Z][a-z]{2,8}\.? \d{1,2}, 20\d\d|\d{1,2} [A-Z][a-z]{2,8}\.? 20\d\d)\s*<\/time>/)?.[1];
+    if (text) published = parseDate(`${text.replace('.', '')} 12:00 UTC`);
+  }
 
   let image = meta.get('og:image') ?? meta.get('og:image:url') ?? meta.get('twitter:image') ?? meta.get('twitter:image:src') ?? null;
   if (image) {
@@ -110,6 +118,7 @@ export function parsePageMeta(html: string, pageUrl: string): PageMeta {
     image,
     siteName: meta.get('og:site_name') ?? null,
     title: meta.get('og:title') ?? (title ? decodeEntities(title.trim()) : null),
+    description: meta.get('og:description') ?? meta.get('description') ?? meta.get('twitter:description') ?? null,
     images: parseImages(html, pageUrl),
   };
 }

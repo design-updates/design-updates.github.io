@@ -126,3 +126,49 @@ test('build copies app icons and source favicons into the site, keeping the orig
   assert.equal(out.sources[1].favicon, null, 'Skift favicon failed, so the page falls back to the original address');
   assert.deepEqual([r.saved, r.failed], [2, 1]);
 });
+
+test('newsroom pages: article links from markup and from script data, assets and other sites left out', async () => {
+  const { pageLinks } = await import('../src/feeds.ts');
+  const html = `<html><head><link rel="canonical" href="https://www.trip.com/newsroom/"><link href="/newsroom/home.c4fa6df0.css" rel="stylesheet"></head>
+    <body><nav><a href="/newsroom/">Newsroom</a> <a href="/about-us">About</a></nav>
+    <a href="https://www.trip.com/newsroom/trip-com-wins-the-if-design-award-2026/">Trip.com wins the iF Design Award</a>
+    <a href="/newsroom/tripgenie-how-travellers-are-using-ai/?utm_source=x">TripGenie</a>
+    <a href="https://other.example/newsroom/not-ours/">elsewhere</a>
+    <script>window.__DATA__={"items":[{"url":"/newsroom/eight-clever-ways-to-save/"},{"url":"/newsroom/vendor.f4b5637c.js"},{"url":"/newsroom/trip-com-wins-the-if-design-award-2026/"}]}</script>
+    <span class=c-news-card__link data-href=/newsroom/global-football-tournament-drives-travel>card</span></body></html>`;
+  // Addresses are normalised as everywhere else (no www, no tracking query), so a story found twice counts once.
+  assert.deepEqual(pageLinks(html, 'https://www.trip.com/newsroom/', /^\/newsroom\/[a-z0-9-]{12,}\/?$/), [
+    'https://trip.com/newsroom/trip-com-wins-the-if-design-award-2026',
+    'https://trip.com/newsroom/tripgenie-how-travellers-are-using-ai',
+    'https://trip.com/newsroom/eight-clever-ways-to-save',
+    'https://trip.com/newsroom/global-football-tournament-drives-travel',
+  ]);
+  assert.equal(pageLinks(html, 'https://www.trip.com/newsroom/', /^\/newsroom\/[a-z0-9-]{12,}\/?$/, 2).length, 2, 'at most max links');
+});
+
+test('newsroom pages: each article is read for its title, date and summary; a page with no matching links is an error', async () => {
+  const { readFeed } = await import('../src/feeds.ts');
+  const pages: Record<string, string> = {
+    'https://news.example.com/': '<a href="/introducing-a-new-way-to-book">x</a> <a href="/about">About us</a>',
+    'https://news.example.com/introducing-a-new-way-to-book': '<meta property="og:title" content="Introducing a new way to book"><meta property="og:description" content="A new booking screen."><meta property="article:published_time" content="2026-11-02T08:00:00Z"><meta property="og:image" content="https://news.example.com/hero.jpg">',
+  };
+  const fetchImpl = (async (u: string | URL | Request) => (pages[String(u)] ? new Response(pages[String(u)]) : new Response('no', { status: 404 }))) as typeof fetch;
+  const feed = { name: 'Example Newsroom', url: 'https://news.example.com/', kind: 'company' as const, app: 'Airbnb', page: /^\/[a-z0-9]+(-[a-z0-9]+){2,}\/?$/ };
+  const r = await readFeed(feed, fetchImpl);
+  assert.equal(r.ok, true);
+  assert.deepEqual(r.entries, [{ title: 'Introducing a new way to book', url: 'https://news.example.com/introducing-a-new-way-to-book', publishedAt: '2026-11-02T08:00:00.000Z', summary: 'A new booking screen.', image: 'https://news.example.com/hero.jpg' }]);
+  const none = await readFeed({ ...feed, page: /^\/press\// }, fetchImpl);
+  assert.equal(none.ok, false);
+  assert.match(none.error ?? '', /no article links/);
+  const refused = (async (u: string | URL | Request) => (String(u) === 'https://news.example.com/' ? new Response(pages['https://news.example.com/']) : new Response('no', { status: 429 }))) as typeof fetch;
+  const blocked = await readFeed(feed, refused);
+  assert.equal(blocked.ok, false);
+  assert.match(blocked.error ?? '', /found 1 articles but could not read any/);
+});
+
+test('page meta: a <time> with only readable text gives the date (Trip.com), and nothing else is guessed', async () => {
+  const { parsePageMeta } = await import('../src/pagemeta.ts');
+  assert.equal(parsePageMeta('<title>x</title><time class=c-news-article__date>Jul 21, 2026</time>', 'https://trip.com/a').publishedAt, '2026-07-21T12:00:00.000Z');
+  assert.equal(parsePageMeta('<time>3 November 2026</time>', 'https://x/a').publishedAt, '2026-11-03T12:00:00.000Z');
+  assert.equal(parsePageMeta('<time>5 min read</time><p>Sale runs August 12, 2026</p>', 'https://x/a').publishedAt, null);
+});

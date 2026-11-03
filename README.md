@@ -106,9 +106,23 @@ Add a feed under `feeds:`:
     app: Kayak         # outlet: items are matched to apps by alias instead
 ```
 
+**A newsroom with no feed** can be read as a web page: give its address and a `page` pattern (a regular expression on the path) that matches its article links. Each matching link is read for its title, date, summary and picture, then treated like a feed item:
+
+```yaml
+  - name: Airbnb Newsroom
+    url: https://news.airbnb.com/
+    kind: company
+    app: Airbnb
+    page: '^/[a-z0-9]+(-[a-z0-9]+){2,}/?$'   # one-segment slugs with at least three words
+```
+
+This only works when the articles carry a readable date (a publish-date meta tag, structured data, or a `<time>` element); without one the 48-hour rule drops them all.
+
 Run `npm run check-feeds` to confirm it works. If a site has no feed, add its domain to the app's `domains` (for a company) or to `trust.outlets` (for a news site) so the search step covers it instead.
 
-When this was set up (October 2026) there was no working public feed for the Airbnb, Expedia Group, Agoda, Trainline and Omio newsrooms, Google Design / Material Design, or PhocusWire (it blocks automated readers). From the laptop's network, Brand New, Design Week, Creative Review and Fast Company Co.Design could not be reached either. (Creative Bloq worked when checked again in November 2026 and was added.)
+Travel companies (November 2026): Booking.com, KAYAK and Tripadvisor have newsroom feeds; Airbnb, Agoda and Trip.com are read as newsroom pages. **Expedia cannot be read**: expedia.com (including its product release pages such as expedia.com/product/release/fall2026/) and Expedia Group's newsroom block automated readers, even a real Chrome, and so do Skyscanner, Omio, Trainline and PhocusWire. Their bigger releases still arrive through Skift, The Verge, 9to5Mac and TechCrunch, and Expedia's app updates through the App Store and Google Play notes. Hopper's media center reads fine but its articles carry no machine-readable date, so it is left out.
+
+When this was first set up (October 2026) there was no working public feed for Google Design / Material Design. From the laptop's network, Brand New, Design Week, Creative Review and Fast Company Co.Design could not be reached either. (Creative Bloq worked when checked again in November 2026 and was added.)
 
 **X and LinkedIn are not read directly.** X's API is paid only (from $0.005 per post read). LinkedIn only lets you read pages you administer, and scraping it breaks its terms. Big design news posted there usually reaches the outlets and design publications in the list, so it still gets picked up. The Airbnb, Uber, Spotify and Google Design blogs on Medium were also tried; their newest posts are 1 to 8 years old.
 

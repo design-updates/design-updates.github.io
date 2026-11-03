@@ -1,7 +1,210 @@
 {
   "version": 1,
-  "updated_at": "2026-11-02T23:00:54.923Z",
+  "updated_at": "2026-11-03T23:04:28.914Z",
   "days": [
+    {
+      "date": "2026-11-04",
+      "collected_at": "2026-11-03T23:04:28.914Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "safari-vertical-tabs-adaptive-dark-mode",
+          "app": "Safari",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-04",
+          "published_at": "2026-11-03T18:51:53.000Z",
+          "beta": true,
+          "importance": 3,
+          "headline": "Safari adds a Vertical Tabs layout and Adaptive Dark Mode in the iOS 27.3, iPadOS 27.3 and macOS 27.3 betas.",
+          "what": "Users can choose Vertical Tabs instead of the standard horizontal tab bar. MacRumors says the layout suits the iPhone Duo's larger display but is not limited to that device. The betas also add Adaptive Dark Mode and Siri AI Custom Actions to Safari.",
+          "why": "Apple is putting a vertical tab list on iPhone as screens get wider, so results lists and filter layouts should be tested at iPhone Duo widths. Web-based pages such as hosted checkout are worth checking under Adaptive Dark Mode once its behaviour is clear.",
+          "sources": [
+            {
+              "title": "iOS 27.3 Adds Vertical Tabs and Adaptive Dark Mode to Safari",
+              "url": "https://macrumors.com/2026/11/03/ios-27-3-safari",
+              "publisher": "MacRumors"
+            },
+            {
+              "title": "iOS 27.3 and macOS 27.3 add Vertical Tabs, Adaptive Dark Mode, and more to Safari",
+              "url": "https://9to5mac.com/2026/11/03/ios-27-3-and-macos-27-3-add-vertical-tabs-adaptive-dark-mode-and-more-to-safari",
+              "publisher": "9to5Mac"
+            }
+          ],
+          "release": null,
+          "image": "https://9to5mac.com/wp-content/uploads/sites/6/2026/11/IMG_0334.png",
+          "icon": "https://www.google.com/s2/favicons?domain=apple.com&sz=64",
+          "collected_at": "2026-11-03T23:04:28.914Z",
+          "zh": {
+            "headline": "Safari 在 iOS 27.3、iPadOS 27.3 和 macOS 27.3 beta 中新增竖向标签页布局和 Adaptive Dark Mode。",
+            "what": "用户可以用 Vertical Tabs 代替原来的横向标签栏。据 MacRumors，这个布局适合 iPhone Duo 的大屏，但不限于这款机型。这批 beta 还为 Safari 加入了 Adaptive Dark Mode 和 Siri AI Custom Actions。",
+            "why": "屏幕变宽后，Apple 在 iPhone 上也用了竖向标签列表，搜索结果列表和筛选布局应该在 iPhone Duo 的宽度下测试。具体机制明确后，也值得检查网页收银台等 Web 页面在 Adaptive Dark Mode 下的显示效果。"
+          }
+        },
+        {
+          "id": "apple-health-app-redesign",
+          "app": "Apple Health",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-04",
+          "published_at": "2026-11-03T18:24:58.012Z",
+          "beta": true,
+          "importance": 3,
+          "headline": "Apple's redesigned Health app returns in the iOS 27.3 beta, with new Insights and Longevity tabs.",
+          "what": "Apple previewed the redesign in September and tested it in the iOS 27.2 beta, then removed it before that update shipped. iOS 27.3 beta 1 brings it back with new Insights and Longevity tabs that show more information about the user's health. Apple also announced expanded language support for the redesigned app.",
+          "why": "Apple gave interpreted information (Insights, Longevity) its own top-level tabs. This is a useful reference when deciding whether personalised trip suggestions get a tab of their own or sit inside trip management.",
+          "sources": [
+            {
+              "title": "Redesigned Health app expands language support",
+              "url": "https://apple.com/newsroom/2026/11/redesigned-health-app-expands-language-support",
+              "publisher": "Apple Newsroom"
+            },
+            {
+              "title": "iOS 27.3 Beta Brings Back Apple's Redesigned Health App",
+              "url": "https://macrumors.com/2026/11/03/ios-27-3-health-app",
+              "publisher": "MacRumors"
+            }
+          ],
+          "release": null,
+          "image": "https://www.apple.com/newsroom/images/2026/11/redesigned-health-app-expands-language-support/article/Apple-Health-app-language-expansion_quick-read-16x9.jpg.large_2x.jpg",
+          "icon": "https://www.google.com/s2/favicons?domain=apple.com&sz=64",
+          "collected_at": "2026-11-03T23:04:28.914Z",
+          "zh": {
+            "headline": "Apple 重新设计的健康 App 在 iOS 27.3 beta 中回归，新增 Insights 和 Longevity 两个标签页。",
+            "what": "这次改版在 9 月预览，曾在 iOS 27.2 beta 中测试，但正式版发布前被撤下。iOS 27.3 beta 1 重新加入了新版健康 App，新增的 Insights 和 Longevity 标签页展示更多健康信息。Apple 同时宣布新版 App 支持更多语言。",
+            "why": "Apple 把解读后的信息（Insights、Longevity）放到了一级标签页。设计行程管理时，如果在考虑个性化出行建议要不要单独占一个 Tab，可以参考这个做法。"
+          }
+        },
+        {
+          "id": "apple-ios-standby-redesign-expansion",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-04",
+          "published_at": "2026-11-03T20:14:38.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "iOS 27.3 brings the iPhone Duo's redesigned StandBy to iPhone 11 and newer.",
+          "what": "StandBy shows information at a glance when an iPhone is charging in landscape. Apple says the redesigned StandBy, first introduced on the iPhone Duo, comes to every iPhone that can run iOS 27.3, which is now in beta.",
+          "why": "StandBy is where widgets and Live Activities appear on a charging phone, so trip countdown widgets and departure Live Activities should be rechecked in the new layout.",
+          "sources": [
+            {
+              "title": "iOS 27.3 Adding New StandBy Mode Features to iPhone 11 and Newer",
+              "url": "https://macrumors.com/2026/11/03/ios-27-3-new-standby-features-on-more-iphones",
+              "publisher": "MacRumors"
+            },
+            {
+              "title": "iOS 27.3 brings the iPhone Duo’s revamped StandBy to other iPhones",
+              "url": "https://9to5mac.com/2026/11/03/ios-27-3-brings-the-iphone-duos-revamped-standby-to-other-iphones",
+              "publisher": "9to5Mac"
+            }
+          ],
+          "release": null,
+          "image": "https://images.macrumors.com/t/iwMFiB5tQj0nhfN77ezS9qjHa9I=/2500x0/filters:no_upscale()/article-new/2026/11/iPhone-Duo-StandBy-Weather.jpg?lossy",
+          "icon": "https://www.google.com/s2/favicons?domain=apple.com&sz=64",
+          "collected_at": "2026-11-03T23:04:28.914Z",
+          "zh": {
+            "headline": "iOS 27.3 把 iPhone Duo 上重新设计的 StandBy 带到 iPhone 11 及更新机型。",
+            "what": "StandBy 在 iPhone 横放充电时显示一目了然的信息。Apple 表示，最早在 iPhone Duo 上推出的新版 StandBy，将覆盖所有支持 iOS 27.3 的 iPhone，目前处于 beta 阶段。",
+            "why": "手机充电时，小组件和实时活动都会出现在 StandBy 里，行程倒计时小组件和出发提醒类实时活动需要在新布局下重新检查。"
+          }
+        },
+        {
+          "id": "apple-iphone-duo-reachability",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ux",
+          "date": "2026-11-04",
+          "published_at": "2026-11-03T19:09:11.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "iOS 27.3 adds Reachability to the iPhone Duo for one-handed use.",
+          "what": "On the iPhone Duo's outer screen, Reachability shifts the content on the left or right side toward the user's thumb. It is in the first iOS 27.3 beta and is switched on or off in Settings > Accessibility > Touch.",
+          "why": "Apple's answer to the Duo's wide outer screen is to move content toward the thumb, so actions at the far edges are hard to reach. Keep primary buttons such as Book or Select seat near the bottom centre on wide layouts.",
+          "sources": [
+            {
+              "title": "iPhone Duo Gets Reachability in iOS 27.3 Beta",
+              "url": "https://macrumors.com/2026/11/03/iphone-duo-reachability-ios-27-3",
+              "publisher": "MacRumors"
+            },
+            {
+              "title": "iOS 27.3 introduces new iPhone Duo feature for one-handed use",
+              "url": "https://9to5mac.com/2026/11/03/ios-27-3-introduces-new-iphone-duo-feature-for-one-handed-use",
+              "publisher": "9to5Mac"
+            }
+          ],
+          "release": null,
+          "image": "https://images.macrumors.com/t/gPDnWfVxrPKV1-btVSWLa9tWtdM=/2000x/article-new/2026/11/ios-27-3-reachability-duo.jpg",
+          "icon": "https://www.google.com/s2/favicons?domain=apple.com&sz=64",
+          "collected_at": "2026-11-03T23:04:28.914Z",
+          "zh": {
+            "headline": "iOS 27.3 为 iPhone Duo 加入 Reachability，方便单手操作。",
+            "what": "在 iPhone Duo 的外屏上，Reachability 可以把左侧或右侧的内容移到拇指附近。该功能出现在首个 iOS 27.3 beta 中，可在 设置 > 辅助功能 > 触控 中开关。",
+            "why": "Apple 对外屏变宽的解决方法是把内容移向拇指，说明屏幕两侧边缘的操作很难够到。在宽屏布局下，“预订”“选座”这类主按钮应放在靠下居中的位置。"
+          }
+        },
+        {
+          "id": "tabby-identity-ragged-edge",
+          "app": "Tabby",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-03",
+          "published_at": "2026-11-03T09:15:08.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Middle Eastern fintech app Tabby gets a new identity from Ragged Edge.",
+          "what": "Branding studio Ragged Edge has created a new identity for Tabby, which BP&O describes as playful. Tabby was founded in 2019 and now calls itself \"the money app that lets you spend, send, save and boss money around\".",
+          "why": "Where Tabby is offered as a payment method, its logo in the checkout payment list will need updating to the new identity.",
+          "sources": [
+            {
+              "title": "Ragged Edge creates a playful new identity for Middle Eastern fintech app Tabby",
+              "url": "https://bpando.org/2026/11/03/ragged-edge-tabby-branding-identity-design",
+              "publisher": "BP&O"
+            }
+          ],
+          "release": null,
+          "image": "https://bpando.org/wp-content/uploads/ragged-edge-tabby-brandng-identity-design-bpo-review-logo-mark-badge.png",
+          "icon": "https://www.google.com/s2/favicons?domain=tabby.ai&sz=64",
+          "collected_at": "2026-11-03T23:04:28.914Z",
+          "zh": {
+            "headline": "中东金融科技 App Tabby 启用 Ragged Edge 设计的新品牌形象。",
+            "what": "品牌设计工作室 Ragged Edge 为 Tabby 设计了新形象，BP&O 评价其风格轻松活泼。Tabby 成立于 2019 年，现在自称“让你消费、转账、储蓄、掌控钱的理财 App”。",
+            "why": "如果收银台提供 Tabby 作为支付方式，支付方式列表里的 Tabby 标识需要换成新版。"
+          }
+        },
+        {
+          "id": "swiss-post-custom-typeface",
+          "app": "Swiss Post",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-02",
+          "published_at": "2026-11-02T06:15:00.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Swiss Post gets a custom typeface from Swiss Typefaces.",
+          "what": "Swiss Typefaces spent three years on the font, which Creative Boom describes as warmer and friendlier.",
+          "why": "A national service brand chose a warmer custom typeface over a neutral one. That is a reference point when weighing a proprietary brand font against system fonts for app text.",
+          "sources": [
+            {
+              "title": "Swiss Typefaces crafts a warmer, friendlier custom font for Swiss Post",
+              "url": "https://creativeboom.com/inspiration/swiss-typefaces-crafts-a-warmer-friendlier-custom-font-for-swiss-post",
+              "publisher": "Creative Boom"
+            }
+          ],
+          "release": null,
+          "image": "https://media.creativeboom.com/a050e96d-986d-487d-b08c-0695210aba1d/conversions/7400c6b112c36d63af140a718170e080990e68f1-medium.webp",
+          "icon": "https://www.google.com/s2/favicons?domain=post.ch&sz=64",
+          "collected_at": "2026-11-03T23:04:28.914Z",
+          "zh": {
+            "headline": "Swiss Post 启用 Swiss Typefaces 定制的新字体。",
+            "what": "Swiss Typefaces 用了三年时间设计这款字体，Creative Boom 称其更温暖、更亲切。",
+            "why": "一个国家级服务品牌选择了更温暖的定制字体，而不是中性字体。权衡 App 文字是用自有品牌字体还是系统字体时，可以参考。"
+          }
+        }
+      ]
+    },
     {
       "date": "2026-11-03",
       "collected_at": "2026-11-02T23:00:54.923Z",

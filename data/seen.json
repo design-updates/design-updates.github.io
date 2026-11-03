@@ -113,6 +113,58 @@
       "urls": [
         "https://9to5mac.com/2026/11/02/x-for-iphone-and-ipad-just-dropped-a-dozen-new-app-icon-options"
       ]
+    },
+    "safari-vertical-tabs-adaptive-dark-mode": {
+      "app": "Safari",
+      "headline": "Safari adds a Vertical Tabs layout and Adaptive Dark Mode in the iOS 27.3, iPadOS 27.3 and macOS 27.3 betas.",
+      "date": "2026-11-04",
+      "urls": [
+        "https://macrumors.com/2026/11/03/ios-27-3-safari",
+        "https://9to5mac.com/2026/11/03/ios-27-3-and-macos-27-3-add-vertical-tabs-adaptive-dark-mode-and-more-to-safari"
+      ]
+    },
+    "apple-health-app-redesign": {
+      "app": "Apple Health",
+      "headline": "Apple's redesigned Health app returns in the iOS 27.3 beta, with new Insights and Longevity tabs.",
+      "date": "2026-11-04",
+      "urls": [
+        "https://apple.com/newsroom/2026/11/redesigned-health-app-expands-language-support",
+        "https://macrumors.com/2026/11/03/ios-27-3-health-app"
+      ]
+    },
+    "apple-ios-standby-redesign-expansion": {
+      "app": "Apple",
+      "headline": "iOS 27.3 brings the iPhone Duo's redesigned StandBy to iPhone 11 and newer.",
+      "date": "2026-11-04",
+      "urls": [
+        "https://macrumors.com/2026/11/03/ios-27-3-new-standby-features-on-more-iphones",
+        "https://9to5mac.com/2026/11/03/ios-27-3-brings-the-iphone-duos-revamped-standby-to-other-iphones"
+      ]
+    },
+    "apple-iphone-duo-reachability": {
+      "app": "Apple",
+      "headline": "iOS 27.3 adds Reachability to the iPhone Duo for one-handed use.",
+      "date": "2026-11-04",
+      "urls": [
+        "https://macrumors.com/2026/11/03/iphone-duo-reachability-ios-27-3",
+        "https://9to5mac.com/2026/11/03/ios-27-3-introduces-new-iphone-duo-feature-for-one-handed-use"
+      ]
+    },
+    "tabby-identity-ragged-edge": {
+      "app": "Tabby",
+      "headline": "Middle Eastern fintech app Tabby gets a new identity from Ragged Edge.",
+      "date": "2026-11-03",
+      "urls": [
+        "https://bpando.org/2026/11/03/ragged-edge-tabby-branding-identity-design"
+      ]
+    },
+    "swiss-post-custom-typeface": {
+      "app": "Swiss Post",
+      "headline": "Swiss Post gets a custom typeface from Swiss Typefaces.",
+      "date": "2026-11-02",
+      "urls": [
+        "https://creativeboom.com/inspiration/swiss-typefaces-crafts-a-warmer-friendlier-custom-font-for-swiss-post"
+      ]
     }
   }
 }

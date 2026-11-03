@@ -49,8 +49,8 @@
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/da/35/1eda3573-62cb-1c5f-e959-74c20f797c68/34fda8a0-c8dc-40a6-a1a0-5d6e2aeb21cd_US_5.5_-_Slide_1_refreshed.jpg/392x696bb.jpg"
     },
     "Omio": {
-      "version": "26.1023.0",
-      "date": "2026-11-02T04:22:06.000Z",
+      "version": "26.1023.1",
+      "date": "2026-11-03T05:29:51.000Z",
       "notes": "Update your app to avoid being bugged by reduced speeds! Omio is now faster, better and stronger.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3b/d6/79/3bd67922-8183-5a19-20d9-6c2f8bd642e7/EN-Apple-1290x2796-1.jpg/320x480bb.jpg"
     },
@@ -91,9 +91,9 @@
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d8/95/88/d89588dd-ce20-0f5b-95bc-f99814bf9a6c/6.9__Display_1-en_US.png/320x480bb.jpg"
     },
     "TikTok": {
-      "version": "47.5.0",
-      "date": "2026-10-26T21:46:05.000Z",
-      "notes": "Easily add a sound to your video.",
+      "version": "47.6.0",
+      "date": "2026-11-02T22:22:26.000Z",
+      "notes": "Quickly find and tag your friends in comments.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6c/a1/6a/6ca16a58-1937-7122-e65b-2d901f84fdbb/oEEEv6yBAvIC3s9IGZ1A83wu5TAjAsxiAjLig.png/392x696bb.png"
     },
     "Threads": {
@@ -113,6 +113,18 @@
       "date": "2026-10-27T22:55:24.000Z",
       "notes": "Bug fixes and minor improvements",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/5a/ae/ea5aaea5-37a2-f012-18e0-1b768410b871/initiatives.png/320x480bb.jpg"
+    },
+    "Kayak": {
+      "version": "297.0.0",
+      "date": "2026-10-20T13:41:53.000Z",
+      "notes": "We've been busy paving the runway for your next great escape! We're excited to present the latest version of our app, tuned up and bugs squashed, providing you a smooth and seamless experience.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/97/c7/e2/97c7e280-a2f0-e8f3-c4c5-08c20a4a8a09/0_APP_IPHONE_55_0.png/392x696bb.png"
+    },
+    "Tripadvisor": {
+      "version": "70.5.0",
+      "date": "2026-10-28T07:57:59.000Z",
+      "notes": "While you’ve been out there planning and taking trips, we’ve been here, working to bring you the best version of the app yet. That means fixing bugs, adding new features, and generally making sure your trip is nothing but smooth sailing. Download the latest version if you haven’t already. Love the app? We’d love to hear it! Rate it to let us know how we’re doing.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bd/43/a8/bd43a84f-ec4b-85ac-4775-c68c48681948/0_APP_IPHONE_55_0.png/392x696bb.png"
     }
   },
   "googlePlay": {
@@ -129,8 +141,8 @@
       "screenshot": null
     },
     "Agoda": {
-      "version": "2026-10-27·2tie",
-      "date": "2026-10-27T00:00:00.000Z",
+      "version": "2026-11-03·2tie",
+      "date": "2026-11-03T00:00:00.000Z",
       "notes": "Introducing Agoda AI Assistant Travel planning just got smarter. With our new AI Assistant, go from \"Where should I travel?\" to a confirmed booking—all in one conversation. What you can do: • Get personalized recommendations based on your preferences • Compare hotels, flights, and activities without leaving the chat • Book instantly in the app when you find what you love Try it now: Tap the AI Assistant icon and start planning your next adventure.",
       "screenshot": null
     },
@@ -141,9 +153,9 @@
       "screenshot": null
     },
     "Trainline": {
-      "version": "2026-10-30·1l0f",
+      "version": "2026-10-30·1337",
       "date": "2026-10-30T00:00:00.000Z",
-      "notes": "The little things matter All aboard for some bug fixes and improvements. Our weekly update sorts out a few back-end issues that were affecting our app’s performance.",
+      "notes": "The little things matter Some small improvements are coming down the track with this update. We’ve fixed a few bugs that were affecting our app and made some other minor changes.",
       "screenshot": null
     },
     "Klook": {
@@ -153,14 +165,14 @@
       "screenshot": null
     },
     "Duolingo": {
-      "version": "2026-11-03·nx1b",
-      "date": "2026-11-03T00:00:00.000Z",
+      "version": "2026-11-04·nx1b",
+      "date": "2026-11-04T00:00:00.000Z",
       "notes": "Our mascot owl, Duo, is trading in his usual diet of mice for bugs this week. Yup, we’re squashing those pesky bugs to make the experience better for all of you. For more Duolingo news, contests and product releases, follow us on Facebook, Twitter, and Instagram @duolingo.",
       "screenshot": null
     },
     "Omio": {
-      "version": "2026-10-30·afme",
-      "date": "2026-10-30T00:00:00.000Z",
+      "version": "2026-11-03·afme",
+      "date": "2026-11-03T00:00:00.000Z",
       "notes": "Update your app to avoid being bugged by reduced speeds! Omio is now faster, better and stronger.",
       "screenshot": null
     },
@@ -171,8 +183,8 @@
       "screenshot": null
     },
     "Revolut": {
-      "version": "2026-11-01·61xw",
-      "date": "2026-11-01T00:00:00.000Z",
+      "version": "2026-11-04·61xw",
+      "date": "2026-11-04T00:00:00.000Z",
       "notes": "Welcome to Revolut. We’ve made some tweaks and improvements under the hood in this version to make your Revolut experience even smoother.",
       "screenshot": null
     },
@@ -189,8 +201,8 @@
       "screenshot": null
     },
     "TikTok": {
-      "version": "2026-10-29·5kpb",
-      "date": "2026-10-29T00:00:00.000Z",
+      "version": "2026-11-03·5kpb",
+      "date": "2026-11-03T00:00:00.000Z",
       "notes": "Quickly find and tag your friends in comments.",
       "screenshot": null
     },
@@ -201,8 +213,8 @@
       "screenshot": null
     },
     "WhatsApp": {
-      "version": "2026-10-31·acjt",
-      "date": "2026-10-31T00:00:00.000Z",
+      "version": "2026-11-03·acjt",
+      "date": "2026-11-03T00:00:00.000Z",
       "notes": "• You can now choose to share recent group history with new members when you add them to a group • Group calls now include the ability to transfer calls between mobile and desktop, add a waiting room for call links, and pin a participant to a bigger tile. These features will roll out over the coming weeks. Thanks for using WhatsApp!",
       "screenshot": null
     },
@@ -210,6 +222,24 @@
       "version": "2026-10-28·1szi",
       "date": "2026-10-28T00:00:00.000Z",
       "notes": "Linear Mobile has arrived. Bring the speed and power of Linear to your pocket with our fast, compact, and fully native Android application. Stay informed about important updates, file issues on the go, and unblock your team whenever necessary. Linear Mobile is purpose-designed for “away from keyboard” workflows, so you can move product work forward, no matter where you are. For more information visit https://linear.app/mobile",
+      "screenshot": null
+    },
+    "Tripadvisor": {
+      "version": "2026-11-03·ih9a",
+      "date": "2026-11-03T00:00:00.000Z",
+      "notes": "While you’ve been out there planning and taking trips, we’ve been here, working to bring you the best version of the app yet. That means fixing bugs, adding new features, and generally making sure your trip is nothing but smooth sailing. Download the latest version if you haven’t already. Love the app? We’d love to hear it! Rate it to let us know how we’re doing.",
+      "screenshot": null
+    },
+    "Kayak": {
+      "version": "2026-11-02·o5th",
+      "date": "2026-11-02T00:00:00.000Z",
+      "notes": "Compare flights, hotel and vacation rentals from 100s of sites with the KAYAK app.",
+      "screenshot": null
+    },
+    "Notion": {
+      "version": "2026-11-03·1cmr",
+      "date": "2026-11-03T00:00:00.000Z",
+      "notes": "Bug fixes and performance improvements.",
       "screenshot": null
     }
   }

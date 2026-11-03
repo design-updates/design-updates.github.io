@@ -587,5 +587,35 @@
       }
     ],
     "cost_usd": 0
+  },
+  {
+    "at": "2026-11-03T23:04:28.914Z",
+    "date": "2026-11-04",
+    "mode": "company",
+    "feeds_ok": 34,
+    "feeds_failed": [],
+    "candidates": 2044,
+    "sent_to_model": 142,
+    "kept": 6,
+    "added": 6,
+    "usage": [
+      {
+        "step": "curate",
+        "model": "kr-claude-opus-5.5",
+        "input_tokens": 43933,
+        "output_tokens": 3484,
+        "web_searches": 0,
+        "credits": 3.2721086325041453
+      },
+      {
+        "step": "pictures",
+        "model": "kr-claude-haiku-4-5-20251001",
+        "input_tokens": 73298,
+        "output_tokens": 408,
+        "web_searches": 0,
+        "credits": 0.1071119208623549
+      }
+    ],
+    "cost_usd": 0
   }
 ]

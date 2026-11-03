@@ -685,32 +685,30 @@ button {
 /* ---------- today ---------- */
 
 .today {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(28px, 4vw, 48px) clamp(24px, 3vw, 40px);
-}
-
-.lead {
-  grid-column: span 8;
-}
-.side {
-  grid-column: span 4;
   display: flex;
   flex-direction: column;
-  gap: 28px;
 }
-.today.solo .lead {
-  grid-column: 1 / -1;
+/* One story per row: text left, its own picture right. A dotted rule between rows, as in Earlier. */
+.story {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  gap: 40px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.62fr);
+  gap: 0 clamp(24px, 3.5vw, 48px);
   align-items: start;
+  padding: clamp(26px, 3.5vw, 40px) 0;
 }
-.cards {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 40px 32px;
+.story + .story,
+.pattern + .story {
+  background: repeating-linear-gradient(90deg, var(--line) 0 var(--px), transparent var(--px) calc(var(--px) * 2)) top / 100% 2px no-repeat;
+}
+.story.lead {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  padding-top: 0;
+}
+.story-text {
+  min-width: 0;
+}
+.story > .frame {
+  margin: 0;
 }
 
 .media {
@@ -811,9 +809,6 @@ button {
   mix-blend-mode: multiply;
 }
 
-.lead .frame {
-  margin-bottom: 26px;
-}
 .lead .meta {
   margin-bottom: 14px;
 }
@@ -896,16 +891,10 @@ button {
 .card .meta {
   margin: 0 0 10px;
 }
-.card .frame {
-  margin-bottom: 18px;
-}
 .headline {
   margin: 0;
-  font: 600 20px/1.22 var(--display);
+  font: 600 clamp(20px, 2vw, 24px)/1.22 var(--display);
   text-wrap: balance;
-}
-.side .headline {
-  font-size: 21px;
 }
 .card .why {
   margin-top: 12px;
@@ -913,10 +902,6 @@ button {
 }
 .card .sources {
   margin-top: 12px;
-}
-.side .card + .card {
-  padding-top: 28px;
-  background: repeating-linear-gradient(90deg, var(--line) 0 var(--px), transparent var(--px) calc(var(--px) * 2)) top / 100% 2px no-repeat;
 }
 
 /* More / Less: an outlined chip in the accent colour, with a pixel chevron that flips when open. */
@@ -1614,24 +1599,8 @@ html:lang(zh-CN) .row-title {
 }
 
 @media (max-width: 960px) {
-  .lead,
-  .side {
-    grid-column: 1 / -1;
-  }
-  .side {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 32px;
-  }
-  .side .card + .card {
-    padding-top: 0;
-    background: none;
-  }
-  .cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .today.solo .lead {
-    display: block;
+  .story.lead {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
   }
 }
 
@@ -1696,7 +1665,19 @@ html:lang(zh-CN) .row-title {
   .hello-title {
     gap: 12px;
   }
-  .lead .frame {
+  .story,
+  .story.lead {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 26px 0;
+  }
+  .story.lead {
+    padding-top: 0;
+  }
+  .story > .frame {
+    order: -1;
+    margin-bottom: 18px;
+  }
+  .lead > .frame {
     margin: 0 calc(var(--gutter) * -1) 22px;
   }
   .lead .frame::before {
@@ -1707,29 +1688,6 @@ html:lang(zh-CN) .row-title {
   }
   .lead-what {
     font-size: 16px;
-  }
-  .side,
-  .cards {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .side .card,
-  .cards .card {
-    padding: 26px 0;
-    background: repeating-linear-gradient(90deg, var(--line) 0 var(--px), transparent var(--px) calc(var(--px) * 2)) top / 100% 2px no-repeat;
-  }
-  .side .card:first-child {
-    padding-top: 26px;
-  }
-  /* Phone cards stay text-first; only real photos are shown, and smaller. */
-  .card .frame {
-    display: none;
-  }
-  .card .frame.photo {
-    display: block;
-  }
-  .today {
-    gap: 28px 0;
   }
   .pattern {
     padding: 18px;

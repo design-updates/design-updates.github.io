@@ -534,10 +534,13 @@ function media(item, { reveal = false, ratio } = {}) {
 
 /* ---------- today ---------- */
 
+/*
+ * Every story today is one row: its text on the left, its own picture on the right, so a picture can never sit
+ * beside another story's text. The first story is the same row, larger. Phones stack each picture above its text.
+ */
 function leadHtml(item) {
-  return `<article class="lead reveal" data-id="${esc(item.id)}">
-    ${media(item, { reveal: true })}
-    <div class="lead-text">
+  return `<article class="story lead reveal" data-id="${esc(item.id)}">
+    <div class="story-text">
       ${metaRow(item, true)}
       <h2 class="lead-headline"><a href="${esc(safeUrl(item.sources?.[0]?.url))}" target="_blank" rel="noopener" data-read="${esc(item.id)}">${esc(txt(item, 'headline'))}</a></h2>
       <p class="lead-what">${esc(txt(item, 'what'))}</p>
@@ -545,21 +548,24 @@ function leadHtml(item) {
       ${sources(item)}
       ${actions(item)}
     </div>
+    ${media(item, { reveal: true })}
   </article>`;
 }
 
-function cardHtml(item, i, withMedia) {
-  return `<article class="card reveal" data-id="${esc(item.id)}">
-    ${withMedia ? media(item, { reveal: true }) : ''}
-    ${metaRow(item)}
-    <h3 class="headline"><a href="${esc(safeUrl(item.sources?.[0]?.url))}" target="_blank" rel="noopener" data-read="${esc(item.id)}">${esc(txt(item, 'headline'))}</a></h3>
-    <p class="what clamp">${esc(txt(item, 'what'))}</p>
-    <div class="fold">
-      <div class="more-body" id="more-${esc(item.id)}" hidden><div class="more-in">${why(item)}</div></div>
-      ${moreBtn(`more-${item.id}`)}
+function cardHtml(item) {
+  return `<article class="story card reveal" data-id="${esc(item.id)}">
+    <div class="story-text">
+      ${metaRow(item)}
+      <h3 class="headline"><a href="${esc(safeUrl(item.sources?.[0]?.url))}" target="_blank" rel="noopener" data-read="${esc(item.id)}">${esc(txt(item, 'headline'))}</a></h3>
+      <p class="what clamp">${esc(txt(item, 'what'))}</p>
+      <div class="fold">
+        <div class="more-body" id="more-${esc(item.id)}" hidden><div class="more-in">${why(item)}</div></div>
+        ${moreBtn(`more-${item.id}`)}
+      </div>
+      ${sources(item)}
+      ${actions(item)}
     </div>
-    ${sources(item)}
-    ${actions(item)}
+    ${media(item, { reveal: true })}
   </article>`;
 }
 
@@ -588,17 +594,7 @@ function renderToday(day) {
     return;
   }
   const [lead, ...rest] = day.items;
-  // Two stories beside the lead, the rest in rows of three. Take a third beside the lead rather than leave one card alone on a row.
-  const sideCount = rest.length - 2 > 1 && (rest.length - 2) % 3 === 1 ? 3 : 2;
-  const side = rest.slice(0, sideCount);
-  const cards = rest.slice(sideCount);
-  el.classList.toggle('solo', day.items.length === 1);
-  el.innerHTML = [
-    leadHtml(lead),
-    side.length ? `<div class="side">${side.map((it, i) => cardHtml(it, i + 1, false)).join('')}</div>` : '',
-    day.pattern ? patternHtml(patternOf(day)) : '',
-    cards.length ? `<div class="cards">${cards.map((it, i) => cardHtml(it, i + sideCount + 1, true)).join('')}</div>` : '',
-  ].join('');
+  el.innerHTML = [leadHtml(lead), day.pattern ? patternHtml(patternOf(day)) : '', ...rest.map(cardHtml)].join('');
 }
 
 /* ---------- archive ---------- */

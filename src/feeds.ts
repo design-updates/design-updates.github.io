@@ -60,7 +60,10 @@ export function parseFeed(xml: string, base: string): FeedEntry[] {
         if (guid && !/isPermaLink\s*=\s*["']false/i.test(guid[1])) url = cdata(guid[2]);
       }
     }
-    url = decodeEntities(url.trim());
+    // Some feeds (Fast Company) encode & twice, so decode until nothing changes.
+    url = url.trim();
+    for (let i = 0; i < 3 && /&(amp|#38);/i.test(url); i++) url = decodeEntities(url);
+    url = decodeEntities(url);
     if (!title || !url) continue;
     try {
       url = new URL(url, base).toString();

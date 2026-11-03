@@ -4,14 +4,16 @@
 // obvious misses with rules, read each page, and ask the model for the few worth copying. Writes data/workflows.json.
 
 import { existsSync, readFileSync } from 'node:fs';
-import { readFeed, type FeedResult } from './feeds.ts';
 import type { Feed } from './config.ts';
 import type { Llm } from './llm.ts';
 import { textOf, usageOf } from './llm.ts';
-import { decodeEntities, domainOf, fetchText, mapLimit, normalizeUrl, parseDate, parseJsonLoose, readJson, slugify, stripHtml, truncate, writeJson } from './util.ts';
+import { domainOf, parseDate, parseJsonLoose, readJson, slugify, truncate } from './util.ts';
 import { parseYaml } from './yaml.ts';
 import { WORKFLOWS_SYSTEM } from './prompts.ts';
 import type { CallUsage } from './types.ts';
+import { clean, countBetween, DAY, HYPE, orNull, poolFeeds, readPosts, saveWeek, uniqueIds, weekKey, type Dropped, type PoolPost, type ReadPost, type Week, type WeeksFile } from './weekly.ts';
+
+export { articleText, weekKey, FeedsDownError as WorkflowFeedsDownError, type PoolPost } from './weekly.ts';
 
 export interface WorkflowsConfig {
   enabled: boolean;
@@ -32,18 +34,6 @@ export function parseWorkflowsConfig(src: string): WorkflowsConfig {
 }
 
 export const loadWorkflowsConfig = (path = 'workflows.yaml') => parseWorkflowsConfig(existsSync(path) ? readFileSync(path, 'utf8') : 'enabled: false');
-
-/** A post waiting to be judged. */
-export interface PoolPost {
-  url: string;
-  title: string;
-  source: string;
-  publishedAt: string;
-  summary: string;
-  content?: string;
-  author?: string;
-  image: string | null;
-}
 
 export type Stage = 'research' | 'ideas' | 'ux' | 'ui' | 'prototyping' | 'systems' | 'handoff' | 'brand' | 'team';
 export type WfType = 'workflow' | 'technique' | 'tool' | 'study';
@@ -82,39 +72,9 @@ export interface Workflow {
   zh: WorkflowZh | null;
 }
 
-export interface WorkflowWeek {
-  /** Monday of the week, YYYY-MM-DD in the reader's time zone. */
-  week: string;
-  from: string;
-  to: string;
-  checked: number;
-  picks: Workflow[];
-  collected_at: string;
-}
-
-export interface WorkflowsFile {
-  version: 1;
-  updated_at: string | null;
-  weeks: WorkflowWeek[];
-}
-
-export interface WfDropped {
-  title: string;
-  url: string;
-  source: string;
-  reason: string;
-  bulk?: boolean;
-}
-
-const DAY = 86_400_000;
-
-/** Monday of the week that `at` falls in, in `timeZone`. */
-export function weekKey(at: Date, timeZone: string): string {
-  const ymd = new Intl.DateTimeFormat('en-CA', { timeZone, year: 'numeric', month: '2-digit', day: '2-digit' }).format(at);
-  const d = new Date(`${ymd}T12:00:00Z`);
-  d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 6) % 7));
-  return d.toISOString().slice(0, 10);
-}
+export type WorkflowWeek = Week<Workflow>;
+export type WorkflowsFile = WeeksFile<Workflow>;
+export type WfDropped = Dropped;
 
 /** AI words and tool names. Posts with none of these in the title or summary are not about AI. Tool names are
     matched with their capitals, so "the cursor" or "a bolt" in a design post does not count. */
@@ -168,42 +128,11 @@ export function prefilterWorkflows(posts: PoolPost[], ctx: { from: Date; to: Dat
   return { kept: scored.slice(0, max).map(([p]) => p), dropped };
 }
 
-/** The readable text of an article page, plus its image and author when the page says. */
-export function articleText(html: string): { text: string; image: string | null; author: string | null } {
-  const meta = (name: string) =>
-    html.match(new RegExp(`<meta[^>]+(?:property|name)=["']${name}["'][^>]+content=["']([^"']+)["']`, 'i'))?.[1] ??
-    html.match(new RegExp(`<meta[^>]+content=["']([^"']+)["'][^>]+(?:property|name)=["']${name}["']`, 'i'))?.[1] ??
-    null;
-  const body = html.match(/<article\b[\s\S]*?<\/article>/i)?.[0] ?? html.match(/<main\b[\s\S]*?<\/main>/i)?.[0] ?? html.match(/<body\b[\s\S]*<\/body>/i)?.[0] ?? html;
-  const text = stripHtml(body.replace(/<(nav|header|footer|aside|form|noscript|svg|figure)\b[\s\S]*?<\/\1>/gi, ' '));
-  const image = meta('og:image');
-  const author = meta('author') ?? meta('article:author');
-  return { text: truncate(text, 8000), image: image ? decodeEntities(image) : null, author: author && !/^https?:/.test(author) ? decodeEntities(author) : null };
-}
-
-/** Reading time at 230 words a minute. Unknown when the text was cut short, since the post is longer than that. */
-const minutesOf = (text: string) => {
-  const words = text.split(/\s+/).filter(Boolean).length;
-  return words > 150 && text.length < 7900 ? Math.max(1, Math.round(words / 230)) : null;
-};
-
-const HYPE = /\b(revolutionary|game[- ]changing|game[- ]changer|seamless(ly)?|powerful|unlock(s|ing)?|leverag(e|es|ing)|supercharge[sd]?|delve)\b/i;
-const EMOJI = /[\p{Extended_Pictographic}\u{FE0F}]/gu;
-const clean = (s: unknown, max: number): string =>
-  typeof s === 'string' ? truncate(s.replace(EMOJI, '').replace(/！+/g, '。').replace(/\.?!+(?=\s|$)/g, '.').trim(), max) : '';
-const orNull = (s: unknown, max: number) => clean(s, max) || null;
-
 export interface JudgeResult {
   picks: Workflow[];
   dropped: WfDropped[];
   usage: CallUsage;
   warnings: string[];
-}
-
-interface ReadPost extends PoolPost {
-  cid: string;
-  text: string;
-  minutes: number | null;
 }
 
 /** One model call: which of the week's posts are worth copying, written up. Keeps the best `maxPicks`. */
@@ -282,14 +211,7 @@ export async function judgeWeek(llm: Llm, model: string, posts: ReadPost[], cfg:
   const picks = good.slice(0, cfg.maxPicks);
   for (const w of good.slice(cfg.maxPicks)) dropped.push({ title: w.post_title, url: w.url, source: w.source, reason: `scored ${w.score}/10; the week's ${cfg.maxPicks} best scored higher` });
   for (const p of posts) if (!done.has(p.cid)) drop(p, 'model did not mention it');
-  // Two picks with the same slug would collide on the page.
-  const ids = new Set<string>();
-  for (const w of picks) {
-    let id = w.id || 'workflow';
-    for (let n = 2; ids.has(id); n++) id = `${w.id}-${n}`;
-    ids.add(id);
-    w.id = id;
-  }
+  uniqueIds(picks, 'workflow');
   return { picks, dropped, usage, warnings };
 }
 
@@ -314,13 +236,6 @@ export interface WorkflowsReport {
   judged: null | { checked: number; candidates: number; picks: Workflow[]; preDropped: WfDropped[]; modelDropped: WfDropped[]; warnings: string[]; usage: CallUsage | null };
 }
 
-export class WorkflowFeedsDownError extends Error {
-  constructor() {
-    super('No workflow feed could be read. Nothing written.');
-    this.name = 'WorkflowFeedsDownError';
-  }
-}
-
 export async function runWorkflows(opts: {
   cfg: WorkflowsConfig;
   timeZone: string;
@@ -338,28 +253,11 @@ export async function runWorkflows(opts: {
   const fetchImpl = opts.fetchImpl ?? fetch;
 
   // 1. Pool: today's feed entries join the posts already waiting.
-  const results: FeedResult[] = await mapLimit(cfg.feeds, 6, (f) => readFeed(f, fetchImpl));
-  const ok = results.filter((r) => r.ok);
-  const failed = results.filter((r) => !r.ok).map((r) => ({ name: r.feed.name, error: r.error ?? 'failed' }));
-  if (cfg.feeds.length && !ok.length) throw new WorkflowFeedsDownError();
-  const pool = new Map<string, PoolPost>(readJson<PoolPost[]>(paths.pool, []).map((p) => [p.url, p]));
-  const before = pool.size;
-  for (const r of ok) {
-    for (const e of r.entries) {
-      const at = parseDate(e.publishedAt);
-      if (!at || now.getTime() - at.getTime() > 14 * DAY || at.getTime() - now.getTime() > DAY) continue;
-      const url = normalizeUrl(e.url);
-      if (pool.has(url)) continue;
-      pool.set(url, { url, title: e.title, source: r.feed.name, publishedAt: at.toISOString(), summary: e.summary, content: e.content, author: e.author, image: e.image });
-    }
-  }
-  for (const [url, p] of pool) if (now.getTime() - Date.parse(p.publishedAt) > 21 * DAY) pool.delete(url);
-  const added = pool.size - before;
-  if (!opts.dryRun) writeJson(paths.pool, [...pool.values()]);
+  const { ok, failed, added, pool } = await poolFeeds({ feeds: cfg.feeds, path: paths.pool, now, addDays: 14, keepDays: 21, what: 'workflow', fetchImpl, dryRun: opts.dryRun });
 
   const week = weekKey(now, opts.timeZone);
   const file = readJson<WorkflowsFile>(paths.data, { version: 1, updated_at: null, weeks: [] });
-  const report: WorkflowsReport = { week, feeds: { ok: ok.length, failed }, added, pooled: pool.size, judged: null };
+  const report: WorkflowsReport = { week, feeds: { ok, failed }, added, pooled: pool.size, judged: null };
   if (!opts.force && file.weeks.some((w) => w.week === week)) return report;
 
   // 2. The week's pick covers the 7 days before this run.
@@ -369,36 +267,9 @@ export async function runWorkflows(opts: {
   if (opts.force) for (const w of file.weeks.filter((x) => x.week === week)) for (const p of w.picks) judged.delete(p.url);
   const pre = prefilterWorkflows([...pool.values()], { from, to, judged });
 
-  // 3. Read each candidate's text: the feed's own copy when it carries the full post, else the page.
-  const read: ReadPost[] = [];
-  await mapLimit(pre.kept, 6, async (p) => {
-    let text = p.content ?? '';
-    let image = p.image;
-    let author = p.author;
-    if (text.length < 1500) {
-      try {
-        const page = articleText(await fetchText(p.url, { fetchImpl, timeoutMs: 15_000, maxBytes: 1_500_000 }));
-        if (page.text.length > text.length) text = page.text;
-        image ??= page.image;
-        author ||= page.author ?? undefined;
-      } catch {
-        // Keep the feed's summary.
-      }
-    }
-    if (text.length < 400) text = `${text} ${p.summary}`.trim();
-    if (text.length < 300) {
-      pre.dropped.push({ title: p.title, url: p.url, source: p.source, reason: 'only a preview could be read (a member-only post, or the site blocks readers)' });
-      return;
-    }
-    read.push({ ...p, cid: '', text, image, author, minutes: minutesOf(text) });
-  });
-  read.sort((a, b) => a.publishedAt.localeCompare(b.publishedAt));
-  read.forEach((p, i) => (p.cid = `p${i + 1}`));
-
-  const checked = [...pool.values()].filter((p) => {
-    const at = Date.parse(p.publishedAt);
-    return at >= from.getTime() && at < to.getTime();
-  }).length;
+  // 3. Read each candidate's text.
+  const read = await readPosts(pre.kept, fetchImpl, pre.dropped);
+  const checked = countBetween(pool, from, to);
   report.judged = { checked, candidates: read.length, picks: [], preDropped: pre.dropped, modelDropped: [], warnings: [], usage: null };
   if (opts.dryRun) return report;
 
@@ -410,11 +281,6 @@ export async function runWorkflows(opts: {
     report.judged = { ...report.judged, picks, modelDropped: j.dropped, warnings: j.warnings, usage: j.usage };
   }
 
-  const entry: WorkflowWeek = { week, from: from.toISOString(), to: to.toISOString(), checked, picks, collected_at: now.toISOString() };
-  file.weeks = [entry, ...file.weeks.filter((w) => w.week !== week)].sort((a, b) => b.week.localeCompare(a.week)).slice(0, 52);
-  file.updated_at = now.toISOString();
-  writeJson(paths.data, file);
-  for (const p of read) judged.add(p.url);
-  writeJson(paths.judged, [...judged].slice(-3000));
+  saveWeek(paths, file, { week, from: from.toISOString(), to: to.toISOString(), checked, picks, collected_at: now.toISOString() }, judged, read, now);
   return report;
 }

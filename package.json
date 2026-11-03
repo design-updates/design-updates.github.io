@@ -15,6 +15,7 @@
     "dev": "node src/serve.ts",
     "test": "node --test \"tests/**/*.test.ts\"",
     "backfill-compare": "node src/backfill-compare.ts",
-    "workflows": "node --env-file-if-exists=.env src/workflows-cli.ts"
+    "workflows": "node --env-file-if-exists=.env src/workflows-cli.ts",
+    "cases": "node --env-file-if-exists=.env src/cases-cli.ts"
   }
 }

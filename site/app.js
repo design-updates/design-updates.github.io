@@ -53,6 +53,19 @@ const T = {
     wfFilterLabel: 'Filter by stage or tool',
     stage: { research: 'Research', ideas: 'Ideas', ux: 'UX', ui: 'UI', prototyping: 'Prototyping', systems: 'Design systems', handoff: 'Handoff', brand: 'Brand', team: 'Team' },
     wfType: { workflow: 'Workflow', technique: 'Technique', tool: 'Tool', study: 'Study' },
+    viewCases: 'Case studies',
+    csTitle: 'Case studies',
+    csSummary: (picks, checked) => `This week: <b>${picks}</b> from ${checked} posts by top design teams and the design press. Shipped work from well-known companies only. Picked every Monday.`,
+    csQuiet: (checked) => `This week, none of ${checked} posts was a case study of shipped work from a well-known company. Picked every Monday.`,
+    csQuietRow: 'Quiet week. No case worth studying.',
+    csPicks: (n) => (n === 1 ? '1 case' : `${n} cases`),
+    csApproach: 'What they did',
+    csOutcome: 'What happened',
+    csLesson: 'Take away',
+    csRead: 'Read the case',
+    csFilterLabel: 'Filter by area',
+    area: { product: 'Product', system: 'Design system', brand: 'Brand', research: 'Research', content: 'Content' },
+    maker: { team: 'In-house team', agency: 'Agency', designer: 'Designer' },
     pattern: 'Pattern',
     sources: (n) => `${n} source${n === 1 ? '' : 's'}`,
     today: 'Today',
@@ -145,6 +158,19 @@ const T = {
     wfFilterLabel: '按阶段或工具筛选',
     stage: { research: '调研', ideas: '构思', ux: 'UX', ui: 'UI', prototyping: '原型', systems: '设计系统', handoff: '交付', brand: '品牌', team: '团队' },
     wfType: { workflow: '工作流', technique: '技巧', tool: '工具', study: '研究' },
+    viewCases: '设计案例',
+    csTitle: '设计案例',
+    csSummary: (picks, checked) => `本周：从 ${checked} 篇顶尖设计团队和设计媒体的文章中选出 <b>${picks}</b>。只收知名公司已上线的作品。每周一更新。`,
+    csQuiet: (checked) => `本周 ${checked} 篇文章里，没有知名公司已上线作品的案例。每周一更新。`,
+    csQuietRow: '本周很安静，没有值得研究的案例。',
+    csPicks: (n) => `${n} 个案例`,
+    csApproach: '做法',
+    csOutcome: '结果',
+    csLesson: '启发',
+    csRead: '阅读案例',
+    csFilterLabel: '按领域筛选',
+    area: { product: '产品', system: '设计系统', brand: '品牌', research: '调研', content: '内容' },
+    maker: { team: '内部团队', agency: '设计公司', designer: '设计师' },
     pattern: '趋势',
     sources: (n) => `${n} 个来源`,
     today: '今天',
@@ -977,7 +1003,7 @@ function wireRail() {
   let queued = false;
   const update = () => {
     queued = false;
-    const days = [...document.querySelectorAll('#archive .day:not([hidden]), #wf-list .day:not([hidden])')].filter((d) => d.offsetParent);
+    const days = [...document.querySelectorAll('#archive .day:not([hidden]), #wf-list .day:not([hidden]), #cs-list .day:not([hidden])')].filter((d) => d.offsetParent);
     if (!days.length) return;
     const maxScroll = document.documentElement.scrollHeight - innerHeight;
     const nearEnd = maxScroll > 0 ? Math.max(0, (scrollY - (maxScroll - innerHeight)) / innerHeight) : 1;
@@ -1004,6 +1030,7 @@ function wireRail() {
   // Rows opening and filters changing move the days; redraw then too.
   new ResizeObserver(queue).observe($('#archive'));
   new ResizeObserver(queue).observe($('#wf-list'));
+  new ResizeObserver(queue).observe($('#cs-list'));
   update();
 }
 
@@ -1321,22 +1348,152 @@ async function loadWorkflows() {
   }
 }
 
-/** News or AI workflows, from the address (#workflows). The tab only shows while workflows.yaml has it on. */
+/* ---------- Case studies ---------- */
+
+let cases = null; // data/cases.json once loaded
+const csFilter = { area: null };
+const csTxt = (c, field) => (lang === 'zh' && c.zh?.[field]) || c[field];
+
+/** A small pixel briefcase: the page's mark for case studies. */
+const CASE = [
+  '...oooo....',
+  '...o..o....',
+  'aaaaaaaaaaa',
+  'a.........a',
+  'aaaaaoaaaaa',
+  'a....o....a',
+  'a.........a',
+  'aaaaaaaaaaa',
+];
+const briefcase = () => pixels(CASE, { a: 'var(--accent)', o: 'var(--sun)' }, 'sky');
+
+function csRowHtml(c) {
+  const link = `href="${esc(safeUrl(c.url))}" target="_blank" rel="noopener"`;
+  const thumb = c.image
+    ? `<a class="row-thumb notch${reduced ? '' : ' pending'}" ${link} tabindex="-1" aria-hidden="true" data-mosaic="${esc(iconAt(c.icon, 16))}"><img src="${esc(c.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
+    : `<a class="row-thumb notch mosaic" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--accent)"><img src="${esc(iconAt(c.icon, 16))}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`;
+  const icon = `<img class="icon notch row-icon" src="${esc(iconAt(c.icon, 16))}" alt="" width="24" height="24" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'">`;
+  const by = c.by ?? '';
+  const source = c.source.toLowerCase().startsWith(c.company.toLowerCase()) ? '' : esc(c.source);
+  return `<li class="row wf-row cs-row reveal read" data-id="${esc(c.id)}" data-area="${esc(c.area)}">
+    <div class="row-head">
+      <span class="dot" aria-hidden="true"></span>
+      ${icon}
+      <div class="row-main">
+        <p class="row-top"><span class="app">${esc(c.company)}</span><span class="kind">${t().area[c.area] ?? esc(c.area)}</span><span class="wf-type">${t().maker[c.maker] ?? esc(c.maker)}</span>${c.minutes ? `<span class="when">${t().wfMin(c.minutes)}</span>` : ''}</p>
+        <h3 class="row-title"><a ${link}>${esc(csTxt(c, 'title'))}</a></h3>
+        ${by || source ? `<p class="wf-by">${[by ? t().wfBy(esc(by)) : '', source].filter(Boolean).join(' · ')}</p>` : ''}
+        <p class="what clamp">${esc(csTxt(c, 'problem'))}</p>
+      </div>
+    </div>
+    ${thumb}
+    <div class="fold row-fold">
+      <div class="more-body" id="more-cs-${esc(c.id)}" hidden>
+        <div class="more-in">
+          <dl class="wf-facts">
+            <div><dt>${t().csApproach}</dt><dd>${esc(csTxt(c, 'approach'))}</dd></div>
+            <div><dt>${t().csOutcome}</dt><dd>${esc(csTxt(c, 'outcome'))}</dd></div>
+            <div><dt>${t().csLesson}</dt><dd>${esc(csTxt(c, 'lesson'))}</dd></div>
+          </dl>
+          <p class="wf-read"><a class="act" ${link}>${t().csRead} ↗</a><span class="wf-src">${esc(c.post_title)}</span></p>
+        </div>
+      </div>
+      ${moreBtn(`more-cs-${c.id}`)}
+    </div>
+  </li>`;
+}
+
+function csWeekHtml(week) {
+  const d = fromYmd(week.week);
+  const rail = `<div class="rail"><span class="rail-fill" aria-hidden="true"></span><div class="rail-inner reveal"><span class="rail-day">${t().wfWeek}</span><span class="rail-date">${fmt(d, { day: 'numeric', month: 'short' })}</span></div></div>`;
+  if (!week.picks.length) {
+    return `<section class="day quiet-day" data-week="${week.week}">${rail}<div class="rows reveal">${t().csQuietRow}</div></section>`;
+  }
+  return `<section class="day" data-week="${week.week}">${rail}<div><ul class="rows">${week.picks.map(csRowHtml).join('')}</ul></div></section>`;
+}
+
+function renderCsFilters(weeks) {
+  const picks = weeks.flatMap((w) => w.picks);
+  const areas = Object.keys(t().area).filter((a) => picks.some((p) => p.area === a));
+  const box = $('#cs-filters');
+  box.setAttribute('aria-label', t().csFilterLabel);
+  // One area is no choice, so the chips only show once there are two.
+  box.innerHTML =
+    areas.length > 1
+      ? [
+          `<button class="chip" type="button" data-cs="all" aria-pressed="${!csFilter.area}">${t().wfAllStages} <span class="n">${picks.length}</span></button>`,
+          ...areas.map((a) => `<button class="chip" type="button" data-cs="${a}" aria-pressed="${csFilter.area === a}">${t().area[a]} <span class="n">${picks.filter((p) => p.area === a).length}</span></button>`),
+        ].join('')
+      : '';
+}
+
+function applyCsFilters() {
+  for (const day of document.querySelectorAll('#cs-list .day')) {
+    const rows = [...day.querySelectorAll('.row')];
+    let shown = 0;
+    for (const r of rows) {
+      r.hidden = !!csFilter.area && r.dataset.area !== csFilter.area;
+      if (!r.hidden) shown++;
+    }
+    day.hidden = !!csFilter.area && !shown;
+  }
+}
+
+function renderCases() {
+  $('#cs-title').innerHTML = `${briefcase()}<span>${t().csTitle}</span>`;
+  $('#cs-list-title').textContent = t().wfList;
+  if (!cases) {
+    $('#cs-summary').textContent = t().wfLoading;
+    return;
+  }
+  const weeks = cases.weeks ?? [];
+  const latest = weeks[0];
+  $('#cs-summary').innerHTML = !latest ? t().wfNone : latest.picks.length ? t().csSummary(t().csPicks(latest.picks.length), latest.checked) : t().csQuiet(latest.checked);
+  renderCsFilters(weeks);
+  $('#cs-list').innerHTML = weeks.map(csWeekHtml).join('');
+  applyCsFilters();
+  wireImages();
+  wireReveal();
+}
+
+async function loadCases() {
+  if (cases) return;
+  try {
+    const r = await fetch('data/cases.json', { cache: 'no-store' });
+    cases = r.ok ? await r.json() : { weeks: [] };
+  } catch {
+    cases = { weeks: [] };
+  }
+}
+
+/* ---------- pages ---------- */
+
+/** The pages besides News, each shown only while its yaml file has it on (meta.json says which). */
+const PAGES = {
+  cases: { on: () => !!meta.cases, label: () => t().viewCases, render: renderCases, load: loadCases },
+  workflows: { on: () => !!meta.workflows, label: () => t().viewWorkflows, render: renderWorkflows, load: loadWorkflows },
+};
+
+/** News, Case studies or AI workflows, from the address (#cases, #workflows). */
 async function showView() {
-  const on = !!meta.workflows;
-  $('#views').hidden = !on;
-  const view = on && location.hash === '#workflows' ? 'workflows' : 'news';
+  const on = Object.keys(PAGES).filter((k) => PAGES[k].on());
+  $('#views').hidden = !on.length;
+  const asked = location.hash.slice(1);
+  const view = on.includes(asked) ? asked : 'news';
   document.body.dataset.view = view;
   for (const a of document.querySelectorAll('.view-tab')) {
-    a.textContent = a.dataset.view === 'news' ? t().viewNews : t().viewWorkflows;
-    if (a.dataset.view === view) a.setAttribute('aria-current', 'page');
+    const v = a.dataset.view;
+    a.hidden = v !== 'news' && !on.includes(v);
+    a.textContent = v === 'news' ? t().viewNews : PAGES[v].label();
+    if (v === view) a.setAttribute('aria-current', 'page');
     else a.removeAttribute('aria-current');
   }
   $('#views').setAttribute('aria-label', t().viewsLabel);
-  if (view !== 'workflows') return;
-  renderWorkflows();
-  await loadWorkflows();
-  renderWorkflows();
+  const page = PAGES[view];
+  if (!page) return;
+  page.render();
+  await page.load();
+  page.render();
 }
 
 /* ---------- opening a card or row ---------- */
@@ -1440,6 +1597,13 @@ function wireEvents() {
       else if (wf.startsWith('tool:')) wfFilter.tool = wfFilter.tool === wf.slice(5) ? null : wf.slice(5);
       renderWfFilters(workflows?.weeks ?? []);
       applyWfFilters();
+    }
+
+    const cs = t.dataset.cs;
+    if (cs) {
+      csFilter.area = cs === 'all' || csFilter.area === cs ? null : cs;
+      renderCsFilters(cases?.weeks ?? []);
+      applyCsFilters();
     }
 
     const f = t.dataset.filter;

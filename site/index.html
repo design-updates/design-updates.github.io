@@ -38,6 +38,7 @@
         <div class="rule rule-heavy" aria-hidden="true"></div>
         <nav class="views" id="views" aria-label="Pages" hidden>
           <a class="view-tab" href="#news" data-view="news" aria-current="page">News</a>
+          <a class="view-tab" href="#cases" data-view="cases">Case studies</a>
           <a class="view-tab" href="#workflows" data-view="workflows">AI workflows</a>
         </nav>
       </header>
@@ -58,7 +59,19 @@
           <div id="archive"></div>
         </section>
 
-        <section class="workflows" id="workflows" aria-labelledby="wf-title">
+        <section class="page-view cases" id="cases" aria-labelledby="cs-title">
+          <div class="hello">
+            <h1 id="cs-title" class="hello-title"></h1>
+            <p id="cs-summary" class="hello-summary" aria-live="polite"></p>
+          </div>
+          <div class="archive-head">
+            <h2 id="cs-list-title" class="section-title"></h2>
+            <div class="filters" id="cs-filters" role="group"></div>
+          </div>
+          <div id="cs-list"></div>
+        </section>
+
+        <section class="page-view workflows" id="workflows" aria-labelledby="wf-title">
           <div class="hello">
             <h1 id="wf-title" class="hello-title"></h1>
             <p id="wf-summary" class="hello-summary" aria-live="polite"></p>

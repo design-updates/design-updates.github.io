@@ -1462,7 +1462,7 @@ button {
   transition: none !important;
 }
 
-/* ---------- pages: News and AI workflows ---------- */
+/* ---------- pages: News, Case studies and AI workflows ---------- */
 
 .views {
   display: flex;
@@ -1490,17 +1490,20 @@ button {
   background: var(--on-band);
   box-shadow: none;
 }
-.workflows {
+.view-tab[hidden],
+.page-view {
   display: none;
 }
-body[data-view='workflows'] .news-only {
+body[data-view='workflows'] .news-only,
+body[data-view='cases'] .news-only {
   display: none;
 }
-body[data-view='workflows'] .workflows {
+body[data-view='workflows'] .workflows,
+body[data-view='cases'] .cases {
   display: block;
 }
 
-/* A workflow row: the same row as Earlier, with a byline, the tools, and the facts behind More. */
+/* A workflow or case-study row: the same row as Earlier, with a byline and the facts behind More. */
 .wf-type {
   font: 500 11px/1 var(--display);
   letter-spacing: 0.08em;

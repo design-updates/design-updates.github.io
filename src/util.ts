@@ -2,7 +2,7 @@ import { existsSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
 
 export const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36 AppChangeRadar/0.1';
 
-const TRACKING_PARAMS = /^(utm_\w+|fbclid|gclid|mc_cid|mc_eid|ref|ref_src|cmpid|smid|guccounter|taid)$/i;
+const TRACKING_PARAMS = /^(utm_\w+|fbclid|gclid|mc_cid|mc_eid|ref|ref_src|cmpid|smid|guccounter|taid|partner)$/i;
 
 /** Same article, same string: lowercase host, no www., no tracking parameters, no #hash, no trailing slash. */
 export function normalizeUrl(raw: string): string {

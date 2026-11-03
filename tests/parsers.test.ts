@@ -172,3 +172,9 @@ test('page meta: a <time> with only readable text gives the date (Trip.com), and
   assert.equal(parsePageMeta('<time>3 November 2026</time>', 'https://x/a').publishedAt, '2026-11-03T12:00:00.000Z');
   assert.equal(parsePageMeta('<time>5 min read</time><p>Sale runs August 12, 2026</p>', 'https://x/a').publishedAt, null);
 });
+
+test('feed links encoded twice are decoded, and partner=rss is dropped', () => {
+  const [e] = parseFeed('<rss><channel><item><title>T</title><link>https://fastcompany.com/1/a?partner=rss&amp;amp;utm_source=rss&amp;amp;id=7</link></item></channel></rss>', 'https://fastcompany.com/rss');
+  assert.equal(e.url, 'https://fastcompany.com/1/a?partner=rss&utm_source=rss&id=7');
+  assert.equal(normalizeUrl(e.url), 'https://fastcompany.com/1/a?id=7');
+});

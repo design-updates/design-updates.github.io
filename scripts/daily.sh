@@ -64,6 +64,12 @@ else
     tail -n 3 .cache/workflows-run.txt
   fi
 
+  # Case studies: the same, for case studies of shipped work from well-known companies.
+  if grep -q "^enabled: true" casestudies.yaml 2>/dev/null; then
+    "$NODE" src/cases-cli.ts >.cache/cases-run.txt 2>&1 || echo "Case studies step failed (see .cache/cases-run.txt). The news is unaffected."
+    tail -n 3 .cache/cases-run.txt
+  fi
+
   git add data/
   if git diff --cached --quiet; then
     echo "No changes to upload."

@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-03T10:11:56.778Z",
+  "weeks": [
+    {
+      "week": "2026-11-02",
+      "from": "2026-10-20T10:11:56.778Z",
+      "to": "2026-11-03T10:11:56.778Z",
+      "checked": 72,
+      "picks": [
+        {
+          "id": "how-koto-refreshed-the-nubank-brand-for-its-us-launch-as-nu",
+          "title": "How Koto refreshed the Nubank brand for its US launch as Nu",
+          "post_title": "Brazil’s most popular bank brings its vibrant brand to the U.S.",
+          "url": "https://fastcompany.com/91631436/purple-is-everywhere-in-fintech-nu-bank-redesign",
+          "source": "Fast Company Design",
+          "domain": "fastcompany.com",
+          "company": "Nubank",
+          "by": "Koto with Nu",
+          "maker": "agency",
+          "area": "brand",
+          "published_at": "2026-10-29T07:00:00.000Z",
+          "problem": "Nubank was preparing to launch in the US and expand further abroad, but its brand attributes, especially its purple, had become common across fintech. The identity no longer set the bank apart.",
+          "approach": "Koto kept the purple but refined it, and added a secondary palette to work alongside it. They designed a proprietary typeface, Nu Sans, that works as an expressive headline font and stays legible at small sizes in the app. They added whimsical, optimistic illustrations and motion with bounce for kinetic type and app UX. They chose not to Americanize the brand and aimed for a global look instead.",
+          "outcome": "The new identity launched with Nu's US debut in September through partner bank Lead Bank, across the app, motion and a welcome kit with metal cards; the post gives no performance numbers.",
+          "lesson": "When your signature colour becomes the category's colour, keep it and stand out through type, illustration and motion.",
+          "score": 7,
+          "minutes": 2,
+          "image": "https://images.fastcompany.com/image/upload/w_1280,q_auto,f_auto,fl_lossy/f_webp,q_auto,c_fit/wp-cms-2/2026/10/01-91631436-nubank-rebrand.jpg",
+          "icon": "https://www.google.com/s2/favicons?domain=nubank.com.br&sz=64",
+          "zh": {
+            "title": "Koto 如何为 Nubank 以 Nu 之名进入美国市场更新品牌形象",
+            "problem": "Nubank 准备进入美国市场并进一步拓展海外业务，但它的品牌特征，尤其是紫色，已经在金融科技行业里随处可见，品牌不再具有辨识度。",
+            "approach": "Koto 保留了紫色并加以调整，同时增加了一套与之搭配的辅助色板。团队设计了专属字体 Nu Sans，既能用作富有表现力的大标题，在应用内的小字号下也清晰易读。插画风格轻松、乐观，动效带有弹性，用于动态文字和应用交互。团队有意不让品牌“美国化”，而是追求全球化的面貌。",
+            "outcome": "新品牌形象随 Nu 于 9 月通过合作银行 Lead Bank 在美国上线，覆盖应用、动效以及装有金属卡的欢迎礼盒；文章没有给出效果数据。",
+            "lesson": "当你的标志色变成了整个品类的颜色，可以保留它，再用字体、插画和动效建立区分度。"
+          }
+        },
+        {
+          "id": "how-discord-merged-its-separate-video-players-into-one-share",
+          "title": "How Discord merged its separate video players into one shared player for 90 million daily users",
+          "post_title": "Modernizing the Video Playback Experience at Discord",
+          "url": "https://discord.com/blog/modernizing-the-video-playback-experience-at-discord",
+          "source": "Discord",
+          "domain": "discord.com",
+          "company": "Discord",
+          "by": "Discord Media Infrastructure team",
+          "maker": "team",
+          "area": "system",
+          "published_at": "2026-11-02T00:00:00.000Z",
+          "problem": "Discord had four separate video player implementations. The two largest, the attachments player and the Quest player, shared no code and had no tests, so every feature had to be built twice and every bug fixed twice. The team wanted to modernize the viewing experience and make one player that any team could change safely.",
+          "approach": "The team audited every place Discord plays video, and gave silent background videos a lightweight effect component instead of the full player. They started with the Quest player because it had the richest features (reward markers, end cards, progress rings, animations) and was a more contained surface than videos shared in chats. Before rebuilding anything, they wrote 60 unit tests and 7 Playwright end-to-end tests, and put the player in a component playground to separate shared behavior from Quest-specific parts.",
+          "outcome": "The two main players became one shared player, the player code each product maintained dropped by up to 94%, and the first version was swapped in without users noticing.",
+          "lesson": "Map every variant of a component and pin down its current behavior before you redesign it.",
+          "score": 7,
+          "minutes": null,
+          "image": "https://cdn.prod.website-files.com/5f9072399b2640f14d6a2bf4/67f4343d3897ce1dca91d04e_2024_10_DiscordBlog_Educational-2.png",
+          "icon": "https://www.google.com/s2/favicons?domain=discord.com&sz=64",
+          "zh": {
+            "title": "Discord 如何为 9000 万日活用户把多个视频播放器合并为一个共享播放器",
+            "problem": "Discord 内部有四套独立的视频播放器。其中最大的两套，附件播放器和 Quest 播放器，没有任何共用代码，也没有任何测试，每个新功能都要做两遍，每个问题都要修两遍。团队希望更新观看体验，并做出一个任何团队都能放心修改的播放器。",
+            "approach": "团队梳理了 Discord 中所有播放视频的位置，并为无声的背景视频单独做了一个轻量的视频效果组件，不再套用完整播放器。他们选择从 Quest 播放器入手，因为它功能最丰富（奖励标记、片尾卡片、进度环、动画），而且影响范围比聊天中的视频更小。在重建之前，他们先写了 60 个单元测试和 7 个 Playwright 端到端测试，并把播放器放进组件预览环境，以区分通用行为和 Quest 专属部分。",
+            "outcome": "两套主要播放器合并为一个共享播放器，各产品需要维护的播放器代码最多减少了 94%，第一个版本替换上线时用户没有察觉。",
+            "lesson": "重新设计一个组件之前，先找出它的所有变体，并把现有行为固定下来。"
+          }
+        }
+      ],
+      "collected_at": "2026-11-03T10:11:56.778Z"
+    }
+  ]
+}

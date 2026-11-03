@@ -50,6 +50,7 @@ Other commands:
 - `npm run build`: builds the site into `dist/`.
 - `npm run dev`: builds and serves the site at http://localhost:5180.
 - `npm run workflows`: adds today's posts to the AI workflows pool and, on the first run of a week, picks that week's posts (see below). `-- --dry-run` reads and filters without calling the model; `-- --force` picks the current week again.
+- `npm run cases`: the same for the Case studies page (see below), with the same options.
 - `npm test`: runs the tests.
 
 ### Which AI it uses
@@ -138,6 +139,16 @@ A second page, **AI workflows**, collects posts in which designers show how they
 - **Each pick** has a plain title, the author and their role when the post says, the tools, the stage of design work, the process, the result, the catch (only if the post names one) and who should try it, in English and Chinese.
 - **Output:** `data/workflows.json`. `npm run workflows` prints what was kept and dropped with the reason for each; the last report is in `.cache/workflows-last.txt`.
 - **To turn it off:** set `enabled: false` in `workflows.yaml`. The tab disappears from the page and the morning job skips it.
+
+## Case studies
+
+A third page, **Case studies**, collects the most inspiring design case studies of shipped work from well-known companies: what the problem was, what the team did and why, what happened, and one thing to take away. It is a weekly list.
+
+- **Sources** are in `casestudies.yaml`: company design and product blogs (Microsoft Design, Slack Design, Discord, Duolingo, IBM Design, Lyft Design, Thumbtack, Linear, Stripe, GitHub), company engineering blogs that sometimes cover product and design work (Airbnb, Netflix, Pinterest, Spotify, Shopify, Meta, Dropbox, Grab, Nubank, Expedia Group, Booking.com), and the design press (Fast Company Design, Design Week, Awwwards, UX Collective, Smashing Magazine). The file also lists the sources tried and left out, and why.
+- **On the first run of each week** it takes the posts from the last `window_days` (14), because company blogs post a case every few weeks, not every day. Rules drop posts with no design words (most engineering posts), patch notes, interviews, newsletters and posts in other languages. The company Claude then keeps only work for a well-known company that shipped and explains the case. Concepts, course projects, small local businesses, ad campaigns, architecture and engineering-only posts are dropped. Each case gets a score out of 10; at most `max_picks` (5) with at least `min_score` (7) are kept. A post is judged once, so nothing shows up twice.
+- **Each pick** has a plain title, the company and its own icon, who did the work (in-house team, agency or one designer), the area (product, design system, brand, research or content), the problem, what they did, what happened and a take-away, in English and Chinese.
+- **Output:** `data/cases.json`. `npm run cases` prints what was kept and dropped with the reason for each; the last report is in `.cache/cases-last.txt`.
+- **To turn it off:** set `enabled: false` in `casestudies.yaml`.
 
 ## The morning job (this Mac)
 

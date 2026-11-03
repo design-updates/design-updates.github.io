@@ -1,0 +1,38 @@
+src/backfill-compare.ts
+  s_54fc1ca7bb74fe::t_caa20805bac600 1-4,13-20,27-28,34,42-43
+src/run.ts
+  s_54fc1ca7bb74fe::t_2c915ced19279e 284-285
+site/styles.css
+  s_54fc1ca7bb74fe::t_81aea1cb852a7c 691-692,695
+  s_54fc1ca7bb74fe::t_2c82a96931acf4 728-736
+README.md
+  s_54fc1ca7bb74fe::t_bd10aa7edfd81c 18,48,185
+site/app.js
+  s_54fc1ca7bb74fe::t_2c82a96931acf4 819-826,907,911-923
+src/compare.ts
+  s_54fc1ca7bb74fe::t_2c915ced19279e 1,3-6,9,12,38-48,59-67,80-81,83-84,87-112,120-121,123-130,133-135,137,144,158-161,163-164,167-195,204-205,207-208,210,218-219,222,225-228,231,234-238
+  s_54fc1ca7bb74fe::t_a795e633d7965e 148,150,162
+  s_54fc1ca7bb74fe::t_6913a891981255 68-79,82,85-86,149,165-166
+  s_54fc1ca7bb74fe::t_b61cc488efd136 146-147,151-157
+tests/pipeline.test.ts
+  s_54fc1ca7bb74fe::t_124fd272d89294 485-486,492-497,501,504-505,507,511-515,517-518,523-525,527,530-531,533-538,540-541,543
+  s_54fc1ca7bb74fe::t_e783d2422fda1c 526
+  s_54fc1ca7bb74fe::t_b61cc488efd136 539,542,544
+  s_54fc1ca7bb74fe::t_6913a891981255 498-500,508,516
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.51-trip",
+  "base_commit_sha": "746cd6e936e0f179362c8b96c1d13d9e6870c7c7",
+  "prompts": {},
+  "sessions": {
+    "s_54fc1ca7bb74fe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "752feab2-5b26-4e2c-8c5b-8e100159791a",
+        "model": "claude-opus-5.5"
+      },
+      "human_author": "kashif-08 <kashif-08@users.noreply.github.com>"
+    }
+  }
+}

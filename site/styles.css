@@ -1,22 +1,25 @@
 /* Pixel Post: a morning paper for one, set in pixels.
-   Pixelify Sans for display, Fustat for reading. Muted paper, one coral-red accent, one dot colour per category. */
+   Pixelify Sans for display, Fustat for reading. Every colour comes from the reader's palette (Nov 2026):
+   pale green-white paper, black ink, forest green and grey for quieter text, one indigo accent (lavender in dark,
+   where indigo is too dark to read), one dot colour per category. Small text is at least 4.5:1 in both themes. */
 
 :root {
-  --paper: #f3efe6;
-  --paper-2: #ebe5d8;
-  --card: #fbf9f4;
-  --ink: #1d1a16;
-  --ink-2: #4a443b;
-  --ink-3: #6e675c;
-  --line: #d9d1c1;
-  --accent: #d6614f;
+  --paper: #f5ffe5; /* cream */
+  --paper-2: #e2e2e2; /* light grey: picture frames, empty slots */
+  --card: #ffffff;
+  --ink: #000000;
+  --ink-2: #285b38; /* forest, 7.7:1 */
+  --ink-3: #6d6e6d; /* grey, 5.0:1 */
+  --line: #9cb8ad; /* sage */
+  --accent: #4c49f3; /* indigo, 5.7:1 */
   --accent-ink: var(--accent); /* one accent everywhere: text, cursor, timeline */
-  --sun: #f2b705;
-  --ota: #2f6fe0;
-  --rail: #1d9a5b;
-  --platform: #7b4fd6;
-  --consumer: #e0446e;
-  --shadow: #1d1a16;
+  --sun: #b2902f; /* ochre */
+  --ota: #51b3f9; /* sky */
+  --rail: #61c87a; /* green */
+  --platform: #7f52f6; /* violet */
+  --consumer: #ee7a48; /* orange */
+  --shadow: #000000;
+  --tile: #ffffff; /* behind logos */
 
   /* Pixelify Sans and Fustat have no Chinese characters; Chinese text falls back to the system's Chinese font. */
   --cjk: 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
@@ -32,21 +35,22 @@
 }
 
 [data-theme='dark'] {
-  --paper: #16140f;
-  --paper-2: #1e1b15;
-  --card: #1c1913;
-  --ink: #efe9dc;
-  --ink-2: #c9c1b1;
-  --ink-3: #9c9384;
-  --line: #3a352b;
-  --accent: #d6614f;
+  --paper: #000000;
+  --paper-2: #2c2c2c; /* dark grey */
+  --card: #2c2c2c;
+  --ink: #f5ffe5; /* cream, 20:1 */
+  --ink-2: #9cb8ad; /* sage, 9.9:1 */
+  --ink-3: #857a7a; /* taupe, 5.1:1 */
+  --line: #285b38; /* forest */
+  --accent: #c2bafa; /* lavender, 11.7:1 */
   --accent-ink: var(--accent);
-  --sun: #ffcc33;
-  --ota: #6b9cff;
-  --rail: #3fcf8a;
-  --platform: #a98bff;
-  --consumer: #ff7a9c;
-  --shadow: #000;
+  --sun: #e9fea3; /* lime */
+  --ota: #51b3f9;
+  --rail: #61c87a;
+  --platform: #7f52f6;
+  --consumer: #ee7a48;
+  --shadow: #2c2c2c;
+  --tile: #f5ffe5;
   color-scheme: dark;
 }
 
@@ -382,11 +386,11 @@ button {
    Times), which vanishes on the dark page. A logo that is light on transparent gets a dark tile instead (tileIcons). */
 .icon,
 .sources .stack img {
-  background: #f3efe6;
+  background: var(--tile);
 }
 .icon.on-dark,
 .sources .stack img.on-dark {
-  background: #1d1a16;
+  background: #000000;
 }
 .icon {
   flex: none;
@@ -725,10 +729,10 @@ button {
   height: 100%;
   object-fit: cover;
 }
-/* A picture far from the frame's shape is shown whole, on a light paper (most such pictures are screenshots). */
+/* A picture far from the frame's shape is shown whole, on the theme's grey (light grey, or dark grey in dark mode). */
 .media.whole,
 .row-thumb.whole {
-  background: #f3efe6;
+  background: var(--paper-2);
 }
 .media.whole img,
 .row-thumb.whole img {

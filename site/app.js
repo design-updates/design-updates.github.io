@@ -348,7 +348,7 @@ const CUP = [
   '.cccccccccccccc.',
   '................',
 ];
-const cup = () => pixels(CUP, { c: 'var(--ink)', k: '#8a5a33', w: 'var(--card)', s: ['var(--ink-3)', 'steam'], t: ['var(--ink-3)', 'steam s2'] });
+const cup = () => pixels(CUP, { c: 'var(--ink)', k: '#b2902f', w: 'var(--card)', s: ['var(--ink-3)', 'steam'], t: ['var(--ink-3)', 'steam s2'] });
 
 const TREND = [
   '............',
@@ -1022,7 +1022,7 @@ function paintTheme() {
   const dark = document.documentElement.dataset.theme === 'dark';
   btn.innerHTML = dark ? sun() : moon();
   btn.setAttribute('aria-label', dark ? t().toLight : t().toDark);
-  $('meta[name="theme-color"]').content = dark ? '#16140f' : '#f3efe6';
+  $('meta[name="theme-color"]').content = dark ? '#000000' : '#f5ffe5';
 }
 
 function wireTheme() {

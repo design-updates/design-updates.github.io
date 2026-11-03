@@ -502,10 +502,10 @@ function paintNote(id) {
 }
 
 /** Old and new design side by side (or one picture that shows both). */
-function compareHtml(item, size = 'lead') {
+function compareHtml(item) {
   const c = item.compare;
   const label = (k) => `<figcaption>${k === 'before' ? (c.from === 'app-store' && c.before_version ? `${t().before} · v${esc(c.before_version)}` : t().before) : c.from === 'app-store' && item.release ? `${t().after} · v${esc(item.release.version)}` : t().after}</figcaption>`;
-  const pic = (src) => `<img src="${esc(src)}" alt="" loading="${size === 'lead' ? 'eager' : 'lazy'}" referrerpolicy="no-referrer" decoding="async">`;
+  const pic = (src) => `<img src="${esc(src)}" alt="" loading="eager" referrerpolicy="no-referrer" decoding="async">`;
   const href = esc(safeUrl(item.sources?.[0]?.url));
   if (c.combined || !c.before) {
     return `<a class="frame photo" href="${href}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-read="${esc(item.id)}"><div class="compare notch one"><figure>${pic(c.after)}<figcaption>${c.combined ? t().beforeAfter : t().after}</figcaption></figure></div></a>`;
@@ -518,14 +518,14 @@ function why(item) {
 }
 
 /** A photo if there is one; otherwise the app icon blown up into a pixel mosaic. */
-function media(item, { reveal = false, ratio } = {}) {
-  if (item.compare?.after) return compareHtml(item, reveal ? 'lead' : 'card');
+function media(item) {
+  if (item.compare?.after) return compareHtml(item);
   const href = esc(safeUrl(item.sources?.[0]?.url));
-  const style = `--c: var(--${esc(item.category)})${ratio ? `; aspect-ratio: ${ratio}` : ''}`;
+  const style = `--c: var(--${esc(item.category)})`;
   if (item.image) {
     return `<a class="frame photo" href="${href}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-read="${esc(item.id)}">
-      <div class="media notch${reveal && !reduced ? ' pending' : ''}" style="${style}" data-mosaic="${esc(iconAt(iconFor(item), 16))}">
-        <img src="${esc(item.image)}" alt="" loading="${reveal ? 'eager' : 'lazy'}" referrerpolicy="no-referrer" decoding="async">
+      <div class="media notch${reduced ? '' : ' pending'}" style="${style}" data-mosaic="${esc(iconAt(iconFor(item), 16))}">
+        <img src="${esc(item.image)}" alt="" loading="eager" referrerpolicy="no-referrer" decoding="async">
       </div></a>`;
   }
   return `<a class="frame" href="${href}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-read="${esc(item.id)}">
@@ -557,7 +557,7 @@ function cardHtml(item, i) {
         ${moreBtn(`more-${item.id}`)}
       </div>
     </div>
-    ${media(item, { reveal: true })}
+    ${media(item)}
   </article>`;
 }
 
@@ -798,7 +798,7 @@ function pixelate(box) {
     const ctx = canvas.getContext('2d');
     box.append(canvas);
     done();
-    // Small thumbnails need fewer, smaller steps than the lead photo.
+    // Small thumbnails need fewer, smaller steps than a story picture.
     const steps = box.clientWidth < 200 ? [4, 8, 16, 32] : [5, 10, 20, 40, 80];
     let i = 0;
     const tick = () => {

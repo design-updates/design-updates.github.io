@@ -180,11 +180,9 @@ export async function addCompares(
           } else if (before && after && before !== after) {
             item.compare = { before, after, from: 'article' };
             notes.push(`${item.id}: old and new pictures${why}`);
-          } else {
-            if (best) {
-              if (best !== item.image) notes.push(`${item.id}: picture ${seen.findIndex((g) => g.img.src === best)} of ${seen.length} chosen${why}`);
-              item.image = best;
-            }
+          } else if (best) {
+            if (best !== item.image) notes.push(`${item.id}: picture ${seen.findIndex((g) => g.img.src === best)} of ${seen.length} chosen${why}`);
+            item.image = best;
           }
           return;
         } catch (err) {
@@ -193,12 +191,9 @@ export async function addCompares(
       }
     }
 
-    const pair = pairFromWords(images);
-    const fresh = pair ? null : newOnly(images);
-    if (pair) {
-      item.compare = pair;
-      notes.push(`${item.id}: ${pair.combined ? 'one before/after picture' : 'before and after'} from captions`);
-    } else if (fresh) {
+    // Captions that name a pair were handled above; one that names only the new design is used as it is.
+    const fresh = newOnly(images);
+    if (fresh) {
       item.image = fresh;
       notes.push(`${item.id}: picture of the new design from captions`);
     } else byText.push({ item, images });

@@ -29,6 +29,7 @@
   --on-band: #e9fea3;
   --on-band-2: #f5ffe5;
   --on-band-mark: #ffffff;
+  --band-shadow: #000000;
 
   /* Pixelify Sans and Fustat have no Chinese characters; Chinese text falls back to the system's Chinese font. */
   --cjk: 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
@@ -190,7 +191,7 @@ button {
   position: absolute;
   inset: 0;
   transform: translate(calc(var(--px) * 1.5), calc(var(--px) * 1.5));
-  background: var(--shadow);
+  background: var(--edge);
   z-index: -1;
   transition: transform 0.18s var(--step);
 }
@@ -253,12 +254,9 @@ button {
   box-shadow: inset 0 0 0 2px var(--line);
   font: 500 12px/1 var(--display);
   letter-spacing: 0.04em;
-  color: var(--ink-2);
+  color: var(--ink);
   cursor: pointer;
   transition: box-shadow 0.12s var(--step);
-}
-.act:hover {
-  box-shadow: inset 0 0 0 2px var(--ink-3);
 }
 .act:disabled {
   opacity: 0.35;
@@ -370,8 +368,8 @@ button {
   font: 600 11px/1 var(--display);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--paper);
-  background: var(--ink-2);
+  color: var(--on-fill);
+  background: var(--fill);
   padding: 3px 5px 2px;
 }
 .chip-gap {
@@ -428,8 +426,22 @@ button {
 
 /* ---------- masthead ---------- */
 
+/* The masthead is an indigo band from edge to edge of the window, with lime type (dark mode: lime band, black type). */
 .masthead {
+  --ink: var(--on-band);
+  --ink-2: var(--on-band-2);
+  --ink-3: var(--on-band-2);
+  --line: var(--on-band);
+  --paper: var(--band);
+  --accent: var(--on-band-mark);
+  --accent-ink: var(--on-band);
+  position: relative;
   padding-top: clamp(20px, 4vw, 40px);
+  padding-bottom: 0;
+  color: var(--ink);
+  background: var(--band);
+  box-shadow: 0 0 0 100vmax var(--band);
+  clip-path: inset(0 -100vmax);
 }
 .masthead-row {
   display: flex;
@@ -475,16 +487,13 @@ button {
   color: var(--ink);
   box-shadow: inset 0 0 0 2px var(--line);
 }
-.digest-btn:hover {
-  box-shadow: inset 0 0 0 2px var(--ink);
-}
 .digest-btn .n {
   min-width: 18px;
   padding: 3px 4px 2px;
   font-size: 11px;
   text-align: center;
-  color: var(--paper);
-  background: var(--accent);
+  color: var(--band);
+  background: var(--on-band);
 }
 .digest-btn .n[hidden] {
   display: none;
@@ -533,32 +542,6 @@ button {
   padding: 0;
   font-size: 16px;
 }
-.d-field {
-  display: block;
-  margin: 12px 0;
-}
-.d-field span {
-  display: block;
-  margin-bottom: 6px;
-  font: 500 12px/1 var(--display);
-  letter-spacing: 0.04em;
-  color: var(--ink-3);
-}
-.d-field textarea,
-.d-field input {
-  width: 100%;
-  padding: 10px 12px;
-  border: 0;
-  background: var(--card);
-  box-shadow: inset 0 0 0 2px var(--line);
-  font: 400 14px/1.45 var(--body);
-  color: var(--ink);
-}
-.d-field textarea:focus,
-.d-field input:focus {
-  outline: none;
-  box-shadow: inset 0 0 0 2px var(--accent);
-}
 .d-list {
   margin: 0;
   padding: 0;
@@ -603,11 +586,6 @@ button {
 .d-remove {
   margin-top: 8px;
 }
-.d-buttons {
-  display: flex;
-  gap: 8px;
-  margin-top: 16px;
-}
 .d-hint {
   margin: 16px 0 0;
   font: 400 12px/1.5 var(--display);
@@ -628,9 +606,6 @@ button {
   box-shadow: inset 0 0 0 2px var(--line);
   transition: box-shadow 0.15s var(--step);
 }
-.lang-toggle:hover {
-  box-shadow: inset 0 0 0 2px var(--ink);
-}
 .theme-toggle {
   display: grid;
   place-items: center;
@@ -640,11 +615,9 @@ button {
   border: 0;
   background: transparent;
   cursor: pointer;
+  color: var(--ink);
   box-shadow: inset 0 0 0 2px var(--line);
   transition: box-shadow 0.15s var(--step);
-}
-.theme-toggle:hover {
-  box-shadow: inset 0 0 0 2px var(--ink);
 }
 .theme-toggle svg {
   width: 18px;
@@ -712,19 +685,20 @@ button {
 .today {
   display: flex;
   flex-direction: column;
+  gap: 28px;
 }
-/* One story per row: text left, its own picture right. A dotted rule between rows, as in Earlier. Every story's
-   picture is the same size (one column width, 16:9); only the first story's headline is larger. */
+/* One story per card: text left, its own picture right, a black border and a hard indigo pixel shadow. Every
+   story's picture is the same size (one column width, 16:9); only the first story's headline is larger. */
 .story {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
   gap: 0 clamp(24px, 3.5vw, 48px);
   align-items: start;
-  padding: clamp(26px, 3.5vw, 40px) 0;
-}
-.story + .story,
-.pattern + .story {
-  background: repeating-linear-gradient(90deg, var(--line) 0 var(--px), transparent var(--px) calc(var(--px) * 2)) top / 100% 2px no-repeat;
+  padding: clamp(20px, 2.6vw, 30px);
+  background: var(--card);
+  box-shadow:
+    inset 0 0 0 3px var(--edge),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 0 var(--shadow);
 }
 .story-text {
   min-width: 0;
@@ -924,7 +898,7 @@ button {
   padding: 0 9px 0 10px;
   border: 0;
   background: transparent;
-  box-shadow: inset 0 0 0 2px var(--accent);
+  box-shadow: inset 0 0 0 2px var(--edge);
   font: 500 12px/1 var(--display);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -933,10 +907,11 @@ button {
   transition: background-color 0.12s var(--step);
 }
 .more:hover {
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--on-fill);
+  background: var(--fill);
 }
 .chev {
-  color: var(--accent);
+  color: currentColor;
   transition: transform 0.2s steps(2, end);
 }
 .more[aria-expanded='true'] .chev {
@@ -1007,8 +982,8 @@ button {
     repeating-conic-gradient(color-mix(in srgb, var(--accent) 9%, transparent) 0 25%, transparent 0 50%) 0 0 / 8px 8px,
     var(--card);
   box-shadow:
-    inset 0 0 0 2px var(--ink),
-    calc(var(--px) * 1.5) calc(var(--px) * 1.5) 0 0 var(--shadow);
+    inset 0 0 0 3px var(--edge),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 0 var(--shadow);
 }
 .pattern svg {
   flex: none;
@@ -1072,11 +1047,16 @@ button {
   gap: 16px 24px;
   padding-bottom: 18px;
   margin-bottom: 8px;
-  background: linear-gradient(var(--ink) 0 0) bottom / 100% 2px no-repeat;
+  background: linear-gradient(var(--ink) 0 0) bottom / 100% 3px no-repeat;
 }
+/* Section heads: a solid black label. */
 .section-title {
+  display: inline-block;
   margin: 0;
+  padding: 8px 12px 6px;
   font: 600 30px/1 var(--display);
+  color: var(--on-fill);
+  background: var(--fill);
 }
 .section-title .count {
   margin-left: 10px;
@@ -1097,27 +1077,17 @@ button {
   height: 32px;
   padding: 0 12px;
   border: 0;
-  background: transparent;
+  background: var(--card);
   box-shadow: inset 0 0 0 2px var(--line);
   font: 500 13px/1 var(--display);
   letter-spacing: 0.04em;
-  color: var(--ink-2);
+  color: var(--ink);
   cursor: pointer;
   transition: box-shadow 0.12s var(--step), background-color 0.12s var(--step);
 }
-.chip:hover {
-  box-shadow: inset 0 0 0 2px var(--ink-3);
-}
-.chip[aria-pressed='true'] {
-  background: var(--ink);
-  color: var(--paper);
-  box-shadow: inset 0 0 0 2px var(--ink);
-}
 .chip .n {
-  color: var(--ink-3);
-}
-.chip[aria-pressed='true'] .n {
-  color: color-mix(in srgb, var(--paper) 70%, transparent);
+  color: inherit;
+  opacity: 0.75;
 }
 .chip[data-cat]::before {
   content: '';
@@ -1164,19 +1134,20 @@ button {
 .rail-fill {
   position: absolute;
   top: 0;
-  right: -16px;
-  width: 2px;
+  right: -17px;
+  width: 4px;
   height: var(--fill, 0px);
   background: var(--accent);
   pointer-events: none;
 }
+/* The square at the tip, centred on the line. */
 .rail-fill::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   left: -2px;
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   background: var(--accent);
   opacity: var(--tip, 0);
 }
@@ -1198,7 +1169,7 @@ button {
 .day.has-unread .rail-inner::after {
   background: var(--ink);
 }
-/* A date turns orange once the fill reaches it. */
+/* A date turns the accent colour once the fill reaches it. */
 .day.reached .rail-inner::after {
   background: var(--accent);
   box-shadow: inset 0 0 0 2px var(--accent);
@@ -1212,9 +1183,6 @@ button {
   margin-top: 2px;
   font: 400 14px/1.2 var(--display);
   color: var(--ink-3);
-}
-.rail-pattern {
-  display: none;
 }
 
 .rows {
@@ -1296,6 +1264,7 @@ button {
 .row.open .what {
   color: var(--ink-2);
 }
+/* Thumbnails get the same black border as the cards. */
 .row-thumb {
   grid-column: 2;
   grid-row: 1 / span 2;
@@ -1305,6 +1274,8 @@ button {
   width: 112px;
   aspect-ratio: 4 / 3;
   margin-top: 24px;
+  outline: 2px solid var(--edge);
+  outline-offset: -2px;
   --n: 3px;
 }
 .row-thumb canvas {
@@ -1486,27 +1457,29 @@ button {
 
 .views {
   display: flex;
-  gap: 22px;
-  padding-top: 12px;
+  gap: 4px;
+  padding: 14px 0 0;
 }
 .views[hidden] {
   display: none;
 }
 .view-tab {
-  padding: 2px 0 6px;
+  padding: 9px 14px 8px;
   font: 500 14px/1 var(--display);
   letter-spacing: 0.04em;
-  color: var(--ink-3);
+  color: var(--on-band);
   text-decoration: none;
-  box-shadow: inset 0 -3px 0 transparent;
+  box-shadow: none;
   transition: box-shadow 0.12s var(--step), color 0.12s var(--step);
 }
 .view-tab:hover {
-  color: var(--ink);
+  color: var(--on-band);
+  box-shadow: inset 0 -4px 0 var(--on-band);
 }
 .view-tab[aria-current='page'] {
-  color: var(--ink);
-  box-shadow: inset 0 -3px 0 var(--accent);
+  color: var(--band);
+  background: var(--on-band);
+  box-shadow: none;
 }
 .workflows {
   display: none;
@@ -1584,94 +1557,17 @@ html:lang(zh-CN) .view-tab {
 
 /* ---------- identity: colour blocks, black borders, hard pixel shadows ---------- */
 
-/* The masthead is an indigo band from edge to edge of the window, with lime type. */
-.masthead {
-  --ink: var(--on-band);
-  --ink-2: var(--on-band-2);
-  --ink-3: var(--on-band-2);
-  --line: var(--on-band);
-  --paper: var(--band);
-  --accent: var(--on-band-mark);
-  --accent-ink: var(--on-band);
-  position: relative;
-  padding-bottom: 0;
-  color: var(--ink);
-  background: var(--band);
-  box-shadow: 0 0 0 100vmax var(--band);
-  clip-path: inset(0 -100vmax);
-}
-.views {
-  padding: 14px 0 0;
-  gap: 4px;
-}
-.view-tab {
-  padding: 9px 14px 8px;
-  color: var(--on-band);
-  box-shadow: none;
-}
-.view-tab:hover {
-  color: var(--on-band);
-  box-shadow: inset 0 -4px 0 var(--on-band);
-}
-.view-tab[aria-current='page'] {
-  color: var(--band);
-  background: var(--on-band);
-  box-shadow: none;
-}
-.digest-btn .n {
-  color: var(--band);
-  background: var(--on-band);
-}
 
-/* Today's stories are cards: a black border and a hard indigo pixel shadow. */
-.today {
-  gap: 28px;
-}
-.story {
-  padding: clamp(20px, 2.6vw, 30px);
-  background: var(--card);
-  box-shadow:
-    inset 0 0 0 3px var(--edge),
-    calc(var(--px) * 2) calc(var(--px) * 2) 0 0 var(--shadow);
-}
-.story + .story,
-.pattern + .story {
-  background: var(--card);
-}
-.story > .frame::before {
-  background: var(--edge);
-}
 /* The day's first story: the same card, a larger headline. */
 .story:first-child .headline {
   font-size: clamp(26px, 3vw, 36px);
   line-height: 1.12;
 }
-.pattern {
-  box-shadow:
-    inset 0 0 0 3px var(--edge),
-    calc(var(--px) * 2) calc(var(--px) * 2) 0 0 var(--shadow);
-}
 
-/* Section heads: a solid black label. */
-.section-title {
-  display: inline-block;
-  padding: 8px 12px 6px;
-  color: var(--on-fill);
-  background: var(--fill);
-}
-.archive-head {
-  background: linear-gradient(var(--ink) 0 0) bottom / 100% 3px no-repeat;
-}
 
-/* Buttons and chips: black borders, solid black when on, an indigo pixel shadow when hovered. */
-.chip,
-.act,
-.lang-toggle,
-.theme-toggle,
-.digest-btn {
-  box-shadow: inset 0 0 0 2px var(--line);
-  color: var(--ink);
-}
+/* Buttons and chips: black borders, solid black when on, an indigo pixel shadow when hovered. These come after
+   the pressed Save button so hovering it still shows the hover border, and before the pressed chip so a pressed
+   chip stays solid when hovered. */
 .chip:hover,
 .act:hover,
 .lang-toggle:hover,
@@ -1686,55 +1582,14 @@ html:lang(zh-CN) .view-tab {
 .masthead .digest-btn:hover {
   box-shadow:
     inset 0 0 0 2px var(--on-band),
-    3px 3px 0 0 var(--band-shadow, #000000);
-}
-.chip {
-  background: var(--card);
+    3px 3px 0 0 var(--band-shadow);
 }
 .chip[aria-pressed='true'] {
   color: var(--on-fill);
   background: var(--fill);
   box-shadow: inset 0 0 0 2px var(--fill);
 }
-.chip .n {
-  color: inherit;
-  opacity: 0.75;
-}
-.chip[aria-pressed='true'] .n {
-  color: inherit;
-}
-.more {
-  color: var(--ink);
-  box-shadow: inset 0 0 0 2px var(--edge);
-}
-.more:hover {
-  color: var(--on-fill);
-  background: var(--fill);
-}
-.chev {
-  color: currentColor;
-}
-.kind {
-  color: var(--on-fill);
-  background: var(--fill);
-}
 
-/* Earlier: thumbnails get the same black border; the timeline is thicker. */
-.row-thumb {
-  outline: 2px solid var(--edge);
-  outline-offset: -2px;
-}
-.rail-fill {
-  width: 4px;
-  right: -17px;
-}
-/* The square at the tip, centred on the 4px line (the dotted line under it is 2px, centred the same). */
-.rail-fill::after {
-  left: -2px;
-  width: 8px;
-  height: 8px;
-  bottom: -4px;
-}
 
 /* ---------- dark mode: the indigo accent, kept readable ---------- */
 
@@ -1780,9 +1635,7 @@ html:lang(zh-CN) .view-tab {
 [data-theme='dark'] .release {
   box-shadow: inset 0 0 0 1px var(--ink);
 }
-[data-theme='dark'] .note-box:focus,
-[data-theme='dark'] .d-field textarea:focus,
-[data-theme='dark'] .d-field input:focus {
+[data-theme='dark'] .note-box:focus {
   box-shadow:
     inset 0 0 0 2px var(--ink),
     3px 3px 0 0 #4c49f3;
@@ -1818,16 +1671,14 @@ html:lang(zh-CN) .row-title {
   line-height: 1.5;
 }
 
-@media (max-width: 960px) {
-}
-
 @media (max-width: 640px) {
   body {
     font-size: 15.5px;
   }
+  /* Wordmark and three buttons on one row at 375px. */
   .masthead-row {
     flex-wrap: wrap;
-    gap: 10px 12px;
+    gap: 10px 8px;
   }
   .masthead-meta {
     order: 3;
@@ -1835,11 +1686,6 @@ html:lang(zh-CN) .row-title {
     margin: 0;
     text-align: left;
     font-size: 13px;
-  }
-  /* Wordmark and three buttons on one row at 375px. */
-  .masthead-row {
-    flex-wrap: wrap;
-    gap: 10px 8px;
   }
   .wordmark {
     gap: 8px;
@@ -1984,7 +1830,9 @@ html:lang(zh-CN) .row-title {
     gap: 0 10px;
     padding-top: 18px;
   }
+  /* The opened text uses the full width, under the thumbnail. */
   .row-thumb {
+    grid-row: 1;
     width: 72px;
     aspect-ratio: 1;
     margin-top: 20px;
@@ -2002,10 +1850,6 @@ html:lang(zh-CN) .row-title {
   }
   .row .what {
     font-size: 14px;
-  }
-  /* On a phone the opened text uses the full width, under the thumbnail. */
-  .row-thumb {
-    grid-row: 1;
   }
   /* 8px dot + 24px icon + two 10px gaps. */
   .row-fold {

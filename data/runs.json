@@ -617,5 +617,59 @@
       }
     ],
     "cost_usd": 0
+  },
+  {
+    "at": "2026-11-04T23:01:04.007Z",
+    "date": "2026-11-05",
+    "mode": "company",
+    "feeds_ok": 13,
+    "feeds_failed": [
+      "The Keyword (Android)",
+      "The Keyword (Travel)",
+      "Booking Holdings",
+      "Lyft Blog",
+      "Traveloka News",
+      "Meta Newsroom",
+      "Spotify Newsroom",
+      "Duolingo Blog",
+      "Linear Changelog",
+      "Notion Releases",
+      "9to5Mac",
+      "9to5Google",
+      "MacRumors",
+      "The Verge",
+      "TechCrunch Apps",
+      "Skift",
+      "TechCrunch Transportation",
+      "Restaurant Dive",
+      "Inc42 (India)",
+      "Apple Newsroom",
+      "Netflix Tech Blog",
+      "It's Nice That",
+      "Dezeen",
+      "Dezeen (logos)",
+      "BP&O",
+      "Logo Design Love",
+      "PRINT",
+      "Sidebar",
+      "Figma Blog",
+      "Creative Bloq",
+      "Creative Boom"
+    ],
+    "candidates": 287,
+    "sent_to_model": 7,
+    "kept": 1,
+    "added": 1,
+    "usage": [
+      {
+        "step": "curate",
+        "model": "kr-claude-opus-5.5",
+        "input_tokens": 9336,
+        "output_tokens": 585,
+        "web_searches": 0,
+        "credits": 0.3654988709784411
+      }
+    ],
+    "cost_usd": 0
   }
 ]

@@ -61,10 +61,10 @@
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/ef/30/6eef3023-de04-3b29-21f8-a993245b9abd/iPhone6.5_-_Default_-_first_screen_adapt_Var_2_01.jpg/320x480bb.jpg"
     },
     "Revolut": {
-      "version": "10.153.1",
-      "date": "2026-10-28T09:53:59.000Z",
+      "version": "10.153.3",
+      "date": "2026-11-03T10:50:20.000Z",
       "notes": "Welcome to Revolut. We’ve made some tweaks and improvements under the hood in this version to make your Revolut experience even smoother.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2a/57/bc/2a57bcc6-39c7-8ed6-c056-1bffec31625c/Screen_1_1206x2622.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4d/e0/e2/4de0e230-ec4f-2030-b732-5cd32a22dfa3/Screen_1_1206x2622.jpg/320x480bb.jpg"
     },
     "Uber": {
       "version": "3.746.10001",
@@ -103,14 +103,14 @@
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d4/b5/c5/d4b5c54d-25ba-e4c0-7fbc-b1c0b3476ef3/01_iOS-1242x2688-Join-the-conversation_en_US.png/320x480bb.jpg"
     },
     "Notion": {
-      "version": "1.7.350",
-      "date": "2026-10-27T00:13:58.000Z",
+      "version": "1.7.351",
+      "date": "2026-11-03T18:16:20.000Z",
       "notes": "Bug fixes and performance improvements.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4e/9c/7b/4e9c7b5a-4e44-af47-6389-1fce93ffc6de/NotionLabs_Notion_iOS-6.9_US_Screenshots_250924_01.png/320x480bb.jpg"
     },
     "Linear": {
-      "version": "1.106.0",
-      "date": "2026-10-27T22:55:24.000Z",
+      "version": "1.107.0",
+      "date": "2026-11-03T17:20:35.000Z",
       "notes": "Bug fixes and minor improvements",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/5a/ae/ea5aaea5-37a2-f012-18e0-1b768410b871/initiatives.png/320x480bb.jpg"
     },
@@ -125,6 +125,204 @@
       "date": "2026-10-28T07:57:59.000Z",
       "notes": "While you’ve been out there planning and taking trips, we’ve been here, working to bring you the best version of the app yet. That means fixing bugs, adding new features, and generally making sure your trip is nothing but smooth sailing. Download the latest version if you haven’t already. Love the app? We’d love to hear it! Rate it to let us know how we’re doing.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bd/43/a8/bd43a84f-ec4b-85ac-4775-c68c48681948/0_APP_IPHONE_55_0.png/392x696bb.png"
+    },
+    "Skyscanner": {
+      "version": "7.216",
+      "date": "2026-11-03T21:32:51.000Z",
+      "notes": "This just in. Drops. Our brand-new app-exclusive feature is your next travel hack to get the best deal for your next trip. Every day, we’re sifting through billions of travel prices hunting for the best flight price drops of at least 20% to anywhere in the world. Simply tell us where you like to fly from, and watch the deals roll in. Whether you’re feeling a little spontaneous or got your eye on somewhere specific, check Drops for the latest prices from your top airport.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/09/3b/84/093b84e2-4966-7102-42b2-7463bbbb5409/5595c1a1-aa72-4597-bf84-2d38c07c72b0_01-iphone5.5-Screen-Title-en-CA.png/392x696bb.png"
+    },
+    "Traveloka": {
+      "version": "5.56.0",
+      "date": "2026-10-28T01:59:31.000Z",
+      "notes": "Ready for your next adventure? We’ve smoothed out the ride with performance boosts and bug fixes to make your travel planning better than ever. - Faster search and better stability. - General performance improvements for a seamless experience. Update your Traveloka app now and start your journey!",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/38/d2/a9/38d2a9fb-018c-f112-b885-75a3d525a79d/ASO_2025_iOS_1284x2778__U00282_U0029.png/320x480bb.jpg"
+    },
+    "Priceline": {
+      "version": "37.2",
+      "date": "2026-10-30T19:56:48.000Z",
+      "notes": "Planning your next trip just got easier. Here's what's new in the latest Priceline update: - Made for iPhone Duo: Priceline adapts to Duo's foldable screen, so your trip plans have room to unfold, whether your phone is open or closed. - Peace of Mind on Every Booking: Add confidence to your travels with insurance available across all our products. - Bundle Up, Save Big: Book flights, hotels, and cars together to unlock savingsor add a rental car to your round-trip flight in just a few taps. - Penny's Got You Covered: Get trip ideas, talk through plans, or use voice to plan with your AI travel companion while you're on the move. - Notifications Fully in Your Control: Pick the updates you want in settings and skip the ones you don't need. - Plan Smarter: Find your saved places, standout deals, and travel inspiration together in the Saved tab on My Trips. - Smoother Than Ever: Bug fixes and performance updates help make planning and booking feel more seamless.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9e/1f/2c/9e1f2cd4-588a-40f4-a2bf-8b5d56c41996/63296501-a4c1-41c4-85cc-9983cb2ec555_01-5.5_Inch_IOS_Hotel1.1_Copy.jpg/392x696bb.jpg"
+    },
+    "trivago": {
+      "version": "7.1.0",
+      "date": "2026-10-26T10:44:42.000Z",
+      "notes": "Ready to find your perfect stay? Well, good thing we’ve updated our app in this latest release. Let’s just say we’ve been busy bees implementing all sorts of bug fixes and performance improvements to give you the best app experience yet.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/6a/1a/5b6a1a2a-26fe-b494-3a24-1761fb8b4bc5/043fb1ea-e7c0-4da7-938c-196d9682135b_app_store_2008_55_AU.png/392x696bb.png"
+    },
+    "Amtrak": {
+      "version": "6.1.8",
+      "date": "2026-10-16T13:09:19.000Z",
+      "notes": "Thanks for choosing the Amtrak app. We continue to fix bugs and improve the experience. Please check for updates frequently to take advantage of the improvements.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/af/ec/60/afec6013-6c4a-cb6d-0ef7-93a159035d60/Slide_1.png/320x480bb.jpg"
+    },
+    "Uber Eats": {
+      "version": "6.347.10000",
+      "date": "2026-11-02T17:43:43.000Z",
+      "notes": "We update the Uber Eats app as often as possible to make it faster and more reliable for you. Here are a couple of the enhancements you'll find in the latest update: - Performance improvements - Localization updates Love the app? Rate us! Your feedback keeps the Uber Eats engine running. Have a question? Tap Help in the Uber Eats app or visit help.uber.com.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/de/cb/c4decbb3-75b8-30fd-a9aa-07b5c6c65c9f/Eats_US_iOS_iphoneX_1242x2688_SS01.jpg/320x480bb.jpg"
+    },
+    "Lyft": {
+      "version": "2026.42.3",
+      "date": "2026-11-02T19:19:18.000Z",
+      "notes": "Thank you for using Lyft! We regularly update our app to make your experience even better. Each update to our app includes reliability and speed improvements, in addition to bug fixes and performance improvements. New features are highlighted in the app.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/70/36/c8/7036c842-cb38-1ab2-3761-7bebdff7c28b/Apple_55_Rdr_US_F1_1242x2208.png/392x696bb.png"
+    },
+    "DoorDash": {
+      "version": "8.43.0",
+      "date": "2026-11-02T06:00:23.000Z",
+      "notes": "Minor updates and performance improvements",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/33/a1/5833a1ca-cbc7-31d4-26f0-2742f819aa7c/AppStore-iPhone6.9-Screen-01.jpg/320x480bb.jpg"
+    },
+    "Grubhub": {
+      "version": "2026.44.2",
+      "date": "2026-11-03T13:48:48.000Z",
+      "notes": "We upgraded the app. Now upgrade your mealtime with something delicious. Plus, there's still no delivery or service fees on $50+ restaurant orders.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dc/60/d8/dc60d8f9-ed93-2377-7d1f-79b5b809dc1b/Copy_of_82._Apple_Product_Page_-_Image_1_-_1242x2208_-_GH.png/392x696bb.png"
+    },
+    "MakeMyTrip": {
+      "version": "10.7.1",
+      "date": "2026-10-31T02:49:03.000Z",
+      "notes": "• A smoother travel experience with smarter bookings and greater flexibility. • Hotels – Book cabs alongside your stay. • Buses – Explore safety features and onboard amenities. • Trains – Cancel at ₹0 on eligible advance bookings and pre-book meals. • Cabs – Smarter recommendations, route selection, and improved post-booking support. • Tours & Attractions – Ratings and reviews across 10,000+ activities. • General fixes and performance enhancements across the app.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7f/35/00/7f3500c2-3b91-2b43-0a4c-f46d79d01898/0_APP_IPHONE_65_0.png/320x480bb.jpg"
+    },
+    "IRCTC Rail Connect": {
+      "version": "4.3.20",
+      "date": "2026-11-02T17:09:20.000Z",
+      "notes": "UI enhancement and minor bug fixes.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5c/bc/48/5cbc4871-c039-c1e4-a22b-8c79a623425a/a9.png/392x696bb.png"
+    },
+    "ixigo": {
+      "version": "9.5.8",
+      "date": "2026-11-01T10:14:08.000Z",
+      "notes": "Seasonal advisory: Low clouds may lead to high wanderlust. A change in weather may call for a change in scenery. Grey skies may result in colourful travel plans. Proceed with an open calendar. Find your next trip and book it now!",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/80/db/df/80dbdf15-acd2-0583-0d50-15df09c73935/1._Travel_Guarantee_-_Alternate_Travel_Plan_6.5.jpg/320x480bb.jpg"
+    },
+    "Zomato": {
+      "version": "27.7.1",
+      "date": "2026-11-03T20:47:58.000Z",
+      "notes": "Our latest update comes with bug fixes and performance enhancements to ensure a seamless experience across our app. Update your app now and give it a spin!",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4f/ea/08/4fea08ca-ea59-3c7d-5215-b91c778a141c/5.5inch_-_1.jpg/392x696bb.jpg"
+    },
+    "Swiggy": {
+      "version": "8.8.6",
+      "date": "2026-10-31T14:03:10.000Z",
+      "notes": "Bug fixes and improvements",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8a/56/f1/8a56f193-1d38-de5d-bb4a-1befa1140d76/IOS_Swiggy__U0028without_Giftables_U0029-.png/320x480bb.jpg"
+    },
+    "Fliggy": {
+      "version": "10.0.10.105",
+      "date": "2026-11-02T02:24:59.000Z",
+      "notes": "飞猪双十一优先购 【酒店】酒店特惠，预订送200元惊喜红包券 【机票】国内机票低至160元起 【度假】跟团特惠，速抢1500元券包 【赛事】预约抢明星演唱会门票",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cd/dd/f5/cdddf591-ffa8-9af0-5ffa-d3d1ce132bfa/_U5206_U9875-V10_U4e00_U53e5_U8bdd_U5c31_U51fa_U53d11242x2688.png/320x480bb.jpg"
+    },
+    "Railway 12306": {
+      "version": "5.9.6",
+      "date": "2026-06-26T01:55:04.000Z",
+      "notes": "【新版本特性】 1.页面焕新升级，优化功能布局； 2.提升产品体验，解决已知BUG。",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/83/7b/33/837b33f9-9c6f-e154-a3dc-a25101db6b5d/bd108256-e346-4382-9951-a98ec0a4b125__U9996_U9875-_U65e0_U5218_U6d77_U5c4f_U5907_U4efd_7@2x.png/392x696bb.png"
+    },
+    "DiDi": {
+      "version": "8.0.18",
+      "date": "2026-10-29T02:47:48.000Z",
+      "notes": "“滴滴出行”正式更名为“滴滴” 网约车青春代言人王安宇，「宇」你一起全新体验，去往每一种生活！ 页面结构全面升级！ 新增顶部导航栏，覆盖出行、送货、旅行、车主等多重使用场景，操作更顺畅。 底部导航栏新增“消息”、“行程”入口，查询更便捷。 新版打车地图视觉焕新上线！ 优化路边商铺、楼宇楼栋、道路显示效果；从找点发单、候车找上车点到确认目的地，全程画面清晰准确，方便快速定位，打车体验更顺畅。 滴滴会员成长值体系全新上线！ 成长更直观、身份更稳定，场景覆盖更广泛；同时新增生日礼、代驾等专属权益，会员体验持续升级。",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/65/52/32/65523260-5ba9-0658-edec-6a5273c80b44/ios-P1.png/320x480bb.jpg"
+    },
+    "Meituan": {
+      "version": "8.85.1",
+      "date": "2026-10-27T08:02:43.000Z",
+      "notes": "优化一些细节体验，期待你的更新～",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c1/fd/df/c1fddfe2-378b-f87b-a76d-7c4f4962864b/5.5_U5927_U989d_U795e_U5238.png/392x696bb.png"
+    },
+    "SNCF Connect": {
+      "version": "v20261029.0.0",
+      "date": "2026-11-03T08:39:24.000Z",
+      "notes": "Vous utilisez SNCF Connect pour organiser vos trajets et nous vous en remercions. Cette mise à jour corrige des anomalies, améliore les performances et renforce la sécurité de l’application. De nouvelles fonctionnalités arriveront bientôt pour faciliter vos déplacements. Bon voyage !",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/35/72/39357294-dd4e-040b-8e15-dbe017f40b8c/00_FR_1242x2208.jpg/392x696bb.jpg"
+    },
+    "DB Navigator": {
+      "version": "26.20.0",
+      "date": "2026-10-27T10:14:40.000Z",
+      "notes": "Süßes oder Saures? Wir haben uns für Feinschliff entschieden. Mit diesem Update haben wir die App weiter optimiert und einige Details im Hintergrund verbessert, damit du weiterhin entspannt unterwegs bist. Jetzt aktualisieren! Wir freuen uns auf dein Feedback hier im Store.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0c/ae/73/0cae7310-a0f5-5269-1483-fcbaf9295241/Screen_2_iPhone_6.9.png/320x480bb.jpg"
+    },
+    "FlixBus": {
+      "version": "10.11.0",
+      "date": "2026-10-28T16:56:50.000Z",
+      "notes": "Nur ein kurzes Hallo mit einigen Leistungsverbesserungen. Schönen Tag und gute Reise!",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/11/0b/a0/110ba03c-78e8-f499-370d-8bb0278ebb20/08956003-63e9-4620-8c39-accb6fd35709_1_-_iOS__U00281242_x_2208_U0029.jpg/392x696bb.jpg"
+    },
+    "Eurostar": {
+      "version": "15.0.1284",
+      "date": "2026-11-03T09:17:44.000Z",
+      "notes": "We’ve made behind-the-scenes improvements for a smoother, more reliable experience. This update includes bug fixes and performance enhancements to help you book tickets easily, access journeys faster, and enjoy a more seamless app experience. Thanks for travelling with Eurostar!",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3d/59/f4/3d59f4d2-3c61-a350-4ea3-05896b82a5e9/befac475-7fb9-4dd9-b1b3-0744960b1e10_iPhone-x-1242x2208-en-cover.jpg/392x696bb.jpg"
+    },
+    "Bolt": {
+      "version": "257.0",
+      "date": "2026-11-02T07:59:37.000Z",
+      "notes": "Thanks for using Bolt! We regularly update the app to provide a consistently high-quality experience. This update includes bug fixes and performance improvements. Enjoying Bolt? Please leave a rating! Your feedback helps us improve.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c9/09/18/c9091848-56e8-7c0d-259d-b86c99a709e6/screen-1_bolt-perspective-phone.jpg/320x480bb.jpg"
+    },
+    "Deliveroo": {
+      "version": "3.346.0",
+      "date": "2026-10-29T14:03:42.000Z",
+      "notes": "The Deliveroo chefs have been busy cooking up some new features for you: • We’ve been updating our app to use the latest technologies to make Deliveroo faster and easier to use than ever before • We've made several improvements to Deliveroo Plus, our free delivery subscription service • We’ve also made some changes to our Grocery feature so you can get all your essentials delivered in no time We’re always making improvements, so keep your eyes peeled and make sure to keep updating your app to get all the latest features. Bon appetit!",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/54/81/02/54810285-9945-804f-e9c6-dcd7232d6190/pr_source.png/640x1136bb.png"
+    },
+    "Trenitalia": {
+      "version": "13.700.0",
+      "date": "2026-10-23T22:27:04.000Z",
+      "notes": "• Esperienza Trenitalia ottimizzata Apple per iPhone Duo • Bug fixing",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d2/dc/80/d2dc803b-8107-e827-9038-c3fe04253668/IOS-IT_1260x2736-01-HP.jpg/320x480bb.jpg"
+    },
+    "Renfe": {
+      "version": "2.15.0",
+      "date": "2026-08-03T09:59:45.000Z",
+      "notes": "Mejoras en la estabilidad y corrección de errores.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e3/cf/c1/e3cfc154-53f9-354d-9b2e-98872a2634ff/289b72b1-3113-4e65-8637-b6115cab89ba_IOS-5-5-generico2023.jpg/392x696bb.jpg"
+    },
+    "Korail": {
+      "version": "5.1.2",
+      "date": "2026-11-03T01:05:11.000Z",
+      "notes": "· 코레일톡이 코레일+로 새로워졌습니다. · 열차 승차권 예매·발권 서비스를 더 편리하게 개선했습니다. · 여행 및 연계교통 서비스를 쉽게 확인할 수 있도록 개선했습니다. · 서비스 안정성을 개선했습니다.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/00/9b/0b/009b0b95-5991-c5bf-bea4-29030397b9d5/m_1.png/392x696bb.png"
+    },
+    "Grab": {
+      "version": "5.432.0",
+      "date": "2026-10-13T00:38:13.000Z",
+      "notes": "Some say bugs are the future of food: They are rich in protein and can be sustainably produced for mass consumption. In fact, some 2 billion humans on the planet eat bugs as part of their diet. But when the bug is in an app, we won't want you to eat it. And we certainly won't try to make more of it. Update your Grab to 5.432.0 to get rid of bugs from your everyday app experience.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/43/43/7f/43437f55-1091-d3de-3f87-8466f5b9ebfd/c322749a-b5ce-4301-9382-e60b8d6b74f7_Transport-Focus_iOS-5.5_EN_01.jpg/392x696bb.jpg"
+    },
+    "foodpanda": {
+      "version": "26.44.0",
+      "date": "2026-11-02T09:11:53.000Z",
+      "notes": "We're always working hard to optimize our app with the latest technologies and best new features. This version includes a number of UI/UX improvements as well as stability enhancements. Enjoy!",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a7/a7/53/a7a753f8-2e2c-3061-0655-fe88c8004a7e/01.png/320x480bb.jpg"
+    },
+    "Careem": {
+      "version": "26.43.0",
+      "date": "2026-11-02T18:44:00.000Z",
+      "notes": "We've been busy polishing and refining. The result? An app experience that's better, faster, and more reliable. Check out the latest improvements, plus a slew of fixes and enhancements.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e2/99/82/e299826a-ae68-2b6f-04dc-fed98f3146c5/00283ff2-3658-4562-984a-52f9c9b8cd11_ASO_Refresh_iOS5.5_Frame_01.jpg/392x696bb.jpg"
+    },
+    "Noon": {
+      "version": "5.261102",
+      "date": "2026-11-03T21:03:59.000Z",
+      "notes": "Enjoy a smoother, more modern experience with Apple's Liquid Glass design, along with support for Apple Duo. Update now and enjoy the difference!",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b3/4f/b2/b34fb260-76fb-6187-7ecd-4e1c33da2875/en_uae_iOS-5.5in-1242x2208-1.png/392x696bb.png"
+    },
+    "Delivery Hero": {
+      "version": "14.5.0",
+      "date": "2026-11-02T22:41:48.000Z",
+      "notes": "We’ve spiced things up for your orders—and more! Whether you're browsing the menu in Cairo, grabbing groceries in Dubai, or finding everyday essentials in Oman, we've updated the app to show only what matters to you. From Kuwait to Qatar, Iraq to Bahrain, and everywhere in between, we’ve fine-tuned your experience across 8 countries. Smoother, faster, and now more personalized than ever—so you see the right places, every time.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e5/06/54/e506543c-e48d-3961-e926-39df89e1ee45/SS_1_EN.jpg/320x480bb.jpg"
+    },
+    "Gojek": {
+      "version": "5.82.0",
+      "date": "2026-10-30T11:41:41.000Z",
+      "notes": "RUNWAY BUGS EDITION 1. KYLIE BUGJENNER 2. BUGBARA PALVIN 3. BUGGI HADID 4. CANDICE SWANEBUGOEL 5. ADRIANA BUGMA *Closing out the show wearing the baddiest wings... BUGOLINI FIXOLINI~~~ (Making a comeback :3) Bombshell. Showstopping. Iconic. Just like 5.82... Update, Angels! ;)",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/16/2e/95/162e957e-4b7c-0d13-841b-6e22168f5a8f/iOS5-5_Frame1.jpg/392x696bb.jpg"
     }
   },
   "googlePlay": {
@@ -135,8 +333,8 @@
       "screenshot": null
     },
     "Booking.com": {
-      "version": "2026-10-30·1qb0",
-      "date": "2026-10-30T00:00:00.000Z",
+      "version": "2026-11-04·1qb0",
+      "date": "2026-11-04T00:00:00.000Z",
       "notes": "Thanks for using Booking.com! This update contains several bug fixes and performance improvements. Enjoy the latest and greatest version of our app.",
       "screenshot": null
     },
@@ -201,8 +399,8 @@
       "screenshot": null
     },
     "TikTok": {
-      "version": "2026-11-03·5kpb",
-      "date": "2026-11-03T00:00:00.000Z",
+      "version": "2026-11-04·5kpb",
+      "date": "2026-11-04T00:00:00.000Z",
       "notes": "Quickly find and tag your friends in comments.",
       "screenshot": null
     },
@@ -219,8 +417,8 @@
       "screenshot": null
     },
     "Linear": {
-      "version": "2026-10-28·1szi",
-      "date": "2026-10-28T00:00:00.000Z",
+      "version": "2026-11-04·1szi",
+      "date": "2026-11-04T00:00:00.000Z",
       "notes": "Linear Mobile has arrived. Bring the speed and power of Linear to your pocket with our fast, compact, and fully native Android application. Stay informed about important updates, file issues on the go, and unblock your team whenever necessary. Linear Mobile is purpose-designed for “away from keyboard” workflows, so you can move product work forward, no matter where you are. For more information visit https://linear.app/mobile",
       "screenshot": null
     },
@@ -240,6 +438,132 @@
       "version": "2026-11-03·1cmr",
       "date": "2026-11-03T00:00:00.000Z",
       "notes": "Bug fixes and performance improvements.",
+      "screenshot": null
+    },
+    "Skyscanner": {
+      "version": "2026-11-04·1ieg",
+      "date": "2026-11-04T00:00:00.000Z",
+      "notes": "This just in. Drops. Our brand-new app-exclusive feature is your next travel hack to get the best deal for your next trip. Every day, we’re sifting through billions of travel prices hunting for the best flight price drops of at least 20% to anywhere in the world. Simply tell us where you like to fly from, and watch the deals roll in. Whether you’re feeling a little spontaneous or got your eye on somewhere specific, check Drops for the latest prices from your top airport.",
+      "screenshot": null
+    },
+    "MakeMyTrip": {
+      "version": "2026-11-04·1u7p",
+      "date": "2026-11-04T00:00:00.000Z",
+      "notes": "✨ A smoother travel experience with smarter hotel discovery and flexible booking options. 🏨 Hotels – Explore stays through videos, discover verified hosts, enjoy improved maps and filters, and share wishlists 💳 Split Payments – Easily split payments with your group when booking villas and homestays 🌍 International Hotels – Smoother booking with clearer pricing and improved Halal food visibility for GCC users ➕ General fixes, security updates, and performance enhancements across the app",
+      "screenshot": null
+    },
+    "Traveloka": {
+      "version": "2026-10-27·1rfa",
+      "date": "2026-10-27T00:00:00.000Z",
+      "notes": "Ready for your next adventure? We’ve smoothed out the ride with performance boosts and bug fixes to make your travel planning better than ever. - Faster search and better stability. - General performance improvements for a seamless experience. Update your Traveloka app now and start your journey!",
+      "screenshot": null
+    },
+    "Priceline": {
+      "version": "2026-10-29·z9a7",
+      "date": "2026-10-29T00:00:00.000Z",
+      "notes": "We’ve been busy improving your travel experience! Here’s what’s new: Meet Penny, your AI travel assistant: chat, get trip ideas, or use voice commands for hands-free travel planning Travel Insurance: now available for all products - for extra peace of mind wherever you go Rental Car Booking: Enjoy a faster, more intuitive rental car checkout with our redesigned experience Bug fixes and performance improvements for a smoother experience.",
+      "screenshot": null
+    },
+    "trivago": {
+      "version": "2026-10-27·1j0c",
+      "date": "2026-10-27T00:00:00.000Z",
+      "notes": "Thanks for using the trivago app. We always take our users' reviews into consideration as we make improvements, so be sure to let us know what you think. From now on, you can expect fixed monthly releases based on what we learn from you. Just go to your settings and enable automatic updates.",
+      "screenshot": null
+    },
+    "Amtrak": {
+      "version": "2026-10-05·epd7",
+      "date": "2026-10-05T00:00:00.000Z",
+      "notes": "Thanks for choosing the Amtrak app. We continue to fix bugs and improve the experience. Please check for updates frequently to take advantage of the improvements.",
+      "screenshot": null
+    },
+    "DB Navigator": {
+      "version": "2026-10-23·cpd6",
+      "date": "2026-10-23T00:00:00.000Z",
+      "notes": "Trick or treat? We chose fine-tuning instead. With this update, we've further optimised the app and improved a few details behind the scenes, so you can continue travelling with ease. Update now! We're looking forward to your feedback here in the store.",
+      "screenshot": null
+    },
+    "Trenitalia": {
+      "version": "2026-11-03·1ony",
+      "date": "2026-11-03T00:00:00.000Z",
+      "notes": "Bug fixing",
+      "screenshot": null
+    },
+    "IRCTC Rail Connect": {
+      "version": "2026-11-03·gay1",
+      "date": "2026-11-03T00:00:00.000Z",
+      "notes": "Minor UI enhancements and bug fixes.",
+      "screenshot": null
+    },
+    "Korail": {
+      "version": "2026-11-02·14w4",
+      "date": "2026-11-02T00:00:00.000Z",
+      "notes": "Korailtalk has been renewed as KORAIL+. We have improved the train ticket reservation and issuance services for greater convenience. Service stability has been improved.",
+      "screenshot": null
+    },
+    "FlixBus": {
+      "version": "2026-10-29·1e24",
+      "date": "2026-10-29T00:00:00.000Z",
+      "notes": "Just saying Hi with some performance improvements. Have a great day and happy traveling!",
+      "screenshot": null
+    },
+    "Uber Eats": {
+      "version": "2026-11-03·8glb",
+      "date": "2026-11-03T00:00:00.000Z",
+      "notes": "We update the Uber Eats app as often as possible to make it faster and more reliable for you. Love the app? Rate us! Your feedback keeps the Uber Eats running. Have a question? Tap Help in the Uber Eats app or visit help.uber.com.",
+      "screenshot": null
+    },
+    "Grab": {
+      "version": "2026-10-20·1izc",
+      "date": "2026-10-20T00:00:00.000Z",
+      "notes": "Some say bugs are the future of food: They are rich in protein and can be sustainably produced for mass consumption. In fact, some 2 billion humans on the planet eat bugs as part of their diet. But when the bug is in an app, we won't want you to eat it. And we certainly won't try to make more of it. Update your Grab to 5.430.0 to get rid of bugs from your everyday app experience.",
+      "screenshot": null
+    },
+    "Lyft": {
+      "version": "2026-10-31·7hnj",
+      "date": "2026-10-31T00:00:00.000Z",
+      "notes": "Thanks for choosing Lyft! To make your rides even better, we update the app regularly. It’s like housekeeping: squashing bugs, cleaning up code, and other small-but-mighty improvements.",
+      "screenshot": null
+    },
+    "Bolt": {
+      "version": "2026-10-30·111u",
+      "date": "2026-10-30T00:00:00.000Z",
+      "notes": "Thanks for using Bolt! We regularly update the app to provide a consistently high-quality experience. Each update includes improvements in speed and reliability. Check out the latest updates in the app! Enjoying Bolt? Please leave a rating! Your feedback helps us improve.",
+      "screenshot": null
+    },
+    "Gojek": {
+      "version": "2026-10-30·wxzn",
+      "date": "2026-10-30T00:00:00.000Z",
+      "notes": "RUNWAY BUGS EDITION 1. KYLIE BUGJENNER 2. BUGBARA PALVIN 3. BUGGI HADID 4. CANDICE SWANEBUGOEL 5. ADRIANA BUGMA *Closing out the show wearing the baddiest wings... BUGOLINI FIXOLINI~~~ (Making a comeback :3) Bombshell. Showstopping. Iconic. Just like 5.82... Update, Angels! ;)",
+      "screenshot": null
+    },
+    "DoorDash": {
+      "version": "2026-11-04·3wes",
+      "date": "2026-11-04T00:00:00.000Z",
+      "notes": "Our mission is to deliver good by connecting people and possibility. If we can play a small role in helping you spend more time with your friends and family or get ahead on your favorite projects, then we have delivered good. We’re launching a new set of initiatives to deliver good within our communities, and you’ll see a new visual identity that reflects our spirit. Thank you for making DoorDash a success — we wouldn’t be here without you. Upward and onward! Tony Xu, CEO and Co-Founder",
+      "screenshot": null
+    },
+    "Grubhub": {
+      "version": "2026-10-30·ch4n",
+      "date": "2026-10-30T00:00:00.000Z",
+      "notes": "We kneaded the dough, sprinkled in some fixes, and delivered a fresh batch of updates. Time to satisfy your cravings. Plus, there's still no delivery or service fees on $50+ restaurant orders.",
+      "screenshot": null
+    },
+    "Noon": {
+      "version": "2026-10-29·kxcc",
+      "date": "2026-10-29T00:00:00.000Z",
+      "notes": "Update to get enhanced performance and a more seamless experience while you shop at noon!",
+      "screenshot": null
+    },
+    "foodpanda": {
+      "version": "2026-11-02·17zc",
+      "date": "2026-11-02T00:00:00.000Z",
+      "notes": "We're always working hard to optimize our app with the latest technologies and best new features. This version includes a number of UI/UX improvements as well as stability enhancements. Enjoy!",
+      "screenshot": null
+    },
+    "Meituan": {
+      "version": "2026-10-14·1mte",
+      "date": "2026-10-14T00:00:00.000Z",
+      "notes": "【Multilingual Interface】The Meituan app now supports four interface languages: Simplified Chinese, English, Japanese, and Korean. Try it now!",
       "screenshot": null
     }
   }

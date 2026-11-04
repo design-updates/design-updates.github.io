@@ -1,7 +1,45 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T23:04:28.914Z",
+  "updated_at": "2026-11-04T23:01:04.007Z",
   "days": [
+    {
+      "date": "2026-11-05",
+      "collected_at": "2026-11-04T23:01:04.007Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "apple-app-store-subscription-retention-messages",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ux",
+          "date": "2026-11-05",
+          "published_at": "2026-11-04T16:00:56.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Apple adds retention messages to the App Store subscription cancellation flow.",
+          "what": "When a subscriber starts to cancel, the cancellation flow can now show a message from the app that reminds them what the subscription gives them. The message can include text, images or a special offer. Developers set these messages up in App Store Connect.",
+          "why": "Travel apps with a paid membership or subscription now control one screen in a cancellation flow that Apple owns. Teams need to write that message and design its image and offer to match the in-app membership pages.",
+          "sources": [
+            {
+              "title": "Now available: Retention messages for subscriptions",
+              "url": "https://developer.apple.com/news?id=fk9ps3gv",
+              "publisher": "Apple Developer News"
+            }
+          ],
+          "release": null,
+          "image": null,
+          "icon": "https://www.google.com/s2/favicons?domain=apple.com&sz=64",
+          "collected_at": "2026-11-04T23:01:04.007Z",
+          "zh": {
+            "headline": "Apple 在 App Store 订阅取消流程中加入挽留信息。",
+            "what": "用户开始取消订阅时，取消流程里会出现一条由 App 提供的信息，提醒用户这项订阅的价值。信息可以包含文字、图片或专属优惠。开发者在 App Store Connect 中配置这些内容。",
+            "why": "对于有付费会员或订阅的旅行 App，原本由系统掌控的取消流程里多了一个可以自己设计的页面。团队需要准备这条挽留信息的文案、配图和优惠，并与 App 内会员页面的视觉保持一致。"
+          }
+        }
+      ]
+    },
     {
       "date": "2026-11-04",
       "collected_at": "2026-11-03T23:04:28.914Z",

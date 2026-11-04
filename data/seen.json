@@ -165,6 +165,14 @@
       "urls": [
         "https://creativeboom.com/inspiration/swiss-typefaces-crafts-a-warmer-friendlier-custom-font-for-swiss-post"
       ]
+    },
+    "apple-app-store-subscription-retention-messages": {
+      "app": "Apple",
+      "headline": "Apple adds retention messages to the App Store subscription cancellation flow.",
+      "date": "2026-11-05",
+      "urls": [
+        "https://developer.apple.com/news?id=fk9ps3gv"
+      ]
     }
   }
 }

@@ -1,0 +1,49 @@
+site/games-zip.js
+  s_54fc1ca7bb74fe::t_fa5907531ad1c3 1-209,220-225,227-229,234-240
+  s_54fc1ca7bb74fe::t_fa86486c8fdff3 210-219,230-233
+  s_54fc1ca7bb74fe::t_926f43a90e1a5f 226
+site/games-snake.js
+  s_54fc1ca7bb74fe::t_d0f78bd88ecf1f 1-18,20-163,165-166,168-189,192-198
+  s_54fc1ca7bb74fe::t_aab76c045d47f3 19,190-191
+  s_54fc1ca7bb74fe::t_926f43a90e1a5f 164,167
+site/styles.css
+  s_54fc1ca7bb74fe::t_926f43a90e1a5f 1887-2190,2192-2194,2196-2208,2212-2218
+  s_54fc1ca7bb74fe::t_c41f306a1b58c7 1465,1498-1499,1503-1504
+  s_54fc1ca7bb74fe::t_4e53a24d7deea2 2191,2195
+  s_54fc1ca7bb74fe::t_c4861642465d68 2209-2211
+site/app.js
+  s_54fc1ca7bb74fe::t_c41f306a1b58c7 57-59,165-167,1475-1501,1508,1511,1526
+site/index.html
+  s_54fc1ca7bb74fe::t_c41f306a1b58c7 43,86-92
+tests/games.test.ts
+  s_54fc1ca7bb74fe::t_8f2492b4939553 1-73
+site/games-logic.js
+  s_54fc1ca7bb74fe::t_1072b566d793ba 1-121
+README.md
+  s_54fc1ca7bb74fe::t_6c6b0fbe9ad047 153-162
+src/build.ts
+  s_54fc1ca7bb74fe::t_b20219140ef18c 4,43-55,59-60
+site/games-word.js
+  s_54fc1ca7bb74fe::t_926f43a90e1a5f 130,132-133
+  s_54fc1ca7bb74fe::t_bf387a450f809d 1-129,131,134-148
+site/games.js
+  s_54fc1ca7bb74fe::t_d155b5251ea762 1-147
+site/games-words.js
+  s_54fc1ca7bb74fe::t_8173c1d3ea3aed 1-99
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.51-trip",
+  "base_commit_sha": "a5c5dce893f56d126caca2ac7ec19794d0389cd5",
+  "prompts": {},
+  "sessions": {
+    "s_54fc1ca7bb74fe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "752feab2-5b26-4e2c-8c5b-8e100159791a",
+        "model": "claude-opus-5.5"
+      },
+      "human_author": "kashif-08 <kashif-08@users.noreply.github.com>"
+    }
+  }
+}

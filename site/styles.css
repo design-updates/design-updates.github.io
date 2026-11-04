@@ -1477,6 +1477,8 @@ button {
   display: none;
 }
 .view-tab {
+  flex: none;
+  white-space: nowrap;
   padding: 9px 14px 8px;
   font: 500 14px/1 var(--display);
   letter-spacing: 0.04em;
@@ -2406,7 +2408,24 @@ html:lang(zh-CN) .snake-hint span {
   .game-stats dd {
     font-size: 22px;
   }
+  /* One line of tabs that scrolls sideways when it is wider than the phone. It runs to the screen's edges, so a
+     tab cut off at the right shows there is more; the scrollbar is hidden. */
   .views {
-    flex-wrap: wrap;
+    margin: 0 calc(-1 * var(--gutter));
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    scroll-padding: 0 var(--gutter);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .views::-webkit-scrollbar {
+    display: none;
+  }
+  /* The last tab keeps the right-hand padding when scrolled to the end. */
+  .views::after {
+    content: '';
+    flex: none;
+    width: 1px;
   }
 }

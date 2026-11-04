@@ -1523,6 +1523,9 @@ async function showView() {
     else a.removeAttribute('aria-current');
   }
   $('#views').setAttribute('aria-label', t().viewsLabel);
+  // On a phone the tabs scroll sideways; keep the open one in view.
+  const current = $('#views').querySelector('[aria-current="page"]');
+  if (current && $('#views').scrollWidth > $('#views').clientWidth) current.scrollIntoView({ block: 'nearest', inline: 'nearest' });
   if (view !== 'games') games?.leaveGames();
   const page = PAGES[view];
   if (!page) return;

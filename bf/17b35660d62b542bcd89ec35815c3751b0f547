@@ -1,0 +1,47 @@
+src/config.ts
+  s_54fc1ca7bb74fe::t_69c58ac9f0945b 13-15,99
+tests/pipeline.test.ts
+  s_54fc1ca7bb74fe::t_58f286154d9825 11
+  s_54fc1ca7bb74fe::t_83ffdb634f7b8b 547-573
+  s_54fc1ca7bb74fe::t_cd0b4a5af46790 6
+site/app.js
+  s_54fc1ca7bb74fe::t_5ba0e07bfb6903 28,136
+site/games-zip.js
+  s_54fc1ca7bb74fe::t_013095accd285a 154-157
+README.md
+  s_54fc1ca7bb74fe::t_7b2082415b10f4 15,78,84-86,126-128
+src/types.ts
+  s_54fc1ca7bb74fe::t_5ba0e07bfb6903 1
+tests/parsers.test.ts
+  s_54fc1ca7bb74fe::t_63663e5f163886 50-51
+src/icons.ts
+  s_54fc1ca7bb74fe::t_69c58ac9f0945b 19
+watchlist.yaml
+  s_54fc1ca7bb74fe::t_a60c28684494c0 50,57,66,118-148,155-156,172-345,365,425-427,484-514,552-561,619-620
+site/styles.css
+  s_54fc1ca7bb74fe::t_5ba0e07bfb6903 24,66,226,1111
+site/games-snake.js
+  s_54fc1ca7bb74fe::t_013095accd285a 187-190
+src/prompts.ts
+  s_54fc1ca7bb74fe::t_5ba0e07bfb6903 50
+src/stores.ts
+  s_54fc1ca7bb74fe::t_69c58ac9f0945b 40,43-61,113
+src/prefilter.ts
+  s_54fc1ca7bb74fe::t_5f55a5de524c98 17-18,20,24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.51-trip",
+  "base_commit_sha": "bf17b35660d62b542bcd89ec35815c3751b0f547",
+  "prompts": {},
+  "sessions": {
+    "s_54fc1ca7bb74fe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "752feab2-5b26-4e2c-8c5b-8e100159791a",
+        "model": "claude-opus-5.5"
+      },
+      "human_author": "kashif-08 <kashif-08@users.noreply.github.com>"
+    }
+  }
+}

@@ -1816,9 +1816,10 @@ html:lang(zh-CN) .row-title {
   .digest-btn .label {
     display: none;
   }
+  /* 15px: the visual size of 中 and Aa next to it. The star's 9 pixels land on whole screen pixels on iPhones (3×). */
   .digest-btn .star::before {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
   }
   .digest {
     width: 100vw;

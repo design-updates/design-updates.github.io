@@ -18,7 +18,8 @@ const S = {
       undo: 'Undo', clear: 'Clear', practice: 'Practice puzzle', daily: "Today's puzzle",
       solved: (t) => `Solved in ${t}.`, cover: 'Every square has to be on the line.', next: (n) => `Next number: ${n}.`,
       label: (n) => `Zip puzzle, ${n} by ${n}. Arrow keys draw the line, Backspace takes a step back.`,
-      practiceNote: 'Practice: not counted.', tomorrow: 'A new puzzle tomorrow.',
+      practiceNote: 'Practice puzzles are not counted.', comeBack: 'Come back tomorrow for the next one.',
+      solvedTitle: 'Solved', newBest: 'New best time', nextIn: 'Next puzzle in', showLine: 'Show my line', backToScore: 'Back to score', another: 'Another practice',
       shareText: (n, t) => `Pixel Post Zip No. ${n} · ${t}`,
     },
     word: {
@@ -26,7 +27,7 @@ const S = {
       enter: 'Enter', del: 'Delete', short: 'Five letters, please.',
       won: (n) => (n === 1 ? 'Got it in one.' : `Got it in ${n}.`), lost: (w) => `The word was ${w}.`,
       state: { 2: 'right place', 1: 'wrong place', 0: 'not in the word' }, board: 'Your guesses',
-      tomorrow: 'A new word tomorrow.', shareText: (n, k) => `Pixel Post Word No. ${n} · ${k}/6`,
+      nextIn: 'Next word in', shareText: (n, k) => `Pixel Post Word No. ${n} · ${k}/6`,
     },
     snake: {
       help: 'Eat the dots. Miss the walls and your own tail. Arrow keys or WASD, swipe on the board, or the buttons. Space pauses.',
@@ -46,7 +47,8 @@ const S = {
       undo: '撤销', clear: '清空', practice: '练习一题', daily: '今日题目',
       solved: (t) => `用时 ${t} 完成。`, cover: '每个方格都要在线上。', next: (n) => `下一个数字：${n}。`,
       label: (n) => `Zip 谜题，${n} × ${n}。方向键画线，退格键后退一步。`,
-      practiceNote: '练习题不计入成绩。', tomorrow: '明天有新题。',
+      practiceNote: '练习题不计入成绩。', comeBack: '明天再来玩下一题。',
+      solvedTitle: '完成', newBest: '最佳用时', nextIn: '下一题还有', showLine: '查看我的连线', backToScore: '返回成绩', another: '再练一题',
       shareText: (n, t) => `Pixel Post Zip 第 ${n} 期 · ${t}`,
     },
     word: {
@@ -54,7 +56,7 @@ const S = {
       enter: '确定', del: '删除', short: '请输入五个字母。',
       won: (n) => `第 ${n} 次猜中。`, lost: (w) => `答案是 ${w}。`,
       state: { 2: '位置正确', 1: '位置不对', 0: '不在词中' }, board: '你的猜测',
-      tomorrow: '明天换一个新词。', shareText: (n, k) => `Pixel Post Word 第 ${n} 期 · ${k}/6`,
+      nextIn: '下一个词还有', shareText: (n, k) => `Pixel Post Word 第 ${n} 期 · ${k}/6`,
     },
     snake: {
       help: '吃掉圆点，别撞墙，也别撞到自己的尾巴。用方向键或 WASD、在游戏区滑动，或点按钮。空格键暂停。',
@@ -103,7 +105,15 @@ async function copy(text, btn) {
   }
 }
 
-const ctx = { s: () => S[lang], lang: () => lang, store, copy, day: () => dayNumber(), link: () => `${location.origin}${location.pathname}#games` };
+/** A pixel trophy, drawn like the rest of the page's pixel art. */
+const TROPHY = ['ooooooooo', 'o.ooooo.o', 'o.ooooo.o', '.ooooooo.', '..ooooo..', '...ooo...', '....o....', '...ooo...', '..ooooo..'];
+const trophy = () => {
+  let r = '';
+  TROPHY.forEach((row, y) => [...row].forEach((ch, x) => ch === 'o' && (r += `<rect x="${x}" y="${y}" width="1" height="1"/>`)));
+  return `<svg class="pixel-art zip-trophy" viewBox="0 0 9 9" shape-rendering="crispEdges" aria-hidden="true">${r}<rect x="3" y="1" width="1" height="2" class="shine"/></svg>`;
+};
+
+const ctx = { trophy, s: () => S[lang], lang: () => lang, store, copy, day: () => dayNumber(), link: () => `${location.origin}${location.pathname}#games` };
 
 function paint() {
   const s = S[lang];

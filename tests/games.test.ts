@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 // @ts-expect-error plain JavaScript from the site, no types
-import { adjacent, canStep, clock, dailyWord, dayNumber, nextNumber, scoreGuess, shareRows, zipPuzzle, zipSolved } from '../site/games-logic.js';
+import { adjacent, canStep, clock, countdown, dailyWord, dayNumber, nextNumber, scoreGuess, shareRows, untilTomorrow, zipPuzzle, zipSolved } from '../site/games-logic.js';
 // @ts-expect-error plain JavaScript from the site, no types
 import { WORDS } from '../site/games-words.js';
 
@@ -70,4 +70,10 @@ test('Word: every answer is five capital letters, once each, with both meanings;
   const run = Array.from({ length: WORDS.length }, (_, i) => dailyWord(i + 1, WORDS)[0]);
   assert.equal(new Set(run).size, WORDS.length, 'each word once before any comes back');
   assert.deepEqual(dailyWord(1 + WORDS.length, WORDS), dailyWord(1, WORDS));
+});
+
+test('the countdown runs to the reader’s next midnight', () => {
+  assert.equal(untilTomorrow(new Date(2026, 10, 4, 23, 59, 30)), 30_000);
+  assert.equal(countdown(untilTomorrow(new Date(2026, 10, 4, 7, 4, 5))), '16:55:55');
+  assert.equal(countdown(0), '0:00:00');
 });

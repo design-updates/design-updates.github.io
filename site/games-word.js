@@ -1,6 +1,6 @@
 // Word: guess the day's five-letter design word in six tries.
 
-import { dailyWord, scoreGuess, shareRows } from './games-logic.js';
+import { countdown, dailyWord, scoreGuess, shareRows, untilTomorrow } from './games-logic.js';
 import { WORDS } from './games-words.js';
 
 const KEYS = ['QWERTYUIOP', 'ASDFGHJKL', '+ZXCVBNM-'];
@@ -13,6 +13,25 @@ export function wordGame(ctx) {
   let card = null;
   let shake = false;
   let note = ''; // spoken after each guess
+  let tick = 0; // the countdown to tomorrow's word
+
+  function runCountdown() {
+    clearInterval(tick);
+    tick = setInterval(() => {
+      const el = card?.querySelector('[data-word-count]');
+      if (!el) return clearInterval(tick);
+      const left = untilTomorrow();
+      el.textContent = countdown(left);
+      if (left <= 1000) {
+        clearInterval(tick);
+        setTimeout(() => card?.isConnected && render(card), 1200);
+      }
+    }, 1000);
+  }
+
+  function pause() {
+    clearInterval(tick);
+  }
 
   const won = () => guesses.at(-1) === answer[0];
   const done = () => won() || guesses.length === 6;
@@ -53,7 +72,8 @@ export function wordGame(ctx) {
       } else {
         guesses.push(typing);
         const sc = scoreGuess(typing, answer[0]);
-        note = `${typing.split('').map((ch, i) => `${ch} ${s.word.state[sc[i]]}`).join(', ')}.`;
+        const zh = ctx.lang() === 'zh';
+        note = `${typing.split('').map((ch, i) => `${ch} ${s.word.state[sc[i]]}`).join(zh ? '，' : ', ')}${zh ? '。' : '.'}`;
         typing = '';
         ctx.store.set('word.day', { day: forDay, guesses });
         if (done()) record();
@@ -111,13 +131,17 @@ export function wordGame(ctx) {
     const msg = card.querySelector('#word-msg');
     const end = card.querySelector('#word-end');
     if (done()) {
-      msg.textContent = `${note} ${won() ? s.word.won(guesses.length) : s.word.lost(answer[0])}`.trim();
+      msg.textContent = won() ? s.word.won(guesses.length) : s.word.lost(answer[0]);
       end.innerHTML = `<p class="word-meaning"><b>${answer[0]}</b> ${ctx.lang() === 'zh' ? answer[2] : answer[1]}</p>
-        <div class="game-actions"><button class="act" type="button" data-word="share">${s.share}</button><span class="game-note">${s.word.tomorrow}</span></div>`;
+        <p class="zip-next word-next">${s.word.nextIn} <b data-word-count>${countdown(untilTomorrow())}</b></p>
+        <div class="game-actions"><button class="act" type="button" data-word="share">${s.share}</button></div>`;
+      runCountdown();
     } else {
       msg.textContent = note;
       end.innerHTML = '';
     }
+    // Once the word is found or the tries are used up, the keyboard has nothing left to do.
+    card.querySelector('#word-keys').hidden = done();
   }
 
   function render(el) {
@@ -144,5 +168,5 @@ export function wordGame(ctx) {
     paint();
   }
 
-  return { render, key };
+  return { render, key, pause };
 }

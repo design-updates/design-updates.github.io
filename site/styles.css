@@ -2042,6 +2042,158 @@ html:lang(zh-CN) .game-stats dt {
   cursor: default;
 }
 
+/* Solved: the line lights up orange square by square from 1 to the end, each number pops, the board folds away,
+   and a score card prints in where it was, with a small burst of pixels. */
+.zip-board.finishing {
+  --path: var(--accent);
+  animation: zip-out 0.36s steps(4, end) both;
+  animation-delay: calc(var(--len) * 28ms + 520ms);
+}
+.zip-board.finishing .zip-seg {
+  animation: zip-wave 0.42s steps(3, end) both;
+  animation-delay: calc(var(--k) * 28ms);
+}
+.zip-board.finishing .zip-num {
+  animation: zip-pop 0.3s steps(3, end) both;
+  animation-delay: calc(var(--k) * 28ms);
+}
+@keyframes zip-wave {
+  0% { background: var(--accent); }
+  50% { background: var(--ink); }
+  100% { background: var(--sun); }
+}
+@keyframes zip-pop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+@keyframes zip-out {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.92); opacity: 0; }
+}
+
+.zip-done {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  aspect-ratio: 1;
+  padding: 24px;
+  overflow: hidden;
+  text-align: center;
+}
+.zip-done.fresh {
+  /* backwards, not both: a clip left on at the end would cut off the pixel shadow. */
+  animation: zip-in 0.5s steps(5, end) backwards;
+}
+@keyframes zip-in {
+  0% { clip-path: inset(50% 0 50% 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+.zip-trophy {
+  width: clamp(56px, 11vw, 84px);
+  height: auto;
+  fill: var(--sun);
+}
+.zip-trophy .shine {
+  fill: var(--card);
+}
+.zip-done.fresh .zip-trophy {
+  animation: trophy-drop 0.5s steps(4, end) 0.35s both;
+}
+@keyframes trophy-drop {
+  0% { transform: translateY(-24px); opacity: 0; }
+  60% { transform: translateY(4px); opacity: 1; }
+  100% { transform: translateY(0); }
+}
+.zip-done-kicker {
+  margin: 4px 0 0;
+  padding: 5px 9px 4px;
+  font: 500 13px/1 var(--display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--on-fill);
+  background: var(--fill);
+}
+.zip-done-time {
+  margin: 0;
+  font: 600 clamp(56px, 12vw, 92px)/1 var(--display);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.zip-done-best {
+  margin: 0;
+  padding: 4px 8px 3px;
+  font: 500 12px/1 var(--display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--accent);
+}
+.zip-done-facts {
+  display: flex;
+  gap: 32px;
+  margin: 6px 0 0;
+}
+.zip-done-facts dt {
+  font: 500 12px/1.2 var(--display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.zip-done-facts dd {
+  margin: 4px 0 0;
+  font: 600 24px/1 var(--display);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.zip-next {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--text-2);
+}
+.zip-next b {
+  margin-left: 4px;
+  font: 600 16px/1 var(--display);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.word-next {
+  margin-top: 12px;
+}
+.zip-burst {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  pointer-events: none;
+}
+.zip-burst i {
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  opacity: 0;
+  animation: burst 0.8s steps(6, end) both;
+  animation-delay: calc(0.45s + var(--d));
+}
+.zip-burst i:nth-child(3n) { background: var(--sun); }
+.zip-burst i:nth-child(3n + 1) { background: var(--ink); }
+@keyframes burst {
+  0% { transform: rotate(var(--a)) translateX(10px); opacity: 1; }
+  100% { transform: rotate(var(--a)) translateX(clamp(90px, 22vw, 150px)); opacity: 0; }
+}
+html:lang(zh-CN) .zip-done-kicker,
+html:lang(zh-CN) .zip-done-best,
+html:lang(zh-CN) .zip-done-facts dt {
+  letter-spacing: 0;
+}
+.word-keys[hidden] {
+  display: none;
+}
+
 /* Word: six rows of five tiles and a keyboard. Right place: indigo square. Wrong place: orange with cut corners,
    so the two differ in shape as well as colour. Not in the word: grey. */
 .word-board {

@@ -119,3 +119,12 @@ export const shareRows = (rows) => rows.map((r) => r.map((s) => ['⬛', '🟧', 
 
 /** Seconds as m:ss. */
 export const clock = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+
+/** Milliseconds until the reader's next midnight, when the next Zip and Word arrive. */
+export const untilTomorrow = (now = new Date()) => new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1).getTime() - now.getTime();
+
+/** A countdown as h:mm:ss. */
+export const countdown = (ms) => {
+  const s = Math.max(0, Math.ceil(ms / 1000));
+  return `${Math.floor(s / 3600)}:${String(Math.floor((s % 3600) / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+};

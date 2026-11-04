@@ -1,6 +1,8 @@
 // Zip: draw one line through every square of the grid, passing the numbers in order. One puzzle a day.
+// When it is solved, the line lights up square by square, then the board turns into a score card that counts
+// down to tomorrow's puzzle. "Show my line" brings the finished board back.
 
-import { canStep, clock, nextNumber, zipPuzzle, zipSolved } from './games-logic.js';
+import { canStep, clock, countdown, nextNumber, untilTomorrow, zipPuzzle, zipSolved } from './games-logic.js';
 
 export function zipGame(ctx) {
   let mode = 'daily'; // or 'practice', a random puzzle that is not counted
@@ -13,6 +15,14 @@ export function zipGame(ctx) {
   let card = null;
   let ticker = 0;
   let dragging = false;
+  let finishing = false; // the solve animation is playing
+  let fresh = false; // solved just now, so the score card bursts in
+  let showLine = false; // the finished board instead of the score card
+  let wait = 0; // the timer that ends the solve animation
+  let tick = 0; // the countdown on the score card
+
+  const done = () => solved && !finishing && !showLine;
+  const still = () => matchMedia('(prefers-reduced-motion: reduce)').matches || document.body.classList.contains('still');
 
   const secs = () => spent + (since ? (Date.now() - since) / 1000 : 0);
   const save = () => mode === 'daily' && p && ctx.store.set('zip.day', { day: forDay, path, spent: secs(), solved });
@@ -20,6 +30,8 @@ export function zipGame(ctx) {
   function start(next) {
     pause();
     mode = next;
+    showLine = false;
+    fresh = false;
     forDay = ctx.day();
     path = [];
     spent = 0;
@@ -41,6 +53,10 @@ export function zipGame(ctx) {
   }
 
   function pause() {
+    clearTimeout(wait);
+    clearInterval(tick);
+    tick = 0;
+    finishing = false;
     if (since) {
       spent = secs();
       since = 0;
@@ -72,12 +88,25 @@ export function zipGame(ctx) {
     ctx.store.set('zip.stats', st);
   }
 
-  /** After every change: stop the clock on a solve, save, and redraw the line and the status. */
+  /** After every change: stop the clock on a solve, save, and redraw the line and the status. A solve plays the
+      line lighting up, then swaps the board for the score card. */
   function changed() {
     if (!solved && zipSolved(p, path)) {
       solved = true;
       pause();
       if (mode === 'daily') record();
+      fresh = true;
+      if (!still()) {
+        finishing = true;
+        wait = setTimeout(() => {
+          finishing = false;
+          if (card?.isConnected) render(card);
+        }, 900 + path.length * 28);
+      }
+      paintBoard();
+      if (!finishing) return render(card);
+      paintStatus();
+      return;
     } else {
       run();
       save();
@@ -170,9 +199,12 @@ export function zipGame(ctx) {
       }
       if (p.marks[c]) h += `<span class="zip-num">${p.marks[c]}</span>`;
       cell.innerHTML = h;
+      cell.style.setProperty('--k', i ?? 0);
       cell.classList.toggle('head', c === path[path.length - 1] && !solved);
     }
     board.classList.toggle('solved', solved);
+    board.classList.toggle('finishing', finishing);
+    board.style.setProperty('--len', path.length);
   }
 
   function paintTime() {
@@ -184,27 +216,69 @@ export function zipGame(ctx) {
     const s = ctx.s();
     const st = stats();
     const item = (dt, dd, attr = '') => `<div><dt>${dt}</dt><dd${attr}>${dd}</dd></div>`;
-    card.querySelector('#zip-stats').innerHTML = [
-      item(mode === 'daily' ? s.zip.daily : s.zip.practice, mode === 'daily' ? s.no(forDay) : '–'),
-      item(s.time, clock(secs()), ' data-zip-time'),
-      mode === 'daily' ? item(s.best, st.best == null ? '–' : clock(st.best)) : '',
-      mode === 'daily' ? item(s.streak, st.streak) : '',
-    ].join('');
+    const box = card.querySelector('#zip-stats');
+    if (box)
+      box.innerHTML = [
+        item(mode === 'daily' ? s.zip.daily : s.zip.practice, mode === 'daily' ? s.no(forDay) : '–'),
+        item(s.time, clock(secs()), ' data-zip-time'),
+        mode === 'daily' ? item(s.best, st.best == null ? '–' : clock(st.best)) : '',
+        mode === 'daily' ? item(s.streak, st.streak) : '',
+      ].join('');
     const last = path[path.length - 1];
     const text = solved
-      ? `${s.zip.solved(clock(secs()))} ${mode === 'daily' ? s.zip.tomorrow : s.zip.practiceNote}`
+      ? `${s.zip.solved(clock(secs()))}${mode === 'daily' ? `${ctx.lang() === 'zh' ? '' : ' '}${s.zip.comeBack}` : ''}`
       : path.length && p.marks[last] === p.count
         ? s.zip.cover
         : s.zip.next(nextNumber(p, path));
     const msg = card.querySelector('#zip-msg');
     if (msg.textContent !== text) msg.textContent = text;
-    const none = !path.length || solved;
-    card.querySelector('#zip-actions').innerHTML = [
-      `<button class="act" type="button" data-zip="undo"${none ? ' disabled' : ''}>${s.zip.undo}</button>`,
-      `<button class="act" type="button" data-zip="clear"${none ? ' disabled' : ''}>${s.zip.clear}</button>`,
-      solved && mode === 'daily' ? `<button class="act" type="button" data-zip="share">${s.share}</button>` : '',
-      `<button class="act" type="button" data-zip="mode">${mode === 'daily' ? s.zip.practice : s.zip.daily}</button>`,
-    ].join('');
+    const btn = (a, label, off = false) => `<button class="act" type="button" data-zip="${a}"${off ? ' disabled' : ''}>${label}</button>`;
+    card.querySelector('#zip-actions').innerHTML = finishing
+      ? ''
+      : solved
+        ? [
+            mode === 'daily' ? btn('share', s.share) : btn('again', s.zip.another),
+            btn('line', showLine ? s.zip.backToScore : s.zip.showLine),
+            btn('mode', mode === 'daily' ? s.zip.practice : s.zip.daily),
+          ].join('')
+        : [btn('undo', s.zip.undo, !path.length), btn('clear', s.zip.clear, !path.length), btn('mode', mode === 'daily' ? s.zip.practice : s.zip.daily)].join('');
+  }
+
+  /** The score card that takes the board's place once the puzzle is solved. */
+  function doneHtml() {
+    const s = ctx.s();
+    const st = stats();
+    const t = secs();
+    const best = mode === 'daily' && st.played > 1 && st.best != null && Math.abs(st.best - t) < 0.5;
+    const burst = fresh && !still() ? `<span class="zip-burst" aria-hidden="true">${Array.from({ length: 12 }, (_, i) => `<i style="--a: ${i * 30}deg; --d: ${(i % 3) * 0.05}s"></i>`).join('')}</span>` : '';
+    const facts =
+      mode === 'daily'
+        ? `<dl class="zip-done-facts"><div><dt>${s.best}</dt><dd>${st.best == null ? '–' : clock(st.best)}</dd></div><div><dt>${s.streak}</dt><dd>${st.streak}</dd></div></dl>
+           <p class="zip-next">${s.zip.nextIn} <b data-zip-count>${countdown(untilTomorrow())}</b></p>`
+        : `<p class="zip-next">${s.zip.practiceNote}</p>`;
+    return `<div class="game-board zip-done${fresh && !still() ? ' fresh' : ''}" id="zip-done" role="group" aria-label="${s.zip.solvedTitle}">
+      ${burst}
+      ${ctx.trophy()}
+      <p class="zip-done-kicker">${mode === 'daily' ? `${s.zip.solvedTitle} · ${s.no(forDay)}` : s.zip.solvedTitle}</p>
+      <p class="zip-done-time">${clock(t)}</p>
+      ${best ? `<p class="zip-done-best">${s.zip.newBest}</p>` : ''}
+      ${facts}
+    </div>`;
+  }
+
+  /** The countdown on the score card. At midnight the next puzzle opens by itself. */
+  function runCountdown() {
+    clearInterval(tick);
+    tick = setInterval(() => {
+      const el = card?.querySelector('[data-zip-count]');
+      if (!el) return clearInterval(tick);
+      const left = untilTomorrow();
+      el.textContent = countdown(left);
+      if (left <= 1000) {
+        clearInterval(tick);
+        setTimeout(() => card?.isConnected && render(card), 1200);
+      }
+    }, 1000);
   }
 
   function onClick(e) {
@@ -213,6 +287,8 @@ export function zipGame(ctx) {
     else if (a === 'clear') path = [];
     else if (a === 'share') return ctx.copy(`${ctx.s().zip.shareText(forDay, clock(secs()))}\n${ctx.link()}`, e.target.closest('button'));
     else if (a === 'mode') return start(mode === 'daily' ? 'practice' : 'daily'), render(card);
+    else if (a === 'again') return start('practice'), render(card);
+    else if (a === 'line') return (showLine = !showLine), (fresh = false), render(card);
     else return;
     changed();
   }
@@ -221,16 +297,28 @@ export function zipGame(ctx) {
     if (!p || (mode === 'daily' && forDay !== ctx.day())) start('daily');
     card = el;
     const s = ctx.s();
-    card.innerHTML = `<p class="game-help">${s.zip.help}</p>
+    const over = done();
+    card.innerHTML = over
+      ? `${doneHtml()}
+      <p class="game-msg" id="zip-msg" aria-live="polite"></p>
+      <div class="game-actions" id="zip-actions"></div>`
+      : `<p class="game-help">${s.zip.help}</p>
       <dl class="game-stats" id="zip-stats"></dl>
       <div class="game-board zip-board" id="zip-board" tabindex="0" role="group" aria-label="${s.zip.label(p.size)}" aria-describedby="zip-msg" style="--size: ${p.size}">${Array.from({ length: p.size * p.size }, (_, c) => `<div class="zip-cell" data-c="${c}"></div>`).join('')}</div>
       <p class="game-msg" id="zip-msg" aria-live="polite"></p>
       <div class="game-actions" id="zip-actions"></div>`;
-    wire(card.querySelector('#zip-board'));
     if (!card.dataset.wired) {
       card.dataset.wired = '1';
       card.addEventListener('click', onClick);
     }
+    if (over) {
+      paintStatus();
+      // The burst plays once, right after the solve.
+      fresh = false;
+      if (mode === 'daily') runCountdown();
+      return;
+    }
+    wire(card.querySelector('#zip-board'));
     paintBoard();
     paintStatus();
     if (since) ticker ||= setInterval(paintTime, 250);

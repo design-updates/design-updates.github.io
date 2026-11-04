@@ -642,6 +642,27 @@ button {
   letter-spacing: -0.01em;
 }
 
+/* Narrow phones (360px): the wordmark and four buttons still share one row. */
+@media (max-width: 380px) {
+  .masthead-row {
+    column-gap: 6px;
+  }
+  .masthead .digest-btn,
+  .masthead .lang-toggle,
+  .masthead .theme-toggle {
+    min-width: 32px;
+    width: 32px;
+    height: 32px;
+  }
+  .masthead .digest-btn {
+    padding: 0;
+    justify-content: center;
+  }
+  .wordmark-text {
+    font-size: 20px;
+  }
+}
+
 /* The Aa switch shows the font it switches to. */
 .font-toggle {
   font-family: var(--body);

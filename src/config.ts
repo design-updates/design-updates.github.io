@@ -10,6 +10,9 @@ export interface App {
   aliases: string[];
   domains: string[];
   appstoreId: number | null;
+  /** The App Store country the app is listed in, when it is not in the default one (stores.country). Zomato is
+   *  only in India's store, Careem in the UAE's, SNCF Connect in France's. */
+  storeCountry: string | null;
   /** Google Play package name, for version notes. */
   playId: string | null;
   iconDomain: string | null;
@@ -93,6 +96,7 @@ export function parseConfig(src: string, env: Record<string, string | undefined>
         aliases: strList(a.aliases, `${name}.aliases`).length ? strList(a.aliases, `${name}.aliases`) : [name],
         domains: strList(a.domains, `${name}.domains`).map((d) => d.toLowerCase().replace(/^www\./, '')),
         appstoreId: a.appstore_id == null ? null : Number(a.appstore_id),
+        storeCountry: a.store_country ? String(a.store_country).toLowerCase() : null,
         playId: a.play_id ? String(a.play_id) : null,
         iconDomain: a.icon_domain ? String(a.icon_domain) : null,
       };

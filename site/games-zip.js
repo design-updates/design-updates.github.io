@@ -151,7 +151,10 @@ export function zipGame(ctx) {
       e.preventDefault();
       board.focus({ preventScroll: true });
       dragging = true;
-      board.setPointerCapture?.(e.pointerId);
+      // Keeps the moves coming when the finger slides off the board; some browsers refuse, which is fine.
+      try {
+        board.setPointerCapture(e.pointerId);
+      } catch {}
       if (!path.length ? canStep(p, path, c) && path.push(c) : backTo(c) || toward(c)) changed();
     });
     board.addEventListener('pointermove', (e) => {

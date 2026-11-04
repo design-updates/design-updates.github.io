@@ -37,22 +37,28 @@ export function notesMentionDesign(notes: string): boolean {
 
 type Lookup = { results?: { trackId: number; version?: string; currentVersionReleaseDate?: string; releaseNotes?: string; screenshotUrls?: string[] }[] };
 
+/** One lookup per store country: most apps are in the default store, a few only in their home country's. */
 export async function readAppStore(apps: App[], country: string, fetchImpl: typeof fetch): Promise<Map<string, StoreVersion>> {
-  const ids = apps.filter((a) => a.appstoreId).map((a) => a.appstoreId!);
   const out = new Map<string, StoreVersion>();
-  if (!ids.length) return out;
-  const res = await fetchImpl(`https://itunes.apple.com/lookup?id=${ids.join(',')}&country=${encodeURIComponent(country)}`, { signal: AbortSignal.timeout(20_000) });
-  if (!res.ok) throw new Error(`App Store lookup HTTP ${res.status}`);
-  const data = (await res.json()) as Lookup;
-  for (const r of data.results ?? []) {
-    const app = apps.find((a) => a.appstoreId === r.trackId);
-    if (!app || !r.version) continue;
-    out.set(app.name, {
-      version: r.version,
-      date: parseDate(r.currentVersionReleaseDate)?.toISOString() ?? null,
-      notes: truncate((r.releaseNotes ?? '').replace(/\s+/g, ' '), 1200),
-      screenshot: r.screenshotUrls?.[0] ?? null,
-    });
+  const byCountry = new Map<string, App[]>();
+  for (const a of apps.filter((x) => x.appstoreId)) {
+    const cc = a.storeCountry ?? country;
+    byCountry.set(cc, [...(byCountry.get(cc) ?? []), a]);
+  }
+  for (const [cc, list] of byCountry) {
+    const res = await fetchImpl(`https://itunes.apple.com/lookup?id=${list.map((a) => a.appstoreId).join(',')}&country=${encodeURIComponent(cc)}`, { signal: AbortSignal.timeout(20_000) });
+    if (!res.ok) throw new Error(`App Store lookup (${cc}) HTTP ${res.status}`);
+    const data = (await res.json()) as Lookup;
+    for (const r of data.results ?? []) {
+      const app = list.find((a) => a.appstoreId === r.trackId);
+      if (!app || !r.version) continue;
+      out.set(app.name, {
+        version: r.version,
+        date: parseDate(r.currentVersionReleaseDate)?.toISOString() ?? null,
+        notes: truncate((r.releaseNotes ?? '').replace(/\s+/g, ' '), 1200),
+        screenshot: r.screenshotUrls?.[0] ?? null,
+      });
+    }
   }
   return out;
 }
@@ -104,7 +110,7 @@ export interface StoresResult {
 
 function toCandidate(app: App, store: 'app-store' | 'google-play', v: StoreVersion, previous: StoreVersion | undefined): Candidate {
   const storeName = store === 'app-store' ? 'App Store' : 'Google Play';
-  const base = store === 'app-store' ? `https://apps.apple.com/us/app/id${app.appstoreId}` : `https://play.google.com/store/apps/details?id=${app.playId}`;
+  const base = store === 'app-store' ? `https://apps.apple.com/${app.storeCountry ?? 'us'}/app/id${app.appstoreId}` : `https://play.google.com/store/apps/details?id=${app.playId}`;
   const sep = base.includes('?') ? '&' : '?';
   return {
     cid: '',

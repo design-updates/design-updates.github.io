@@ -21,6 +21,7 @@
   --sun: #ee7a48; /* orange */
   --ota: #51b3f9; /* sky */
   --rail: #285b38; /* forest */
+  --delivery: #9cb8ad; /* sage */
   --platform: #7f52f6; /* violet */
   --consumer: #ee7a48; /* orange */
   --shadow: #4c49f3; /* hard pixel shadows are indigo */
@@ -62,6 +63,7 @@
   --sun: #ee7a48;
   --ota: #51b3f9;
   --rail: #61c87a;
+  --delivery: #9cb8ad;
   --platform: #7f52f6;
   --consumer: #ee7a48;
   --shadow: #4c49f3; /* hard pixel shadows are indigo, as in light mode */
@@ -221,6 +223,7 @@ button {
 }
 .tag[data-cat='ota'] { --c: var(--ota); }
 .tag[data-cat='rail'] { --c: var(--rail); }
+.tag[data-cat='delivery'] { --c: var(--delivery); }
 .tag[data-cat='platform'] { --c: var(--platform); }
 .tag[data-cat='consumer'] { --c: var(--consumer); }
 
@@ -1105,6 +1108,7 @@ button {
 }
 .chip[data-cat='ota'] { --c: var(--ota); }
 .chip[data-cat='rail'] { --c: var(--rail); }
+.chip[data-cat='delivery'] { --c: var(--delivery); }
 .chip[data-cat='platform'] { --c: var(--platform); }
 .chip[data-cat='consumer'] { --c: var(--consumer); }
 .chip.unread-chip::before {

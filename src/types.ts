@@ -1,4 +1,4 @@
-export const CATEGORIES = ['ota', 'rail', 'platform', 'consumer'] as const;
+export const CATEGORIES = ['ota', 'rail', 'delivery', 'platform', 'consumer'] as const;
 export type Category = (typeof CATEGORIES)[number];
 
 /** What kind of design change an item is. */

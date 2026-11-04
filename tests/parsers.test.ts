@@ -47,8 +47,8 @@ test('yaml: tabs are rejected with a line number', () => {
 
 test('watchlist.yaml loads, every feed names a real app, and no app is listed twice', () => {
   const cfg = loadConfig();
-  assert.deepEqual(cfg.groups.map((g) => g.category), ['ota', 'rail', 'platform', 'consumer']);
-  assert.ok(cfg.apps.length >= 20);
+  assert.deepEqual(cfg.groups.map((g) => g.category), ['ota', 'rail', 'delivery', 'platform', 'consumer']);
+  assert.ok(cfg.apps.length >= 50);
   assert.ok(cfg.feeds.length >= 10);
 });
 

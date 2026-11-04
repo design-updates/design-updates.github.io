@@ -14,13 +14,14 @@ function wordPattern(word: string, flags: string): RegExp {
   return new RegExp(`${pre}${escape(word)}${post}`, flags);
 }
 
-/** The watchlist app a headline is about: the alias that appears earliest in the text. Exact capitals. */
+/** The watchlist app a headline is about: the alias that appears earliest in the text. Exact capitals. When two
+    start at the same place, the longer one wins, so "Uber Eats adds..." is Uber Eats, not Uber. */
 export function matchApp(cfg: Config, text: string): App | null {
-  let best: { app: App; at: number } | null = null;
+  let best: { app: App; at: number; len: number } | null = null;
   for (const app of cfg.apps) {
     for (const alias of app.aliases) {
       const m = wordPattern(alias, '').exec(text);
-      if (m && (!best || m.index < best.at)) best = { app, at: m.index };
+      if (m && (!best || m.index < best.at || (m.index === best.at && alias.length > best.len))) best = { app, at: m.index, len: alias.length };
     }
   }
   return best?.app ?? null;

@@ -3,11 +3,12 @@ import { mkdtempSync, readFileSync, existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
-import { parseConfig } from '../src/config.ts';
+import { loadConfig, parseConfig } from '../src/config.ts';
 import { similar } from '../src/curate.ts';
 import type { Llm, MessagesRequest } from '../src/llm.ts';
 import { matchApp, prefilter } from '../src/prefilter.ts';
 import { mergeDay } from '../src/radar.ts';
+import { readAppStore } from '../src/stores.ts';
 import { collect, defaultPaths, SourcesDownError } from '../src/run.ts';
 import type { Radar, Seen } from '../src/types.ts';
 
@@ -542,4 +543,31 @@ test('pictures: the model looks at the article pictures and picks the one that s
   assert.deepEqual(looked.map((l) => l.pictures), [3, 3, 3], 'each story sends its pictures plus its current one; offline, app-store and already-paired stories send nothing');
   assert.equal(r.usage?.step, 'pictures');
   assert.ok(Math.abs((r.usage?.credits ?? 0) - 0.03) < 1e-9, 'one usage line for the whole step');
+});
+
+test('the real watchlist: longer names win at the same place, and short everyday names need their app forms', () => {
+  const cfg = loadConfig();
+  assert.equal(matchApp(cfg, 'Uber Eats adds a new checkout')?.name, 'Uber Eats');
+  assert.equal(matchApp(cfg, 'Uber adds teen accounts')?.name, 'Uber');
+  assert.equal(matchApp(cfg, 'GrabFood gets a new home screen')?.name, 'Grab');
+  assert.equal(matchApp(cfg, 'Grab Your Tickets Now'), null);
+  assert.equal(matchApp(cfg, 'Usain Bolt opens a café at noon'), null);
+  assert.equal(matchApp(cfg, 'talabat redesigns its app')?.name, 'Delivery Hero');
+  assert.equal(matchApp(cfg, 'Zomato launches a new home screen')?.category, 'delivery');
+});
+
+test('App Store notes for an app listed in another country are read from that country’s store', async () => {
+  const cfg = loadConfig();
+  const asked: string[] = [];
+  const fake = (async (url: string | URL | Request) => {
+    asked.push(String(url));
+    return new Response(JSON.stringify({ results: [] }));
+  }) as typeof fetch;
+  await readAppStore(cfg.apps, 'us', fake);
+  const countries = asked.map((u) => new URL(u).searchParams.get('country')).sort();
+  assert.ok(countries.includes('in') && countries.includes('cn') && countries.includes('us'));
+  assert.equal(new Set(countries).size, countries.length, 'one lookup per country');
+  const india = asked.find((u) => u.includes('country=in'))!;
+  assert.ok(india.includes('434613896'), 'Zomato is looked up in India');
+  assert.ok(!asked.find((u) => u.includes('country=us'))!.includes('434613896'));
 });

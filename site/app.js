@@ -25,7 +25,7 @@ const T = {
   en: {
     title: 'Pixel Post · app design changes worth your time',
     skip: 'Skip to today',
-    cat: { ota: 'OTA', rail: 'Rail', platform: 'Platform', consumer: 'Consumer' },
+    cat: { ota: 'OTA', rail: 'Rail', delivery: 'Delivery', platform: 'Platform', consumer: 'Consumer' },
     kind: { ui: 'UI', ux: 'UX', brand: 'Brand' },
     beta: 'Beta',
     why: 'Why it matters',
@@ -133,7 +133,7 @@ const T = {
   zh: {
     title: 'Pixel Post · 值得一看的应用设计变化',
     skip: '跳到今天',
-    cat: { ota: 'OTA', rail: '铁路', platform: '平台', consumer: '消费' },
+    cat: { ota: 'OTA', rail: '铁路', delivery: '外卖出行', platform: '平台', consumer: '消费' },
     kind: { ui: 'UI', ux: 'UX', brand: '品牌' },
     beta: '测试版',
     why: '为什么重要',

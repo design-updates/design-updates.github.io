@@ -184,7 +184,10 @@ export function snakeGame(ctx) {
       e.preventDefault();
       from = [e.clientX, e.clientY];
       swiped = false;
-      board.setPointerCapture?.(e.pointerId);
+      // Keeps the moves coming when the finger slides off the board; some browsers refuse, which is fine.
+      try {
+        board.setPointerCapture(e.pointerId);
+      } catch {}
     });
     board.addEventListener('pointermove', (e) => {
       if (!from) return;

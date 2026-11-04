@@ -16,7 +16,7 @@ const sized = (art: string) => art.replace(/\/\d+x\d+(bb)?\.(jpg|png|webp)$/, '/
 
 async function appStoreIcon(app: App, fetchImpl: typeof fetch): Promise<{ url: string; name: string } | null> {
   const url = app.appstoreId
-    ? `https://itunes.apple.com/lookup?id=${app.appstoreId}&country=us`
+    ? `https://itunes.apple.com/lookup?id=${app.appstoreId}&country=${app.storeCountry ?? 'us'}`
     : `https://itunes.apple.com/search?term=${encodeURIComponent(app.name)}&entity=software&country=us&limit=5`;
   const res = await fetchImpl(url, { signal: AbortSignal.timeout(15_000) });
   if (!res.ok) return null;

@@ -47,7 +47,7 @@ The candidate list may include an item the reader already saw on an earlier day 
 
 For each kept item:
 - app: the watchlist name exactly when it is a watchlist app; otherwise the brand's own short name ("YouTube", "Duolingo", "Mastercard").
-- category: for watchlist apps, the watchlist group it is in. For others: "ota" for travel booking and hotels, "rail" for trains, buses and ground transport, "platform" for operating systems and design systems, "consumer" for everything else.
+- category: for watchlist apps, the watchlist group it is in. For others: "ota" for travel booking and hotels, "rail" for trains, buses and ground transport, "delivery" for food delivery and ride-hailing, "platform" for operating systems and design systems, "consumer" for everything else.
 - domain: the brand's own website domain, e.g. "youtube.com". Used for its icon.
 - kind: "ui", "ux" or "brand" (the main one).
 

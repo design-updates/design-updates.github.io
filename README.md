@@ -12,7 +12,7 @@ Every morning from 07:00 (or as soon as the laptop is on and online after that) 
 
 1. **Feeds.** Every RSS/Atom feed in `watchlist.yaml` is read: company newsrooms, tech news sites, and design and branding publications (It's Nice That, Dezeen, BP&O, PRINT and others).
 1. **Store version notes (changes nobody announces).** The latest App Store and Google Play version of every watchlist app is read. A version not seen before, released inside the window, whose notes mention a design change (redesign, new look, layout, home, tab, navigation...) becomes a candidate like a news story. Boilerplate ("bug fixes and performance improvements") is ignored, so this fires rarely. What was seen is kept in `data/stores.json`, with each version's first App Store screenshot.
-2. **Search (Anthropic API only).** One call per app group (OTAs, rail, platforms, consumer) with the web search tool, limited to the apps' own sites and the trusted outlets list. This catches newsrooms that have no feed. The company plan and Gemini have no working web search, so with those the run uses feeds only.
+2. **Search (Anthropic API only).** One call per app group (OTAs, rail, delivery and rides, platforms, consumer) with the web search tool, limited to the apps' own sites and the trusted outlets list. This catches newsrooms that have no feed. The company plan and Gemini have no working web search, so with those the run uses feeds only.
 3. **Rules (no model).** Each item is dropped, with a reason, if it comes from a blocked or unknown site, has no real publish date or is older than 48 hours, has a drop word in the headline ("funding", "deals", "rumor"...), or was already reported. From news sites, an item must be about a watchlist app or have a design word in its headline (redesign, rebrand, new logo, interface, onboarding...). Everything from a design publication goes through. Search results are dated by the article page itself, not by the search engine.
 4. **One curate call.** The model gets everything that passed, plus what was reported in the last two weeks. It keeps only design changes of three kinds: **UI** (the interface: redesigns, layout, visual style, icons, platform design rules), **UX** (how a flow works: navigation, onboarding, search, checkout, sign-in) and **Brand** (logos, identity, type, colour, app icons). Feature news with no visible design angle is dropped. Watchlist apps come first, but any well-known app, site or brand counts. It merges syndicated copies of one launch into one item (keeping the two best sources), drops the rest with a reason, and writes `headline`, `what` and `why` for each item in English and in Simplified Chinese (`zh`). It adds a `pattern` note (and `pattern_zh`) only when three or more apps moved the same way.
 5. **The picture.** For each kept item, the model (`company.compare`, Haiku) looks at the pictures in its source articles, downloaded and sent with the headline, and picks the one that shows the change itself: the grid of new icons rather than the bare logo, the new screen rather than a photo of the company. If the pictures show the old design and the new, the page shows them side by side. Captions that name the old and new picture ("the previous logo", "Apple-Music-icon-old.jpg") are used as they are, without asking. Pictures uploaded more than two months before the story are left out, since they belong to older articles linked on the page. A pair chosen earlier is never replaced. Items from App Store notes show the previous version's screenshot next to the new one, when they differ. This costs about 0.01 credits per story.
@@ -75,13 +75,15 @@ Gemini was tried on GitHub in October 2026 and not used: it timed out on several
 
 Everything is in `watchlist.yaml`; no code changes needed.
 
-**Add an app.** Add an entry under one of the four groups:
+**Add an app.** Add an entry under one of the five groups (`ota`, `rail`, `delivery`, `platform`, `consumer`):
 
 ```yaml
       - name: Kayak
         aliases: [Kayak]             # words that mark a headline as about this app (exact capitals)
         domains: [kayak.com]         # its own sites; count as first-party sources
-        appstore_id: 305204535       # optional, for the icon
+        appstore_id: 305204535       # optional, for the icon and App Store notes
+        play_id: com.kayak.android   # optional, for Google Play notes
+        store_country: in            # only for apps not in the US App Store (Zomato: in, Careem: ae, Meituan: cn)
 ```
 
 Then run `npm run icons` to fetch its icon. An app can only be in one group. The group decides its category dot on the page.
@@ -120,6 +122,10 @@ Add a feed under `feeds:`:
 This only works when the articles carry a readable date (a publish-date meta tag, structured data, or a `<time>` element); without one the 48-hour rule drops them all.
 
 Run `npm run check-feeds` to confirm it works. If a site has no feed, add its domain to the app's `domains` (for a company) or to `trust.outlets` (for a news site) so the search step covers it instead.
+
+The watchlist covers 58 apps: OTAs and metasearch (Expedia, Booking.com, Airbnb, Agoda, Trip.com, Skyscanner, MakeMyTrip, Traveloka, Priceline, trivago, Fliggy and others), rail and buses (Trainline, Omio, Amtrak, SNCF Connect, DB Navigator, Eurostar, Trenitalia, Renfe, 12306, IRCTC, ixigo, Korail, FlixBus), food delivery and rides (Uber, Uber Eats, Lyft, Grab, Careem, Bolt, Gojek, DiDi, DoorDash, Grubhub, Zomato, Swiggy, Noon, foodpanda, Delivery Hero, Deliveroo, Meituan), platforms and consumer apps. Delivery Hero has no app of its own; its entry follows talabat and also matches news about Glovo, Baemin and PedidosYa. Short everyday names are matched only in their app forms ("GrabFood", "Bolt Food", "noon app"), so "grab a coffee" or "Usain Bolt" is not news about them. There is one App Store lookup per country. Some Google Play pages carry no "What's new" notes (Airbnb, Instagram, Zomato, Careem in November 2026); for those only the App Store notes are read.
+
+Delivery and rides (November 2026): Grab, Amtrak, Priceline and trivago have feeds; Lyft, Bolt and Traveloka are read as newsroom pages. DoorDash, Grubhub, Delivery Hero, foodpanda, Noon, Careem, Deliveroo and Eurostar block readers; Uber's newsroom has no article dates and Zomato's blog no article titles. TechCrunch Transportation, Restaurant Dive and Inc42 cover those companies instead, with the store notes.
 
 Travel companies (November 2026): Booking.com, KAYAK and Tripadvisor have newsroom feeds; Airbnb, Agoda and Trip.com are read as newsroom pages. **Expedia cannot be read**: expedia.com (including its product release pages such as expedia.com/product/release/fall2026/) and Expedia Group's newsroom block automated readers, even a real Chrome, and so do Skyscanner, Omio, Trainline and PhocusWire. Their bigger releases still arrive through Skift, The Verge, 9to5Mac and TechCrunch, and Expedia's app updates through the App Store and Google Play notes. Hopper's media center reads fine but its articles carry no machine-readable date, so it is left out.
 

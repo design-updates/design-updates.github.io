@@ -47,13 +47,14 @@ prices:
   gemini-3.8-flash: { input: 0, output: 0 }   # free tier; wrong if billing is turned on for the key's project
   web_search_per_1000: 10
 
-# The four groups are also the four categories on the page: ota, rail, platform, consumer.
+# The five groups are also the five categories on the page: ota, rail, delivery, platform, consumer.
 # Per app:
 #   aliases      words that mark a headline as being about this app. Whole words, exact
 #                capitals, so "Threads" matches the app but not "email threads".
 #   domains      the company's own sites; items from these count as first-party
 #   appstore_id  App Store id: the icon, and version notes for "changes nobody announces" (optional)
 #   play_id      Google Play package name, for version notes (optional)
+#   store_country  the App Store country the app is listed in, when it is not in `stores.country` (e.g. in, ae, cn)
 #   icon_domain  use this site's favicon as the icon instead (optional)
 groups:
   ota:
@@ -62,6 +63,7 @@ groups:
       - Expedia OR Booking.com OR Airbnb app new feature OR redesign
       - Agoda OR Hopper OR Klook OR Trip.com app launches new feature
       - Google Flights OR Google Hotels new feature
+      - Skyscanner OR MakeMyTrip OR Traveloka OR Priceline app new feature
     apps:
       - name: Expedia
         aliases: [Expedia, Hotels.com, Vrbo]
@@ -113,12 +115,45 @@ groups:
         domains: [tripadvisor.com, tripadvisor.mediaroom.com]
         appstore_id: 284876795
         play_id: com.tripadvisor.tripadvisor
+      - name: Skyscanner
+        aliases: [Skyscanner]
+        domains: [skyscanner.net, skyscanner.com]
+        appstore_id: 415458524
+        play_id: net.skyscanner.android.main
+      - name: MakeMyTrip
+        aliases: [MakeMyTrip, Goibibo]
+        domains: [makemytrip.com]
+        appstore_id: 530488359
+        play_id: com.makemytrip
+        store_country: in
+      - name: Traveloka
+        aliases: [Traveloka]
+        domains: [traveloka.com]
+        appstore_id: 898244857
+        play_id: com.traveloka.android
+      - name: Priceline
+        aliases: [Priceline]
+        domains: [priceline.com, press.priceline.com]
+        appstore_id: 336381998
+        play_id: com.priceline.android.negotiator
+      - name: trivago
+        aliases: [trivago, Trivago]
+        domains: [trivago.com, company.trivago.com]
+        appstore_id: 376888389
+        play_id: com.trivago
+      - name: Fliggy
+        aliases: [Fliggy, 飞猪]
+        domains: [fliggy.com]
+        appstore_id: 453691481
+        store_country: cn
 
   rail:
     label: Rail and ground
     search:
       - Trainline OR Omio app new feature
       - JR East OR JR Central OR Shinkansen app booking new feature
+      - Amtrak OR SNCF Connect OR DB Navigator OR Eurostar app new feature
+      - IRCTC OR ixigo OR 12306 OR FlixBus app new feature
     apps:
       - name: Trainline
         aliases: [Trainline]
@@ -134,6 +169,180 @@ groups:
         aliases: [JR East, JR West, JR Central, JR Kyushu, Eki-net, SmartEX, Shinkansen app]
         domains: [jreast.co.jp, jr-central.co.jp, westjr.co.jp, jrkyushu.co.jp]
         icon_domain: jreast.co.jp
+      - name: Amtrak
+        aliases: [Amtrak, Acela]
+        domains: [amtrak.com, media.amtrak.com]
+        appstore_id: 405074003
+        play_id: com.amtrak.rider
+      - name: SNCF Connect
+        aliases: [SNCF Connect, SNCF, TGV INOUI, OUIGO]
+        domains: [sncf-connect.com, sncf.com]
+        appstore_id: 343889987
+        store_country: fr
+      - name: DB Navigator
+        aliases: [DB Navigator, Deutsche Bahn]
+        domains: [bahn.de, deutschebahn.com]
+        appstore_id: 343555245
+        play_id: de.hafas.android.db
+        store_country: de
+      - name: Eurostar
+        aliases: [Eurostar]
+        domains: [eurostar.com]
+        appstore_id: 453671246
+        play_id: com.eurostar.androidapp
+        store_country: gb
+      - name: Trenitalia
+        aliases: [Trenitalia, Frecciarossa]
+        domains: [trenitalia.com]
+        appstore_id: 331050847
+        play_id: com.lynxspa.prontotreno
+        store_country: it
+      - name: Renfe
+        aliases: [Renfe, AVE trains]
+        domains: [renfe.com]
+        appstore_id: 1544224672
+        store_country: es
+      - name: Railway 12306
+        aliases: [12306, China Railway]
+        domains: [12306.cn]
+        appstore_id: 564818797
+        store_country: cn
+      - name: IRCTC Rail Connect
+        aliases: [IRCTC, Indian Railways]
+        domains: [irctc.co.in]
+        appstore_id: 1386197253
+        play_id: cris.org.in.prs.ima
+        store_country: in
+      - name: ixigo
+        aliases: [ixigo, ConfirmTkt]
+        domains: [ixigo.com]
+        appstore_id: 1148984317
+        play_id: com.ixigo.train.ixitrain
+        store_country: in
+      - name: Korail
+        aliases: [Korail, KTX]
+        domains: [letskorail.com]
+        appstore_id: 1000558562
+        play_id: com.korail.talk
+        store_country: kr
+      - name: FlixBus
+        aliases: [FlixBus, FlixTrain, Flix SE]
+        domains: [flixbus.com, flix.com]
+        appstore_id: 778437357
+        play_id: de.flixbus.app
+        store_country: de
+
+  # Food delivery and ride-hailing. Most of these have no newsroom the laptop can read (DoorDash, Grubhub,
+  # Delivery Hero, foodpanda, Noon, Careem and Deliveroo block readers; Uber's articles carry no date), so they are
+  # covered by their App Store and Google Play notes and by the outlets below. Short or everyday names (Grab, Bolt,
+  # Noon) are matched only in forms that can't be about something else.
+  delivery:
+    label: Delivery and rides
+    search:
+      - Uber OR Lyft OR Grab OR Bolt app new feature OR redesign
+      - DoorDash OR Uber Eats OR Grubhub OR Deliveroo app new feature OR redesign
+      - Zomato OR Swiggy OR Careem OR foodpanda OR talabat app new feature
+    apps:
+      - name: Uber
+        aliases: [Uber]
+        domains: [uber.com]
+        play_id: com.ubercab
+        appstore_id: 368677368
+      - name: Uber Eats
+        aliases: [Uber Eats, UberEats]
+        domains: [ubereats.com]
+        appstore_id: 1058959277
+        play_id: com.ubercab.eats
+      - name: Lyft
+        aliases: [Lyft]
+        domains: [lyft.com]
+        appstore_id: 529379082
+        play_id: me.lyft.android
+      - name: Grab
+        aliases: [Grab Holdings, Grab app, Grab's, GrabFood, GrabCar, GrabPay, GrabMart, Grab launches, Grab adds, Grab rolls out]
+        domains: [grab.com]
+        appstore_id: 647268330
+        play_id: com.grabtaxi.passenger
+        store_country: sg
+      - name: Careem
+        aliases: [Careem]
+        domains: [careem.com]
+        appstore_id: 592978487
+        play_id: com.careem.acma
+        store_country: ae
+      - name: Bolt
+        aliases: [Bolt app, Bolt Food, Bolt Business, Bolt Technology, Bolt's, Bolt launches, Bolt adds, Bolt rolls out, bolt.eu]
+        domains: [bolt.eu]
+        appstore_id: 675033630
+        play_id: ee.mtakso.client
+        store_country: gb
+      - name: Gojek
+        aliases: [Gojek, GoTo Group, GoFood, GoRide]
+        domains: [gojek.com]
+        appstore_id: 944875099
+        play_id: com.gojek.app
+        store_country: id
+      - name: DiDi
+        aliases: [DiDi, Didi Chuxing, 滴滴]
+        domains: [didiglobal.com]
+        appstore_id: 554499054
+        play_id: com.sdu.didi.psnger
+        store_country: cn
+      - name: DoorDash
+        aliases: [DoorDash, Wolt]
+        domains: [doordash.com, about.doordash.com]
+        appstore_id: 719972451
+        play_id: com.dd.doordash
+      - name: Grubhub
+        aliases: [Grubhub]
+        domains: [grubhub.com]
+        appstore_id: 302920553
+        play_id: com.grubhub.android
+      - name: Zomato
+        aliases: [Zomato, Blinkit, Eternal Ltd]
+        domains: [zomato.com, blog.zomato.com, eternal.com]
+        appstore_id: 434613896
+        play_id: com.application.zomato
+        store_country: in
+      - name: Swiggy
+        aliases: [Swiggy, Instamart]
+        domains: [swiggy.com]
+        appstore_id: 989540920
+        play_id: in.swiggy.android
+        store_country: in
+      - name: Noon
+        aliases: [noon app, noon.com, Noon Food, Noon Minutes, noon Minutes, Noon launches]
+        domains: [noon.com]
+        appstore_id: 1269038866
+        play_id: com.noon.buyerapp
+        store_country: ae
+      - name: foodpanda
+        aliases: [foodpanda, Foodpanda]
+        domains: [foodpanda.com]
+        appstore_id: 758103884
+        play_id: com.global.foodpanda.android
+        store_country: sg
+      # Delivery Hero has no app of its own; it runs foodpanda (above), talabat, Glovo, Baemin, PedidosYa and others.
+      # Its app here is talabat, its biggest in the Middle East.
+      - name: Delivery Hero
+        aliases: [Delivery Hero, talabat, Talabat, Glovo, Baemin, PedidosYa, HungerStation, efood]
+        domains: [deliveryhero.com, talabat.com, glovoapp.com]
+        appstore_id: 451001072
+        play_id: com.talabat
+        store_country: ae
+        icon_domain: deliveryhero.com
+      - name: Deliveroo
+        aliases: [Deliveroo]
+        domains: [deliveroo.co.uk, deliveroo.com]
+        appstore_id: 1001501844
+        play_id: com.deliveroo.orderapp
+        store_country: gb
+      - name: Meituan
+        aliases: [Meituan, Keeta, 美团]
+        domains: [meituan.com]
+        appstore_id: 737310995
+        play_id: com.sankuai.meituan
+        store_country: cn
 
   platform:
     label: Platforms
@@ -153,7 +362,7 @@ groups:
   consumer:
     label: Consumer apps known for design
     search:
-      - Duolingo OR Revolut OR Uber OR Spotify app redesign OR new feature
+      - Duolingo OR Revolut OR Spotify app redesign OR new feature
       - Instagram OR WhatsApp OR TikTok OR Threads new feature rolling out
       - Notion OR Linear new feature launch
     apps:
@@ -167,11 +376,6 @@ groups:
         domains: [revolut.com]
         play_id: com.revolut.revolut
         appstore_id: 932493382
-      - name: Uber
-        aliases: [Uber]
-        domains: [uber.com]
-        play_id: com.ubercab
-        appstore_id: 368677368
       - name: Spotify
         aliases: [Spotify]
         domains: [spotify.com, newsroom.spotify.com]
@@ -218,6 +422,9 @@ groups:
 #                  expression) are the articles, and each is read for its title, date and summary
 # `npm run check-feeds` tests every URL below.
 #
+# Also blocked or unusable (Nov 2026): DoorDash, Grubhub, Delivery Hero, foodpanda, Instacart, Noon, Careem, Deliveroo,
+# Eurostar and Skyscanner newsrooms; Uber's newsroom (no article dates) and Zomato's blog (no article titles).
+# Swiggy's blog is mostly restaurant lists, so it is left out. Those apps are covered by their store notes and outlets.
 # Blocked for automated readers from the laptop's network (Nov 2026), even in a real Chrome: expedia.com (including
 # its product release pages, expedia.com/product/release/...), Expedia Group's newsroom, Skyscanner, Omio, Trainline
 # and PhocusWire. Their bigger releases reach the outlets below (Skift, The Verge, 9to5Mac, TechCrunch).
@@ -274,6 +481,37 @@ feeds:
     kind: company
     app: Trip.com
     page: '^/newsroom/[a-z0-9_-]{12,}/?$'
+  - name: Grab Press
+    url: https://www.grab.com/sg/press/feed/
+    kind: company
+    app: Grab
+  - name: Priceline Press
+    url: https://press.priceline.com/feed/
+    kind: company
+    app: Priceline
+  - name: trivago
+    url: https://company.trivago.com/feed/
+    kind: company
+    app: trivago
+  - name: Amtrak Media
+    url: https://media.amtrak.com/feed/
+    kind: company
+    app: Amtrak
+  - name: Lyft Blog
+    url: https://www.lyft.com/blog
+    kind: company
+    app: Lyft
+    page: '^/blog/posts/[a-z0-9]+(-[a-z0-9]+){2,}/?$'
+  - name: Bolt Blog
+    url: https://bolt.eu/en/blog/
+    kind: company
+    app: Bolt
+    page: '^/en/blog/[a-z0-9]+(-[a-z0-9]+){1,}/?$'
+  - name: Traveloka News
+    url: https://www.traveloka.com/en-id/explore/news
+    kind: company
+    app: Traveloka
+    page: '^/en-id/explore/news/[a-z0-9-]+/\d+/?$'
   - name: Meta Newsroom
     url: https://about.fb.com/news/feed/
     kind: outlet
@@ -310,6 +548,16 @@ feeds:
     kind: outlet
   - name: Skift
     url: https://skift.com/feed/
+    kind: outlet
+  # Food delivery and ride-hailing news, for the companies whose own newsrooms block readers.
+  - name: TechCrunch Transportation
+    url: https://techcrunch.com/category/transportation/feed/
+    kind: outlet
+  - name: Restaurant Dive
+    url: https://www.restaurantdive.com/feeds/news/
+    kind: outlet
+  - name: Inc42 (India)
+    url: https://inc42.com/feed/
     kind: outlet
   - name: Apple Newsroom
     url: https://www.apple.com/newsroom/rss-feed.rss
@@ -368,6 +616,8 @@ trust:
     - macrumors.com
     - phocuswire.com
     - skift.com
+    - restaurantdive.com
+    - inc42.com
     - theverge.com
     - techcrunch.com
     - engadget.com

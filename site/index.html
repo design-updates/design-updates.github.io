@@ -12,10 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Fustat:wght@400..800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <script>
-      // Set the theme and language before first paint so neither flashes.
+      // Set the theme, font and language before first paint so none of them flashes.
       try {
         const t = localStorage.getItem('radar.theme');
         if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+        if (localStorage.getItem('radar.font') === 'clean') document.documentElement.dataset.font = 'clean';
         const l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('radar.lang');
         if (l === 'zh') document.documentElement.lang = 'zh-CN';
       } catch {}
@@ -33,6 +34,7 @@
           <p class="masthead-meta" id="issue"></p>
           <button class="digest-btn" id="digest" type="button"><span class="star" aria-hidden="true"></span><span class="label">Saved</span><span class="n" hidden></span></button>
           <button class="lang-toggle" id="lang" type="button" aria-label="切换到中文" lang="zh-CN">中</button>
+          <button class="lang-toggle font-toggle" id="font" type="button" aria-label="Switch to a simpler font">Aa</button>
           <button class="theme-toggle" id="theme" type="button" aria-label="Switch to dark mode"></button>
         </div>
         <div class="rule rule-heavy" aria-hidden="true"></div>

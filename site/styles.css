@@ -37,7 +37,8 @@
 
   /* Pixelify Sans and Fustat have no Chinese characters; Chinese text falls back to the system's Chinese font. */
   --cjk: 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
-  --display: 'Pixelify Sans', var(--cjk), ui-monospace, 'SF Mono', Menlo, monospace;
+  --brand: 'Pixelify Sans', var(--cjk), ui-monospace, 'SF Mono', Menlo, monospace;
+  --display: var(--brand);
   --body: 'Fustat', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', var(--cjk), sans-serif;
   --px: 4px; /* one "pixel" of the pixel art */
   --page: 1180px;
@@ -78,6 +79,12 @@
   --on-band-mark: #4c49f3; /* indigo: the logo square and the Saved star */
   --band-shadow: #4c49f3;
   color-scheme: dark;
+}
+
+/* The simpler font (the Aa switch): Fustat for headlines and labels too. The Pixel Post wordmark keeps the pixel
+   font, because it is the name. */
+:root[data-font='clean'] {
+  --display: var(--body);
 }
 
 *,
@@ -468,7 +475,7 @@ button {
   height: 30px;
 }
 .wordmark-text {
-  font: 700 26px/1 var(--display);
+  font: 700 26px/1 var(--brand);
   letter-spacing: 0.02em;
 }
 .masthead-meta {
@@ -615,6 +622,35 @@ button {
   color: var(--ink);
   box-shadow: inset 0 0 0 2px var(--line);
   transition: box-shadow 0.15s var(--step);
+}
+/* The simpler font is narrower and lighter than the pixel one at the same size: big headings get bolder and a
+   little tighter, so they keep their weight on the page. */
+:root[data-font='clean'] .hello-title,
+:root[data-font='clean'] .headline,
+:root[data-font='clean'] .section-title,
+:root[data-font='clean'] .zip-done-time {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+/* Fixed-width digits keep the pixel font's clocks steady; in the simpler font they leave gaps ("No.  2"). Only
+   the running clocks keep them. */
+:root[data-font='clean'] .game-stats dd:not([data-zip-time]) {
+  font-variant-numeric: normal;
+}
+:root[data-font='clean'] .row-title {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* The Aa switch shows the font it switches to. */
+.font-toggle {
+  font-family: var(--body);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+:root[data-font='clean'] .font-toggle {
+  font-family: var(--brand);
+  font-weight: 600;
 }
 .theme-toggle {
   display: grid;

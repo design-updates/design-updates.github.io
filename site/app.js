@@ -105,6 +105,8 @@ const T = {
     loadFailed: 'Could not load data/radar.json.',
     toLight: 'Switch to light mode',
     toDark: 'Switch to dark mode',
+    toCleanFont: 'Switch to a simpler font',
+    toPixelFont: 'Switch to the pixel font',
     langButton: '中',
     langLabel: '切换到中文',
     home: 'Pixel Post, home',
@@ -213,6 +215,8 @@ const T = {
     loadFailed: '无法加载 data/radar.json。',
     toLight: '切换到浅色模式',
     toDark: '切换到深色模式',
+    toCleanFont: '切换到简洁字体',
+    toPixelFont: '切换到像素字体',
     langButton: 'EN',
     langLabel: 'Switch to English',
     home: 'Pixel Post，首页',
@@ -1050,6 +1054,28 @@ function paintTheme() {
   $('meta[name="theme-color"]').content = dark ? '#000000' : '#f5ffe5';
 }
 
+/* ---------- font: the pixel font (default) or a simpler one ---------- */
+
+function paintFont() {
+  const btn = $('#font');
+  const label = document.documentElement.dataset.font === 'clean' ? t().toPixelFont : t().toCleanFont;
+  btn.setAttribute('aria-label', label);
+  btn.title = label;
+}
+
+function wireFont() {
+  $('#font').addEventListener('click', () => {
+    const clean = document.documentElement.dataset.font !== 'clean';
+    if (clean) document.documentElement.dataset.font = 'clean';
+    else delete document.documentElement.dataset.font;
+    try {
+      localStorage.setItem('radar.font', clean ? 'clean' : 'pixel');
+    } catch {}
+    // Text takes a different amount of room in the other font, so the cards are drawn again.
+    render();
+  });
+}
+
 function wireTheme() {
   $('#theme').addEventListener('click', () => {
     const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
@@ -1218,6 +1244,7 @@ function paintLanguage() {
   const dg = $('#digest .label');
   if (dg) dg.textContent = t().digest;
   paintTheme();
+  paintFont();
   if ($('#digest-dialog')?.open) openDigest();
 }
 
@@ -1706,6 +1733,7 @@ function render() {
 async function main() {
   wireLogo();
   wireTheme();
+  wireFont();
   wireLanguage();
   paintLanguage();
   try {

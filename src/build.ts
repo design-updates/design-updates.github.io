@@ -1,7 +1,7 @@
 // npm run build: copies the static site and today's data into dist/ for GitHub Pages.
 
 import { createHash } from 'node:crypto';
-import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { loadConfig } from './config.ts';
 import { iconAt16, mirrorAssets, mirrorUrls } from './mirror.ts';
 import { emptyRadar } from './radar.ts';
@@ -40,14 +40,24 @@ writeJson('dist/data/meta.json', {
   workflows: workflowsOn,
   cases: casesOn,
 });
-// Browsers keep styles.css and app.js for up to 10 minutes. A version tag that changes with the file makes them
-// fetch the new one straight after a publish.
-const version = (file: string) => createHash('sha1').update(readFileSync(`site/${file}`)).digest('hex').slice(0, 10);
+// Browsers keep styles.css and the scripts for up to 10 minutes. A version tag that changes with the files makes
+// them fetch the new ones straight after a publish. The scripts share one tag, so app.js and the games files it
+// loads never mix an old and a new copy.
+const hash = (...parts: (string | Buffer)[]) => {
+  const h = createHash('sha1');
+  for (const p of parts) h.update(p);
+  return h.digest('hex').slice(0, 10);
+};
+const scripts = readdirSync('site').filter((f) => f.endsWith('.js')).sort();
+const js = hash(...scripts.flatMap((f) => [f, readFileSync(`site/${f}`)]));
+for (const f of scripts) {
+  writeFileSync(`dist/${f}`, readFileSync(`site/${f}`, 'utf8').replace(/(import\s*\(?\s*(?:[^'"]*?from\s*)?['"])(\.\/[\w-]+\.js)(['"])/g, `$1$2?v=${js}$3`));
+}
 writeFileSync(
   'dist/index.html',
   readFileSync('site/index.html', 'utf8')
-    .replace('href="styles.css"', `href="styles.css?v=${version('styles.css')}"`)
-    .replace('src="app.js"', `src="app.js?v=${version('app.js')}"`),
+    .replace('href="styles.css"', `href="styles.css?v=${hash(readFileSync('site/styles.css'))}"`)
+    .replace('src="app.js"', `src="app.js?v=${js}"`),
 );
 writeFileSync('dist/.nojekyll', '');
 console.log('Built dist/');

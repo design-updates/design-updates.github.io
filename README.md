@@ -150,6 +150,16 @@ A third page, **Case studies**, collects the most inspiring design case studies 
 - **Output:** `data/cases.json`. `npm run cases` prints what was kept and dropped with the reason for each; the last report is in `.cache/cases-last.txt`.
 - **To turn it off:** set `enabled: false` in `casestudies.yaml`.
 
+## Games
+
+A fourth page, **Games**, is a break between reads. It needs no data and no model; everything runs in the browser.
+
+- **Zip**: draw one line through every square of a 6×6 grid, passing the numbers 1 to 9 in order. Drag with a finger or the mouse, or use the arrow keys. One puzzle a day, the same for everyone (made from the day's number), plus practice puzzles that are not counted. The puzzle is made by reshaping a zigzag line through every square, so it always has a solution.
+- **Word**: guess the day's five-letter design word in six tries. The answers and their meanings, in English and Chinese, are in `site/games-words.js` (95 words, one a day in a fixed shuffled order). Any five letters count as a guess, so there is no dictionary to download.
+- **Snake**: eat the dots and miss the walls and your own tail. Arrow keys or WASD, swipes on the board, or the buttons on touch screens.
+- Puzzle No. 1 was 3 Nov 2026, on the reader's own calendar. Scores, streaks and today's progress stay in the browser (`localStorage`); nothing is sent anywhere. Zip and Word can copy the result to share.
+- The rules are in `site/games-logic.js`, tested in `tests/games.test.ts`. The game files load only when the Games tab opens.
+
 ## The morning job (this Mac)
 
 `scripts/daily.sh` runs the collector with the company Claude, then commits and uploads `data/` to GitHub, which republishes the page. macOS starts it **every hour from 07:00 to 23:00**, and also when you log in. The first time it finds the Mac awake and online, it does the day's run; every later check that day does nothing. So if the laptop was off or away from the company network at 07:00, the edition appears within an hour of it coming back.

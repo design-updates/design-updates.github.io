@@ -54,6 +54,9 @@ const T = {
     stage: { research: 'Research', ideas: 'Ideas', ux: 'UX', ui: 'UI', prototyping: 'Prototyping', systems: 'Design systems', handoff: 'Handoff', brand: 'Brand', team: 'Team' },
     wfType: { workflow: 'Workflow', technique: 'Technique', tool: 'Tool', study: 'Study' },
     viewCases: 'Case studies',
+    viewGames: 'Games',
+    gmTitle: 'Games',
+    gmSummary: 'A break between reads. <b>Zip</b> and <b>Word</b> are one puzzle a day, the same for everyone; <b>Snake</b> never ends. Scores stay in this browser.',
     csTitle: 'Case studies',
     csSummary: (picks, checked) => `This week: <b>${picks}</b> from ${checked} posts by top design teams and the design press. Shipped work from well-known companies only. Picked every Monday.`,
     csQuiet: (checked) => `This week, none of ${checked} posts was a case study of shipped work from a well-known company. Picked every Monday.`,
@@ -159,6 +162,9 @@ const T = {
     stage: { research: '调研', ideas: '构思', ux: 'UX', ui: 'UI', prototyping: '原型', systems: '设计系统', handoff: '交付', brand: '品牌', team: '团队' },
     wfType: { workflow: '工作流', technique: '技巧', tool: '工具', study: '研究' },
     viewCases: '设计案例',
+    viewGames: '游戏',
+    gmTitle: '游戏',
+    gmSummary: '读累了就玩一会儿。<b>Zip</b> 和 <b>Word</b> 每天一题，大家的题目相同；<b>Snake</b> 可以一直玩。成绩只保存在这个浏览器里。',
     csTitle: '设计案例',
     csSummary: (picks, checked) => `本周：从 ${checked} 篇顶尖设计团队和设计媒体的文章中选出 <b>${picks}</b>。只收知名公司已上线的作品。每周一更新。`,
     csQuiet: (checked) => `本周 ${checked} 篇文章里，没有知名公司已上线作品的案例。每周一更新。`,
@@ -1466,15 +1472,43 @@ async function loadCases() {
   }
 }
 
+/* ---------- Games ---------- */
+
+let games = null; // games.js, loaded the first time the tab opens
+
+/** A small pixel game controller: the page's mark for games. */
+const PAD = [
+  '..aaaaaaa..',
+  '.aaaaaaaaa.',
+  'aaoaaaaaaaa',
+  'aooooaaoaoa',
+  'aaoaaaaaaaa',
+  'aaaaaaaaaaa',
+  'aaa.....aaa',
+  '.a.......a.',
+];
+const gamepad = () => pixels(PAD, { a: 'var(--accent)', o: 'var(--sun)' }, 'sky');
+
+function renderGames() {
+  $('#gm-title').innerHTML = `${gamepad()}<span>${t().gmTitle}</span>`;
+  $('#gm-summary').innerHTML = t().gmSummary;
+  if (games) games.showGames($('#gm-box'), lang);
+}
+
+async function loadGames() {
+  games ||= await import('./games.js');
+}
+
 /* ---------- pages ---------- */
 
 /** The pages besides News, each shown only while its yaml file has it on (meta.json says which). */
 const PAGES = {
   cases: { on: () => !!meta.cases, label: () => t().viewCases, render: renderCases, load: loadCases },
   workflows: { on: () => !!meta.workflows, label: () => t().viewWorkflows, render: renderWorkflows, load: loadWorkflows },
+  games: { on: () => true, label: () => t().viewGames, render: renderGames, load: loadGames },
 };
 
-/** News, Case studies or AI workflows, from the address (#cases, #workflows). */
+/** News, Case studies, AI workflows or Games, from the address (#cases, #workflows, #games). */
 async function showView() {
   const on = Object.keys(PAGES).filter((k) => PAGES[k].on());
   $('#views').hidden = !on.length;
@@ -1489,6 +1523,7 @@ async function showView() {
     else a.removeAttribute('aria-current');
   }
   $('#views').setAttribute('aria-label', t().viewsLabel);
+  if (view !== 'games') games?.leaveGames();
   const page = PAGES[view];
   if (!page) return;
   page.render();

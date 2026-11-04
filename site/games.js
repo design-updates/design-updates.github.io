@@ -30,8 +30,10 @@ const S = {
       nextIn: 'Next word in', shareText: (n, k) => `Pixel Post Word No. ${n} · ${k}/6`,
     },
     snake: {
-      help: 'Eat the dots. Miss the walls and your own tail. Arrow keys or WASD, swipe on the board, or the buttons. Space pauses.',
+      help: 'Eat the dots. Miss the walls and your own tail. On a phone, swipe on the board to steer and tap to pause. On a computer, arrow keys or WASD, and Space pauses.',
       start: 'Start', again: 'Play again', pause: 'Pause', resume: 'Resume',
+      hint: { ready: ['Tap to start', 'Press Space to start'], paused: ['Tap to carry on', 'Press Space to carry on'], over: ['Tap to play again', 'Press Space to play again'] },
+      steer: ['Swipe to steer', 'Arrow keys to steer'],
       over: (n) => `Game over. Score ${n}.`, record: 'New best.', label: 'Snake board',
       dirs: { up: 'Up', down: 'Down', left: 'Left', right: 'Right' },
     },
@@ -59,8 +61,10 @@ const S = {
       nextIn: '下一个词还有', shareText: (n, k) => `Pixel Post Word 第 ${n} 期 · ${k}/6`,
     },
     snake: {
-      help: '吃掉圆点，别撞墙，也别撞到自己的尾巴。用方向键或 WASD、在游戏区滑动，或点按钮。空格键暂停。',
+      help: '吃掉圆点，别撞墙，也别撞到自己的尾巴。手机上在游戏区滑动控制方向，轻点暂停。电脑上用方向键或 WASD，空格键暂停。',
       start: '开始', again: '再来一局', pause: '暂停', resume: '继续',
+      hint: { ready: ['轻点开始', '按空格键开始'], paused: ['轻点继续', '按空格键继续'], over: ['轻点再来一局', '按空格键再来一局'] },
+      steer: ['滑动控制方向', '方向键控制方向'],
       over: (n) => `游戏结束，得分 ${n}。`, record: '新纪录。', label: 'Snake 游戏区',
       dirs: { up: '上', down: '下', left: '左', right: '右' },
     },

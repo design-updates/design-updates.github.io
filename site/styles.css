@@ -2304,8 +2304,46 @@ html:lang(zh-CN) .zip-done-facts dt {
 
 /* Snake: a square canvas and, on touch screens, four direction buttons. */
 .snake-board {
+  position: relative;
   padding: 3px;
   aspect-ratio: 1;
+  /* The page must not scroll or zoom while a finger steers. */
+  touch-action: none;
+  overscroll-behavior: contain;
+}
+/* The hint over the board while the snake is still: what a tap does, and that swiping steers. */
+.snake-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 14%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  pointer-events: none;
+  text-align: center;
+  white-space: nowrap;
+}
+.snake-hint:empty {
+  display: none;
+}
+.snake-hint b {
+  padding: 7px 11px 6px;
+  font: 600 15px/1 var(--display);
+  letter-spacing: 0.04em;
+  color: var(--on-fill);
+  background: var(--fill);
+}
+.snake-hint span {
+  font: 500 13px/1 var(--display);
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+}
+html:lang(zh-CN) .snake-hint b,
+html:lang(zh-CN) .snake-hint span {
+  letter-spacing: 0;
 }
 .snake-board canvas {
   display: block;

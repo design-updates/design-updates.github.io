@@ -156,7 +156,7 @@ A fourth page, **Games**, is a break between reads. It needs no data and no mode
 
 - **Zip**: draw one line through every square of a 6×6 grid, passing the numbers 1 to 9 in order. Drag with a finger or the mouse, or use the arrow keys. One puzzle a day, the same for everyone (made from the day's number), plus practice puzzles that are not counted. The puzzle is made by reshaping a zigzag line through every square, so it always has a solution. When it is solved, the line lights up square by square and the board turns into a score card (time, best, streak, and a countdown to the next puzzle); "Show my line" brings the finished board back.
 - **Word**: guess the day's five-letter design word in six tries. The answers and their meanings, in English and Chinese, are in `site/games-words.js` (95 words, one a day in a fixed shuffled order). Any five letters count as a guess, so there is no dictionary to download. When the round is over, the keyboard hides and a countdown to the next word appears.
-- **Snake**: eat the dots and miss the walls and your own tail. Arrow keys or WASD, swipes on the board, or the buttons on touch screens.
+- **Snake**: eat the dots and miss the walls and your own tail. On phones, swipe on the board to steer (the snake turns as soon as the finger moves, so one swipe can turn it twice) and tap to start or pause; there are buttons too. On computers, arrow keys or WASD, and Space pauses.
 - Puzzle No. 1 was 3 Nov 2026, on the reader's own calendar. Scores, streaks and today's progress stay in the browser (`localStorage`); nothing is sent anywhere. Zip and Word can copy the result to share.
 - The rules are in `site/games-logic.js`, tested in `tests/games.test.ts`. The game files load only when the Games tab opens.
 

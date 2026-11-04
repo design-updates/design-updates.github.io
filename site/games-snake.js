@@ -1,6 +1,7 @@
 // Snake: eat the dots, miss the walls and your own tail. It speeds up a little with every dot.
 
 const N = 16; // squares across and down
+const SWIPE = 22; // pixels a finger moves before it counts as a swipe
 const DIRS = { up: [0, -1], down: [0, 1], left: [-1, 0], right: [1, 0] };
 const KEYMAP = { ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right', w: 'up', s: 'down', a: 'left', d: 'right', W: 'up', S: 'down', A: 'left', D: 'right' };
 
@@ -150,6 +151,10 @@ export function snakeGame(ctx) {
     const label = { ready: s.snake.start, running: s.snake.pause, paused: s.snake.resume, over: s.snake.again }[status];
     card.querySelector('#snake-actions').innerHTML = `<button class="act" type="button" data-snake="go">${label}</button>`;
     card.querySelector('#snake-board').classList.toggle('idle', status !== 'running');
+    // On the board: what a tap does now, and on touch screens that swiping steers.
+    const k = matchMedia('(pointer: coarse)').matches ? 0 : 1;
+    const what = s.snake.hint[status];
+    card.querySelector('#snake-hint').innerHTML = what ? `<b>${what[k]}</b><span>${s.snake.steer[k]}</span>` : '';
     const msg = status === 'over' ? `${s.snake.over(score)}${record ? ` ${s.snake.record}` : ''}` : '';
     const m = card.querySelector('#snake-msg');
     if (m.textContent !== msg) m.textContent = msg;
@@ -161,7 +166,7 @@ export function snakeGame(ctx) {
     const s = ctx.s();
     card.innerHTML = `<p class="game-help">${s.snake.help}</p>
       <dl class="game-stats" id="snake-stats"></dl>
-      <div class="game-board snake-board" id="snake-board"><canvas width="${N * 20}" height="${N * 20}" role="img" aria-label="${s.snake.label}"></canvas></div>
+      <div class="game-board snake-board" id="snake-board"><canvas width="${N * 20}" height="${N * 20}" role="img" aria-label="${s.snake.label}"></canvas><p class="snake-hint" id="snake-hint" aria-hidden="true"></p></div>
       <p class="game-msg" id="snake-msg" aria-live="polite"></p>
       <div class="game-actions" id="snake-actions"></div>
       <div class="game-keys snake-pad" role="group" aria-label="${s.snake.label}">${['up', 'left', 'down', 'right'].map((d) => `<button class="act pad-${d}" type="button" data-turn="${d}" aria-label="${s.snake.dirs[d]}">${{ up: '▲', down: '▼', left: '◀', right: '▶' }[d]}</button>`).join('')}</div>`;
@@ -169,17 +174,32 @@ export function snakeGame(ctx) {
     sized?.disconnect();
     sized = new ResizeObserver(fit);
     sized.observe(canvas);
-    // Swipes on the board turn the snake; a tap starts or pauses it.
+    // Swipes on the board turn the snake as soon as the finger has moved a little, without waiting for it to
+    // lift, and one swipe can turn it more than once (right, then down). A tap starts or pauses it.
+    const board = card.querySelector('#snake-board');
     let from = null;
-    canvas.addEventListener('pointerdown', (e) => (from = [e.clientX, e.clientY]));
-    canvas.addEventListener('pointerup', (e) => {
+    let swiped = false;
+    board.addEventListener('pointerdown', (e) => {
+      if (e.button > 0) return;
+      e.preventDefault();
+      from = [e.clientX, e.clientY];
+      swiped = false;
+      board.setPointerCapture?.(e.pointerId);
+    });
+    board.addEventListener('pointermove', (e) => {
       if (!from) return;
       const dx = e.clientX - from[0];
       const dy = e.clientY - from[1];
-      from = null;
-      if (Math.max(Math.abs(dx), Math.abs(dy)) < 18) return status === 'running' ? pause() : go();
+      if (Math.max(Math.abs(dx), Math.abs(dy)) < SWIPE) return;
       turn(Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 'right' : 'left') : dy > 0 ? 'down' : 'up');
+      from = [e.clientX, e.clientY];
+      swiped = true;
     });
+    board.addEventListener('pointerup', () => {
+      if (from && !swiped) status === 'running' ? pause() : go();
+      from = null;
+    });
+    board.addEventListener('pointercancel', () => (from = null));
     card.addEventListener('click', (e) => {
       const t = e.target.closest('[data-turn], [data-snake]');
       if (!t) return;

@@ -4,11 +4,10 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Config } from './config.ts';
-import { addCompares } from './compare.ts';
 import { curate } from './curate.ts';
 import { feedCandidates, readFeed, type FeedResult } from './feeds.ts';
 import { ensureIcons } from './icons.ts';
-import { poolOf, searchCoverage, withRelatedPictures, type PoolEntry } from './related.ts';
+import { pickPictures, poolOf, type PoolEntry } from './related.ts';
 import type { Llm } from './llm.ts';
 import { fetchPageMeta, type PageMeta } from './pagemeta.ts';
 import { prefilter } from './prefilter.ts';
@@ -286,13 +285,12 @@ export async function collect(opts: CollectOptions): Promise<Report> {
       const rel = item.sources.map((s) => byUrl.get(s.url)?.release).find(Boolean);
       if (rel) releaseShots.set(item.id, { before: rel.previousScreenshot ?? null, after: rel.screenshot ?? null, beforeVersion: rel.previousVersion ?? null });
     }
-    // The picture can come from another site's article about the same change, which is then listed as a source.
-    const related = withRelatedPictures(snap.pool ?? [], getMeta, offline ? undefined : (item) => searchCoverage(item, fetchImpl));
-    // Pictures are checked to load, except when finishing offline from saved sources (there is no network to ask).
-    const cmp = await addCompares(cfg, post.items, related.imagesFor, llm, releaseShots, offline ? undefined : fetchImpl);
+    // The picture can come from another site's article about the same change (then listed as a source), or, failing
+    // that, from the store. Offline (finishing from saved sources) nothing is searched or checked.
+    const cmp = await pickPictures({ cfg, items: post.items, pool: snap.pool ?? [], getMeta, llm, releaseShots, fetchImpl: offline ? undefined : fetchImpl });
     if (cmp.usage) report.usage.push(cmp.usage);
     report.warnings.push(...cmp.notes.map((n) => `before/after: ${n}`));
-    items = related.credit(cmp.items);
+    items = cmp.items;
     pattern = result.pattern;
     pattern_zh = result.pattern_zh;
     report.modelDropped = [...result.dropped, ...post.dropped];

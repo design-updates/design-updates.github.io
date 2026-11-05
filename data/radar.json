@@ -158,10 +158,15 @@
               "title": "Google Maps update makes the app fully iPhone Duo compatible",
               "url": "https://gsmarena.com/google_maps_update_makes_the_app_fully_iphone_duo_compatible-news-75349.php",
               "publisher": "GSMArena"
+            },
+            {
+              "title": "Google Maps update adds full support for iPhone Duo",
+              "url": "https://kalingatv.com/technology/google-maps-update-adds-full-support-for-iphone-duo",
+              "publisher": "Kalinga TV"
             }
           ],
           "release": null,
-          "image": null,
+          "image": "https://kalingatv.com/wp-content/uploads/2026/11/google-mpas-for-iphone-duo.jpg",
           "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/58/d3/ee/58d3eefe-ff6a-2309-faa8-b5043082bbb1/maps_2025-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-85-220.png/128x128bb.png",
           "collected_at": "2026-11-05T04:10:23.374Z",
           "zh": {
@@ -169,7 +174,9 @@
             "what": "Google Maps 26.44.4 版完整适配 iPhone Duo，地图可以铺满内屏和外屏，不再沿用单屏布局。目前不少 iOS App 还没有针对这款设备的双屏做适配。",
             "why": "地图找酒店、车站和机场导航这类以地图为主的页面，最能用上更大的内屏。Google Maps 的做法可以作为地图布局在 iPhone Duo 两块屏上如何表现的参考。"
           },
-          "compare": null
+          "compare": null,
+          "store_shots": null,
+          "store_from": null
         },
         {
           "id": "whatsapp-chat-media-suggestions",
@@ -188,17 +195,25 @@
               "title": "WhatsApp starts suggesting your latest photos and videos right in your chats",
               "url": "https://gsmarena.com/whatsapp_starts_suggesting_your_latest_photos_and_videos_right_in_your_chats-news-75335.php",
               "publisher": "GSMArena"
+            },
+            {
+              "title": "WhatsApp Can Now Suggest Your Latest Gallery Photos in Chats",
+              "url": "https://techjuice.pk/whatsapp-can-now-suggest-your-latest-gallery-photos-in-chats",
+              "publisher": "TechJuice"
             }
           ],
           "release": null,
-          "image": null,
+          "image": "https://www.techjuice.pk/wp-content/uploads/2026/11/whatsapp-new-feature.jpg",
           "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/15/eb/39/15eb3965-bec3-4737-950a-9d9df5303e93/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-85-220.png/128x128bb.png",
           "collected_at": "2026-11-05T04:10:23.374Z",
           "zh": {
             "headline": "WhatsApp 开始在聊天中推荐最近拍摄的照片和视频。",
             "what": "打开聊天时，WhatsApp 会推荐最近的照片和视频供直接发送。此前它已在 Android 键盘上方根据输入的表情推荐贴纸，这次把推荐扩展到了媒体。目前在 Android 和 iOS 最新版本中向部分用户开放。",
             "why": "旅行 App 的客服对话和搜索框可以借鉴这种上下文推荐：在用户输入前先给出当前订单或最近的截图，省掉一步操作。"
-          }
+          },
+          "compare": null,
+          "store_shots": null,
+          "store_from": null
         },
         {
           "id": "google-messages-pinned-chats-redesign",
@@ -217,10 +232,15 @@
               "title": "Google Messages’ pinned chats UI makeover is finally landing for users",
               "url": "https://androidauthority.com/google-messages-pinned-chats-redesign-beta-rollout-3731406",
               "publisher": "Android Authority"
+            },
+            {
+              "title": "Google Messages pinned chats are getting a big iMessage-style makeover",
+              "url": "https://androidpolice.com/google-messages-pinned-chats-now-showing-up",
+              "publisher": "Android Police"
             }
           ],
           "release": null,
-          "image": null,
+          "image": "https://static0.anpoimages.com/wordpress/wp-content/uploads/2026/11/google-messages-pinned-chats-new.jpg?q=49&fit=crop&w=825&dpr=2",
           "icon": "https://www.google.com/s2/favicons?domain=messages.google.com&sz=64",
           "collected_at": "2026-11-05T03:33:13.536Z",
           "zh": {
@@ -228,7 +248,9 @@
             "what": "Google Messages 正在推送置顶聊天的新设计，置顶聊天位于会话列表顶部。目前只有测试版用户能看到这一改动。",
             "why": "置顶聊天的做法是：在长列表上方，用单独的视觉样式突出少数几条重点内容。旅行 App 的行程管理页在把即将出行的行程放在历史订单上方时，也要处理同样的布局问题。"
           },
-          "compare": null
+          "compare": null,
+          "store_shots": null,
+          "store_from": null
         },
         {
           "id": "google-android-family-hub-settings",
@@ -276,10 +298,15 @@
               "title": "Samsung changed Galaxy Z Flip’s cover screen with One UI 9, and a lot of owners are not happy",
               "url": "https://androidauthority.com/galaxy-z-flip-one-ui-9-cover-screen-backlash-3731117",
               "publisher": "Android Authority"
+            },
+            {
+              "title": "Some Galaxy Z Flip Users aren’t Impressed with One UI 9’s Cover Screen Overhaul",
+              "url": "https://sammyguru.com/galaxy-z-flip-users-arent-impressed-with-one-ui-9-cover-screen-overhaul",
+              "publisher": "SammyGuru"
             }
           ],
           "release": null,
-          "image": null,
+          "image": "https://sammyguru.com/wp-content/uploads/2026/11/the-new-cover-home-screen.webp",
           "icon": "https://www.google.com/s2/favicons?domain=samsung.com&sz=64",
           "collected_at": "2026-11-05T03:33:13.536Z",
           "zh": {
@@ -287,7 +314,9 @@
             "what": "基于 Android 17 的 One UI 9 更新改变了 Galaxy Z Flip 外屏的样式和交互方式。据 Android Authority 报道，更新后大量用户提出了抱怨。",
             "why": "如果你的 App 在 Flip 外屏上显示登机牌、车票或行程状态，需要确认 One UI 9 调整外屏布局后，这些界面仍能正常使用。"
           },
-          "compare": null
+          "compare": null,
+          "store_shots": null,
+          "store_from": null
         }
       ]
     },

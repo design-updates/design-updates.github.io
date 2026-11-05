@@ -129,6 +129,7 @@ const T = {
     before: 'Before',
     after: 'After',
     beforeAfter: 'Before and after',
+    storeShots: { 'app-store': 'App Store screenshots', 'google-play': 'Google Play screenshots' },
     storeNotes: (store, version) => (store === 'app-store' ? `App Store notes · v${version}` : 'Google Play notes'),
     textNote: 'Note',
   },
@@ -239,6 +240,7 @@ const T = {
     before: '改版前',
     after: '改版后',
     beforeAfter: '改版前后对比',
+    storeShots: { 'app-store': 'App Store 截图', 'google-play': 'Google Play 截图' },
     storeNotes: (store, version) => (store === 'app-store' ? `App Store 更新说明 · v${version}` : 'Google Play 更新说明'),
     textNote: '备注',
   },
@@ -555,6 +557,14 @@ function compareHtml(item) {
   return `<a class="frame photo" href="${href}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-read="${esc(item.id)}"><div class="compare notch"><figure class="half">${pic(c.before)}${label('before')}</figure><figure class="half">${pic(c.after)}${label('after')}</figure></div></a>`;
 }
 
+/** No picture of the change was found anywhere: the store's screenshots of the app, labelled so they are not taken
+    for the change itself. */
+function storeShotsHtml(item) {
+  const href = esc(safeUrl(item.sources?.[0]?.url));
+  const shots = item.store_shots.slice(0, 3);
+  return `<a class="frame photo" href="${href}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-read="${esc(item.id)}"><div class="compare notch store" style="--shots: ${shots.length}">${shots.map((src) => `<figure><img src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async"></figure>`).join('')}<span class="store-label">${t().storeShots[item.store_from] ?? t().storeShots['app-store']}</span></div></a>`;
+}
+
 function why(item) {
   return `<p class="why"><b>${t().why}</b>${esc(txt(item, 'why'))}</p>`;
 }
@@ -562,6 +572,7 @@ function why(item) {
 /** A photo if there is one; otherwise the app's icon on a plain tile. */
 function media(item) {
   if (item.compare?.after) return compareHtml(item);
+  if (!item.image && item.store_shots?.length) return storeShotsHtml(item);
   const href = esc(safeUrl(item.sources?.[0]?.url));
   const style = `--c: var(--${esc(item.category)})`;
   if (item.image) {
@@ -645,8 +656,8 @@ function rowHtml(item) {
     ? `<a class="row-thumb notch split" ${link} tabindex="-1" aria-hidden="true"><img src="${esc(c.before)}" alt="" loading="lazy" referrerpolicy="no-referrer"><img src="${esc(c.after)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
     : c?.after
       ? `<a class="row-thumb notch" ${link} tabindex="-1" aria-hidden="true"><img src="${esc(c.after)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
-      : item.image
-    ? `<a class="row-thumb notch${reduced ? '' : ' pending'}" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--${esc(item.category)})" data-fallback="${esc(bigIcon(item))}"><img src="${esc(item.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
+      : item.image || item.store_shots?.length
+    ? `<a class="row-thumb notch${reduced ? '' : ' pending'}${item.image ? '' : ' whole'}" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--${esc(item.category)})" data-fallback="${esc(bigIcon(item))}"><img src="${esc(item.image || item.store_shots[0])}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
     : `<a class="row-thumb notch placeholder" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--${esc(item.category)})">${placeholderHtml(bigIcon(item))}</a>`;
   return `<li class="row reveal ${unread ? 'unread' : 'read'}${isSaved(item.id) ? ' is-saved' : ''}" data-cat="${esc(item.category)}" data-kind="${esc(item.kind ?? '')}" data-id="${esc(item.id)}">
     <div class="row-head">

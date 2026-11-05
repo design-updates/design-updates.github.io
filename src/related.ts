@@ -2,13 +2,14 @@
 // readers (Android Authority) or shows only a stock photo, another site's article about the same change can supply
 // the picture. That site is then listed as a source too, so the picture is credited.
 
-import { isStockImage, oldUpload } from './compare.ts';
-import type { Config } from './config.ts';
+import { addCompares, isStockImage, oldUpload, type CompareResult } from './compare.ts';
+import { appByName, type Config } from './config.ts';
+import type { Llm } from './llm.ts';
 import type { PageImage, PageMeta } from './pagemeta.ts';
 import { matchApp } from './prefilter.ts';
 import type { Candidate, Item } from './types.ts';
 import { readFeed } from './feeds.ts';
-import { hoursAgo, normalizeUrl, onDomain, parseDate } from './util.ts';
+import { decodeEntities, fetchText, hoursAgo, mapLimit, normalizeUrl, onDomain, parseDate } from './util.ts';
 
 /** A headline from any source read this run, kept for matching (the model never sees these). */
 export interface PoolEntry {
@@ -102,10 +103,82 @@ export async function searchCoverage(item: Pick<Item, 'app' | 'headline' | 'sour
 }
 
 /**
+ * Who else covered the story, from Google News, and the real address of each article, from that site's news sitemap.
+ * Google News search works from the laptop but wraps every link in a redirect that can't be followed; it does give
+ * each result's site and headline, and most news sites list their recent articles in a news sitemap (the one Google
+ * News reads), headline and address together. Found this way on 5 Nov: Android Police and 9to5Google for the Messages
+ * redesign, SammyGuru for the Galaxy Z Flip cover screen, Tech Build Africa for WhatsApp.
+ */
+export async function newsCoverage(item: Pick<Item, 'app' | 'headline' | 'sources' | 'published_at'>, fetchImpl: typeof fetch = fetch): Promise<PoolEntry[]> {
+  const appWords = new Set(keyWords(item.app));
+  const head = [...new Set(keyWords(item.headline).filter((w) => !appWords.has(w)))];
+  const inTitles = new Set(item.sources.flatMap((s) => keyWords(s.title)));
+  const words = [...head.filter((w) => inTitles.has(w)), ...head.filter((w) => !inTitles.has(w)).sort((a, b) => b.length - a.length)].slice(0, 3);
+  if (words.length < 2) return [];
+  let xml = '';
+  try {
+    xml = await fetchText(`https://news.google.com/rss/search?q=${encodeURIComponent(`${item.app} ${words.join(' ')}`)}+when:21d&hl=en-US&gl=US&ceid=US:en`, { fetchImpl, timeoutMs: 15_000 });
+  } catch {
+    return [];
+  }
+  const own = new Set(item.sources.map((s) => s.publisher.toLowerCase()));
+  const listed = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((m) => ({
+    title: decodeEntities(m[1].match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? '').replace(/ - [^-]+$/, ''),
+    site: (m[1].match(/<source url="([^"]+)"/)?.[1] ?? '').replace(/\/$/, ''),
+    source: decodeEntities(m[1].match(/<source[^>]*>([\s\S]*?)<\/source>/)?.[1] ?? ''),
+    publishedAt: parseDate(m[1].match(/<pubDate>([^<]+)/)?.[1])?.toISOString() ?? null,
+  }));
+  // Only results about this story; then the real address from each site's news sitemap.
+  // The search already named the app, so a result needn't repeat it ("Some Galaxy Z Flip users aren't impressed…"
+  // is about Samsung); it still has to share the words that name the story.
+  const same = relatedCoverage(item, listed.filter((l) => l.site && !own.has(l.source.toLowerCase())).map((l) => ({ ...l, url: `${l.site}#${l.title}`, app: item.app })), 6, 21 * 24);
+  const found = await mapLimit(same, 4, async (r) => {
+    const site = r.url.split('#')[0];
+    const url = await fromNewsSitemap(site, r.title, fetchImpl);
+    return url ? { ...r, url } : null;
+  });
+  return found.filter((f): f is PoolEntry => !!f).slice(0, 3);
+}
+
+const SITEMAPS = ['/news-sitemap.xml', '/sitemap-news.xml', '/sitemap_news.xml', '/news_sitemap.xml', '/sitemaps/news.xml'];
+/** The address of the article with this headline in a site's news sitemap, if the site has one. */
+async function fromNewsSitemap(site: string, title: string, fetchImpl: typeof fetch): Promise<string | null> {
+  const want = keyWords(title);
+  for (const path of SITEMAPS) {
+    let body: string;
+    try {
+      body = await fetchText(site + path, { fetchImpl, timeoutMs: 12_000, maxBytes: 4_000_000 });
+    } catch {
+      continue;
+    }
+    if (/<sitemapindex/.test(body)) {
+      const child = body.match(/<loc>([^<]+)<\/loc>/)?.[1];
+      if (!child) continue;
+      try {
+        body = await fetchText(decodeEntities(child), { fetchImpl, timeoutMs: 12_000, maxBytes: 4_000_000 });
+      } catch {
+        continue;
+      }
+    }
+    if (!/<urlset/.test(body)) continue;
+    let best: { loc: string; score: number } | null = null;
+    for (const u of body.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
+      const loc = decodeEntities(u[1].match(/<loc>([^<]+)/)?.[1] ?? '');
+      const t = decodeEntities(u[1].match(/<news:title>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/news:title>/)?.[1] ?? '');
+      const have = new Set(keyWords(`${t} ${loc.replace(/[-/]/g, ' ')}`));
+      const score = want.filter((w) => have.has(w)).length / Math.max(1, want.length);
+      if (loc && (!best || score > best.score)) best = { loc, score };
+    }
+    return best && best.score >= 0.7 ? normalizeUrl(best.loc) : null;
+  }
+  return null;
+}
+
+/**
  * Pictures for the picture step: the item's own sources first, then other coverage of the same story. `credit`
  * adds the other site to an item's sources when its picture was the one chosen.
  */
-export function withRelatedPictures(pool: PoolEntry[], getMeta: (url: string) => Promise<PageMeta | null>, search?: (item: Item) => Promise<PoolEntry[]>) {
+export function withRelatedPictures(pool: PoolEntry[], getMeta: (url: string) => Promise<PageMeta | null>, search?: (item: Item) => Promise<PoolEntry[]>, forced = new Set<string>()) {
   const from = new Map<string, PoolEntry>();
   const picturesOf = (list: PoolEntry[]) =>
     Promise.all(
@@ -125,7 +198,7 @@ export function withRelatedPictures(pool: PoolEntry[], getMeta: (url: string) =>
     // Nothing usable from the story's own sites or today's other coverage: search for earlier coverage.
     const usable = all.flat().some((i) => !isStockImage(i.src) && !oldUpload(i.src, item.published_at));
     const current = item.image && !isStockImage(item.image) && !oldUpload(item.image, item.published_at);
-    if (!usable && !current && search) all.push(...(await picturesOf(await search(item))));
+    if (((!usable && !current) || forced.has(item.id)) && search) all.push(...(await picturesOf(await search(item))));
     return all;
   };
   const credit = (items: Item[]): Item[] =>
@@ -135,4 +208,83 @@ export function withRelatedPictures(pool: PoolEntry[], getMeta: (url: string) =>
       return { ...item, sources: [...item.sources, { title: used.title, url: used.url, publisher: used.source }] };
     });
   return { imagesFor, credit };
+}
+
+/** The store's own screenshots of the app, newest version: the last resort before the icon. App Store by the app's id,
+    else its Google Play page. Not a picture of the change itself, so the card says where they are from. */
+export async function storeShots(cfg: Config, item: Pick<Item, 'app'>, fetchImpl: typeof fetch = fetch): Promise<{ shots: string[]; from: 'app-store' | 'google-play' } | null> {
+  const app = appByName(cfg, item.app);
+  if (!app) return null;
+  if (app.appstoreId) {
+    try {
+      const res = await fetchImpl(`https://itunes.apple.com/lookup?id=${app.appstoreId}&country=${app.storeCountry ?? cfg.stores.country}`, { signal: AbortSignal.timeout(15_000) });
+      const shots = ((await res.json()) as { results?: { screenshotUrls?: string[] }[] }).results?.[0]?.screenshotUrls ?? [];
+      if (shots.length) return { shots: shots.slice(0, 3).map((u) => u.replace(/\/\d+x\d+bb\.(jpg|png)$/, '/600x1300bb.jpg')), from: 'app-store' };
+    } catch {
+      // try Google Play
+    }
+  }
+  if (app.playId) {
+    try {
+      const html = await fetchText(`https://play.google.com/store/apps/details?id=${encodeURIComponent(app.playId)}&hl=en_US&gl=US`, { fetchImpl, timeoutMs: 15_000, maxBytes: 3_000_000 });
+      const shots = [...new Set([...html.matchAll(/<img[^>]+src="(https:\/\/play-lh\.googleusercontent\.com\/[^"=]+)=w\d+-h\d+[^"]*"[^>]*alt="Screenshot image"/g)].map((m) => m[1]))];
+      if (shots.length) return { shots: shots.slice(0, 3).map((u) => `${u}=w600-h1300`), from: 'google-play' };
+    } catch {
+      // nothing
+    }
+  }
+  return null;
+}
+
+/**
+ * The whole picture step for a set of items, the same in the morning run and in `backfill-compare`:
+ * 1. the item's own pages and other coverage read this run;
+ * 2. for an item still without a picture: other sites found by search (WordPress search feeds, Google News with
+ *    each site's news sitemap), and the step runs again for it;
+ * 3. still nothing: the store's screenshots of the app, labelled as such; failing that, the app icon.
+ */
+export async function pickPictures(opts: {
+  cfg: Config;
+  items: Item[];
+  pool: PoolEntry[];
+  getMeta: (url: string) => Promise<PageMeta | null>;
+  llm: Llm | null;
+  releaseShots: Map<string, { before: string | null; after: string | null; beforeVersion: string | null }>;
+  /** Unset when finishing offline: no searching, and pictures are not checked to load. */
+  fetchImpl?: typeof fetch;
+}): Promise<CompareResult> {
+  const { cfg, pool, getMeta, llm, releaseShots, fetchImpl } = opts;
+  const forced = new Set<string>();
+  const search = fetchImpl
+    ? async (item: Item) => {
+        const [wp, news] = await Promise.all([searchCoverage(item, fetchImpl), newsCoverage(item, fetchImpl)]);
+        const seen = new Set<string>();
+        return [...wp, ...news].filter((p) => !seen.has(p.source) && seen.add(p.source));
+      }
+    : undefined;
+  const related = withRelatedPictures(pool, getMeta, search, forced);
+  const first = await addCompares(cfg, opts.items, related.imagesFor, llm, releaseShots, fetchImpl);
+  const notes = [...first.notes];
+  let items = first.items;
+  let usage = first.usage;
+  const bare = (i: Item) => !i.compare && !i.image && !i.store_shots?.length;
+  if (search && items.some(bare)) {
+    for (const i of items.filter(bare)) forced.add(i.id);
+    const again = await addCompares(cfg, items.filter(bare), related.imagesFor, llm, releaseShots, fetchImpl);
+    const byId = new Map(again.items.map((i) => [i.id, i]));
+    items = items.map((i) => byId.get(i.id) ?? i);
+    notes.push(...again.notes.map((n) => `${n} (after searching other sites)`));
+    if (again.usage) usage = usage ? { ...usage, input_tokens: usage.input_tokens + again.usage.input_tokens, output_tokens: usage.output_tokens + again.usage.output_tokens, credits: (usage.credits ?? 0) + (again.usage.credits ?? 0) } : again.usage;
+  }
+  items = related.credit(items);
+  if (fetchImpl) {
+    items = await mapLimit(items, 3, async (i) => {
+      if (!bare(i)) return i;
+      const s = await storeShots(cfg, i, fetchImpl);
+      if (!s) return i;
+      notes.push(`${i.id}: no picture of the change found anywhere; showing ${s.from === 'app-store' ? 'App Store' : 'Google Play'} screenshots of the app`);
+      return { ...i, store_shots: s.shots, store_from: s.from };
+    });
+  }
+  return { items, usage, notes };
 }

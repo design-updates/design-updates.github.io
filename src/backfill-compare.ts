@@ -6,12 +6,12 @@
 // sites' coverage of the same stories, whose pictures can be used. Only `compare`, `image` and, when another site
 // supplied the picture, `sources` change; headlines and text are never touched.
 
-import { addCompares, isStockImage, oldUpload } from './compare.ts';
+import { isStockImage, oldUpload } from './compare.ts';
 import { loadConfig } from './config.ts';
 import { companyLlm, companyLogin, type Llm } from './llm.ts';
 import { feedCandidates, readFeed } from './feeds.ts';
 import { fetchPageMeta } from './pagemeta.ts';
-import { poolOf, searchCoverage, withRelatedPictures, type PoolEntry } from './related.ts';
+import { pickPictures, poolOf, type PoolEntry } from './related.ts';
 import type { Item, Radar } from './types.ts';
 import { mapLimit, readJson, writeJson } from './util.ts';
 
@@ -43,8 +43,13 @@ const loadsHere = async (src: string) => {
 };
 const broken = new Set<string>();
 if (missing) for (const i of all) if (i.image && !i.compare && !(await loadsHere(i.image))) broken.add(i.id);
-const todo = missing ? all.filter((i) => !i.compare && (!i.image || broken.has(i.id) || isStockImage(i.image) || oldUpload(i.image, i.published_at))) : all;
-console.log(`${todo.length} items ${days ? `from the last ${days} days` : 'without before/after'}${missing ? ' with no picture yet' : ''}`);
+const todo = missing ? all.filter((i) => !i.compare && (i.store_shots?.length || !i.image || broken.has(i.id) || isStockImage(i.image) || oldUpload(i.image, i.published_at))) : all;
+// A card showing store screenshots is looked at again too: a site may have covered the change since.
+for (const i of todo) if (i.store_shots?.length) {
+  i.store_shots = null;
+  i.store_from = null;
+}
+console.log(`${todo.length} items ${days ? `from the last ${days} days` : 'without before/after'}${missing ? ' with no picture of the change yet' : ''}`);
 const pages = new Map<string, ReturnType<typeof fetchPageMeta>>();
 const getMeta = (url: string) => {
   if (!pages.has(url)) pages.set(url, fetchPageMeta(url));
@@ -57,18 +62,16 @@ if (missing && todo.length) {
   pool = poolOf(cfg, feedCandidates(cfg, results), new Date());
   console.log(`${pool.length} headlines from ${results.filter((x) => x.ok).length} feeds, for other coverage of the same stories`);
 }
-const related = withRelatedPictures(pool, getMeta, missing ? (item) => searchCoverage(item) : undefined);
-const picked = await addCompares(cfg, todo, related.imagesFor, llm, new Map(), fetch);
-const r = { ...picked, items: related.credit(picked.items) };
+const r = await pickPictures({ cfg, items: todo, pool, getMeta, llm, releaseShots: new Map(), fetchImpl: fetch });
 for (const n of r.notes) console.log(`  ${n}`);
 if (r.usage) console.log(`  model: ${r.usage.model} in ${r.usage.input_tokens} out ${r.usage.output_tokens}${r.usage.credits ? ` credits ${r.usage.credits.toFixed(3)}` : ''}`);
 
-const sig = (i: Item) => JSON.stringify([i.image, i.compare ?? null, i.sources.length]);
+const sig = (i: Item) => JSON.stringify([i.image, i.compare ?? null, i.sources.length, i.store_shots ?? null]);
 const before = new Map(todo.map((i) => [i.id, sig(i)]));
 const changed = new Map(r.items.filter((i) => before.get(i.id) !== sig(i)).map((i) => [i.id, i]));
 console.log(`${changed.size} items get a new picture`);
 if (!dry && changed.size) {
-  for (const d of radar.days) d.items = d.items.map((i) => (changed.has(i.id) ? { ...i, compare: changed.get(i.id)!.compare ?? null, image: changed.get(i.id)!.image, sources: changed.get(i.id)!.sources } : i));
+  for (const d of radar.days) d.items = d.items.map((i) => (changed.has(i.id) ? { ...i, compare: changed.get(i.id)!.compare ?? null, image: changed.get(i.id)!.image, sources: changed.get(i.id)!.sources, store_shots: changed.get(i.id)!.store_shots ?? null, store_from: changed.get(i.id)!.store_from ?? null } : i));
   writeJson('data/radar.json', radar);
   console.log('Saved data/radar.json');
 }

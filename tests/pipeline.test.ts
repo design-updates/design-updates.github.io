@@ -720,3 +720,30 @@ test('pictures: a picture named as the old design is never shown alone (Google M
   const r = await addCompares(CFG, [{ ...base, id: 'alone', headline: 'Messages redesigns pinned chats' }, { ...base, id: 'picked', headline: 'Messages redesigns pinned chats' }], async (i) => (i.id === 'alone' ? [[old]] : [[old, { src: 'https://9to5google.com/2026/09/thread.jpg', alt: '', caption: '' }]]), llm, new Map(), fetchImpl);
   for (const i of r.items) assert.equal(i.image, null, `${i.id}: the app icon, not the old design`);
 });
+
+test('news coverage: Google News names the site, its news sitemap gives the real article (Samsung, 5 Nov)', async () => {
+  const { newsCoverage } = await import('../src/related.ts');
+  const at = '2026-11-03T12:43:00Z';
+  const item = { app: 'Samsung', headline: "Samsung's One UI 9 redesigns the Galaxy Z Flip cover screen, and many owners are unhappy.", published_at: at, sources: [{ title: 'Samsung changed Galaxy Z Flip’s cover screen with One UI 9, and a lot of owners are not happy', url: 'https://androidauthority.com/a', publisher: 'Android Authority' }] };
+  const fetchImpl = (async (input: string | URL | Request) => {
+    const u = String(input);
+    if (u.startsWith('https://news.google.com/rss/search')) return new Response(`<rss><channel>
+      <item><title>Some Galaxy Z Flip Users aren’t Impressed with One UI 9’s Cover Screen Overhaul - SammyGuru</title><link>https://news.google.com/rss/articles/xyz</link><pubDate>${new Date(at).toUTCString()}</pubDate><source url="https://sammyguru.com">SammyGuru</source></item>
+      <item><title>Samsung changed Galaxy Z Flip's cover screen with One UI 9 - Android Authority</title><link>https://news.google.com/rss/articles/abc</link><pubDate>${new Date(at).toUTCString()}</pubDate><source url="https://www.androidauthority.com">Android Authority</source></item>
+      <item><title>Best foldable phones to buy in 2026 - PhoneArena</title><link>https://news.google.com/rss/articles/q</link><pubDate>${new Date(at).toUTCString()}</pubDate><source url="https://www.phonearena.com">PhoneArena</source></item>
+    </channel></rss>`);
+    if (u === 'https://sammyguru.com/news-sitemap.xml') return new Response(`<urlset><url><loc>https://sammyguru.com/one-ui-9-rollout-tracker/</loc><news:news><news:title>One UI 9 Rollout Tracker</news:title></news:news></url><url><loc>https://sammyguru.com/galaxy-z-flip-users-arent-impressed-with-one-ui-9-cover-screen-overhaul/</loc><news:news><news:title>Some Galaxy Z Flip Users aren’t Impressed with One UI 9’s Cover Screen Overhaul</news:title></news:news></url></urlset>`);
+    return new Response('no', { status: 404 });
+  }) as typeof fetch;
+  const found = await newsCoverage(item, fetchImpl);
+  assert.deepEqual(found.map((f) => f.url), ['https://sammyguru.com/galaxy-z-flip-users-arent-impressed-with-one-ui-9-cover-screen-overhaul'], 'the article itself; not the story’s own site, not an unrelated one');
+});
+
+test('store screenshots: the last resort before the icon, by the app’s App Store id', async () => {
+  const { storeShots } = await import('../src/related.ts');
+  const fetchImpl = (async (u: string) => new Response(JSON.stringify({ results: [{ screenshotUrls: ['https://is1.mzstatic.com/a/1.png/392x696bb.jpg', 'https://is1.mzstatic.com/a/2.png/392x696bb.jpg'] }] }))) as unknown as typeof fetch;
+  const r = await storeShots(CFG, { app: 'Airbnb' }, fetchImpl);
+  assert.equal(r?.from, 'app-store');
+  assert.deepEqual(r?.shots, ['https://is1.mzstatic.com/a/1.png/600x1300bb.jpg', 'https://is1.mzstatic.com/a/2.png/600x1300bb.jpg']);
+  assert.equal(await storeShots(CFG, { app: 'Not on the watchlist' }, fetchImpl), null);
+});

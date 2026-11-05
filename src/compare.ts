@@ -46,6 +46,9 @@ export function pairFromWords(images: PageImage[]): Compare | null {
   return null;
 }
 
+/** A picture named as the old design: it can be the "before" of a pair, never the card's only picture. */
+const isOldOnly = (img: PageImage) => (OLD.test(words(img)) && !NEW.test(words(img).replace(OLD, ''))) || FILE_OLD.test(img.src);
+
 /** A picture whose words or file name say it shows the new design, when there is no old one to pair it with. */
 export function newOnly(images: PageImage[]): string | null {
   return images.find((i) => (NEW.test(words(i)) && !OLD.test(words(i))) || FILE_NEW.test(i.src))?.src ?? null;
@@ -212,6 +215,11 @@ export async function addCompares(
     }
     // One picture: the article's only picture is the one to show, unless it is the one already shown.
     if (images.length === 1) {
+      if (isOldOnly(images[0])) {
+        notes.push(`${item.id}: the only picture shows the old design; the app icon shows`);
+        if (item.image === images[0].src) item.image = null;
+        return;
+      }
       if (images[0].src !== item.image) {
         item.image = images[0].src;
         notes.push(`${item.id}: the article's only picture`);
@@ -252,6 +260,9 @@ export async function addCompares(
           } else if (before && after && before !== after) {
             item.compare = { before, after, from: 'article' };
             notes.push(`${item.id}: old and new pictures${why}`);
+          } else if (best && isOldOnly(seen.find((g) => g.img.src === best)!.img)) {
+            notes.push(`${item.id}: the picture chosen shows the old design, so it is not used`);
+            if (item.image === best) item.image = null;
           } else if (best) {
             if (best !== item.image) notes.push(`${item.id}: picture ${seen.findIndex((g) => g.img.src === best)} of ${seen.length} chosen${why}`);
             item.image = best;
@@ -270,7 +281,8 @@ export async function addCompares(
       notes.push(`${item.id}: picture of the new design from captions`);
     } else {
       // Until the words settle it, the first article picture beats a missing or stock one.
-      if (!item.image || isStockImage(item.image)) item.image = images[0].src;
+      const first = images.find((i) => !isOldOnly(i));
+      if ((!item.image || isStockImage(item.image)) && first) item.image = first.src;
       byText.push({ item, images });
     }
   });

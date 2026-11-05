@@ -111,7 +111,9 @@ export function withRelatedPictures(pool: PoolEntry[], getMeta: (url: string) =>
     Promise.all(
       list.map(async (r) => {
         const m = await getMeta(r.url);
-        const imgs: PageImage[] = [...(m?.image && !isStockImage(m.image) ? [{ src: m.image, alt: r.title, caption: '' }] : []), ...(m?.images ?? [])];
+        // The share picture gets no words of its own: the article's headline as its caption once made a cover
+        // illustration pass for the "after" picture ("…what it looks like after the upgrade").
+        const imgs: PageImage[] = [...(m?.image && !isStockImage(m.image) ? [{ src: m.image, alt: '', caption: '' }] : []), ...(m?.images ?? [])];
         for (const i of imgs) if (!from.has(i.src)) from.set(i.src, r);
         return imgs;
       }),

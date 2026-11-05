@@ -43,9 +43,8 @@
             "why": "把标签栏位置让给公司想推的功能、而不是用户每天都用的功能，容易引起反弹。旅行 App 如果为了给灵感或特价频道腾位置，把「行程」或「我的订单」移出标签栏，也会面临同样的风险。"
           },
           "compare": {
-            "before": null,
-            "after": "https://9to5google.com/wp-content/uploads/sites/4/2026/10/YouTube-Subscriptions-move-cover.jpg?quality=82&strip=all&resize=1200,628",
-            "combined": true,
+            "before": "https://9to5google.com/wp-content/uploads/sites/4/2026/10/YouTube-Subscriptions-move-old.jpg?strip=info&w=1280",
+            "after": "https://9to5google.com/wp-content/uploads/sites/4/2026/10/YouTube-Subscriptions-move-new.jpg?strip=info&w=1344",
             "from": "article"
           }
         },

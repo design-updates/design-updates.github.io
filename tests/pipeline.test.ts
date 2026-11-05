@@ -696,3 +696,27 @@ test('before/after from file names: the two pictures must be of the same thing (
   // Pictures whose captions say old and new pair whatever their file names.
   assert.ok(pairFromWords([img('https://x/a1.png', 'The previous logo'), img('https://x/b2.png', 'The new logo')]));
 });
+
+test('other coverage: the other article’s headline is not used as its picture’s caption (YouTube, 5 Nov)', async () => {
+  const { withRelatedPictures } = await import('../src/related.ts');
+  const at = '2026-11-04T15:03:00Z';
+  const base = 'https://9to5google.com/wp-content/uploads/sites/4/2026/10/';
+  const item = { id: 'yt', app: 'YouTube', category: 'consumer' as const, kind: 'ui' as const, date: '', published_at: at, beta: false, importance: 4, headline: 'YouTube moves Subscriptions out of the tab bar', what: 'w', why: 'y', sources: [{ title: 'Users are furious about the YouTube Subscriptions tab redesign', url: 'https://androidauthority.com/a', publisher: 'Android Authority' }], image: null, icon: null, collected_at: '' };
+  const pool = [{ title: 'YouTube Subscriptions tab moves after the redesign, before and after', url: 'https://9to5google.com/yt', source: '9to5Google', app: 'YouTube', publishedAt: at }];
+  const metas: Record<string, PageMeta | null> = {
+    'https://androidauthority.com/a': null,
+    'https://9to5google.com/yt': { publishedAt: at, image: `${base}YouTube-Subscriptions-move-cover.jpg`, siteName: null, title: null, images: [{ src: `${base}YouTube-Subscriptions-move-old.jpg`, alt: '', caption: '' }, { src: `${base}YouTube-Subscriptions-move-new.jpg`, alt: '', caption: '' }] },
+  };
+  const related = withRelatedPictures(pool, async (u) => metas[u] ?? null);
+  const [out] = (await addCompares(CFG, [item], related.imagesFor, null, new Map())).items;
+  assert.deepEqual([out.compare?.before, out.compare?.after], [`${base}YouTube-Subscriptions-move-old.jpg`, `${base}YouTube-Subscriptions-move-new.jpg`], 'the two real screenshots, not the cover illustration');
+});
+
+test('pictures: a picture named as the old design is never shown alone (Google Messages, 5 Nov)', async () => {
+  const base = { app: 'Google Messages', category: 'consumer' as const, kind: 'ui' as const, date: '', published_at: '2026-11-04T04:00:00Z', beta: true, importance: 2, what: 'w', why: 'y', sources: [{ title: 't', url: 'https://x/a', publisher: 'p' }], image: null, icon: null, collected_at: '' };
+  const old = { src: 'https://9to5google.com/2026/11/Google-Messages-pinned-old.jpg', alt: '', caption: '' };
+  const llm: Llm = { mode: 'company', canSearch: false, messages: async () => ({ content: [{ type: 'text', text: '{"best": 0}' }], stopReason: 'end_turn', usage: { input_tokens: 0, output_tokens: 0, web_searches: 0 } }) };
+  const fetchImpl = (async () => new Response(new Uint8Array(6000), { headers: { 'content-type': 'image/jpeg' } })) as typeof fetch;
+  const r = await addCompares(CFG, [{ ...base, id: 'alone', headline: 'Messages redesigns pinned chats' }, { ...base, id: 'picked', headline: 'Messages redesigns pinned chats' }], async (i) => (i.id === 'alone' ? [[old]] : [[old, { src: 'https://9to5google.com/2026/09/thread.jpg', alt: '', caption: '' }]]), llm, new Map(), fetchImpl);
+  for (const i of r.items) assert.equal(i.image, null, `${i.id}: the app icon, not the old design`);
+});

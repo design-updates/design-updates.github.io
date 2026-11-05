@@ -116,8 +116,11 @@ export function prefilter(cfg: Config, all: Candidate[], ctx: { now: Date; seenU
     ok.push({ ...c, app: app?.name ?? null, trust: own || c.trust === 'company' ? 'company' : 'outlet' });
   }
 
-  // Company posts first, then newest. Anything past the cap is dropped so the model call stays small.
-  ok.sort((a, b) => (a.trust === b.trust ? (b.publishedAt ?? '').localeCompare(a.publishedAt ?? '') : a.trust === 'company' ? -1 : 1));
+  // Company posts first, then headlines with design words, then other news about watchlist apps; newest first within
+  // each. Anything past the cap is dropped so the model call stays small, so a plain app mention never pushes out
+  // a redesign.
+  const rank = (c: Candidate) => (c.trust === 'company' ? 0 : c.design || looksLikeDesign(c.title) ? 1 : 2);
+  ok.sort((a, b) => rank(a) - rank(b) || (b.publishedAt ?? '').localeCompare(a.publishedAt ?? ''));
   for (const c of ok.slice(cfg.models.maxCandidates)) drop(c, `over the cap of ${cfg.models.maxCandidates} candidates`);
   const kept = ok.slice(0, cfg.models.maxCandidates).map((c, i) => ({ ...c, cid: `c${i + 1}` }));
   return { kept, dropped };

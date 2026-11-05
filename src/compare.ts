@@ -19,15 +19,31 @@ const FILE_NEW = /[-_/](new|after|updated|redesign)[-_.]/i;
 
 const words = (img: PageImage) => `${img.alt} ${img.caption}`.trim();
 
-/** Clear cases only. Returns null when the words don't settle it. */
+/** The words of a picture's file name, for telling whether two pictures are of the same thing. */
+const NOT_SUBJECT = /^(old|new|before|after|previous|prev|legacy|updated|redesign|cover|copy|scaled|image|img|jpg|jpeg|png|webp)$/;
+const fileWords = (src: string) => new Set((src.split('/').pop()?.split('?')[0].toLowerCase().match(/[a-z]{3,}/g) ?? []).filter((w) => !NOT_SUBJECT.test(w)));
+const sameSubject = (a: string, b: string) => {
+  const x = fileWords(a);
+  const y = fileWords(b);
+  let shared = 0;
+  for (const w of x) if (y.has(w)) shared++;
+  return shared / Math.max(1, Math.min(x.size, y.size)) >= 0.8;
+};
+
+/** Clear cases only. Returns null when the words don't settle it. Two pictures named old and new only by their
+    file names must be of the same thing ("Messages-pinned-old" and "Messages-pinned-new", not "Messages-icon-redesign"). */
 export function pairFromWords(images: PageImage[]): Compare | null {
   const both = images.find((i) => BOTH.test(words(i)));
   if (both) return { before: null, after: both.src, combined: true, from: 'article' };
-  const isOld = (i: PageImage) => (OLD.test(words(i)) && !NEW.test(words(i).replace(OLD, ''))) || FILE_OLD.test(i.src);
-  const isNew = (i: PageImage) => (NEW.test(words(i)) && !OLD.test(words(i))) || FILE_NEW.test(i.src);
-  const before = images.find(isOld);
-  const after = images.find((i) => i !== before && isNew(i));
-  return before && after ? { before: before.src, after: after.src, from: 'article' } : null;
+  const saysOld = (i: PageImage) => OLD.test(words(i)) && !NEW.test(words(i).replace(OLD, ''));
+  const saysNew = (i: PageImage) => NEW.test(words(i)) && !OLD.test(words(i));
+  const isOld = (i: PageImage) => saysOld(i) || FILE_OLD.test(i.src);
+  const isNew = (i: PageImage) => saysNew(i) || FILE_NEW.test(i.src);
+  for (const before of images.filter(isOld)) {
+    const after = images.find((i) => i !== before && isNew(i) && ((saysOld(before) && saysNew(i)) || sameSubject(before.src, i.src)));
+    if (after) return { before: before.src, after: after.src, from: 'article' };
+  }
+  return null;
 }
 
 /** A picture whose words or file name say it shows the new design, when there is no old one to pair it with. */
@@ -124,6 +140,19 @@ async function download(src: string, fetchImpl: typeof fetch): Promise<{ type: s
   }
 }
 
+/** Does the picture load for someone opening the page? Some sites refuse pictures shown on other sites
+    (AppleInsider answers 403), and a card with a broken picture is worse than one with the app icon. */
+async function loads(src: string, fetchImpl: typeof fetch): Promise<boolean> {
+  try {
+    const res = await fetchImpl(src, { headers: { 'user-agent': 'Mozilla/5.0' }, signal: AbortSignal.timeout(12_000) });
+    const type = (res.headers.get('content-type') ?? '').split(';')[0].trim().toLowerCase();
+    await res.body?.cancel();
+    return res.ok && type.startsWith('image/');
+  } catch {
+    return false;
+  }
+}
+
 export interface CompareResult {
   items: Item[];
   usage: CallUsage | null;
@@ -140,8 +169,11 @@ export async function addCompares(
   imagesFor: (item: Item) => Promise<PageImage[][]>,
   llm: Llm | null,
   releaseShots: Map<string, { before: string | null; after: string | null; beforeVersion: string | null }>,
-  fetchImpl: typeof fetch = fetch,
+  /** Also used to check that each picture loads; without it, pictures are not checked (tests). */
+  fetchImpl?: typeof fetch,
 ): Promise<CompareResult> {
+  const verify = fetchImpl;
+  fetchImpl ??= fetch;
   const notes: string[] = [];
   const out = items.map((i) => ({ ...i }));
   const usage: CallUsage[] = [];
@@ -159,7 +191,16 @@ export async function addCompares(
     }
     // A before/after chosen earlier stays: re-picking must not swap a clear pair for a guess.
     if (item.compare) return;
-    const images = candidatePictures(await imagesFor(item), item.image, item.published_at);
+    const perSource = await imagesFor(item);
+    let images = candidatePictures(perSource, item.image, item.published_at);
+    if (verify) {
+      const ok = await mapLimit(images, 4, async (img) => ((await loads(img.src, verify)) ? img : null));
+      const kept = ok.filter((i): i is PageImage => !!i);
+      for (const img of images) if (!kept.includes(img)) notes.push(`${item.id}: ${img.src.split('/')[2]} does not let other sites show ${img.src.split('/').pop()?.split('?')[0]}`);
+      images = kept;
+      // The card's own picture is one that doesn't load: drop it.
+      if (item.image && !images.some((i) => i.src === item.image) && !(await loads(item.image, verify))) item.image = null;
+    }
     if (!images.length) {
       // Nothing better on the page (or the page is blocked): a stock share card or an old reused photo is still not
       // the change, so the app icon shows instead.
@@ -177,8 +218,10 @@ export async function addCompares(
       }
       return;
     }
-    // Captions that name the old and the new picture are clearer than any guess, so they win.
-    const named = pairFromWords(images);
+    // Captions that name the old and the new picture are clearer than any guess, so they win. A pair comes from one
+    // article: an old picture on one site and a new one on another may be of different changes.
+    const allowed = new Set(images.map((i) => keyOf(i.src)));
+    const named = perSource.map((list) => pairFromWords(list.filter((i) => allowed.has(keyOf(i.src))))).find(Boolean) ?? null;
     if (named) {
       item.compare = named;
       notes.push(`${item.id}: ${named.combined ? 'one before/after picture' : 'before and after'} from captions`);

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-05T03:33:13.536Z",
+  "updated_at": "2026-11-05T04:10:23.374Z",
   "days": [
     {
       "date": "2026-11-05",
@@ -26,6 +26,11 @@
               "title": "Where’s my Subscriptions tab? Users are furious about YouTube’s latest redesign",
               "url": "https://androidauthority.com/youtube-subscriptions-tab-redesign-3731679",
               "publisher": "Android Authority"
+            },
+            {
+              "title": "YouTube removing ‘Subscriptions’ bottom bar tab on Android, iOS after nearly a decade",
+              "url": "https://9to5google.com/2026/10/22/youtube-subscriptions-android-ios",
+              "publisher": "9to5Google"
             }
           ],
           "release": null,
@@ -37,7 +42,12 @@
             "what": "YouTube 最新改版后，「订阅」不再出现在底部栏，Shorts 和上传按钮仍保留在底部栏。据 Android Authority 报道，不少用户表示自己使用「订阅」的频率高于这两个入口，因此对改版不满。",
             "why": "把标签栏位置让给公司想推的功能、而不是用户每天都用的功能，容易引起反弹。旅行 App 如果为了给灵感或特价频道腾位置，把「行程」或「我的订单」移出标签栏，也会面临同样的风险。"
           },
-          "compare": null
+          "compare": {
+            "before": null,
+            "after": "https://9to5google.com/wp-content/uploads/sites/4/2026/10/YouTube-Subscriptions-move-cover.jpg?quality=82&strip=all&resize=1200,628",
+            "combined": true,
+            "from": "article"
+          }
         },
         {
           "id": "apple-macos-live-activities-menu-bar",
@@ -97,6 +107,99 @@
             "why": "对于有付费会员或订阅的旅行 App，原本由系统掌控的取消流程里多了一个可以自己设计的页面。团队需要准备这条挽留信息的文案、配图和优惠，并与 App 内会员页面的视觉保持一致。"
           },
           "compare": null
+        },
+        {
+          "id": "chrome-menu-search",
+          "app": "Chrome",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-04",
+          "published_at": "2026-11-04T13:27:05.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Chrome adds a search box to its redesigned three-dot menu.",
+          "what": "Chrome's redesigned three-dot menu now has a working search box. As you type, it shows matching settings, bookmarks and recently visited sites, so you no longer have to dig through nested menu items.",
+          "why": "Travel apps pile settings, saved items and past trips into the Account or Me tab. A search field at the top of that menu is a pattern to consider before adding more nesting.",
+          "sources": [
+            {
+              "title": "Google is finally fixing Google Chrome’s cluttered three-dot menu with a handy search feature",
+              "url": "https://digitaltrends.com/computing/chromes-new-menu-search-makes-settings-and-bookmarks-easier-to-find",
+              "publisher": "Digital Trends"
+            }
+          ],
+          "release": null,
+          "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2026/11/Chrome-canary-search-feature.jpg?resize=2225%2C1150&ssl=1",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1d/84/62/1d8462cc-1b5c-90ee-1c12-6570a213d0e5/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-05T04:10:23.374Z",
+          "zh": {
+            "headline": "Chrome 在改版后的三点菜单中加入搜索框。",
+            "what": "Chrome 改版后的三点菜单新增可用的搜索框，输入时即时列出匹配的设置项、书签和最近访问的网站，不必再逐层翻找菜单。",
+            "why": "旅行 App 的“我的”页往往堆满设置、收藏和历史行程。与其继续加深层级，可以考虑在顶部放一个搜索入口。"
+          }
+        },
+        {
+          "id": "google-maps-iphone-duo-dual-display",
+          "app": "Google Maps",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-04",
+          "published_at": "2026-11-04T13:28:43.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Google Maps now fills both displays on the iPhone Duo.",
+          "what": "Google Maps version 26.44.4 adds full support for the iPhone Duo. The app now uses the whole of both the inner and outer displays instead of a layout built for a single screen. Many iOS apps have not yet been adapted to the device's two displays.",
+          "why": "Map-based screens such as hotel search on a map and station or airport navigation are where a larger inner display pays off first. Google Maps is now a reference for how a map layout behaves on both iPhone Duo screens.",
+          "sources": [
+            {
+              "title": "What Google Maps looks like on both iPhone Duo displays, after upgrade",
+              "url": "https://appleinsider.com/articles/26/11/04/what-google-maps-looks-like-on-both-iphone-duo-displays-after-upgrade",
+              "publisher": "AppleInsider"
+            },
+            {
+              "title": "Google Maps update makes the app fully iPhone Duo compatible",
+              "url": "https://gsmarena.com/google_maps_update_makes_the_app_fully_iphone_duo_compatible-news-75349.php",
+              "publisher": "GSMArena"
+            }
+          ],
+          "release": null,
+          "image": null,
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/58/d3/ee/58d3eefe-ff6a-2309-faa8-b5043082bbb1/maps_2025-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-05T04:10:23.374Z",
+          "zh": {
+            "headline": "Google Maps 在 iPhone Duo 上实现双屏全屏显示。",
+            "what": "Google Maps 26.44.4 版完整适配 iPhone Duo，地图可以铺满内屏和外屏，不再沿用单屏布局。目前不少 iOS App 还没有针对这款设备的双屏做适配。",
+            "why": "地图找酒店、车站和机场导航这类以地图为主的页面，最能用上更大的内屏。Google Maps 的做法可以作为地图布局在 iPhone Duo 两块屏上如何表现的参考。"
+          },
+          "compare": null
+        },
+        {
+          "id": "whatsapp-chat-media-suggestions",
+          "app": "WhatsApp",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-04",
+          "published_at": "2026-11-04T06:01:02.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "WhatsApp starts suggesting your latest photos and videos inside chats.",
+          "what": "When you open a chat, WhatsApp can now suggest recent photos and videos to send. This extends the sticker suggestions it already shows above the keyboard on Android, which are based on the emojis you type. The feature is reaching some users on Android and iOS in the latest app versions.",
+          "why": "Travel apps could use the same contextual-suggestion pattern in the support chat and the search field. Offering the user's current booking or a recent screenshot before they type would save them a step.",
+          "sources": [
+            {
+              "title": "WhatsApp starts suggesting your latest photos and videos right in your chats",
+              "url": "https://gsmarena.com/whatsapp_starts_suggesting_your_latest_photos_and_videos_right_in_your_chats-news-75335.php",
+              "publisher": "GSMArena"
+            }
+          ],
+          "release": null,
+          "image": null,
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/15/eb/39/15eb3965-bec3-4737-950a-9d9df5303e93/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-05T04:10:23.374Z",
+          "zh": {
+            "headline": "WhatsApp 开始在聊天中推荐最近拍摄的照片和视频。",
+            "what": "打开聊天时，WhatsApp 会推荐最近的照片和视频供直接发送。此前它已在 Android 键盘上方根据输入的表情推荐贴纸，这次把推荐扩展到了媒体。目前在 Android 和 iOS 最新版本中向部分用户开放。",
+            "why": "旅行 App 的客服对话和搜索框可以借鉴这种上下文推荐：在用户输入前先给出当前订单或最近的截图，省掉一步操作。"
+          }
         },
         {
           "id": "google-messages-pinned-chats-redesign",

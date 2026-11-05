@@ -727,5 +727,39 @@
       }
     ],
     "cost_usd": 0
+  },
+  {
+    "at": "2026-11-05T04:10:23.374Z",
+    "date": "2026-11-05",
+    "mode": "company",
+    "feeds_ok": 61,
+    "feeds_failed": [
+      "Amtrak Media",
+      "SamMobile",
+      "Creative Boom"
+    ],
+    "candidates": 2795,
+    "sent_to_model": 200,
+    "kept": 3,
+    "added": 3,
+    "usage": [
+      {
+        "step": "curate",
+        "model": "kr-claude-opus-5.5",
+        "input_tokens": 54707,
+        "output_tokens": 3439,
+        "web_searches": 0,
+        "credits": 2.9002206189054727
+      },
+      {
+        "step": "pictures",
+        "model": "kr-claude-haiku-4-5-20251001",
+        "input_tokens": 7736,
+        "output_tokens": 85,
+        "web_searches": 0,
+        "credits": 0.0130342671973466
+      }
+    ],
+    "cost_usd": 0
   }
 ]

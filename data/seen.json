@@ -213,6 +213,31 @@
       "urls": [
         "https://androidauthority.com/galaxy-z-flip-one-ui-9-cover-screen-backlash-3731117"
       ]
+    },
+    "chrome-menu-search": {
+      "app": "Chrome",
+      "headline": "Chrome adds a search box to its redesigned three-dot menu.",
+      "date": "2026-11-04",
+      "urls": [
+        "https://digitaltrends.com/computing/chromes-new-menu-search-makes-settings-and-bookmarks-easier-to-find"
+      ]
+    },
+    "whatsapp-chat-media-suggestions": {
+      "app": "WhatsApp",
+      "headline": "WhatsApp starts suggesting your latest photos and videos inside chats.",
+      "date": "2026-11-04",
+      "urls": [
+        "https://gsmarena.com/whatsapp_starts_suggesting_your_latest_photos_and_videos_right_in_your_chats-news-75335.php"
+      ]
+    },
+    "google-maps-iphone-duo-dual-display": {
+      "app": "Google Maps",
+      "headline": "Google Maps now fills both displays on the iPhone Duo.",
+      "date": "2026-11-04",
+      "urls": [
+        "https://appleinsider.com/articles/26/11/04/what-google-maps-looks-like-on-both-iphone-duo-displays-after-upgrade",
+        "https://gsmarena.com/google_maps_update_makes_the_app_fully_iphone_duo_compatible-news-75349.php"
+      ]
     }
   }
 }

@@ -31,8 +31,8 @@
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/af/ac/90/afac90c6-5f57-6ee2-365f-cbd7782eed8d/dark_1242x2688_01f.png/320x480bb.jpg"
     },
     "Klook": {
-      "version": "7.56.0",
-      "date": "2026-11-02T02:41:55.000Z",
+      "version": "7.56.1",
+      "date": "2026-11-05T02:53:38.000Z",
       "notes": "We've made some updates to make your experience even better! - Use member perks for airport transfer upgrades and train seat preferences - Seamless browsing of the same products from web city pages to app We're always working to improve your experience. Love it? Let us know by leaving a review! Have feedback? Reach out to appfeedback@klook.com.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/59/45/d6/5945d613-7b45-da68-42c8-0d2cc9afe7b7/0_APP_IPHONE_55_0.png/392x696bb.png"
     },
@@ -181,10 +181,10 @@
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dc/60/d8/dc60d8f9-ed93-2377-7d1f-79b5b809dc1b/Copy_of_82._Apple_Product_Page_-_Image_1_-_1242x2208_-_GH.png/392x696bb.png"
     },
     "MakeMyTrip": {
-      "version": "10.7.1",
-      "date": "2026-10-31T02:49:03.000Z",
+      "version": "10.7.2",
+      "date": "2026-11-05T03:44:55.000Z",
       "notes": "• A smoother travel experience with smarter bookings and greater flexibility. • Hotels – Book cabs alongside your stay. • Buses – Explore safety features and onboard amenities. • Trains – Cancel at ₹0 on eligible advance bookings and pre-book meals. • Cabs – Smarter recommendations, route selection, and improved post-booking support. • Tours & Attractions – Ratings and reviews across 10,000+ activities. • General fixes and performance enhancements across the app.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7f/35/00/7f3500c2-3b91-2b43-0a4c-f46d79d01898/0_APP_IPHONE_65_0.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/51/96/5c/51965c28-1b83-bf30-7ab5-a2bed39a65d2/0_APP_IPHONE_65_0.png/320x480bb.jpg"
     },
     "IRCTC Rail Connect": {
       "version": "4.3.20",
@@ -329,6 +329,90 @@
       "date": "2026-11-02T23:52:24.000Z",
       "notes": "Fixed bugs, improved performance, drank way too much coffee.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e8/5d/12/e85d121e-8bcf-4f57-cf07-ed23b57f1b30/f1192f1f-430d-469a-b032-cdf77b8b04c7_iOS-5.5-in_1.jpg/392x696bb.jpg"
+    },
+    "Gmail": {
+      "version": "6.0.261026",
+      "date": "2026-11-02T19:58:27.000Z",
+      "notes": "Bug fixes and performance improvements.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/61/93/d8/6193d85d-6769-b879-0fdc-1a3fd6ea83c7/APP_IPHONE_55-0.png/392x696bb.png"
+    },
+    "Google Maps": {
+      "version": "26.44.4",
+      "date": "2026-11-03T14:36:39.000Z",
+      "notes": "Thanks for using Google Maps! This release brings bug fixes that improve our product to help you discover new places and navigate to them.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/fa/59/defa59e3-d4d3-3884-3550-f5b66e370972/APP_IPHONE_65-0.png/320x480bb.jpg"
+    },
+    "Chrome": {
+      "version": "157.0.8103.37",
+      "date": "2026-11-03T18:36:06.000Z",
+      "notes": "Thanks for choosing Chrome! This version includes: • Stability and performance improvements.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/20/73/58207379-b824-6361-aaf2-af9850d9c165/APP_IPHONE_65-0.png/320x480bb.jpg"
+    },
+    "Netflix": {
+      "version": "26.4.0",
+      "date": "2026-11-02T15:10:58.000Z",
+      "notes": "We’re working on the app experience. You work on what, when, and how you watch next. That's equally as important. We know you have choices. In this release, we made gallery improvements so it’s easier to find the perfect thing to watch.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/38/ba/84/38ba8407-1436-6073-0ef4-eb314ba0451a/freeform_U0023game-screenshot-ios-mobile-vertical-5-5-inch_na_01_0_-_DONE.jpg/392x696bb.jpg"
+    },
+    "X": {
+      "version": "12.40.1",
+      "date": "2026-11-04T03:19:55.000Z",
+      "notes": "We made improvements and squashed bugs so X is even better for you.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/d3/7a/bad37ad7-811c-7dda-9916-1ee121d459eb/X_SS1__U0028App_Store_U0029.jpg/320x480bb.jpg"
+    },
+    "Facebook": {
+      "version": "586.0.0",
+      "date": "2026-11-04T18:21:38.000Z",
+      "notes": "Our teams have solved many crashes, fixed issues you’ve reported and made the app faster.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ec/d3/9c/ecd39c66-4b07-f453-c811-6513d6e05e8d/1-iOS-Marketplace.png/320x480bb.jpg"
+    },
+    "Snapchat": {
+      "version": "14.30.1.0",
+      "date": "2026-11-02T06:08:44.000Z",
+      "notes": "Just a little tune-up to keep everything running smoothly!",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bb/4e/cf/bb4ecf68-b806-767b-170d-43b39cf32dbe/762b1643-82ac-445a-8500-c4c4f86102b1_Screenshot1_Snap_USA_Apple_1242x2208.jpg/392x696bb.jpg"
+    },
+    "Pinterest": {
+      "version": "14.43",
+      "date": "2026-11-04T17:22:15.000Z",
+      "notes": "Every week, we polish up the Pinterest app. This update includes: - Bug fixes - Performance improvements Tell us if you like this latest version at https://help.pinterest.com/contact",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/05/a0/f4/05a0f4cc-c5c2-7598-0c8a-802ca66d93a0/260630_H2-App-Store-Update_EN_iOSApp_Image-Designed_1242x2208_iPhone-5.5_Halloween_1.png/392x696bb.png"
+    },
+    "Reddit": {
+      "version": "2026.44.0",
+      "date": "2026-11-02T21:29:28.000Z",
+      "notes": "Thanks for updating the Reddit app! We've updated our iOS app with bug fixes and changes to improve your overall experience.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/04/d2/41/04d241f1-1cff-8627-7ccd-e4fac6008f10/375c47d8-0adc-4e6d-8b1f-63cad0fd81cd_Reddit_SS_Brand_Update_Colorful_Set_5.5_1.png/392x696bb.png"
+    },
+    "LinkedIn": {
+      "version": "9.1.587",
+      "date": "2026-11-04T19:07:18.000Z",
+      "notes": "We want you to have the best possible LinkedIn experience. This update contains bug fixes and improvements to ensure the app’s continued speed and reliability.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b2/b0/48/b2b04875-90fe-f042-0041-808b7ed923b8/LinkedIn_LinkedIn_iOS_6.7_US_Screenshots_260317_V2B_01a__U00281_U0029.png/320x480bb.jpg"
+    },
+    "Amazon": {
+      "version": "27.19.0",
+      "date": "2026-10-26T22:45:04.000Z",
+      "notes": "Our new design provides easier access to the features you use most while on the go. This includes the homepage, account and order information, your cart and the ability to browse and discover Amazon departments, products, programs, and features.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/c1/db/c1c1db19-ad12-04e1-0259-5fde5500e409/302f0217-ce5f-45be-869f-7dbee745861a_5.5_1_1242_U200a_U00d7_U200a2208_.jpg/392x696bb.jpg"
+    },
+    "ChatGPT": {
+      "version": "1.2026.300",
+      "date": "2026-11-03T18:55:49.000Z",
+      "notes": "Bug fixes and small improvements.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a1/39/1d/a1391d37-04ea-8ead-62eb-d925b773ed4a/1_iPhone.jpg/320x480bb.jpg"
+    },
+    "Discord": {
+      "version": "352.1",
+      "date": "2026-11-04T16:52:28.000Z",
+      "notes": "We’ve been hard at work making Discord better for you. This includes bug fixes and performance enhancements. For more detailed information, go to your profile in the app and scroll down to “What’s New”.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/17/6b/df/176bdf6b-a84a-97e9-2234-8e1a1294870b/1242x2208_-_1_GroupChat.png/392x696bb.png"
+    },
+    "Telegram": {
+      "version": "13.1.2",
+      "date": "2026-10-29T23:15:53.000Z",
+      "notes": "Bug fixes, minor improvements, and more.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/29/6c/87/296c8715-63d1-77c5-4385-f06a3c0d7627/0_APP_IPHONE_55_0.png/392x696bb.png"
     }
   },
   "googlePlay": {
@@ -576,6 +660,66 @@
       "version": "2026-11-04·nc0s",
       "date": "2026-11-04T00:00:00.000Z",
       "notes": "For new features, look for in-product education & notifications sharing the feature and how to use it!",
+      "screenshot": null
+    },
+    "Gmail": {
+      "version": "2026-11-03·848h",
+      "date": "2026-11-03T00:00:00.000Z",
+      "notes": "Stay on top of the work that matters with Gmail, part of Google Workspace. With secure email as the foundation, you can also chat, collaborate with a group in spaces or make voice or video calls - all in one place.",
+      "screenshot": null
+    },
+    "Google Maps": {
+      "version": "2026-11-04·zhd3",
+      "date": "2026-11-04T00:00:00.000Z",
+      "notes": "Thanks for using Google Maps! This release brings bug fixes that improve our product to help you discover new places and navigate to them. Become a beta tester: http://goo.gl/vLUcaJ",
+      "screenshot": null
+    },
+    "Chrome": {
+      "version": "2026-11-05·1gc7",
+      "date": "2026-11-05T00:00:00.000Z",
+      "notes": "Thanks for choosing Chrome! This release includes stability and performance improvements.",
+      "screenshot": null
+    },
+    "Netflix": {
+      "version": "2026-11-05·xzfo",
+      "date": "2026-11-05T00:00:00.000Z",
+      "notes": "Get the best experience for enjoying recent hits and timeless classics with our latest Netflix update for your phone and tablet.",
+      "screenshot": null
+    },
+    "Snapchat": {
+      "version": "2026-11-04·s6iu",
+      "date": "2026-11-04T00:00:00.000Z",
+      "notes": "Just a little tune-up to keep everything running smoothly! 👻",
+      "screenshot": null
+    },
+    "Pinterest": {
+      "version": "2026-11-03·ps40",
+      "date": "2026-11-03T00:00:00.000Z",
+      "notes": "Every week we polish up the Pinterest app to make it faster and better than ever. Tell us if you like this newest version at https://help.pinterest.com/contact",
+      "screenshot": null
+    },
+    "LinkedIn": {
+      "version": "2026-11-05·19bj",
+      "date": "2026-11-05T00:00:00.000Z",
+      "notes": "Thanks for using LinkedIn! We regularly update our app to fix bugs, improve performance and add new features to help you connect with your professional network and advance your career.",
+      "screenshot": null
+    },
+    "Amazon": {
+      "version": "2026-10-28·1614",
+      "date": "2026-10-28T00:00:00.000Z",
+      "notes": "Access popular pages quickly with our new shortcuts. Tap and hold the Amazon app icon to access your Orders, Daily Deals, Shopping Cart, and Search. Enjoy our latest update where we have fixed some bugs and improved our app to provide you a seamless shopping experience",
+      "screenshot": null
+    },
+    "ChatGPT": {
+      "version": "2026-10-30·8aqn",
+      "date": "2026-10-30T00:00:00.000Z",
+      "notes": "Minor fixes and improvements",
+      "screenshot": null
+    },
+    "Discord": {
+      "version": "2026-11-03·1se1",
+      "date": "2026-11-03T00:00:00.000Z",
+      "notes": "We’ve been hard at work making Discord better for you. This includes bug fixes and performance enhancements. For more detailed information, go to your profile in the app and scroll down to “What’s New”.",
       "screenshot": null
     }
   }

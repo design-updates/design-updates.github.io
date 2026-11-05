@@ -8,6 +8,7 @@ import { addCompares } from './compare.ts';
 import { curate } from './curate.ts';
 import { feedCandidates, readFeed, type FeedResult } from './feeds.ts';
 import { ensureIcons } from './icons.ts';
+import { poolOf, searchCoverage, withRelatedPictures, type PoolEntry } from './related.ts';
 import type { Llm } from './llm.ts';
 import { fetchPageMeta, type PageMeta } from './pagemeta.ts';
 import { prefilter } from './prefilter.ts';
@@ -91,6 +92,8 @@ interface Snapshot {
   usage: CallUsage[];
   /** Page details for every candidate, by URL. */
   pages: Record<string, PageMeta | null>;
+  /** Every headline of the last three days, for finding other coverage of a kept story (its pictures). */
+  pool?: PoolEntry[];
   stores?: Report['stores'];
   /** Store versions read this run, saved to data/stores.json once the run is written. */
   storeState?: StoreState;
@@ -173,6 +176,7 @@ async function gather(opts: CollectOptions, seen: Seen): Promise<Snapshot> {
     total: all.length,
     usage: searchResults.flatMap((r) => r.usage),
     pages,
+    pool: poolOf(cfg, all, now),
     stores: storeResult
       ? {
           ran: true,
@@ -282,11 +286,13 @@ export async function collect(opts: CollectOptions): Promise<Report> {
       const rel = item.sources.map((s) => byUrl.get(s.url)?.release).find(Boolean);
       if (rel) releaseShots.set(item.id, { before: rel.previousScreenshot ?? null, after: rel.screenshot ?? null, beforeVersion: rel.previousVersion ?? null });
     }
-    const imagesFor = async (item: Item) => Promise.all(item.sources.map(async (s) => (await getMeta(s.url))?.images ?? []));
-    const cmp = await addCompares(cfg, post.items, imagesFor, llm, releaseShots, fetchImpl);
+    // The picture can come from another site's article about the same change, which is then listed as a source.
+    const related = withRelatedPictures(snap.pool ?? [], getMeta, offline ? undefined : (item) => searchCoverage(item, fetchImpl));
+    // Pictures are checked to load, except when finishing offline from saved sources (there is no network to ask).
+    const cmp = await addCompares(cfg, post.items, related.imagesFor, llm, releaseShots, offline ? undefined : fetchImpl);
     if (cmp.usage) report.usage.push(cmp.usage);
     report.warnings.push(...cmp.notes.map((n) => `before/after: ${n}`));
-    items = cmp.items;
+    items = related.credit(cmp.items);
     pattern = result.pattern;
     pattern_zh = result.pattern_zh;
     report.modelDropped = [...result.dropped, ...post.dropped];

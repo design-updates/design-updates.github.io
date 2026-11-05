@@ -29,8 +29,10 @@ const attrOf = (tag: string, name: string): string | null => {
   return m ? decodeEntities(m[2] ?? m[3] ?? '') : null;
 };
 
-/** The real picture behind lazy-loading markup: data-src, then the largest srcset entry, then src. */
+/** The real picture behind lazy-loading markup: the largest srcset entry when it is a full-size one, else data-src
+    or src. Future's sites (Android Central, TechRadar) list only 80–160px thumbnails in srcset, with the full picture in src. */
 function imgSrc(tag: string): string | null {
+  const plain = attrOf(tag, 'data-src') ?? attrOf(tag, 'data-lazy-src') ?? attrOf(tag, 'data-original') ?? attrOf(tag, 'src');
   const srcset = attrOf(tag, 'data-srcset') ?? attrOf(tag, 'srcset');
   if (srcset) {
     const best = srcset
@@ -38,9 +40,9 @@ function imgSrc(tag: string): string | null {
       .map((p) => p.trim().split(/\s+/))
       .map(([u, w]) => ({ u, w: Number.parseInt(w ?? '0', 10) || 0 }))
       .sort((a, b) => b.w - a.w)[0];
-    if (best?.u) return best.u;
+    if (best?.u && (best.w >= 600 || !plain || plain.startsWith('data:'))) return best.u;
   }
-  return attrOf(tag, 'data-src') ?? attrOf(tag, 'data-lazy-src') ?? attrOf(tag, 'src');
+  return plain;
 }
 
 export function parseImages(html: string, pageUrl: string): PageImage[] {

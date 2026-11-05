@@ -10,7 +10,7 @@ import { matchApp, prefilter } from '../src/prefilter.ts';
 import { mergeDay } from '../src/radar.ts';
 import { readAppStore } from '../src/stores.ts';
 import { addCompares } from '../src/compare.ts';
-import { fetchPageMeta } from '../src/pagemeta.ts';
+import { fetchPageMeta, parseImages, type PageMeta } from '../src/pagemeta.ts';
 import { collect, defaultPaths, SourcesDownError } from '../src/run.ts';
 import type { Radar, Seen } from '../src/types.ts';
 
@@ -84,7 +84,10 @@ function fakeFetch(world: World): typeof fetch {
     if (world.down) throw new Error('network down');
     if (url.startsWith('https://itunes.apple.com/')) return Response.json({ results: [{ trackName: 'App', artworkUrl512: 'https://is1.mzstatic.com/image/a/512x512bb.jpg' }] });
     const body = world.feeds[url] ?? world.pages[url.replace(/\/$/, '')];
-    return body ? new Response(body) : new Response('missing', { status: 404 });
+    if (body) return new Response(body);
+    // Article pictures load, unless the world says they don't.
+    if (/\.(jpe?g|png|webp|gif)(\?|$)/i.test(String(input))) return new Response(new Uint8Array(6000), { headers: { 'content-type': 'image/jpeg' } });
+    return new Response('missing', { status: 404 });
   }) as typeof fetch;
 }
 
@@ -507,7 +510,7 @@ test('pictures: the model looks at the article pictures and picks the one that s
     { ...base, id: 'x-icons', kind: 'brand' as const, headline: 'X adds a dozen new app icons' },
     { ...base, id: 'c-logo', kind: 'brand' as const, headline: 'C shows its old and new logo' },
     { ...base, id: 'ux-b', kind: 'ux' as const, headline: 'B changes checkout' },
-    { ...base, id: 'offline', kind: 'brand' as const, headline: 'D gets a new wordmark' },
+    { ...base, id: 'offline', kind: 'brand' as const, headline: 'D gets a new wordmark', image: 'https://x/gone-og.jpg' },
     { ...base, id: 'kept-pair', kind: 'ui' as const, headline: 'E redesigns its home screen', compare: { before: 'https://x/e-old.jpg', after: 'https://x/e-new.jpg', from: 'article' as const } },
     { ...base, id: 'airbnb-v', kind: 'ui' as const, headline: 'Airbnb redesign', release: { store: 'app-store' as const, version: '26.44' } },
   ];
@@ -515,7 +518,7 @@ test('pictures: the model looks at the article pictures and picks the one that s
     'x-icons': [[img('https://x/logo.jpg'), img('https://x/icon-grid.jpg')]],
     'c-logo': [[img('https://x/cmp.jpg'), img('https://x/team.jpg')]],
     'ux-b': [[img('https://x/office.jpg'), img('https://x/checkout.jpg')]],
-    offline: [[img('https://x/gone1.jpg'), img('https://x/gone2.jpg', '', 'The new wordmark')]],
+    offline: [[img('https://x/gone1.jpg'), img('https://x/fine.jpg', '', 'The new wordmark')]],
     'kept-pair': [[img('https://x/e-old.jpg'), img('https://x/e-new.jpg'), img('https://x/e-team.jpg')]],
   };
   const looked: { headline: string; pictures: number }[] = [];
@@ -540,7 +543,7 @@ test('pictures: the model looks at the article pictures and picks the one that s
   assert.deepEqual(by['c-logo'].compare, { before: null, after: 'https://x/cmp.jpg', combined: true, from: 'article' });
   assert.equal(by['ux-b'].image, 'https://x/checkout.jpg', 'UX stories get a picture too');
   assert.deepEqual(by['kept-pair'].compare, { before: 'https://x/e-old.jpg', after: 'https://x/e-new.jpg', from: 'article' }, 'a before/after chosen earlier is kept, and the model is not asked');
-  assert.equal(by.offline.image, 'https://x/gone2.jpg', 'no picture could be downloaded: the caption decides');
+  assert.equal(by.offline.image, 'https://x/fine.jpg', 'a picture that does not load is left out; the one that loads is used');
   assert.deepEqual(by['airbnb-v'].compare, { before: 'https://is1/old.jpg', after: 'https://is1/new.jpg', from: 'app-store', before_version: '26.40' });
   assert.deepEqual(looked.map((l) => l.pictures), [3, 3, 3], 'each story sends its pictures plus its current one; offline, app-store and already-paired stories send nothing');
   assert.equal(r.usage?.step, 'pictures');
@@ -612,4 +615,84 @@ test('page reads: a page that does not load is tried once more; one that answers
   const blocked = (async () => (calls++, new Response('no', { status: 403 }))) as typeof fetch;
   assert.equal(await fetchPageMeta('https://x/post', blocked, 0), null);
   assert.equal(calls, 1);
+});
+
+test('other coverage: the same change on other sites is found, and a different story about the same app is not', async () => {
+  const { relatedCoverage } = await import('../src/related.ts');
+  const at = '2026-11-04T15:03:00Z';
+  const item = { app: 'YouTube', headline: "YouTube's latest redesign moves Subscriptions out of the bottom tab bar.", published_at: at, sources: [{ title: 'Where’s my Subscriptions tab? Users are furious about YouTube’s latest redesign', url: 'https://androidauthority.com/a', publisher: 'Android Authority' }] };
+  const p = (title: string, source: string, app: string | null = 'YouTube', hours = 3) => ({ title, url: `https://${source.replace(/\W/g, '')}.com/${encodeURIComponent(title)}`, source, app, publishedAt: new Date(Date.parse(at) + hours * 3_600_000).toISOString() });
+  const pool = [
+    p('YouTube moves the Subscriptions tab in its new app redesign', 'Android Police'),
+    p('YouTube’s redesign hides Subscriptions, and people are not happy', '9to5Google', null),
+    p('YouTube Music’s playback controls could soon feel more lively', 'Android Authority'),
+    p('Watch too much YouTube? Google could be working on a new tool to help', 'Android Authority'),
+    p('YouTube moves the Subscriptions tab in its new app redesign', 'Android Police', 'YouTube', 2),
+    p('YouTube redesign Subscriptions tab, two weeks later', 'XDA', 'YouTube', 24 * 14),
+    p('Netflix redesigns its home screen tab bar', 'The Verge', 'Netflix'),
+  ];
+  const found = relatedCoverage(item, pool);
+  assert.deepEqual(found.map((f) => f.source), ['Android Police', '9to5Google'], 'one per site; other YouTube stories, other apps and old posts are left out');
+});
+
+test('other coverage: when the kept site is blocked, the picture comes from another site, which is then credited', async () => {
+  const { withRelatedPictures } = await import('../src/related.ts');
+  const at = '2026-11-04T15:03:00Z';
+  const item = { id: 'yt', app: 'YouTube', category: 'consumer' as const, kind: 'ui' as const, date: '', published_at: at, beta: false, importance: 4, headline: 'YouTube moves Subscriptions out of the tab bar', what: 'w', why: 'y', sources: [{ title: 'Users are furious about YouTube’s latest redesign of the Subscriptions tab', url: 'https://androidauthority.com/a', publisher: 'Android Authority' }], image: 'https://www.androidauthority.com/wp-content/uploads/2026/08/old.jpg', icon: null, collected_at: '' };
+  const pool = [{ title: 'YouTube redesign moves the Subscriptions tab', url: 'https://androidpolice.com/yt', source: 'Android Police', app: 'YouTube', publishedAt: at }];
+  const shot = 'https://static1.androidpolicecdn.com/2026/11/youtube-new-tab-bar.jpg';
+  const metas: Record<string, PageMeta | null> = { 'https://androidauthority.com/a': null, 'https://androidpolice.com/yt': { publishedAt: at, image: shot, siteName: null, title: null, images: [] } };
+  const related = withRelatedPictures(pool, async (u) => metas[u] ?? null);
+  const picked = await addCompares(CFG, [item], related.imagesFor, null, new Map());
+  const [out] = related.credit(picked.items);
+  assert.equal(out.image, shot, 'the other site’s screenshot, not the old reused photo');
+  assert.deepEqual(out.sources.map((s) => s.publisher), ['Android Authority', 'Android Police'], 'and the site it came from is listed');
+});
+
+test('pictures: a full-size src beats a srcset of thumbnails (Android Central, TechRadar)', () => {
+  const html = '<article><img src="https://cdn.mos.cms.futurecdn.net/abc.jpg" alt="New tab bar" srcset="https://cdn.mos.cms.futurecdn.net/abc-160-80.jpg 160w, https://cdn.mos.cms.futurecdn.net/abc-80-80.jpg 80w"><img src="https://x.com/small.jpg" srcset="https://x.com/big-1600.jpg 1600w, https://x.com/s-400.jpg 400w"></article>';
+  assert.deepEqual(parseImages(html, 'https://www.androidcentral.com/a').map((i) => i.src), ['https://cdn.mos.cms.futurecdn.net/abc.jpg', 'https://x.com/big-1600.jpg']);
+});
+
+test('other coverage: a card with no picture searches news sites for earlier reports of the same change', async () => {
+  const { searchCoverage, withRelatedPictures } = await import('../src/related.ts');
+  const at = '2026-11-04T15:03:00Z';
+  const asked: string[] = [];
+  const rss = (items: [string, string, string][]) => `<rss><channel>${items.map(([t, u, d]) => `<item><title>${t}</title><link>${u}</link><pubDate>${new Date(d).toUTCString()}</pubDate></item>`).join('')}</channel></rss>`;
+  const fetchImpl = (async (input: string | URL | Request) => {
+    const u = String(input);
+    asked.push(u);
+    if (u.startsWith('https://9to5google.com/?s=')) return new Response(rss([
+      ['YouTube removing ‘Subscriptions’ bottom bar tab on Android, iOS after nearly a decade', 'https://9to5google.com/2026/10/22/youtube-subscriptions-tab', '2026-10-22T16:00:00Z'],
+      ['YouTube Music gets a new widget', 'https://9to5google.com/2026/10/30/yt-music-widget', '2026-10-30T10:00:00Z'],
+      ['YouTube Subscriptions tab redesign, back in 2023', 'https://9to5google.com/2023/05/01/old', '2023-05-01T10:00:00Z'],
+    ]));
+    return new Response('<rss><channel></channel></rss>');
+  }) as typeof fetch;
+  const item = { id: 'yt', app: 'YouTube', category: 'consumer' as const, kind: 'ui' as const, date: '', published_at: at, beta: false, importance: 4, headline: "YouTube's latest redesign moves Subscriptions out of the bottom tab bar.", what: 'w', why: 'y', sources: [{ title: 'Where’s my Subscriptions tab? Users are furious about YouTube’s latest redesign', url: 'https://androidauthority.com/a', publisher: 'Android Authority' }], image: null, icon: null, collected_at: '' };
+
+  const found = await searchCoverage(item, fetchImpl);
+  assert.deepEqual(found.map((f) => f.url), ['https://9to5google.com/2026/10/22/youtube-subscriptions-tab'], 'the first report, 13 days earlier; not another YouTube story or a 2023 one');
+  assert.ok(asked.some((u) => u.startsWith('https://9to5google.com/?s=YouTube%20redesign%20subscriptions')), 'searched for the app and the words its headline and source share');
+
+  // In the picture step: the search runs only when nothing else has a usable picture.
+  const shot = 'https://9to5google.com/wp-content/uploads/sites/4/2026/10/youtube-tab-bar.jpg';
+  const metas: Record<string, PageMeta | null> = { 'https://androidauthority.com/a': null, 'https://9to5google.com/2026/10/22/youtube-subscriptions-tab': { publishedAt: '2026-10-22T16:00:00Z', image: shot, siteName: null, title: null, images: [] } };
+  let searched = 0;
+  const related = withRelatedPictures([], async (u) => metas[u] ?? null, async (i) => (searched++, searchCoverage(i, fetchImpl)));
+  const [out] = related.credit((await addCompares(CFG, [item], related.imagesFor, null, new Map())).items);
+  assert.equal(out.image, shot);
+  assert.equal(out.sources.at(-1)?.publisher, '9to5Google', 'credited');
+  assert.equal(searched, 1);
+});
+
+test('before/after from file names: the two pictures must be of the same thing (Google Messages, 5 Nov)', async () => {
+  const { pairFromWords } = await import('../src/compare.ts');
+  const img = (src: string, alt = '') => ({ src, alt, caption: '' });
+  const old = img('https://9to5google.com/wp-content/uploads/sites/4/2026/11/Google-Messages-pinned-old.jpg?w=1280');
+  // The new app icon from another story on the same page is not the "after" of the pinned chats.
+  assert.equal(pairFromWords([old, img('https://9to5google.com/2026/11/Google-Messages-Phone-Contacts-icon-gradient-redesign.webp')]), null);
+  assert.deepEqual(pairFromWords([old, img('https://9to5google.com/2026/11/Google-Messages-pinned-new.jpg')])?.after, 'https://9to5google.com/2026/11/Google-Messages-pinned-new.jpg');
+  // Pictures whose captions say old and new pair whatever their file names.
+  assert.ok(pairFromWords([img('https://x/a1.png', 'The previous logo'), img('https://x/b2.png', 'The new logo')]));
 });

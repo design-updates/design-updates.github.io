@@ -37,7 +37,7 @@ models:
   search: claude-haiku-5-5    # one web-search call per group below
   search_tool: web_search_20250305
   searches_per_group: 3       # max web searches the model may run per group
-  max_candidates: 150         # cap on items sent to the curate call
+  max_candidates: 200         # cap on items sent to the curate call; design headlines are kept first
 
 # USD per million tokens, used only to log an estimated cost per run.
 # Check https://www.anthropic.com/pricing if these change.
@@ -408,6 +408,78 @@ groups:
         domains: [about.fb.com, threads.com, threads.net]
         play_id: com.instagram.barcelona
         appstore_id: 6446901002
+      # Big consumer apps whose redesigns are widely covered. Short or everyday names are matched only in forms that
+      # can't be about something else ("X app", not "X"; "Amazon app", not "Amazon").
+      - name: Gmail
+        aliases: [Gmail]
+        domains: [workspace.google.com]
+        appstore_id: 422689480
+        play_id: com.google.android.gm
+      - name: Google Maps
+        aliases: [Google Maps]
+        domains: [blog.google]
+        appstore_id: 585027354
+        play_id: com.google.android.apps.maps
+      - name: Chrome
+        aliases: [Google Chrome, Chrome for Android, Chrome for iOS, Chrome on Android, Chrome on iOS, Chrome browser]
+        domains: [blog.google, blog.chromium.org]
+        appstore_id: 535886823
+        play_id: com.android.chrome
+      - name: Netflix
+        aliases: [Netflix]
+        domains: [about.netflix.com, netflix.com]
+        appstore_id: 363590051
+        play_id: com.netflix.mediaclient
+      - name: X
+        aliases: [X app, X for iPhone, X for Android, X (formerly Twitter), X Corp, X's app]
+        domains: [x.ai]
+        appstore_id: 333903271
+        play_id: com.twitter.android
+      - name: Facebook
+        aliases: [Facebook]
+        domains: [about.fb.com]
+        appstore_id: 284882215
+        play_id: com.facebook.katana
+      - name: Snapchat
+        aliases: [Snapchat, Snap Inc]
+        domains: [newsroom.snap.com, snap.com]
+        appstore_id: 447188370
+        play_id: com.snapchat.android
+      - name: Pinterest
+        aliases: [Pinterest]
+        domains: [newsroom.pinterest.com, pinterest.com]
+        appstore_id: 429047995
+        play_id: com.pinterest
+      - name: Reddit
+        aliases: [Reddit]
+        domains: [redditinc.com]
+        appstore_id: 1064216828
+        play_id: com.reddit.frontpage
+      - name: LinkedIn
+        aliases: [LinkedIn]
+        domains: [news.linkedin.com]
+        appstore_id: 288429040
+        play_id: com.linkedin.android
+      - name: Amazon
+        aliases: [Amazon app, Amazon Shopping, Amazon's app, Amazon Prime Video, Prime Video]
+        domains: [aboutamazon.com]
+        appstore_id: 297606951
+        play_id: com.amazon.mShop.android.shopping
+      - name: ChatGPT
+        aliases: [ChatGPT]
+        domains: [openai.com]
+        appstore_id: 6448311069
+        play_id: com.openai.chatgpt
+      - name: Discord
+        aliases: [Discord]
+        domains: [discord.com]
+        appstore_id: 985746746
+        play_id: com.discord
+      - name: Telegram
+        aliases: [Telegram]
+        domains: [telegram.org]
+        appstore_id: 686449807
+        play_id: org.telegram.messenger
       - name: Notion
         aliases: [Notion]
         domains: [notion.com, notion.so]
@@ -551,6 +623,65 @@ feeds:
   - name: Android Authority
     url: https://www.androidauthority.com/feed/
     kind: outlet
+  # Major tech news sites, added Nov 2026 after the YouTube redesign was missed. All read from the laptop's network;
+  # most of their article pages can also be read for pictures (AppleInsider, Ars Technica and Android Authority's
+  # can't, and GSMArena's have none, so their stories take pictures from other sites' coverage of the same change).
+  # Not reachable: PhoneArena, Gizmodo, The Next Web (403); Cult of Mac, Neowin (no answer); Windows Central and
+  # The Verge's section feeds (404).
+  - name: Android Police
+    url: https://www.androidpolice.com/feed/
+    kind: outlet
+  - name: XDA
+    url: https://www.xda-developers.com/feed/
+    kind: outlet
+  - name: Android Central
+    url: https://www.androidcentral.com/feed
+    kind: outlet
+  - name: SamMobile
+    url: https://www.sammobile.com/feed/
+    kind: outlet
+  - name: Droid Life
+    url: https://www.droid-life.com/feed/
+    kind: outlet
+  - name: GSMArena
+    url: https://www.gsmarena.com/rss-news-reviews.php3
+    kind: outlet
+  - name: AppleInsider
+    url: https://appleinsider.com/rss/news/
+    kind: outlet
+  - name: MacStories
+    url: https://www.macstories.net/feed/
+    kind: outlet
+  - name: TechCrunch
+    url: https://techcrunch.com/feed/
+    kind: outlet
+  - name: Engadget
+    url: https://www.engadget.com/rss.xml
+    kind: outlet
+  - name: Ars Technica
+    url: https://feeds.arstechnica.com/arstechnica/index
+    kind: outlet
+  - name: Wired
+    url: https://www.wired.com/feed/rss
+    kind: outlet
+  - name: CNET
+    url: https://www.cnet.com/rss/news/
+    kind: outlet
+  - name: Digital Trends
+    url: https://www.digitaltrends.com/feed/
+    kind: outlet
+  - name: TechRadar
+    url: https://www.techradar.com/rss
+    kind: outlet
+  - name: Tom's Guide
+    url: https://www.tomsguide.com/feeds/all
+    kind: outlet
+  - name: Mashable
+    url: https://mashable.com/feeds/rss/all
+    kind: outlet
+  - name: Social Media Today
+    url: https://www.socialmediatoday.com/feeds/news/
+    kind: outlet
   - name: MacRumors
     url: https://feeds.macrumors.com/MacRumors-All
     kind: outlet
@@ -639,6 +770,17 @@ trust:
     - wired.com
     - androidpolice.com
     - androidauthority.com
+    - androidpolice.com
+    - xda-developers.com
+    - androidcentral.com
+    - sammobile.com
+    - droid-life.com
+    - gsmarena.com
+    - digitaltrends.com
+    - techradar.com
+    - tomsguide.com
+    - mashable.com
+    - cnet.com
     - appleinsider.com
     - macstories.net
     - travelweekly.com
@@ -705,6 +847,12 @@ trust:
     - reportedly
     - best deals
     - deals
+    - deal
+    - Black Friday
+    - Cyber Monday
+    - price drop
+    - giveaway
+    - how to
     - discount
     - "% off"
     - best apps

@@ -364,6 +364,7 @@ groups:
     search:
       - Duolingo OR Revolut OR Spotify app redesign OR new feature
       - Instagram OR WhatsApp OR TikTok OR Threads new feature rolling out
+      - YouTube OR YouTube Music redesign OR new feature
       - Notion OR Linear new feature launch
     apps:
       - name: Duolingo
@@ -381,6 +382,12 @@ groups:
         domains: [spotify.com, newsroom.spotify.com]
         play_id: com.spotify.music
         appstore_id: 324684580
+      # youtube.com stays in blocked_domains (video links are not news); its blog is blog.youtube.
+      - name: YouTube
+        aliases: [YouTube, YouTube Music, YouTube Shorts, YouTube TV]
+        domains: [blog.youtube]
+        appstore_id: 544007664
+        play_id: com.google.android.youtube
       - name: Instagram
         aliases: [Instagram]
         domains: [about.instagram.com, about.fb.com, instagram.com]
@@ -519,6 +526,10 @@ feeds:
     url: https://newsroom.spotify.com/feed/
     kind: company
     app: Spotify
+  - name: YouTube Official Blog
+    url: https://blog.youtube/rss/
+    kind: company
+    app: YouTube
   - name: Duolingo Blog
     url: https://blog.duolingo.com/rss/
     kind: company
@@ -536,6 +547,9 @@ feeds:
     kind: outlet
   - name: 9to5Google
     url: https://9to5google.com/feed/
+    kind: outlet
+  - name: Android Authority
+    url: https://www.androidauthority.com/feed/
     kind: outlet
   - name: MacRumors
     url: https://feeds.macrumors.com/MacRumors-All

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-05T01:55:48.107Z",
+  "updated_at": "2026-11-05T03:33:13.536Z",
   "days": [
     {
       "date": "2026-11-05",
@@ -9,6 +9,36 @@
       "pattern": null,
       "pattern_zh": null,
       "items": [
+        {
+          "id": "youtube-subscriptions-tab",
+          "app": "YouTube",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-04",
+          "published_at": "2026-11-04T15:03:26.000Z",
+          "beta": false,
+          "importance": 4,
+          "headline": "YouTube's latest redesign moves Subscriptions out of the bottom tab bar.",
+          "what": "In YouTube's latest app redesign, Subscriptions is no longer in the bottom bar. Shorts and the Upload button stay there. Android Authority reports that users are complaining because they say they use Subscriptions more than either of those.",
+          "why": "Giving a tab-bar slot to a surface the company wants to grow, rather than one people use every day, can cause a backlash. The same risk applies if a travel app moves Trips or My Bookings out of the tab bar to make room for inspiration or deals.",
+          "sources": [
+            {
+              "title": "Where’s my Subscriptions tab? Users are furious about YouTube’s latest redesign",
+              "url": "https://androidauthority.com/youtube-subscriptions-tab-redesign-3731679",
+              "publisher": "Android Authority"
+            }
+          ],
+          "release": null,
+          "image": null,
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/be/56/df/be56dfa2-70bd-feb2-b666-38277eb5be3b/logo_youtube_2024_q4_color-0-0-1x_U007emarketing-0-0-0-7-0-0-0-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-05T03:33:13.536Z",
+          "zh": {
+            "headline": "YouTube 最新改版把「订阅」移出了底部标签栏。",
+            "what": "YouTube 最新改版后，「订阅」不再出现在底部栏，Shorts 和上传按钮仍保留在底部栏。据 Android Authority 报道，不少用户表示自己使用「订阅」的频率高于这两个入口，因此对改版不满。",
+            "why": "把标签栏位置让给公司想推的功能、而不是用户每天都用的功能，容易引起反弹。旅行 App 如果为了给灵感或特价频道腾位置，把「行程」或「我的订单」移出标签栏，也会面临同样的风险。"
+          },
+          "compare": null
+        },
         {
           "id": "apple-macos-live-activities-menu-bar",
           "app": "Apple",
@@ -69,6 +99,36 @@
           "compare": null
         },
         {
+          "id": "google-messages-pinned-chats-redesign",
+          "app": "Google Messages",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-04",
+          "published_at": "2026-11-04T03:59:50.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "Google Messages starts testing a redesigned pinned chats area in beta.",
+          "what": "Google Messages is rolling out a new design for pinned chats at the top of the conversation list. The change is currently limited to beta users.",
+          "why": "Pinned chats show how to give a few priority items their own visual treatment above a long list. A travel app faces the same layout question when it shows upcoming trips above past bookings in trip management.",
+          "sources": [
+            {
+              "title": "Google Messages’ pinned chats UI makeover is finally landing for users",
+              "url": "https://androidauthority.com/google-messages-pinned-chats-redesign-beta-rollout-3731406",
+              "publisher": "Android Authority"
+            }
+          ],
+          "release": null,
+          "image": null,
+          "icon": "https://www.google.com/s2/favicons?domain=messages.google.com&sz=64",
+          "collected_at": "2026-11-05T03:33:13.536Z",
+          "zh": {
+            "headline": "Google Messages 在测试版中上线重新设计的置顶聊天区域。",
+            "what": "Google Messages 正在推送置顶聊天的新设计，置顶聊天位于会话列表顶部。目前只有测试版用户能看到这一改动。",
+            "why": "置顶聊天的做法是：在长列表上方，用单独的视觉样式突出少数几条重点内容。旅行 App 的行程管理页在把即将出行的行程放在历史订单上方时，也要处理同样的布局问题。"
+          },
+          "compare": null
+        },
+        {
           "id": "google-android-family-hub-settings",
           "app": "Google",
           "category": "platform",
@@ -96,6 +156,36 @@
             "what": "Google 确认 Android 设置菜单将加入 Family Hub 功能，目前尚未开始推送。9to5Google 提前发布了界面截图。",
             "why": "Android 把家庭相关的设置集中到一个入口。预订类 App 在「我的」和设置页中安排常用旅客、家庭成员和共享行程时，可以参考这种做法。"
           }
+        },
+        {
+          "id": "samsung-galaxy-z-flip-cover-screen-one-ui-9",
+          "app": "Samsung",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-03",
+          "published_at": "2026-11-03T12:43:12.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Samsung's One UI 9 redesigns the Galaxy Z Flip cover screen, and many owners are unhappy.",
+          "what": "The One UI 9 update, based on Android 17, changes how the Galaxy Z Flip's cover screen looks and works. Android Authority reports a wave of complaints from owners after the update.",
+          "why": "If your app shows boarding passes, tickets or trip status on the Flip's cover screen, check that those views still work after One UI 9 changes how the screen is laid out.",
+          "sources": [
+            {
+              "title": "Samsung changed Galaxy Z Flip’s cover screen with One UI 9, and a lot of owners are not happy",
+              "url": "https://androidauthority.com/galaxy-z-flip-one-ui-9-cover-screen-backlash-3731117",
+              "publisher": "Android Authority"
+            }
+          ],
+          "release": null,
+          "image": null,
+          "icon": "https://www.google.com/s2/favicons?domain=samsung.com&sz=64",
+          "collected_at": "2026-11-05T03:33:13.536Z",
+          "zh": {
+            "headline": "三星 One UI 9 重新设计了 Galaxy Z Flip 的外屏，不少用户不满。",
+            "what": "基于 Android 17 的 One UI 9 更新改变了 Galaxy Z Flip 外屏的样式和交互方式。据 Android Authority 报道，更新后大量用户提出了抱怨。",
+            "why": "如果你的 App 在 Flip 外屏上显示登机牌、车票或行程状态，需要确认 One UI 9 调整外屏布局后，这些界面仍能正常使用。"
+          },
+          "compare": null
         }
       ]
     },

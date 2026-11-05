@@ -582,8 +582,11 @@ test('pictures: the article’s only picture is used, and a site’s stock share
     { ...base, id: 'with-stock', headline: 'Apple adds retention messages', image: stock },
     { ...base, id: 'no-image', headline: 'Apple adds retention messages', image: null },
     { ...base, id: 'only-stock', headline: 'Apple posts a beta', image: stock },
+    // Android Authority blocks page readers, and its feed photo is a reused one from an August article.
+    { ...base, id: 'old-feed-photo', headline: 'YouTube moves Subscriptions', published_at: '2026-11-04T15:03:00Z', image: 'https://www.androidauthority.com/wp-content/uploads/2026/08/screen-after-cancelling-youtube-premium-lite-scaled.jpg' },
+    { ...base, id: 'new-feed-photo', headline: 'YouTube moves Subscriptions', published_at: '2026-11-04T15:03:00Z', image: 'https://www.androidauthority.com/wp-content/uploads/2026/11/youtube-new-tab-bar.jpg' },
   ];
-  const pictures: Record<string, (typeof shot)[][]> = { 'with-stock': [[shot]], 'no-image': [[shot]], 'only-stock': [[]] };
+  const pictures: Record<string, (typeof shot)[][]> = { 'with-stock': [[shot]], 'no-image': [[shot]], 'only-stock': [[]], 'old-feed-photo': [[]], 'new-feed-photo': [[]] };
   let asked = 0;
   const llm: Llm = { mode: 'company', canSearch: false, messages: async () => (asked++, { content: [{ type: 'text', text: '{}' }], stopReason: 'end_turn', usage: { input_tokens: 0, output_tokens: 0, web_searches: 0 } }) };
   const r = await addCompares(CFG, items, async (i) => pictures[i.id], llm, new Map());
@@ -591,6 +594,8 @@ test('pictures: the article’s only picture is used, and a site’s stock share
   assert.equal(by['with-stock'].image, shot.src, 'the screenshot, not the stock card');
   assert.equal(by['no-image'].image, shot.src, 'one picture is enough');
   assert.equal(by['only-stock'].image, null, 'a stock card alone shows the app icon instead');
+  assert.equal(by['old-feed-photo'].image, null, 'a photo uploaded months before the story is not the change');
+  assert.equal(by['new-feed-photo'].image, 'https://www.androidauthority.com/wp-content/uploads/2026/11/youtube-new-tab-bar.jpg', 'a fresh feed photo stays');
   assert.equal(asked, 0, 'one picture needs no model');
 });
 

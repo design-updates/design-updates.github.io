@@ -189,6 +189,30 @@
       "urls": [
         "https://9to5google.com/2026/11/03/google-android-family-hub-feature"
       ]
+    },
+    "youtube-subscriptions-tab": {
+      "app": "YouTube",
+      "headline": "YouTube's latest redesign moves Subscriptions out of the bottom tab bar.",
+      "date": "2026-11-04",
+      "urls": [
+        "https://androidauthority.com/youtube-subscriptions-tab-redesign-3731679"
+      ]
+    },
+    "google-messages-pinned-chats-redesign": {
+      "app": "Google Messages",
+      "headline": "Google Messages starts testing a redesigned pinned chats area in beta.",
+      "date": "2026-11-04",
+      "urls": [
+        "https://androidauthority.com/google-messages-pinned-chats-redesign-beta-rollout-3731406"
+      ]
+    },
+    "samsung-galaxy-z-flip-cover-screen-one-ui-9": {
+      "app": "Samsung",
+      "headline": "Samsung's One UI 9 redesigns the Galaxy Z Flip cover screen, and many owners are unhappy.",
+      "date": "2026-11-03",
+      "urls": [
+        "https://androidauthority.com/galaxy-z-flip-one-ui-9-cover-screen-backlash-3731117"
+      ]
     }
   }
 }

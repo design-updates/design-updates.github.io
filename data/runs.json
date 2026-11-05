@@ -703,5 +703,29 @@
       }
     ],
     "cost_usd": 0
+  },
+  {
+    "at": "2026-11-05T03:33:13.536Z",
+    "date": "2026-11-05",
+    "mode": "company",
+    "feeds_ok": 45,
+    "feeds_failed": [
+      "Amtrak Media"
+    ],
+    "candidates": 2252,
+    "sent_to_model": 150,
+    "kept": 3,
+    "added": 3,
+    "usage": [
+      {
+        "step": "curate",
+        "model": "kr-claude-opus-5.5",
+        "input_tokens": 41903,
+        "output_tokens": 2820,
+        "web_searches": 0,
+        "credits": 2.2131456301824213
+      }
+    ],
+    "cost_usd": 0
   }
 ]

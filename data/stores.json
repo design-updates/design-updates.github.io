@@ -323,6 +323,12 @@
       "date": "2026-10-30T11:41:41.000Z",
       "notes": "RUNWAY BUGS EDITION 1. KYLIE BUGJENNER 2. BUGBARA PALVIN 3. BUGGI HADID 4. CANDICE SWANEBUGOEL 5. ADRIANA BUGMA *Closing out the show wearing the baddiest wings... BUGOLINI FIXOLINI~~~ (Making a comeback :3) Bombshell. Showstopping. Iconic. Just like 5.82... Update, Angels! ;)",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/16/2e/95/162e957e-4b7c-0d13-841b-6e22168f5a8f/iOS5-5_Frame1.jpg/392x696bb.jpg"
+    },
+    "YouTube": {
+      "version": "21.44.4",
+      "date": "2026-11-02T23:52:24.000Z",
+      "notes": "Fixed bugs, improved performance, drank way too much coffee.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e8/5d/12/e85d121e-8bcf-4f57-cf07-ed23b57f1b30/f1192f1f-430d-469a-b032-cdf77b8b04c7_iOS-5.5-in_1.jpg/392x696bb.jpg"
     }
   },
   "googlePlay": {
@@ -564,6 +570,12 @@
       "version": "2026-10-14·1mte",
       "date": "2026-10-14T00:00:00.000Z",
       "notes": "【Multilingual Interface】The Meituan app now supports four interface languages: Simplified Chinese, English, Japanese, and Korean. Try it now!",
+      "screenshot": null
+    },
+    "YouTube": {
+      "version": "2026-11-04·nc0s",
+      "date": "2026-11-04T00:00:00.000Z",
+      "notes": "For new features, look for in-product education & notifications sharing the feature and how to use it!",
       "screenshot": null
     }
   }

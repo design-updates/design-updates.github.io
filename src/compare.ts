@@ -76,6 +76,14 @@ const uploadedAt = (src: string): Date | null => {
   return m ? new Date(`${m[1]}-${m[2]}-01T00:00:00Z`) : null;
 };
 
+/** A picture uploaded more than two months before the story belongs to an older article (Android Authority's feed
+    reuses old header photos), so it cannot show this change. */
+export const oldUpload = (src: string | null, publishedAt?: string) => {
+  const up = src ? uploadedAt(src) : null;
+  const story = publishedAt ? Date.parse(publishedAt) : NaN;
+  return !!up && Number.isFinite(story) && story - up.getTime() > 62 * 86_400_000;
+};
+
 /**
  * The article pictures worth showing the model: the first few from each source, no thumbnails, no repeats, and
  * none uploaded more than two months before the story. Those belong to older articles linked on the page; a 2022
@@ -153,8 +161,12 @@ export async function addCompares(
     if (item.compare) return;
     const images = candidatePictures(await imagesFor(item), item.image, item.published_at);
     if (!images.length) {
-      // Nothing better on the page: a stock share card is still not the change, so the app icon shows instead.
-      if (isStockImage(item.image)) item.image = null;
+      // Nothing better on the page (or the page is blocked): a stock share card or an old reused photo is still not
+      // the change, so the app icon shows instead.
+      if (isStockImage(item.image) || oldUpload(item.image, item.published_at)) {
+        notes.push(`${item.id}: no picture of the change could be read; the app icon shows`);
+        item.image = null;
+      }
       return;
     }
     // One picture: the article's only picture is the one to show, unless it is the one already shown.

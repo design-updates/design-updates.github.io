@@ -65,6 +65,11 @@ const isTiny = (src: string) => {
 /** One key per picture across hosts and sizes: i0.wp.com/site.com/x.jpg?w=1500 and site.com/x.jpg are the same. */
 const keyOf = (src: string) => src.replace(/^https?:\/\/i\d\.wp\.com\//, 'https://').replace(/[?#].*$/, '').replace(/-\d+x\d+(?=\.\w+$)/, '').replace(/^https?:\/\/(www\.)?/, '');
 
+/** A site's stock share card (Apple's /news/images/og/app-store-connect-og.png): the same for every article, so it
+    never shows the change. An article picture always beats it. */
+const STOCK = /\/(og|social|share|sharing)[-_]?(images?)?\/|[-_](og|share|social)\.(png|jpe?g|webp)$|default[-_](og|share|social)|(og|share|social)[-_]default/i;
+export const isStockImage = (src: string | null) => !!src && STOCK.test(src.replace(/[?#].*$/, ''));
+
 /** Upload month in the address (WordPress: /2026/11/), as the first of that month. */
 const uploadedAt = (src: string): Date | null => {
   const m = src.match(/\/(20\d\d)\/(0[1-9]|1[0-2])\//);
@@ -90,7 +95,8 @@ export function candidatePictures(perSource: PageImage[][], current: string | nu
     out.push(img);
   };
   for (const list of perSource) list.slice(0, 5).forEach(add);
-  if (current && !seen.has(keyOf(current))) add({ src: current, alt: '', caption: '' });
+  // The page's own share picture is a candidate too, unless it is the site's stock card.
+  if (current && !seen.has(keyOf(current)) && !isStockImage(current)) add({ src: current, alt: '', caption: '' });
   return out.slice(0, 8);
 }
 
@@ -145,9 +151,20 @@ export async function addCompares(
     }
     // A before/after chosen earlier stays: re-picking must not swap a clear pair for a guess.
     if (item.compare) return;
-    // With one picture or none there is nothing to choose between.
     const images = candidatePictures(await imagesFor(item), item.image, item.published_at);
-    if (images.length < 2) return;
+    if (!images.length) {
+      // Nothing better on the page: a stock share card is still not the change, so the app icon shows instead.
+      if (isStockImage(item.image)) item.image = null;
+      return;
+    }
+    // One picture: the article's only picture is the one to show, unless it is the one already shown.
+    if (images.length === 1) {
+      if (images[0].src !== item.image) {
+        item.image = images[0].src;
+        notes.push(`${item.id}: the article's only picture`);
+      }
+      return;
+    }
     // Captions that name the old and the new picture are clearer than any guess, so they win.
     const named = pairFromWords(images);
     if (named) {
@@ -196,7 +213,11 @@ export async function addCompares(
     if (fresh) {
       item.image = fresh;
       notes.push(`${item.id}: picture of the new design from captions`);
-    } else byText.push({ item, images });
+    } else {
+      // Until the words settle it, the first article picture beats a missing or stock one.
+      if (!item.image || isStockImage(item.image)) item.image = images[0].src;
+      byText.push({ item, images });
+    }
   });
 
   // Without being able to look, the model still gets the pictures' words, for what captions alone don't settle.

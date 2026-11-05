@@ -171,6 +171,7 @@ try {
     if (!existsSync(paths.icons) && existsSync('data/icons.json')) copyFileSync('data/icons.json', paths.icons);
   }
   const fetchImpl = backfill ? memoFetch() : fetch;
+  let last: Report | null = null;
   for (let back = Math.max(backfill - 1, 0); back >= 0; back--) {
     const at = new Date(now.getTime() - back * 86_400_000);
     const date = localDate(at, cfg.timezone);
@@ -192,7 +193,17 @@ try {
       noSearch: flag('no-search') || back > 0,
     });
     print(report, at, flag('verbose'));
+    last = report;
     if (back > 0) out('\n' + '─'.repeat(60) + '\n');
+  }
+  // Most sources could not be reached at all (no network yet, right after the Mac woke up): what was found is saved,
+  // and exit code 4 tells the morning job to try again the next hour. Sites that answer with an error don't count.
+  if (last && !noModel && !backfill) {
+    const offline = last.feeds.failed.filter((f) => !/^HTTP \d|not an RSS|no article links|could not read any/.test(f.error)).length;
+    if (offline > (last.feeds.ok + last.feeds.failed.length) / 2) {
+      out(`\nMost sources could not be reached (${offline} of ${last.feeds.ok + last.feeds.failed.length} did not answer). What was found is saved; the next hour tries again.`);
+      process.exitCode = 4;
+    }
   }
 } catch (err) {
   if (err instanceof AnswerPendingError) {

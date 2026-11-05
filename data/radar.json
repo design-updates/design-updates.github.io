@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-04T23:01:04.007Z",
+  "updated_at": "2026-11-05T01:55:48.107Z",
   "days": [
     {
       "date": "2026-11-05",
@@ -9,6 +9,35 @@
       "pattern": null,
       "pattern_zh": null,
       "items": [
+        {
+          "id": "apple-macos-live-activities-menu-bar",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-05",
+          "published_at": "2026-11-04T18:43:01.000Z",
+          "beta": true,
+          "importance": 3,
+          "headline": "macOS 27.3 shows Live Activities in the menu bar on Macs without a Dynamic Island.",
+          "what": "The new touchscreen MacBook Pro shows Live Activities in its Dynamic Island. In the macOS 27.3 beta, other Apple silicon Macs show Live Activities in the menu bar instead, for apps such as Apple Music.",
+          "why": "A Live Activity for a train departure or flight can appear in more places than the iPhone Dynamic Island. Check that its compact layout still reads at menu-bar size, with the platform or gate and the time shown first.",
+          "sources": [
+            {
+              "title": "macOS 27.3 Brings Live Activities to Macs Without Dynamic Island",
+              "url": "https://macrumors.com/2026/11/04/macos-27-3-live-activities-in-menu-bar",
+              "publisher": "MacRumors"
+            }
+          ],
+          "release": null,
+          "image": "https://images.macrumors.com/t/q9je-6rbmcbsHkhNsYBq7sbBbUQ=/2500x0/filters:no_upscale()/article-new/2026/11/macOS-27-3-Live-Activities-Now-Playing.jpg?lossy",
+          "icon": "https://www.google.com/s2/favicons?domain=apple.com&sz=64",
+          "collected_at": "2026-11-05T01:55:48.107Z",
+          "zh": {
+            "headline": "macOS 27.3 在没有灵动岛的 Mac 上，把实时活动放进菜单栏显示。",
+            "what": "新款触屏 MacBook Pro 在灵动岛中显示实时活动（Live Activities）。macOS 27.3 测试版让其他 Apple 芯片 Mac 在菜单栏显示实时活动，Apple Music 等应用已支持。",
+            "why": "火车发车、航班这类实时活动的显示位置不再限于 iPhone 灵动岛。需要确认紧凑布局在菜单栏尺寸下仍然清楚，站台或登机口和时间放在最前面。"
+          }
+        },
         {
           "id": "apple-app-store-subscription-retention-messages",
           "app": "Apple",
@@ -29,13 +58,43 @@
             }
           ],
           "release": null,
-          "image": null,
+          "image": "https://devimages-cdn.apple.com/wwdc-services/articles/images/A6247A25-56E3-4B91-8D4C-AD5CA7DD198E/2048.jpeg",
           "icon": "https://www.google.com/s2/favicons?domain=apple.com&sz=64",
           "collected_at": "2026-11-04T23:01:04.007Z",
           "zh": {
             "headline": "Apple 在 App Store 订阅取消流程中加入挽留信息。",
             "what": "用户开始取消订阅时，取消流程里会出现一条由 App 提供的信息，提醒用户这项订阅的价值。信息可以包含文字、图片或专属优惠。开发者在 App Store Connect 中配置这些内容。",
             "why": "对于有付费会员或订阅的旅行 App，原本由系统掌控的取消流程里多了一个可以自己设计的页面。团队需要准备这条挽留信息的文案、配图和优惠，并与 App 内会员页面的视觉保持一致。"
+          },
+          "compare": null
+        },
+        {
+          "id": "google-android-family-hub-settings",
+          "app": "Google",
+          "category": "platform",
+          "kind": "ux",
+          "date": "2026-11-03",
+          "published_at": "2026-11-03T14:45:00.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Google confirms a new Family Hub section in Android Settings.",
+          "what": "Google has confirmed a Family Hub feature that will appear in the Android Settings menu. The rollout has not started yet, and 9to5Google published an early gallery of the screens.",
+          "why": "Android is grouping family-related controls in one Settings hub. This is a useful reference for where a booking app puts saved travellers, family members and shared trips in its account and settings screens.",
+          "sources": [
+            {
+              "title": "Google confirms Android’s new ‘Family Hub’ feature, and this is what it looks like [Gallery]",
+              "url": "https://9to5google.com/2026/11/03/google-android-family-hub-feature",
+              "publisher": "9to5Google"
+            }
+          ],
+          "release": null,
+          "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/11/google-family-hub-android-early-aa-3-copy.jpg",
+          "icon": "https://www.google.com/s2/favicons?domain=android.com&sz=64",
+          "collected_at": "2026-11-05T01:55:48.107Z",
+          "zh": {
+            "headline": "Google 确认 Android 设置中将新增「Family Hub」入口。",
+            "what": "Google 确认 Android 设置菜单将加入 Family Hub 功能，目前尚未开始推送。9to5Google 提前发布了界面截图。",
+            "why": "Android 把家庭相关的设置集中到一个入口。预订类 App 在「我的」和设置页中安排常用旅客、家庭成员和共享行程时，可以参考这种做法。"
           }
         }
       ]
@@ -528,14 +587,15 @@
               "publisher": "Sidebar"
             }
           ],
-          "image": null,
+          "image": "https://fls-a308a4a0-40a0-4df8-8dbb-117b4b947e86.laravel.cloud/articles/2026/10/microsofts-identity-for-copilot-positions-it-as-a-tool-for-work/Microsoft-Copilot-Microsoft-Design-15.jpg",
           "icon": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
           "collected_at": "2026-10-29T15:45:10.721Z",
           "zh": {
             "headline": "Microsoft 为 Copilot 推出新品牌形象，定位为工作工具。",
             "what": "据 The Brand Identity 报道，新的 Copilot 品牌形象以动态几何图形为基础，面向企业办公场景。报道没有提供更多关于标志和上线安排的细节。",
             "why": "Copilot 把动效当作品牌的核心元素，而不只是装饰。如果你们正在把品牌规范延伸到加载状态和页面转场，可以参考这种做法。"
-          }
+          },
+          "compare": null
         }
       ]
     },

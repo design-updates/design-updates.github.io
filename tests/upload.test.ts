@@ -77,7 +77,12 @@ test('morning job: waits for 07:00, then the first hour that gets through finish
   const bin = join(dir, 'bin');
   mkdirSync(bin);
   // A fake node (the collector) and git; `pushes` says how each git push ends.
-  writeFileSync(join(bin, 'node'), `#!/bin/sh\ncase "$1" in *workflows*) echo workflows >> "${dir}/calls" ;; *) echo collect >> "${dir}/calls" ;; esac\nexit 0\n`);
+  // A fake node: `collect-exit` says how the collector ends (0, or 4 when most sources were unreachable).
+  writeFileSync(join(dir, 'collect-exit'), '0');
+  writeFileSync(
+    join(bin, 'node'),
+    `#!/bin/sh\ncase "$1" in *workflows*) echo workflows >> "${dir}/calls" ;; *backfill*) echo backfill >> "${dir}/calls" ;; *) echo collect >> "${dir}/calls"; exit $(cat "${dir}/collect-exit") ;; esac\nexit 0\n`,
+  );
   writeFileSync(join(dir, 'workflows.yaml'), 'enabled: true\n');
   writeFileSync(
     join(bin, 'git'),
@@ -133,3 +138,44 @@ exit 0
   assert.equal(run(), 0);
   assert.equal(readFileSync(join(dir, 'calls'), 'utf8').trim(), '', 'a third run that day does nothing');
 });
+
+test('morning job: a run that could not reach most sources is saved, and the next hour collects again (at most 3 a day)', async () => {
+  const { cpSync, mkdirSync } = await import('node:fs');
+  const dir = mkdtempSync(join(tmpdir(), 'daily-'));
+  mkdirSync(join(dir, 'scripts'));
+  cpSync('scripts/daily.sh', join(dir, 'scripts/daily.sh'));
+  cpSync('scripts/upload.sh', join(dir, 'scripts/upload.sh'));
+  const bin = join(dir, 'bin');
+  mkdirSync(bin);
+  writeFileSync(join(dir, 'collect-exit'), '4');
+  writeFileSync(
+    join(bin, 'node'),
+    `#!/bin/sh\ncase "$1" in *backfill*) echo backfill >> "${dir}/calls" ;; *) echo collect >> "${dir}/calls"; exit $(cat "${dir}/collect-exit") ;; esac\nexit 0\n`,
+  );
+  writeFileSync(join(bin, 'git'), `#!/bin/sh\ncase "$1" in push) echo push >> "${dir}/calls" ;; diff) exit 1 ;; esac\nexit 0\n`);
+  writeFileSync(join(bin, 'date'), `#!/bin/sh\ncase "$1" in +%H) echo 07 ;; +%F) echo 2026-11-05 ;; *) /bin/date "$@" ;; esac\n`);
+  for (const f of ['node', 'git', 'date']) chmodSync(join(bin, f), 0o755);
+  const run = () => {
+    writeFileSync(join(dir, 'calls'), '');
+    execFileSync('/bin/sh', [join(dir, 'scripts/daily.sh')], { env: { ...process.env, PATH: `${bin}:/usr/bin:/bin`, RADAR_NODE: join(bin, 'node'), RADAR_NOTIFY: '/usr/bin/true', RADAR_UPLOAD_WAITS: '0 0 0 0 0' } });
+    return readFileSync(join(dir, 'calls'), 'utf8').trim().split('\n');
+  };
+
+  // 07:00, mostly offline: what was found is uploaded, the pictures are tried again, and the day is not done.
+  assert.deepEqual(run(), ['collect', 'backfill', 'push']);
+  // 08:00, still offline: the same.
+  assert.deepEqual(run(), ['collect', 'backfill', 'push']);
+  // 09:00, back online: collects again, re-reads pictures, and the day is done.
+  writeFileSync(join(dir, 'collect-exit'), '0');
+  assert.deepEqual(run(), ['collect', 'backfill', 'push']);
+  assert.deepEqual(run(), [''], 'the rest of the day does nothing');
+
+  // A day that stays offline stops retrying after the third run.
+  writeFileSync(join(dir, 'collect-exit'), '4');
+  writeFileSync(join(dir, '.cache/last-success'), '');
+  writeFileSync(join(dir, '.cache/last-collected'), '');
+  writeFileSync(join(dir, '.cache/partial-runs'), '2026-11-05\n2026-11-05\n');
+  assert.deepEqual(run(), ['collect', 'backfill', 'push']);
+  assert.deepEqual(run(), [''], 'a third unreachable run is kept as the day');
+});
+

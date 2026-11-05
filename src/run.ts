@@ -272,7 +272,8 @@ export async function collect(opts: CollectOptions): Promise<Report> {
     const result = await curate(cfg, llm, snap.candidates, { now, recent: recentItems(radar, date), seen, icons });
     report.usage.push(result.usage);
     report.warnings.push(...result.warnings);
-    const getMeta = async (url: string) => (url in snap.pages || offline ? (snap.pages[url] ?? null) : fetchPageMeta(url, fetchImpl));
+    // A page that could not be read while gathering is tried once more now, for the kept items' pictures.
+    const getMeta = async (url: string) => (offline || snap.pages[url] ? (snap.pages[url] ?? null) : (snap.pages[url] = await fetchPageMeta(url, fetchImpl)));
     const post = await postCheck(cfg, result.items, now, getMeta);
     // Before/after: App Store screenshots for version-note items, article pictures for the rest.
     const byUrl = new Map(snap.candidates.map((c) => [c.url, c]));

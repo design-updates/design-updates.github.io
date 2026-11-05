@@ -1,9 +1,11 @@
-// npm run backfill-compare [-- --days N] [--dry-run]
+// npm run backfill-compare [-- --days N] [--missing] [--dry-run]
 // Picks the picture again for items already in radar.json, by re-reading their source pages and letting the model
 // look at the pictures (see compare.ts). Without --days, only items that have no before/after yet; with --days N,
-// every item from the last N days. Only `compare` and `image` change; headlines and text are never touched.
+// every item from the last N days. --missing keeps only items with no picture or a site's stock share card (the
+// morning job uses `--days 1 --missing` after a run that could not read most pages). Only `compare` and `image`
+// change; headlines and text are never touched.
 
-import { addCompares } from './compare.ts';
+import { addCompares, isStockImage } from './compare.ts';
 import { loadConfig } from './config.ts';
 import { companyLlm, companyLogin, type Llm } from './llm.ts';
 import { fetchPageMeta } from './pagemeta.ts';
@@ -24,8 +26,10 @@ const login = cfg.provider === 'company' ? companyLogin() : null;
 const llm: Llm | null = login ? companyLlm(login) : null;
 if (!llm) console.log('No company login found; only captions that clearly say "before"/"after" are used.');
 
-const todo = days ? radar.days.slice(0, days).flatMap((d) => d.items) : radar.days.flatMap((d) => d.items).filter((i) => !i.compare);
-console.log(days ? `${todo.length} items from the last ${days} days` : `${todo.length} items without before/after`);
+const missing = argv.includes('--missing');
+const all = days ? radar.days.slice(0, days).flatMap((d) => d.items) : radar.days.flatMap((d) => d.items).filter((i) => !i.compare);
+const todo = missing ? all.filter((i) => !i.compare && (!i.image || isStockImage(i.image))) : all;
+console.log(`${todo.length} items ${days ? `from the last ${days} days` : 'without before/after'}${missing ? ' with no picture yet' : ''}`);
 const pages = new Map<string, Awaited<ReturnType<typeof fetchPageMeta>>>();
 const imagesFor = async (item: Item) => {
   const out = [];

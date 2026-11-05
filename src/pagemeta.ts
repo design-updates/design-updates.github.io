@@ -123,11 +123,17 @@ export function parsePageMeta(html: string, pageUrl: string): PageMeta {
   };
 }
 
-export async function fetchPageMeta(url: string, fetchImpl: typeof fetch = fetch): Promise<PageMeta | null> {
-  try {
-    const html = await fetchText(url, { fetchImpl, timeoutMs: 15_000, maxBytes: 600_000 });
-    return parsePageMeta(html, url);
-  } catch {
-    return null;
+/** One retry after a pause: a page that fails right after the Mac wakes up usually loads a few seconds later. */
+export async function fetchPageMeta(url: string, fetchImpl: typeof fetch = fetch, retryMs = 4000): Promise<PageMeta | null> {
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const html = await fetchText(url, { fetchImpl, timeoutMs: 15_000, maxBytes: 600_000 });
+      return parsePageMeta(html, url);
+    } catch (err) {
+      // A page that answers with an error (403, 404) will answer the same way again.
+      if (/^HTTP \d/.test((err as Error).message) || attempt) return null;
+      await new Promise((r) => setTimeout(r, retryMs));
+    }
   }
+  return null;
 }

@@ -671,5 +671,37 @@
       }
     ],
     "cost_usd": 0
+  },
+  {
+    "at": "2026-11-05T01:55:48.107Z",
+    "date": "2026-11-05",
+    "mode": "company",
+    "feeds_ok": 43,
+    "feeds_failed": [
+      "Amtrak Media"
+    ],
+    "candidates": 2153,
+    "sent_to_model": 140,
+    "kept": 2,
+    "added": 2,
+    "usage": [
+      {
+        "step": "curate",
+        "model": "kr-claude-opus-5.5",
+        "input_tokens": 39270,
+        "output_tokens": 2133,
+        "web_searches": 0,
+        "credits": 1.7487642338308456
+      },
+      {
+        "step": "pictures",
+        "model": "kr-claude-haiku-4-5-20251001",
+        "input_tokens": 21383,
+        "output_tokens": 197,
+        "web_searches": 0,
+        "credits": 0.03346671721393035
+      }
+    ],
+    "cost_usd": 0
   }
 ]

@@ -11,6 +11,8 @@ mkdir -p .cache
 LOG=.cache/daily.log
 STAMP=.cache/last-success
 COLLECTED=.cache/last-collected
+# A run that could not reach most sources (exit 4) is tried again the next hour, up to this many times a day.
+PARTIAL=.cache/partial-runs
 NODE="${RADAR_NODE:-node}"
 TODAY=$(date +%F)
 
@@ -47,6 +49,22 @@ else
   "$NODE" src/collect.ts >.cache/last-run.txt 2>&1
   code=$?
   cat .cache/last-run.txt
+  partial=""
+  if [ $code -eq 4 ]; then
+    tries=$(grep -c "^$TODAY$" "$PARTIAL" 2>/dev/null)
+    echo "$TODAY" >>"$PARTIAL"
+    if [ "${tries:-0}" -lt 2 ]; then
+      partial=yes
+      echo "Most sources were unreachable. Saving what was found; the next hour collects again."
+    else
+      echo "Most sources were unreachable for the third time today. Keeping what was found."
+    fi
+    code=0
+  fi
+  # A retry after an unreachable run: pages that could not be read before are read again for their pictures.
+  if [ $code -eq 0 ] && grep -q "^$TODAY$" "$PARTIAL" 2>/dev/null; then
+    "$NODE" src/backfill-compare.ts --days 1 --missing 2>&1 | tail -n 3
+  fi
   if [ $code -ne 0 ]; then
     echo "Collect failed with exit $code. The next hour will try again."
     if grep -q "company login has expired" .cache/last-run.txt; then
@@ -76,7 +94,7 @@ else
   else
     git commit -qm "radar: $TODAY" && echo "Committed."
   fi
-  echo "$TODAY" >"$COLLECTED"
+  [ -z "$partial" ] && echo "$TODAY" >"$COLLECTED"
 fi
 
 upload
@@ -93,6 +111,8 @@ else
   exit 1
 fi
 
-echo "$TODAY" >"$STAMP"
+# After a partial run the day is not done: the next hour collects again (nothing reported twice).
+[ -z "$partial" ] && echo "$TODAY" >"$STAMP"
+tail -n 20 "$PARTIAL" >"$PARTIAL.tmp" 2>/dev/null && mv "$PARTIAL.tmp" "$PARTIAL"
 tail -n 200 "$NOTIFIED" >"$NOTIFIED.tmp" 2>/dev/null && mv "$NOTIFIED.tmp" "$NOTIFIED"
 tail -n 3000 "$LOG" >"$LOG.tmp" && mv "$LOG.tmp" "$LOG"

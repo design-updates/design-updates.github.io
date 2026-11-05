@@ -9,6 +9,8 @@ import type { Llm, MessagesRequest } from '../src/llm.ts';
 import { matchApp, prefilter } from '../src/prefilter.ts';
 import { mergeDay } from '../src/radar.ts';
 import { readAppStore } from '../src/stores.ts';
+import { addCompares } from '../src/compare.ts';
+import { fetchPageMeta } from '../src/pagemeta.ts';
 import { collect, defaultPaths, SourcesDownError } from '../src/run.ts';
 import type { Radar, Seen } from '../src/types.ts';
 
@@ -570,4 +572,39 @@ test('App Store notes for an app listed in another country are read from that co
   const india = asked.find((u) => u.includes('country=in'))!;
   assert.ok(india.includes('434613896'), 'Zomato is looked up in India');
   assert.ok(!asked.find((u) => u.includes('country=us'))!.includes('434613896'));
+});
+
+test('pictures: the article’s only picture is used, and a site’s stock share card never beats it (Apple, 5 Nov)', async () => {
+  const base = { app: 'Apple', category: 'platform' as const, kind: 'ux' as const, date: '', published_at: '', beta: false, importance: 3, what: 'w', why: 'y', sources: [{ title: 't', url: 'https://developer.apple.com/news?id=fk9ps3gv', publisher: 'Apple Developer News' }], icon: null, collected_at: '' };
+  const shot = { src: 'https://devimages-cdn.apple.com/wwdc-services/articles/images/A6247A25/2048.jpeg', alt: 'Two iPhones showing a subscription cancellation screen', caption: '' };
+  const stock = 'https://developer.apple.com/news/images/og/app-store-connect-og.png';
+  const items = [
+    { ...base, id: 'with-stock', headline: 'Apple adds retention messages', image: stock },
+    { ...base, id: 'no-image', headline: 'Apple adds retention messages', image: null },
+    { ...base, id: 'only-stock', headline: 'Apple posts a beta', image: stock },
+  ];
+  const pictures: Record<string, (typeof shot)[][]> = { 'with-stock': [[shot]], 'no-image': [[shot]], 'only-stock': [[]] };
+  let asked = 0;
+  const llm: Llm = { mode: 'company', canSearch: false, messages: async () => (asked++, { content: [{ type: 'text', text: '{}' }], stopReason: 'end_turn', usage: { input_tokens: 0, output_tokens: 0, web_searches: 0 } }) };
+  const r = await addCompares(CFG, items, async (i) => pictures[i.id], llm, new Map());
+  const by = Object.fromEntries(r.items.map((i) => [i.id, i]));
+  assert.equal(by['with-stock'].image, shot.src, 'the screenshot, not the stock card');
+  assert.equal(by['no-image'].image, shot.src, 'one picture is enough');
+  assert.equal(by['only-stock'].image, null, 'a stock card alone shows the app icon instead');
+  assert.equal(asked, 0, 'one picture needs no model');
+});
+
+test('page reads: a page that does not load is tried once more; one that answers with an error is not', async () => {
+  let calls = 0;
+  const flaky = (async () => {
+    calls++;
+    if (calls === 1) throw new TypeError('fetch failed');
+    return new Response('<html><head><meta property="og:image" content="https://x/a.jpg"></head></html>');
+  }) as typeof fetch;
+  assert.equal((await fetchPageMeta('https://x/post', flaky, 0))?.image, 'https://x/a.jpg');
+  assert.equal(calls, 2);
+  calls = 0;
+  const blocked = (async () => (calls++, new Response('no', { status: 403 }))) as typeof fetch;
+  assert.equal(await fetchPageMeta('https://x/post', blocked, 0), null);
+  assert.equal(calls, 1);
 });

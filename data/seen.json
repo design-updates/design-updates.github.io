@@ -173,6 +173,22 @@
       "urls": [
         "https://developer.apple.com/news?id=fk9ps3gv"
       ]
+    },
+    "apple-macos-live-activities-menu-bar": {
+      "app": "Apple",
+      "headline": "macOS 27.3 shows Live Activities in the menu bar on Macs without a Dynamic Island.",
+      "date": "2026-11-05",
+      "urls": [
+        "https://macrumors.com/2026/11/04/macos-27-3-live-activities-in-menu-bar"
+      ]
+    },
+    "google-android-family-hub-settings": {
+      "app": "Google",
+      "headline": "Google confirms a new Family Hub section in Android Settings.",
+      "date": "2026-11-03",
+      "urls": [
+        "https://9to5google.com/2026/11/03/google-android-family-hub-feature"
+      ]
     }
   }
 }

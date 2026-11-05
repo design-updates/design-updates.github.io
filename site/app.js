@@ -288,6 +288,12 @@ function iconAt(url, px) {
   return url;
 }
 const iconFor = (item) => item.icon || favicon(domainOf(item.sources?.[0]?.url));
+/** The large icon (128px App Store artwork, 64px favicon) for a card without a picture. */
+const bigIcon = (item) => item.icon_large || iconAt(iconFor(item), 128);
+
+/** A card or row with no picture of the change: the app's icon, sharp, on a soft tint of the card's colour. */
+// A small favicon (Google Messages has only 32px) is shown at its own size, never enlarged into a blur.
+const placeholderHtml = (src) => `<span class="ph-icon notch"><img src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" onload="this.parentElement.style.setProperty('--own', this.naturalWidth + 'px')" onerror="this.parentElement.remove()"></span>`;
 
 /* ---------- pixel art ---------- */
 
@@ -553,19 +559,19 @@ function why(item) {
   return `<p class="why"><b>${t().why}</b>${esc(txt(item, 'why'))}</p>`;
 }
 
-/** A photo if there is one; otherwise the app icon blown up into a pixel mosaic. */
+/** A photo if there is one; otherwise the app's icon on a plain tile. */
 function media(item) {
   if (item.compare?.after) return compareHtml(item);
   const href = esc(safeUrl(item.sources?.[0]?.url));
   const style = `--c: var(--${esc(item.category)})`;
   if (item.image) {
     return `<a class="frame photo" href="${href}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-read="${esc(item.id)}">
-      <div class="media notch${reduced ? '' : ' pending'}" style="${style}" data-mosaic="${esc(iconAt(iconFor(item), 16))}">
+      <div class="media notch${reduced ? '' : ' pending'}" style="${style}" data-fallback="${esc(bigIcon(item))}">
         <img src="${esc(item.image)}" alt="" loading="eager" referrerpolicy="no-referrer" decoding="async">
       </div></a>`;
   }
   return `<a class="frame" href="${href}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-read="${esc(item.id)}">
-    <div class="media notch mosaic" style="${style}"><img src="${esc(iconAt(iconFor(item), 16))}" alt="" loading="lazy" referrerpolicy="no-referrer"></div></a>`;
+    <div class="media notch placeholder" style="${style}">${placeholderHtml(bigIcon(item))}</div></a>`;
 }
 
 /* ---------- today ---------- */
@@ -640,8 +646,8 @@ function rowHtml(item) {
     : c?.after
       ? `<a class="row-thumb notch" ${link} tabindex="-1" aria-hidden="true"><img src="${esc(c.after)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
       : item.image
-    ? `<a class="row-thumb notch${reduced ? '' : ' pending'}" ${link} tabindex="-1" aria-hidden="true" data-mosaic="${esc(iconAt(iconFor(item), 16))}"><img src="${esc(item.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
-    : `<a class="row-thumb notch mosaic" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--${esc(item.category)})"><img src="${esc(iconAt(iconFor(item), 16))}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`;
+    ? `<a class="row-thumb notch${reduced ? '' : ' pending'}" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--${esc(item.category)})" data-fallback="${esc(bigIcon(item))}"><img src="${esc(item.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
+    : `<a class="row-thumb notch placeholder" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--${esc(item.category)})">${placeholderHtml(bigIcon(item))}</a>`;
   return `<li class="row reveal ${unread ? 'unread' : 'read'}${isSaved(item.id) ? ' is-saved' : ''}" data-cat="${esc(item.category)}" data-kind="${esc(item.kind ?? '')}" data-id="${esc(item.id)}">
     <div class="row-head">
       <span class="dot" aria-hidden="true"></span>
@@ -837,6 +843,8 @@ function pixelate(box) {
     // Small thumbnails need fewer, smaller steps than a story picture.
     const steps = box.clientWidth < 200 ? [4, 8, 16, 32] : [5, 10, 20, 40, 80];
     let i = 0;
+    // However the steps go (a tab in the background slows timers down), the photo ends sharp.
+    setTimeout(() => canvas.remove(), 4000);
     const tick = () => {
       if (i === steps.length) return canvas.remove();
       const w = steps[i++];
@@ -910,28 +918,26 @@ function wireReveal() {
   for (const el of all) io.observe(el);
 }
 
-/** A photo that fails to load (hotlink protection, gone) turns into the app-icon mosaic. */
-function mosaicOnError(img) {
+/** A photo that fails to load (a site that refuses to be shown elsewhere, or a removed file) becomes the app's icon. */
+function placeholderOnError(img) {
   img.addEventListener(
     'error',
     () => {
       const holder = img.parentElement;
-      const fallback = holder.dataset.mosaic || img.dataset.mosaic;
-      holder.classList.remove('pending');
-      if (!fallback || img.src === fallback) {
-        img.remove();
-        return;
-      }
-      holder.classList.add('mosaic');
+      if (!holder || img.closest('.ph-icon')) return;
+      holder.classList.remove('pending', 'whole');
       holder.closest('.frame')?.classList.remove('photo');
-      img.src = fallback;
+      const fallback = holder.dataset.fallback;
+      holder.classList.add('placeholder');
+      holder.innerHTML = fallback ? placeholderHtml(fallback) : '';
+      tileIcons();
     },
     { once: true },
   );
 }
 
 function wireImages() {
-  for (const img of document.querySelectorAll('.media img, .row-thumb img')) mosaicOnError(img);
+  for (const img of document.querySelectorAll('.media img, .row-thumb img')) placeholderOnError(img);
   for (const img of document.querySelectorAll('.media img, .row-thumb img')) fitWhole(img);
   tileIcons();
 }
@@ -943,7 +949,7 @@ function wireImages() {
 function fitWhole(img) {
   const check = () => {
     const box = img.parentElement;
-    if (!img.naturalWidth || !box?.clientWidth || box.classList.contains('mosaic')) return;
+    if (!img.naturalWidth || !box?.clientWidth || box.classList.contains('placeholder') || img.closest('.ph-icon')) return;
     const ratio = img.naturalWidth / img.naturalHeight / (box.clientWidth / box.clientHeight);
     box.classList.toggle('whole', ratio > 1.35 || ratio < 0.74);
   };
@@ -958,7 +964,7 @@ function fitWhole(img) {
  */
 const tileCache = new Map(); // src -> true (dark tile) | false
 function tileIcons() {
-  for (const img of document.querySelectorAll('img.icon, .sources .stack img')) {
+  for (const img of document.querySelectorAll('img.icon, .sources .stack img, .ph-icon img')) {
     const apply = () => {
       if (!tileCache.has(img.src)) tileCache.set(img.src, needsDarkTile(img));
       img.classList.toggle('on-dark', tileCache.get(img.src));
@@ -1281,8 +1287,8 @@ const spark = () => pixels(SPARK, { a: 'var(--accent)', o: 'var(--sun)' }, 'sky'
 function wfRowHtml(w) {
   const link = `href="${esc(safeUrl(w.url))}" target="_blank" rel="noopener"`;
   const thumb = w.image
-    ? `<a class="row-thumb notch${reduced ? '' : ' pending'}" ${link} tabindex="-1" aria-hidden="true" data-mosaic="${esc(iconAt(w.icon, 16))}"><img src="${esc(w.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
-    : `<a class="row-thumb notch mosaic" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--accent)"><img src="${esc(iconAt(w.icon, 16))}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`;
+    ? `<a class="row-thumb notch${reduced ? '' : ' pending'}" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--accent)" data-fallback="${esc(w.icon_large || iconAt(w.icon, 64))}"><img src="${esc(w.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
+    : `<a class="row-thumb notch placeholder" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--accent)">${placeholderHtml(w.icon_large || iconAt(w.icon, 64))}</a>`;
   const by = [w.author ? t().wfBy(esc(w.author)) : '', w.author_role ? esc(w.author_role) : ''].filter(Boolean).join(', ');
   const icon = `<img class="icon notch row-icon" src="${esc(iconAt(w.icon, 16))}" alt="" width="24" height="24" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'">`;
   const catchText = wfTxt(w, 'catch');
@@ -1403,8 +1409,8 @@ const briefcase = () => pixels(CASE, { a: 'var(--accent)', o: 'var(--sun)' }, 's
 function csRowHtml(c) {
   const link = `href="${esc(safeUrl(c.url))}" target="_blank" rel="noopener"`;
   const thumb = c.image
-    ? `<a class="row-thumb notch${reduced ? '' : ' pending'}" ${link} tabindex="-1" aria-hidden="true" data-mosaic="${esc(iconAt(c.icon, 16))}"><img src="${esc(c.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
-    : `<a class="row-thumb notch mosaic" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--accent)"><img src="${esc(iconAt(c.icon, 16))}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`;
+    ? `<a class="row-thumb notch${reduced ? '' : ' pending'}" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--accent)" data-fallback="${esc(c.icon_large || iconAt(c.icon, 64))}"><img src="${esc(c.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
+    : `<a class="row-thumb notch placeholder" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--accent)">${placeholderHtml(c.icon_large || iconAt(c.icon, 64))}</a>`;
   const icon = `<img class="icon notch row-icon" src="${esc(iconAt(c.icon, 16))}" alt="" width="24" height="24" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'">`;
   const by = c.by ?? '';
   const source = c.source.toLowerCase().startsWith(c.company.toLowerCase()) ? '' : esc(c.source);

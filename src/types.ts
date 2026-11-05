@@ -88,6 +88,8 @@ export interface Item {
   sources: Source[];
   image: string | null;
   icon: string | null;
+  /** A large copy of the icon for a card without a picture. Set when the site is built. */
+  icon_large?: string | null;
   collected_at: string;
   zh?: ItemZh | null;
   compare?: Compare | null;

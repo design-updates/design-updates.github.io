@@ -15,6 +15,13 @@ export function iconAt16(url: string): string {
   return url;
 }
 
+/** The large version, for the placeholder on a card without a picture: 128px App Store artwork, 64px favicons. */
+export function iconLarge(url: string): string {
+  if (/mzstatic\.com/.test(url)) return url.replace(/\/\d+x\d+(bb)?\.(png|jpg|webp)$/, '/128x128bb.png');
+  if (/google\.com\/s2\/favicons/.test(url)) return url.replace(/sz=\d+/, 'sz=64');
+  return url;
+}
+
 export const faviconUrl = (domain: string) => `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=16`;
 
 const EXT: [RegExp, string][] = [
@@ -50,7 +57,10 @@ export async function mirrorAssets(radar: Radar, outDir: string, fetchImpl: type
   const wanted = new Set<string>();
   for (const d of radar.days) {
     for (const i of d.items) {
-      if (i.icon) wanted.add(iconAt16(i.icon));
+      if (i.icon) {
+        wanted.add(iconAt16(i.icon));
+        wanted.add(iconLarge(i.icon));
+      }
       for (const s of i.sources) wanted.add(faviconUrl(domainOf(s.url)));
     }
   }
@@ -62,6 +72,7 @@ export async function mirrorAssets(radar: Radar, outDir: string, fetchImpl: type
       items: d.items.map((i) => ({
         ...i,
         icon: i.icon ? (local.get(iconAt16(i.icon)) ?? i.icon) : i.icon,
+        icon_large: i.icon ? (local.get(iconLarge(i.icon)) ?? iconLarge(i.icon)) : null,
         sources: i.sources.map((s) => ({ ...s, favicon: local.get(faviconUrl(domainOf(s.url))) ?? null })),
       })),
     })),

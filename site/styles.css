@@ -815,19 +815,8 @@ button {
   image-rendering: pixelated;
   pointer-events: none;
 }
-/* Faint scanlines over every image ties photos into the pixel style without hurting them. */
-.media::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(0deg, color-mix(in srgb, var(--ink) 7%, transparent) 0 1px, transparent 1px 3px);
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
-[data-theme='dark'] .media::after {
-  mix-blend-mode: normal;
-  background: repeating-linear-gradient(0deg, rgb(0 0 0 / 0.18) 0 1px, transparent 1px 3px);
-}
+/* Photos arrive blocky and sharpen in a few steps (the canvas above, see pixelate in app.js). Once that is over,
+   nothing sits on top of them: the picture is shown as it is. */
 /* Before / after: two pictures side by side, shown whole (logos and phone screens have different shapes). */
 .compare {
   position: relative;
@@ -882,17 +871,41 @@ button {
 .media.pending img {
   visibility: hidden;
 }
-.media.mosaic img {
-  image-rendering: pixelated;
-  filter: saturate(0.9);
+/* No picture of the change: the app's icon, sharp and at a size it was made for, centred on a soft tint of the
+   card's colour. Not blown up into pixels: a placeholder should look calm, not like a broken photo. */
+.media.placeholder,
+.row-thumb.placeholder {
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--c, var(--ink-3)) 16%, var(--paper-2));
 }
-.media.mosaic::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: color-mix(in srgb, var(--c, var(--ink-3)) 18%, transparent);
-  mix-blend-mode: multiply;
+.ph-icon {
+  display: block;
+  width: min(clamp(64px, 26%, 128px), var(--own, 128px));
+  aspect-ratio: 1;
+  background: var(--tile);
+  --n: var(--px);
+}
+.row-thumb .ph-icon {
+  width: min(44px, var(--own, 44px));
+  --n: 3px;
+}
+.ph-icon img,
+.media .ph-icon img,
+.row-thumb .ph-icon img {
+  position: static;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: auto;
+}
+.ph-icon:has(img.on-dark) {
+  background: #000000;
+}
+[data-theme='dark'] .media.placeholder,
+[data-theme='dark'] .row-thumb.placeholder {
+  background: color-mix(in srgb, var(--c, var(--ink-3)) 10%, var(--paper-2));
 }
 
 .why {
@@ -1375,9 +1388,6 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.row-thumb.mosaic img {
-  image-rendering: pixelated;
 }
 /* Lines up with the headline: 12px dot + 24px icon + two 14px gaps. */
 .row-fold {

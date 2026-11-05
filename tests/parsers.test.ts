@@ -115,7 +115,7 @@ test('build copies app icons and source favicons into the site, keeping the orig
     sources: [{ title: 't', url: 'https://news.airbnb.com/a', publisher: 'Airbnb' }, { title: 't', url: 'https://skift.com/b', publisher: 'Skift' }],
   };
   const fetchImpl = (async (url: string) =>
-    /16x16bb\.png$/.test(url) || /airbnb/.test(url)
+    /(16x16|128x128)bb\.png$/.test(url) || /airbnb/.test(url)
       ? new Response(new Uint8Array([137, 80, 78, 71]), { headers: { 'content-type': 'image/png' } })
       : new Response('nope', { status: 404 })) as unknown as typeof fetch;
   const r = await mirrorAssets({ version: 1, updated_at: '', days: [{ date: '2026-10-29', collected_at: '', quiet: false, pattern: null, items: [item] }] }, dir, fetchImpl);
@@ -124,7 +124,9 @@ test('build copies app icons and source favicons into the site, keeping the orig
   assert.ok(existsSync(join(dir, out.icon!)));
   assert.match(out.sources[0].favicon ?? '', /^icons\//);
   assert.equal(out.sources[1].favicon, null, 'Skift favicon failed, so the page falls back to the original address');
-  assert.deepEqual([r.saved, r.failed], [2, 1]);
+  assert.match(out.icon_large ?? '', /^icons\/[0-9a-f]{12}\.png$/, 'a large copy too, for a card with no picture');
+  assert.notEqual(out.icon_large, out.icon);
+  assert.deepEqual([r.saved, r.failed], [3, 1]);
 });
 
 test('newsroom pages: article links from markup and from script data, assets and other sites left out', async () => {

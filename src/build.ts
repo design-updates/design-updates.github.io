@@ -3,7 +3,7 @@
 import { createHash } from 'node:crypto';
 import { cpSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { loadConfig } from './config.ts';
-import { iconAt16, mirrorAssets, mirrorUrls } from './mirror.ts';
+import { iconAt16, iconLarge, mirrorAssets, mirrorUrls } from './mirror.ts';
 import { emptyRadar } from './radar.ts';
 import { readJson, writeJson } from './util.ts';
 import { loadCasesConfig } from './casestudies.ts';
@@ -19,9 +19,13 @@ writeJson('dist/data/radar.json', mirrored.radar);
 console.log(`Copied ${mirrored.saved} icons into the site${mirrored.failed ? ` (${mirrored.failed} could not be downloaded and load from their original address)` : ''}.`);
 // The weekly pages, each only published while its yaml file has enabled: true. Their icons are copied into the site.
 async function publishWeeks(file: string) {
-  const data = readJson<WeeksFile<{ icon: string }>>(`data/${file}`, { version: 1, updated_at: null, weeks: [] });
-  const { local } = await mirrorUrls(data.weeks.flatMap((w) => w.picks.map((p) => iconAt16(p.icon))), 'dist');
-  for (const w of data.weeks) for (const p of w.picks) p.icon = local.get(iconAt16(p.icon)) ?? p.icon;
+  const data = readJson<WeeksFile<{ icon: string; icon_large?: string }>>(`data/${file}`, { version: 1, updated_at: null, weeks: [] });
+  const { local } = await mirrorUrls(data.weeks.flatMap((w) => w.picks.flatMap((p) => [iconAt16(p.icon), iconLarge(p.icon)])), 'dist');
+  for (const w of data.weeks)
+    for (const p of w.picks) {
+      p.icon_large = local.get(iconLarge(p.icon)) ?? iconLarge(p.icon);
+      p.icon = local.get(iconAt16(p.icon)) ?? p.icon;
+    }
   writeJson(`dist/data/${file}`, data);
 }
 // AI workflows (trial) and case studies.

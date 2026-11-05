@@ -139,7 +139,7 @@ exit 0
   assert.equal(readFileSync(join(dir, 'calls'), 'utf8').trim(), '', 'a third run that day does nothing');
 });
 
-test('morning job: a run that could not reach most sources is saved, and the next hour collects again (at most 3 a day)', async () => {
+test('morning job: a run that could not reach most sources is saved, and every later hour collects again until one gets through', async () => {
   const { cpSync, mkdirSync } = await import('node:fs');
   const dir = mkdtempSync(join(tmpdir(), 'daily-'));
   mkdirSync(join(dir, 'scripts'));
@@ -170,12 +170,10 @@ test('morning job: a run that could not reach most sources is saved, and the nex
   assert.deepEqual(run(), ['collect', 'backfill', 'push']);
   assert.deepEqual(run(), [''], 'the rest of the day does nothing');
 
-  // A day that stays offline stops retrying after the third run.
+  // A day that stays offline keeps trying every hour, however many runs it takes.
   writeFileSync(join(dir, 'collect-exit'), '4');
   writeFileSync(join(dir, '.cache/last-success'), '');
   writeFileSync(join(dir, '.cache/last-collected'), '');
-  writeFileSync(join(dir, '.cache/partial-runs'), '2026-11-05\n2026-11-05\n');
-  assert.deepEqual(run(), ['collect', 'backfill', 'push']);
-  assert.deepEqual(run(), [''], 'a third unreachable run is kept as the day');
+  for (let hour = 0; hour < 6; hour++) assert.deepEqual(run(), ['collect', 'backfill', 'push'], `still trying, run ${hour + 1}`);
 });
 

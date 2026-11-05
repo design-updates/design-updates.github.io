@@ -11,7 +11,8 @@ mkdir -p .cache
 LOG=.cache/daily.log
 STAMP=.cache/last-success
 COLLECTED=.cache/last-collected
-# A run that could not reach most sources (exit 4) is tried again the next hour, up to this many times a day.
+# A run that could not reach most sources (exit 4) is tried again every hour until one gets through. This file
+# remembers which days had one, so the retry also re-reads the pages of cards that got no picture.
 PARTIAL=.cache/partial-runs
 NODE="${RADAR_NODE:-node}"
 TODAY=$(date +%F)
@@ -51,14 +52,9 @@ else
   cat .cache/last-run.txt
   partial=""
   if [ $code -eq 4 ]; then
-    tries=$(grep -c "^$TODAY$" "$PARTIAL" 2>/dev/null)
     echo "$TODAY" >>"$PARTIAL"
-    if [ "${tries:-0}" -lt 2 ]; then
-      partial=yes
-      echo "Most sources were unreachable. Saving what was found; the next hour collects again."
-    else
-      echo "Most sources were unreachable for the third time today. Keeping what was found."
-    fi
+    partial=yes
+    echo "Most sources were unreachable. Saving what was found; the next hour collects again."
     code=0
   fi
   # A retry after an unreachable run: pages that could not be read before are read again for their pictures.

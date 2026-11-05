@@ -168,7 +168,7 @@ A fourth page, **Games**, is a break between reads. It needs no data and no mode
 
 ## The morning job (this Mac)
 
-**When most sources can't be reached** (the Mac has just woken and the network isn't up yet), the run saves what it found, uploads it, and collects again the next hour, up to three runs a day. Stories already reported are not added twice, and cards that got no picture have their pages read again. Pages that fail to load are also retried once within a run.
+**When most sources can't be reached** (the Mac has just woken and the network isn't up yet), the run saves what it found, uploads it, and collects again every hour until a run gets through (the job runs hourly until 23:00). Stories already reported are not added twice, and cards that got no picture have their pages read again. Pages that fail to load are also retried once within a run.
 
 `scripts/daily.sh` runs the collector with the company Claude, then commits and uploads `data/` to GitHub, which republishes the page. macOS starts it **every hour from 07:00 to 23:00**, and also when you log in. The first time it finds the Mac awake and online, it does the day's run; every later check that day does nothing. So if the laptop was off or away from the company network at 07:00, the edition appears within an hour of it coming back.
 

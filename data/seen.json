@@ -238,6 +238,107 @@
         "https://appleinsider.com/articles/26/11/04/what-google-maps-looks-like-on-both-iphone-duo-displays-after-upgrade",
         "https://gsmarena.com/google_maps_update_makes_the_app_fully_iphone_duo_compatible-news-75349.php"
       ]
+    },
+    "airbnb-redesigned-app": {
+      "app": "Airbnb",
+      "headline": "Airbnb’s redesigned app combines homes, experiences and services in one booking journey.",
+      "date": "2026-11-05",
+      "urls": [
+        "https://apps.apple.com/us/app/id401626263?version=26.45"
+      ]
+    },
+    "apple-music-classical-refresh": {
+      "app": "Apple Music Classical",
+      "headline": "Apple Music Classical adopts Apple Music’s black-and-white icon and refreshed interface.",
+      "date": "2026-11-06",
+      "urls": [
+        "https://macrumors.com/2026/11/06/apple-music-classical-updated",
+        "https://appleinsider.com/articles/26/11/06/new-apple-music-classical-update-matches-wider-music-rebrand"
+      ]
+    },
+    "apple-ios-suggested-actions": {
+      "app": "Apple",
+      "headline": "iOS 27.2 adds Suggested Actions that turn messages into one-tap tasks.",
+      "date": "2026-11-06",
+      "urls": [
+        "https://tomsguide.com/phones/iphones/the-hidden-ios-27-2-upgrade-that-turns-messages-into-one-tap-actions"
+      ]
+    },
+    "whatsapp-events-home-shareable-invites": {
+      "app": "WhatsApp",
+      "headline": "WhatsApp adds an Events home and invitations that work outside WhatsApp.",
+      "date": "2026-11-05",
+      "urls": [
+        "https://about.fb.com/news/2026/11/whatsapp-events-brings-people-together-beyond-the-group-chat",
+        "https://gsmarena.com/whatsapp_events_home-news-75382.php",
+        "https://9to5mac.com/2026/11/05/whatsapp-adds-shareable-event-invites-and-a-new-events-hub"
+      ]
+    },
+    "spotify-library-pins-carousel": {
+      "app": "Spotify",
+      "headline": "Spotify tests a Pins carousel to separate saved items from the rest of Your Library.",
+      "date": "2026-11-06",
+      "urls": [
+        "https://androidauthority.com/spotify-your-library-pins-shelf-test-3732365"
+      ]
+    },
+    "whatsapp-android-chat-previews": {
+      "app": "WhatsApp",
+      "headline": "WhatsApp brings iOS-style chat previews to Android.",
+      "date": "2026-11-06",
+      "urls": [
+        "https://gsmarena.com/whatsapp_is_bringing_iosstyle_chat_previews_to_android-news-75371.php"
+      ]
+    },
+    "youtube-ambient-watch-page-design": {
+      "app": "YouTube",
+      "headline": "YouTube tests a split light-and-dark watch page treatment.",
+      "date": "2026-11-06",
+      "urls": [
+        "https://androidauthority.com/youtube-ambient-watch-page-design-test-3732286"
+      ]
+    },
+    "google-find-hub-left-behind-alerts": {
+      "app": "Find Hub",
+      "headline": "Google Find Hub adds alerts when users leave a tracker behind.",
+      "date": "2026-11-06",
+      "urls": [
+        "https://9to5google.com/2026/11/05/google-find-hub-tracker-alerts",
+        "https://androidauthority.com/google-find-hub-left-behind-reminders-rolling-out-3732383"
+      ]
+    },
+    "instagram-edits-mac-app": {
+      "app": "Instagram",
+      "headline": "Instagram brings its Edits video editor to Mac with a multi-track timeline.",
+      "date": "2026-11-06",
+      "urls": [
+        "https://appleinsider.com/articles/26/11/05/instagrams-edits-moves-beyond-the-iphone-with-mac-app",
+        "https://9to5mac.com/2026/11/05/instagram-launches-edits-for-mac-with-multi-track-video-editing-and-4k-exports"
+      ]
+    },
+    "linear-mobile-diffs": {
+      "app": "Linear",
+      "headline": "Linear brings its Diffs review flow to iOS and Android.",
+      "date": "2026-11-06",
+      "urls": [
+        "https://linear.app/changelog/2026-11-04-mobile-diffs"
+      ]
+    },
+    "google-earth-gradient-logo": {
+      "app": "Google Earth",
+      "headline": "Google Earth gets a gradient logo.",
+      "date": "2026-11-06",
+      "urls": [
+        "https://androidauthority.com/google-earth-gradient-icon-redesign-3732345"
+      ]
+    },
+    "phone-by-google-gradient-icon": {
+      "app": "Phone by Google",
+      "headline": "Phone by Google tests a gradient app icon on Android.",
+      "date": "2026-11-06",
+      "urls": [
+        "https://9to5google.com/2026/11/05/phone-by-google-246-new-icon"
+      ]
     }
   }
 }

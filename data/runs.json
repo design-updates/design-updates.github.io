@@ -761,5 +761,88 @@
       }
     ],
     "cost_usd": 0
+  },
+  {
+    "at": "2026-11-07T08:00:06.032Z",
+    "date": "2026-11-07",
+    "mode": "company",
+    "feeds_ok": 53,
+    "feeds_failed": [
+      "The Keyword (Android)",
+      "The Keyword (Travel)",
+      "Booking Holdings",
+      "Spotify Newsroom",
+      "Android Police",
+      "XDA",
+      "MacStories",
+      "Engadget",
+      "Netflix Tech Blog",
+      "Creative Bloq",
+      "Creative Boom"
+    ],
+    "candidates": 2650,
+    "sent_to_model": 200,
+    "kept": 11,
+    "added": 11,
+    "usage": [
+      {
+        "step": "curate",
+        "model": "claude-kr-gpt-5.6-terra[1M]",
+        "input_tokens": 35802,
+        "output_tokens": 5916,
+        "web_searches": 0,
+        "credits": 3.5798972091210617
+      },
+      {
+        "step": "pictures",
+        "model": "claude-kr-gpt-5.6-luna[1M]",
+        "input_tokens": 43727,
+        "output_tokens": 296,
+        "web_searches": 0,
+        "credits": 0.5029261910447761
+      }
+    ],
+    "cost_usd": 0
+  },
+  {
+    "at": "2026-11-07T08:00:04.954Z",
+    "date": "2026-11-07",
+    "mode": "company",
+    "feeds_ok": 54,
+    "feeds_failed": [
+      "The Keyword (Travel)",
+      "Booking Holdings",
+      "Spotify Newsroom",
+      "Android Police",
+      "XDA",
+      "MacStories",
+      "Engadget",
+      "TechRadar",
+      "Netflix Tech Blog",
+      "Creative Boom"
+    ],
+    "candidates": 2646,
+    "sent_to_model": 200,
+    "kept": 12,
+    "added": 12,
+    "usage": [
+      {
+        "step": "curate",
+        "model": "claude-kr-gpt-5.6-terra[1M]",
+        "input_tokens": 33667,
+        "output_tokens": 6230,
+        "web_searches": 0,
+        "credits": 3.2026897795024873
+      },
+      {
+        "step": "pictures",
+        "model": "claude-kr-gpt-5.6-luna[1M]",
+        "input_tokens": 42996,
+        "output_tokens": 259,
+        "web_searches": 0,
+        "credits": 0.4719472903482587
+      }
+    ],
+    "cost_usd": 0
   }
 ]

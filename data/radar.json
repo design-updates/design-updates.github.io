@@ -1,7 +1,415 @@
 {
   "version": 1,
-  "updated_at": "2026-11-05T04:10:23.374Z",
+  "updated_at": "2026-11-07T08:00:04.954Z",
   "days": [
+    {
+      "date": "2026-11-07",
+      "collected_at": "2026-11-07T08:00:04.954Z",
+      "quiet": false,
+      "pattern": "Google Messages, Phone by Google and Google Earth all moved to gradient app icons this week.",
+      "pattern_zh": "Google Messages、Phone by Google 和 Google Earth 本周都换用了渐变风格的 App 图标。",
+      "items": [
+        {
+          "id": "airbnb-redesigned-app",
+          "app": "Airbnb",
+          "category": "ota",
+          "kind": "ux",
+          "date": "2026-11-05",
+          "published_at": "2026-11-05T14:51:35.000Z",
+          "beta": false,
+          "importance": 4,
+          "headline": "Airbnb’s redesigned app combines homes, experiences and services in one booking journey.",
+          "what": "Airbnb’s version notes describe a redesigned app with personalised recommendations across homes, experiences and services. The update also adds a day-by-day trip view, new messaging features, a revamped profile, and host tools for listings, reservations and scheduling.",
+          "why": "A combined inventory model needs a trip view that joins bookings from different verticals without making the journey feel fragmented. The day-by-day itinerary is a useful reference for presenting accommodation, activities and services after checkout.",
+          "sources": [
+            {
+              "title": "Airbnb 26.45 version notes: Now you can book homes, experiences, and services—all in one app. Our redesigned app includes personalized…",
+              "url": "https://apps.apple.com/us/app/id401626263?version=26.45",
+              "publisher": "App Store notes"
+            }
+          ],
+          "release": {
+            "store": "app-store",
+            "version": "26.45"
+          },
+          "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/a6/64/44a664df-d808-cc9b-0a4d-95e866530de8/250509_AppStore_Mobile_Airbnb_Carousel_01_en-US.jpg/320x480bb.jpg",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ad/ff/29/adff29b3-b964-bf50-25ad-c29f07ad55f1/AppIcon-0-0-1x_U007epad-0-1-0-0-0-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Airbnb 改版 App，将房源、体验和服务整合到同一预订旅程中。",
+            "what": "Airbnb 的版本说明显示，改版后的 App 会在房源、体验和服务之间提供个性化推荐。更新还加入按天查看的行程、新的消息功能、改版后的个人主页，以及供房东管理发布、预订和排期的工具。",
+            "why": "当产品整合多种供给时，需要用统一的行程视图串联不同品类的订单，避免旅程被拆散。按天展示的行程可作为支付完成后呈现住宿、活动和服务的参考。"
+          }
+        },
+        {
+          "id": "apple-music-classical-refresh",
+          "app": "Apple Music Classical",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-06",
+          "published_at": "2026-11-06T13:19:47.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Apple Music Classical adopts Apple Music’s black-and-white icon and refreshed interface.",
+          "what": "Apple Music Classical 4.1 replaces its previous icon with a shaded black treble clef on white. Apple also refreshed the iPhone and iPad interface to align the Classical app with the wider Apple Music rebrand.",
+          "why": "When a product family changes identity, the app icon and in-product interface need to move together. Travel brands with separate rail, stays or activities products should decide which distinctive cues remain while shared brand elements are updated.",
+          "sources": [
+            {
+              "title": "Apple Music Classical Updated With New Icon and Refreshed Design",
+              "url": "https://macrumors.com/2026/11/06/apple-music-classical-updated",
+              "publisher": "MacRumors"
+            },
+            {
+              "title": "New Apple Music Classical update matches wider Music rebrand",
+              "url": "https://appleinsider.com/articles/26/11/06/new-apple-music-classical-update-matches-wider-music-rebrand",
+              "publisher": "AppleInsider"
+            }
+          ],
+          "release": null,
+          "image": "https://images.macrumors.com/t/BqVFtSTwLSZCOOsmdi42dhn8XB8=/2500x0/filters:no_upscale()/article-new/2026/11/apple-music-classical-hero.jpg?lossy",
+          "icon": "https://www.google.com/s2/favicons?domain=music.apple.com&sz=64",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Apple Music Classical 换用与 Apple Music 一致的黑白图标，并更新界面。",
+            "what": "Apple Music Classical 4.1 将原有图标改为白底上的黑色渐变高音谱号。Apple 同时更新了 iPhone 和 iPad 界面，使其与 Apple Music 整体改版后的视觉保持一致。",
+            "why": "产品家族更新品牌时，App 图标和产品内界面应同步调整。拥有铁路、住宿或活动等独立产品的旅行品牌，需要明确哪些识别元素保留，哪些元素随主品牌统一更新。"
+          }
+        },
+        {
+          "id": "apple-ios-suggested-actions",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ux",
+          "date": "2026-11-06",
+          "published_at": "2026-11-06T09:00:00.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "iOS 27.2 adds Suggested Actions that turn messages into one-tap tasks.",
+          "what": "iOS 27.2 can scan message context and show one-tap Suggested Actions for Calendar, Reminders, Notes and Maps. The shortcuts turn information in a conversation into an action without requiring users to manually copy it between apps.",
+          "why": "Booking confirmations and support chats often contain dates, addresses and reservation details that users must re-enter elsewhere. Travel apps can reduce that work by offering explicit, reviewable actions such as add to calendar, save address or open directions.",
+          "sources": [
+            {
+              "title": "Apple just added Suggested Actions to iOS 27.2 — Apple Intelligence upgrade scans your texts to create one-tap buttons for Calendar, Reminders, Notes, and Maps",
+              "url": "https://tomsguide.com/phones/iphones/the-hidden-ios-27-2-upgrade-that-turns-messages-into-one-tap-actions",
+              "publisher": "Tom's Guide"
+            }
+          ],
+          "release": null,
+          "image": "https://cdn.mos.cms.futurecdn.net/fJJqLFfXfgVDL6N4y9kqU8-2000-80.jpg",
+          "icon": "https://www.google.com/s2/favicons?domain=apple.com&sz=64",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "iOS 27.2 新增 Suggested Actions，可将消息内容转为一键任务。",
+            "what": "iOS 27.2 可根据消息上下文，为 Calendar、Reminders、Notes 和 Maps 显示一键 Suggested Actions。用户无需手动复制信息到其他 App，即可把对话中的内容转为操作。",
+            "why": "预订确认和客服对话常包含日期、地址与订单信息，用户往往还要手动录入其他工具。旅行 App 可提供明确且可确认的操作，例如加入日历、保存地址或打开导航，减少重复输入。"
+          }
+        },
+        {
+          "id": "whatsapp-events-home-shareable-invites",
+          "app": "WhatsApp",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-05",
+          "published_at": "2026-11-05T15:00:45.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "WhatsApp adds an Events home and invitations that work outside WhatsApp.",
+          "what": "WhatsApp is adding an Events home for managing events beyond individual chats. Event creators can add a cover photo and share an invitation link with people who do not have WhatsApp, letting recipients view details and RSVP without installing the app.",
+          "why": "For booking apps, an event-level home can separate time-bound plans from the conversations that generated them. External RSVP links are also a useful pattern when a traveller needs to share an itinerary or activity with people outside the app.",
+          "sources": [
+            {
+              "title": "WhatsApp Events Brings People Together Beyond the Group Chat",
+              "url": "https://about.fb.com/news/2026/11/whatsapp-events-brings-people-together-beyond-the-group-chat",
+              "publisher": "Meta Newsroom"
+            },
+            {
+              "title": "WhatsApp announces Events Home and shareable event invites",
+              "url": "https://gsmarena.com/whatsapp_events_home-news-75382.php",
+              "publisher": "GSMArena"
+            },
+            {
+              "title": "WhatsApp adds shareable event invites and a new Events hub",
+              "url": "https://9to5mac.com/2026/11/05/whatsapp-adds-shareable-event-invites-and-a-new-events-hub",
+              "publisher": "9to5Mac"
+            }
+          ],
+          "release": null,
+          "image": "https://9to5mac.com/wp-content/uploads/sites/6/2026/11/whatsapp-events-link-and-view.webp",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/15/eb/39/15eb3965-bec3-4737-950a-9d9df5303e93/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "WhatsApp 新增 Events 首页，并支持向非 WhatsApp 用户分享邀请。",
+            "what": "WhatsApp 新增了集中管理活动的 Events 首页，不再只依附于单个聊天。创建者可添加封面图并分享邀请链接，即使对方未安装 WhatsApp，也能查看活动详情并回复是否参加。",
+            "why": "旅行预订产品可以考虑用活动级首页，把有明确时间节点的计划从产生它的聊天中独立出来。向站外用户分享并收集回复，也适合行程或活动的协作场景。"
+          }
+        },
+        {
+          "id": "spotify-library-pins-carousel",
+          "app": "Spotify",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-06",
+          "published_at": "2026-11-06T09:12:59.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "Spotify tests a Pins carousel to separate saved items from the rest of Your Library.",
+          "what": "Spotify is testing a dedicated Pins carousel in Your Library on mobile. The new shelf separates pinned content from the rest of the library instead of mixing it into one list.",
+          "why": "A pinned shelf can give frequent travellers fast access to active trips while leaving past bookings searchable below. It works best when the distinction between pinned, upcoming and archived content remains explicit.",
+          "sources": [
+            {
+              "title": "Spotify tests dedicated ‘Pins’ carousel to declutter Your Library on mobile",
+              "url": "https://androidauthority.com/spotify-your-library-pins-shelf-test-3732365",
+              "publisher": "Android Authority"
+            }
+          ],
+          "release": null,
+          "image": null,
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8b/f2/6a/8bf26ab9-3ced-cb5c-a2b3-19f65e7f5cc6/AppIcon-0-0-1x_U007epad-0-1-0-0-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Spotify 测试 Pins 轮播区，将置顶内容从 Your Library 中分离出来。",
+            "what": "Spotify 正在移动端 Your Library 中测试独立的 Pins 轮播区。新的内容架将置顶内容与其余收藏内容分开，不再全部混在同一列表中。",
+            "why": "置顶内容架可让高频旅行者快速进入当前行程，同时将历史订单保留在下方供搜索。关键是清楚区分置顶、即将开始和已归档的内容。"
+          },
+          "store_shots": [
+            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f3/ce/05/f3ce0547-690a-b355-b1dd-6b6e91808279/IOS_-_5.5_-_S01_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/600x1300bb.jpg",
+            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/78/81/ca/7881ca10-b441-1a6c-e030-92e08dd76144/IOS_-_5.5_-_S02_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/600x1300bb.jpg",
+            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5b/e7/6a/5be76ae0-8bc6-59fc-58ef-92aa931b6dba/IOS_-_5.5_-_S03_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/600x1300bb.jpg"
+          ],
+          "store_from": "app-store"
+        },
+        {
+          "id": "whatsapp-android-chat-previews",
+          "app": "WhatsApp",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-06",
+          "published_at": "2026-11-05T23:31:02.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "WhatsApp brings iOS-style chat previews to Android.",
+          "what": "WhatsApp is adding chat previews on Android for users who have read receipts enabled. The interaction lets users inspect a message without opening the chat and triggering a read receipt.",
+          "why": "Preview interactions can help users triage booking updates without committing to a full task flow. For travel notifications, distinguish a quick glance at a disruption or gate change from an action that marks the update as acknowledged.",
+          "sources": [
+            {
+              "title": "WhatsApp is bringing iOS-style chat previews to Android",
+              "url": "https://gsmarena.com/whatsapp_is_bringing_iosstyle_chat_previews_to_android-news-75371.php",
+              "publisher": "GSMArena"
+            }
+          ],
+          "release": null,
+          "image": null,
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/15/eb/39/15eb3965-bec3-4737-950a-9d9df5303e93/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "WhatsApp 将 iOS 风格的聊天预览带到 Android。",
+            "what": "WhatsApp 正在为已开启已读回执的 Android 用户加入聊天预览。用户可以查看消息内容，而无需打开聊天并触发已读回执。",
+            "why": "预览交互能帮助用户快速判断预订更新是否需要处理，而不用立即进入完整流程。旅行通知应区分“快速查看航班变动或登车口变更”和“确认已处理”这两种行为。"
+          },
+          "store_shots": [
+            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d8/95/88/d89588dd-ce20-0f5b-95bc-f99814bf9a6c/6.9__Display_1-en_US.png/600x1300bb.jpg",
+            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/60/0f/39/600f39e2-82c1-d2dd-eb76-d9c58d88e1f9/6.9__Display_2-en_US.png/600x1300bb.jpg",
+            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4e/64/6b/4e646b15-085c-ab69-957f-790f1e17475b/6.9__Display_3-en_US.png/600x1300bb.jpg"
+          ],
+          "store_from": "app-store"
+        },
+        {
+          "id": "youtube-ambient-watch-page-design",
+          "app": "YouTube",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-06",
+          "published_at": "2026-11-05T22:09:53.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "YouTube tests a split light-and-dark watch page treatment.",
+          "what": "YouTube confirmed that the half-dark, half-light appearance on some watch pages is an active design test rather than a bug. The test changes the visual treatment around video playback for selected users.",
+          "why": "Immersive media screens can use surrounding colour and contrast to foreground content, but the treatment must not make controls harder to scan. On a booking app, apply similarly expressive backgrounds cautiously around map, gallery or trip-detail screens with important actions.",
+          "sources": [
+            {
+              "title": "YouTube confirms your half-dark, half-light viewing experience is a test",
+              "url": "https://androidauthority.com/youtube-ambient-watch-page-design-test-3732286",
+              "publisher": "Android Authority"
+            }
+          ],
+          "release": null,
+          "image": null,
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/be/56/df/be56dfa2-70bd-feb2-b666-38277eb5be3b/logo_youtube_2024_q4_color-0-0-1x_U007emarketing-0-0-0-7-0-0-0-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "YouTube 正在测试明暗分区的视频观看页。",
+            "what": "YouTube 确认，部分观看页同时呈现深色和浅色区域并非故障，而是一项面向部分用户的设计测试。该测试改变了视频播放页周边区域的视觉处理方式。",
+            "why": "沉浸式内容页面可以利用背景色和对比度突出内容，但不能让控件更难识别。旅行 App 在地图、图片库或行程详情等关键页面采用类似背景效果时，应确保主要操作始终清晰。"
+          },
+          "store_shots": [
+            "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e8/5d/12/e85d121e-8bcf-4f57-cf07-ed23b57f1b30/f1192f1f-430d-469a-b032-cdf77b8b04c7_iOS-5.5-in_1.jpg/600x1300bb.jpg",
+            "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2d/da/fa/2ddafabb-ad03-eda7-417f-6a22418551d0/868afd15-b2e4-4923-b0f8-c5599327a3d7_iOS-5.5-in_2.jpg/600x1300bb.jpg",
+            "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f4/b6/02/f4b602e0-04b4-60ff-7960-d8ba227dc980/2930dbc3-4228-403b-b46d-e0066516ab6a_iOS-5.5-in_3.jpg/600x1300bb.jpg"
+          ],
+          "store_from": "app-store"
+        },
+        {
+          "id": "google-find-hub-left-behind-alerts",
+          "app": "Find Hub",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-06",
+          "published_at": "2026-11-05T21:30:00.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Google Find Hub adds alerts when users leave a tracker behind.",
+          "what": "Google is rolling out a “Notify when left behind” option for Find Hub tags and trackers on Android. The notification flow alerts users when a tracked item is no longer nearby.",
+          "why": "Departure-sensitive alerts are directly relevant to travel products. A trip app could use the same timing principle for passport reminders, station departure prompts or luggage-related notifications, with settings that prevent alert fatigue.",
+          "sources": [
+            {
+              "title": "Google Find Hub rolls out ‘Notify when left behind’ tracker alerts on Android",
+              "url": "https://9to5google.com/2026/11/05/google-find-hub-tracker-alerts",
+              "publisher": "9to5Google"
+            },
+            {
+              "title": "Google Find Hub is catching up to Apple Find My with left-behind alerts",
+              "url": "https://androidauthority.com/google-find-hub-left-behind-reminders-rolling-out-3732383",
+              "publisher": "Android Authority"
+            }
+          ],
+          "release": null,
+          "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/11/Find-Hub-Notify-when-left-behind.jpg?strip=info&w=1280",
+          "icon": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Google Find Hub 在 Android 推出遗落物品提醒。",
+            "what": "Google 正在为 Android 上的 Find Hub 标签和追踪器推出“离开时通知”选项。当用户与被追踪物品相距较远时，系统会发出提醒。",
+            "why": "基于离开时机的提醒与旅行场景直接相关。行程 App 可借鉴这一触发原则，用于护照提醒、车站出发提示或行李相关通知，同时提供设置以避免通知过多。"
+          }
+        },
+        {
+          "id": "instagram-edits-mac-app",
+          "app": "Instagram",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-06",
+          "published_at": "2026-11-05T18:38:44.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Instagram brings its Edits video editor to Mac with a multi-track timeline.",
+          "what": "Instagram’s Edits video editor is now available on Mac. The desktop app includes a multi-track timeline, colour controls and direct publishing to Instagram, extending the editing workflow beyond iPhone.",
+          "why": "A mobile-first creation flow can expand to desktop when tasks become more detailed, without abandoning its publishing destination. For travel products with richer itinerary editing or group planning, use desktop for complex arrangement while keeping mobile publishing and sharing immediate.",
+          "sources": [
+            {
+              "title": "Instagram's Edits moves beyond the iPhone with Mac app",
+              "url": "https://appleinsider.com/articles/26/11/05/instagrams-edits-moves-beyond-the-iphone-with-mac-app",
+              "publisher": "AppleInsider"
+            },
+            {
+              "title": "Instagram launches Edits for Mac with multi-track video editing and 4K exports",
+              "url": "https://9to5mac.com/2026/11/05/instagram-launches-edits-for-mac-with-multi-track-video-editing-and-4k-exports",
+              "publisher": "9to5Mac"
+            }
+          ],
+          "release": null,
+          "image": "https://9to5mac.com/wp-content/uploads/sites/6/2026/11/instagram-edits-desktop.jpg?quality=82&strip=all&resize=1200,628",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/65/b4/b1/65b4b1e1-9891-0b84-4d9a-6370410bfbf4/Prod-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Instagram 将 Edits 视频编辑器带到 Mac，并加入多轨时间线。",
+            "what": "Instagram 的 Edits 视频编辑器现已推出 Mac 版。桌面端提供多轨时间线、色彩控制和直接发布到 Instagram 的功能，将编辑流程从 iPhone 延伸到桌面。",
+            "why": "当任务变得更复杂时，移动优先的创作流程可以扩展到桌面端，同时保持原有的发布入口。旅行产品若支持更复杂的行程编辑或多人规划，可让桌面端承担编排，并保留移动端的即时分享能力。"
+          }
+        },
+        {
+          "id": "linear-mobile-diffs",
+          "app": "Linear",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-06",
+          "published_at": "2026-11-05T17:49:55.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Linear brings its Diffs review flow to iOS and Android.",
+          "what": "Linear’s Diffs review experience is now available on mobile. Users can start Guided Reviews on a phone, see items awaiting review in the inbox, open preview links, and continue a review later on desktop.",
+          "why": "The cross-device handoff is useful for trip-management work that begins with a mobile notification but needs more space to resolve later. Keep the mobile review state and desktop state visibly aligned so users know what still needs attention.",
+          "sources": [
+            {
+              "title": "Mobile Diffs",
+              "url": "https://linear.app/changelog/2026-11-04-mobile-diffs",
+              "publisher": "Linear Changelog"
+            }
+          ],
+          "release": null,
+          "image": "https://webassets.linear.app/images/ornj730p/production/d7688613732759db351a5a952b703585e1d5a1db-3904x1760.png?q=95&auto=format&dpr=2",
+          "icon": "https://www.google.com/s2/favicons?domain=linear.app&sz=64",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Linear 将 Diffs 评审流程带到 iOS 和 Android。",
+            "what": "Linear 的 Diffs 评审体验现已支持移动端。用户可以在手机上开始 Guided Reviews、在收件箱查看待评审内容、打开预览链接，并在桌面端继续处理。",
+            "why": "这对从移动端通知开始、但需要在更大屏幕完成的行程管理任务有参考价值。移动端和桌面端应清晰同步处理状态，让用户知道还有哪些事项待处理。"
+          }
+        },
+        {
+          "id": "google-earth-gradient-logo",
+          "app": "Google Earth",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-06",
+          "published_at": "2026-11-06T10:47:25.000Z",
+          "beta": false,
+          "importance": 1,
+          "headline": "Google Earth gets a gradient logo.",
+          "what": "Google Earth has adopted a new logo as part of Google’s wider gradient icon treatment. The update changes the product’s visible brand mark.",
+          "why": "Even a small icon update matters for a map product because users identify it in crowded home screens and utility folders. A travel app icon should preserve its recognisable silhouette when its colour system changes.",
+          "sources": [
+            {
+              "title": "Google Earth gets a new logo with Google’s gradient makeover",
+              "url": "https://androidauthority.com/google-earth-gradient-icon-redesign-3732345",
+              "publisher": "Android Authority"
+            }
+          ],
+          "release": null,
+          "image": null,
+          "icon": "https://www.google.com/s2/favicons?domain=earth.google.com&sz=64",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Google Earth 换用了渐变风格的新 Logo。",
+            "what": "Google Earth 采用了新的 Logo，延续 Google 正在推进的渐变图标风格。这次更新改变了产品对用户可见的品牌标识。",
+            "why": "对于地图产品，即使只是图标的小改动，也会影响用户在拥挤的主屏幕和工具文件夹中的识别。旅行 App 调整配色时，应保留容易辨认的图标轮廓。"
+          }
+        },
+        {
+          "id": "phone-by-google-gradient-icon",
+          "app": "Phone by Google",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-06",
+          "published_at": "2026-11-05T19:04:24.000Z",
+          "beta": true,
+          "importance": 1,
+          "headline": "Phone by Google tests a gradient app icon on Android.",
+          "what": "Phone by Google 246 beta introduces a redesigned gradient icon. The new mark follows the gradient icon treatment that recently reached Google Messages.",
+          "why": "Shared icon treatments can make a suite feel connected, but they can also reduce distinction between utilities. If a travel product has several companion apps, test recognisability at small icon sizes before applying one visual treatment across all of them.",
+          "sources": [
+            {
+              "title": "Phone by Google 246 beta brings gradient icon redesign on Android",
+              "url": "https://9to5google.com/2026/11/05/phone-by-google-246-new-icon",
+              "publisher": "9to5Google"
+            }
+          ],
+          "release": null,
+          "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/11/Google-Messages-Phone-Contacts-icon-gradient-redesign.webp?resize=1200,628",
+          "icon": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Phone by Google 在 Android Beta 中测试渐变 App 图标。",
+            "what": "Phone by Google 246 Beta 带来了重新设计的渐变图标。新图标延续了 Google Messages 最近采用的渐变处理方式。",
+            "why": "统一的图标风格能让产品套件更有整体感，但也可能降低不同工具之间的辨识度。旅行产品若有多个配套 App，应在统一视觉前测试小尺寸图标的可识别性。"
+          },
+          "compare": {
+            "before": "https://9to5google.com/wp-content/uploads/sites/4/2026/11/Phone-by-Google-245-icon.jpg?strip=info&w=640",
+            "after": "https://9to5google.com/wp-content/uploads/sites/4/2026/11/Phone-by-Google-246-icon.jpg?strip=info&w=640",
+            "from": "article"
+          }
+        }
+      ]
+    },
     {
       "date": "2026-11-05",
       "collected_at": "2026-11-04T23:01:04.007Z",

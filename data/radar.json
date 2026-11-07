@@ -176,7 +176,8 @@
             "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/78/81/ca/7881ca10-b441-1a6c-e030-92e08dd76144/IOS_-_5.5_-_S02_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/600x1300bb.jpg",
             "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5b/e7/6a/5be76ae0-8bc6-59fc-58ef-92aa931b6dba/IOS_-_5.5_-_S03_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/600x1300bb.jpg"
           ],
-          "store_from": "app-store"
+          "store_from": "app-store",
+          "compare": null
         },
         {
           "id": "whatsapp-android-chat-previews",
@@ -211,7 +212,8 @@
             "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/60/0f/39/600f39e2-82c1-d2dd-eb76-d9c58d88e1f9/6.9__Display_2-en_US.png/600x1300bb.jpg",
             "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4e/64/6b/4e646b15-085c-ab69-957f-790f1e17475b/6.9__Display_3-en_US.png/600x1300bb.jpg"
           ],
-          "store_from": "app-store"
+          "store_from": "app-store",
+          "compare": null
         },
         {
           "id": "youtube-ambient-watch-page-design",
@@ -246,7 +248,8 @@
             "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2d/da/fa/2ddafabb-ad03-eda7-417f-6a22418551d0/868afd15-b2e4-4923-b0f8-c5599327a3d7_iOS-5.5-in_2.jpg/600x1300bb.jpg",
             "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f4/b6/02/f4b602e0-04b4-60ff-7960-d8ba227dc980/2930dbc3-4228-403b-b46d-e0066516ab6a_iOS-5.5-in_3.jpg/600x1300bb.jpg"
           ],
-          "store_from": "app-store"
+          "store_from": "app-store",
+          "compare": null
         },
         {
           "id": "google-find-hub-left-behind-alerts",
@@ -372,7 +375,14 @@
             "headline": "Google Earth 换用了渐变风格的新 Logo。",
             "what": "Google Earth 采用了新的 Logo，延续 Google 正在推进的渐变图标风格。这次更新改变了产品对用户可见的品牌标识。",
             "why": "对于地图产品，即使只是图标的小改动，也会影响用户在拥挤的主屏幕和工具文件夹中的识别。旅行 App 调整配色时，应保留容易辨认的图标轮廓。"
-          }
+          },
+          "compare": null,
+          "store_shots": [
+            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/5e/b0/fd/5eb0fd89-e5c5-d970-dbf2-6fc2e738a226/c297772b-e3a7-44bd-8315-93bb7b650d68_APP_IPHONE_55-1.png/600x1300bb.jpg",
+            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/78/53/98/78539862-f178-a416-7dd8-2e83e7bd9dce/305c7aee-e2dc-4ffc-b6fd-0f286836da47_APP_IPHONE_55-2.png/600x1300bb.jpg",
+            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/fe/9c/6d/fe9c6df9-63dd-9e13-82a4-bb26c57a453d/e140a7a2-e7b9-49ce-b4de-65a4fbd5e53c_APP_IPHONE_55-3.png/600x1300bb.jpg"
+          ],
+          "store_from": "app-store"
         },
         {
           "id": "phone-by-google-gradient-icon",
@@ -920,14 +930,21 @@
             }
           ],
           "release": null,
-          "image": "https://media.creativeboom.com/a050e96d-986d-487d-b08c-0695210aba1d/conversions/7400c6b112c36d63af140a718170e080990e68f1-medium.webp",
+          "image": null,
           "icon": "https://www.google.com/s2/favicons?domain=post.ch&sz=64",
           "collected_at": "2026-11-03T23:04:28.914Z",
           "zh": {
             "headline": "Swiss Post 启用 Swiss Typefaces 定制的新字体。",
             "what": "Swiss Typefaces 用了三年时间设计这款字体，Creative Boom 称其更温暖、更亲切。",
             "why": "一个国家级服务品牌选择了更温暖的定制字体，而不是中性字体。权衡 App 文字是用自有品牌字体还是系统字体时，可以参考。"
-          }
+          },
+          "compare": null,
+          "store_shots": [
+            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fb/ec/87/fbec87c8-0e9d-31ea-87c1-c54a11bc8fbe/iOS-69-DE-01.png/600x1300bb.jpg",
+            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/76/76/1c/76761c9f-59d4-dd34-6eb1-133174fe530e/iOS-69-DE-02.png/600x1300bb.jpg",
+            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/af/d8/42/afd842fe-af79-26d9-4707-324ded5dad79/iOS-69-DE-03.png/600x1300bb.jpg"
+          ],
+          "store_from": "app-store"
         }
       ]
     },

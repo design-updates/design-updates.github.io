@@ -2,7 +2,7 @@
 
 A morning paper for one: what apps, sites and brands changed in **UI design, UX and brand identity**, filtered so only real design changes get through. In English or Chinese.
 
-Every morning from 07:00 (or as soon as the laptop is on and online after that) a job on the laptop reads news feeds, applies strict rules, asks the company Claude (Opus 5.5) to pick what is worth your time and write it up, and uploads the result. GitHub then publishes it as a static page at https://design-updates.github.io/. Today's changes are on top; older days are listed below with a date rail, category filters and unread dots.
+Every morning from 07:00 (or as soon as the laptop is on and online after that) a job on the laptop reads news feeds, applies strict rules, asks the company plan model to pick what is worth your time and write it up, and uploads the result. GitHub then publishes it as a static page at https://design-updates.github.io/. Today's changes are on top; older days are listed below with a date rail, category filters and unread dots.
 
 | Phone (375px) | Desktop (1280px) |
 | --- | --- |
@@ -15,7 +15,7 @@ Every morning from 07:00 (or as soon as the laptop is on and online after that) 
 2. **Search (Anthropic API only).** One call per app group (OTAs, rail, delivery and rides, platforms, consumer) with the web search tool, limited to the apps' own sites and the trusted outlets list. This catches newsrooms that have no feed. The company plan and Gemini have no working web search, so with those the run uses feeds only.
 3. **Rules (no model).** Each item is dropped, with a reason, if it comes from a blocked or unknown site, has no real publish date or is older than 48 hours, has a drop word in the headline ("funding", "deals", "rumor"...), or was already reported. From news sites, an item must be about a watchlist app or have a design word in its headline (redesign, rebrand, new logo, interface, onboarding...). Everything from a design publication goes through. Search results are dated by the article page itself, not by the search engine.
 4. **One curate call.** The model gets everything that passed, plus what was reported in the last two weeks. It keeps only design changes of three kinds: **UI** (the interface: redesigns, layout, visual style, icons, platform design rules), **UX** (how a flow works: navigation, onboarding, search, checkout, sign-in) and **Brand** (logos, identity, type, colour, app icons). Feature news with no visible design angle is dropped. Watchlist apps come first, but any well-known app, site or brand counts. It merges syndicated copies of one launch into one item (keeping the two best sources), drops the rest with a reason, and writes `headline`, `what` and `why` for each item in English and in Simplified Chinese (`zh`). It adds a `pattern` note (and `pattern_zh`) only when three or more apps moved the same way.
-5. **The picture.** For each kept item, the model (`company.compare`, Haiku) looks at the pictures in its source articles, downloaded and sent with the headline, and picks the one that shows the change itself: the grid of new icons rather than the bare logo, the new screen rather than a photo of the company. If the pictures show the old design and the new, the page shows them side by side. Captions that name the old and new picture ("the previous logo", "Apple-Music-icon-old.jpg") are used as they are, without asking. Pictures uploaded more than two months before the story are left out, since they belong to older articles linked on the page. A pair chosen earlier is never replaced. Items from App Store notes show the previous version's screenshot next to the new one, when they differ. This costs about 0.01 credits per story.
+5. **The picture.** For each kept item, the smaller vision model (`company.compare`) looks at the pictures in its source articles, downloaded and sent with the headline, and picks the one that shows the change itself: the grid of new icons rather than the bare logo, the new screen rather than a photo of the company. If the pictures show the old design and the new, the page shows them side by side. Captions that name the old and new picture ("the previous logo", "Apple-Music-icon-old.jpg") are used as they are, without asking. Pictures uploaded more than two months before the story are left out, since they belong to older articles linked on the page. A pair chosen earlier is never replaced. Items from App Store notes show the previous version's screenshot next to the new one, when they differ. This costs about 0.01 credits per story.
 6. **Checks.** The answer is validated in code: unknown apps, missing sources and incomplete write-ups are dropped; emojis and exclamation marks are removed; hype words are flagged in the log. Each kept page is re-read for its `og:image` and to make sure it is not an old story with a new date.
 7. **Write.** `data/radar.json` gets a new day at the top. A quiet day is recorded as `"quiet": true` with no items. `data/seen.json` remembers every reported event, so a launch never shows up again on a later day. `data/runs.json` logs token use and estimated cost per run.
 
@@ -59,13 +59,13 @@ Set `provider:` in `watchlist.yaml`, or `RADAR_PROVIDER` in the environment, to 
 
 | Provider | Where it works | Login | Web search |
 | --- | --- | --- | --- |
-| `company` | Your laptop only (Trip.com network) | Run `ada cc` once in Terminal, log in, type `/exit`. Model: `company.curate` (default `kr-claude-opus-5.5`) | No |
+| `company` | Your laptop only (Trip.com network) | Run `ada cc` once in Terminal, log in, type `/exit`. Model: `company.curate` (currently `claude-kr-gpt-5.6-terra[1M]`) | No |
 | `gemini` | GitHub only (Google blocks the API from mainland China) | `GEMINI_API_KEY`. Model: `gemini.curate` (default `gemini-3.8-flash`, free tier) | No |
 | `anthropic` | Anywhere Anthropic serves | `ANTHROPIC_API_KEY` | Yes |
 
 The morning job uses `company`. Keys for the other two go in `.env` (copy `.env.example`); it is git-ignored. If the company login expires, run `ada refresh` in Terminal and log in again.
 
-Gemini was tried on GitHub in October 2026 and not used: it timed out on several calls, invented a detail, and dropped stories Opus kept.
+Gemini was tried on GitHub in October 2026 and not used: it timed out on several calls, invented a detail, and dropped good stories.
 
 ### Running without a key
 
@@ -197,13 +197,13 @@ Edit the `HOURS` line in `scripts/install-mac.sh` (the hours it checks, 24-hour 
 
 ## Hosting on GitHub
 
-The page is published by `.github/workflows/radar.yml` whenever `data/`, `site/`, `src/` or `watchlist.yaml` changes on `main`, or by hand (Actions tab → Publish page → Run workflow). It needs no secrets. While building, it copies app icons and source favicons into the site, because Google's and Apple's image servers may not load in mainland China. Article photos still load from the publishers' sites.
+The page is published by `.github/workflows/radar.yml` whenever `data/`, `site/`, `src/` or `watchlist.yaml` changes on `main`, or by hand (Actions tab → Publish page → Run workflow). It needs no secrets. While building, it copies every card picture, app icon and source favicon it can into the site. Published cards therefore do not depend on a publisher continuing to allow hotlinks, and they still load when that publisher is unavailable or blocked in mainland China. A failed icon copy falls back to its original address; a card picture is repaired before publish.
 
 To set it up from scratch: create a repository, push this folder to `main`, and set Settings → Pages → Source to **GitHub Actions**.
 
 ## Cost
 
-- **Company plan (in use):** about 0.6 credits a day with Opus 5.5 (4.4 for the test week; a busy day about 1.6). The run prints credits used. `kr-claude-opus-5` costs about a third less: set `company.curate` in `watchlist.yaml`.
+- **Company plan (in use):** the allowed model list can change. As of 7 Nov 2026, curation uses `claude-kr-gpt-5.6-terra[1M]` and picture selection uses `claude-kr-gpt-5.6-luna[1M]`; the first 12-story run used 3.675 credits. The run prints credits used. Pixel Post now distinguishes an expired login from a model the plan no longer allows.
 - **Gemini:** free on the free tier.
 - **Anthropic API:** one Sonnet curate call plus up to four Haiku search calls, about $0.15–0.35 a day.
 

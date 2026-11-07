@@ -180,3 +180,24 @@ test('feed links encoded twice are decoded, and partner=rss is dropped', () => {
   assert.equal(e.url, 'https://fastcompany.com/1/a?partner=rss&utm_source=rss&id=7');
   assert.equal(normalizeUrl(e.url), 'https://fastcompany.com/1/a?id=7');
 });
+
+test('build copies card pictures, comparisons and store screenshots into the site too', async () => {
+  const { mkdtempSync, existsSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { mirrorAssets } = await import('../src/mirror.ts');
+  const dir = mkdtempSync(join(tmpdir(), 'pictures-'));
+  const base = { app: 'A', category: 'consumer' as const, date: '2026-11-07', published_at: '', beta: false, importance: 2, headline: 'h', what: 'w', why: 'y', icon: null, collected_at: '', sources: [] };
+  const items = [
+    { ...base, id: 'photo', image: 'https://img.test/photo.jpg' },
+    { ...base, id: 'pair', image: null, compare: { before: 'https://img.test/old.webp', after: 'https://img.test/new.webp', from: 'article' as const } },
+    { ...base, id: 'store', image: null, store_shots: ['https://img.test/s1.png', 'https://img.test/s2.png'], store_from: 'app-store' as const },
+  ];
+  const fetchImpl = (async (u: string) => new Response(new Uint8Array([137, 80, 78, 71]), { headers: { 'content-type': u.endsWith('.jpg') ? 'image/jpeg' : u.endsWith('.webp') ? 'image/webp' : 'image/png' } })) as unknown as typeof fetch;
+  const out = (await mirrorAssets({ version: 1, updated_at: '', days: [{ date: '2026-11-07', collected_at: '', quiet: false, pattern: null, items }] }, dir, fetchImpl)).radar.days[0].items;
+  assert.match(out[0].image ?? '', /^icons\/[0-9a-f]{12}\.jpg$/);
+  assert.match(out[1].compare?.before ?? '', /^icons\/[0-9a-f]{12}\.webp$/);
+  assert.match(out[1].compare?.after ?? '', /^icons\/[0-9a-f]{12}\.webp$/);
+  assert.equal(out[2].store_shots?.length, 2);
+  for (const u of [out[0].image, out[1].compare?.before, out[1].compare?.after, ...(out[2].store_shots ?? [])]) assert.ok(u && existsSync(join(dir, u)), u ?? 'missing');
+});

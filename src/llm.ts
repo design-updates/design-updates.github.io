@@ -144,7 +144,15 @@ function messagesLlm(c: MessagesClient, fetchImpl: typeof fetch, sleep: Sleep): 
           await sleep(3000 * 2 ** attempt);
           continue;
         }
-        if (res.status === 401 || res.status === 403) throw new LlmUnavailableError(`${c.name} rejected the login (HTTP ${res.status}). ${c.onRejected}`);
+        if (res.status === 401 || res.status === 403) {
+          const detail = (await res.text()).slice(0, 400);
+          // A 403 can mean a valid login but a model that the plan no longer offers. Keep that distinction visible:
+          // Ada changed the available model list on 7 Nov 2026, while the old message said the login had expired.
+          if (/model is not enabled or allowed/i.test(detail)) {
+            throw new LlmUnavailableError(`${c.name} does not allow model ${req.model}. Choose one returned by the gateway's /v1/models endpoint.`);
+          }
+          throw new LlmUnavailableError(`${c.name} rejected the login (HTTP ${res.status}). ${c.onRejected}`);
+        }
         if (!res.ok) throw new Error(`${c.name} returned HTTP ${res.status}: ${(await res.text()).slice(0, 400)}`);
         const data = (await res.json()) as {
           content?: ContentBlock[];

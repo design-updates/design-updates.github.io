@@ -16,15 +16,16 @@ mkdirSync('dist/data', { recursive: true });
 cpSync('site', 'dist', { recursive: true });
 const mirrored = await mirrorAssets(readJson('data/radar.json', emptyRadar()), 'dist');
 writeJson('dist/data/radar.json', mirrored.radar);
-console.log(`Copied ${mirrored.saved} icons into the site${mirrored.failed ? ` (${mirrored.failed} could not be downloaded and load from their original address)` : ''}.`);
+console.log(`Copied ${mirrored.saved} pictures and icons into the site${mirrored.failed ? ` (${mirrored.failed} could not be downloaded and keep their original address)` : ''}.`);
 // The weekly pages, each only published while its yaml file has enabled: true. Their icons are copied into the site.
 async function publishWeeks(file: string) {
-  const data = readJson<WeeksFile<{ icon: string; icon_large?: string }>>(`data/${file}`, { version: 1, updated_at: null, weeks: [] });
-  const { local } = await mirrorUrls(data.weeks.flatMap((w) => w.picks.flatMap((p) => [iconAt16(p.icon), iconLarge(p.icon)])), 'dist');
+  const data = readJson<WeeksFile<{ icon: string; icon_large?: string; image?: string | null }>>(`data/${file}`, { version: 1, updated_at: null, weeks: [] });
+  const { local } = await mirrorUrls(data.weeks.flatMap((w) => w.picks.flatMap((p) => [iconAt16(p.icon), iconLarge(p.icon), ...(p.image ? [p.image] : [])])), 'dist');
   for (const w of data.weeks)
     for (const p of w.picks) {
       p.icon_large = local.get(iconLarge(p.icon)) ?? iconLarge(p.icon);
       p.icon = local.get(iconAt16(p.icon)) ?? p.icon;
+      if (p.image) p.image = local.get(p.image) ?? p.image;
     }
   writeJson(`dist/data/${file}`, data);
 }

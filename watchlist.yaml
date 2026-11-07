@@ -18,8 +18,8 @@ window_hours: 48
 provider: company
 
 company:
-  curate: kr-claude-opus-5.5  # the model list is at aicoding.console.ctripcorp.com/admin/modelList
-  compare: kr-claude-haiku-4-5-20251001  # small second call that picks before/after images
+  curate: claude-kr-gpt-5.6-terra[1M]  # current high-quality model allowed by the company plan
+  compare: claude-kr-gpt-5.6-luna[1M]  # smaller vision call that picks before/after images
 
 # Version notes from the stores: catches design changes nobody announces. A new version whose notes
 # mention design words (redesign, new look, layout...) goes to the model like a news item.
@@ -420,6 +420,11 @@ groups:
         domains: [blog.google]
         appstore_id: 585027354
         play_id: com.google.android.apps.maps
+      - name: Google Earth
+        aliases: [Google Earth]
+        domains: [earth.google.com, blog.google]
+        appstore_id: 293622097
+        play_id: com.google.earth
       - name: Chrome
         aliases: [Google Chrome, Chrome for Android, Chrome for iOS, Chrome on Android, Chrome on iOS, Chrome browser]
         domains: [blog.google, blog.chromium.org]
@@ -485,6 +490,11 @@ groups:
         domains: [notion.com, notion.so]
         play_id: notion.id
         appstore_id: 1232780281
+      - name: Swiss Post
+        aliases: [Swiss Post, Die Schweizerische Post]
+        domains: [post.ch]
+        appstore_id: 378676700
+        store_country: ch
       - name: Linear
         aliases: [Linear app, Linear's, Linear launches, Linear adds]
         domains: [linear.app]

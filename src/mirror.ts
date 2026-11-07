@@ -1,6 +1,6 @@
-// Copies app icons and source favicons into the built site, so the page doesn't depend on Google's and Apple's
-// image servers, which may not load in mainland China. Runs at build time on GitHub. Anything that can't be
-// downloaded keeps its original address.
+// Copies every picture, app icon and source favicon into the built site, so published cards do not depend on
+// publishers allowing hotlinks later, and Google's or Apple's image servers do not need to load in mainland China.
+// Runs at build time on GitHub. Anything that cannot be downloaded keeps its original address.
 
 import { createHash } from 'node:crypto';
 import { mkdirSync, writeFileSync } from 'node:fs';
@@ -29,17 +29,20 @@ const EXT: [RegExp, string][] = [
   [/jpe?g/, 'jpg'],
   [/svg/, 'svg'],
   [/webp/, 'webp'],
+  [/avif/, 'avif'],
+  [/gif/, 'gif'],
   [/icon/, 'ico'],
 ];
 
-/** Downloads each image into <outDir>/icons/ and returns original address -> local path, for those that worked. */
+/** Downloads each image into <outDir>/icons/ and returns original address -> local path, for those that worked.
+    The directory name is kept for compatibility; it now contains card pictures too. */
 export async function mirrorUrls(urls: Iterable<string>, outDir: string, fetchImpl: typeof fetch = fetch): Promise<{ local: Map<string, string>; failed: number }> {
   mkdirSync(join(outDir, 'icons'), { recursive: true });
   const local = new Map<string, string>();
   let failed = 0;
   await mapLimit([...new Set(urls)], 6, async (url) => {
     try {
-      const res = await fetchImpl(url, { signal: AbortSignal.timeout(10_000) });
+      const res = await fetchImpl(url, { headers: { 'user-agent': 'Mozilla/5.0' }, signal: AbortSignal.timeout(20_000) });
       const type = res.headers.get('content-type') ?? '';
       if (!res.ok || !type.startsWith('image/')) throw new Error(`HTTP ${res.status} ${type}`);
       const ext = EXT.find(([re]) => re.test(type))?.[1] ?? 'img';
@@ -62,6 +65,10 @@ export async function mirrorAssets(radar: Radar, outDir: string, fetchImpl: type
         wanted.add(iconLarge(i.icon));
       }
       for (const s of i.sources) wanted.add(faviconUrl(domainOf(s.url)));
+      if (i.image) wanted.add(i.image);
+      if (i.compare?.before) wanted.add(i.compare.before);
+      if (i.compare?.after) wanted.add(i.compare.after);
+      for (const shot of i.store_shots ?? []) wanted.add(shot);
     }
   }
   const { local, failed } = await mirrorUrls(wanted, outDir, fetchImpl);
@@ -73,6 +80,11 @@ export async function mirrorAssets(radar: Radar, outDir: string, fetchImpl: type
         ...i,
         icon: i.icon ? (local.get(iconAt16(i.icon)) ?? i.icon) : i.icon,
         icon_large: i.icon ? (local.get(iconLarge(i.icon)) ?? iconLarge(i.icon)) : null,
+        image: i.image ? (local.get(i.image) ?? i.image) : i.image,
+        compare: i.compare
+          ? { ...i.compare, before: i.compare.before ? (local.get(i.compare.before) ?? i.compare.before) : i.compare.before, after: local.get(i.compare.after) ?? i.compare.after }
+          : i.compare,
+        store_shots: i.store_shots?.map((shot) => local.get(shot) ?? shot) ?? i.store_shots,
         sources: i.sources.map((s) => ({ ...s, favicon: local.get(faviconUrl(domainOf(s.url))) ?? null })),
       })),
     })),

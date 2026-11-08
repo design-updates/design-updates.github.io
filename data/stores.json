@@ -25,8 +25,8 @@
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/67/0c/e4/670ce454-3d77-d929-a4c5-616cd7b44194/EN_-_MY_U002c_SG_U002c_PH_U002c_TH__U00231.jpg/320x480bb.jpg"
     },
     "Hopper": {
-      "version": "7.121.0",
-      "date": "2026-11-02T21:33:06.000Z",
+      "version": "7.121.1",
+      "date": "2026-11-07T17:08:00.000Z",
       "notes": "Bug fixes and UI improvements.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/af/ac/90/afac90c6-5f57-6ee2-365f-cbd7782eed8d/dark_1242x2688_01f.png/320x480bb.jpg"
     },
@@ -193,9 +193,9 @@
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5c/bc/48/5cbc4871-c039-c1e4-a22b-8c79a623425a/a9.png/392x696bb.png"
     },
     "ixigo": {
-      "version": "9.5.8",
-      "date": "2026-11-01T10:14:08.000Z",
-      "notes": "Seasonal advisory: Low clouds may lead to high wanderlust. A change in weather may call for a change in scenery. Grey skies may result in colourful travel plans. Proceed with an open calendar. Find your next trip and book it now!",
+      "version": "9.5.9",
+      "date": "2026-11-07T10:15:10.000Z",
+      "notes": "Diwali se New Year tak, khushiyon ka tyohaar! Friends ke saath plan karo koi fun trip, ya parents ko do ek spiritual holiday gift. This winter banao some brand-new memories, Har safar ko special kare ixigo, with ease!",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/80/db/df/80dbdf15-acd2-0583-0d50-15df09c73935/1._Travel_Guarantee_-_Alternate_Travel_Plan_6.5.jpg/320x480bb.jpg"
     },
     "Zomato": {
@@ -413,6 +413,18 @@
       "date": "2026-11-05T13:22:09.000Z",
       "notes": "Bug fixes, minor improvements, and more.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/29/6c/87/296c8715-63d1-77c5-4385-f06a3c0d7627/0_APP_IPHONE_55_0.png/392x696bb.png"
+    },
+    "Google Earth": {
+      "version": "10.123.75",
+      "date": "2026-10-20T16:05:04.000Z",
+      "notes": "Thanks for using Google Earth! This version includes bug fixes. Our recent release brings a fresh new look, with new features to help you collaborate with others across devices, create maps on the go, and add photos from your camera to your maps.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/5e/b0/fd/5eb0fd89-e5c5-d970-dbf2-6fc2e738a226/c297772b-e3a7-44bd-8315-93bb7b650d68_APP_IPHONE_55-1.png/392x696bb.png"
+    },
+    "Swiss Post": {
+      "version": "9.7.1",
+      "date": "2026-10-22T14:20:39.000Z",
+      "notes": "Fehlende Frankatur können Sie neu bequem direkt in der Post-App bezahlen. Zudem haben wir Fehler behoben und weitere Verbesserungen vorgenommen, damit die App im Alltag noch zuverlässiger funktioniert.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fb/ec/87/fbec87c8-0e9d-31ea-87c1-c54a11bc8fbe/iOS-69-DE-01.png/320x480bb.jpg"
     }
   },
   "googlePlay": {
@@ -501,8 +513,8 @@
       "screenshot": null
     },
     "WhatsApp": {
-      "version": "2026-11-05·acjt",
-      "date": "2026-11-05T00:00:00.000Z",
+      "version": "2026-11-07·acjt",
+      "date": "2026-11-07T00:00:00.000Z",
       "notes": "• You can now choose to share recent group history with new members when you add them to a group • Group calls now include the ability to transfer calls between mobile and desktop, add a waiting room for call links, and pin a participant to a bigger tile. These features will roll out over the coming weeks. Thanks for using WhatsApp!",
       "screenshot": null
     },
@@ -573,8 +585,8 @@
       "screenshot": null
     },
     "Trenitalia": {
-      "version": "2026-11-03·1ony",
-      "date": "2026-11-03T00:00:00.000Z",
+      "version": "2026-11-08·1ony",
+      "date": "2026-11-08T00:00:00.000Z",
       "notes": "Bug fixing",
       "screenshot": null
     },
@@ -657,8 +669,8 @@
       "screenshot": null
     },
     "YouTube": {
-      "version": "2026-11-04·nc0s",
-      "date": "2026-11-04T00:00:00.000Z",
+      "version": "2026-11-07·nc0s",
+      "date": "2026-11-07T00:00:00.000Z",
       "notes": "For new features, look for in-product education & notifications sharing the feature and how to use it!",
       "screenshot": null
     },
@@ -717,9 +729,15 @@
       "screenshot": null
     },
     "Discord": {
-      "version": "2026-11-03·1se1",
-      "date": "2026-11-03T00:00:00.000Z",
+      "version": "2026-11-07·1se1",
+      "date": "2026-11-07T00:00:00.000Z",
       "notes": "We’ve been hard at work making Discord better for you. This includes bug fixes and performance enhancements. For more detailed information, go to your profile in the app and scroll down to “What’s New”.",
+      "screenshot": null
+    },
+    "Google Earth": {
+      "version": "2026-11-04·1x10",
+      "date": "2026-11-04T00:00:00.000Z",
+      "notes": "Thanks for using Google Earth! This release brings a fresh new look, with new features to help you collaborate with others across devices, create maps on the go, and add photos from your camera to your maps.",
       "screenshot": null
     }
   }

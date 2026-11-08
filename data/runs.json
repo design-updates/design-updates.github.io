@@ -844,5 +844,46 @@
       }
     ],
     "cost_usd": 0
+  },
+  {
+    "at": "2026-11-08T05:00:06.673Z",
+    "date": "2026-11-08",
+    "mode": "company",
+    "feeds_ok": 54,
+    "feeds_failed": [
+      "The Keyword (Android)",
+      "The Keyword (Travel)",
+      "Booking Holdings",
+      "Spotify Newsroom",
+      "Android Police",
+      "XDA",
+      "MacStories",
+      "Engadget",
+      "Netflix Tech Blog",
+      "Creative Boom"
+    ],
+    "candidates": 2681,
+    "sent_to_model": 121,
+    "kept": 2,
+    "added": 2,
+    "usage": [
+      {
+        "step": "curate",
+        "model": "claude-kr-gpt-5.6-terra[1M]",
+        "input_tokens": 25441,
+        "output_tokens": 2084,
+        "web_searches": 0,
+        "credits": 2.203590479535655
+      },
+      {
+        "step": "pictures",
+        "model": "claude-kr-gpt-5.6-luna[1M]",
+        "input_tokens": 6057,
+        "output_tokens": 96,
+        "web_searches": 0,
+        "credits": 0.07119500736318407
+      }
+    ],
+    "cost_usd": 0
   }
 ]

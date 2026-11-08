@@ -1,7 +1,74 @@
 {
   "version": 1,
-  "updated_at": "2026-11-07T08:00:04.954Z",
+  "updated_at": "2026-11-08T05:00:06.673Z",
   "days": [
+    {
+      "date": "2026-11-08",
+      "collected_at": "2026-11-08T05:00:06.673Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "chatgpt-interactive-tools",
+          "app": "ChatGPT",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-07",
+          "published_at": "2026-11-07T09:00:00.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "ChatGPT can generate interactive tools directly inside a conversation.",
+          "what": "ChatGPT can now create an interactive tool in the chat instead of responding only with text. TechRadar reports using the new Intelligent UI to create six custom apps, without stating rollout limits.",
+          "why": "A travel assistant that produces controls inside chat still needs a clear handoff to stable search, results and checkout screens. Generated interactions should preserve reviewable selections, prices and booking state.",
+          "sources": [
+            {
+              "title": "ChatGPT can now create interactive tools instead of just answering questions",
+              "url": "https://techradar.com/ai-platforms-assistants/chatgpt/chatgpt-can-now-build-custom-apps-for-you-in-seconds-without-any-coding-i-tried-making-6-of-my-own-and-the-results-surprised-me",
+              "publisher": "TechRadar"
+            }
+          ],
+          "release": null,
+          "image": "https://cdn.mos.cms.futurecdn.net/6juFREvprxncNkDiwGBcPU-1920-80.jpg",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5c/9c/84/5c9c8431-bd39-08fa-cba4-8bb6561f9877/AppIcon-0-0-1x_U007epad-0-0-0-1-0-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-08T05:00:06.673Z",
+          "zh": {
+            "headline": "ChatGPT 可直接在对话中生成交互工具。",
+            "what": "ChatGPT 现在可以在对话中生成交互工具，而不只是返回文字回答。TechRadar 使用新的 Intelligent UI 创建了 6 个自定义应用，报道未说明适用范围或上线限制。",
+            "why": "如果旅行助手在对话中生成可操作控件，仍应清楚地衔接到稳定的搜索、结果和结账页面。用户已选内容、价格和预订状态需要可复核、可延续。"
+          }
+        },
+        {
+          "id": "chrome-android-settings-color-icons",
+          "app": "Chrome",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-07",
+          "published_at": "2026-11-06T18:07:34.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Chrome for Android adds colourful icons to its Settings screen in Canary.",
+          "what": "Chrome for Android is reworking its Settings screen in the Canary channel with colourful, iOS-style icons beside settings categories. The available report does not give a public-release date.",
+          "why": "Colour and icon pairing can make dense settings lists faster to scan, which is relevant to trip-management and account settings. The icons should support clear labels rather than become the only way users distinguish settings groups.",
+          "sources": [
+            {
+              "title": "Google is bringing iOS-style Settings icons to Chrome for Android",
+              "url": "https://androidauthority.com/chrome-android-colorful-settings-icons-redesign-3732624",
+              "publisher": "Android Authority"
+            }
+          ],
+          "release": null,
+          "image": "https://www.androidauthority.com/wp-content/uploads/2026/11/Chrome-on-android-settings-redesign-2.jpg",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1d/84/62/1d8462cc-1b5c-90ee-1c12-6570a213d0e5/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-08T05:00:06.673Z",
+          "zh": {
+            "headline": "Chrome for Android 在 Canary 版的设置页加入彩色图标。",
+            "what": "Chrome for Android 正在 Canary 渠道调整设置页，为设置分类加入类似 iOS 风格的彩色图标。现有报道未说明正式版上线时间。",
+            "why": "颜色加图标能帮助用户更快浏览密集的设置列表，行程管理和账户设置页也有同样的问题。图标应辅助清晰的文字标签，而不应成为区分设置分类的唯一方式。"
+          }
+        }
+      ]
+    },
     {
       "date": "2026-11-07",
       "collected_at": "2026-11-07T08:00:04.954Z",
@@ -160,10 +227,15 @@
               "title": "Spotify tests dedicated ‘Pins’ carousel to declutter Your Library on mobile",
               "url": "https://androidauthority.com/spotify-your-library-pins-shelf-test-3732365",
               "publisher": "Android Authority"
+            },
+            {
+              "title": "New Layout for Pinned Items",
+              "url": "https://www.reddit.com/r/truespotify/comments/1xoxwdx/new_layout_for_pinned_items/",
+              "publisher": "r/truespotify"
             }
           ],
           "release": null,
-          "image": null,
+          "image": "assets/verified/spotify-pins.jpg",
           "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8b/f2/6a/8bf26ab9-3ced-cb5c-a2b3-19f65e7f5cc6/AppIcon-0-0-1x_U007epad-0-1-0-0-85-220.png/128x128bb.png",
           "collected_at": "2026-11-07T08:00:04.954Z",
           "zh": {
@@ -171,12 +243,6 @@
             "what": "Spotify 正在移动端 Your Library 中测试独立的 Pins 轮播区。新的内容架将置顶内容与其余收藏内容分开，不再全部混在同一列表中。",
             "why": "置顶内容架可让高频旅行者快速进入当前行程，同时将历史订单保留在下方供搜索。关键是清楚区分置顶、即将开始和已归档的内容。"
           },
-          "store_shots": [
-            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f3/ce/05/f3ce0547-690a-b355-b1dd-6b6e91808279/IOS_-_5.5_-_S01_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/600x1300bb.jpg",
-            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/78/81/ca/7881ca10-b441-1a6c-e030-92e08dd76144/IOS_-_5.5_-_S02_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/600x1300bb.jpg",
-            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5b/e7/6a/5be76ae0-8bc6-59fc-58ef-92aa931b6dba/IOS_-_5.5_-_S03_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/600x1300bb.jpg"
-          ],
-          "store_from": "app-store",
           "compare": null
         },
         {
@@ -196,10 +262,15 @@
               "title": "WhatsApp is bringing iOS-style chat previews to Android",
               "url": "https://gsmarena.com/whatsapp_is_bringing_iosstyle_chat_previews_to_android-news-75371.php",
               "publisher": "GSMArena"
+            },
+            {
+              "title": "WhatsApp Could Soon Let Android Users Read Messages Without Blue Ticks",
+              "url": "https://gadgets.beebom.com/news/whatsapp-testing-chat-previews-on-android",
+              "publisher": "Beebom"
             }
           ],
           "release": null,
-          "image": null,
+          "image": "assets/verified/whatsapp-chat-preview.jpg",
           "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/15/eb/39/15eb3965-bec3-4737-950a-9d9df5303e93/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-85-220.png/128x128bb.png",
           "collected_at": "2026-11-07T08:00:04.954Z",
           "zh": {
@@ -207,12 +278,6 @@
             "what": "WhatsApp 正在为已开启已读回执的 Android 用户加入聊天预览。用户可以查看消息内容，而无需打开聊天并触发已读回执。",
             "why": "预览交互能帮助用户快速判断预订更新是否需要处理，而不用立即进入完整流程。旅行通知应区分“快速查看航班变动或登车口变更”和“确认已处理”这两种行为。"
           },
-          "store_shots": [
-            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d8/95/88/d89588dd-ce20-0f5b-95bc-f99814bf9a6c/6.9__Display_1-en_US.png/600x1300bb.jpg",
-            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/60/0f/39/600f39e2-82c1-d2dd-eb76-d9c58d88e1f9/6.9__Display_2-en_US.png/600x1300bb.jpg",
-            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4e/64/6b/4e646b15-085c-ab69-957f-790f1e17475b/6.9__Display_3-en_US.png/600x1300bb.jpg"
-          ],
-          "store_from": "app-store",
           "compare": null
         },
         {
@@ -232,10 +297,15 @@
               "title": "YouTube confirms your half-dark, half-light viewing experience is a test",
               "url": "https://androidauthority.com/youtube-ambient-watch-page-design-test-3732286",
               "publisher": "Android Authority"
+            },
+            {
+              "title": "What's with the forced dark mode on every video now?",
+              "url": "https://www.reddit.com/r/youtube/comments/1xja5n1/whats_with_the_forced_dark_mode_on_every_video_now/",
+              "publisher": "r/youtube"
             }
           ],
           "release": null,
-          "image": null,
+          "image": "assets/verified/youtube-mixed-theme.webp",
           "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/be/56/df/be56dfa2-70bd-feb2-b666-38277eb5be3b/logo_youtube_2024_q4_color-0-0-1x_U007emarketing-0-0-0-7-0-0-0-85-220.png/128x128bb.png",
           "collected_at": "2026-11-07T08:00:04.954Z",
           "zh": {
@@ -243,12 +313,6 @@
             "what": "YouTube 确认，部分观看页同时呈现深色和浅色区域并非故障，而是一项面向部分用户的设计测试。该测试改变了视频播放页周边区域的视觉处理方式。",
             "why": "沉浸式内容页面可以利用背景色和对比度突出内容，但不能让控件更难识别。旅行 App 在地图、图片库或行程详情等关键页面采用类似背景效果时，应确保主要操作始终清晰。"
           },
-          "store_shots": [
-            "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e8/5d/12/e85d121e-8bcf-4f57-cf07-ed23b57f1b30/f1192f1f-430d-469a-b032-cdf77b8b04c7_iOS-5.5-in_1.jpg/600x1300bb.jpg",
-            "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2d/da/fa/2ddafabb-ad03-eda7-417f-6a22418551d0/868afd15-b2e4-4923-b0f8-c5599327a3d7_iOS-5.5-in_2.jpg/600x1300bb.jpg",
-            "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f4/b6/02/f4b602e0-04b4-60ff-7960-d8ba227dc980/2930dbc3-4228-403b-b46d-e0066516ab6a_iOS-5.5-in_3.jpg/600x1300bb.jpg"
-          ],
-          "store_from": "app-store",
           "compare": null
         },
         {
@@ -365,6 +429,11 @@
               "title": "Google Earth gets a new logo with Google’s gradient makeover",
               "url": "https://androidauthority.com/google-earth-gradient-icon-redesign-3732345",
               "publisher": "Android Authority"
+            },
+            {
+              "title": "From 5 Layers to 4: Google Earth icon refresh",
+              "url": "https://jetstream.blog/en/google-earth-icon-refresh-november-2026/",
+              "publisher": "Jetstream"
             }
           ],
           "release": null,
@@ -376,13 +445,11 @@
             "what": "Google Earth 采用了新的 Logo，延续 Google 正在推进的渐变图标风格。这次更新改变了产品对用户可见的品牌标识。",
             "why": "对于地图产品，即使只是图标的小改动，也会影响用户在拥挤的主屏幕和工具文件夹中的识别。旅行 App 调整配色时，应保留容易辨认的图标轮廓。"
           },
-          "compare": null,
-          "store_shots": [
-            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/5e/b0/fd/5eb0fd89-e5c5-d970-dbf2-6fc2e738a226/c297772b-e3a7-44bd-8315-93bb7b650d68_APP_IPHONE_55-1.png/600x1300bb.jpg",
-            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/78/53/98/78539862-f178-a416-7dd8-2e83e7bd9dce/305c7aee-e2dc-4ffc-b6fd-0f286836da47_APP_IPHONE_55-2.png/600x1300bb.jpg",
-            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/fe/9c/6d/fe9c6df9-63dd-9e13-82a4-bb26c57a453d/e140a7a2-e7b9-49ce-b4de-65a4fbd5e53c_APP_IPHONE_55-3.png/600x1300bb.jpg"
-          ],
-          "store_from": "app-store"
+          "compare": {
+            "before": "assets/verified/google-earth-old.jpg",
+            "after": "assets/verified/google-earth-new.webp",
+            "from": "article"
+          }
         },
         {
           "id": "phone-by-google-gradient-icon",
@@ -592,9 +659,7 @@
             "what": "Google Maps 26.44.4 版完整适配 iPhone Duo，地图可以铺满内屏和外屏，不再沿用单屏布局。目前不少 iOS App 还没有针对这款设备的双屏做适配。",
             "why": "地图找酒店、车站和机场导航这类以地图为主的页面，最能用上更大的内屏。Google Maps 的做法可以作为地图布局在 iPhone Duo 两块屏上如何表现的参考。"
           },
-          "compare": null,
-          "store_shots": null,
-          "store_from": null
+          "compare": null
         },
         {
           "id": "whatsapp-chat-media-suggestions",
@@ -629,9 +694,7 @@
             "what": "打开聊天时，WhatsApp 会推荐最近的照片和视频供直接发送。此前它已在 Android 键盘上方根据输入的表情推荐贴纸，这次把推荐扩展到了媒体。目前在 Android 和 iOS 最新版本中向部分用户开放。",
             "why": "旅行 App 的客服对话和搜索框可以借鉴这种上下文推荐：在用户输入前先给出当前订单或最近的截图，省掉一步操作。"
           },
-          "compare": null,
-          "store_shots": null,
-          "store_from": null
+          "compare": null
         },
         {
           "id": "google-messages-pinned-chats-redesign",
@@ -666,9 +729,7 @@
             "what": "Google Messages 正在推送置顶聊天的新设计，置顶聊天位于会话列表顶部。目前只有测试版用户能看到这一改动。",
             "why": "置顶聊天的做法是：在长列表上方，用单独的视觉样式突出少数几条重点内容。旅行 App 的行程管理页在把即将出行的行程放在历史订单上方时，也要处理同样的布局问题。"
           },
-          "compare": null,
-          "store_shots": null,
-          "store_from": null
+          "compare": null
         },
         {
           "id": "google-android-family-hub-settings",
@@ -732,9 +793,7 @@
             "what": "基于 Android 17 的 One UI 9 更新改变了 Galaxy Z Flip 外屏的样式和交互方式。据 Android Authority 报道，更新后大量用户提出了抱怨。",
             "why": "如果你的 App 在 Flip 外屏上显示登机牌、车票或行程状态，需要确认 One UI 9 调整外屏布局后，这些界面仍能正常使用。"
           },
-          "compare": null,
-          "store_shots": null,
-          "store_from": null
+          "compare": null
         }
       ]
     },
@@ -930,7 +989,7 @@
             }
           ],
           "release": null,
-          "image": null,
+          "image": "assets/verified/swiss-post-typeface.jpg",
           "icon": "https://www.google.com/s2/favicons?domain=post.ch&sz=64",
           "collected_at": "2026-11-03T23:04:28.914Z",
           "zh": {
@@ -938,13 +997,7 @@
             "what": "Swiss Typefaces 用了三年时间设计这款字体，Creative Boom 称其更温暖、更亲切。",
             "why": "一个国家级服务品牌选择了更温暖的定制字体，而不是中性字体。权衡 App 文字是用自有品牌字体还是系统字体时，可以参考。"
           },
-          "compare": null,
-          "store_shots": [
-            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fb/ec/87/fbec87c8-0e9d-31ea-87c1-c54a11bc8fbe/iOS-69-DE-01.png/600x1300bb.jpg",
-            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/76/76/1c/76761c9f-59d4-dd34-6eb1-133174fe530e/iOS-69-DE-02.png/600x1300bb.jpg",
-            "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/af/d8/42/afd842fe-af79-26d9-4707-324ded5dad79/iOS-69-DE-03.png/600x1300bb.jpg"
-          ],
-          "store_from": "app-store"
+          "compare": null
         }
       ]
     },

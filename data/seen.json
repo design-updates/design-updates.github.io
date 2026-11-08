@@ -339,6 +339,22 @@
       "urls": [
         "https://9to5google.com/2026/11/05/phone-by-google-246-new-icon"
       ]
+    },
+    "chatgpt-interactive-tools": {
+      "app": "ChatGPT",
+      "headline": "ChatGPT can generate interactive tools directly inside a conversation.",
+      "date": "2026-11-07",
+      "urls": [
+        "https://techradar.com/ai-platforms-assistants/chatgpt/chatgpt-can-now-build-custom-apps-for-you-in-seconds-without-any-coding-i-tried-making-6-of-my-own-and-the-results-surprised-me"
+      ]
+    },
+    "chrome-android-settings-color-icons": {
+      "app": "Chrome",
+      "headline": "Chrome for Android adds colourful icons to its Settings screen in Canary.",
+      "date": "2026-11-07",
+      "urls": [
+        "https://androidauthority.com/chrome-android-colorful-settings-icons-redesign-3732624"
+      ]
     }
   }
 }

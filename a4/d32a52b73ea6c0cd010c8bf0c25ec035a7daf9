@@ -1,0 +1,34 @@
+data/radar.json
+  s_54fc1ca7bb74fe::t_ceabf0589fc0ff 265-269,273
+  s_54fc1ca7bb74fe::t_97a74f5c603cd4 662,697,732
+  s_54fc1ca7bb74fe::t_9d70a7a32231af 230-234,238
+  s_54fc1ca7bb74fe::t_a588ed647c469c 300-304,308
+  s_54fc1ca7bb74fe::t_f7d3b77f09564a 432-436
+  s_54fc1ca7bb74fe::t_3ff1606c4022b6 796
+  s_54fc1ca7bb74fe::t_509cf7c4d61961 992
+  s_54fc1ca7bb74fe::t_41fba16c27e15e 448-452
+  s_54fc1ca7bb74fe::t_95a926d88c6d79 1000
+  s_54fc1ca7bb74fe::t_c5ab7a6fb66895 3,5-71
+data/stores.json
+  s_54fc1ca7bb74fe::t_c5ab7a6fb66895 28-29,196-198,416-427,516-517,588-589,672-673,732-733,736-740
+data/seen.json
+  s_54fc1ca7bb74fe::t_c5ab7a6fb66895 342-357
+data/runs.json
+  s_54fc1ca7bb74fe::t_c5ab7a6fb66895 847-887
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.52-trip",
+  "base_commit_sha": "a4d32a52b73ea6c0cd010c8bf0c25ec035a7daf9",
+  "prompts": {},
+  "sessions": {
+    "s_54fc1ca7bb74fe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "752feab2-5b26-4e2c-8c5b-8e100159791a",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "kashif-08 <kashif-08@users.noreply.github.com>"
+    }
+  }
+}

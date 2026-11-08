@@ -354,6 +354,37 @@ test('company gateway: bearer login, Messages API, credits recorded, expired log
   await assert.rejects(companyLlm({ baseUrl: 'http://g', token: 'x' }, expired).messages({ model: 'm', system: '', maxTokens: 1, messages: [] }), (e: Error) => e instanceof LlmUnavailableError && /ada refresh/.test(e.message));
 });
 
+test('company gateway: GPT-6.1 Sol uses the Responses API', async () => {
+  const { companyLlm } = await import('../src/llm.ts');
+  const seen: { url: string; auth: string | null; body: Record<string, any> }[] = [];
+  const ok = (async (url: string, init: RequestInit) => {
+    seen.push({ url, auth: new Headers(init.headers).get('authorization'), body: JSON.parse(String(init.body)) });
+    return Response.json({ status: 'completed', output: [{ type: 'message', content: [{ type: 'output_text', text: '{"items":[]}' }] }], usage: { input_tokens: 300, output_tokens: 20 }, credit_usage: 0.02 });
+  }) as unknown as typeof fetch;
+  const llm = companyLlm({ baseUrl: 'http://gateway.example/coding-plan', token: 'T0KEN' }, ok);
+  const r = await llm.messages({ model: 'claude-gpt-6.1-sol[1M]', system: 'system rules', maxTokens: 100, messages: [{ role: 'user', content: 'input' }] });
+  assert.equal(seen[0].url, 'http://gateway.example/coding-plan/v1/responses');
+  assert.equal(seen[0].auth, 'Bearer T0KEN');
+  assert.equal(seen[0].body.model, 'gpt-6.1-sol');
+  assert.equal(seen[0].body.instructions, 'system rules');
+  assert.equal(seen[0].body.max_output_tokens, 100);
+  assert.deepEqual(seen[0].body.input, [{ role: 'user', content: [{ type: 'input_text', text: 'input' }] }]);
+  assert.equal(r.content[0].text, '{"items":[]}');
+  assert.equal(r.usage.credits, 0.02);
+});
+
+test('company gateway: GPT-6.1 Sol maps image blocks to Responses input images', async () => {
+  const { companyLlm } = await import('../src/llm.ts');
+  let body: Record<string, any> = {};
+  const ok = (async (_url: string, init: RequestInit) => {
+    body = JSON.parse(String(init.body));
+    return Response.json({ status: 'completed', output_text: 'OK', usage: { input_tokens: 10, output_tokens: 1 } });
+  }) as unknown as typeof fetch;
+  const llm = companyLlm({ baseUrl: 'http://g', token: 'x' }, ok);
+  await llm.messages({ model: 'claude-gpt-6.1-sol[1M]', system: '', maxTokens: 10, messages: [{ role: 'user', content: [{ type: 'text', text: 'look' }, { type: 'image', source: { type: 'base64', media_type: 'image/png', data: 'abc' } }] }] });
+  assert.deepEqual(body.input[0].content, [{ type: 'input_text', text: 'look' }, { type: 'input_image', image_url: 'data:image/png;base64,abc' }]);
+});
+
 test('provider: company switches the curate model and turns search off; RADAR_PROVIDER overrides', () => {
   const yaml = 'provider: company\ncompany:\n  curate: kr-claude-opus-5.5\nmodels:\n  curate: claude-sonnet-5-5\ngroups:\n  ota:\n    apps:\n      - name: A\n';
   assert.equal(parseConfig(yaml).models.curate, 'kr-claude-opus-5.5');

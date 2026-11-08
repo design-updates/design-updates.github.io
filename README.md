@@ -59,7 +59,7 @@ Set `provider:` in `watchlist.yaml`, or `RADAR_PROVIDER` in the environment, to 
 
 | Provider | Where it works | Login | Web search |
 | --- | --- | --- | --- |
-| `company` | Your laptop only (Trip.com network) | Run `ada cc` once in Terminal, log in, type `/exit`. Model: `company.curate` (currently `claude-kr-gpt-5.6-terra[1M]`) | No |
+| `company` | Your laptop only (Trip.com network) | Run `ada cc` once in Terminal, log in, type `/exit`. Model: `company.curate` (currently `claude-gpt-6.1-sol[1M]`) | No |
 | `gemini` | GitHub only (Google blocks the API from mainland China) | `GEMINI_API_KEY`. Model: `gemini.curate` (default `gemini-3.8-flash`, free tier) | No |
 | `anthropic` | Anywhere Anthropic serves | `ANTHROPIC_API_KEY` | Yes |
 
@@ -203,7 +203,7 @@ To set it up from scratch: create a repository, push this folder to `main`, and 
 
 ## Cost
 
-- **Company plan (in use):** the allowed model list can change. As of 7 Nov 2026, curation uses `claude-kr-gpt-5.6-terra[1M]` and picture selection uses `claude-kr-gpt-5.6-luna[1M]`; the first 12-story run used 3.675 credits. The run prints credits used. Pixel Post now distinguishes an expired login from a model the plan no longer allows.
+- **Company plan (in use):** the allowed model list can change. As of 8 Nov 2026, curation uses `claude-gpt-6.1-sol[1M]` through the gateway Responses API, and picture selection remains `claude-kr-gpt-5.6-luna[1M]` through Messages. A live model request was verified after the switch. The run prints credits used. Pixel Post now distinguishes an expired login from a model the plan no longer allows.
 - **Gemini:** free on the free tier.
 - **Anthropic API:** one Sonnet curate call plus up to four Haiku search calls, about $0.15–0.35 a day.
 

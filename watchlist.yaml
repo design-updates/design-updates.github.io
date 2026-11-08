@@ -18,7 +18,7 @@ window_hours: 48
 provider: company
 
 company:
-  curate: claude-kr-gpt-5.6-terra[1M]  # current high-quality model allowed by the company plan
+  curate: claude-gpt-6.1-sol[1M]  # requested 8 Nov 2026; gateway Responses API (not Messages)
   compare: claude-kr-gpt-5.6-luna[1M]  # smaller vision call that picks before/after images
 
 # Version notes from the stores: catches design changes nobody announces. A new version whose notes

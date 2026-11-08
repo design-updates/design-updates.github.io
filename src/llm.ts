@@ -98,7 +98,7 @@ export function companyLogin(home = homedir()): { baseUrl: string; token: string
 }
 
 export function companyLlm(login: { baseUrl: string; token: string }, fetchImpl: typeof fetch = fetch, sleep: Sleep = realSleep): Llm {
-  return messagesLlm(
+  const messages = messagesLlm(
     {
       mode: 'company',
       baseUrl: login.baseUrl,
@@ -111,6 +111,79 @@ export function companyLlm(login: { baseUrl: string; token: string }, fetchImpl:
     fetchImpl,
     sleep,
   );
+  const responses = companyResponsesLlm(login, fetchImpl, sleep);
+  return {
+    mode: 'company',
+    canSearch: false,
+    // GPT-6.1 Sol rejects the Anthropic Messages protocol; route it through the gateway's OpenAI Responses API.
+    messages: (req) => /gpt-6\.1-sol/i.test(req.model) ? responses.messages(req) : messages.messages(req),
+  };
+}
+
+
+/** Company GPT models that accept only OpenAI's Responses protocol. The rest of Pixel Post still sees the small
+    internal `Llm` interface used by every provider. */
+function companyResponsesLlm(login: { baseUrl: string; token: string }, fetchImpl: typeof fetch, sleep: Sleep): Llm {
+  const inputOf = (message: Message) => ({
+    role: message.role,
+    content: typeof message.content === 'string'
+      ? [{ type: 'input_text', text: message.content }]
+      : message.content.flatMap((block) => {
+          if (block.type === 'text' && typeof block.text === 'string') return [{ type: 'input_text', text: block.text }];
+          if (block.type === 'image') {
+            const source = block.source as { type?: string; media_type?: string; data?: string } | undefined;
+            if (source?.type === 'base64' && source.media_type && source.data) return [{ type: 'input_image', image_url: `data:${source.media_type};base64,${source.data}` }];
+          }
+          return [];
+        }),
+  });
+  return {
+    mode: 'company',
+    canSearch: false,
+    async messages(req) {
+      if (req.tools?.length) throw new LlmUnavailableError('web search is not set up for Company GPT models');
+      for (let attempt = 0; ; attempt++) {
+        let res: Response;
+        try {
+          res = await fetchImpl(`${login.baseUrl}/v1/responses`, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json', authorization: `Bearer ${login.token}` },
+            body: JSON.stringify({
+              model: req.model.replace(/^claude-/, '').replace(/\[1M\]$/, ''),
+              instructions: req.system,
+              input: req.messages.map(inputOf),
+              max_output_tokens: req.maxTokens,
+            }),
+            signal: AbortSignal.timeout(300_000),
+          });
+        } catch (err) {
+          if (attempt < 3) { await sleep(3000 * 2 ** attempt); continue; }
+          throw new Error(`Company Coding Plan unreachable: ${(err as Error).message} (is the laptop on the company network or VPN?)`);
+        }
+        if ((res.status === 429 || res.status >= 500) && attempt < 3) { await sleep(3000 * 2 ** attempt); continue; }
+        const text = await res.text();
+        if (res.status === 401 || res.status === 403) throw new LlmUnavailableError(`Company Coding Plan rejected the login (HTTP ${res.status}). The company login has expired. Run \`ada refresh\` and \`ada config claude\` in Terminal.`);
+        if (!res.ok) throw new Error(`Company Coding Plan returned HTTP ${res.status}: ${text.slice(0, 400)}`);
+        const data = JSON.parse(text) as {
+          status?: string;
+          output_text?: string;
+          output?: { type?: string; content?: { type?: string; text?: string }[] }[];
+          usage?: { input_tokens?: number; output_tokens?: number };
+          usage_info?: { input_tokens?: number; output_tokens?: number; credit_usage?: number };
+          credit_usage?: number;
+        };
+        const out = data.output_text ?? (data.output ?? []).flatMap((o) => o.content ?? []).filter((c) => c.type === 'output_text').map((c) => c.text ?? '').join('');
+        if (!out) throw new Error(`Company Coding Plan returned no text (${data.status ?? 'no status'})`);
+        const usage = data.usage ?? data.usage_info ?? {};
+        const credits = data.credit_usage ?? data.usage_info?.credit_usage;
+        return {
+          content: [{ type: 'text', text: out }],
+          stopReason: data.status === 'incomplete' ? 'max_tokens' : 'end_turn',
+          usage: { input_tokens: usage.input_tokens ?? 0, output_tokens: usage.output_tokens ?? 0, web_searches: 0, ...(typeof credits === 'number' ? { credits } : {}) },
+        };
+      }
+    },
+  };
 }
 
 function messagesLlm(c: MessagesClient, fetchImpl: typeof fetch, sleep: Sleep): Llm {

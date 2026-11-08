@@ -93,9 +93,6 @@ export interface Item {
   collected_at: string;
   zh?: ItemZh | null;
   compare?: Compare | null;
-  /** No picture of the change could be found anywhere: the store's current screenshots of the app, and which store. */
-  store_shots?: string[] | null;
-  store_from?: 'app-store' | 'google-play' | null;
   release?: Release | null;
 }
 

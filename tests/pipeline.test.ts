@@ -114,6 +114,11 @@ class FakeLlm implements Llm {
       ];
       return { content: blocks, stopReason: 'end_turn', usage };
     }
+    // Picture calls carry image blocks. The test model explicitly verifies the first picture; a lone image is no
+    // longer trusted without a visual decision.
+    if (Array.isArray(req.messages[0].content)) {
+      return { content: [{ type: 'text', text: '{"best":0,"combined":null,"before":null,"after":null,"why":"shows the reported UI change"}' }], stopReason: 'end_turn', usage };
+    }
     const input = JSON.parse(req.messages[0].content as string) as { candidates: { cid: string; app: string; title: string }[] };
     const items: unknown[] = [];
     const dropped: unknown[] = [];
@@ -155,8 +160,8 @@ function day1World(): World {
       ]),
     },
     pages: {
-      'https://news.airbnb.com/services-tab': '<meta property="og:image" content="https://news.airbnb.com/hero.jpg">',
-      'https://9to5mac.com/ios-26-2-glass': '<meta property="og:image" content="https://9to5mac.com/glass.jpg"><meta property="article:published_time" content="2026-10-28T19:00:00Z">',
+      'https://news.airbnb.com/services-tab': '<meta property="og:image" content="https://news.airbnb.com/hero.jpg"><article><img src="https://news.airbnb.com/hero.jpg" alt="New Airbnb Services tab interface"></article>',
+      'https://9to5mac.com/ios-26-2-glass': '<meta property="og:image" content="https://9to5mac.com/glass.jpg"><meta property="article:published_time" content="2026-10-28T19:00:00Z"><article><img src="https://9to5mac.com/glass.jpg" alt="New Liquid Glass slider interface"></article>',
       // Search says "2 hours ago", the page says July: the page wins.
       'https://theverge.com/old-airbnb': '<meta property="article:published_time" content="2026-07-01T10:00:00Z">',
     },
@@ -209,9 +214,9 @@ test('collect: keeps real changes, merges syndicated copies, drops everything el
   assert.ok(read<Seen>(paths.seen).events['airbnb-services-tab']);
   const runs = read<{ usage: unknown[]; cost_usd: number }[]>(paths.runs);
   assert.equal(runs.length, 1);
-  assert.equal(runs[0].usage.length, 2, 'one search call (only ota has queries) + one curate call');
+  assert.equal(runs[0].usage.length, 3, 'one search call, one curate call, and one consolidated picture line');
   assert.ok(runs[0].cost_usd > 0);
-  assert.equal(llm.calls.filter((c) => !c.tools).length, 1, 'one curate call per run');
+  assert.equal(llm.calls.filter((c) => !c.tools && typeof c.messages[0].content === 'string').length, 1, 'one curate call per run');
 });
 
 test('collect twice on the same day: no duplicates, nothing rewritten', async () => {
@@ -529,7 +534,7 @@ test('pictures: the model looks at the article pictures and picks the one that s
       const blocks = req.messages[0].content as { type: string; text?: string }[];
       const headline = (blocks[0].text ?? '').split('\n')[0].replace('Headline: ', '');
       looked.push({ headline, pictures: blocks.filter((b) => b.type === 'image').length });
-      const answer = /dozen/.test(headline) ? { best: 1 } : /old and new/.test(headline) ? { best: 0, combined: 0 } : { best: 1, why: 'the new checkout screen' };
+      const answer = /dozen/.test(headline) ? { best: 1 } : /old and new/.test(headline) ? { best: 0, combined: 0 } : /Airbnb redesign/.test(headline) ? { best: 1, before: 0, after: 1, why: 'the screenshots visibly show the changed design' } : /wordmark/.test(headline) ? { best: 0, why: 'the new wordmark' } : { best: 1, why: 'the new checkout screen' };
       return { content: [{ type: 'text', text: JSON.stringify(answer) }], stopReason: 'end_turn', usage: { input_tokens: 1500, output_tokens: 30, web_searches: 0, credits: 0.01 } };
     },
   };
@@ -544,10 +549,10 @@ test('pictures: the model looks at the article pictures and picks the one that s
   assert.equal(by['ux-b'].image, 'https://x/checkout.jpg', 'UX stories get a picture too');
   assert.deepEqual(by['kept-pair'].compare, { before: 'https://x/e-old.jpg', after: 'https://x/e-new.jpg', from: 'article' }, 'a before/after chosen earlier is kept, and the model is not asked');
   assert.equal(by.offline.image, 'https://x/fine.jpg', 'a picture that does not load is left out; the one that loads is used');
-  assert.deepEqual(by['airbnb-v'].compare, { before: 'https://is1/old.jpg', after: 'https://is1/new.jpg', from: 'app-store', before_version: '26.40' });
-  assert.deepEqual(looked.map((l) => l.pictures), [3, 3, 3], 'each story sends its pictures plus its current one; offline, app-store and already-paired stories send nothing');
+  assert.deepEqual(by['airbnb-v'].compare, { before: 'https://is1/old.jpg', after: 'https://is1/new.jpg', from: 'article' }, 'store-version screenshots are used only after the visual model confirms they show the change');
+  assert.deepEqual(looked.map((l) => l.pictures).sort((a, b) => a - b), [1, 3, 3, 3, 3], 'every candidate set, including one surviving image and store-version screenshots, is visually checked; already-paired stories send nothing');
   assert.equal(r.usage?.step, 'pictures');
-  assert.ok(Math.abs((r.usage?.credits ?? 0) - 0.03) < 1e-9, 'one usage line for the whole step');
+  assert.ok(Math.abs((r.usage?.credits ?? 0) - 0.05) < 1e-9, 'one usage line for the whole step, including the single-image check');
 });
 
 test('the real watchlist: longer names win at the same place, and short everyday names need their app forms', () => {
@@ -591,15 +596,16 @@ test('pictures: the article’s only picture is used, and a site’s stock share
   ];
   const pictures: Record<string, (typeof shot)[][]> = { 'with-stock': [[shot]], 'no-image': [[shot]], 'only-stock': [[]], 'old-feed-photo': [[]], 'new-feed-photo': [[]] };
   let asked = 0;
-  const llm: Llm = { mode: 'company', canSearch: false, messages: async () => (asked++, { content: [{ type: 'text', text: '{}' }], stopReason: 'end_turn', usage: { input_tokens: 0, output_tokens: 0, web_searches: 0 } }) };
-  const r = await addCompares(CFG, items, async (i) => pictures[i.id], llm, new Map());
+  const llm: Llm = { mode: 'company', canSearch: false, messages: async () => (asked++, { content: [{ type: 'text', text: '{"best":0}' }], stopReason: 'end_turn', usage: { input_tokens: 0, output_tokens: 0, web_searches: 0 } }) };
+  const imageFetch = (async () => new Response(new Uint8Array(6000), { headers: { 'content-type': 'image/jpeg' } })) as typeof fetch;
+  const r = await addCompares(CFG, items, async (i) => pictures[i.id], llm, new Map(), imageFetch);
   const by = Object.fromEntries(r.items.map((i) => [i.id, i]));
   assert.equal(by['with-stock'].image, shot.src, 'the screenshot, not the stock card');
   assert.equal(by['no-image'].image, shot.src, 'one picture is enough');
   assert.equal(by['only-stock'].image, null, 'a stock card alone shows the app icon instead');
   assert.equal(by['old-feed-photo'].image, null, 'a photo uploaded months before the story is not the change');
   assert.equal(by['new-feed-photo'].image, 'https://www.androidauthority.com/wp-content/uploads/2026/11/youtube-new-tab-bar.jpg', 'a fresh feed photo stays');
-  assert.equal(asked, 0, 'one picture needs no model');
+  assert.equal(asked, 3, 'each lone candidate is visually checked: the article picture twice and the fresh feed image');
 });
 
 test('page reads: a page that does not load is tried once more; one that answers with an error is not', async () => {
@@ -643,7 +649,9 @@ test('other coverage: when the kept site is blocked, the picture comes from anot
   const shot = 'https://static1.androidpolicecdn.com/2026/11/youtube-new-tab-bar.jpg';
   const metas: Record<string, PageMeta | null> = { 'https://androidauthority.com/a': null, 'https://androidpolice.com/yt': { publishedAt: at, image: shot, siteName: null, title: null, images: [] } };
   const related = withRelatedPictures(pool, async (u) => metas[u] ?? null);
-  const picked = await addCompares(CFG, [item], related.imagesFor, null, new Map());
+  const vision: Llm = { mode: 'company', canSearch: false, messages: async () => ({ content: [{ type: 'text', text: '{"best":0}' }], stopReason: 'end_turn', usage: { input_tokens: 0, output_tokens: 0, web_searches: 0 } }) };
+  const imageFetch = (async () => new Response(new Uint8Array(6000), { headers: { 'content-type': 'image/jpeg' } })) as typeof fetch;
+  const picked = await addCompares(CFG, [item], related.imagesFor, vision, new Map(), imageFetch);
   const [out] = related.credit(picked.items);
   assert.equal(out.image, shot, 'the other site’s screenshot, not the old reused photo');
   assert.deepEqual(out.sources.map((s) => s.publisher), ['Android Authority', 'Android Police'], 'and the site it came from is listed');
@@ -680,7 +688,9 @@ test('other coverage: a card with no picture searches news sites for earlier rep
   const metas: Record<string, PageMeta | null> = { 'https://androidauthority.com/a': null, 'https://9to5google.com/2026/10/22/youtube-subscriptions-tab': { publishedAt: '2026-10-22T16:00:00Z', image: shot, siteName: null, title: null, images: [] } };
   let searched = 0;
   const related = withRelatedPictures([], async (u) => metas[u] ?? null, async (i) => (searched++, searchCoverage(i, fetchImpl)));
-  const [out] = related.credit((await addCompares(CFG, [item], related.imagesFor, null, new Map())).items);
+  const vision: Llm = { mode: 'company', canSearch: false, messages: async () => ({ content: [{ type: 'text', text: '{"best":0}' }], stopReason: 'end_turn', usage: { input_tokens: 0, output_tokens: 0, web_searches: 0 } }) };
+  const imageFetch = (async () => new Response(new Uint8Array(6000), { headers: { 'content-type': 'image/jpeg' } })) as typeof fetch;
+  const [out] = related.credit((await addCompares(CFG, [item], related.imagesFor, vision, new Map(), imageFetch)).items);
   assert.equal(out.image, shot);
   assert.equal(out.sources.at(-1)?.publisher, '9to5Google', 'credited');
   assert.equal(searched, 1);
@@ -739,11 +749,69 @@ test('news coverage: Google News names the site, its news sitemap gives the real
   assert.deepEqual(found.map((f) => f.url), ['https://sammyguru.com/galaxy-z-flip-users-arent-impressed-with-one-ui-9-cover-screen-overhaul'], 'the article itself; not the story’s own site, not an unrelated one');
 });
 
-test('store screenshots: the last resort before the icon, by the app’s App Store id', async () => {
-  const { storeShots } = await import('../src/related.ts');
-  const fetchImpl = (async (u: string) => new Response(JSON.stringify({ results: [{ screenshotUrls: ['https://is1.mzstatic.com/a/1.png/392x696bb.jpg', 'https://is1.mzstatic.com/a/2.png/392x696bb.jpg'] }] }))) as unknown as typeof fetch;
-  const r = await storeShots(CFG, { app: 'Airbnb' }, fetchImpl);
-  assert.equal(r?.from, 'app-store');
-  assert.deepEqual(r?.shots, ['https://is1.mzstatic.com/a/1.png/600x1300bb.jpg', 'https://is1.mzstatic.com/a/2.png/600x1300bb.jpg']);
-  assert.equal(await storeShots(CFG, { app: 'Not on the watchlist' }, fetchImpl), null);
+test('picture pipeline: it never substitutes generic store screenshots for a missing change image', async () => {
+  const { pickPictures } = await import('../src/related.ts');
+  const item = { id: 'missing', app: 'Airbnb', category: 'ota' as const, kind: 'ui' as const, date: '', published_at: '2026-11-07T00:00:00Z', beta: false, importance: 2, headline: 'Airbnb tests a new control', what: 'w', why: 'y', sources: [{ title: 'Airbnb tests a new control', url: 'https://blocked.example/a', publisher: 'Blocked' }], image: null, icon: null, collected_at: '' };
+  const result = await pickPictures({ cfg: CFG, items: [item], pool: [], getMeta: async () => null, llm: null, releaseShots: new Map() });
+  assert.equal(result.items[0].image, null);
+  assert.equal(result.items[0].store_shots, undefined);
+  assert.match(result.notes.join(' '), /no verified picture of this change/);
+});
+
+test('collection picture gate: a curated story with no visually approved change image is dropped, not published with a logo', async () => {
+  const cfg = parseConfig(`
+reader: ""
+timezone: Asia/Shanghai
+window_hours: 48
+provider: company
+company: { curate: c, compare: p }
+stores: { app_store: false, google_play: false }
+models: { curate: c, compare: p, max_candidates: 20 }
+feeds:
+  - name: News
+    url: https://news.test/feed
+    kind: outlet
+trust:
+  outlets: [news.test]
+groups:
+  consumer:
+    label: Consumer
+    apps:
+      - name: Example
+        aliases: [Example]
+        domains: [example.com]
+`);
+  const feed = rss([['Example redesigns its home screen', 'https://news.test/example', h(1)]]);
+  const page = '<meta property="og:image" content="https://news.test/stock.jpg"><article><img src="https://news.test/stock.jpg" alt="Team photo"></article>';
+  const fetchImpl = (async (input: string | URL | Request) => {
+    const u = String(input);
+    if (u === 'https://news.test/feed') return new Response(feed);
+    if (u === 'https://news.test/example') return new Response(page);
+    if (u === 'https://news.test/stock.jpg') return new Response(new Uint8Array(6000), { headers: { 'content-type': 'image/jpeg' } });
+    if (/news.google.com|feed=rss2|sitemap/.test(u)) return new Response('<rss><channel></channel></rss>');
+    return new Response('no', { status: 404 });
+  }) as typeof fetch;
+  const llm: Llm = {
+    mode: 'company', canSearch: false,
+    messages: async (req) => Array.isArray(req.messages[0].content)
+      ? { content: [{ type: 'text', text: '{"best":null,"combined":null,"before":null,"after":null,"why":"team photo, not the changed UI"}' }], stopReason: 'end_turn', usage: { input_tokens: 10, output_tokens: 5, web_searches: 0 } }
+      : { content: [{ type: 'text', text: '{"items":[{"event_id":"example-home","app":"Example","category":"consumer","kind":"ui","headline":"Example redesigns its home screen","what":"The home screen changed.","why":"Useful pattern.","source_cids":["c1"]}],"dropped":[],"pattern":null}' }], stopReason: 'end_turn', usage: { input_tokens: 10, output_tokens: 5, web_searches: 0 } },
+  };
+  const dir = mkdtempSync(join(tmpdir(), 'picture-gate-'));
+  const r = await collect({ cfg, now: NOW, llm, fetchImpl, paths: { ...defaultPaths(dir), cache: join(dir, '.cache') } });
+  assert.equal(r.kept.length, 0);
+  assert.equal(r.quiet, true);
+  assert.match(r.modelDropped.map((d) => d.reason).join(' '), /no verified picture/);
+});
+
+test('build picture gate: cards without an image or after image are identified', async () => {
+  const { cardsWithoutChangePictures } = await import('../src/related.ts');
+  const base = { id: '', app: 'A', category: 'consumer' as const, kind: 'ui' as const, date: '', published_at: '', beta: false, importance: 2, headline: 'h', what: 'w', why: 'y', sources: [], image: null, icon: null, collected_at: '' };
+  const items = [
+    { ...base, id: 'missing' },
+    { ...base, id: 'logo-is-not-image', icon: 'https://x/logo.png' },
+    { ...base, id: 'image', image: 'assets/change.jpg' },
+    { ...base, id: 'pair', compare: { before: 'assets/old.jpg', after: 'assets/new.jpg', from: 'article' as const } },
+  ];
+  assert.deepEqual(cardsWithoutChangePictures(items).map((i) => i.id), ['missing', 'logo-is-not-image']);
 });

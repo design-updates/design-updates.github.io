@@ -857,35 +857,6 @@ button {
 .compare .half:last-child figcaption {
   background: var(--accent);
 }
-/* The store's screenshots of the app, side by side, when no picture of the change exists. */
-.compare.store {
-  grid-template-columns: repeat(var(--shots), 1fr);
-  padding: 10px 10px 0;
-  gap: 8px;
-  background: color-mix(in srgb, var(--c, var(--ink-3)) 14%, var(--paper-2));
-}
-.compare.store figure {
-  background: none;
-  align-items: start;
-}
-.compare.store img {
-  object-fit: contain;
-  object-position: top;
-}
-.store-label {
-  position: absolute;
-  left: 8px;
-  bottom: 8px;
-  padding: 4px 6px 3px;
-  font: 600 11px/1 var(--display);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--paper);
-  background: var(--ink);
-}
-html:lang(zh-CN) .store-label {
-  letter-spacing: 0;
-}
 .row-thumb.split {
   display: grid;
   grid-template-columns: 1fr 1fr;

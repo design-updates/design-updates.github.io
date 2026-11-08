@@ -7,6 +7,7 @@ import { iconAt16, iconLarge, mirrorAssets, mirrorUrls } from './mirror.ts';
 import { emptyRadar } from './radar.ts';
 import { readJson, writeJson } from './util.ts';
 import { loadCasesConfig } from './casestudies.ts';
+import { cardsWithoutChangePictures } from './related.ts';
 import type { WeeksFile } from './weekly.ts';
 import { loadWorkflowsConfig } from './workflows.ts';
 
@@ -14,7 +15,14 @@ const cfg = loadConfig();
 rmSync('dist', { recursive: true, force: true });
 mkdirSync('dist/data', { recursive: true });
 cpSync('site', 'dist', { recursive: true });
-const mirrored = await mirrorAssets(readJson('data/radar.json', emptyRadar()), 'dist');
+const radar = readJson('data/radar.json', emptyRadar());
+const missing = cardsWithoutChangePictures(radar.days.flatMap((d) => d.items));
+if (missing.length) throw new Error(`Refusing to publish ${missing.length} news card(s) without a verified change image: ${missing.map((i) => i.id).join(', ')}`);
+const mirrored = await mirrorAssets(radar, 'dist');
+// Every display image must be copied successfully. Keeping a remote URL could put a broken or blocked image on the
+// live card, so publishing stops until that picture is repaired.
+const unmirrored = mirrored.radar.days.flatMap((d) => d.items).filter((i) => [i.image, i.compare?.before, i.compare?.after].filter(Boolean).some((u) => !u.startsWith('assets/') && !u.startsWith('icons/')));
+if (unmirrored.length) throw new Error(`Refusing to publish ${unmirrored.length} card(s) whose display image could not be copied: ${unmirrored.map((i) => i.id).join(', ')}`);
 writeJson('dist/data/radar.json', mirrored.radar);
 console.log(`Copied ${mirrored.saved} pictures and icons into the site${mirrored.failed ? ` (${mirrored.failed} could not be downloaded and keep their original address)` : ''}.`);
 // The weekly pages, each only published while its yaml file has enabled: true. Their icons are copied into the site.

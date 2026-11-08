@@ -210,39 +210,19 @@ export function withRelatedPictures(pool: PoolEntry[], getMeta: (url: string) =>
   return { imagesFor, credit };
 }
 
-/** The store's own screenshots of the app, newest version: the last resort before the icon. App Store by the app's id,
-    else its Google Play page. Not a picture of the change itself, so the card says where they are from. */
-export async function storeShots(cfg: Config, item: Pick<Item, 'app'>, fetchImpl: typeof fetch = fetch): Promise<{ shots: string[]; from: 'app-store' | 'google-play' } | null> {
-  const app = appByName(cfg, item.app);
-  if (!app) return null;
-  if (app.appstoreId) {
-    try {
-      const res = await fetchImpl(`https://itunes.apple.com/lookup?id=${app.appstoreId}&country=${app.storeCountry ?? cfg.stores.country}`, { signal: AbortSignal.timeout(15_000) });
-      const shots = ((await res.json()) as { results?: { screenshotUrls?: string[] }[] }).results?.[0]?.screenshotUrls ?? [];
-      if (shots.length) return { shots: shots.slice(0, 3).map((u) => u.replace(/\/\d+x\d+bb\.(jpg|png)$/, '/600x1300bb.jpg')), from: 'app-store' };
-    } catch {
-      // try Google Play
-    }
-  }
-  if (app.playId) {
-    try {
-      const html = await fetchText(`https://play.google.com/store/apps/details?id=${encodeURIComponent(app.playId)}&hl=en_US&gl=US`, { fetchImpl, timeoutMs: 15_000, maxBytes: 3_000_000 });
-      const shots = [...new Set([...html.matchAll(/<img[^>]+src="(https:\/\/play-lh\.googleusercontent\.com\/[^"=]+)=w\d+-h\d+[^"]*"[^>]*alt="Screenshot image"/g)].map((m) => m[1]))];
-      if (shots.length) return { shots: shots.slice(0, 3).map((u) => `${u}=w600-h1300`), from: 'google-play' };
-    } catch {
-      // nothing
-    }
-  }
-  return null;
-}
-
 /**
  * The whole picture step for a set of items, the same in the morning run and in `backfill-compare`:
  * 1. the item's own pages and other coverage read this run;
  * 2. for an item still without a picture: other sites found by search (WordPress search feeds, Google News with
  *    each site's news sitemap), and the step runs again for it;
- * 3. still nothing: the store's screenshots of the app, labelled as such; failing that, the app icon.
+ * 3. still nothing: the story is not publishable until an exact change image is found.
  */
+/** A news card is publishable only with a picture of this change: one image, or the after side of a pair. */
+export const hasChangePicture = (item: Pick<Item, 'image' | 'compare'>) => !!(item.compare?.after || item.image);
+
+/** Every news card must pass this before the site is built. */
+export const cardsWithoutChangePictures = (items: Item[]) => items.filter((item) => !hasChangePicture(item));
+
 export async function pickPictures(opts: {
   cfg: Config;
   items: Item[];
@@ -267,7 +247,7 @@ export async function pickPictures(opts: {
   const notes = [...first.notes];
   let items = first.items;
   let usage = first.usage;
-  const bare = (i: Item) => !i.compare && !i.image && !i.store_shots?.length;
+  const bare = (i: Item) => !hasChangePicture(i);
   if (search && items.some(bare)) {
     for (const i of items.filter(bare)) forced.add(i.id);
     const again = await addCompares(cfg, items.filter(bare), related.imagesFor, llm, releaseShots, fetchImpl);
@@ -277,14 +257,9 @@ export async function pickPictures(opts: {
     if (again.usage) usage = usage ? { ...usage, input_tokens: usage.input_tokens + again.usage.input_tokens, output_tokens: usage.output_tokens + again.usage.output_tokens, credits: (usage.credits ?? 0) + (again.usage.credits ?? 0) } : again.usage;
   }
   items = related.credit(items);
-  if (fetchImpl) {
-    items = await mapLimit(items, 3, async (i) => {
-      if (!bare(i)) return i;
-      const s = await storeShots(cfg, i, fetchImpl);
-      if (!s) return i;
-      notes.push(`${i.id}: no picture of the change found anywhere; showing ${s.from === 'app-store' ? 'App Store' : 'Google Play'} screenshots of the app`);
-      return { ...i, store_shots: s.shots, store_from: s.from };
-    });
-  }
+  // No generic fallback here. If no article shows the reported change, the item stays without a picture and the
+  // caller must repair it from exact coverage or leave the story out. Store screenshots and app logos are not
+  // evidence of this change.
+  for (const i of items.filter(bare)) notes.push(`${i.id}: no verified picture of this change found; do not publish with a generic fallback`);
   return { items, usage, notes };
 }

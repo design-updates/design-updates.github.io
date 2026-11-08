@@ -65,10 +65,10 @@ export async function mirrorAssets(radar: Radar, outDir: string, fetchImpl: type
         wanted.add(iconLarge(i.icon));
       }
       for (const s of i.sources) wanted.add(faviconUrl(domainOf(s.url)));
-      if (i.image) wanted.add(i.image);
-      if (i.compare?.before) wanted.add(i.compare.before);
-      if (i.compare?.after) wanted.add(i.compare.after);
-      for (const shot of i.store_shots ?? []) wanted.add(shot);
+      // Files under site/assets are already copied with the site; only remote pictures need mirroring.
+      if (i.image && !i.image.startsWith('assets/')) wanted.add(i.image);
+      if (i.compare?.before && !i.compare.before.startsWith('assets/')) wanted.add(i.compare.before);
+      if (i.compare?.after && !i.compare.after.startsWith('assets/')) wanted.add(i.compare.after);
     }
   }
   const { local, failed } = await mirrorUrls(wanted, outDir, fetchImpl);
@@ -84,7 +84,6 @@ export async function mirrorAssets(radar: Radar, outDir: string, fetchImpl: type
         compare: i.compare
           ? { ...i.compare, before: i.compare.before ? (local.get(i.compare.before) ?? i.compare.before) : i.compare.before, after: local.get(i.compare.after) ?? i.compare.after }
           : i.compare,
-        store_shots: i.store_shots?.map((shot) => local.get(shot) ?? shot) ?? i.store_shots,
         sources: i.sources.map((s) => ({ ...s, favicon: local.get(faviconUrl(domainOf(s.url))) ?? null })),
       })),
     })),

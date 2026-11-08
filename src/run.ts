@@ -7,7 +7,7 @@ import type { Config } from './config.ts';
 import { curate } from './curate.ts';
 import { feedCandidates, readFeed, type FeedResult } from './feeds.ts';
 import { ensureIcons } from './icons.ts';
-import { pickPictures, poolOf, type PoolEntry } from './related.ts';
+import { hasChangePicture, pickPictures, poolOf, type PoolEntry } from './related.ts';
 import type { Llm } from './llm.ts';
 import { fetchPageMeta, type PageMeta } from './pagemeta.ts';
 import { prefilter } from './prefilter.ts';
@@ -290,10 +290,15 @@ export async function collect(opts: CollectOptions): Promise<Report> {
     const cmp = await pickPictures({ cfg, items: post.items, pool: snap.pool ?? [], getMeta, llm, releaseShots, fetchImpl: offline ? undefined : fetchImpl });
     if (cmp.usage) report.usage.push(cmp.usage);
     report.warnings.push(...cmp.notes.map((n) => `before/after: ${n}`));
-    items = cmp.items;
+    // A logo or an unrelated store gallery does not explain the story. If exact source or alternate coverage has no
+    // verifiable change image, leave the story out rather than publish a misleading display image.
+    const noPicture = cmp.items.filter((i) => !hasChangePicture(i));
+    const pictureDropped = noPicture.map((item) => ({ title: item.headline, url: item.sources[0]?.url ?? '', source: item.sources[0]?.publisher ?? item.app, reason: 'no verified picture of the reported change' }));
+    for (const item of noPicture) report.warnings.push(`picture gate: dropped ${item.id}; no verified picture of the reported change`);
+    items = cmp.items.filter(hasChangePicture);
     pattern = result.pattern;
     pattern_zh = result.pattern_zh;
-    report.modelDropped = [...result.dropped, ...post.dropped];
+    report.modelDropped = [...result.dropped, ...post.dropped, ...pictureDropped];
   }
 
   const merged = mergeDay(radar, { date, items, pattern, pattern_zh, now });

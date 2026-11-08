@@ -62,7 +62,7 @@ Also say whether the pictures show the old design next to the new one:
 - "combined": the number of ONE picture that itself shows old and new together (side by side, before/after), else null.
 - "before" and "after": two different pictures, one of the old design and one of the new, of the same thing, else null.
 
-Reply with JSON only: {"best": 2, "combined": null, "before": null, "after": null, "why": "a few words"}. "best" is null if no picture shows the change; then the page keeps its current picture.`;
+Reply with JSON only: {"best": 2, "combined": null, "before": null, "after": null, "why": "a few words"}. "best" is null if no picture visibly shows the reported change; then the story is not published.`;
 
 const PICK_TEXT_SYSTEM = `You help a design news page show before/after pictures. For each item you get its headline and the pictures in the source articles, described ONLY by their alt text, caption and file name. You cannot see the pictures.
 
@@ -184,17 +184,18 @@ export async function addCompares(
   const byText: { item: Item; images: PageImage[] }[] = [];
 
   await mapLimit(out, 3, async (item) => {
-    const shots = releaseShots.get(item.id);
-    if (shots) {
-      if (shots.after && shots.before && shots.before !== shots.after) {
-        item.compare = { before: shots.before, after: shots.after, from: 'app-store', before_version: shots.beforeVersion ?? undefined };
-        notes.push(`${item.id}: App Store screenshots of ${shots.beforeVersion} and ${item.release?.version}`);
-      } else if (shots.after) item.image = shots.after;
-      return;
-    }
     // A before/after chosen earlier stays: re-picking must not swap a clear pair for a guess.
     if (item.compare) return;
     const perSource = await imagesFor(item);
+    // Store version notes may carry screenshots from this and the previous version. They are candidates, not an
+    // automatic pair: the vision model still has to confirm that they visibly show the reported change.
+    const shots = releaseShots.get(item.id);
+    if (shots) {
+      const store: PageImage[] = [];
+      if (shots.before) store.push({ src: shots.before, alt: `App Store screenshot from version ${shots.beforeVersion ?? 'before'}`, caption: '' });
+      if (shots.after) store.push({ src: shots.after, alt: `App Store screenshot from version ${item.release?.version ?? 'current'}`, caption: '' });
+      if (store.length) perSource.push(store);
+    }
     let images = candidatePictures(perSource, item.image, item.published_at);
     if (verify) {
       const ok = await mapLimit(images, 4, async (img) => ((await loads(img.src, verify)) ? img : null));
@@ -213,19 +214,9 @@ export async function addCompares(
       }
       return;
     }
-    // One picture: the article's only picture is the one to show, unless it is the one already shown.
-    if (images.length === 1) {
-      if (isOldOnly(images[0])) {
-        notes.push(`${item.id}: the only picture shows the old design; the app icon shows`);
-        if (item.image === images[0].src) item.image = null;
-        return;
-      }
-      if (images[0].src !== item.image) {
-        item.image = images[0].src;
-        notes.push(`${item.id}: the article's only picture`);
-      }
-      return;
-    }
+    // A single image still has to be verified by the vision model. Articles often have one stock header image that
+    // does not show the change. With no vision model, only captions/file names that explicitly identify the new
+    // design are accepted below.
     // Captions that name the old and the new picture are clearer than any guess, so they win. A pair comes from one
     // article: an old picture on one site and a new one on another may be of different changes.
     const allowed = new Set(images.map((i) => keyOf(i.src)));
@@ -239,7 +230,7 @@ export async function addCompares(
     if (canLook) {
       const got = await mapLimit(images, 4, async (img) => ({ img, file: await download(img.src, fetchImpl) }));
       const seen = got.filter((g) => g.file);
-      if (seen.length >= 2) {
+      if (seen.length >= 1) {
         const content: ContentBlock[] = [{ type: 'text', text: `Headline: ${item.headline}\nWhat changed: ${item.what}` }];
         seen.forEach((g, n) => {
           const file = g.img.src.split('/').pop()?.split('?')[0] ?? '';
@@ -262,10 +253,14 @@ export async function addCompares(
             notes.push(`${item.id}: old and new pictures${why}`);
           } else if (best && isOldOnly(seen.find((g) => g.img.src === best)!.img)) {
             notes.push(`${item.id}: the picture chosen shows the old design, so it is not used`);
-            if (item.image === best) item.image = null;
+            item.image = null;
           } else if (best) {
             if (best !== item.image) notes.push(`${item.id}: picture ${seen.findIndex((g) => g.img.src === best)} of ${seen.length} chosen${why}`);
             item.image = best;
+          } else {
+            // The visual check found no picture of this change. Do not keep an existing header or feed image.
+            item.image = null;
+            notes.push(`${item.id}: visual check found no picture of the reported change`);
           }
           return;
         } catch (err) {
@@ -280,9 +275,9 @@ export async function addCompares(
       item.image = fresh;
       notes.push(`${item.id}: picture of the new design from captions`);
     } else {
-      // Until the words settle it, the first article picture beats a missing or stock one.
-      const first = images.find((i) => !isOldOnly(i));
-      if ((!item.image || isStockImage(item.image)) && first) item.image = first.src;
+      // With no usable visual result, captions/file names get one conservative chance below. Nothing is selected
+      // merely because it is the first image in an article.
+      item.image = null;
       byText.push({ item, images });
     }
   });

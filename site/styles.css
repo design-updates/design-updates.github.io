@@ -803,12 +803,10 @@ button {
   object-fit: cover;
 }
 /* A picture far from the frame's shape is shown whole, on the theme's grey (light grey, or dark grey in dark mode). */
-.media.whole,
-.row-thumb.whole {
+.media.whole {
   background: var(--paper-2);
 }
-.media.whole img,
-.row-thumb.whole img {
+.media.whole img {
   object-fit: contain;
 }
 .media canvas {
@@ -1388,6 +1386,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 /* Lines up with the headline: 12px dot + 24px icon + two 14px gaps. */
 .row-fold {
@@ -2523,5 +2522,119 @@ html:lang(zh-CN) .snake-hint span {
     content: '';
     flex: none;
     width: 1px;
+  }
+}
+
+/* ---------- small-card image viewer ---------- */
+
+/* Only archive-row thumbnails are buttons. They crop tightly so the 112×84 preview has no letterbox bars; the
+   full image appears uncropped in the dialog. */
+button.row-thumb {
+  padding: 0;
+  border: 0;
+  background: var(--paper-2);
+  color: inherit;
+  cursor: zoom-in;
+}
+button.row-thumb:hover {
+  outline-width: 3px;
+}
+.image-dialog {
+  width: min(1100px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow:
+    inset 0 0 0 3px var(--line),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--shadow);
+}
+.image-dialog::backdrop {
+  background: rgb(0 0 0 / 0.78);
+}
+.image-dialog-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  background: linear-gradient(var(--line) 0 0) bottom / 100% 2px no-repeat;
+}
+.image-dialog-top h2 {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: 600 18px/1.2 var(--display);
+}
+.image-dialog-top .act {
+  flex: none;
+}
+.image-view {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  height: min(76dvh, 820px);
+  padding: 20px;
+  gap: 4px;
+  background: var(--paper-2);
+}
+.image-view.split {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.image-view figure {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.image-view img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.image-view figcaption {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  padding: 4px 6px 3px;
+  font: 600 11px/1 var(--display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink);
+}
+.image-view figure:last-child figcaption {
+  background: var(--accent);
+}
+.image-view figcaption:empty {
+  display: none;
+}
+@media (max-width: 640px) {
+  .image-dialog {
+    width: calc(100vw - 20px);
+    max-height: calc(100dvh - 20px);
+  }
+  .image-dialog-top {
+    padding: 12px 14px;
+  }
+  .image-dialog-top h2 {
+    font-size: 15px;
+  }
+  .image-view {
+    height: calc(100dvh - 100px);
+    padding: 10px;
+  }
+  .image-view.split {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
   }
 }

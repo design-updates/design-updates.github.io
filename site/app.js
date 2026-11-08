@@ -126,6 +126,7 @@ const T = {
     sharedTitle: (from) => (from ? `Digest from ${from}` : 'Shared digest'),
     sharedMissing: (n) => `${n} item${n === 1 ? '' : 's'} in this link ${n === 1 ? 'is' : 'are'} no longer on the page.`,
     close: 'Close',
+    imageViewer: 'Image viewer',
     before: 'Before',
     after: 'After',
     beforeAfter: 'Before and after',
@@ -236,6 +237,7 @@ const T = {
     sharedTitle: (from) => (from ? `${from} 分享的周报` : '分享的周报'),
     sharedMissing: (n) => `链接里有 ${n} 条已不在页面上。`,
     close: '关闭',
+    imageViewer: '查看大图',
     before: '改版前',
     after: '改版后',
     beforeAfter: '改版前后对比',
@@ -636,19 +638,25 @@ function renderToday(day) {
 
 const filter = { cat: 'all', kind: null, unread: false };
 
+/** A small thumbnail that opens its full image in the centred viewer, never the source article. */
+function smallImageButton(pictures, title, body, cls = '') {
+  return `<button class="row-thumb notch image-open${cls}" type="button" aria-label="${esc(t().imageViewer)}: ${esc(title)}" data-images="${esc(JSON.stringify(pictures))}" data-image-title="${esc(title)}">${body}</button>`;
+}
+
 function rowHtml(item) {
   const unread = isUnread(item);
   const href = esc(safeUrl(item.sources?.[0]?.url));
   const link = `href="${href}" target="_blank" rel="noopener" data-read="${esc(item.id)}"`;
   // The thumbnail sits beside the headline and the opened text, so opening a row adds no gap. It links to the source, like the headline.
   const c = item.compare;
+  const title = txt(item, 'headline');
   const thumb = c?.after && c.before && !c.combined
-    ? `<a class="row-thumb notch split" ${link} tabindex="-1" aria-hidden="true"><img src="${esc(c.before)}" alt="" loading="lazy" referrerpolicy="no-referrer"><img src="${esc(c.after)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
+    ? smallImageButton([c.before, c.after], title, `<img src="${esc(c.before)}" alt="" loading="lazy" referrerpolicy="no-referrer"><img src="${esc(c.after)}" alt="" loading="lazy" referrerpolicy="no-referrer">`, ' split')
     : c?.after
-      ? `<a class="row-thumb notch" ${link} tabindex="-1" aria-hidden="true"><img src="${esc(c.after)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
+      ? smallImageButton([c.after], title, `<img src="${esc(c.after)}" alt="" loading="lazy" referrerpolicy="no-referrer">`)
       : item.image
-    ? `<a class="row-thumb notch${reduced ? '' : ' pending'}" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--${esc(item.category)})"><img src="${esc(item.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
-    : '';
+        ? smallImageButton([item.image], title, `<img src="${esc(item.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`, reduced ? '' : ' pending')
+        : '';
   return `<li class="row reveal ${unread ? 'unread' : 'read'}${isSaved(item.id) ? ' is-saved' : ''}" data-cat="${esc(item.category)}" data-kind="${esc(item.kind ?? '')}" data-id="${esc(item.id)}">
     <div class="row-head">
       <span class="dot" aria-hidden="true"></span>
@@ -937,13 +945,15 @@ function placeholderOnError(img) {
 
 function wireImages() {
   for (const img of document.querySelectorAll('.media img, .row-thumb img')) placeholderOnError(img);
-  for (const img of document.querySelectorAll('.media img, .row-thumb img')) fitWhole(img);
+  // Large cards may contain a tall phone screenshot; show that whole. Small row thumbnails always crop to fill,
+  // and clicking them opens the uncropped image in the viewer.
+  for (const img of document.querySelectorAll('.media img')) fitWhole(img);
   tileIcons();
 }
 
 /**
- * Pictures fill their frame, trimming the edges. A picture much wider or taller than the frame (a grid of a
- * dozen app icons, a tall phone screen) would lose what matters, so it is shown whole on the frame's paper instead.
+ * Large-card pictures fill their frame, trimming the edges. A picture much wider or taller than the frame (a grid
+ * of app icons, a tall phone screen) would lose what matters, so it is shown whole there. Small thumbnails crop.
  */
 function fitWhole(img) {
   const check = () => {
@@ -1239,7 +1249,9 @@ function wireDigest() {
 /** Static text in index.html, the switch's own label, and the page language for fonts and screen readers. */
 function paintLanguage() {
   document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-  document.title = t().title;
+  // The page content switches language, but its browser/search title stays English. Otherwise Chrome saves the
+  // translated title in history and shows Chinese when someone searches for Pixel Post.
+  document.title = T.en.title;
   $('.skip').textContent = t().skip;
   $('.wordmark').setAttribute('aria-label', t().home);
   const btn = $('#lang');
@@ -1285,8 +1297,9 @@ const spark = () => pixels(SPARK, { a: 'var(--accent)', o: 'var(--sun)' }, 'sky'
 
 function wfRowHtml(w) {
   const link = `href="${esc(safeUrl(w.url))}" target="_blank" rel="noopener"`;
+  const title = wfTxt(w, 'title');
   const thumb = w.image
-    ? `<a class="row-thumb notch${reduced ? '' : ' pending'}" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--accent)" data-fallback="${esc(w.icon_large || iconAt(w.icon, 64))}"><img src="${esc(w.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
+    ? smallImageButton([w.image], title, `<img src="${esc(w.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`, reduced ? '' : ' pending')
     : `<a class="row-thumb notch placeholder" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--accent)">${placeholderHtml(w.icon_large || iconAt(w.icon, 64))}</a>`;
   const by = [w.author ? t().wfBy(esc(w.author)) : '', w.author_role ? esc(w.author_role) : ''].filter(Boolean).join(', ');
   const icon = `<img class="icon notch row-icon" src="${esc(iconAt(w.icon, 16))}" alt="" width="24" height="24" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'">`;
@@ -1407,8 +1420,9 @@ const briefcase = () => pixels(CASE, { a: 'var(--accent)', o: 'var(--sun)' }, 's
 
 function csRowHtml(c) {
   const link = `href="${esc(safeUrl(c.url))}" target="_blank" rel="noopener"`;
+  const title = csTxt(c, 'title');
   const thumb = c.image
-    ? `<a class="row-thumb notch${reduced ? '' : ' pending'}" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--accent)" data-fallback="${esc(c.icon_large || iconAt(c.icon, 64))}"><img src="${esc(c.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>`
+    ? smallImageButton([c.image], title, `<img src="${esc(c.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`, reduced ? '' : ' pending')
     : `<a class="row-thumb notch placeholder" ${link} tabindex="-1" aria-hidden="true" style="--c: var(--accent)">${placeholderHtml(c.icon_large || iconAt(c.icon, 64))}</a>`;
   const icon = `<img class="icon notch row-icon" src="${esc(iconAt(c.icon, 16))}" alt="" width="24" height="24" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'">`;
   const by = c.by ?? '';
@@ -1622,12 +1636,47 @@ function toggleMore(btn) {
   };
 }
 
+/* ---------- small-card image viewer ---------- */
+
+function openImageViewer(button) {
+  const dlg = $('#image-dialog');
+  let pictures = [];
+  try { pictures = JSON.parse(button.dataset.images || '[]').filter((src) => safeUrl(src)); } catch {}
+  if (!pictures.length) return;
+  $('#image-title').textContent = button.dataset.imageTitle || t().imageViewer;
+  $('#image-view').classList.toggle('split', pictures.length > 1);
+  $('#image-view').innerHTML = pictures.map((src, i) => `<figure><img src="${esc(src)}" alt=""><figcaption>${pictures.length > 1 ? (i ? t().after : t().before) : ''}</figcaption></figure>`).join('');
+  $('#image-close').textContent = t().close;
+  if (!dlg.open) dlg.showModal?.() ?? dlg.setAttribute('open', '');
+}
+
+function wireImageViewer() {
+  const dlg = $('#image-dialog');
+  dlg.addEventListener('click', (e) => {
+    if (e.target === dlg || e.target.closest('[data-image-close]')) dlg.close();
+  });
+}
+
 /* ---------- events ---------- */
 
 function wireEvents() {
   document.addEventListener('click', (e) => {
     const t = e.target.closest('button, a');
     if (!t) return;
+
+    if (t.classList.contains('image-open')) {
+      e.preventDefault();
+      // Opening the image still counts as reading the row, as clicking its old source-linked thumbnail did.
+      const row = t.closest('.row');
+      if (row?.classList.contains('unread')) {
+        markRead([row.dataset.id]);
+        row.classList.replace('unread', 'read');
+        row.closest('.day')?.classList.toggle('has-unread', !!row.closest('.day')?.querySelector('.row.unread'));
+        renderFilters(archiveDays);
+      }
+      openImageViewer(t);
+      return;
+    }
 
     if (t.dataset.read) {
       markRead([t.dataset.read]);
@@ -1753,6 +1802,7 @@ async function main() {
   wireRail();
   wireEvents();
   wireDigest();
+  wireImageViewer();
   addEventListener('hashchange', () => {
     showView();
     scrollTo(0, 0);

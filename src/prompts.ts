@@ -43,7 +43,7 @@ Beta features, tests and gradual rollouts are fine to keep. Set "beta": true onl
 
 Merge candidates that report the same event (one launch is often syndicated across many sites) into ONE item. List at most two source_cids, best first: the company's own post first, then the outlet with the most concrete design detail.
 
-The candidate list may include an item the reader already saw on an earlier day (see recently_reported). Drop it with the reason "already reported", unless it is a genuinely new development.
+The candidate list may include an item the reader already saw on an earlier day (see recently_reported). Drop it with the reason "already reported", unless it is a genuinely new development. Treat one app from a previously reported product-family rollout as the same event: if "gradient icons for Messages, Phone and Contacts" was already reported, a later article only about Phone's gradient icon is not new.
 
 For each kept item:
 - app: the watchlist name exactly when it is a watchlist app; otherwise the brand's own short name ("YouTube", "Duolingo", "Mastercard").

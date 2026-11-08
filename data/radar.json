@@ -450,40 +450,6 @@
             "after": "assets/verified/google-earth-new.webp",
             "from": "article"
           }
-        },
-        {
-          "id": "phone-by-google-gradient-icon",
-          "app": "Phone by Google",
-          "category": "consumer",
-          "kind": "brand",
-          "date": "2026-11-06",
-          "published_at": "2026-11-05T19:04:24.000Z",
-          "beta": true,
-          "importance": 1,
-          "headline": "Phone by Google tests a gradient app icon on Android.",
-          "what": "Phone by Google 246 beta introduces a redesigned gradient icon. The new mark follows the gradient icon treatment that recently reached Google Messages.",
-          "why": "Shared icon treatments can make a suite feel connected, but they can also reduce distinction between utilities. If a travel product has several companion apps, test recognisability at small icon sizes before applying one visual treatment across all of them.",
-          "sources": [
-            {
-              "title": "Phone by Google 246 beta brings gradient icon redesign on Android",
-              "url": "https://9to5google.com/2026/11/05/phone-by-google-246-new-icon",
-              "publisher": "9to5Google"
-            }
-          ],
-          "release": null,
-          "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/11/Google-Messages-Phone-Contacts-icon-gradient-redesign.webp?resize=1200,628",
-          "icon": "https://www.google.com/s2/favicons?domain=google.com&sz=64",
-          "collected_at": "2026-11-07T08:00:04.954Z",
-          "zh": {
-            "headline": "Phone by Google 在 Android Beta 中测试渐变 App 图标。",
-            "what": "Phone by Google 246 Beta 带来了重新设计的渐变图标。新图标延续了 Google Messages 最近采用的渐变处理方式。",
-            "why": "统一的图标风格能让产品套件更有整体感，但也可能降低不同工具之间的辨识度。旅行产品若有多个配套 App，应在统一视觉前测试小尺寸图标的可识别性。"
-          },
-          "compare": {
-            "before": "https://9to5google.com/wp-content/uploads/sites/4/2026/11/Phone-by-Google-245-icon.jpg?strip=info&w=640",
-            "after": "https://9to5google.com/wp-content/uploads/sites/4/2026/11/Phone-by-Google-246-icon.jpg?strip=info&w=640",
-            "from": "article"
-          }
         }
       ]
     },

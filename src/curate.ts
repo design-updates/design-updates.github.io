@@ -53,6 +53,30 @@ export function similar(a: string, b: string): number {
   return inter / (x.size + y.size - inter);
 }
 
+// Generic news grammar is removed; simple plurals are folded together. This makes a focused follow-up headline a
+// subset of a broader rollout ("Phone gets a gradient icon" vs "gradient icons for Messages, Phone and Contacts").
+const EVENT_STOP = new Set('the and for with its this that from into onto over under after before latest new adds added adding gets got getting is are was were be being been app apps application applications update updates updated updating rollout rolls rolling rolled test tests tested testing beta android ios mobile now starts started starting brings brought introducing introduces introduced'.split(' '));
+const eventWords = (s: string) => {
+  const out = new Set<string>();
+  for (let word of s.toLowerCase().match(/[a-z0-9]{3,}/g) ?? []) {
+    if (EVENT_STOP.has(word)) continue;
+    if (word.endsWith('ies') && word.length > 4) word = `${word.slice(0, -3)}y`;
+    else if (word.endsWith('s') && word.length > 4 && !word.endsWith('ss')) word = word.slice(0, -1);
+    out.add(word);
+  }
+  return out;
+};
+
+/** The same design event, including one product from a previously-reported multi-product rollout. */
+export function sameDesignEvent(a: string, b: string): boolean {
+  const x = eventWords(a);
+  const y = eventWords(b);
+  if (!x.size || !y.size) return false;
+  let shared = 0;
+  for (const w of x) if (y.has(w)) shared++;
+  return shared >= 3 && shared / Math.min(x.size, y.size) >= 0.75;
+}
+
 export function buildCurateInput(cfg: Config, candidates: Candidate[], recent: RecentItem[], now: Date) {
   return {
     today: localDate(now, cfg.timezone),
@@ -162,6 +186,7 @@ export async function curate(
     const repeat =
       ctx.seen.events[id] ??
       recentSeen.find(([, e]) => e.app === brand && similar(e.headline, headline) >= 0.8)?.[1] ??
+      recentSeen.find(([, e]) => sameDesignEvent(e.headline, headline))?.[1] ??
       recentSeen.find(([, e]) => e.urls.some((u) => kept.some((k) => k.url === u)))?.[1];
     if (repeat) {
       fail(`already reported on ${repeat.date} ("${truncate(repeat.headline, 60)}")`);

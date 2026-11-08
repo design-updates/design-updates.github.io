@@ -199,3 +199,25 @@ test('build copies card pictures and comparisons into the site', async () => {
   assert.match(out[1].compare?.after ?? '', /^icons\/[0-9a-f]{12}\.webp$/);
   for (const u of [out[0].image, out[1].compare?.before, out[1].compare?.after]) assert.ok(u && existsSync(join(dir, u)), u ?? 'missing');
 });
+
+test('the static search/share metadata stays English', () => {
+  const html = readFileSync('site/index.html', 'utf8');
+  assert.match(html, /<html lang="en"/);
+  assert.match(html, /<title>Pixel Post · app design changes worth your time<\/title>/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/design-updates\.github\.io\/"/);
+  assert.match(html, /<meta property="og:title" content="Pixel Post · app design changes worth your time"/);
+  const app = readFileSync('site/app.js', 'utf8');
+  assert.match(app, /document\.title = T\.en\.title/);
+});
+
+test('small news images are viewer buttons; source links stay on headlines', () => {
+  const app = readFileSync('site/app.js', 'utf8');
+  assert.match(app, /function smallImageButton/);
+  assert.match(app, /class="row-thumb notch image-open/);
+  assert.match(app, /class="row-title"><a/);
+  assert.match(app, /openImageViewer/);
+  const css = readFileSync('site/styles.css', 'utf8');
+  assert.match(css, /button\.row-thumb[\s\S]*cursor: zoom-in/);
+  assert.match(css, /\.row-thumb img[\s\S]*object-fit: cover/);
+  assert.match(css, /\.image-view img[\s\S]*object-fit: contain/);
+});

@@ -852,3 +852,10 @@ test('the real watchlist uses GPT-6.1 Sol for both curation and picture verifica
   assert.equal(cfg.models.curate, 'claude-gpt-6.1-sol[1M]');
   assert.equal(cfg.models.compare, 'claude-gpt-6.1-sol[1M]');
 });
+
+test('sameDesignEvent catches a focused app story after a broader product-family rollout', async () => {
+  const { sameDesignEvent } = await import('../src/curate.ts');
+  assert.equal(sameDesignEvent('Google is rolling out gradient app icons for Messages, Phone and Contacts.', 'Phone by Google tests a gradient app icon on Android.'), true);
+  assert.equal(sameDesignEvent('Google Earth gets a gradient logo.', 'Phone by Google tests a gradient app icon on Android.'), false);
+  assert.equal(sameDesignEvent('WhatsApp adds an Events home.', 'WhatsApp brings chat previews to Android.'), false);
+});

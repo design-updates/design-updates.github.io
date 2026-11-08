@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Pixel Post · app design changes worth your time</title>
     <meta name="description" content="A one-person morning paper of design, flow and feature changes in popular apps." />
+    <link rel="canonical" href="https://design-updates.github.io/" />
+    <meta property="og:title" content="Pixel Post · app design changes worth your time" />
+    <meta property="og:description" content="A one-person morning paper of design, flow and feature changes in popular apps." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://design-updates.github.io/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Pixel Post · app design changes worth your time" />
+    <meta name="twitter:description" content="A one-person morning paper of design, flow and feature changes in popular apps." />
     <meta name="theme-color" content="#f5ffe5" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -98,6 +106,10 @@
       <footer class="footer" id="footer"></footer>
     </div>
     <dialog id="digest-dialog" class="digest" aria-labelledby="digest-title"><div id="digest-box"></div></dialog>
+    <dialog id="image-dialog" class="image-dialog" aria-labelledby="image-title">
+      <header class="image-dialog-top"><h2 id="image-title"></h2><button class="act" id="image-close" data-image-close type="button">Close</button></header>
+      <div id="image-view" class="image-view"></div>
+    </dialog>
     <script type="module" src="app.js"></script>
   </body>
 </html>

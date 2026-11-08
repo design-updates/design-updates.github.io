@@ -203,7 +203,7 @@ To set it up from scratch: create a repository, push this folder to `main`, and 
 
 ## Cost
 
-- **Company plan (in use):** the allowed model list can change. As of 8 Nov 2026, curation uses `claude-gpt-6.1-sol[1M]` through the gateway Responses API, and picture selection remains `claude-kr-gpt-5.6-luna[1M]` through Messages. A live model request was verified after the switch. The run prints credits used. Pixel Post now distinguishes an expired login from a model the plan no longer allows.
+- **Company plan (in use):** the allowed model list can change. As of 8 Nov 2026, both curation and visual picture selection use `claude-gpt-6.1-sol[1M]` through the gateway Responses API. Text and real-screenshot requests were verified after the switch. The run prints credits used. Pixel Post now distinguishes an expired login from a model the plan no longer allows.
 - **Gemini:** free on the free tier.
 - **Anthropic API:** one Sonnet curate call plus up to four Haiku search calls, about $0.15–0.35 a day.
 

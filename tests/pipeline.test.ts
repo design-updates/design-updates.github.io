@@ -846,3 +846,9 @@ test('build picture gate: cards without an image or after image are identified',
   ];
   assert.deepEqual(cardsWithoutChangePictures(items).map((i) => i.id), ['missing', 'logo-is-not-image']);
 });
+
+test('the real watchlist uses GPT-6.1 Sol for both curation and picture verification', () => {
+  const cfg = loadConfig();
+  assert.equal(cfg.models.curate, 'claude-gpt-6.1-sol[1M]');
+  assert.equal(cfg.models.compare, 'claude-gpt-6.1-sol[1M]');
+});

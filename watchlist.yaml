@@ -19,7 +19,7 @@ provider: company
 
 company:
   curate: claude-gpt-6.1-sol[1M]  # requested 8 Nov 2026; gateway Responses API (not Messages)
-  compare: claude-kr-gpt-5.6-luna[1M]  # smaller vision call that picks before/after images
+  compare: claude-gpt-6.1-sol[1M]  # same model visually checks every candidate picture
 
 # Version notes from the stores: catches design changes nobody announces. A new version whose notes
 # mention design words (redesign, new look, layout...) goes to the model like a news item.

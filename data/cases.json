@@ -1,7 +1,100 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T10:11:56.778Z",
+  "updated_at": "2026-11-09T00:19:37.199Z",
   "weeks": [
+    {
+      "week": "2026-11-09",
+      "from": "2026-10-26T00:19:37.199Z",
+      "to": "2026-11-09T00:19:37.199Z",
+      "checked": 121,
+      "picks": [
+        {
+          "id": "how-mlb-built-a-five-typeface-identity-for-stadiums-apps-and",
+          "title": "How MLB built a five-typeface identity for stadiums, apps and social channels",
+          "post_title": "Major League Baseball’s new look pays homage to the sport’s history",
+          "url": "https://fastcompany.com/91632355/major-league-baseballs-new-look-pays-homage-to-the-sports-history",
+          "source": "Fast Company Design",
+          "domain": "fastcompany.com",
+          "company": "MLB",
+          "by": "Mother Design with five type designers and foundries",
+          "maker": "agency",
+          "area": "brand",
+          "published_at": "2026-11-03T03:30:00.000Z",
+          "problem": "MLB wanted a unified visual identity that could help it expand baseball’s fandom and talent. Its historic lettering needed to work on smartphone screens and in small spaces as well as at stadium scale.",
+          "approach": "Mother Design kept the silhouetted batter logo and updated the wordmark within a broader brand architecture. It commissioned five typefaces based on styles present in early-20th-century baseball, choosing specialists for each. The designs included a script with underline flags, a warm handlettering style honoring baseball’s Latin American connections, and adaptations of historic scoreboard and slab-serif lettering.",
+          "outcome": "Introduced progressively from 2024 and now complete, the identity appears across the Ballpark app, venues, social channels and special events, with MLB Franklin visible on recent World Series scoreboards.",
+          "lesson": "Adapt heritage lettering to real screen sizes rather than simply reproducing its old appearance.",
+          "score": 8,
+          "minutes": 3,
+          "image": "https://images.fastcompany.com/image/upload/w_1280,q_auto,f_auto,fl_lossy/f_webp,q_auto,c_fit/wp-cms-2/2026/11/07-91632355-mlb.jpg",
+          "icon": "https://www.google.com/s2/favicons?domain=mlb.com&sz=64",
+          "zh": {
+            "title": "MLB 如何用五款字体构建覆盖球场、应用和社交渠道的品牌识别",
+            "problem": "MLB 希望统一视觉识别，帮助棒球吸引更多球迷和人才。历史悠久的棒球字体既要适用于手机屏幕和狭小空间，也要适用于球场中的大型展示。",
+            "approach": "Mother Design 保留了击球手剪影标志，并在更完整的品牌架构中更新了文字标志。工作室以 20 世纪初棒球中出现过的字体风格为基础，委托不同领域的专家制作五款字体。其中包括带有下划线旗形延伸的手写体、体现棒球与拉丁美洲文化联系的温暖手绘字体，以及对历史记分牌字体和粗衬线字体的改造。",
+            "outcome": "这套识别系统从 2024 年起逐步推出，目前已完成，应用于 Ballpark 应用、球场、社交渠道和特别活动；MLB Franklin 也出现在近期 World Series 的记分牌上。",
+            "lesson": "让历史字体适应真实的屏幕尺寸，而不只是复刻旧有外观。"
+          }
+        },
+        {
+          "id": "how-nubank-rebuilt-its-global-brand-system-while-keeping-its",
+          "title": "How Nubank rebuilt its global brand system while keeping its logo and wordmark",
+          "post_title": "Nubank unveils global brand refresh by Koto ahead of US launch",
+          "url": "https://designweek.co.uk/nubank-unveils-global-brand-refresh-by-koto-ahead-of-us-launch",
+          "source": "Design Week",
+          "domain": "designweek.co.uk",
+          "company": "Nubank",
+          "by": "Koto with Nubank’s in-house team",
+          "maker": "agency",
+          "area": "brand",
+          "published_at": "2026-11-03T06:00:24.000Z",
+          "problem": "International growth meant Nubank needed one brand system to accommodate different markets, products and sub-brands. Those expressions needed their own personalities while remaining recognizably Nu.",
+          "approach": "Koto and Nubank’s in-house team retained the logo and wordmark, refined the signature purple, and expanded the palette to support sub-brands including Ultravioleta and Croma. Two proprietary typefaces addressed legibility across markets, products and channels. Koto also created a global photography library and hand-painted illustrations animated in Rive for the app, developed the voice for conversational UI and the private AI banker, and redesigned nu.com as a responsive global platform.",
+          "outcome": "The refreshed identity debuted at Nubank’s US launch event in Miami, with a global photography library of more than 50 photos and films and an illustration library designed to integrate into the app.",
+          "lesson": "Keep recognizable brand assets and build flexibility around them as products and markets multiply.",
+          "score": 8,
+          "minutes": 2,
+          "image": "https://d3faj0w6aqatyx.cloudfront.net/uploads/2026/11/Nubank_PR_30_Man.jpg",
+          "icon": "https://www.google.com/s2/favicons?domain=nubank.com.br&sz=64",
+          "zh": {
+            "title": "Nubank 如何保留标志与文字标志，重建全球品牌系统",
+            "problem": "国际业务增长要求 Nubank 用一套品牌系统容纳不同市场、产品和子品牌。这些表达既要保有各自的个性，也要让人一眼认出 Nu。",
+            "approach": "Koto 与 Nubank 内部团队保留了标志和文字标志，调整标志性的紫色，并扩展色板以支持 Ultravioleta 和 Croma 等子品牌。两款专属字体用于满足不同市场、产品和渠道的可读性需求。Koto 还建立了全球摄影素材库，制作可通过 Rive 动画直接融入应用的手绘插画，制定对话式界面和私人 AI 银行助理的语言风格，并将 nu.com 重新设计为响应式全球网站。",
+            "outcome": "新品牌识别在迈阿密的 Nubank 美国业务发布活动上首次亮相，配套的全球摄影素材库包含超过 50 张照片及影片，插画库则面向应用内使用。",
+            "lesson": "保留用户熟悉的品牌资产，再围绕它们建立适应更多产品和市场的灵活系统。"
+          }
+        },
+        {
+          "id": "how-trustpilot-turned-its-rating-star-into-a-visual-system-f",
+          "title": "How Trustpilot turned its rating star into a visual system for customer reviews",
+          "post_title": "Trustpilot reveals new brand identity by Further",
+          "url": "https://designweek.co.uk/trustpilot-reveals-new-brand-identity-by-further",
+          "source": "Design Week",
+          "domain": "designweek.co.uk",
+          "company": "Trustpilot",
+          "by": "Further",
+          "maker": "agency",
+          "area": "brand",
+          "published_at": "2026-10-30T06:00:07.000Z",
+          "problem": "Trustpilot wanted its identity to represent the individual customer experiences behind its ratings, rather than rely on a static quality badge. It needed a more expressive system without overwhelming review interfaces.",
+          "approach": "Further broke the familiar five-point star into modular shapes, framing devices and motion behaviors, using its angles to structure review content on desktop and embedded merchant widgets. Graphic signal devices highlighted standout quotes and verified details through color and geometric framing. The studio paired candid photography with Trustpilot Sans, a bespoke typeface serving both dense mobile review feeds and display headlines, and introduced conversational site copy.",
+          "outcome": "Trustpilot unveiled the refreshed identity with a star-derived visual system, bespoke typography and updated verbal identity and site copy.",
+          "lesson": "Use a familiar brand symbol to organize content, not just mark ownership.",
+          "score": 7,
+          "minutes": 2,
+          "image": "https://d3faj0w6aqatyx.cloudfront.net/uploads/2026/10/signal-of-trust-1793103255909.jpg",
+          "icon": "https://www.google.com/s2/favicons?domain=trustpilot.com&sz=64",
+          "zh": {
+            "title": "Trustpilot 如何把评分星形变成呈现用户评价的视觉系统",
+            "problem": "Trustpilot 希望品牌识别能呈现评分背后的个人消费经历，而不只是依赖一个静态的质量徽章。新系统需要更有表现力，同时不能干扰评价界面的使用。",
+            "approach": "Further 将熟悉的五角星拆解为模块化形状、框架元素和动态行为，并用星形的角度组织桌面端及商家嵌入式组件中的评价内容。图形提示元素通过色彩和几何框架突出重点引文及已验证信息。工作室将纪实感的生活摄影与专属字体 Trustpilot Sans 配合使用，让字体同时适用于信息密集的移动端评价列表和展示标题，并引入更口语化的网站文案。",
+            "outcome": "Trustpilot 发布了更新后的品牌识别，包括源于星形的视觉系统、专属字体，以及新的语言风格和网站文案。",
+            "lesson": "让熟悉的品牌符号参与内容组织，而不只是标示归属。"
+          }
+        }
+      ],
+      "collected_at": "2026-11-09T00:19:37.199Z"
+    },
     {
       "week": "2026-11-02",
       "from": "2026-10-20T10:11:56.778Z",

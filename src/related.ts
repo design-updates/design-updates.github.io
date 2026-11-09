@@ -229,7 +229,13 @@ export async function pickPictures(opts: {
   pool: PoolEntry[];
   getMeta: (url: string) => Promise<PageMeta | null>;
   llm: Llm | null;
-  releaseShots: Map<string, { before: string | null; after: string | null; beforeVersion: string | null }>;
+  releaseShots: Map<string, {
+    screenshot: string | null;
+    screenshots?: string[];
+    previousScreenshot: string | null;
+    previousScreenshots?: string[];
+    previousVersion: string | null;
+  }>;
   /** Unset when finishing offline: no searching, and pictures are not checked to load. */
   fetchImpl?: typeof fetch;
 }): Promise<CompareResult> {

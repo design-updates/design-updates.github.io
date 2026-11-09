@@ -16,7 +16,10 @@
       "version": "26.45",
       "date": "2026-11-05T14:51:35.000Z",
       "notes": "Now you can book homes, experiences, and services—all in one app. Our redesigned app includes personalized recommendations of unique places to stay, unforgettable things to do, and incredible services at a range of prices. Plus, get a day-by-day view of your trips, new messaging features, and a revamped profile that shows who you are, where you’ve been, and who you’ve met along the way. And if you’re hosting, you’ll find useful new tools that make it easier to list your home, experience or service, as well as manage your reservations, scheduling, and more.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/a6/64/44a664df-d808-cc9b-0a4d-95e866530de8/250509_AppStore_Mobile_Airbnb_Carousel_01_en-US.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/a6/64/44a664df-d808-cc9b-0a4d-95e866530de8/250509_AppStore_Mobile_Airbnb_Carousel_01_en-US.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/a6/64/44a664df-d808-cc9b-0a4d-95e866530de8/250509_AppStore_Mobile_Airbnb_Carousel_01_en-US.jpg/1920x1920bb.jpg"
+      ]
     },
     "Agoda": {
       "version": "14.41.0",

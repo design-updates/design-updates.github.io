@@ -280,10 +280,22 @@ export async function collect(opts: CollectOptions): Promise<Report> {
     const post = await postCheck(cfg, result.items, now, getMeta);
     // Before/after: App Store screenshots for version-note items, article pictures for the rest.
     const byUrl = new Map(snap.candidates.map((c) => [c.url, c]));
-    const releaseShots = new Map<string, { before: string | null; after: string | null; beforeVersion: string | null }>();
+    const releaseShots = new Map<string, {
+      screenshot: string | null;
+      screenshots?: string[];
+      previousScreenshot: string | null;
+      previousScreenshots?: string[];
+      previousVersion: string | null;
+    }>();
     for (const item of post.items) {
       const rel = item.sources.map((s) => byUrl.get(s.url)?.release).find(Boolean);
-      if (rel) releaseShots.set(item.id, { before: rel.previousScreenshot ?? null, after: rel.screenshot ?? null, beforeVersion: rel.previousVersion ?? null });
+      if (rel) releaseShots.set(item.id, {
+        screenshot: rel.screenshot ?? null,
+        screenshots: rel.screenshots,
+        previousScreenshot: rel.previousScreenshot ?? null,
+        previousScreenshots: rel.previousScreenshots,
+        previousVersion: rel.previousVersion ?? null,
+      });
     }
     // The picture can come from another site's article about the same change (then listed as a source), or, failing
     // that, from the store. Offline (finishing from saved sources) nothing is searched or checked.

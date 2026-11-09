@@ -49,7 +49,13 @@ export interface Candidate {
   /** From a design or branding publication: kept without a watchlist match, the model names the brand. */
   design?: boolean;
   /** From the App Store or Google Play version notes. */
-  release?: Release & { screenshot?: string | null; previousScreenshot?: string | null; previousVersion?: string | null };
+  release?: Release & {
+    screenshot?: string | null;
+    screenshots?: string[];
+    previousScreenshot?: string | null;
+    previousScreenshots?: string[];
+    previousVersion?: string | null;
+  };
 }
 
 export interface Dropped {

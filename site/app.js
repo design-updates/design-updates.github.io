@@ -639,8 +639,8 @@ function renderToday(day) {
 const filter = { cat: 'all', kind: null, unread: false };
 
 /** A small thumbnail that opens its full image in the centred viewer, never the source article. */
-function smallImageButton(pictures, title, body, cls = '') {
-  return `<button class="row-thumb notch image-open${cls}" type="button" aria-label="${esc(t().imageViewer)}: ${esc(title)}" data-images="${esc(JSON.stringify(pictures))}" data-image-title="${esc(title)}">${body}</button>`;
+function smallImageButton(pictures, title, body, cls = '', singleLabel = '') {
+  return `<button class="row-thumb notch image-open${cls}" type="button" aria-label="${esc(t().imageViewer)}: ${esc(title)}" data-images="${esc(JSON.stringify(pictures))}" data-image-title="${esc(title)}"${singleLabel ? ` data-image-label="${esc(singleLabel)}"` : ''}>${body}</button>`;
 }
 
 function rowHtml(item) {
@@ -653,7 +653,7 @@ function rowHtml(item) {
   const thumb = c?.after && c.before && !c.combined
     ? smallImageButton([c.before, c.after], title, `<img src="${esc(c.before)}" alt="" loading="lazy" referrerpolicy="no-referrer"><img src="${esc(c.after)}" alt="" loading="lazy" referrerpolicy="no-referrer">`, ' split')
     : c?.after
-      ? smallImageButton([c.after], title, `<img src="${esc(c.after)}" alt="" loading="lazy" referrerpolicy="no-referrer">`)
+      ? smallImageButton([c.after], title, `<img src="${esc(c.after)}" alt="" loading="lazy" referrerpolicy="no-referrer">`, '', c.combined ? t().beforeAfter : t().after)
       : item.image
         ? smallImageButton([item.image], title, `<img src="${esc(item.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`, reduced ? '' : ' pending')
         : '';
@@ -1645,7 +1645,8 @@ function openImageViewer(button) {
   if (!pictures.length) return;
   $('#image-title').textContent = button.dataset.imageTitle || t().imageViewer;
   $('#image-view').classList.toggle('split', pictures.length > 1);
-  $('#image-view').innerHTML = pictures.map((src, i) => `<figure><img src="${esc(src)}" alt=""><figcaption>${pictures.length > 1 ? (i ? t().after : t().before) : ''}</figcaption></figure>`).join('');
+  const singleLabel = button.dataset.imageLabel || '';
+  $('#image-view').innerHTML = pictures.map((src, i) => `<figure><img src="${esc(src)}" alt=""><figcaption>${pictures.length > 1 ? (i ? t().after : t().before) : esc(singleLabel)}</figcaption></figure>`).join('');
   $('#image-close').textContent = t().close;
   if (!dlg.open) dlg.showModal?.() ?? dlg.setAttribute('open', '');
 }

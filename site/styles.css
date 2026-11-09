@@ -1142,6 +1142,19 @@ button {
   margin-bottom: 8px;
   background: linear-gradient(var(--ink) 0 0) bottom / 100% 3px no-repeat;
 }
+/* Keep the News archive heading and filters available after the reader reaches them. The masthead scrolls away,
+   so the sticky row belongs at the top of the viewport; weekly page headings keep their normal flow. */
+@media (min-width: 641px) {
+  .archive.news-only > .archive-head {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    padding-top: 12px;
+    background-color: color-mix(in srgb, var(--paper) 96%, transparent);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+}
 /* Section heads: a solid black label. */
 .section-title {
   display: inline-block;

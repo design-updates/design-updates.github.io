@@ -221,3 +221,10 @@ test('small news images are viewer buttons; source links stay on headlines', () 
   assert.match(css, /\.row-thumb img[\s\S]*object-fit: contain/);
   assert.match(css, /\.image-view img[\s\S]*object-fit: contain/);
 });
+
+test('the News Earlier heading and filters stick on desktop only', () => {
+  const css = readFileSync('site/styles.css', 'utf8');
+  assert.match(css, /@media \(min-width: 641px\)[\s\S]*\.archive\.news-only > \.archive-head[\s\S]*position: sticky[\s\S]*top: 0/);
+  assert.doesNotMatch(css, /\.cases[^}]*> \.archive-head[^}]*position: sticky/);
+  assert.doesNotMatch(css, /\.workflows[^}]*> \.archive-head[^}]*position: sticky/);
+});

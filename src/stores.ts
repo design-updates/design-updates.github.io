@@ -13,7 +13,10 @@ export interface StoreVersion {
   version: string;
   date: string | null;
   notes: string;
+  /** Highest-resolution form of the first screenshot, kept for old state readers. */
   screenshot: string | null;
+  /** All screenshots returned by the store, in their highest-resolution URL form. */
+  screenshots?: string[];
 }
 
 export interface StoreState {
@@ -37,6 +40,12 @@ export function notesMentionDesign(notes: string): boolean {
 
 type Lookup = { results?: { trackId: number; version?: string; currentVersionReleaseDate?: string; releaseNotes?: string; screenshotUrls?: string[] }[] };
 
+/** Apple's lookup API returns small rendition URLs such as /320x480bb.jpg. Keep the same verified asset but ask
+    Apple's image server for the largest useful rendition, so opening it in the viewer does not enlarge a thumbnail. */
+export function fullSizeAppStoreScreenshot(url: string): string {
+  return url.replace(/\/\d+x\d+bb\.(jpe?g|png|webp)(?=([?#]|$))/i, '/1920x1920bb.$1');
+}
+
 /** One lookup per store country: most apps are in the default store, a few only in their home country's. */
 export async function readAppStore(apps: App[], country: string, fetchImpl: typeof fetch): Promise<Map<string, StoreVersion>> {
   const out = new Map<string, StoreVersion>();
@@ -52,11 +61,13 @@ export async function readAppStore(apps: App[], country: string, fetchImpl: type
     for (const r of data.results ?? []) {
       const app = list.find((a) => a.appstoreId === r.trackId);
       if (!app || !r.version) continue;
+      const screenshots = (r.screenshotUrls ?? []).map(fullSizeAppStoreScreenshot);
       out.set(app.name, {
         version: r.version,
         date: parseDate(r.currentVersionReleaseDate)?.toISOString() ?? null,
         notes: truncate((r.releaseNotes ?? '').replace(/\s+/g, ' '), 1200),
-        screenshot: r.screenshotUrls?.[0] ?? null,
+        screenshot: screenshots[0] ?? null,
+        screenshots,
       });
     }
   }
@@ -125,7 +136,15 @@ function toCandidate(app: App, store: 'app-store' | 'google-play', v: StoreVersi
     via: 'feed',
     trust: 'company',
     app: app.name,
-    release: { store, version: v.version, screenshot: v.screenshot, previousScreenshot: previous?.screenshot ?? null, previousVersion: previous?.version ?? null },
+    release: {
+      store,
+      version: v.version,
+      screenshot: v.screenshot,
+      screenshots: v.screenshots,
+      previousScreenshot: previous?.screenshot ?? null,
+      previousScreenshots: previous?.screenshots,
+      previousVersion: previous?.version ?? null,
+    },
   };
 }
 

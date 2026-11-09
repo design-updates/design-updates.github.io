@@ -478,7 +478,8 @@ trust:
 });
 
 test('store version notes: only new versions inside the window whose notes mention design go to the model', async () => {
-  const { checkStores, notesMentionDesign, parsePlayPage } = await import('../src/stores.ts');
+  const { checkStores, fullSizeAppStoreScreenshot, notesMentionDesign, parsePlayPage } = await import('../src/stores.ts');
+  assert.equal(fullSizeAppStoreScreenshot('https://is1.mzstatic.com/a.jpg/320x480bb.jpg'), 'https://is1.mzstatic.com/a.jpg/1920x1920bb.jpg');
   assert.equal(notesMentionDesign('Bug fixes and performance improvements.'), false);
   assert.equal(notesMentionDesign('We update the app regularly to make the experience better. Thanks for using WhatsApp.'), false);
   assert.equal(notesMentionDesign('Now you can book homes, experiences, and services, all in one app. Our redesigned app includes a new Services tab.'), true);
@@ -506,7 +507,7 @@ stores:
   const fetchImpl = (async () =>
     Response.json({
       results: [
-        { trackId: 401626263, version: '26.44', currentVersionReleaseDate: fresh, releaseNotes: 'Our redesigned app has a new Services tab.', screenshotUrls: ['https://is1.mzstatic.com/new.jpg'] },
+        { trackId: 401626263, version: '26.44', currentVersionReleaseDate: fresh, releaseNotes: 'Our redesigned app has a new Services tab.', screenshotUrls: ['https://is1.mzstatic.com/new.jpg/320x480bb.jpg', 'https://is1.mzstatic.com/new-tab.jpg/640x960bb.jpg'] },
         { trackId: 427916203, version: '2026.43', currentVersionReleaseDate: fresh, releaseNotes: 'Bug fixes and performance improvements.', screenshotUrls: ['https://is1.mzstatic.com/e.jpg'] },
       ],
     })) as unknown as typeof fetch;
@@ -516,7 +517,16 @@ stores:
   const [c] = r.candidates;
   assert.equal(c.app, 'Airbnb');
   assert.equal(c.url, 'https://apps.apple.com/us/app/id401626263?version=26.44');
-  assert.deepEqual(c.release, { store: 'app-store', version: '26.44', screenshot: 'https://is1.mzstatic.com/new.jpg', previousScreenshot: 'https://is1.mzstatic.com/old.jpg', previousVersion: '26.40' });
+  assert.deepEqual(c.release, {
+    store: 'app-store',
+    version: '26.44',
+    screenshot: 'https://is1.mzstatic.com/new.jpg/1920x1920bb.jpg',
+    screenshots: ['https://is1.mzstatic.com/new.jpg/1920x1920bb.jpg', 'https://is1.mzstatic.com/new-tab.jpg/1920x1920bb.jpg'],
+    previousScreenshot: 'https://is1.mzstatic.com/old.jpg',
+    previousScreenshots: undefined,
+    previousVersion: '26.40',
+  });
+  assert.deepEqual(r.latest.appStore.Airbnb.screenshots, ['https://is1.mzstatic.com/new.jpg/1920x1920bb.jpg', 'https://is1.mzstatic.com/new-tab.jpg/1920x1920bb.jpg']);
   assert.deepEqual(r.skipped, [{ app: 'Expedia', store: 'app-store', version: '2026.43', reason: 'notes mention no design change' }]);
   assert.equal(r.latest.appStore.Airbnb.version, '26.44', 'remembered for next time');
 
@@ -525,7 +535,14 @@ stores:
 });
 
 test('pictures: the model looks at the article pictures and picks the one that shows the change; captions are the fallback', async () => {
-  const { pairFromWords, addCompares, candidatePictures } = await import('../src/compare.ts');
+  const { pairFromWords, addCompares, candidatePictures, imageDimensions, usefulImageSize } = await import('../src/compare.ts');
+  const png = Buffer.alloc(5000);
+  png.write('\x89PNG\r\n\x1a\n', 0, 'latin1');
+  png.writeUInt32BE(221, 16);
+  png.writeUInt32BE(480, 20);
+  assert.deepEqual(imageDimensions(png, 'image/png'), { width: 221, height: 480 });
+  assert.equal(usefulImageSize({ width: 221, height: 480 }), false, 'a phone screenshot thumbnail is too small for the enlarged viewer');
+  assert.equal(usefulImageSize({ width: 886, height: 1920 }), true);
   const img = (src: string, alt = '', caption = '') => ({ src, alt, caption });
   assert.deepEqual(pairFromWords([img('https://x/hero.jpg', 'Team photo'), img('https://x/a.png', 'The previous Mastercard logo'), img('https://x/b.png', '', 'The new wordmark')]), { before: 'https://x/a.png', after: 'https://x/b.png', from: 'article' });
   assert.deepEqual(pairFromWords([img('https://x/c.png', '', 'Before and after: the app icon')]), { before: null, after: 'https://x/c.png', combined: true, from: 'article' });
@@ -571,7 +588,13 @@ test('pictures: the model looks at the article pictures and picks the one that s
   };
   const fetchImpl = (async (input: string | URL | Request) =>
     /gone/.test(String(input)) ? new Response('no', { status: 404 }) : new Response(new Uint8Array(6000), { headers: { 'content-type': 'image/jpeg' } })) as typeof fetch;
-  const shots = new Map([['airbnb-v', { before: 'https://is1/old.jpg', after: 'https://is1/new.jpg', beforeVersion: '26.40' }]]);
+  const shots = new Map([['airbnb-v', {
+    screenshot: 'https://is1/new.jpg',
+    screenshots: ['https://is1/new.jpg'],
+    previousScreenshot: 'https://is1/old.jpg',
+    previousScreenshots: ['https://is1/old.jpg'],
+    previousVersion: '26.40',
+  }]]);
   const r = await addCompares(CFG, items, async (item) => pictures[item.id] ?? [], llm, shots, fetchImpl);
   const by = Object.fromEntries(r.items.map((i) => [i.id, i]));
 

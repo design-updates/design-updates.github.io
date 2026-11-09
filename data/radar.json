@@ -137,7 +137,7 @@
             "store": "app-store",
             "version": "26.45"
           },
-          "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/a6/64/44a664df-d808-cc9b-0a4d-95e866530de8/250509_AppStore_Mobile_Airbnb_Carousel_01_en-US.jpg/320x480bb.jpg",
+          "image": "assets/verified/airbnb-redesigned-app.jpg",
           "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ad/ff/29/adff29b3-b964-bf50-25ad-c29f07ad55f1/AppIcon-0-0-1x_U007epad-0-1-0-0-0-85-220.png/128x128bb.png",
           "collected_at": "2026-11-07T08:00:04.954Z",
           "zh": {
@@ -273,7 +273,7 @@
             }
           ],
           "release": null,
-          "image": "assets/verified/spotify-pins.jpg",
+          "image": null,
           "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8b/f2/6a/8bf26ab9-3ced-cb5c-a2b3-19f65e7f5cc6/AppIcon-0-0-1x_U007epad-0-1-0-0-85-220.png/128x128bb.png",
           "collected_at": "2026-11-07T08:00:04.954Z",
           "zh": {
@@ -281,7 +281,12 @@
             "what": "Spotify 正在移动端 Your Library 中测试独立的 Pins 轮播区。新的内容架将置顶内容与其余收藏内容分开，不再全部混在同一列表中。",
             "why": "置顶内容架可让高频旅行者快速进入当前行程，同时将历史订单保留在下方供搜索。关键是清楚区分置顶、即将开始和已归档的内容。"
           },
-          "compare": null
+          "compare": {
+            "before": null,
+            "after": "assets/verified/spotify-pins-before-after.webp",
+            "combined": true,
+            "from": "article"
+          }
         },
         {
           "id": "whatsapp-android-chat-previews",
@@ -644,18 +649,13 @@
               "publisher": "AppleInsider"
             },
             {
-              "title": "Google Maps update makes the app fully iPhone Duo compatible",
-              "url": "https://gsmarena.com/google_maps_update_makes_the_app_fully_iphone_duo_compatible-news-75349.php",
-              "publisher": "GSMArena"
-            },
-            {
-              "title": "Google Maps update adds full support for iPhone Duo",
-              "url": "https://kalingatv.com/technology/google-maps-update-adds-full-support-for-iphone-duo",
-              "publisher": "Kalinga TV"
+              "title": "Google Maps Updated to Fully Support iPhone Duo Displays",
+              "url": "https://www.macrumors.com/2026/11/04/latest-google-maps-update-iphone-duo-support/",
+              "publisher": "MacRumors"
             }
           ],
           "release": null,
-          "image": "https://kalingatv.com/wp-content/uploads/2026/11/google-mpas-for-iphone-duo.jpg",
+          "image": "assets/verified/google-maps-iphone-duo.jpg",
           "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/58/d3/ee/58d3eefe-ff6a-2309-faa8-b5043082bbb1/maps_2025-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-85-220.png/128x128bb.png",
           "collected_at": "2026-11-05T04:10:23.374Z",
           "zh": {

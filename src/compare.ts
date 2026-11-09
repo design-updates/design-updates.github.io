@@ -56,7 +56,7 @@ export function newOnly(images: PageImage[]): string | null {
 
 const PICK_SYSTEM = `You choose the picture for one story on a design news page for a product designer. You see the story's headline and what changed, then the pictures from its source articles, numbered.
 
-Pick the picture that shows THE CHANGE ITSELF: the new screens, the new icons, the new logo or the new layout. Prefer a picture that shows the whole change (a grid of all the new icons, the full new screen) over one that shows only part of it or only the brand's usual logo. A photo of people, an office, a device box, an event or an unrelated product is never the answer. A thumbnail of another article is never the answer.
+Pick the picture that shows THE CHANGE ITSELF: the new screens, the new icons, the new logo or the new layout. Prefer a true before/after (one combined picture or a matched pair) over a new-only image when both clearly show the same reported change. Then prefer the clearest, highest-resolution picture that shows the whole change (a grid of all the new icons, the full new screen) over one that shows only part of it or only the brand's usual logo. The dimensions in brackets are source pixels; do not choose a smaller derivative when a larger exact picture is available. A photo of people, an office, a device box, an event or an unrelated product is never the answer. A thumbnail of another article is never the answer.
 
 Also say whether the pictures show the old design next to the new one:
 - "combined": the number of ONE picture that itself shows old and new together (side by side, before/after), else null.
@@ -129,28 +129,77 @@ export function candidatePictures(perSource: PageImage[][], current: string | nu
 
 const IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
 
+export interface ImageDimensions {
+  width: number;
+  height: number;
+}
+
+/** Reads the intrinsic size from common web image headers without decoding or adding an image dependency. */
+export function imageDimensions(buf: Buffer, type: string): ImageDimensions | null {
+  if (type === 'image/png' && buf.length >= 24 && buf.toString('ascii', 1, 4) === 'PNG') {
+    return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
+  }
+  if (type === 'image/gif' && buf.length >= 10) return { width: buf.readUInt16LE(6), height: buf.readUInt16LE(8) };
+  if (type === 'image/webp' && buf.length >= 30 && buf.toString('ascii', 0, 4) === 'RIFF' && buf.toString('ascii', 8, 12) === 'WEBP') {
+    const kind = buf.toString('ascii', 12, 16);
+    if (kind === 'VP8X') return { width: 1 + buf.readUIntLE(24, 3), height: 1 + buf.readUIntLE(27, 3) };
+    if (kind === 'VP8 ' && buf.length >= 30 && buf[23] === 0x9d && buf[24] === 0x01 && buf[25] === 0x2a) {
+      return { width: buf.readUInt16LE(26) & 0x3fff, height: buf.readUInt16LE(28) & 0x3fff };
+    }
+    if (kind === 'VP8L' && buf.length >= 25 && buf[20] === 0x2f) {
+      const bits = buf.readUInt32LE(21);
+      return { width: (bits & 0x3fff) + 1, height: ((bits >>> 14) & 0x3fff) + 1 };
+    }
+  }
+  if (type === 'image/jpeg' && buf.length >= 4 && buf[0] === 0xff && buf[1] === 0xd8) {
+    let at = 2;
+    while (at + 9 < buf.length) {
+      if (buf[at] !== 0xff) { at++; continue; }
+      const marker = buf[at + 1];
+      if (marker === 0xd9 || marker === 0xda) break;
+      if (marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) { at += 2; continue; }
+      const length = buf.readUInt16BE(at + 2);
+      if (length < 2 || at + 2 + length > buf.length) break;
+      if ([0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf].includes(marker)) {
+        return { width: buf.readUInt16BE(at + 7), height: buf.readUInt16BE(at + 5) };
+      }
+      at += 2 + length;
+    }
+  }
+  return null;
+}
+
+/** Images below this size visibly blur in the enlarged viewer. Unknown formats remain eligible for the visual check. */
+export function usefulImageSize(size: ImageDimensions | null): boolean {
+  return !size || (Math.min(size.width, size.height) >= 300 && size.width * size.height >= 300_000);
+}
+
 /** Downloads a picture for the model. Null if it is not a picture, too small to matter, or too big to send. */
-async function download(src: string, fetchImpl: typeof fetch): Promise<{ type: string; data: string } | null> {
+async function download(src: string, fetchImpl: typeof fetch): Promise<{ type: string; data: string; size: ImageDimensions | null } | null> {
   try {
     const res = await fetchImpl(src, { headers: { 'user-agent': 'Mozilla/5.0' }, signal: AbortSignal.timeout(15_000) });
     const type = (res.headers.get('content-type') ?? '').split(';')[0].trim().toLowerCase();
     if (!res.ok || !IMAGE_TYPES.includes(type)) return null;
     const buf = Buffer.from(await res.arrayBuffer());
-    if (buf.length < 4_000 || buf.length > 3_500_000) return null;
-    return { type, data: buf.toString('base64') };
+    const size = imageDimensions(buf, type);
+    if (buf.length < 4_000 || buf.length > 3_500_000 || !usefulImageSize(size)) return null;
+    return { type, data: buf.toString('base64'), size };
   } catch {
     return null;
   }
 }
 
-/** Does the picture load for someone opening the page? Some sites refuse pictures shown on other sites
-    (AppleInsider answers 403), and a card with a broken picture is worse than one with the app icon. */
+/** Does the picture load and contain enough source pixels for both the card and enlarged viewer? */
 async function loads(src: string, fetchImpl: typeof fetch): Promise<boolean> {
   try {
     const res = await fetchImpl(src, { headers: { 'user-agent': 'Mozilla/5.0' }, signal: AbortSignal.timeout(12_000) });
     const type = (res.headers.get('content-type') ?? '').split(';')[0].trim().toLowerCase();
-    await res.body?.cancel();
-    return res.ok && type.startsWith('image/');
+    if (!res.ok || !IMAGE_TYPES.includes(type)) {
+      await res.body?.cancel();
+      return false;
+    }
+    const buf = Buffer.from(await res.arrayBuffer());
+    return buf.length >= 4_000 && usefulImageSize(imageDimensions(buf, type));
   } catch {
     return false;
   }
@@ -171,7 +220,13 @@ export async function addCompares(
   items: Item[],
   imagesFor: (item: Item) => Promise<PageImage[][]>,
   llm: Llm | null,
-  releaseShots: Map<string, { before: string | null; after: string | null; beforeVersion: string | null }>,
+  releaseShots: Map<string, {
+    screenshot: string | null;
+    screenshots?: string[];
+    previousScreenshot: string | null;
+    previousScreenshots?: string[];
+    previousVersion: string | null;
+  }>,
   /** Also used to check that each picture loads; without it, pictures are not checked (tests). */
   fetchImpl?: typeof fetch,
 ): Promise<CompareResult> {
@@ -192,8 +247,10 @@ export async function addCompares(
     const shots = releaseShots.get(item.id);
     if (shots) {
       const store: PageImage[] = [];
-      if (shots.before) store.push({ src: shots.before, alt: `App Store screenshot from version ${shots.beforeVersion ?? 'before'}`, caption: '' });
-      if (shots.after) store.push({ src: shots.after, alt: `App Store screenshot from version ${item.release?.version ?? 'current'}`, caption: '' });
+      const before = shots.previousScreenshots?.length ? shots.previousScreenshots : [shots.previousScreenshot].filter((s): s is string => !!s);
+      const after = shots.screenshots?.length ? shots.screenshots : [shots.screenshot].filter((s): s is string => !!s);
+      before.forEach((src, n) => store.push({ src, alt: `App Store screenshot ${n + 1} from version ${shots.previousVersion ?? 'before'}`, caption: '' }));
+      after.forEach((src, n) => store.push({ src, alt: `App Store screenshot ${n + 1} from version ${item.release?.version ?? 'current'}`, caption: '' }));
       if (store.length) perSource.push(store);
     }
     let images = candidatePictures(perSource, item.image, item.published_at);
@@ -235,7 +292,7 @@ export async function addCompares(
         seen.forEach((g, n) => {
           const file = g.img.src.split('/').pop()?.split('?')[0] ?? '';
           const words = [g.img.alt, g.img.caption, file].filter(Boolean).join(' / ');
-          content.push({ type: 'text', text: `Picture ${n}${words ? ` (${words.slice(0, 160)})` : ''}:` });
+          content.push({ type: 'text', text: `Picture ${n}${words ? ` (${words.slice(0, 160)})` : ''}${g.file!.size ? ` [${g.file!.size.width}x${g.file!.size.height}]` : ''}:` });
           content.push({ type: 'image', source: { type: 'base64', media_type: g.file!.type, data: g.file!.data } });
         });
         try {

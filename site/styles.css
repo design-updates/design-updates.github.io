@@ -862,7 +862,7 @@ button {
   background: var(--ink);
 }
 .row-thumb.split img {
-  object-fit: cover;
+  object-fit: contain;
   min-width: 0;
 }
 
@@ -1385,7 +1385,7 @@ button {
 .row-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 /* Lines up with the headline: 12px dot + 24px icon + two 14px gaps. */
@@ -2527,8 +2527,8 @@ html:lang(zh-CN) .snake-hint span {
 
 /* ---------- small-card image viewer ---------- */
 
-/* Only archive-row thumbnails are buttons. They crop tightly so the 112×84 preview has no letterbox bars; the
-   full image appears uncropped in the dialog. */
+/* Only small-row thumbnails are buttons. Both the 112×84 preview and the centred viewer show the complete image;
+   letterbox space is intentional when the image has another shape. */
 button.row-thumb {
   padding: 0;
   border: 0;
@@ -2591,6 +2591,7 @@ button.row-thumb:hover {
   display: grid;
   place-items: center;
   min-width: 0;
+  min-height: 0;
   height: 100%;
   margin: 0;
   overflow: hidden;
@@ -2599,7 +2600,10 @@ button.row-thumb:hover {
   display: block;
   width: 100%;
   height: 100%;
+  min-width: 0;
+  min-height: 0;
   object-fit: contain;
+  object-position: center;
 }
 .image-view figcaption {
   position: absolute;

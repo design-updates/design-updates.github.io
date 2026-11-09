@@ -218,6 +218,6 @@ test('small news images are viewer buttons; source links stay on headlines', () 
   assert.match(app, /openImageViewer/);
   const css = readFileSync('site/styles.css', 'utf8');
   assert.match(css, /button\.row-thumb[\s\S]*cursor: zoom-in/);
-  assert.match(css, /\.row-thumb img[\s\S]*object-fit: cover/);
+  assert.match(css, /\.row-thumb img[\s\S]*object-fit: contain/);
   assert.match(css, /\.image-view img[\s\S]*object-fit: contain/);
 });

@@ -945,15 +945,15 @@ function placeholderOnError(img) {
 
 function wireImages() {
   for (const img of document.querySelectorAll('.media img, .row-thumb img')) placeholderOnError(img);
-  // Large cards may contain a tall phone screenshot; show that whole. Small row thumbnails always crop to fill,
-  // and clicking them opens the uncropped image in the viewer.
+  // Large cards may contain a tall phone screenshot; show that whole. Small row thumbnails always fit the complete
+  // image too, and clicking them opens the same uncropped image in the viewer.
   for (const img of document.querySelectorAll('.media img')) fitWhole(img);
   tileIcons();
 }
 
 /**
  * Large-card pictures fill their frame, trimming the edges. A picture much wider or taller than the frame (a grid
- * of app icons, a tall phone screen) would lose what matters, so it is shown whole there. Small thumbnails crop.
+ * of app icons, a tall phone screen) would lose what matters, so it is shown whole there. Small thumbnails fit all images.
  */
 function fitWhole(img) {
   const check = () => {

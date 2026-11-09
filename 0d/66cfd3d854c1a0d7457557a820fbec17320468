@@ -1,0 +1,29 @@
+README.md
+  s_e22f00fee0a4ee::t_ced7f468e49381 18
+src/build.ts
+  s_e22f00fee0a4ee::t_0c5b9e73808502 13
+  s_e22f00fee0a4ee::t_14bb095e7c9996 16-17
+data/verified-assets.json
+  s_e22f00fee0a4ee::t_eedfe591fffe85 1-85
+tests/parsers.test.ts
+  s_e22f00fee0a4ee::t_6e982b7424caa6 204-235
+  s_e22f00fee0a4ee::t_b2c8f03c5d6b3e 2
+src/verified-assets.ts
+  s_e22f00fee0a4ee::t_158a06ccfe7e52 1-89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.52-trip",
+  "base_commit_sha": "0d66cfd3d854c1a0d7457557a820fbec17320468",
+  "prompts": {},
+  "sessions": {
+    "s_e22f00fee0a4ee": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d65e9bf9-c7cf-41af-92c4-049f604c9630",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "kashif-08 <kashif-08@users.noreply.github.com>"
+    }
+  }
+}

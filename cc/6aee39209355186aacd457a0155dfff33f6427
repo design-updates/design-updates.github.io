@@ -1,0 +1,56 @@
+README.md
+  s_e22f00fee0a4ee::t_9dc348573f5336 14
+  s_e22f00fee0a4ee::t_c22e0aade29571 18
+tests/pipeline.test.ts
+  s_e22f00fee0a4ee::t_508806d71fc7e6 591-597
+  s_e22f00fee0a4ee::t_57172978d203d0 538-545
+  s_e22f00fee0a4ee::t_cca5f1e0b50b5b 520-529
+  s_e22f00fee0a4ee::t_0466568ed74fd0 481-482
+  s_e22f00fee0a4ee::t_50766901b1d99d 510
+src/stores.ts
+  s_e22f00fee0a4ee::t_82b8b6a0caa605 64,69-70
+  s_e22f00fee0a4ee::t_8018b8f0b4ba61 43-48
+  s_e22f00fee0a4ee::t_5aa776a699e4c0 16,18-19
+  s_e22f00fee0a4ee::t_753dee6efa9d66 139-147
+src/run.ts
+  s_e22f00fee0a4ee::t_3f361e7239b16f 283-289,292-298
+site/app.js
+  s_e22f00fee0a4ee::t_63474d9978b2d4 656
+  s_e22f00fee0a4ee::t_56a00fcf88c6cb 642-643
+  s_e22f00fee0a4ee::t_9ec9ecc6a0613d 1648-1649
+tests/parsers.test.ts
+  s_e22f00fee0a4ee::t_8cf5ec87a37062 224-230
+data/stores.json
+  s_e22f00fee0a4ee::t_6787872b8b740e 19-22
+data/radar.json
+  s_e22f00fee0a4ee::t_98f8f36ac168d3 286
+  s_e22f00fee0a4ee::t_6787872b8b740e 140,276,284-285,287-289,652-654,658
+src/types.ts
+  s_e22f00fee0a4ee::t_33d92127fe77ec 52-58
+src/compare.ts
+  s_e22f00fee0a4ee::t_1572d99100f7cd 178,184-186
+  s_e22f00fee0a4ee::t_d95a5573110cdf 250-253
+  s_e22f00fee0a4ee::t_2c399e7a37b845 132-176
+  s_e22f00fee0a4ee::t_ee3084b708e761 223-229
+  s_e22f00fee0a4ee::t_1ae48e73f1a9eb 295
+  s_e22f00fee0a4ee::t_f7c0a49d8f8e95 59
+  s_e22f00fee0a4ee::t_600938fec572ec 192,197-202
+src/related.ts
+  s_e22f00fee0a4ee::t_f9a0c386ab2470 232-238
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.52-trip",
+  "base_commit_sha": "cc6aee39209355186aacd457a0155dfff33f6427",
+  "prompts": {},
+  "sessions": {
+    "s_e22f00fee0a4ee": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d65e9bf9-c7cf-41af-92c4-049f604c9630",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "kashif-08 <kashif-08@users.noreply.github.com>"
+    }
+  }
+}

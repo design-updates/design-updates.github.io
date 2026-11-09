@@ -1,7 +1,107 @@
 {
   "version": 1,
-  "updated_at": "2026-11-02T13:52:24.528Z",
+  "updated_at": "2026-11-09T02:02:12.585Z",
   "weeks": [
+    {
+      "week": "2026-11-09",
+      "from": "2026-11-02T02:02:12.585Z",
+      "to": "2026-11-09T02:02:12.585Z",
+      "checked": 66,
+      "picks": [
+        {
+          "id": "correcting-ai-built-interfaces-with-design-system-instructio",
+          "title": "Correcting AI-built interfaces with design-system instructions and visual feedback in Intent.",
+          "post_title": "Design Feedback for AI Agents",
+          "url": "https://lukew.com/ff/2170/design-feedback-for-ai-agents",
+          "source": "Luke Wroblewski",
+          "domain": "lukew.com",
+          "author": "Luke Wroblewski",
+          "author_role": null,
+          "published_at": "2026-11-03T14:00:00.000Z",
+          "tools": [
+            "Intent"
+          ],
+          "stage": "ui",
+          "type": "workflow",
+          "process": "The team gives agents design-system specifications and instructions for the first implementation pass. They then point out layout and component-combination problems through Figma comments, annotated screenshots, or chat instructions, asking agents to correct each issue. After trying these feedback formats, they integrated screen annotation, screenshots, video, and typed or spoken instructions into Intent for the final UI corrections.",
+          "result": "The author estimates that the design-system-driven first pass now gets 90% of the way there, compared with 50–60% with earlier models.",
+          "catch": "Current models tend to over-document when allowed to update the design system themselves, so designers still decide which feedback should become a shared pattern.",
+          "try_if": "your agents follow the design system but still miss layout details and edge cases",
+          "score": 8,
+          "minutes": 2,
+          "image": "http://static.lukew.com/intent_designsystem_agents.png",
+          "icon": "https://www.google.com/s2/favicons?domain=lukew.com&sz=64",
+          "zh": {
+            "title": "用设计系统指令和 Intent 中的视觉反馈修正 AI 生成的界面。",
+            "process": "团队先向智能体提供设计系统规范和指令，让它完成第一轮实现。随后通过 Figma 评论、截图标注或聊天指令，指出布局和组件组合中的问题，要求智能体逐项修正。在试过这些反馈形式后，团队将屏幕标注、截图、视频以及文字和语音指令整合进 Intent，用于最后一轮界面修正。",
+            "result": "作者估计，现在由设计系统指导的第一轮实现能完成约 90% 的工作，而早期模型只能达到 50%–60%。",
+            "catch": "目前的模型在自行更新设计系统时容易堆积文档，因此哪些反馈应当沉淀为共享模式，仍需设计师判断。",
+            "try_if": "你的智能体能遵循设计系统，但仍会遗漏布局细节和边界情况"
+          }
+        },
+        {
+          "id": "designing-and-stress-testing-an-interface-explanation-skill-",
+          "title": "Designing and stress-testing an interface explanation skill with an AI agent.",
+          "post_title": "Designing a skill",
+          "url": "https://iamnoman.com/writing/designing-a-skill",
+          "source": "Sidebar",
+          "domain": "iamnoman.com",
+          "author": null,
+          "author_role": null,
+          "published_at": "2026-11-05T09:48:02.000Z",
+          "tools": [],
+          "stage": "ux",
+          "type": "workflow",
+          "process": "The author iterated interface-bts from an overlay showing components, annotations, and a curve graph into poster-like pages that freeze interactions mid-action. They shortened the explanatory copy and used a small set of typography, spacing, and colour tokens for the visual elements. They asked the agent to put multiple posters on one horizontally scrolling page, added a configurator for customising the output, and replaced vague styling instructions with precise rules. They tested the skill across projects, components, and settings, then asked the agent to stress-test it in a fresh session.",
+          "result": "The skill generates configurable interface-explanation posters and keeps multiple posters on a single page rather than creating a page for each.",
+          "catch": "Early visualisations used about three times as many words as needed, and vague instructions such as “clean” or “minimal” did not get the author far.",
+          "try_if": "you are building an agent skill whose output people need to read and customise",
+          "score": 8,
+          "minutes": 3,
+          "image": "https://iamnoman.com/writing/designing-a-skill/opengraph-image.png?opengraph-image.0dzoqihu1hxv0.png",
+          "icon": "https://www.google.com/s2/favicons?domain=iamnoman.com&sz=64",
+          "zh": {
+            "title": "用 AI 智能体设计并压力测试一个界面讲解技能。",
+            "process": "作者将 interface-bts 从展示组件、标注和曲线图的浮层，迭代成海报式页面，把交互定格在进行中的某一刻。随后精简讲解文案，并用一小组字体、间距和颜色令牌统一视觉元素。作者要求智能体将多张海报放在同一个横向滚动页面中，加入输出样式配置器，并用明确规则替代模糊的风格指令。最后在不同项目、组件和设置下测试，再让智能体在全新会话中进行压力测试。",
+            "result": "这个技能能生成可自定义的界面讲解海报，并将多张海报集中在一个页面，而不是每张新建一页。",
+            "catch": "早期可视化的文字量约为实际所需的三倍，而“干净”“极简”这类模糊指令也没有带来多少帮助。",
+            "try_if": "你正在制作一个智能体技能，其输出需要让人阅读和自定义"
+          }
+        },
+        {
+          "id": "testing-whether-explicit-platform-instructions-make-claude-g",
+          "title": "Testing whether explicit platform instructions make Claude generate current iPhone UI conventions.",
+          "post_title": "Native is a floor, not a ceiling",
+          "url": "https://uxdesign.cc/native-is-a-floor-not-a-ceiling-09bc4f27ddce?source=rss----138adf9c44c---4",
+          "source": "UX Collective",
+          "domain": "uxdesign.cc",
+          "author": "Mathieu Poli",
+          "author_role": null,
+          "published_at": "2026-11-06T04:12:29.000Z",
+          "tools": [
+            "Claude"
+          ],
+          "stage": "ui",
+          "type": "study",
+          "process": "The author asked several AI models to design app screens, comparing generic mobile requests with requests that explicitly named iPhone. They then added “Follow the current design conventions of the platform” to see whether the models represented newer iOS patterns. The post shows two daycare-app home screens generated with Claude Opus 5.5: one requested as an iPhone app, and one with the additional platform-conventions instruction.",
+          "result": "In the shown comparison, the extra instruction changed an old full-width tab bar into an iOS 26 floating tab bar, but across the study that pattern appeared only with the instruction and in a minority of mockups.",
+          "catch": "The models mostly drew older iOS conventions even a year after iOS 26 shipped, and naming the platform only corrected some visible details.",
+          "try_if": "you use AI-generated screens to explore native mobile layouts",
+          "score": 7,
+          "minutes": null,
+          "image": "https://cdn-images-1.medium.com/max/1024/1*tmilNueBY4CBfNN99ZX5vA.jpeg",
+          "icon": "https://www.google.com/s2/favicons?domain=uxdesign.cc&sz=64",
+          "zh": {
+            "title": "测试明确的平台指令能否让 Claude 生成符合当前 iPhone 规范的界面。",
+            "process": "作者让多个 AI 模型设计应用界面，对比泛泛的移动应用请求与明确指定 iPhone 的请求。随后加入“Follow the current design conventions of the platform”，观察模型是否会呈现较新的 iOS 模式。文章展示了 Claude Opus 5.5 生成的两张托育应用首页：一张只要求设计 iPhone 应用，另一张额外加入了遵循当前平台规范的指令。",
+            "result": "在展示的对比中，额外指令让旧式通栏标签栏变成了 iOS 26 的悬浮标签栏，但在整个测试中，这种模式只在加入该指令后出现，而且仅见于少数界面稿。",
+            "catch": "即使 iOS 26 已发布一年，模型仍主要绘制旧版 iOS 样式，明确平台也只能修正部分可见细节。",
+            "try_if": "你用 AI 生成的界面稿探索原生移动应用布局"
+          }
+        }
+      ],
+      "collected_at": "2026-11-09T02:02:12.585Z"
+    },
     {
       "week": "2026-11-02",
       "from": "2026-10-26T13:52:24.528Z",

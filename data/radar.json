@@ -1,14 +1,44 @@
 {
   "version": 1,
-  "updated_at": "2026-11-09T00:01:05.955Z",
+  "updated_at": "2026-11-09T02:00:04.513Z",
   "days": [
     {
       "date": "2026-11-09",
       "collected_at": "2026-11-09T00:01:05.955Z",
-      "quiet": true,
+      "quiet": false,
       "pattern": null,
       "pattern_zh": null,
-      "items": []
+      "items": [
+        {
+          "id": "windows-11-beta-search-redesign",
+          "app": "Windows",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-08",
+          "published_at": "2026-11-07T20:05:52.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "Windows 11 introduces a redesigned Search interface in its latest beta.",
+          "what": "Windows 11’s latest beta changes the Search interface. The candidate does not describe the new layout or components, so the visual details remain unspecified.",
+          "why": "For travel-app search, this is worth checking once the layout is documented, particularly how the interface separates entering a query from browsing results.",
+          "sources": [
+            {
+              "title": "Windows 11 is getting redesigned Search and improved facial recognition in its latest beta",
+              "url": "https://digitaltrends.com/computing/windows-11-beta-redesigned-search-improved-facial-recognition",
+              "publisher": "Digital Trends"
+            }
+          ],
+          "release": null,
+          "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2026/11/Redesigned-windows-search.jpg?resize=2000%2C1200&ssl=1",
+          "icon": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=64",
+          "collected_at": "2026-11-09T02:00:04.513Z",
+          "zh": {
+            "headline": "Windows 11 在最新 beta 中更新了 Search 界面。",
+            "what": "Windows 11 最新 beta 带来了重新设计的 Search 界面。候选报道没有说明新的布局或组件，暂时无法判断具体的视觉变化。",
+            "why": "后续有布局细节时，可以关注它如何区分搜索输入和结果浏览，为旅行 App 的搜索页面提供参考。"
+          }
+        }
+      ]
     },
     {
       "date": "2026-11-08",

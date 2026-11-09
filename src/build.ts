@@ -10,12 +10,14 @@ import { loadCasesConfig } from './casestudies.ts';
 import { cardsWithoutChangePictures } from './related.ts';
 import type { WeeksFile } from './weekly.ts';
 import { loadWorkflowsConfig } from './workflows.ts';
+import { verifyReviewedAssets } from './verified-assets.ts';
 
 const cfg = loadConfig();
+const radar = readJson('data/radar.json', emptyRadar());
+verifyReviewedAssets(radar);
 rmSync('dist', { recursive: true, force: true });
 mkdirSync('dist/data', { recursive: true });
 cpSync('site', 'dist', { recursive: true });
-const radar = readJson('data/radar.json', emptyRadar());
 const missing = cardsWithoutChangePictures(radar.days.flatMap((d) => d.items));
 if (missing.length) throw new Error(`Refusing to publish ${missing.length} news card(s) without a verified change image: ${missing.map((i) => i.id).join(', ')}`);
 const mirrored = await mirrorAssets(radar, 'dist');

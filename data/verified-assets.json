@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "path": "assets/verified/airbnb-redesigned-app.jpg",
+      "story_id": "airbnb-redesigned-app",
+      "role": "image",
+      "source_url": "https://apps.apple.com/us/app/id401626263?version=26.45",
+      "reviewed_content": "Airbnb redesigned app screen with Homes, Experiences and Services tabs",
+      "width": 886,
+      "height": 1920,
+      "sha256": "c2d09a9c917f3a589b65f5f9a63db752837b71bbc52fa48fd875378c894c14ac"
+    },
+    {
+      "path": "assets/verified/spotify-pins-before-after.webp",
+      "story_id": "spotify-library-pins-carousel",
+      "role": "combined",
+      "source_url": "https://androidauthority.com/spotify-your-library-pins-shelf-test-3732365",
+      "reviewed_content": "Three Spotify Your Library panels labelled Current old layout and Upcoming new layout",
+      "width": 1808,
+      "height": 1338,
+      "sha256": "7bf4f45afa03c7b56a462e564e0e9d19ed53d4b63d0021748cc77fdd1c0f18a4"
+    },
+    {
+      "path": "assets/verified/whatsapp-chat-preview.jpg",
+      "story_id": "whatsapp-android-chat-previews",
+      "role": "image",
+      "source_url": "https://gadgets.beebom.com/news/whatsapp-testing-chat-previews-on-android",
+      "reviewed_content": "WhatsApp Android chat preview interface",
+      "width": 595,
+      "height": 650,
+      "sha256": "7f99e4f731b60336d11998c95f3ca999b57b43e8aec69efc1a975275c04a6561"
+    },
+    {
+      "path": "assets/verified/youtube-mixed-theme.webp",
+      "story_id": "youtube-ambient-watch-page-design",
+      "role": "image",
+      "source_url": "https://www.reddit.com/r/youtube/comments/1xja5n1/whats_with_the_forced_dark_mode_on_every_video_now/",
+      "reviewed_content": "YouTube watch page showing the mixed dark and light appearance",
+      "width": 1080,
+      "height": 2120,
+      "sha256": "e8dc4315cfc615fe2ad1e26d671a234ab3d7dd01e31bca8ad02bc46eb78d3df1"
+    },
+    {
+      "path": "assets/verified/google-earth-old.jpg",
+      "story_id": "google-earth-gradient-logo",
+      "role": "before",
+      "source_url": "https://jetstream.blog/en/google-earth-icon-refresh-november-2026/",
+      "reviewed_content": "Previous Google Earth logo",
+      "width": 1280,
+      "height": 720,
+      "sha256": "a695e08c2ab4b1d5d86bf6a49cba73e783b507c165c1e56f22169f7b2453ba3a"
+    },
+    {
+      "path": "assets/verified/google-earth-new.webp",
+      "story_id": "google-earth-gradient-logo",
+      "role": "after",
+      "source_url": "https://jetstream.blog/en/google-earth-icon-refresh-november-2026/",
+      "reviewed_content": "New gradient Google Earth logo",
+      "width": 1280,
+      "height": 720,
+      "sha256": "e8220d5bac2e50541835ffbffec3debbd8161cd6e2cbf18ac092383822196d00"
+    },
+    {
+      "path": "assets/verified/google-maps-iphone-duo.jpg",
+      "story_id": "google-maps-iphone-duo-dual-display",
+      "role": "image",
+      "source_url": "https://www.macrumors.com/2026/11/04/latest-google-maps-update-iphone-duo-support/",
+      "reviewed_content": "Google Maps shown across the outer and unfolded iPhone Duo displays",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "5297e7c98b4d38b868bc1d9fb92a3729b5708c791f582d7e437dd6e51484118a"
+    },
+    {
+      "path": "assets/verified/swiss-post-typeface.jpg",
+      "story_id": "swiss-post-custom-typeface",
+      "role": "image",
+      "source_url": "https://creativeboom.com/inspiration/swiss-typefaces-crafts-a-warmer-friendlier-custom-font-for-swiss-post",
+      "reviewed_content": "Swiss Post custom typeface specimen",
+      "width": 1280,
+      "height": 720,
+      "sha256": "a43dbc3d8f621b147b39447452a0b378d7cc7cde6a89ed808e9c3727b11fb024"
+    }
+  ]
+}

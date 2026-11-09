@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import { loadConfig, parseConfig } from '../src/config.ts';
@@ -198,6 +199,38 @@ test('build copies card pictures and comparisons into the site', async () => {
   assert.match(out[1].compare?.before ?? '', /^icons\/[0-9a-f]{12}\.webp$/);
   assert.match(out[1].compare?.after ?? '', /^icons\/[0-9a-f]{12}\.webp$/);
   for (const u of [out[0].image, out[1].compare?.before, out[1].compare?.after]) assert.ok(u && existsSync(join(dir, u)), u ?? 'missing');
+});
+
+test('reviewed assets are locked to the correct story, source, dimensions and bytes', async () => {
+  const { cpSync, mkdtempSync, mkdirSync, writeFileSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { verifyReviewedAssets } = await import('../src/verified-assets.ts');
+  const dir = mkdtempSync(join(tmpdir(), 'verified-assets-'));
+  mkdirSync(join(dir, 'data'), { recursive: true });
+  mkdirSync(join(dir, 'site/assets/verified'), { recursive: true });
+  cpSync('site/assets/verified/spotify-pins-before-after.webp', join(dir, 'site/assets/verified/spotify.webp'));
+  const bytes = readFileSync(join(dir, 'site/assets/verified/spotify.webp'));
+  const manifest = {
+    version: 1,
+    assets: [{
+      path: 'assets/verified/spotify.webp', story_id: 'spotify-pins', role: 'combined',
+      source_url: 'https://source.test/spotify', reviewed_content: 'Spotify old and new Pins layouts',
+      width: 1808, height: 1338, sha256: createHash('sha256').update(bytes).digest('hex'),
+    }],
+  };
+  writeFileSync(join(dir, 'data/verified-assets.json'), JSON.stringify(manifest));
+  const item = {
+    id: 'spotify-pins', app: 'Spotify', category: 'consumer' as const, date: '2026-11-07', published_at: '', beta: true, importance: 2,
+    headline: 'Spotify Pins', what: 'w', why: 'y', image: null, icon: null, collected_at: '',
+    sources: [{ title: 'Spotify source', url: 'https://source.test/spotify', publisher: 'Source' }],
+    compare: { before: null, after: 'assets/verified/spotify.webp', combined: true, from: 'article' as const },
+  };
+  const radar = { version: 1 as const, updated_at: '', days: [{ date: '2026-11-07', collected_at: '', quiet: false, pattern: null, items: [item] }] };
+  assert.doesNotThrow(() => verifyReviewedAssets(radar, dir));
+
+  cpSync('site/assets/verified/google-maps-iphone-duo.jpg', join(dir, 'site/assets/verified/spotify.webp'));
+  assert.throws(() => verifyReviewedAssets(radar, dir), /bytes changed without review/, 'another story image cannot hide behind the Spotify filename');
 });
 
 test('the static search/share metadata stays English', () => {

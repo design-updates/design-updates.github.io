@@ -1,16 +1,38 @@
 {
   "appStore": {
     "Expedia": {
-      "version": "2026.44",
-      "date": "2026-11-02T02:21:47.000Z",
+      "version": "2026.45",
+      "date": "2026-11-09T02:21:40.000Z",
       "notes": "Thanks for seeing the world with Expedia, your on-the-go companion. This update contains some bug fixes and performance improvements to make your experience as smooth as possible. Bon voyage, traveler!",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2c/73/7b/2c737b1a-ace5-7185-a959-035bba41a27c/01_iOS_6.7_1284x2778_en-US_Intro.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2c/73/7b/2c737b1a-ace5-7185-a959-035bba41a27c/01_iOS_6.7_1284x2778_en-US_Intro.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2c/73/7b/2c737b1a-ace5-7185-a959-035bba41a27c/01_iOS_6.7_1284x2778_en-US_Intro.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/68/9a/4b/689a4b6e-b8b5-6052-7a16-b99c9f54d3a8/02_iOS_6.7_1284x2778_en-US_Flight_Deals.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7f/ab/72/7fab722d-06b4-84ea-854c-e339b1473037/03_iOS_6.7_1284x2778_en-US_Bundle_and_Save.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c0/63/93/c06393a2-8f94-0fd2-1484-d919987306ec/04_iOS_6.7_1284x2778_en-US_Rewards.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d6/38/ef/d638ef91-a4b4-8739-1847-9b9303bdf6cc/05_iOS_6.7_1284x2778_en-US_Price_Tracking.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6d/cd/e9/6dcde93a-b808-f011-0ac5-215b5ec2c644/06_iOS_6.7_1284x2778_en-US_Free_Cancellation.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/99/8e/01/998e0172-9c50-e8aa-1f56-a6fe916bdee4/07_iOS_6.7_1284x2778_en-US_Trip_Planner.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5d/1b/d1/5d1bd103-1053-09f5-be77-44ef3a9c3e46/08_iOS_6.7_1284x2778_en-US_Trip_Management.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e8/ba/71/e8ba7167-9228-298a-3241-180a2abf729c/09_iOS_6.7_1284x2778_en-US_Last_Minute_Deals.jpg/1920x1920bb.jpg"
+      ]
     },
     "Booking.com": {
-      "version": "71.2",
-      "date": "2026-11-05T09:01:08.000Z",
+      "version": "71.3",
+      "date": "2026-11-09T09:00:33.000Z",
       "notes": "Thanks for using Booking.com! This update contains several bug fixes and performance improvements. Enjoy the latest and greatest version of our app.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/02/f1/de02f108-b9bf-827b-c308-6bdd9192dbe7/0_APP_IPHONE_55_0.jpg/392x696bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/02/f1/de02f108-b9bf-827b-c308-6bdd9192dbe7/0_APP_IPHONE_55_0.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/02/f1/de02f108-b9bf-827b-c308-6bdd9192dbe7/0_APP_IPHONE_55_0.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b4/cb/42/b4cb4297-f32a-f81f-abce-d62e6b9d995d/1_APP_IPHONE_55_1.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2e/eb/68/2eeb6857-d8ec-4e9d-422d-f71bfc959757/2_APP_IPHONE_55_2.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6b/cd/cf/6bcdcfbf-7c60-96c0-bf6e-a31f1e37d620/3_APP_IPHONE_55_3.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f1/d7/93/f1d793da-0449-36d9-38fb-08272eb024bc/4_APP_IPHONE_55_4.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/60/44/cb/6044cb27-6fe8-f07a-1493-cad6dcc44caf/5_APP_IPHONE_55_5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cc/49/43/cc4943cf-04e2-a982-4fb8-89c99d4e513f/6_APP_IPHONE_55_6.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/16/88/33/168833fc-1e59-cc9d-5842-04ed10449f98/7_APP_IPHONE_55_7.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b6/68/57/b66857b2-f8d4-6ad5-c32e-c95001974895/8_APP_IPHONE_55_8.jpg/1920x1920bb.jpg"
+      ]
     },
     "Airbnb": {
       "version": "26.45",
@@ -18,416 +40,1048 @@
       "notes": "Now you can book homes, experiences, and services—all in one app. Our redesigned app includes personalized recommendations of unique places to stay, unforgettable things to do, and incredible services at a range of prices. Plus, get a day-by-day view of your trips, new messaging features, and a revamped profile that shows who you are, where you’ve been, and who you’ve met along the way. And if you’re hosting, you’ll find useful new tools that make it easier to list your home, experience or service, as well as manage your reservations, scheduling, and more.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/a6/64/44a664df-d808-cc9b-0a4d-95e866530de8/250509_AppStore_Mobile_Airbnb_Carousel_01_en-US.jpg/1920x1920bb.jpg",
       "screenshots": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/a6/64/44a664df-d808-cc9b-0a4d-95e866530de8/250509_AppStore_Mobile_Airbnb_Carousel_01_en-US.jpg/1920x1920bb.jpg"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/a6/64/44a664df-d808-cc9b-0a4d-95e866530de8/250509_AppStore_Mobile_Airbnb_Carousel_01_en-US.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/85/d1/27/85d127a6-4bdb-034c-b683-0eb9adb88227/250509_AppStore_Mobile_Airbnb_Carousel_02_en-US.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6a/da/5b/6ada5b21-7c80-e8a8-24bf-a3ff62a74122/250509_AppStore_Mobile_Airbnb_Carousel_03_en-US.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/18/da/0d/18da0dbb-1164-a7ce-5d82-3c773721b351/250509_AppStore_Mobile_Airbnb_Carousel_04_en-US.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/5d/af/ea5daf46-d317-5b81-fc83-cdca8051826d/250509_AppStore_Mobile_Airbnb_Carousel_05_en-US.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fc/96/cf/fc96cf30-95ad-1b1e-b7d4-242a88d7d49d/250509_AppStore_Mobile_Airbnb_Carousel_06_en-US.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a0/2b/4a/a02b4ae6-efbb-a34f-7d6b-9843792e2e02/250509_AppStore_Mobile_Airbnb_Carousel_07_en-US.jpg/1920x1920bb.jpg"
       ]
     },
     "Agoda": {
-      "version": "14.41.0",
-      "date": "2026-11-02T05:11:46.000Z",
+      "version": "14.42.0",
+      "date": "2026-11-09T04:55:18.000Z",
       "notes": "Introducing Agoda AI Assistant Travel planning just got smarter. With our new AI Assistant, go from \"Where should I travel?\" to a confirmed booking—all in one conversation. What you can do: • Get personalized recommendations based on your preferences • Compare hotels, flights, and activities without leaving the chat • See real-time prices and availability as you explore • Book instantly in the app when you find what you love No more back-and-forth. No more guesswork. Just effortless travel planning. Try it now: Tap the AI Assistant icon and start planning your next adventure.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/67/0c/e4/670ce454-3d77-d929-a4c5-616cd7b44194/EN_-_MY_U002c_SG_U002c_PH_U002c_TH__U00231.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/67/0c/e4/670ce454-3d77-d929-a4c5-616cd7b44194/EN_-_MY_U002c_SG_U002c_PH_U002c_TH__U00231.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/67/0c/e4/670ce454-3d77-d929-a4c5-616cd7b44194/EN_-_MY_U002c_SG_U002c_PH_U002c_TH__U00231.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2b/03/f3/2b03f32b-3e43-4293-6dc5-11219efe6d25/EN_-_MY_U002c_SG_U002c_PH_U002c_TH__U00232_1290x2796.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ea/99/6f/ea996f36-4ad2-7ae1-16af-149a5942a217/EN_-_MY_U002c_SG_U002c_PH_U002c_TH__U00233_1290x2796.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/06/24/ae/0624aefb-e504-8baa-aa23-b51e12a32d05/EN_-_MY_U002c_SG_U002c_PH_U002c_TH__U00234_1290x2796.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9b/4b/fa/9b4bfa85-2ee6-ff78-ec4a-e4f5f4dfa01a/EN_-_MY_U002c_SG_U002c_PH_U002c_TH__U00235_1290x2796.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/49/0a/fe/490afe8f-f697-07ff-6b00-715f89fdf3fe/EN_-_MY_U002c_SG_U002c_PH_U002c_TH__U00236_1290x2796.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ad/60/7f/ad607ffb-5f40-553b-eeeb-f1a0e607460a/EN_-_MY_U002c_SG_U002c_PH_U002c_TH__U00237_1290x2796.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/f9/b6/5bf9b668-cdc0-4e1d-dca2-f54e31b90a3f/EN_-_MY_U002c_SG_U002c_PH_U002c_TH__U00238_1290x2796.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/93/bf/ac/93bface9-62d5-c177-b996-f032950f5d00/EN_-_MY_U002c_SG_U002c_PH_U002c_TH__U00239_1290x2796.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c3/fb/9f/c3fb9f7f-5f7c-e632-8c66-607637123217/EN_-_MY_U002c_SG_U002c_PH_U002c_TH__U002310_1290x2796.jpg/1920x1920bb.jpg"
+      ]
     },
     "Hopper": {
       "version": "7.121.1",
       "date": "2026-11-07T17:08:00.000Z",
       "notes": "Bug fixes and UI improvements.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/af/ac/90/afac90c6-5f57-6ee2-365f-cbd7782eed8d/dark_1242x2688_01f.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/af/ac/90/afac90c6-5f57-6ee2-365f-cbd7782eed8d/dark_1242x2688_01f.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/af/ac/90/afac90c6-5f57-6ee2-365f-cbd7782eed8d/dark_1242x2688_01f.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/45/39/a2/4539a22b-513c-eed8-00a0-d79c5a1a9c0a/dark_1242x2688_02f.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3c/33/3d/3c333d4f-e003-09f0-bb91-c27e50292686/dark_1242x2688_03f.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9e/98/30/9e9830ec-96a6-01c0-e1f6-c375e883897c/dark_1242x2688_04f.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/29/d3/4f/29d34f64-073e-fb97-c91f-6cfedce489a6/dark_1242x2688_06f.png/1920x1920bb.jpg"
+      ]
     },
     "Klook": {
       "version": "7.56.1",
       "date": "2026-11-05T02:53:38.000Z",
       "notes": "We've made some updates to make your experience even better! - Use member perks for airport transfer upgrades and train seat preferences - Seamless browsing of the same products from web city pages to app We're always working to improve your experience. Love it? Let us know by leaving a review! Have feedback? Reach out to appfeedback@klook.com.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/59/45/d6/5945d613-7b45-da68-42c8-0d2cc9afe7b7/0_APP_IPHONE_55_0.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/59/45/d6/5945d613-7b45-da68-42c8-0d2cc9afe7b7/0_APP_IPHONE_55_0.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/59/45/d6/5945d613-7b45-da68-42c8-0d2cc9afe7b7/0_APP_IPHONE_55_0.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5f/29/73/5f29738b-d7e8-e2e2-f113-1f42c7e91fb3/Other_iphone_2_1242x2208.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/45/3b/86/453b8671-7720-9967-b8de-533514b60144/2_APP_IPHONE_55_2.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a1/d9/38/a1d938c4-0b11-7d14-9014-6c490f206306/3_APP_IPHONE_55_3.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2d/3a/45/2d3a45df-b90c-3109-22c3-010d2460574f/4_APP_IPHONE_55_4.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/eb/7c/08/eb7c082d-0435-d113-d5bc-8b2eb6f1e222/5_APP_IPHONE_55_5.png/1920x1920bb.png"
+      ]
     },
     "Trip.com": {
       "version": "8.60.0",
       "date": "2026-11-06T00:40:10.000Z",
       "notes": "Explore our new Autumn Map. Autumn doesn't last long, so we've mapped it. Discover the world's top autumn destinations in one view, complete with iconic foliage guides and live trends so that you can catch the season at its peak. Happy travels!",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/99/d7/b4/99d7b4c0-e7f7-8d12-6882-1b1b367dbd39/1-_U5927_U9996_U9875.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/99/d7/b4/99d7b4c0-e7f7-8d12-6882-1b1b367dbd39/1-_U5927_U9996_U9875.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/99/d7/b4/99d7b4c0-e7f7-8d12-6882-1b1b367dbd39/1-_U5927_U9996_U9875.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7e/ef/2c/7eef2ce9-7a5a-24d3-eb5e-12bfb41f35d2/2-_U673a_U7968.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e7/4b/25/e74b25e0-5928-c096-9e81-c7d5c2ed5607/3-_U9152_U5e97.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6f/a9/2d/6fa92d84-da85-430a-205d-16d044263964/4-_U673a_U9152.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/27/60/6f/27606f40-0142-7492-87ae-8e6ec347a786/5-esim.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b4/3c/b6/b43cb6b4-d084-fca2-5df1-e0e0a3bb8c3d/6-_U79df_U8f66.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b6/3c/51/b63c5186-f86c-52b8-b44e-7052b7c02a2c/7-_U706b_U8f66_U7968.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c7/84/3c/c7843c57-d62f-77ca-643c-f73aba7532df/8-coins.jpg/1920x1920bb.jpg"
+      ]
     },
     "Trainline": {
-      "version": "440.0.0",
-      "date": "2026-11-01T12:05:11.000Z",
-      "notes": "Trainline on iPhone Duo. More room to search, buy and travel. Unfold your iPhone Duo and Trainline makes the most of that extra space, with more of your journey in view.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/da/35/1eda3573-62cb-1c5f-e959-74c20f797c68/34fda8a0-c8dc-40a6-a1a0-5d6e2aeb21cd_US_5.5_-_Slide_1_refreshed.jpg/392x696bb.jpg"
+      "version": "441.0.0",
+      "date": "2026-11-09T09:28:47.000Z",
+      "notes": "The little things matter. Some small improvements are coming down the track with this update. We’ve fixed a few bugs that were affecting our app and made some other minor changes.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/da/35/1eda3573-62cb-1c5f-e959-74c20f797c68/34fda8a0-c8dc-40a6-a1a0-5d6e2aeb21cd_US_5.5_-_Slide_1_refreshed.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/da/35/1eda3573-62cb-1c5f-e959-74c20f797c68/34fda8a0-c8dc-40a6-a1a0-5d6e2aeb21cd_US_5.5_-_Slide_1_refreshed.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d6/a3/c2/d6a3c2dd-d406-84ab-afe1-08a3ecb2f8df/6eb93af1-e3c0-4c08-8d2e-636159016b86_US_5.5_-_Slide_2.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9c/5e/74/9c5e74c9-452d-28c7-fccf-1319fbf4180f/72db189d-50d7-4cc2-8149-ae9f8d861d01_Eurostar_5.5_-_Slide_2.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/64/d7/06/64d706d0-5e25-3a60-f887-bdbd79862647/5b632c1d-57f2-440d-a7bc-b032d2fd183b_US_5.5_-_Slide_4.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/18/ff/3318ff4c-8284-dfb0-8d4f-27a1bf03fa04/756c01c2-fbc4-4bcd-b414-673963564dd6_US_5.5_-_Slide_5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5d/ab/8d/5dab8d8d-9a43-ec8e-aa78-03a6cbcd8c0a/4c32a433-4fd3-4316-9621-2fe20e12ea0d_Eurostar_5.5_-_Slide_5.jpg/1920x1920bb.jpg"
+      ]
     },
     "Omio": {
       "version": "26.1030.0",
       "date": "2026-11-06T04:22:21.000Z",
       "notes": "Update your app to avoid being bugged by reduced speeds! Omio is now faster, better and stronger.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3b/d6/79/3bd67922-8183-5a19-20d9-6c2f8bd642e7/EN-Apple-1290x2796-1.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3b/d6/79/3bd67922-8183-5a19-20d9-6c2f8bd642e7/EN-Apple-1290x2796-1.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3b/d6/79/3bd67922-8183-5a19-20d9-6c2f8bd642e7/EN-Apple-1290x2796-1.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e4/1b/13/e41b13d9-5a29-caa4-d9b0-3d4c5438598e/0x0ss-2.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dc/9e/19/dc9e19d4-9a66-c98d-c8cb-471b549e8739/0x0ss-3.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/38/d7/7e/38d77e91-489a-89c4-1c78-7cef4ce039c5/0x0ss-4.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5d/52/cd/5d52cdfc-4151-47d2-38fb-823fe16611a6/0x0ss-5.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d2/6d/83/d26d83aa-d60b-d86b-4b74-62868ac75ae2/0x0ss-6.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c2/eb/94/c2eb9489-bf3b-8b90-4528-4f8c66c12237/0x0ss-7.png/1920x1920bb.jpg"
+      ]
     },
     "Duolingo": {
-      "version": "7.147.1",
-      "date": "2026-11-04T16:59:22.000Z",
+      "version": "7.148.0",
+      "date": "2026-11-09T16:56:36.000Z",
       "notes": "Our mascot owl, Duo, is trading in his usual diet of mice for bugs this week. Yup, we’re squashing those pesky bugs to make the experience better for all of you. For more Duolingo news, contests and product releases, follow us on Facebook, Twitter, and Instagram @duolingo.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/ef/30/6eef3023-de04-3b29-21f8-a993245b9abd/iPhone6.5_-_Default_-_first_screen_adapt_Var_2_01.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/ef/30/6eef3023-de04-3b29-21f8-a993245b9abd/iPhone6.5_-_Default_-_first_screen_adapt_Var_2_01.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/ef/30/6eef3023-de04-3b29-21f8-a993245b9abd/iPhone6.5_-_Default_-_first_screen_adapt_Var_2_01.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cb/ee/31/cbee31c9-a814-b59b-db16-3136ce60d20d/V2_iOS6.5_02.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e0/aa/36/e0aa3660-a5e3-431d-908a-fc04035a62a8/V2_iOS6.5_03.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c2/f5/5c/c2f55ce1-38da-64cc-a7ec-af549fd053e6/V2_iOS6.5_04.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/60/9d/f5/609df56a-1d35-f7fa-92bb-4120ad5ec16c/V2_iOS6.5_05.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/37/b0/99/37b099cd-086d-b920-2ed3-0be6507353c4/V2_iOS6.5_06.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/02/4f/ca/024fcaa8-bc94-def3-4df8-f8f06589c2e4/V2_iOS6.5_07.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6b/a0/8e/6ba08efd-ba4a-b4f8-25a4-dfd749c570a7/V2_iOS6.5_08.jpg/1920x1920bb.jpg"
+      ]
     },
     "Revolut": {
       "version": "10.155",
       "date": "2026-11-05T11:38:52.000Z",
       "notes": "Welcome to Revolut. We’ve made some tweaks and improvements under the hood in this version to make your Revolut experience even smoother.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4d/e0/e2/4de0e230-ec4f-2030-b732-5cd32a22dfa3/Screen_1_1206x2622.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4d/e0/e2/4de0e230-ec4f-2030-b732-5cd32a22dfa3/Screen_1_1206x2622.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4d/e0/e2/4de0e230-ec4f-2030-b732-5cd32a22dfa3/Screen_1_1206x2622.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7e/b9/74/7eb9744e-01ba-5426-3f28-6f6c7f653645/Screen_2_1206x2622.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/96/26/a4/9626a4f9-7898-76a7-1bad-f227ebfdbb6d/Screen_3_1206x2622.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d2/1e/0b/d21e0b07-4f2c-b829-a238-336efb148c34/Screen_4_1206x2622.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bb/1e/c4/bb1ec41f-869c-185f-3e53-c7582f6658b8/Screen_5_1206x2622.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/99/b9/38/99b93876-572d-4af7-8195-788d231a2d46/Screen_6_1206x2622.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/66/7a/93/667a93f4-c9de-1f50-b373-6c1554c68c66/Screen_7_1206x2622.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3c/60/d3/3c60d36a-444c-df72-1df8-1a5725a70845/Screen_8_1206x2622.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ca/27/b5/ca27b52f-cb8b-fe24-c488-bba0d484c2ec/Screen_9_1206x2622.jpg/1920x1920bb.jpg"
+      ]
     },
     "Uber": {
-      "version": "3.746.10001",
-      "date": "2026-11-02T05:05:33.000Z",
+      "version": "3.747.10000",
+      "date": "2026-11-09T07:57:50.000Z",
       "notes": "We update the Uber app as often as possible to make it faster and more reliable for you. Here are a couple of the enhancements you'll find in the latest update: - Updates to improve localization across the app - Various bug fixes & improvements Love the app? Rate us! Your feedback keeps the Uber engine running. Have a question? Tap Help in the Uber app or visit help.uber.com.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/24/94/c7/2494c7d7-6acf-addf-5432-33ce5fc88de2/6cf2abb7-d8c1-49e0-96f5-88dc3b1bdc20_SS01.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/24/94/c7/2494c7d7-6acf-addf-5432-33ce5fc88de2/6cf2abb7-d8c1-49e0-96f5-88dc3b1bdc20_SS01.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/24/94/c7/2494c7d7-6acf-addf-5432-33ce5fc88de2/6cf2abb7-d8c1-49e0-96f5-88dc3b1bdc20_SS01.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ae/bb/4d/aebb4d37-5fe0-96f9-69b7-8cea7896f01c/5921dcb5-b558-4369-b72c-85c22f89742d_SS02.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cc/4f/a5/cc4fa5ad-3856-92d0-a719-6cfa8ef0ff63/ca2de83c-8c8e-4887-94f4-3ae11c83d7cc_SS03.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ab/48/2e/ab482ec4-af94-e191-958b-b72d56347e42/6278c7a5-d250-447d-98a0-bf04f99466d2_SS04-1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/46/c5/3b/46c53b59-1665-3f87-4bf5-c7bdc64fb3dc/b84851b2-17bd-42b1-85c7-a2088fbf7daa_SS04.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/20/20/1b/20201b87-1ecd-8d85-fdd5-f78c83b896d0/17964b45-4a8b-4ec6-a921-2e303727d0c1_SS05.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5e/3f/fe/5e3ffe38-c242-4619-89eb-401c96a0f4b1/367a93cc-dac7-4d8c-9124-dafbcb390f97_SS05-1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/87/35/03/873503e3-c735-3ae5-d05d-b398c3de7f86/c25f9a28-6a59-4e0c-80b4-a12da091a62c_SS06.png/1920x1920bb.png"
+      ]
     },
     "Spotify": {
-      "version": "9.1.94",
-      "date": "2026-10-23T17:59:53.000Z",
+      "version": "9.1.98",
+      "date": "2026-11-09T18:28:38.000Z",
       "notes": "We’re always making changes and improvements to Spotify. To make sure you don’t miss a thing, just keep your Updates turned on.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f3/ce/05/f3ce0547-690a-b355-b1dd-6b6e91808279/IOS_-_5.5_-_S01_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f3/ce/05/f3ce0547-690a-b355-b1dd-6b6e91808279/IOS_-_5.5_-_S01_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f3/ce/05/f3ce0547-690a-b355-b1dd-6b6e91808279/IOS_-_5.5_-_S01_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/78/81/ca/7881ca10-b441-1a6c-e030-92e08dd76144/IOS_-_5.5_-_S02_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5b/e7/6a/5be76ae0-8bc6-59fc-58ef-92aa931b6dba/IOS_-_5.5_-_S03_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cf/ef/84/cfef8425-3610-a4b5-b4d8-1f22da2449d8/IOS_-_5.5_-_S04_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/52/66/2a/52662aa9-7a10-a349-f1cb-787143401ace/IOS_-_5.5_-_S05_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/91/12/40/9112404c-d50d-bae4-1d42-4a0153ab7cfc/IOS_-_5.5_-_S06_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b9/df/e9/b9dfe9f4-7716-a072-6d8b-d683ed92c75f/IOS_-_5.5_-_S07_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cb/55/ca/cb55ca54-a183-ea42-3a46-9c2fa59ea289/IOS_-_5.5_-_S08_-_EN_-_CA_U005bEnglish__U0028Canada_U0029_U005d.png/1920x1920bb.png"
+      ]
     },
     "Instagram": {
-      "version": "454.1",
-      "date": "2026-11-04T14:29:10.000Z",
+      "version": "455.0.0",
+      "date": "2026-11-09T15:57:59.000Z",
       "notes": "Performance optimizations and stability improvements for a smoother, more reliable experience.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/40/d2/ed/40d2ed5a-6217-60a0-22bb-ca38d63689b4/1_iOS_5.5.jpg/392x696bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/40/d2/ed/40d2ed5a-6217-60a0-22bb-ca38d63689b4/1_iOS_5.5.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/40/d2/ed/40d2ed5a-6217-60a0-22bb-ca38d63689b4/1_iOS_5.5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ef/2a/8b/ef2a8b44-fa9c-83b5-ec6a-b548a3c6b803/1_iOS_5.5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/46/04/ec/4604ec65-497b-85a4-fe51-c96719f9aa86/2_iOS_5.5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/96/f8/2196f89d-dba9-c58f-1014-69be7cdc1527/3_iOS_5.5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f6/7a/53/f67a5367-e0f6-368a-9da7-0a5db8502ce0/4_iOS_5.5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/76/44/b3/7644b346-96a2-fdbe-e9e6-84fd4ccf3f30/5_iOS_5.5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e9/56/a6/e956a619-edaf-30a5-0567-3be57feb4157/6_iOS_5.5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/11/a3/ea11a31c-9144-cd4f-3924-87249d18734b/7_iOS_5.5.jpg/1920x1920bb.jpg"
+      ]
     },
     "WhatsApp": {
-      "version": "26.43.75",
-      "date": "2026-11-02T16:48:57.000Z",
+      "version": "26.44.72",
+      "date": "2026-11-09T14:07:04.000Z",
       "notes": "We update the app regularly to fix bugs, optimize performance and improve the experience. Thanks for using WhatsApp!",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d8/95/88/d89588dd-ce20-0f5b-95bc-f99814bf9a6c/6.9__Display_1-en_US.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/59/68/07/59680746-33d1-542e-5c43-1845813e74e2/6.9__Display_1-en_US.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/59/68/07/59680746-33d1-542e-5c43-1845813e74e2/6.9__Display_1-en_US.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/19/02/fb/1902fbb6-44b3-937d-f4f2-279af6a7f68c/6.9__Display_2-en_US.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a5/70/66/a57066d2-6b29-1805-524f-1d2133ab2398/6.9__Display_3-en_US.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5c/44/7c/5c447c79-c33d-18dc-824d-bc2dd5b4c26b/6.9__Display_4-en_US.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7d/8a/c5/7d8ac551-f6d6-99e0-afe0-87021c8ea23a/6.9__Display_5-en_US.png/1920x1920bb.jpg"
+      ]
     },
     "TikTok": {
-      "version": "47.6.0",
-      "date": "2026-11-02T22:22:26.000Z",
-      "notes": "Quickly find and tag your friends in comments.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6c/a1/6a/6ca16a58-1937-7122-e65b-2d901f84fdbb/oEEEv6yBAvIC3s9IGZ1A83wu5TAjAsxiAjLig.png/392x696bb.png"
+      "version": "47.7.0",
+      "date": "2026-11-09T23:05:06.000Z",
+      "notes": "We've been working on making your experience on TikTok better with updates and bug fixes.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6c/a1/6a/6ca16a58-1937-7122-e65b-2d901f84fdbb/oEEEv6yBAvIC3s9IGZ1A83wu5TAjAsxiAjLig.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6c/a1/6a/6ca16a58-1937-7122-e65b-2d901f84fdbb/oEEEv6yBAvIC3s9IGZ1A83wu5TAjAsxiAjLig.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/27/ce/2f/27ce2fc4-a338-95ab-3bbe-1b9062cf537d/e6733d76-8afb-4efa-b9a1-9937cdd227f7_STEM_iOS_2208.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b2/b8/d5/b2b8d5ce-7852-5c2c-1bce-4c812c04cb65/329e308a-8a6a-40d8-a1a1-ada1c34e45e8_Mother_iOS_2208.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/25/77/8b/25778baf-1cdf-6732-6fd0-2ec81e1323f0/aebb5dbd-18b1-423e-b417-f6f7864e3404_Recipe_iOS_2208.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/99/2e/c2/992ec242-7589-7262-cfd6-11a6115674d0/426a0b06-acb2-4cec-b9a0-b0e69a124d7e_Winter_AI_iOS_2208.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bc/ea/c0/bceac0a7-89bb-7aac-eeec-4ee64625ce47/4e4d8986-3144-4362-a170-18cb3bab6dd6_Hocky_iOS_2208.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/21/77/bd/2177bd1d-f668-33ec-0c40-dd2d15e1ff1a/1c75c2b6-1845-4523-b90b-01b54f039b78_Pet_iOS_2208.png/1920x1920bb.png"
+      ]
     },
     "Threads": {
-      "version": "454.0",
-      "date": "2026-11-02T15:05:03.000Z",
+      "version": "455.0",
+      "date": "2026-11-09T15:03:01.000Z",
       "notes": "We’re working fast to regularly update our app. To experience the newest features and improvements, download the latest version of the app.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d4/b5/c5/d4b5c54d-25ba-e4c0-7fbc-b1c0b3476ef3/01_iOS-1242x2688-Join-the-conversation_en_US.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d4/b5/c5/d4b5c54d-25ba-e4c0-7fbc-b1c0b3476ef3/01_iOS-1242x2688-Join-the-conversation_en_US.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d4/b5/c5/d4b5c54d-25ba-e4c0-7fbc-b1c0b3476ef3/01_iOS-1242x2688-Join-the-conversation_en_US.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4f/2e/9a/4f2e9aa6-0491-e17b-d77d-1731ccb8453b/02_iOS-1242x2688-Discover-new-takes_en_US.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fe/59/22/fe59229e-1b5a-9c13-2568-53a402d65bca/03_iOS-1242x2688-Find-your-community_en_US.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/90/d5/5b90d574-56aa-8187-113e-bf68c0e1c3c9/06_iOS-1242x2688-Connect-over-chat_en_US.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/dd/c4/56/ddc456bb-bc7f-673a-734f-c85053c8525d/04_iOS-1242x2688-See-what_s-happening-now_en_US.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7d/6e/7e/7d6e7e2b-da63-2c89-7a4c-79c9124124b4/05_iOS-1242x2688-Say-it-your-way_en_US.png/1920x1920bb.jpg"
+      ]
     },
     "Notion": {
       "version": "1.7.352",
       "date": "2026-11-06T18:12:58.000Z",
       "notes": "Bug fixes and performance improvements.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4e/9c/7b/4e9c7b5a-4e44-af47-6389-1fce93ffc6de/NotionLabs_Notion_iOS-6.9_US_Screenshots_250924_01.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4e/9c/7b/4e9c7b5a-4e44-af47-6389-1fce93ffc6de/NotionLabs_Notion_iOS-6.9_US_Screenshots_250924_01.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4e/9c/7b/4e9c7b5a-4e44-af47-6389-1fce93ffc6de/NotionLabs_Notion_iOS-6.9_US_Screenshots_250924_01.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8f/a4/5c/8fa45ce1-ea9a-8148-1928-b1939028c8ce/NotionLabs_Notion_iOS-6.9_US_Screenshots_250924_02.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/49/67/56/49675696-a92d-ba12-de33-59b79711b0f3/NotionLabs_Notion_iOS-6.9_US_Screenshots_250924_03.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/37/d0/f1/37d0f1dd-0541-712c-85f6-aa1fca59af7a/NotionLabs_Notion_iOS-6.9_US_Screenshots_250924_04.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9e/45/71/9e457117-05e3-a2ab-8a04-c872306f707a/NotionLabs_Notion_iOS-6.9_US_Screenshots_250924_05.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/46/14/f2/4614f26e-bf71-06f4-932b-dcd7ee4a15ef/NotionLabs_Notion_iOS-6.9_US_Screenshots_250924_06.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f0/59/6e/f0596edb-d942-60b7-ae93-b47b6c44c868/NotionLabs_Notion_iOS-6.9_US_Screenshots_250924_07.png/1920x1920bb.jpg"
+      ]
     },
     "Linear": {
       "version": "1.107.0",
       "date": "2026-11-03T17:20:35.000Z",
       "notes": "Bug fixes and minor improvements",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/5a/ae/ea5aaea5-37a2-f012-18e0-1b768410b871/initiatives.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/5a/ae/ea5aaea5-37a2-f012-18e0-1b768410b871/initiatives.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/5a/ae/ea5aaea5-37a2-f012-18e0-1b768410b871/initiatives.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a5/21/f5/a521f5e7-9758-ff3c-dfd1-d27f2830a55e/inbox.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d6/4c/1a/d64c1a3c-c6d4-e44d-e6a4-0eb9f99d654f/agent.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/65/04/4a/65044ae2-5fff-19da-5550-230bfc87e5ad/issues.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4c/23/62/4c236263-77bd-0934-d727-872205f672f5/notifications.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5c/53/d7/5c53d72c-11c9-c7e4-e1ce-e559f535faf0/projects.png/1920x1920bb.jpg"
+      ]
     },
     "Kayak": {
       "version": "298.0.0",
       "date": "2026-11-04T09:32:37.000Z",
       "notes": "We've been busy paving the runway for your next great escape! We're excited to present the latest version of our app, tuned up and bugs squashed, providing you a smooth and seamless experience.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/97/c7/e2/97c7e280-a2f0-e8f3-c4c5-08c20a4a8a09/0_APP_IPHONE_55_0.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/97/c7/e2/97c7e280-a2f0-e8f3-c4c5-08c20a4a8a09/0_APP_IPHONE_55_0.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/97/c7/e2/97c7e280-a2f0-e8f3-c4c5-08c20a4a8a09/0_APP_IPHONE_55_0.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/15/47/a4/1547a4ae-6e5b-946c-455f-39e184a3e2e7/1_APP_IPHONE_55_1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/46/1f/30/461f30b7-e704-4c05-7a0e-34fd9839a461/2_APP_IPHONE_55_2.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/86/a5/a5/86a5a5bf-93f3-b0b8-4e4f-e061e0bfdb57/3_APP_IPHONE_55_3.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0d/4e/ad/0d4ead8f-cc08-2ca1-156c-b39dc1cd5578/4_APP_IPHONE_55_4.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e6/eb/c1/e6ebc18a-c476-226c-5b7d-fc48aaa505f7/5_APP_IPHONE_55_5.png/1920x1920bb.png"
+      ]
     },
     "Tripadvisor": {
       "version": "70.6.0",
       "date": "2026-11-04T09:16:28.000Z",
       "notes": "While you’ve been out there planning and taking trips, we’ve been here, working to bring you the best version of the app yet. That means fixing bugs, adding new features, and generally making sure your trip is nothing but smooth sailing. Download the latest version if you haven’t already. Love the app? We’d love to hear it! Rate it to let us know how we’re doing.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bd/43/a8/bd43a84f-ec4b-85ac-4775-c68c48681948/0_APP_IPHONE_55_0.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bd/43/a8/bd43a84f-ec4b-85ac-4775-c68c48681948/0_APP_IPHONE_55_0.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bd/43/a8/bd43a84f-ec4b-85ac-4775-c68c48681948/0_APP_IPHONE_55_0.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d0/e9/ac/d0e9acde-7dfb-ab6f-8940-3852eb95941d/1_APP_IPHONE_55_1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d4/01/71/d401719b-f6d2-050e-d9a0-5c946d355ef3/2_APP_IPHONE_55_2.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/26/0e/2a/260e2adf-72e7-72d9-9bab-ec5ddd0809c4/3_APP_IPHONE_55_3.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7c/c1/73/7cc17346-603c-780c-d2e4-e599185adf2f/4_APP_IPHONE_55_4.png/1920x1920bb.png"
+      ]
     },
     "Skyscanner": {
       "version": "7.216",
       "date": "2026-11-03T21:32:51.000Z",
       "notes": "This just in. Drops. Our brand-new app-exclusive feature is your next travel hack to get the best deal for your next trip. Every day, we’re sifting through billions of travel prices hunting for the best flight price drops of at least 20% to anywhere in the world. Simply tell us where you like to fly from, and watch the deals roll in. Whether you’re feeling a little spontaneous or got your eye on somewhere specific, check Drops for the latest prices from your top airport.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/09/3b/84/093b84e2-4966-7102-42b2-7463bbbb5409/5595c1a1-aa72-4597-bf84-2d38c07c72b0_01-iphone5.5-Screen-Title-en-CA.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/09/3b/84/093b84e2-4966-7102-42b2-7463bbbb5409/5595c1a1-aa72-4597-bf84-2d38c07c72b0_01-iphone5.5-Screen-Title-en-CA.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/09/3b/84/093b84e2-4966-7102-42b2-7463bbbb5409/5595c1a1-aa72-4597-bf84-2d38c07c72b0_01-iphone5.5-Screen-Title-en-CA.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cb/b5/14/cbb514c2-6535-f532-07a2-93eda3d718e3/84dd3442-cab9-4070-b9e7-6efaf12ab157_02-iphone5.5-Screen-Calendar-en-CA.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c4/13/dc/c413dcc5-0a3f-2dda-0a09-9cc4adb8552c/9a8e10f5-8772-49d7-b4af-c2225e6106e1_10-iphone5.5-Combined-Explore-en-CA.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/25/3d/50/253d5060-c7d2-e970-f7cc-5188a91c84a5/83e7f8da-0a1c-4820-aa9c-c9304cec2474_03-iphone5.5-Screen-Search_Filters-en-CA.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/17/9d/da/179dda4e-cd3f-eefa-eaed-391213f68967/1fa049aa-e5e3-4b0b-ba4d-e92bad99c60d_04-iphone5.5-Screen-Price_Alerts-en-CA.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4d/be/ef/4dbeef68-50a4-9b43-5598-46042558f213/aef46619-8f94-4aa2-8b51-44e1af968958_05-iphone5.5-Screen-Explore_Everywhere-en-CA.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/30/7c/e6/307ce612-851e-79a4-a14e-c3cb65e2e4c8/824a7064-9275-4e20-8292-924d8950ed0d_06-iphone5.5-Screen-Hotels-en-CA.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/62/54/b8/6254b80e-f212-59a8-4a86-f7056a765cfd/1ca78349-a1ba-4b9c-899f-bc20274f05b0_07-iphone5.5-Screen-Car_Hire-en-CA.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8b/9b/fd/8b9bfdac-5116-4f2a-8e83-64da01605d9b/3b92c2d9-2029-4ba2-9f2a-49a34b7e0f63_08-iphone5.5-Screen-Partners-en-CA.png/1920x1920bb.png"
+      ]
     },
     "Traveloka": {
       "version": "5.56.0",
       "date": "2026-10-28T01:59:31.000Z",
       "notes": "Ready for your next adventure? We’ve smoothed out the ride with performance boosts and bug fixes to make your travel planning better than ever. - Faster search and better stability. - General performance improvements for a seamless experience. Update your Traveloka app now and start your journey!",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/38/d2/a9/38d2a9fb-018c-f112-b885-75a3d525a79d/ASO_2025_iOS_1284x2778__U00282_U0029.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/38/d2/a9/38d2a9fb-018c-f112-b885-75a3d525a79d/ASO_2025_iOS_1284x2778__U00282_U0029.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/38/d2/a9/38d2a9fb-018c-f112-b885-75a3d525a79d/ASO_2025_iOS_1284x2778__U00282_U0029.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/89/49/d9/8949d984-4378-4375-58c5-f2b36520db26/ASO_2025_iOS_1284x2778-02-EN.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2c/ec/39/2cec39ee-a202-6246-2c8d-9a897909f7ff/ASO_2025_iOS_1284x2778-03-EN.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/dd/cd/e4/ddcde424-dc09-e30e-0792-e52665991af6/ASO_2025_iOS_1284x2778-04-EN.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/24/1c/0c/241c0c38-cd8b-2fe8-e26f-714410a1534f/ASO_2025_iOS_1284x2778-05-EN.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3a/2a/38/3a2a38c9-514b-be80-2814-5098f7428b1e/ASO_2025_iOS_1284x2778-06-EN.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/32/74/da/3274da60-08c1-4ebb-507f-267c581d8c30/ASO_2025_iOS_1284x2778-07-EN.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/8f/33/1f8f330e-99cc-097f-9f10-472bf792e279/ASO_2025_iOS_1284x2778-08-EN.png/1920x1920bb.jpg"
+      ]
     },
     "Priceline": {
       "version": "37.3",
       "date": "2026-11-05T13:16:47.000Z",
       "notes": "Your next adventure starts here. Here's what's new in the latest Priceline update: - Peace of Mind on Every Booking: Travel insurance is now available across all our products, so you can explore with complete confidence. - Bundle Up, Save Big: Combine flights, hotels, and cars for maximum savings. You can also add a rental car to your round-trip flight in just a few taps. - Penny's Got You Covered: Your AI travel companion is ready to chat, brainstorm, and plan your next trip. Even hands-free when you're on the go. - Notifications Fully in Your Control: Personalize which updates you receive right from your settings. No noise, just what counts. - Plan smarter: Your saved destinations, best deals, and travel tips — now in the Saved tab on My Trips - Smoother Than Ever: We squashed some bugs and fine-tuned performance so everything runs just the way it should.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/b2/71/dfb2711e-59de-e499-8860-257252acfcb4/63296501-a4c1-41c4-85cc-9983cb2ec555_01-5.5_Inch_IOS_Hotel1.1_Copy.jpg/392x696bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/b2/71/dfb2711e-59de-e499-8860-257252acfcb4/63296501-a4c1-41c4-85cc-9983cb2ec555_01-5.5_Inch_IOS_Hotel1.1_Copy.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/b2/71/dfb2711e-59de-e499-8860-257252acfcb4/63296501-a4c1-41c4-85cc-9983cb2ec555_01-5.5_Inch_IOS_Hotel1.1_Copy.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f2/9c/bf/f29cbf15-dfce-a6f2-8462-216432a8d402/Become_a_VIP.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/70/96/22/709622ef-2259-ada9-411f-d8e6f21d6877/233517c1-001c-4d9b-8a7c-9736884867a8_5.5_Inch_IOS_RC_JAN24.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/31/31/0e/31310eb1-b15e-dd66-27f9-aceec6c17371/4e757c6f-9af9-42bb-8701-5b86fda65c95_5.5_Inch_IOS_FLIGHT_FEB24.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/71/92/24/7192249b-61b0-a325-b858-4f61a024c0db/b8820f9d-7a43-4107-a471-51d0b3559224_07-5.5_Inch_IOS_Flight4.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8c/2f/9d/8c2f9daa-eb07-1cd3-1df7-a5714852750b/Manage_trip_details.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/30/bf/d1/30bfd18d-5b15-4f63-5b89-fc20825870ef/Taking_a_Road_Trip.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/44/95/14/44951485-9496-acc5-b2e6-715abddefd8f/05157a47-acfd-423b-aa75-c06e4de45abc_08-5.5_Inch_IOS_RC7.jpg/1920x1920bb.jpg"
+      ]
     },
     "trivago": {
       "version": "7.1.0",
       "date": "2026-10-26T10:44:42.000Z",
       "notes": "Ready to find your perfect stay? Well, good thing we’ve updated our app in this latest release. Let’s just say we’ve been busy bees implementing all sorts of bug fixes and performance improvements to give you the best app experience yet.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/6a/1a/5b6a1a2a-26fe-b494-3a24-1761fb8b4bc5/043fb1ea-e7c0-4da7-938c-196d9682135b_app_store_2008_55_AU.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/6a/1a/5b6a1a2a-26fe-b494-3a24-1761fb8b4bc5/043fb1ea-e7c0-4da7-938c-196d9682135b_app_store_2008_55_AU.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/6a/1a/5b6a1a2a-26fe-b494-3a24-1761fb8b4bc5/043fb1ea-e7c0-4da7-938c-196d9682135b_app_store_2008_55_AU.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6f/d8/d1/6fd8d103-a4c2-f905-d1f0-db569a3f9edc/pr_source.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9c/92/20/9c92205b-5ab0-81dc-8ebd-83cbfcd60a0d/pr_source.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/80/79/fd8079db-0e92-d775-7fb7-0f37c572cad0/pr_source.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d8/bd/87/d8bd87c1-95b6-67d8-3366-f8926c7e1efc/pr_source.jpg/1920x1920bb.jpg"
+      ]
     },
     "Amtrak": {
       "version": "6.1.8",
       "date": "2026-10-16T13:09:19.000Z",
       "notes": "Thanks for choosing the Amtrak app. We continue to fix bugs and improve the experience. Please check for updates frequently to take advantage of the improvements.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/af/ec/60/afec6013-6c4a-cb6d-0ef7-93a159035d60/Slide_1.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/af/ec/60/afec6013-6c4a-cb6d-0ef7-93a159035d60/Slide_1.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/af/ec/60/afec6013-6c4a-cb6d-0ef7-93a159035d60/Slide_1.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/96/2c/b4/962cb4a0-0652-1917-1712-e86fb911769f/Slide_2.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a4/7a/0d/a47a0d68-542d-9ad4-b2ee-81b2a41c822d/Slide_3.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/32/20/dd/3220dd2a-f9a2-0c37-ee5c-07e05549bf01/Slide_4.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/2c/e1/c82ce12d-43f5-0640-a243-6c8c4385a68c/Slide_5.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1d/91/4d/1d914de1-5bdc-37f6-0f57-f057b743a448/Slide_6.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4c/ee/c4/4ceec48f-3d6c-3993-4442-ea60db3b8ea5/Slide_7.png/1920x1920bb.jpg"
+      ]
     },
     "Uber Eats": {
-      "version": "6.347.10000",
-      "date": "2026-11-02T17:43:43.000Z",
+      "version": "6.348.10001",
+      "date": "2026-11-09T18:02:29.000Z",
       "notes": "We update the Uber Eats app as often as possible to make it faster and more reliable for you. Here are a couple of the enhancements you'll find in the latest update: - Performance improvements - Localization updates Love the app? Rate us! Your feedback keeps the Uber Eats engine running. Have a question? Tap Help in the Uber Eats app or visit help.uber.com.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/de/cb/c4decbb3-75b8-30fd-a9aa-07b5c6c65c9f/Eats_US_iOS_iphoneX_1242x2688_SS01.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c5/91/ab/c591ab49-434f-7bfb-d2ee-f4199e6a69bf/Eats_CA_iOS_Max_Pro_1320x2868_SS01.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c5/91/ab/c591ab49-434f-7bfb-d2ee-f4199e6a69bf/Eats_CA_iOS_Max_Pro_1320x2868_SS01.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4a/d8/4a/4ad84a47-fdb3-fb5f-33ce-eaf3b67c8a21/Eats_CA_iOS_Max_Pro_1320x2868_SS02.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e8/01/c3/e801c3fb-16c8-fa6d-18d8-7b8549b8f1f7/Eats_CA_iOS_Max_Pro_1320x2868_SS03.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/b6/17/33b61778-9661-200b-b872-7560e004edc4/Eats_CA_iOS_Max_Pro_1320x2868_SS04.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6a/c6/d6/6ac6d60a-d730-6948-6a58-1557467edb58/Eats_CA_iOS_Max_Pro_1320x2868_SS05.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1b/fd/c1/1bfdc1f9-4429-ecf7-a8c0-4a1d47348f8f/Eats_CA_iOS_Max_Pro_1320x2868_SS06.jpg/1920x1920bb.jpg"
+      ]
     },
     "Lyft": {
-      "version": "2026.42.3",
-      "date": "2026-11-02T19:19:18.000Z",
+      "version": "2026.43.3",
+      "date": "2026-11-09T19:31:59.000Z",
       "notes": "Thank you for using Lyft! We regularly update our app to make your experience even better. Each update to our app includes reliability and speed improvements, in addition to bug fixes and performance improvements. New features are highlighted in the app.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/70/36/c8/7036c842-cb38-1ab2-3761-7bebdff7c28b/Apple_55_Rdr_US_F1_1242x2208.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/70/36/c8/7036c842-cb38-1ab2-3761-7bebdff7c28b/Apple_55_Rdr_US_F1_1242x2208.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/70/36/c8/7036c842-cb38-1ab2-3761-7bebdff7c28b/Apple_55_Rdr_US_F1_1242x2208.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/82/f4/2f82f439-4784-cadd-5a4d-3831fa6e8c8a/Apple_55_Rdr_US_F2_1242x2208.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/18/be/91/18be91ef-6577-86ba-7487-c852d4fe99b6/Apple_55_Rdr_US_F3_1242x2208.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/80/66/aa806667-21e0-a323-5dd4-7226ee476f1c/Apple_55_Rdr_US_F4_1242x2208.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/85/d8/65/85d8655e-9ddc-d87b-802c-15c782904434/Apple_55_Rdr_US_F5_1242x2208.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f1/cd/69/f1cd69af-286d-b1cf-4bac-3406b0354c2b/Apple_55_Rdr_US_F6_1242x2208.png/1920x1920bb.png"
+      ]
     },
     "DoorDash": {
-      "version": "8.43.0",
-      "date": "2026-11-02T06:00:23.000Z",
+      "version": "8.44.0",
+      "date": "2026-11-09T06:00:23.000Z",
       "notes": "Minor updates and performance improvements",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/33/a1/5833a1ca-cbc7-31d4-26f0-2742f819aa7c/AppStore-iPhone6.9-Screen-01.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/33/a1/5833a1ca-cbc7-31d4-26f0-2742f819aa7c/AppStore-iPhone6.9-Screen-01.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/33/a1/5833a1ca-cbc7-31d4-26f0-2742f819aa7c/AppStore-iPhone6.9-Screen-01.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/70/27/7b/70277b10-4274-595f-16a7-731ea5bef2c8/AppStore-iPhone6.9-Screen-02.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8e/49/81/8e49816c-eda1-8b8a-cf82-65618a1f55a5/AppStore-iPhone6.9-Screen-03.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/71/3d/0d/713d0dc3-081e-3c11-16a9-493efd3ea906/AppStore-iPhone6.9-Screen-04.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e6/4b/40/e64b401d-167b-58dc-bf79-61703813593f/AppStore-iPhone6.9-Screen-05.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6c/ac/9d/6cac9ddd-bf94-ef5f-5ea6-1dc0c1bee87c/AppStore-iPhone6.9-Screen-06.jpg/1920x1920bb.jpg"
+      ]
     },
     "Grubhub": {
-      "version": "2026.44.2",
-      "date": "2026-11-03T13:48:48.000Z",
-      "notes": "We upgraded the app. Now upgrade your mealtime with something delicious. Plus, there's still no delivery or service fees on $50+ restaurant orders.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dc/60/d8/dc60d8f9-ed93-2377-7d1f-79b5b809dc1b/Copy_of_82._Apple_Product_Page_-_Image_1_-_1242x2208_-_GH.png/392x696bb.png"
+      "version": "2026.45",
+      "date": "2026-11-09T15:51:09.000Z",
+      "notes": "We kneaded the dough, sprinkled in some fixes, and delivered a fresh batch of updates. Time to satisfy your cravings. Plus, there's still no delivery or service fees on $50+ restaurant orders.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dc/60/d8/dc60d8f9-ed93-2377-7d1f-79b5b809dc1b/Copy_of_82._Apple_Product_Page_-_Image_1_-_1242x2208_-_GH.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dc/60/d8/dc60d8f9-ed93-2377-7d1f-79b5b809dc1b/Copy_of_82._Apple_Product_Page_-_Image_1_-_1242x2208_-_GH.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d0/96/ec/d096ec79-6214-73ec-1d57-675167c87306/Copy_of_82._Apple_Product_Page_-_Image_2_-_1242x2208_-_GH__IC_version.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/87/ad/15/87ad156c-8acb-404a-4b6e-5ce87b8ea117/Copy_of_82._Apple_Product_Page_-_Image_3_-_1242x2208_-_GH__IC_version.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8e/66/9c/8e669c08-50bf-12bc-a116-5c7f9053c5d2/Copy_of_82._Apple_Product_Page_-_Image_4_-_1242x2208_-_GH.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/67/5c/68/675c6841-f9ca-7727-6ff3-93d70194151e/Copy_of_82._Apple_Product_Page_-_Image_5_-_1242x2208_-_GH.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/26/d0/9c/26d09ce5-c962-ce7e-4769-0dd4987cca46/Copy_of_82._Apple_Product_Page_-_Image_6_-_1242x2208-_GH.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/12/7f/92/127f928c-f9fb-3268-902a-dd5aea1b4a5c/Copy_of_82._Apple_Product_Page_-_Image_7_-_1242x2208_-_GH.png/1920x1920bb.png"
+      ]
     },
     "MakeMyTrip": {
       "version": "10.7.2",
       "date": "2026-11-05T03:44:55.000Z",
       "notes": "• A smoother travel experience with smarter bookings and greater flexibility. • Hotels – Book cabs alongside your stay. • Buses – Explore safety features and onboard amenities. • Trains – Cancel at ₹0 on eligible advance bookings and pre-book meals. • Cabs – Smarter recommendations, route selection, and improved post-booking support. • Tours & Attractions – Ratings and reviews across 10,000+ activities. • General fixes and performance enhancements across the app.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/51/96/5c/51965c28-1b83-bf30-7ab5-a2bed39a65d2/0_APP_IPHONE_65_0.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/51/96/5c/51965c28-1b83-bf30-7ab5-a2bed39a65d2/0_APP_IPHONE_65_0.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/51/96/5c/51965c28-1b83-bf30-7ab5-a2bed39a65d2/0_APP_IPHONE_65_0.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4a/98/fc/4a98fc8e-e545-c996-8cbb-8ed9d372b8b3/1_APP_IPHONE_65_1.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/55/7d/a1/557da16e-8875-4aed-2529-83bb68b5bf3d/3_APP_IPHONE_65_3.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/f6/31/58f63110-8a04-7a67-78ef-8767012370a5/4_APP_IPHONE_65_4.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/43/da/b8/43dab890-2ff2-223c-ecbb-a5ccdb665b04/7_APP_IPHONE_65_7.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5d/f7/83/5df78307-6a3e-318a-fe12-ef4f26d2ba05/6_APP_IPHONE_65_6.png/1920x1920bb.jpg"
+      ]
     },
     "IRCTC Rail Connect": {
       "version": "4.3.20",
       "date": "2026-11-02T17:09:20.000Z",
       "notes": "UI enhancement and minor bug fixes.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5c/bc/48/5cbc4871-c039-c1e4-a22b-8c79a623425a/a9.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5c/bc/48/5cbc4871-c039-c1e4-a22b-8c79a623425a/a9.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5c/bc/48/5cbc4871-c039-c1e4-a22b-8c79a623425a/a9.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d8/5b/1d/d85b1d08-9bec-f22d-298e-0025d7b2f23c/a1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cb/02/58/cb0258fa-873c-1891-eb75-a18f864e5286/New_Project.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a3/bc/14/a3bc149f-7f32-dfc8-61cb-592ead9ad873/a4.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/36/62/f1/3662f1c2-b227-a5d5-6150-c3c8d8a89e68/a2.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7f/13/1e/7f131ee4-01a3-001a-de8b-a491bd51988e/a5.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/09/0d/13/090d137e-c756-1652-efa1-5eb60d7e0642/a6.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/d9/86/f3d98689-8fcc-88e9-f49e-b1f66b25db0d/a8.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d8/4d/77/d84d7775-a66f-b777-b636-440551cdd969/a7.png/1920x1920bb.png"
+      ]
     },
     "ixigo": {
       "version": "9.5.9",
       "date": "2026-11-07T10:15:10.000Z",
       "notes": "Diwali se New Year tak, khushiyon ka tyohaar! Friends ke saath plan karo koi fun trip, ya parents ko do ek spiritual holiday gift. This winter banao some brand-new memories, Har safar ko special kare ixigo, with ease!",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/80/db/df/80dbdf15-acd2-0583-0d50-15df09c73935/1._Travel_Guarantee_-_Alternate_Travel_Plan_6.5.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/80/db/df/80dbdf15-acd2-0583-0d50-15df09c73935/1._Travel_Guarantee_-_Alternate_Travel_Plan_6.5.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/80/db/df/80dbdf15-acd2-0583-0d50-15df09c73935/1._Travel_Guarantee_-_Alternate_Travel_Plan_6.5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/47/f3/48/47f348c8-7326-3924-8a73-24f0d750e1f4/2._Free_Trains_Cancellation_6.5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6b/dd/78/6bdd782c-d0f8-1672-53b2-714d74329d96/3._Order_Food_on_Train_6.5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/2e/85/ea2e854b-1680-4791-4afc-ec2c68ff5af1/4._Check_Train_Running_Status_6.5.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fb/ba/6b/fbba6bae-0afe-330c-39f4-c2bbf7dcec83/5._Running_Status_Live_Activity_6.5.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1c/0f/10/1c0f109f-1929-c657-730f-574558fe2b23/6._PNR_Status_Waitlist_Prediction_6.5.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8f/9c/09/8f9c09d9-80f2-83fe-e224-463fc8385381/7._Check_Your_Waitlist_Prediction_6.5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/de/ab/8a/deab8ae3-4aaa-e640-78a4-144a70812d59/8._Confirmed_Seat_on_Waitlisted_Trains_6.5.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cb/82/73/cb82738f-b155-80bc-33ee-00671dd0b91a/9._Train_Platform_Locator_6.5.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d1/50/98/d1509855-76d4-90f4-8e65-832553ac7252/10._Hotel_Booking_Deals_6.5.jpg/1920x1920bb.jpg"
+      ]
     },
     "Zomato": {
       "version": "27.7.1",
       "date": "2026-11-03T20:47:58.000Z",
       "notes": "Our latest update comes with bug fixes and performance enhancements to ensure a seamless experience across our app. Update your app now and give it a spin!",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4f/ea/08/4fea08ca-ea59-3c7d-5215-b91c778a141c/5.5inch_-_1.jpg/392x696bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4f/ea/08/4fea08ca-ea59-3c7d-5215-b91c778a141c/5.5inch_-_1.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4f/ea/08/4fea08ca-ea59-3c7d-5215-b91c778a141c/5.5inch_-_1.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/72/fc/7b/72fc7b38-632b-9f29-a306-c02ca169c4dd/5.5inch_-_2.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5f/cc/c1/5fccc1b8-26ee-d5dd-7afa-86aef56c0c4f/5.5inch_-_3.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/67/83/7f/67837fd0-518d-192d-2de5-60892ecdfaf3/5.5inch_-_4.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3d/02/5b/3d025bb6-11c4-cb66-9411-d99db09f1f65/5.5inch_-_5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/32/e8/90/32e8904c-d3c5-3b44-d485-e077e4a19362/5.5inch_-_6.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/74/ef/f6/74eff66c-75c1-b509-e634-f0c489a94b30/5.5inch_-_7.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/96/4a/07/964a0736-ac20-ef8c-47be-280526bac121/5.5inch_-_8.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/03/9d/34/039d34d2-a11a-74a2-7ea1-38b3bd656380/5.5inch_-_9.jpg/1920x1920bb.jpg"
+      ]
     },
     "Swiggy": {
       "version": "8.9.1",
       "date": "2026-11-08T05:12:35.000Z",
       "notes": "Bug fixes and improvements",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8a/56/f1/8a56f193-1d38-de5d-bb4a-1befa1140d76/IOS_Swiggy__U0028without_Giftables_U0029-.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8a/56/f1/8a56f193-1d38-de5d-bb4a-1befa1140d76/IOS_Swiggy__U0028without_Giftables_U0029-.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8a/56/f1/8a56f193-1d38-de5d-bb4a-1befa1140d76/IOS_Swiggy__U0028without_Giftables_U0029-.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5a/ad/2c/5aad2ca5-c636-e558-153d-1b6f56f992aa/IOS-6.5_Frame_2.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/14/08/0b/14080b3f-040c-4979-feb4-f86f605f8652/InstaUP.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/53/ad/9c/53ad9caf-721a-cc27-12e3-97057354f34d/IOS-6.5__Frame_5.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/45/0d/b0/450db0d8-26af-449f-202a-1a56e72bf58e/IOS-6.5__Frame_7.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5f/f5/6b/5ff56ba0-f964-67e1-3fd1-05b78d5fa09b/IOS-6.5_Frame_6.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ee/8c/35/ee8c354e-3e27-9502-3fc1-df5de3f025c8/IOS-Cashback.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/78/ad/5d/78ad5d6f-667c-7271-5e86-338a5db7d1f5/IOS-6.5_Frame_7.png/1920x1920bb.jpg"
+      ]
     },
     "Fliggy": {
       "version": "10.0.10.105",
       "date": "2026-11-02T02:24:59.000Z",
       "notes": "飞猪双十一优先购 【酒店】酒店特惠，预订送200元惊喜红包券 【机票】国内机票低至160元起 【度假】跟团特惠，速抢1500元券包 【赛事】预约抢明星演唱会门票",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cd/dd/f5/cdddf591-ffa8-9af0-5ffa-d3d1ce132bfa/_U5206_U9875-V10_U4e00_U53e5_U8bdd_U5c31_U51fa_U53d11242x2688.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cd/dd/f5/cdddf591-ffa8-9af0-5ffa-d3d1ce132bfa/_U5206_U9875-V10_U4e00_U53e5_U8bdd_U5c31_U51fa_U53d11242x2688.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cd/dd/f5/cdddf591-ffa8-9af0-5ffa-d3d1ce132bfa/_U5206_U9875-V10_U4e00_U53e5_U8bdd_U5c31_U51fa_U53d11242x2688.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/98/d3/5a/98d35aaa-85c2-15fe-4cb5-195e99388b3e/_U5206_U9875-V10_U5168_U7a0b_U966a_U4f341242x2688.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f5/72/43/f57243d7-9e41-8af4-8762-cea481433459/_U5206_U9875-V10_U540c_U4ef7_U591a_U5f971242x2688.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a5/8e/e1/a58ee14a-d615-346f-938a-d6398b94328d/_U5206_U9875-1242-2688__U673a_U7968.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/41/fc/fe/41fcfede-52f5-4972-6952-215fe44e991e/_U5206_U9875-1242-2688__U9152_U5e97.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/50/7e/38/507e3854-4695-bc46-d427-17e1b2e6cd0b/_U5206_U9875-1242-2688__U706b_U8f66_U7968.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9d/64/e5/9d64e511-267c-6f1b-4576-cf527073d2db/_U5206_U9875-1242-2688__U65c5_U6e38_U5ea6_U5047.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2d/e4/de/2de4deff-445d-991b-b640-1397eab29687/_U5206_U9875-1242-2688__U95e8_U7968.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f5/49/50/f5495046-b876-1b84-a5ea-a50bf88ec578/_U5206_U9875-1242-2688__U51fa_U5883_U6e38_U7b7e_U8bc1.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c0/cd/79/c0cd7989-56f8-3ce7-b21d-9e3adbc3eb50/_U9996_U9875-1242-2688.jpg/1920x1920bb.jpg"
+      ]
     },
     "Railway 12306": {
       "version": "5.9.6",
       "date": "2026-06-26T01:55:04.000Z",
       "notes": "【新版本特性】 1.页面焕新升级，优化功能布局； 2.提升产品体验，解决已知BUG。",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/83/7b/33/837b33f9-9c6f-e154-a3dc-a25101db6b5d/bd108256-e346-4382-9951-a98ec0a4b125__U9996_U9875-_U65e0_U5218_U6d77_U5c4f_U5907_U4efd_7@2x.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/83/7b/33/837b33f9-9c6f-e154-a3dc-a25101db6b5d/bd108256-e346-4382-9951-a98ec0a4b125__U9996_U9875-_U65e0_U5218_U6d77_U5c4f_U5907_U4efd_7@2x.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/83/7b/33/837b33f9-9c6f-e154-a3dc-a25101db6b5d/bd108256-e346-4382-9951-a98ec0a4b125__U9996_U9875-_U65e0_U5218_U6d77_U5c4f_U5907_U4efd_7@2x.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/2c/3e/e0/2c3ee02d-c382-90d0-f479-9bcc6e89707c/a07d73da-54f8-4095-91f3-e156a5180cd3__U51fa_U884c_U670d_U52a1-_U65e0_U5218_U6d77_U5c4f_U5907_U4efd_5@2x.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ad/fb/44/adfb4455-6225-3bb6-08bc-388b2588f779/0676b533-169f-4e8a-b181-6cd6903af09c__U7231_U5fc3_U7248-_U65e0_U5218_U6d77_U5c4f@2x.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f5/0c/c0/f50cc01a-dd6a-dc03-eab8-f1dd45c399e7/359f8f18-f2c6-4664-afeb-6333f755b142__U591a_U8bed_U8a00-_U65e0_U5218_U6d77_U5c4f_U5907_U4efd_4@2x.png/1920x1920bb.png"
+      ]
     },
     "DiDi": {
       "version": "8.0.18",
       "date": "2026-10-29T02:47:48.000Z",
       "notes": "“滴滴出行”正式更名为“滴滴” 网约车青春代言人王安宇，「宇」你一起全新体验，去往每一种生活！ 页面结构全面升级！ 新增顶部导航栏，覆盖出行、送货、旅行、车主等多重使用场景，操作更顺畅。 底部导航栏新增“消息”、“行程”入口，查询更便捷。 新版打车地图视觉焕新上线！ 优化路边商铺、楼宇楼栋、道路显示效果；从找点发单、候车找上车点到确认目的地，全程画面清晰准确，方便快速定位，打车体验更顺畅。 滴滴会员成长值体系全新上线！ 成长更直观、身份更稳定，场景覆盖更广泛；同时新增生日礼、代驾等专属权益，会员体验持续升级。",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/65/52/32/65523260-5ba9-0658-edec-6a5273c80b44/ios-P1.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/65/52/32/65523260-5ba9-0658-edec-6a5273c80b44/ios-P1.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/65/52/32/65523260-5ba9-0658-edec-6a5273c80b44/ios-P1.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f9/19/ea/f919ea66-f2e3-f056-ab3d-85894034887f/ios-P2_U4ee3_U8a00_U4eba_U7248-1242_2688.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0a/6c/2e/0a6c2ea7-dae5-708b-473b-6c7ef45b9131/ios-P3_U9001_U8d27.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d3/14/6b/d3146bf2-86ab-1ea4-e2f9-ebe4b66e47fa/ios-P4_U65c5_U884c.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/ab/7d/23ab7dfc-caf1-3fb4-071e-71ab39850466/ios-P5_U8f66_U4e3b.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3b/06/a3/3b06a34f-2653-68bb-45c0-fe75e5b1e32f/ios-P6_U67e5_U884c_U7a0b_U67e5_U6d88_U606f.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f7/bf/76/f7bf7656-b075-ee52-6184-2302eb574457/ios-P7_U4f1a_U5458.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/6b/7e/b76b7eed-8625-abc8-4342-9c4b35bda06d/ios-P8_U5730_U56fe.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/ef/2a/f3ef2af1-4dbc-fef0-f169-b204f64d1079/ios-P9_U9752_U6854.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/e8/cc/20e8cc47-006f-471d-5ba4-67be1bf014ff/ios-P10_U987a_U98ce_U8f66.png/1920x1920bb.jpg"
+      ]
     },
     "Meituan": {
       "version": "8.85.1",
       "date": "2026-10-27T08:02:43.000Z",
       "notes": "优化一些细节体验，期待你的更新～",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c1/fd/df/c1fddfe2-378b-f87b-a76d-7c4f4962864b/5.5_U5927_U989d_U795e_U5238.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c1/fd/df/c1fddfe2-378b-f87b-a76d-7c4f4962864b/5.5_U5927_U989d_U795e_U5238.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c1/fd/df/c1fddfe2-378b-f87b-a76d-7c4f4962864b/5.5_U5927_U989d_U795e_U5238.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/8f/e8/338fe865-1421-0fd3-2061-5411341ac67e/5.5_U7f8e_U56e2_U62fc_U597d_U996d.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/85/ae/04/85ae0417-1674-5c23-8e9f-5e059ad9c8ed/5.5_U8ba2_U5355_U8ffd_U8e2a.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a3/e7/ca/a3e7ca99-e0db-0f6c-25a9-8b6c50598abd/5.5_U6781_U901f_U9001_U8fbe.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fc/3e/20/fc3e20ed-f921-3f2e-01b3-1fff7e58fe7c/5.5_U54c1_U8d28_U5546_U5bb6.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/80/b2/0080b201-ba92-d683-4aa0-7a6250b6c0ae/b3a01239-a780-4a5f-8b55-b21c500d56f1__U95ea_U8d2d1242x2208.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1a/80/d0/1a80d061-1e73-05e0-9ab6-eea354ea91ce/2499f9de-0cea-4f37-87bd-bf18f62c9461_5.5_U5907_U4efd_5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/67/b5/e4/67b5e46a-95c3-9455-ef95-3773ce435a35/0a31bc4f-50be-41ce-bd89-75ab5315a84e_5.5_U8ba2_U5355_U8ffd_U8e2a.jpg/1920x1920bb.jpg"
+      ]
     },
     "SNCF Connect": {
       "version": "v20261029.0.0",
       "date": "2026-11-03T08:39:24.000Z",
       "notes": "Vous utilisez SNCF Connect pour organiser vos trajets et nous vous en remercions. Cette mise à jour corrige des anomalies, améliore les performances et renforce la sécurité de l’application. De nouvelles fonctionnalités arriveront bientôt pour faciliter vos déplacements. Bon voyage !",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/35/72/39357294-dd4e-040b-8e15-dbe017f40b8c/00_FR_1242x2208.jpg/392x696bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/35/72/39357294-dd4e-040b-8e15-dbe017f40b8c/00_FR_1242x2208.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/35/72/39357294-dd4e-040b-8e15-dbe017f40b8c/00_FR_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ca/4f/01/ca4f017f-0a3a-1c00-4e08-b1d0a87dc412/01_CPP_FR_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/49/b9/37/49b93756-9f64-4141-7a5b-59294b13e3e4/02_CPP_FR_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a0/49/e2/a049e2d8-910c-e241-cdcd-81c5b05bef39/03_CPP_FR_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/01/ee/f5/01eef56c-6e6d-0fa8-3f3d-047997c81cb8/04_CPP_FR_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/80/bc/f6/80bcf642-f2a9-55eb-4fd8-748390bed90f/05_CPP_FR_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1b/e6/5c/1be65c5c-0224-8b81-5415-397f256184c6/06_CPP_FR_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4d/6c/9f/4d6c9f57-bf7e-84bf-fa1e-5df9b631fe52/07_CPP_FR_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/52/cf/25/52cf2550-8513-8c0e-bc79-53c22019927b/08_CPP_FR_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/02/5e/ee/025eeea9-2a2b-8a3a-b57d-152160792d29/09_CPP_FR_1242x2208.jpg/1920x1920bb.jpg"
+      ]
     },
     "DB Navigator": {
       "version": "26.20.0",
       "date": "2026-10-27T10:14:40.000Z",
       "notes": "Süßes oder Saures? Wir haben uns für Feinschliff entschieden. Mit diesem Update haben wir die App weiter optimiert und einige Details im Hintergrund verbessert, damit du weiterhin entspannt unterwegs bist. Jetzt aktualisieren! Wir freuen uns auf dein Feedback hier im Store.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0c/ae/73/0cae7310-a0f5-5269-1483-fcbaf9295241/Screen_2_iPhone_6.9.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0c/ae/73/0cae7310-a0f5-5269-1483-fcbaf9295241/Screen_2_iPhone_6.9.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0c/ae/73/0cae7310-a0f5-5269-1483-fcbaf9295241/Screen_2_iPhone_6.9.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b7/b1/67/b7b167cd-c0f8-728f-8415-cdade06797ff/Screen_3_iPhone_6.9.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/d9/3f/a3d93f0c-54cf-f4bf-e43f-02240ad0d1d2/Screen_4_iPhone_6.9.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/da/ab/57/daab5770-b0cb-d990-52ef-ed2fa1eb381c/Screen_5_iPhone_6.9.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d2/20/6b/d2206bce-5cdb-86f3-f3bb-63bcfaffb4e0/Screen_6_iPhone_6.9.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5a/cc/55/5acc559f-33c7-4fc9-2419-5eeb653eccb6/Screen_7_iPhone_6.9.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d1/e5/8d/d1e58d8d-ae35-b990-0133-2c27637e132f/Screen_8_iPhone_6.9.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c4/e7/91/c4e79167-8f3a-1594-85a1-df1a4048d9b3/Screen_9_iPhone_6.9.png/1920x1920bb.jpg"
+      ]
     },
     "FlixBus": {
       "version": "10.11.0",
       "date": "2026-10-28T16:56:50.000Z",
       "notes": "Nur ein kurzes Hallo mit einigen Leistungsverbesserungen. Schönen Tag und gute Reise!",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/11/0b/a0/110ba03c-78e8-f499-370d-8bb0278ebb20/08956003-63e9-4620-8c39-accb6fd35709_1_-_iOS__U00281242_x_2208_U0029.jpg/392x696bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/11/0b/a0/110ba03c-78e8-f499-370d-8bb0278ebb20/08956003-63e9-4620-8c39-accb6fd35709_1_-_iOS__U00281242_x_2208_U0029.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/11/0b/a0/110ba03c-78e8-f499-370d-8bb0278ebb20/08956003-63e9-4620-8c39-accb6fd35709_1_-_iOS__U00281242_x_2208_U0029.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/96/5b/8f/965b8f09-fa7a-cfd3-db14-274db39cc47a/990c1dad-cf46-4779-9001-d02284e08d9e_2_-_iOS__U00281242_x_2208_U0029.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/16/48/5b/16485bbb-3ae3-06a4-774e-002cd690f01b/aae03bdc-9e6f-4bca-8f35-edbf8206daba_3_-_iOS__U00281242_x_2208_U0029.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9d/cb/94/9dcb941c-c054-c535-1558-aeb70d4d8293/fe9d17dd-d1c5-48be-bd5a-a3a906384072_4_-_iOS__U00281242_x_2208_U0029.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c1/ac/7a/c1ac7af1-216e-0cf3-4ec7-e0fca44e0191/5_-_iOS__U00281242_x_2208_U0029.jpg/1920x1920bb.jpg"
+      ]
     },
     "Eurostar": {
       "version": "15.0.1284",
       "date": "2026-11-03T09:17:44.000Z",
       "notes": "We’ve made behind-the-scenes improvements for a smoother, more reliable experience. This update includes bug fixes and performance enhancements to help you book tickets easily, access journeys faster, and enjoy a more seamless app experience. Thanks for travelling with Eurostar!",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3d/59/f4/3d59f4d2-3c61-a350-4ea3-05896b82a5e9/befac475-7fb9-4dd9-b1b3-0744960b1e10_iPhone-x-1242x2208-en-cover.jpg/392x696bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3d/59/f4/3d59f4d2-3c61-a350-4ea3-05896b82a5e9/befac475-7fb9-4dd9-b1b3-0744960b1e10_iPhone-x-1242x2208-en-cover.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3d/59/f4/3d59f4d2-3c61-a350-4ea3-05896b82a5e9/befac475-7fb9-4dd9-b1b3-0744960b1e10_iPhone-x-1242x2208-en-cover.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/74/a5/87/74a58761-8acc-a058-233a-93879e266bd4/d4800668-441b-4712-8cf7-c54a71385516_iPhone-x-1242x2208-en-screen-1.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/97/11/0e/97110ef1-cddb-cf04-5b24-dbc680628be4/16e86af6-a39e-4539-b8fa-5f8b1d22ac97_iPhone-x-1242x2208-en-screen-2.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/36/79/23367956-78f3-4296-b412-5c8ca5dd70d6/18e2f8e3-b120-4dc7-87aa-16902f5acd2b_iPhone-x-1242x2208-en-screen-3.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1d/b4/cc/1db4cc2c-ee3f-60dc-9f3b-9de972310c07/c311d147-aabe-4ae7-a0f4-cbb9b074a719_iPhone-x-1242x2208-en-screen-4.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dc/00/45/dc0045ff-ba0a-f18f-9c71-ec88808cc271/d643ac92-88de-49d5-bbda-9439061e60a0_iPhone-x-1242x2208-en-screen-5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2a/36/62/2a3662c8-e98d-826d-4e06-f55c21dee743/0dce5d54-de2e-4dc6-81bb-e6c046448ab5_iPhone-x-1242x2208-en-screen-6.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a8/ad/65/a8ad656d-e405-2c89-5f56-80b818eac04f/75ac5862-431e-4206-aada-a7144aefa803_iPhone-x-1242x2208-en-screen-7.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/84/6a/91/846a9193-1c9f-5d67-dc60-4335ed8621ac/847db0d1-067e-4496-8468-8eb3f5d8c452_iPhone-x-1242x2208-en-screen-8.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/55/75/0b/55750b6d-c477-33c4-1262-79a73b73c4db/62d7d96b-6cbe-4bdb-90d8-1a2521835388_iPhone-x-1242x2208-en-screen-9.jpg/1920x1920bb.jpg"
+      ]
     },
     "Bolt": {
-      "version": "257.0",
-      "date": "2026-11-02T07:59:37.000Z",
+      "version": "258.0",
+      "date": "2026-11-09T08:23:35.000Z",
       "notes": "Thanks for using Bolt! We regularly update the app to provide a consistently high-quality experience. This update includes bug fixes and performance improvements. Enjoying Bolt? Please leave a rating! Your feedback helps us improve.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c9/09/18/c9091848-56e8-7c0d-259d-b86c99a709e6/screen-1_bolt-perspective-phone.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c9/09/18/c9091848-56e8-7c0d-259d-b86c99a709e6/screen-1_bolt-perspective-phone.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c9/09/18/c9091848-56e8-7c0d-259d-b86c99a709e6/screen-1_bolt-perspective-phone.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/06/ed/ca/06edca23-527b-b47e-9429-9063b4859292/screen-2_bolt-text-bg.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ef/53/2d/ef532d0d-272d-e1e5-fa1b-5492ea3d4995/screen-3_bolt-bg-phone-text.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ff/f5/65/fff56590-eb89-9e96-1b3a-a722e04f7d3c/screen-4_bolt-text-phone-bottom.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8d/90/2c/8d902c5e-2590-2e80-ba18-bd2df6544e14/screen-5_bolt-phone-text.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2f/5f/5d/2f5f5d50-c440-9517-5d66-74997374ad99/screen-6_bolt-phone-text.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/66/f8/d7/66f8d71f-9787-b213-f5ba-d2cd4fb6b834/screen-7_bolt-text-bg.jpg/1920x1920bb.jpg"
+      ]
     },
     "Deliveroo": {
       "version": "3.347.0",
       "date": "2026-11-05T11:20:27.000Z",
       "notes": "The Deliveroo chefs have been busy cooking up some new features for you: • We’ve been updating our app to use the latest technologies to make Deliveroo faster and easier to use than ever before • We've made several improvements to Deliveroo Plus, our free delivery subscription service • We’ve also made some changes to our Grocery feature so you can get all your essentials delivered in no time We’re always making improvements, so keep your eyes peeled and make sure to keep updating your app to get all the latest features. Bon appetit!",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/54/81/02/54810285-9945-804f-e9c6-dcd7232d6190/pr_source.png/640x1136bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/54/81/02/54810285-9945-804f-e9c6-dcd7232d6190/pr_source.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/54/81/02/54810285-9945-804f-e9c6-dcd7232d6190/pr_source.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/64/3c/5e/643c5eda-3226-0e01-8369-d963712e7d11/pr_source.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/dd/c9/58/ddc95854-45e9-39b3-bb44-2db99d84798b/pr_source.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/b6/df/58/b6df5809-146d-8412-0a59-061f6238abbd/pr_source.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/11/1c/34/111c344d-4179-4420-bd71-2af35d09c052/pr_source.png/1920x1920bb.png"
+      ]
     },
     "Trenitalia": {
       "version": "13.700.0",
       "date": "2026-10-23T22:27:04.000Z",
       "notes": "• Esperienza Trenitalia ottimizzata Apple per iPhone Duo • Bug fixing",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d2/dc/80/d2dc803b-8107-e827-9038-c3fe04253668/IOS-IT_1260x2736-01-HP.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d2/dc/80/d2dc803b-8107-e827-9038-c3fe04253668/IOS-IT_1260x2736-01-HP.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d2/dc/80/d2dc803b-8107-e827-9038-c3fe04253668/IOS-IT_1260x2736-01-HP.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e4/9b/9d/e49b9d46-160d-c548-9b0b-1f9e6f9a37e5/IOS-IT_1260x2736-02-Sol-List.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b3/d9/11/b3d911af-5c89-9056-19d5-dcc475504809/IOS-IT_1260x2736-03-Griglia.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/93/ef/de/93efde45-493b-1754-9535-dbb471017c29/IOS-IT_1260x2736-04-Pag.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/25/64/61/2564615d-b724-d33f-836a-44622837ca27/IOS-IT_1260x2736-05-Infomob.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/15/bd/a2/15bda2c9-3c5a-5a99-3d5c-e5eb50998df6/IOS-IT_1260x2736-06-SposViagg.jpg/1920x1920bb.jpg"
+      ]
     },
     "Renfe": {
       "version": "2.15.1",
       "date": "2026-11-06T10:45:01.000Z",
       "notes": "Mejoras en la estabilidad y corrección de errores.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e3/cf/c1/e3cfc154-53f9-354d-9b2e-98872a2634ff/289b72b1-3113-4e65-8637-b6115cab89ba_IOS-5-5-generico2023.jpg/392x696bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e3/cf/c1/e3cfc154-53f9-354d-9b2e-98872a2634ff/289b72b1-3113-4e65-8637-b6115cab89ba_IOS-5-5-generico2023.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e3/cf/c1/e3cfc154-53f9-354d-9b2e-98872a2634ff/289b72b1-3113-4e65-8637-b6115cab89ba_IOS-5-5-generico2023.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5e/1a/31/5e1a3124-c6ab-d932-7ca9-2046918ec27d/139a1858-4e03-49b6-aefe-b1dce6b033fa_IOS-5-5-pantalla-filtrar.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8b/6d/1e/8b6d1ec3-bbc0-357c-3673-b47b3a9279b2/2c0731e5-c669-4dfa-9c0e-4cbe0cbad1c0_IOS-5-5-pantalla-extras.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bc/23/a7/bc23a790-fc75-ed70-b234-5491a589b906/0fc7d89f-f03b-4991-a60c-521e6f19432c_IOS-5-5-pantalla-billete.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bd/44/76/bd4476fe-e246-e1cb-061a-2989f8f24894/3180c7f7-2aaf-40aa-8e03-01a2df47b453_IOS-5-5-area-privada.jpg/1920x1920bb.jpg"
+      ]
     },
     "Korail": {
       "version": "5.1.2",
       "date": "2026-11-03T01:05:11.000Z",
       "notes": "· 코레일톡이 코레일+로 새로워졌습니다. · 열차 승차권 예매·발권 서비스를 더 편리하게 개선했습니다. · 여행 및 연계교통 서비스를 쉽게 확인할 수 있도록 개선했습니다. · 서비스 안정성을 개선했습니다.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/00/9b/0b/009b0b95-5991-c5bf-bea4-29030397b9d5/m_1.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/00/9b/0b/009b0b95-5991-c5bf-bea4-29030397b9d5/m_1.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/00/9b/0b/009b0b95-5991-c5bf-bea4-29030397b9d5/m_1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/73/6d/10/736d10bb-a046-bf85-a6e2-7cb49af222ab/m_2.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2d/dd/d6/2dddd691-d99e-ee40-f349-b48c050f01b8/m_3.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/95/d9/23/95d92316-98c4-e877-f4e4-0f72d4936f12/m_4.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ba/09/f7/ba09f73b-1042-2950-f329-cac1283151fa/m_5.png/1920x1920bb.png"
+      ]
     },
     "Grab": {
       "version": "5.432.0",
       "date": "2026-10-13T00:38:13.000Z",
       "notes": "Some say bugs are the future of food: They are rich in protein and can be sustainably produced for mass consumption. In fact, some 2 billion humans on the planet eat bugs as part of their diet. But when the bug is in an app, we won't want you to eat it. And we certainly won't try to make more of it. Update your Grab to 5.432.0 to get rid of bugs from your everyday app experience.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/43/43/7f/43437f55-1091-d3de-3f87-8466f5b9ebfd/c322749a-b5ce-4301-9382-e60b8d6b74f7_Transport-Focus_iOS-5.5_EN_01.jpg/392x696bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/43/43/7f/43437f55-1091-d3de-3f87-8466f5b9ebfd/c322749a-b5ce-4301-9382-e60b8d6b74f7_Transport-Focus_iOS-5.5_EN_01.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/43/43/7f/43437f55-1091-d3de-3f87-8466f5b9ebfd/c322749a-b5ce-4301-9382-e60b8d6b74f7_Transport-Focus_iOS-5.5_EN_01.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6d/45/48/6d4548da-7b33-8187-9f53-47a162867421/d3a1d5d5-4296-4653-84df-ac0d94d2358b_Transport-Focus_iOS-5.5_EN_02.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5b/11/3d/5b113dbe-992e-23ab-585c-cddf9bf79486/94820604-0f76-449d-af9d-0efb4f9f4f1b_Transport-Focus_iOS-5.5_EN_03.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/60/b1/8a60b1a9-a0fd-fae5-6d75-a773eb0bbbdf/d4a08bfa-04b9-441f-9a70-3653f42c760b_Transport-Focus_iOS-5.5_EN_04.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/18/4b/c1/184bc18b-fd5b-c0d7-d040-054a3732d2d9/9761c774-3745-4120-90bd-150ac0bb2d90_Transport-Focus_iOS-5.5_EN_05.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c2/21/0e/c2210ed9-2534-1d57-9100-197785fee534/68a44182-9c10-44aa-a633-3828fd947977_Transport-Focus_iOS-5.5_EN_06.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/c5/71/1ec571c4-5ad8-e915-b538-8896ebd159fb/764f1cbc-c78b-4582-9347-8f143d384e56_Transport-Focus_iOS-5.5_EN_07.jpg/1920x1920bb.jpg"
+      ]
     },
     "foodpanda": {
       "version": "26.44.0",
       "date": "2026-11-02T09:11:53.000Z",
       "notes": "We're always working hard to optimize our app with the latest technologies and best new features. This version includes a number of UI/UX improvements as well as stability enhancements. Enjoy!",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a7/a7/53/a7a753f8-2e2c-3061-0655-fe88c8004a7e/01.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a7/a7/53/a7a753f8-2e2c-3061-0655-fe88c8004a7e/01.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a7/a7/53/a7a753f8-2e2c-3061-0655-fe88c8004a7e/01.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/49/87/9d/49879d4a-8d90-dae8-4824-87149a5aba90/af125a34-b3a8-423a-8e95-389825af9624_IOS_1290x2796px_02_food.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a8/b2/71/a8b271e8-d30b-3c4e-31e8-e39bde209c0c/de35ac85-3b48-41c0-a0ac-249398f2b736_IOS_1290x2796px_03_shops.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/40/1f/e3/401fe3fb-8cc6-9188-f64a-004213803666/58cd389e-d925-4130-8cc1-5ee859eecaa8_IOS_1290x2796px_05_deliver_fast.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/82/a8/69/82a86904-dc58-5b5b-cae4-36c20c7d7570/2b8649f6-56b6-4ad6-ab75-eadd98de321a_IOS_1290x2796px_06_pick_up.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9d/31/b4/9d31b454-f7e6-56c8-e286-2e2f504283c4/ce3ed642-e10d-4c0f-a50b-271c272c744b_IOS_1290x2796px_07_pick_up_and_save.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a1/02/b6/a102b686-5548-2377-7148-287dba6cdcbf/42f7b2f6-8ab1-45b4-b874-4a759392d326_IOS_1290x2796px_09_track.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d0/62/b6/d062b633-59f3-cfbd-579e-b1974fb1fb64/2cf5d203-1c8b-45e3-ae50-292811875abf_IOS_1290x2796px_08_3_taps.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a1/86/2c/a1862c1d-8f7d-c259-73d9-14a3f38bc259/70eea129-75cf-4976-8f22-33bb3ec42672_IOS_old_1290x2796px_10_ending.png/1920x1920bb.jpg"
+      ]
     },
     "Careem": {
-      "version": "26.43.0",
-      "date": "2026-11-02T18:44:00.000Z",
-      "notes": "We've been busy polishing and refining. The result? An app experience that's better, faster, and more reliable. Check out the latest improvements, plus a slew of fixes and enhancements.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e2/99/82/e299826a-ae68-2b6f-04dc-fed98f3146c5/00283ff2-3658-4562-984a-52f9c9b8cd11_ASO_Refresh_iOS5.5_Frame_01.jpg/392x696bb.jpg"
+      "version": "26.44.0",
+      "date": "2026-11-09T07:06:40.000Z",
+      "notes": "In this update, we've ironed out the wrinkles and buffed out the rough spots. Your app is now sleeker and more efficient. Enjoy new features and improvements, not to mention various fixes.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e2/99/82/e299826a-ae68-2b6f-04dc-fed98f3146c5/00283ff2-3658-4562-984a-52f9c9b8cd11_ASO_Refresh_iOS5.5_Frame_01.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e2/99/82/e299826a-ae68-2b6f-04dc-fed98f3146c5/00283ff2-3658-4562-984a-52f9c9b8cd11_ASO_Refresh_iOS5.5_Frame_01.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/54/68/ed/5468edae-2964-7796-131f-a75586985d3c/e6193d8b-ac70-4401-89e9-523df4050ea9_ASO_Refresh_iOS5.5_Frame_02.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d5/ac/a4/d5aca40e-73b0-0c83-40bd-29346aa2d49d/b720322f-a6a4-4d52-8ff5-8aa3026ecf22_ASO_Refresh_iOS5.5_Frame_04.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e0/7c/b5/e07cb59e-7d93-5ae7-c564-618eac67f9ca/5fbc6ad0-9e67-4242-8304-c92015666ab8_ASO_Refresh_iOS5.5_Frame_05.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/62/a1/70/62a170c9-f243-20c6-1677-2d574cf5e806/254ee915-e069-462b-99ca-bcaa549bdad8_ASO_Refresh_iOS5.5_Frame_06.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/92/b1/a5/92b1a580-23da-f83c-4313-97bc9cfd1b84/c3357928-0442-4b71-8d37-27397779f9ec_ASO_Refresh_iOS5.5_Frame_07.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/7f/3e/ce7f3e94-b803-08b5-cf89-cdd6c43e19c1/b85603f2-195a-4b4a-bff2-70c2f2ce6cdd_ASO_Refresh_iOS5.5_Frame_08.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f0/66/af/f066af69-1bd5-9f25-5454-b8d4a47bdb07/70e91fa8-d8f1-442f-aeaa-e8c8935bc167_ASO_Refresh_iOS5.5_Frame_10.jpg/1920x1920bb.jpg"
+      ]
     },
     "Noon": {
       "version": "5.261104",
       "date": "2026-11-04T22:43:43.000Z",
       "notes": "Enjoy a smoother, more modern experience with Apple's Liquid Glass design, along with support for Apple Duo. Update now and enjoy the difference!",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b3/4f/b2/b34fb260-76fb-6187-7ecd-4e1c33da2875/en_uae_iOS-5.5in-1242x2208-1.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b3/4f/b2/b34fb260-76fb-6187-7ecd-4e1c33da2875/en_uae_iOS-5.5in-1242x2208-1.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b3/4f/b2/b34fb260-76fb-6187-7ecd-4e1c33da2875/en_uae_iOS-5.5in-1242x2208-1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6c/98/7e/6c987e5c-6e25-4086-3bc3-179f777abe82/en_uae_iOS-5.5in-1242x2208-3__U00281_U0029.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/8e/5b/ea8e5b38-43bc-75f8-6390-24ffd9b958ed/en_uae_iOS-5.5in-1242x2208-4__U2013_1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/42/4f/ed/424fedca-8665-4c2f-4861-03162a04339d/en_uae_iOS-5.5in-1242x2208-5.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/91/38/16/9138169f-1f70-d8fb-72c6-4678ce61978d/en_uae_iOS-5.5in-1242x2208-2.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fa/34/cb/fa34cb1a-c193-eb39-7077-825366df9916/en_uae_iOS-5.5in-1242x2208-6.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0e/a3/27/0ea32777-60a0-d7ce-86e2-84b9ef5df7f7/en_uae_iOS-5.5in-1242x2208-7.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/92/f1/cf/92f1cfe4-b4fa-7569-985a-5a4898ce532e/en_uae_iOS-5.5in-1242x2208-8.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b3/11/db/b311db5b-06a0-63a5-72bb-6fede1672b34/en_uae_iOS-5.5in-1242x2208-7.jpg/1920x1920bb.jpg"
+      ]
     },
     "Delivery Hero": {
-      "version": "14.6.0",
-      "date": "2026-11-04T19:52:30.000Z",
+      "version": "14.7.0",
+      "date": "2026-11-09T17:07:24.000Z",
       "notes": "We’ve spiced things up for your orders—and more! Whether you're browsing the menu in Cairo, grabbing groceries in Dubai, or finding everyday essentials in Oman, we've updated the app to show only what matters to you. From Kuwait to Qatar, Iraq to Bahrain, and everywhere in between, we’ve fine-tuned your experience across 8 countries. Smoother, faster, and now more personalized than ever—so you see the right places, every time.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e5/06/54/e506543c-e48d-3961-e926-39df89e1ee45/SS_1_EN.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e5/06/54/e506543c-e48d-3961-e926-39df89e1ee45/SS_1_EN.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e5/06/54/e506543c-e48d-3961-e926-39df89e1ee45/SS_1_EN.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fd/97/04/fd9704ae-c4b3-6c92-0bf7-a3eb78c4f2a4/SS_1_EN_2.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/52/1a/2f521afa-361d-38ac-d726-ce44c8ce17cf/SS_1_EN_3.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fb/bb/50/fbbb5064-c2d0-7cad-f5a1-43fcfd81f76f/SS_1_EN_4.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8a/ac/87/8aac8730-f08d-13d2-99a1-e3be133b5fba/SS_1_EN_6.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0d/e7/4b/0de74b3e-e9c5-c602-1978-51cd06b37b22/SS_1_EN_7.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a5/29/26/a529261b-5357-ee0b-38a7-6fa357aaa8ee/SS_1_EN_5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3a/15/96/3a1596a9-db70-3077-d606-771318bbdc5b/SS_1_EN_8.jpg/1920x1920bb.jpg"
+      ]
     },
     "Gojek": {
       "version": "5.82.0",
       "date": "2026-10-30T11:41:41.000Z",
       "notes": "RUNWAY BUGS EDITION 1. KYLIE BUGJENNER 2. BUGBARA PALVIN 3. BUGGI HADID 4. CANDICE SWANEBUGOEL 5. ADRIANA BUGMA *Closing out the show wearing the baddiest wings... BUGOLINI FIXOLINI~~~ (Making a comeback :3) Bombshell. Showstopping. Iconic. Just like 5.82... Update, Angels! ;)",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/16/2e/95/162e957e-4b7c-0d13-841b-6e22168f5a8f/iOS5-5_Frame1.jpg/392x696bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/16/2e/95/162e957e-4b7c-0d13-841b-6e22168f5a8f/iOS5-5_Frame1.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/16/2e/95/162e957e-4b7c-0d13-841b-6e22168f5a8f/iOS5-5_Frame1.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d0/58/ad/d058ad97-a023-cf04-11c5-9ebfb5dd4f42/iOS5-5_Frame4.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ac/05/94/ac059448-bd8e-dfa6-2d1e-3365498298ac/iOS5-5_Frame2.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/15/3a/85/153a85f2-1c5c-f4f6-04f4-f752421280df/iOS5-5_Frame3.jpg/1920x1920bb.jpg"
+      ]
     },
     "YouTube": {
-      "version": "21.44.4",
-      "date": "2026-11-02T23:52:24.000Z",
-      "notes": "Fixed bugs, improved performance, drank way too much coffee.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e8/5d/12/e85d121e-8bcf-4f57-cf07-ed23b57f1b30/f1192f1f-430d-469a-b032-cdf77b8b04c7_iOS-5.5-in_1.jpg/392x696bb.jpg"
+      "version": "21.45.4",
+      "date": "2026-11-08T17:09:00.000Z",
+      "notes": "Fixed bugs, improved performance, explored the edges of the known universe.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/de/5a/90/de5a90bf-0ea7-265c-67bb-51d5c50d96bd/f1192f1f-430d-469a-b032-cdf77b8b04c7_iOS-5.5-in_1.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/de/5a/90/de5a90bf-0ea7-265c-67bb-51d5c50d96bd/f1192f1f-430d-469a-b032-cdf77b8b04c7_iOS-5.5-in_1.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/9e/3a/fd9e3a99-563c-c21e-9a7b-9c395c159f66/868afd15-b2e4-4923-b0f8-c5599327a3d7_iOS-5.5-in_2.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/77/96/3f/77963f76-6cf7-4100-e0d4-8998db26396a/2930dbc3-4228-403b-b46d-e0066516ab6a_iOS-5.5-in_3.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/50/e5/3550e583-e240-168e-858f-ef823a45c747/45519fca-0e0b-466e-9ed6-9a43232a0bf8_iOS-5.5-in_4.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c1/32/54/c1325465-bfc3-e271-0553-dd89a4b151c9/bace9abd-71f3-4700-8adf-cedcba275a67_iOS-5.5-in_5.jpg/1920x1920bb.jpg"
+      ]
     },
     "Gmail": {
-      "version": "6.0.261026",
-      "date": "2026-11-02T19:58:27.000Z",
+      "version": "6.0.261102",
+      "date": "2026-11-09T18:16:46.000Z",
       "notes": "Bug fixes and performance improvements.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/61/93/d8/6193d85d-6769-b879-0fdc-1a3fd6ea83c7/APP_IPHONE_55-0.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/61/93/d8/6193d85d-6769-b879-0fdc-1a3fd6ea83c7/APP_IPHONE_55-0.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/61/93/d8/6193d85d-6769-b879-0fdc-1a3fd6ea83c7/APP_IPHONE_55-0.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b0/07/67/b00767ec-0d29-44a1-0533-87719c95cee7/APP_IPHONE_55-1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fb/a0/7e/fba07e24-3e1a-2352-1153-67e055a7c8e6/APP_IPHONE_55-2.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/01/a4/0a/01a40a15-1666-a0f9-7a1e-088a6de3de04/APP_IPHONE_55-3.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/28/c7/e3/28c7e36c-4bea-ec64-62f2-f4ecd7eedcf9/APP_IPHONE_55-4.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8d/0d/75/8d0d7520-9911-08ad-dbfd-4e3cf6cbf728/APP_IPHONE_55-5.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d3/e7/c3/d3e7c3f1-4f36-4633-0f17-543d40cbf6d5/APP_IPHONE_55-6.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e6/2b/87/e62b8744-d445-184f-360e-03e3119167ba/APP_IPHONE_55-7.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d3/83/93/d3839378-f91b-c537-0eac-b0a2a51e826e/APP_IPHONE_55-8.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/24/78/b7/2478b7cb-c912-851f-f29c-6b7b9eb876a0/APP_IPHONE_55-9.png/1920x1920bb.png"
+      ]
     },
     "Google Maps": {
       "version": "26.45.1",
       "date": "2026-11-06T19:29:48.000Z",
       "notes": "Thanks for using Google Maps! This release brings bug fixes that improve our product to help you discover new places and navigate to them.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/fa/59/defa59e3-d4d3-3884-3550-f5b66e370972/APP_IPHONE_65-0.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/fa/59/defa59e3-d4d3-3884-3550-f5b66e370972/APP_IPHONE_65-0.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/fa/59/defa59e3-d4d3-3884-3550-f5b66e370972/APP_IPHONE_65-0.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bd/f1/db/bdf1db2e-2770-c448-b6e0-0d491678282e/APP_IPHONE_65-1.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f4/39/68/f4396894-d994-f544-c58b-447fcd66e33f/APP_IPHONE_65-2.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d6/6b/b9/d66bb99f-0f30-4d97-8f38-73474cb563d5/APP_IPHONE_65-3.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f8/73/23/f873230e-4428-42cf-67ab-7ae03bf746be/APP_IPHONE_65-4.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/57/3d/b2/573db259-213c-c91b-8a04-de208a10265b/APP_IPHONE_65-5.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/4c/e0/2f4ce059-9270-3a80-e55f-47b1a4c1b4f7/APP_IPHONE_65-6.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b3/63/85/b36385b4-2611-36d2-a054-273706a4fd2c/APP_IPHONE_65-7.png/1920x1920bb.jpg"
+      ]
     },
     "Chrome": {
       "version": "157.0.8103.37",
       "date": "2026-11-03T18:36:06.000Z",
       "notes": "Thanks for choosing Chrome! This version includes: • Stability and performance improvements.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/20/73/58207379-b824-6361-aaf2-af9850d9c165/APP_IPHONE_65-0.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/20/73/58207379-b824-6361-aaf2-af9850d9c165/APP_IPHONE_65-0.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/20/73/58207379-b824-6361-aaf2-af9850d9c165/APP_IPHONE_65-0.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/13/02/17/130217f0-0549-ff82-43a4-b52d61e89fe4/APP_IPHONE_65-1.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/43/5c/80/435c8051-ad03-0faa-227d-a7c544c10d5c/APP_IPHONE_65-2.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c3/37/21/c3372170-8b70-313f-f6b3-c5dd7686d299/APP_IPHONE_65-3.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c2/38/f3/c238f3f2-ad60-412f-fab7-b91ea48ddebc/APP_IPHONE_65-4.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/15/8d/fa/158dfa54-384a-53c6-0af8-94bbebc7f90c/APP_IPHONE_65-5.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/15/b1/fe/15b1fe2d-3b02-ef0e-7407-9d2251b37a35/APP_IPHONE_65-6.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/26/da/f9/26daf9fd-8f5b-069d-d835-0c8e9eaff16a/APP_IPHONE_65-7.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b7/60/45/b760451d-2419-544d-ea83-c472cac34483/APP_IPHONE_65-8.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/d9/2a/39d92a8e-da02-14e9-7722-15530539f811/APP_IPHONE_65-9.png/1920x1920bb.jpg"
+      ]
     },
     "Netflix": {
-      "version": "26.4.0",
-      "date": "2026-11-02T15:10:58.000Z",
-      "notes": "We’re working on the app experience. You work on what, when, and how you watch next. That's equally as important. We know you have choices. In this release, we made gallery improvements so it’s easier to find the perfect thing to watch.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/38/ba/84/38ba8407-1436-6073-0ef4-eb314ba0451a/freeform_U0023game-screenshot-ios-mobile-vertical-5-5-inch_na_01_0_-_DONE.jpg/392x696bb.jpg"
+      "version": "26.5.0",
+      "date": "2026-11-09T16:50:28.000Z",
+      "notes": "Keep your app updated to get the latest Netflix experience on your iPhone and iPad. We know you have choices. In this release, we made gallery improvements so it’s easier to find the perfect thing to watch.",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/38/ba/84/38ba8407-1436-6073-0ef4-eb314ba0451a/freeform_U0023game-screenshot-ios-mobile-vertical-5-5-inch_na_01_0_-_DONE.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/38/ba/84/38ba8407-1436-6073-0ef4-eb314ba0451a/freeform_U0023game-screenshot-ios-mobile-vertical-5-5-inch_na_01_0_-_DONE.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/37/c6/3d/37c63dd9-673b-85eb-761c-41671fcc98d4/freeform_U0023game-screenshot-ios-mobile-vertical-5-5-inch_na_02_en-US.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/c6/8f/90c68f5e-7add-8cb0-d1c6-4746ba5de7e5/freeform_U0023game-screenshot-ios-mobile-vertical-5-5-inch_na_03_en_-_US.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a9/51/ac/a951acf0-6a89-977f-0a8a-36f60af8f8c8/freeform_U0023game-screenshot-ios-mobile-vertical-5-5-inch_na_03_0_-_DONE.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3e/30/a6/3e30a6d3-0803-238d-4934-0937da896d17/freeform_U0023game-screenshot-ios-mobile-vertical-5-5-inch_na_04_0_-_DONE.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/23/11/f6/2311f6c7-98c4-4289-9734-a27aeb069a1f/freeform_U0023game-screenshot-ios-mobile-vertical-5-5-inch_na_05_0_-_DONE.jpg/1920x1920bb.jpg"
+      ]
     },
     "X": {
-      "version": "12.41",
-      "date": "2026-11-05T16:04:07.000Z",
+      "version": "12.42.1",
+      "date": "2026-11-09T16:22:25.000Z",
       "notes": "We made improvements and squashed bugs so X is even better for you.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/d3/7a/bad37ad7-811c-7dda-9916-1ee121d459eb/X_SS1__U0028App_Store_U0029.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/d3/7a/bad37ad7-811c-7dda-9916-1ee121d459eb/X_SS1__U0028App_Store_U0029.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/d3/7a/bad37ad7-811c-7dda-9916-1ee121d459eb/X_SS1__U0028App_Store_U0029.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/14/40/2e/14402eb4-b3eb-ef64-fb88-5975c8908deb/X_SS2__U0028App_Store_U0029.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/38/52/5b385220-5043-ab08-e771-5a81a933783b/X_SS3__U0028App_Store_U0029.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f9/98/a2/f998a24a-fd6d-2dca-8a88-905588c74e53/X_SS4__U0028App_Store_U0029.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/16/67/f6/1667f6ea-bf5f-fd85-2300-b06a399eb361/X_SS5__U0028App_Store_U0029.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c3/c7/38/c3c7383c-226a-7519-b19f-f44a121fc2d7/X_SS6__U0028App_Store_U0029.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fe/89/12/fe891284-12fc-2ecf-66e6-45836f393d37/X_SS7__U0028App_Store_U0029.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/79/94/c3/7994c339-a3c4-60c7-9d4c-bc350acff3de/X_SS8__U0028App_Store_U0029.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6f/4c/15/6f4c1549-6cef-903a-3898-c64a47627570/X_SS9__U0028App_Store_U0029.jpg/1920x1920bb.jpg"
+      ]
     },
     "Facebook": {
       "version": "586.0.0",
       "date": "2026-11-04T18:21:38.000Z",
       "notes": "Our teams have solved many crashes, fixed issues you’ve reported and made the app faster.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ec/d3/9c/ecd39c66-4b07-f453-c811-6513d6e05e8d/1-iOS-Marketplace.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ec/d3/9c/ecd39c66-4b07-f453-c811-6513d6e05e8d/1-iOS-Marketplace.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ec/d3/9c/ecd39c66-4b07-f453-c811-6513d6e05e8d/1-iOS-Marketplace.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2c/7f/2e/2c7f2e51-ddac-7171-3a48-7c5f13ecdf1c/2-iOS-Groups.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/42/e6/c4/42e6c43e-3dc2-f660-74d0-b165daba3c78/3-iOS-Events.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/93/17/5d/93175d3f-280e-6b48-aa0f-02a6d1c77e84/4-iOS-Home.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/09/4a/c6/094ac6b4-6426-ca56-2de7-f8987de87371/5-iOS-Reels.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a5/42/9d/a5429d80-9eee-b805-adf6-9ab48dfd0093/6-iOS-Profile.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e1/48/f3/e148f35a-3780-3540-c829-660aea58dd3d/8-iOS-ProMode.png/1920x1920bb.jpg"
+      ]
     },
     "Snapchat": {
       "version": "14.31.1.0",
       "date": "2026-11-06T16:53:34.000Z",
       "notes": "Just a little tune-up to keep everything running smoothly!",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bb/4e/cf/bb4ecf68-b806-767b-170d-43b39cf32dbe/762b1643-82ac-445a-8500-c4c4f86102b1_Screenshot1_Snap_USA_Apple_1242x2208.jpg/392x696bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bb/4e/cf/bb4ecf68-b806-767b-170d-43b39cf32dbe/762b1643-82ac-445a-8500-c4c4f86102b1_Screenshot1_Snap_USA_Apple_1242x2208.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bb/4e/cf/bb4ecf68-b806-767b-170d-43b39cf32dbe/762b1643-82ac-445a-8500-c4c4f86102b1_Screenshot1_Snap_USA_Apple_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a2/21/64/a22164a1-84a1-3622-e2db-b6767ebd0304/370a4e0e-0bcb-42b9-a20c-7aea1c32c1b4_Screenshot2_Chat_USA_Apple_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/31/4b/3c/314b3c6f-be9d-ab4f-01f5-bef71ad121bf/1d1c3b41-98d2-4d02-aaa9-7c958a66f5ad_Screenshot3_Lenses_USA_Apple_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c3/5e/9b/c35e9b78-5162-6603-4c76-bfad12d76778/8e07cbc2-17c5-4f43-98ea-ad105904f7c2_Screenshot4_Stories_USA_Apple_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d7/41/52/d741521a-4b00-8eee-bf3b-04d5c785c48e/611291f2-5d78-402c-a2fd-05feb9d2a5d2_Screenshot5_Spotlight_USA_Apple_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bd/74/e8/bd74e8c3-e1f9-7cc7-7c86-dd9118aa4838/ff702b6f-66fb-48a6-a70e-a3691eb955d9_Screenshot9_VideoCall_USA_Apple_1242x2208_en_US__U00281_U0029.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/db/20/99/db209909-5e85-a63a-0672-ad703b5bf346/94e6028c-27fb-45b1-9738-cd9740855335_Screenshot7_Map_USA_Apple_1242x2208.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/14/40/72/1440726e-b67b-fae9-4b3b-4cd3dbba5226/b161ca1d-96c3-49a7-a22e-10beaebe8622_Screenshot8_Memories_USA_Apple_1242x2208.jpg/1920x1920bb.jpg"
+      ]
     },
     "Pinterest": {
       "version": "14.43",
       "date": "2026-11-04T17:22:15.000Z",
       "notes": "Every week, we polish up the Pinterest app. This update includes: - Bug fixes - Performance improvements Tell us if you like this latest version at https://help.pinterest.com/contact",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/05/a0/f4/05a0f4cc-c5c2-7598-0c8a-802ca66d93a0/260630_H2-App-Store-Update_EN_iOSApp_Image-Designed_1242x2208_iPhone-5.5_Halloween_1.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/05/a0/f4/05a0f4cc-c5c2-7598-0c8a-802ca66d93a0/260630_H2-App-Store-Update_EN_iOSApp_Image-Designed_1242x2208_iPhone-5.5_Halloween_1.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/05/a0/f4/05a0f4cc-c5c2-7598-0c8a-802ca66d93a0/260630_H2-App-Store-Update_EN_iOSApp_Image-Designed_1242x2208_iPhone-5.5_Halloween_1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/13/6c/0e/136c0eba-14ff-efd1-61d0-1fef810593af/260630_H2-App-Store-Update_EN_iOSApp_Image-Designed_1242x2208_iPhone-5.5_Halloween_2.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/56/ac/8c/56ac8cb8-2301-983d-5f64-0c89f5e570e2/260630_H2-App-Store-Update_EN_iOSApp_Image-Designed_1242x2208_iPhone-5.5_Halloween_3.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/65/8b/e4/658be44a-e669-d970-8b23-b833e5553161/260630_H2-App-Store-Update_EN_iOSApp_Image-Designed_1242x2208_iPhone-5.5_Halloween_4.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/04/31/c0/0431c036-f0d7-ec83-7c21-d6c267f683dd/260630_H2-App-Store-Update_EN_iOSApp_Image-Designed_1242x2208_iPhone-5.5_Halloween_5.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/90/97/c4/9097c440-c359-8c0f-2dc0-d52ad4a6686a/260630_H2-App-Store-Update_EN_iOSApp_Image-Designed_1242x2208_iPhone-5.5_Halloween_6.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fa/73/ba/fa73baee-a078-06c1-34ba-24732526e579/260630_H2-App-Store-Update_EN_iOSApp_Image-Designed_1242x2208_iPhone-5.5_Halloween_7.png/1920x1920bb.png"
+      ]
     },
     "Reddit": {
-      "version": "2026.44.1",
-      "date": "2026-11-06T12:49:32.000Z",
+      "version": "2026.45.0",
+      "date": "2026-11-09T21:24:19.000Z",
       "notes": "Thanks for updating the Reddit app! We've updated our iOS app with bug fixes and changes to improve your overall experience.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/04/d2/41/04d241f1-1cff-8627-7ccd-e4fac6008f10/375c47d8-0adc-4e6d-8b1f-63cad0fd81cd_Reddit_SS_Brand_Update_Colorful_Set_5.5_1.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/04/d2/41/04d241f1-1cff-8627-7ccd-e4fac6008f10/375c47d8-0adc-4e6d-8b1f-63cad0fd81cd_Reddit_SS_Brand_Update_Colorful_Set_5.5_1.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/04/d2/41/04d241f1-1cff-8627-7ccd-e4fac6008f10/375c47d8-0adc-4e6d-8b1f-63cad0fd81cd_Reddit_SS_Brand_Update_Colorful_Set_5.5_1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c1/c1/a5/c1c1a5ed-4187-ad96-eca4-c6b6501a939a/b58a74df-0fe7-4816-be96-153438344906_Reddit_SS_Brand_Update_Colorful_Set_5.5_2.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bb/bc/d5/bbbcd5fe-2b4b-e953-87b0-a1eb983ee022/aa03a0e1-d00d-42ae-ba45-f419bbc04c70_Reddit_SS_Brand_Update_Colorful_Set_5.5_3.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/96/17/759617ee-80a5-3945-25ed-04038ccaa739/c754066e-6338-43b4-8b15-b995646437f9_Reddit_SS_Brand_Update_Colorful_Set_5.5_4.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8a/4f/4d/8a4f4d5d-3ff9-206d-3407-ae09c4124995/a73f6e8d-ba7d-4d90-b411-acab9fb721ac_Reddit_SS_Brand_Update_Colorful_Set_5.5_5.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/59/d6/bd/59d6bdc0-ce3d-8aa5-6dea-8dbc080249f5/de45bccb-b483-45e3-ad77-3e493242c6ff_Reddit_SS_Brand_Update_Colorful_Set_5.5_6.png/1920x1920bb.png"
+      ]
     },
     "LinkedIn": {
-      "version": "9.1.587",
-      "date": "2026-11-04T19:07:18.000Z",
+      "version": "9.1.588",
+      "date": "2026-11-09T17:21:14.000Z",
       "notes": "We want you to have the best possible LinkedIn experience. This update contains bug fixes and improvements to ensure the app’s continued speed and reliability.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b2/b0/48/b2b04875-90fe-f042-0041-808b7ed923b8/LinkedIn_LinkedIn_iOS_6.7_US_Screenshots_260317_V2B_01a__U00281_U0029.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b2/b0/48/b2b04875-90fe-f042-0041-808b7ed923b8/LinkedIn_LinkedIn_iOS_6.7_US_Screenshots_260317_V2B_01a__U00281_U0029.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b2/b0/48/b2b04875-90fe-f042-0041-808b7ed923b8/LinkedIn_LinkedIn_iOS_6.7_US_Screenshots_260317_V2B_01a__U00281_U0029.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/68/de/8a68de1f-e24d-a1f9-881b-e7a861d81adb/LinkedIn_LinkedIn_iOS_6.7_US_Screenshots_260317_V2B_02.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/d6/9b/b7d69bf1-d43a-697f-dc76-0b28f8e7108e/LinkedIn_LinkedIn_iOS_6.7_US_Screenshots_260317_V2B_03.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/07/35/b7/0735b73d-3540-daa3-cc69-b55aa3ceb038/LinkedIn_LinkedIn_iOS_6.7_US_Screenshots_260317_V2B_04.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c9/a4/c4/c9a4c45b-6089-6c46-e773-0849febdfd97/LinkedIn_LinkedIn_iOS_6.7_US_Screenshots_260317_V2B_05.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/46/17/b7/4617b782-ed50-9775-79c5-41e5af09be6b/LinkedIn_LinkedIn_iOS_6.7_US_Screenshots_260317_V2B_06.png/1920x1920bb.jpg"
+      ]
     },
     "Amazon": {
-      "version": "27.19.0",
-      "date": "2026-10-26T22:45:04.000Z",
+      "version": "27.20.0",
+      "date": "2026-11-09T17:58:10.000Z",
       "notes": "Our new design provides easier access to the features you use most while on the go. This includes the homepage, account and order information, your cart and the ability to browse and discover Amazon departments, products, programs, and features.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/c1/db/c1c1db19-ad12-04e1-0259-5fde5500e409/302f0217-ce5f-45be-869f-7dbee745861a_5.5_1_1242_U200a_U00d7_U200a2208_.jpg/392x696bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/9f/62/ac9f62e9-363c-1a35-56a5-138991276661/b6eaa022-783a-4e83-a0e4-12dc8de1feb0_1.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/9f/62/ac9f62e9-363c-1a35-56a5-138991276661/b6eaa022-783a-4e83-a0e4-12dc8de1feb0_1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4c/c3/c1/4cc3c187-dd11-b289-0837-da7bad7911fe/0511f3e6-f1de-4a0b-99e0-146688bfe863_2.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/70/82/2370825d-5882-d757-cdcc-8a8067c551e9/d91e0a82-1a4a-4881-bb24-4bb5401195e3_3.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d6/d6/12/d6d61247-e36d-bb0a-b1c9-b101dc303bd5/3e383caa-edc0-4cfd-ac5b-903053a38d12_4.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4e/2f/ea/4e2fea55-bd9c-ea01-27f6-d709c1802255/493e70fd-5450-4b05-b9af-18cecbf4aa8b_5.png/1920x1920bb.png"
+      ]
     },
     "ChatGPT": {
       "version": "1.2026.300",
       "date": "2026-11-03T18:55:49.000Z",
       "notes": "Bug fixes and small improvements.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a1/39/1d/a1391d37-04ea-8ead-62eb-d925b773ed4a/1_iPhone.jpg/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a1/39/1d/a1391d37-04ea-8ead-62eb-d925b773ed4a/1_iPhone.jpg/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a1/39/1d/a1391d37-04ea-8ead-62eb-d925b773ed4a/1_iPhone.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/24/88/47/248847d2-af10-20a9-cfd7-42d071b3dd61/2_iPhone.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ad/c7/1f/adc71f08-c935-fd79-c6c8-e5ba2d690bea/3_iPhone.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e6/9c/1f/e69c1f77-6eb0-d101-b123-d46d16b419d1/4_iPhone.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/12/5c/27/125c27ea-cdf2-28d1-0dda-7ebc3a9cae3e/5_iPhone.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8b/10/d8/8b10d89e-70aa-8f60-6c64-a867d2f62302/6_iPhone.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/a8/90/35a8904c-e321-e163-2c9c-f1a4fd237846/7_iPhone.jpg/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5c/db/10/5cdb105e-af27-71d9-ab5a-9d1d248c42ab/8_iPhone.jpg/1920x1920bb.jpg"
+      ]
     },
     "Discord": {
-      "version": "352.1",
-      "date": "2026-11-04T16:52:28.000Z",
+      "version": "353.0",
+      "date": "2026-11-09T19:34:18.000Z",
       "notes": "We’ve been hard at work making Discord better for you. This includes bug fixes and performance enhancements. For more detailed information, go to your profile in the app and scroll down to “What’s New”.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/17/6b/df/176bdf6b-a84a-97e9-2234-8e1a1294870b/1242x2208_-_1_GroupChat.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/17/6b/df/176bdf6b-a84a-97e9-2234-8e1a1294870b/1242x2208_-_1_GroupChat.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/17/6b/df/176bdf6b-a84a-97e9-2234-8e1a1294870b/1242x2208_-_1_GroupChat.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/aa/f8/b0/aaf8b04d-aeaf-0c0a-400c-ccfb4814bd8e/1242x2208_-_2_Stream.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7e/ff/6b/7eff6b74-cd45-783d-6916-c5e5d78b9344/1242x2208_-_3_SeeWhos.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/f4/5d/acf45d38-0458-fe1a-fad2-ac27eda22f5b/1242x2208_-_4_HopIn.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/10/e4/8a/10e48a77-0e5b-94b8-35d5-2227676b48dc/1242x2208_-_5_ToDos.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/25/99/e3/2599e35c-0cc8-a489-83b5-d03377f135b5/1242x2208_-_6_GameHere.png/1920x1920bb.png"
+      ]
     },
     "Telegram": {
       "version": "13.2",
       "date": "2026-11-05T13:22:09.000Z",
       "notes": "Bug fixes, minor improvements, and more.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/29/6c/87/296c8715-63d1-77c5-4385-f06a3c0d7627/0_APP_IPHONE_55_0.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/29/6c/87/296c8715-63d1-77c5-4385-f06a3c0d7627/0_APP_IPHONE_55_0.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/29/6c/87/296c8715-63d1-77c5-4385-f06a3c0d7627/0_APP_IPHONE_55_0.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/49/a8/48/49a84850-d914-649f-e8ac-8074a73ab941/1_APP_IPHONE_55_1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3c/7f/11/3c7f1180-7e1c-c0e8-b158-5b9068b1e36d/2_APP_IPHONE_55_2.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/70/e0/d9/70e0d910-cdfe-0283-a981-de1c4d7e2b3b/3_APP_IPHONE_55_3.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/02/18/99/0218993a-c0b4-a4e7-580d-51a5b5489341/4_APP_IPHONE_55_4.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/87/6c/a5/876ca575-eeac-e74d-0952-3164f4295989/5_APP_IPHONE_55_5.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ee/1f/f6/ee1ff62d-72d2-7725-eab6-50be0046fdce/6_APP_IPHONE_55_6.png/1920x1920bb.png"
+      ]
     },
     "Google Earth": {
       "version": "10.123.75",
       "date": "2026-10-20T16:05:04.000Z",
       "notes": "Thanks for using Google Earth! This version includes bug fixes. Our recent release brings a fresh new look, with new features to help you collaborate with others across devices, create maps on the go, and add photos from your camera to your maps.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/5e/b0/fd/5eb0fd89-e5c5-d970-dbf2-6fc2e738a226/c297772b-e3a7-44bd-8315-93bb7b650d68_APP_IPHONE_55-1.png/392x696bb.png"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/5e/b0/fd/5eb0fd89-e5c5-d970-dbf2-6fc2e738a226/c297772b-e3a7-44bd-8315-93bb7b650d68_APP_IPHONE_55-1.png/1920x1920bb.png",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/5e/b0/fd/5eb0fd89-e5c5-d970-dbf2-6fc2e738a226/c297772b-e3a7-44bd-8315-93bb7b650d68_APP_IPHONE_55-1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/78/53/98/78539862-f178-a416-7dd8-2e83e7bd9dce/305c7aee-e2dc-4ffc-b6fd-0f286836da47_APP_IPHONE_55-2.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/fe/9c/6d/fe9c6df9-63dd-9e13-82a4-bb26c57a453d/e140a7a2-e7b9-49ce-b4de-65a4fbd5e53c_APP_IPHONE_55-3.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/ef/f9/9b/eff99bce-fc14-1ea5-56d3-0c27168b7713/48cb3536-3932-499c-bfee-706300353bc0_APP_IPHONE_55-4.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/f9/a5/a1/f9a5a12b-d2ff-ef79-0c38-db68fb33b1f3/d1d7d002-9454-49d1-9653-57daa445e7f1_APP_IPHONE_55-5.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/b8/d5/e4/b8d5e49b-b6ee-f790-ce7b-9b01da90203c/5f4b17a6-ddfc-492d-b26f-2dec8581026f_APP_IPHONE_55-6.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/bc/7b/b6/bc7bb6d1-e549-7ad1-de75-5f6d163c3c0a/f7490afb-cf4d-439a-b6e6-05a871ae8f5a_APP_IPHONE_55-7.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/52/e9/a5/52e9a53d-a51c-a086-bb0b-d5e272963e70/068f8cec-1e86-4f61-9f46-2e0520416cca_APP_IPHONE_55-8.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/0a/17/83/0a178381-d92c-bc8e-3229-edc04449c397/c6aca062-61bd-42dd-b5c6-34f624db0306_APP_IPHONE_55-9.png/1920x1920bb.png"
+      ]
     },
     "Swiss Post": {
       "version": "9.7.1",
       "date": "2026-10-22T14:20:39.000Z",
       "notes": "Fehlende Frankatur können Sie neu bequem direkt in der Post-App bezahlen. Zudem haben wir Fehler behoben und weitere Verbesserungen vorgenommen, damit die App im Alltag noch zuverlässiger funktioniert.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fb/ec/87/fbec87c8-0e9d-31ea-87c1-c54a11bc8fbe/iOS-69-DE-01.png/320x480bb.jpg"
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fb/ec/87/fbec87c8-0e9d-31ea-87c1-c54a11bc8fbe/iOS-69-DE-01.png/1920x1920bb.jpg",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fb/ec/87/fbec87c8-0e9d-31ea-87c1-c54a11bc8fbe/iOS-69-DE-01.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/76/76/1c/76761c9f-59d4-dd34-6eb1-133174fe530e/iOS-69-DE-02.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/af/d8/42/afd842fe-af79-26d9-4707-324ded5dad79/iOS-69-DE-03.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/e6/2d/c4e62dd2-01be-8cda-33ea-23e612206776/iOS-69-DE-04.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/da/74/83/da748396-49d2-8d2c-f0ae-4fe489ca2528/iOS-69-DE-05.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/74/60/bf/7460bf2e-d598-5c77-e358-79647f763c65/iOS-69-DE-06.png/1920x1920bb.jpg"
+      ]
     }
   },
   "googlePlay": {
@@ -456,8 +1110,8 @@
       "screenshot": null
     },
     "Trainline": {
-      "version": "2026-10-30·1337",
-      "date": "2026-10-30T00:00:00.000Z",
+      "version": "2026-11-07·1337",
+      "date": "2026-11-07T00:00:00.000Z",
       "notes": "The little things matter Some small improvements are coming down the track with this update. We’ve fixed a few bugs that were affecting our app and made some other minor changes.",
       "screenshot": null
     },
@@ -468,8 +1122,8 @@
       "screenshot": null
     },
     "Duolingo": {
-      "version": "2026-11-04·nx1b",
-      "date": "2026-11-04T00:00:00.000Z",
+      "version": "2026-11-10·nx1b",
+      "date": "2026-11-10T00:00:00.000Z",
       "notes": "Our mascot owl, Duo, is trading in his usual diet of mice for bugs this week. Yup, we’re squashing those pesky bugs to make the experience better for all of you. For more Duolingo news, contests and product releases, follow us on Facebook, Twitter, and Instagram @duolingo.",
       "screenshot": null
     },
@@ -492,14 +1146,14 @@
       "screenshot": null
     },
     "Uber": {
-      "version": "2026-10-31·5ra5",
-      "date": "2026-10-31T00:00:00.000Z",
+      "version": "2026-11-07·5ra5",
+      "date": "2026-11-07T00:00:00.000Z",
       "notes": "We update the Uber app as often as possible to help make it faster and more reliable for you. This version includes several bug fixes and performance improvements. Love the app? Rate us! Your feedback helps us to improve the Uber app. Have a question? Tap Help in the Uber app or visit help.uber.com.",
       "screenshot": null
     },
     "Spotify": {
-      "version": "2026-11-05·1jm4",
-      "date": "2026-11-05T00:00:00.000Z",
+      "version": "2026-11-09·1jm4",
+      "date": "2026-11-09T00:00:00.000Z",
       "notes": "We’re always making changes and improvements to Spotify. To make sure you don’t miss a thing, just keep your Updates turned on.",
       "screenshot": null
     },
@@ -510,8 +1164,8 @@
       "screenshot": null
     },
     "Threads": {
-      "version": "2026-11-03·8mhr",
-      "date": "2026-11-03T00:00:00.000Z",
+      "version": "2026-11-10·8mhr",
+      "date": "2026-11-10T00:00:00.000Z",
       "notes": "We’ve fixed bugs and improved performance. To experience the newest features and improvements, download the latest version of the app.",
       "screenshot": null
     },
@@ -570,8 +1224,8 @@
       "screenshot": null
     },
     "trivago": {
-      "version": "2026-10-27·1j0c",
-      "date": "2026-10-27T00:00:00.000Z",
+      "version": "2026-11-09·1j0c",
+      "date": "2026-11-09T00:00:00.000Z",
       "notes": "Thanks for using the trivago app. We always take our users' reviews into consideration as we make improvements, so be sure to let us know what you think. From now on, you can expect fixed monthly releases based on what we learn from you. Just go to your settings and enable automatic updates.",
       "screenshot": null
     },
@@ -612,8 +1266,8 @@
       "screenshot": null
     },
     "Uber Eats": {
-      "version": "2026-11-03·8glb",
-      "date": "2026-11-03T00:00:00.000Z",
+      "version": "2026-11-10·8glb",
+      "date": "2026-11-10T00:00:00.000Z",
       "notes": "We update the Uber Eats app as often as possible to make it faster and more reliable for you. Love the app? Rate us! Your feedback keeps the Uber Eats running. Have a question? Tap Help in the Uber Eats app or visit help.uber.com.",
       "screenshot": null
     },
@@ -624,8 +1278,8 @@
       "screenshot": null
     },
     "Lyft": {
-      "version": "2026-10-31·7hnj",
-      "date": "2026-10-31T00:00:00.000Z",
+      "version": "2026-11-07·7hnj",
+      "date": "2026-11-07T00:00:00.000Z",
       "notes": "Thanks for choosing Lyft! To make your rides even better, we update the app regularly. It’s like housekeeping: squashing bugs, cleaning up code, and other small-but-mighty improvements.",
       "screenshot": null
     },
@@ -648,8 +1302,8 @@
       "screenshot": null
     },
     "Grubhub": {
-      "version": "2026-10-30·ch4n",
-      "date": "2026-10-30T00:00:00.000Z",
+      "version": "2026-11-06·ch4n",
+      "date": "2026-11-06T00:00:00.000Z",
       "notes": "We kneaded the dough, sprinkled in some fixes, and delivered a fresh batch of updates. Time to satisfy your cravings. Plus, there's still no delivery or service fees on $50+ restaurant orders.",
       "screenshot": null
     },
@@ -690,14 +1344,14 @@
       "screenshot": null
     },
     "Chrome": {
-      "version": "2026-11-06·1gc7",
-      "date": "2026-11-06T00:00:00.000Z",
+      "version": "2026-11-10·1gc7",
+      "date": "2026-11-10T00:00:00.000Z",
       "notes": "Thanks for choosing Chrome! This release includes stability and performance improvements.",
       "screenshot": null
     },
     "Netflix": {
-      "version": "2026-11-05·xzfo",
-      "date": "2026-11-05T00:00:00.000Z",
+      "version": "2026-11-10·xzfo",
+      "date": "2026-11-10T00:00:00.000Z",
       "notes": "Get the best experience for enjoying recent hits and timeless classics with our latest Netflix update for your phone and tablet.",
       "screenshot": null
     },
@@ -708,8 +1362,8 @@
       "screenshot": null
     },
     "Pinterest": {
-      "version": "2026-11-03·ps40",
-      "date": "2026-11-03T00:00:00.000Z",
+      "version": "2026-11-10·ps40",
+      "date": "2026-11-10T00:00:00.000Z",
       "notes": "Every week we polish up the Pinterest app to make it faster and better than ever. Tell us if you like this newest version at https://help.pinterest.com/contact",
       "screenshot": null
     },
@@ -741,6 +1395,12 @@
       "version": "2026-11-04·1x10",
       "date": "2026-11-04T00:00:00.000Z",
       "notes": "Thanks for using Google Earth! This release brings a fresh new look, with new features to help you collaborate with others across devices, create maps on the go, and add photos from your camera to your maps.",
+      "screenshot": null
+    },
+    "Airbnb": {
+      "version": "2026-10-28·g0yj",
+      "date": "2026-10-28T00:00:00.000Z",
+      "notes": "in Acrobat Reader\\u003c/h1\\u003e\\u003cbr\\u003eCollaborate and share files in PDF Spaces, turn your doc summaries into podcast-style audio, and create standout content in Acrobat Reader with design and editor tools powered by Adobe Express\\u003cbr\\u003e\\u003ch1\\u003eFrequently asked questions\\u003c/h1\\u003e\\u003cbr\\u003e\\u003cb\\u003eIs Acrobat Reader free?\\u003c/b\\u003e\\u003cbr\\u003eYes. You can open, read, fill in and sign PDFs for free\\u003cbr\\u003e\\u003cb\\u003eDo I need an Adobe account?\\u003c/b\\u003e\\u003cbr\\u003eNo. You can read PDFs without one. Sign in with a free Adobe account to store files in Adobe Document Cloud storage, access them across devices and use more tools.\\u003cbr\\u003e\\u003cb\\u003eCan I turn off AI features?\\u003c/b\\u003e\\u003cbr\\u003eYes. AI Assistant features are optional, and you can turn them off in Preferences\\u003cbr\\u003eThe Acrobat Reader mobile app is designed to work with customers who have Enterprise Mobility Management (EMM) enabled.\\u003cbr\\u003e*An Adobe Acrobat AI Assistant add-on plan is available to Acrobat Individual customers.\\u003cbr\\u003eTerms \\u0026amp; Conditions: Your use of this application is governed by the Adobe General Terms of…",
       "screenshot": null
     }
   }

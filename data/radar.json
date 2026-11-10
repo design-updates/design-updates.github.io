@@ -1,14 +1,134 @@
 {
   "version": 1,
-  "updated_at": "2026-11-10T00:00:29.689Z",
+  "updated_at": "2026-11-10T02:00:07.060Z",
   "days": [
     {
       "date": "2026-11-10",
       "collected_at": "2026-11-09T23:02:33.578Z",
-      "quiet": true,
+      "quiet": false,
       "pattern": null,
       "pattern_zh": null,
-      "items": []
+      "items": [
+        {
+          "id": "instagram-effect-builder",
+          "app": "Instagram",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-10",
+          "published_at": "2026-11-09T18:07:23.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Instagram adds a prompt-based Effect Builder for creating custom Stories filters.",
+          "what": "Instagram’s new Effect Builder includes a prompt box where users describe a filter idea to a chatbot. It generates custom filters for Stories and is available now to US residents over 18.",
+          "why": "For a travel app considering conversational search, the useful comparison is a prompt input dedicated to one task rather than a general chat interface. The screen should make the intended output—such as a trip plan or filtered results—clear before users type.",
+          "sources": [
+            {
+              "title": "Instagram’s Effect Builder makes new filters from AI prompts",
+              "url": "https://theverge.com/tech/1030061/instagram-ai-effect-builder-filters",
+              "publisher": "The Verge"
+            }
+          ],
+          "release": null,
+          "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/instagram-effect-builder-test-2.jpeg?quality=90&strip=all&w=2400",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b0/91/85/b09185ca-7b74-87a4-adaf-1755d434ee22/Prod-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-10T02:00:07.060Z",
+          "zh": {
+            "headline": "Instagram 推出 Effect Builder，通过文字描述创建 Stories 自定义滤镜。",
+            "what": "Instagram 新增的 Effect Builder 提供提示词输入框，用户可以向聊天机器人描述想要的滤镜。工具会生成 Stories 自定义滤镜，目前面向美国 18 岁以上用户开放。",
+            "why": "对于考虑对话式搜索的旅行 App，可以参考这种围绕单一任务设置的输入框，而不是直接提供通用聊天界面。用户输入前，页面应明确说明将得到行程计划还是筛选后的搜索结果。"
+          }
+        },
+        {
+          "id": "amazon-mobile-navigation-redesign",
+          "app": "Amazon",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-10",
+          "published_at": "2026-11-09T17:58:10.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Amazon updates its mobile design to make key shopping destinations easier to access.",
+          "what": "Amazon’s App Store version notes for 27.20.0 describe a new design covering access to the homepage, account and order information, cart, and department browsing. The notes do not specify the layout or individual component changes.",
+          "why": "For a travel app, the comparable navigation decision is how to balance discovery and booking with quick access to account details and existing trips. This is worth checking on device, though the notes alone do not establish a pattern to copy.",
+          "sources": [
+            {
+              "title": "Amazon 27.20.0 version notes: Our new design provides easier access to the features you use most while on the go. This includes the homepage,…",
+              "url": "https://apps.apple.com/us/app/id297606951?version=27.20.0",
+              "publisher": "App Store notes"
+            }
+          ],
+          "release": {
+            "store": "app-store",
+            "version": "27.20.0"
+          },
+          "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/9f/62/ac9f62e9-363c-1a35-56a5-138991276661/b6eaa022-783a-4e83-a0e4-12dc8de1feb0_1.png/1920x1920bb.png",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ff/99/f1/ff99f196-706f-c781-196d-00391ce216b3/AppIcon-0-0-1x_U007epad-0-1-0-0-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-10T02:00:07.060Z",
+          "zh": {
+            "headline": "Amazon 更新移动端设计，让常用购物页面更容易进入。",
+            "what": "Amazon 的 App Store 27.20.0 版本说明提到，新设计调整了首页、账户与订单信息、购物车，以及品类浏览等功能的访问方式。说明没有交代具体布局或组件变化。",
+            "why": "对应到旅行 App，可以关注导航如何兼顾探索和预订，以及账户和已有行程的快捷访问。值得在实机上查看，但仅凭版本说明还不足以提炼可借鉴的设计模式。"
+          }
+        },
+        {
+          "id": "google-gemini-memory-summary",
+          "app": "Google",
+          "category": "platform",
+          "kind": "ux",
+          "date": "2026-11-10",
+          "published_at": "2026-11-09T16:47:45.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Google adds a Memory summary in Gemini for reviewing and changing remembered information.",
+          "what": "Gemini is rolling out a “Memory summary” that shows what it understands about the user. Users can view, edit and delete that information.",
+          "why": "A travel app that remembers destination, hotel or passenger preferences could offer a similar review surface in personalisation settings. Editing the stored information gives users a direct way to correct assumptions behind recommendations.",
+          "sources": [
+            {
+              "title": "Google Gemini rolling out ‘Memory summary’ with everything it remembers about you",
+              "url": "https://9to5google.com/2026/11/09/google-gemini-memory-summary",
+              "publisher": "9to5Google"
+            }
+          ],
+          "release": null,
+          "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/11/Gemini-app-Memory-summary.jpg?strip=info&w=1600",
+          "icon": "https://www.google.com/s2/favicons?domain=android.com&sz=64",
+          "collected_at": "2026-11-10T02:00:07.060Z",
+          "zh": {
+            "headline": "Google 在 Gemini 中加入 Memory summary，让用户查看和修改被记住的信息。",
+            "what": "Gemini 正在推出 Memory summary，展示它对用户的了解。用户可以查看、编辑和删除这些信息。",
+            "why": "如果旅行 App 会记住目的地、酒店或乘客偏好，可以在个性化设置中提供类似的信息管理页面。让用户直接修改已保存的信息，有助于纠正推荐所依据的错误判断。"
+          }
+        },
+        {
+          "id": "muse-apple-watch-app",
+          "app": "Muse",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-10",
+          "published_at": "2026-11-09T21:55:26.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Muse adds an Apple Watch app with text, dictation and call entry points.",
+          "what": "Meta’s Muse iOS update adds an Apple Watch app displaying the Muse character. Users can text it, dictate a message or call it, and a watch complication provides quick access.",
+          "why": "For a travel companion on a watch, this offers a concrete comparison for choosing between typed, dictated and spoken requests. A complication could serve as a direct entry point to trip assistance without navigating through the phone app.",
+          "sources": [
+            {
+              "title": "Meta's Muse AI Agent Comes to Apple Watch",
+              "url": "https://macrumors.com/2026/11/09/meta-muse-apple-watch",
+              "publisher": "MacRumors"
+            }
+          ],
+          "release": null,
+          "image": "https://images.macrumors.com/t/KR5Keflpp9rwH4Th2L6-ayo27nk=/2500x0/filters:no_upscale()/article-new/2026/11/muse-apple-watch-app.jpg?lossy",
+          "icon": "https://www.google.com/s2/favicons?domain=meta.com&sz=64",
+          "collected_at": "2026-11-10T02:00:07.060Z",
+          "zh": {
+            "headline": "Muse 新增 Apple Watch App，提供文字、语音输入和通话入口。",
+            "what": "Meta 更新 Muse iOS App，加入显示 Muse 角色的 Apple Watch App。用户可以发送文字、听写消息或发起通话，也可以通过表盘复杂功能快捷进入。",
+            "why": "设计手表端旅行助手时，可以对照它如何提供文字、听写和通话三种请求方式。表盘复杂功能也可以作为行程帮助的直接入口，不必先打开手机 App。"
+          }
+        }
+      ]
     },
     {
       "date": "2026-11-09",

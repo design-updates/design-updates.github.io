@@ -355,6 +355,38 @@
       "urls": [
         "https://digitaltrends.com/computing/windows-11-beta-redesigned-search-improved-facial-recognition"
       ]
+    },
+    "amazon-mobile-navigation-redesign": {
+      "app": "Amazon",
+      "headline": "Amazon updates its mobile design to make key shopping destinations easier to access.",
+      "date": "2026-11-10",
+      "urls": [
+        "https://apps.apple.com/us/app/id297606951?version=27.20.0"
+      ]
+    },
+    "google-gemini-memory-summary": {
+      "app": "Google",
+      "headline": "Google adds a Memory summary in Gemini for reviewing and changing remembered information.",
+      "date": "2026-11-10",
+      "urls": [
+        "https://9to5google.com/2026/11/09/google-gemini-memory-summary"
+      ]
+    },
+    "instagram-effect-builder": {
+      "app": "Instagram",
+      "headline": "Instagram adds a prompt-based Effect Builder for creating custom Stories filters.",
+      "date": "2026-11-10",
+      "urls": [
+        "https://theverge.com/tech/1030061/instagram-ai-effect-builder-filters"
+      ]
+    },
+    "muse-apple-watch-app": {
+      "app": "Muse",
+      "headline": "Muse adds an Apple Watch app with text, dictation and call entry points.",
+      "date": "2026-11-10",
+      "urls": [
+        "https://macrumors.com/2026/11/09/meta-muse-apple-watch"
+      ]
     }
   }
 }

@@ -1132,5 +1132,36 @@
     "added": 0,
     "usage": [],
     "cost_usd": 0
+  },
+  {
+    "at": "2026-11-10T02:00:07.060Z",
+    "date": "2026-11-10",
+    "mode": "company",
+    "feeds_ok": 63,
+    "feeds_failed": [
+      "Amtrak Media"
+    ],
+    "candidates": 2829,
+    "sent_to_model": 184,
+    "kept": 4,
+    "added": 4,
+    "usage": [
+      {
+        "step": "curate",
+        "model": "claude-gpt-6.1-sol[1M]",
+        "input_tokens": 28682,
+        "output_tokens": 3766,
+        "web_searches": 0
+      },
+      {
+        "step": "pictures",
+        "model": "claude-gpt-6.1-sol[1M]",
+        "input_tokens": 58481,
+        "output_tokens": 146,
+        "web_searches": 0,
+        "credits": 0
+      }
+    ],
+    "cost_usd": 0
   }
 ]

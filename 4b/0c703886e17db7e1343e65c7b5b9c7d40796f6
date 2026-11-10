@@ -1,0 +1,38 @@
+site/app.js
+  s_e22f00fee0a4ee::t_74f24adae30282 574,577
+  s_e22f00fee0a4ee::t_26c2a077c2e733 548-552,559-560,562
+  s_e22f00fee0a4ee::t_e752f9ebedb286 1674-1683
+  s_e22f00fee0a4ee::t_e208e32017e2be 1076,1080,1087-1088,1091
+README.md
+  s_e22f00fee0a4ee::t_1c220f10e74665 243
+tests/parsers.test.ts
+  s_e22f00fee0a4ee::t_878537259f6a28 246,248-249,251,254,256,261-270
+site/index.html
+  s_e22f00fee0a4ee::t_c19066a54cd316 27-28
+site/styles.css
+  s_e22f00fee0a4ee::t_97b6883fea636d 204-210
+  s_e22f00fee0a4ee::t_90b0905a12a9dc 198-199,211-219
+  s_e22f00fee0a4ee::t_c3c71b6a43b21c 658-663
+  s_e22f00fee0a4ee::t_e4acdf4a3a499c 188-189
+  s_e22f00fee0a4ee::t_b4c76510cba284 669
+  s_e22f00fee0a4ee::t_8b0a7b66d4c32e 42
+  s_e22f00fee0a4ee::t_838d8eaac28646 702-706
+  s_e22f00fee0a4ee::t_d90545a5ea20ec 84-87
+  s_e22f00fee0a4ee::t_a08bdfb53d75cb 672
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.52-trip",
+  "base_commit_sha": "4b0c703886e17db7e1343e65c7b5b9c7d40796f6",
+  "prompts": {},
+  "sessions": {
+    "s_e22f00fee0a4ee": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d65e9bf9-c7cf-41af-92c4-049f604c9630",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "kashif-08 <kashif-08@users.noreply.github.com>"
+    }
+  }
+}

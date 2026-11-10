@@ -38,8 +38,8 @@
   /* Pixelify Sans and Fustat have no Chinese characters; Chinese text falls back to the system's Chinese font. */
   --cjk: 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
   --brand: 'Pixelify Sans', var(--cjk), ui-monospace, 'SF Mono', Menlo, monospace;
-  --display: var(--brand);
   --body: 'Fustat', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', var(--cjk), sans-serif;
+  --display: var(--body);
   --px: 4px; /* one "pixel" of the pixel art */
   --page: 1180px;
   --gutter: clamp(20px, 5vw, 48px);
@@ -81,10 +81,10 @@
   color-scheme: dark;
 }
 
-/* The simpler font (the Aa switch): Fustat for headlines and labels too. The Pixel Post wordmark keeps the pixel
-   font, because it is the name. */
-:root[data-font='clean'] {
-  --display: var(--body);
+/* Fustat is the readable default. The Aa switch can opt into Pixelify Sans for headlines and labels; the Pixel Post
+   wordmark always keeps the pixel font because it is the name. */
+:root[data-font='pixel'] {
+  --display: var(--brand);
 }
 
 *,
@@ -185,7 +185,8 @@ button {
 
 /* Notched corners: the classic pixel box. --n is the notch size. */
 .notch,
-.frame::before {
+.frame::before,
+.frame::after {
   clip-path: polygon(
     0 var(--n), var(--n) var(--n), var(--n) 0,
     calc(100% - var(--n)) 0, calc(100% - var(--n)) var(--n), 100% var(--n),
@@ -194,11 +195,28 @@ button {
   );
 }
 
-/* Hard, unblurred offset shadow behind a notched frame. */
+/* Hard, unblurred offset shadow behind a notched frame. A real inset edge sits above it, so transparent media
+   still reads as a complete box instead of exposing only the shadow on the right and bottom. */
 .frame {
   display: block;
   position: relative;
   isolation: isolate;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  text-align: inherit;
+  font: inherit;
+  cursor: zoom-in;
+}
+.frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 3px var(--edge);
 }
 .frame::before {
   content: '';
@@ -637,21 +655,21 @@ button {
   box-shadow: inset 0 0 0 2px var(--line);
   transition: box-shadow 0.15s var(--step);
 }
-/* The simpler font is narrower and lighter than the pixel one at the same size: big headings get bolder and a
-   little tighter, so they keep their weight on the page. */
-:root[data-font='clean'] .hello-title,
-:root[data-font='clean'] .headline,
-:root[data-font='clean'] .section-title,
-:root[data-font='clean'] .zip-done-time {
+/* The readable Fustat default is narrower and lighter than Pixelify at the same size: big headings get bolder and
+   a little tighter, so they keep their weight on the page. */
+:root:not([data-font='pixel']) .hello-title,
+:root:not([data-font='pixel']) .headline,
+:root:not([data-font='pixel']) .section-title,
+:root:not([data-font='pixel']) .zip-done-time {
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 /* Fixed-width digits keep the pixel font's clocks steady; in the simpler font they leave gaps ("No.  2"). Only
    the running clocks keep them. */
-:root[data-font='clean'] .game-stats dd:not([data-zip-time]) {
+:root:not([data-font='pixel']) .game-stats dd:not([data-zip-time]) {
   font-variant-numeric: normal;
 }
-:root[data-font='clean'] .row-title {
+:root:not([data-font='pixel']) .row-title {
   font-weight: 600;
   letter-spacing: -0.01em;
 }
@@ -679,13 +697,13 @@ button {
 
 /* The Aa switch shows the font it switches to. */
 .font-toggle {
-  font-family: var(--body);
-  font-weight: 700;
-  letter-spacing: 0;
-}
-:root[data-font='clean'] .font-toggle {
   font-family: var(--brand);
   font-weight: 600;
+  letter-spacing: 0;
+}
+:root[data-font='pixel'] .font-toggle {
+  font-family: var(--body);
+  font-weight: 700;
 }
 .theme-toggle {
   display: grid;

@@ -545,16 +545,21 @@ function paintNote(id) {
   }
 }
 
+/** Attributes shared by large and small image buttons. The headline remains the source link. */
+function imageViewerAttrs(pictures, item, singleLabel = '') {
+  return `aria-label="${esc(t().imageViewer)}: ${esc(txt(item, 'headline'))}" data-images="${esc(JSON.stringify(pictures))}" data-image-title="${esc(txt(item, 'headline'))}" data-read="${esc(item.id)}"${singleLabel ? ` data-image-label="${esc(singleLabel)}"` : ''}`;
+}
+
 /** Old and new design side by side (or one picture that shows both). */
 function compareHtml(item) {
   const c = item.compare;
   const label = (k) => `<figcaption>${k === 'before' ? (c.from === 'app-store' && c.before_version ? `${t().before} · v${esc(c.before_version)}` : t().before) : c.from === 'app-store' && item.release ? `${t().after} · v${esc(item.release.version)}` : t().after}</figcaption>`;
   const pic = (src) => `<img src="${esc(src)}" alt="" loading="eager" referrerpolicy="no-referrer" decoding="async">`;
-  const href = esc(safeUrl(item.sources?.[0]?.url));
   if (c.combined || !c.before) {
-    return `<a class="frame photo" href="${href}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-read="${esc(item.id)}"><div class="compare notch one"><figure>${pic(c.after)}<figcaption>${c.combined ? t().beforeAfter : t().after}</figcaption></figure></div></a>`;
+    const caption = c.combined ? t().beforeAfter : t().after;
+    return `<button class="frame photo image-open" type="button" ${imageViewerAttrs([c.after], item, caption)}><div class="compare notch one"><figure>${pic(c.after)}<figcaption>${caption}</figcaption></figure></div></button>`;
   }
-  return `<a class="frame photo" href="${href}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-read="${esc(item.id)}"><div class="compare notch"><figure class="half">${pic(c.before)}${label('before')}</figure><figure class="half">${pic(c.after)}${label('after')}</figure></div></a>`;
+  return `<button class="frame photo image-open" type="button" ${imageViewerAttrs([c.before, c.after], item)}><div class="compare notch"><figure class="half">${pic(c.before)}${label('before')}</figure><figure class="half">${pic(c.after)}${label('after')}</figure></div></button>`;
 }
 
 function why(item) {
@@ -564,13 +569,12 @@ function why(item) {
 /** A photo if there is one; otherwise the app's icon on a plain tile. */
 function media(item) {
   if (item.compare?.after) return compareHtml(item);
-  const href = esc(safeUrl(item.sources?.[0]?.url));
   const style = `--c: var(--${esc(item.category)})`;
   if (item.image) {
-    return `<a class="frame photo" href="${href}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-read="${esc(item.id)}">
+    return `<button class="frame photo image-open" type="button" ${imageViewerAttrs([item.image], item)}>
       <div class="media notch${reduced ? '' : ' pending'}" style="${style}">
         <img src="${esc(item.image)}" alt="" loading="eager" referrerpolicy="no-referrer" decoding="async">
-      </div></a>`;
+      </div></button>`;
   }
   // The collector and build both reject news stories without an image of the reported change. This empty return
   // is only a last guard for old/corrupt data; never substitute an app logo for the display image.
@@ -1069,22 +1073,22 @@ function paintTheme() {
   $('meta[name="theme-color"]').content = dark ? '#000000' : '#f5ffe5';
 }
 
-/* ---------- font: the pixel font (default) or a simpler one ---------- */
+/* ---------- font: readable Fustat by default, optional Pixelify display ---------- */
 
 function paintFont() {
   const btn = $('#font');
-  const label = document.documentElement.dataset.font === 'clean' ? t().toPixelFont : t().toCleanFont;
+  const label = document.documentElement.dataset.font === 'pixel' ? t().toCleanFont : t().toPixelFont;
   btn.setAttribute('aria-label', label);
   btn.title = label;
 }
 
 function wireFont() {
   $('#font').addEventListener('click', () => {
-    const clean = document.documentElement.dataset.font !== 'clean';
-    if (clean) document.documentElement.dataset.font = 'clean';
+    const pixel = document.documentElement.dataset.font !== 'pixel';
+    if (pixel) document.documentElement.dataset.font = 'pixel';
     else delete document.documentElement.dataset.font;
     try {
-      localStorage.setItem('radar.font', clean ? 'clean' : 'pixel');
+      localStorage.setItem('radar.font', pixel ? 'pixel' : 'clean');
     } catch {}
     // Text takes a different amount of room in the other font, so the cards are drawn again.
     render();
@@ -1667,13 +1671,16 @@ function wireEvents() {
 
     if (t.classList.contains('image-open')) {
       e.preventDefault();
-      // Opening the image still counts as reading the row, as clicking its old source-linked thumbnail did.
-      const row = t.closest('.row');
-      if (row?.classList.contains('unread')) {
-        markRead([row.dataset.id]);
-        row.classList.replace('unread', 'read');
-        row.closest('.day')?.classList.toggle('has-unread', !!row.closest('.day')?.querySelector('.row.unread'));
-        renderFilters(archiveDays);
+      // Opening an image counts as reading it. Archive rows also repaint their unread state immediately.
+      const id = t.dataset.read || t.closest('.row')?.dataset.id;
+      if (id) {
+        markRead([id]);
+        const row = document.querySelector(`.row[data-id="${CSS.escape(id)}"]`);
+        if (row?.classList.contains('unread')) {
+          row.classList.replace('unread', 'read');
+          row.closest('.day')?.classList.toggle('has-unread', !!row.closest('.day')?.querySelector('.row.unread'));
+          renderFilters(archiveDays);
+        }
       }
       openImageViewer(t);
       return;

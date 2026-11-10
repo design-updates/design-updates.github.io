@@ -24,7 +24,8 @@
       try {
         const t = localStorage.getItem('radar.theme');
         if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
-        if (localStorage.getItem('radar.font') === 'clean') document.documentElement.dataset.font = 'clean';
+        const f = localStorage.getItem('radar.font');
+        if (f === 'pixel') document.documentElement.dataset.font = 'pixel';
         const l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('radar.lang');
         if (l === 'zh') document.documentElement.lang = 'zh-CN';
       } catch {}

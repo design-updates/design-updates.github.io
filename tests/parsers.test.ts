@@ -243,16 +243,31 @@ test('the static search/share metadata stays English', () => {
   assert.match(app, /document\.title = T\.en\.title/);
 });
 
-test('small news images are viewer buttons; source links stay on headlines', () => {
+test('all news images open the viewer while headlines stay source links', () => {
   const app = readFileSync('site/app.js', 'utf8');
-  assert.match(app, /function smallImageButton/);
+  assert.match(app, /function imageViewerAttrs/);
+  assert.match(app, /class="frame photo image-open"/);
   assert.match(app, /class="row-thumb notch image-open/);
+  assert.match(app, /class="headline"><a/);
   assert.match(app, /class="row-title"><a/);
   assert.match(app, /openImageViewer/);
+  assert.doesNotMatch(app, /<a class="frame photo"/);
   const css = readFileSync('site/styles.css', 'utf8');
-  assert.match(css, /button\.row-thumb[\s\S]*cursor: zoom-in/);
+  assert.match(css, /\.frame::after[\s\S]*box-shadow: inset 0 0 0 3px var\(--edge\)/, 'transparent large images keep a complete four-sided edge');
   assert.match(css, /\.row-thumb img[\s\S]*object-fit: contain/);
   assert.match(css, /\.image-view img[\s\S]*object-fit: contain/);
+});
+
+test('Fustat is the default display font and Pixelify remains optional', () => {
+  const html = readFileSync('site/index.html', 'utf8');
+  const css = readFileSync('site/styles.css', 'utf8');
+  const app = readFileSync('site/app.js', 'utf8');
+  assert.match(css, /--display: var\(--body\)/);
+  assert.match(css, /:root\[data-font='pixel'\][\s\S]*--display: var\(--brand\)/);
+  assert.match(css, /\.wordmark-text[\s\S]*var\(--brand\)/);
+  assert.match(html, /if \(f === 'pixel'\) document\.documentElement\.dataset\.font = 'pixel'/);
+  assert.match(app, /dataset\.font === 'pixel'/);
+  assert.doesNotMatch(css, /data-font='clean'/);
 });
 
 test('the News Earlier heading and filters stick on desktop only', () => {

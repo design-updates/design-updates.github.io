@@ -258,16 +258,25 @@ test('all news images open the viewer while headlines stay source links', () => 
   assert.match(css, /\.image-view img[\s\S]*object-fit: contain/);
 });
 
-test('Fustat is the default display font and Pixelify remains optional', () => {
+test('Fustat is the default display font and Pixelify remains an explicit v2 preference', () => {
   const html = readFileSync('site/index.html', 'utf8');
   const css = readFileSync('site/styles.css', 'utf8');
   const app = readFileSync('site/app.js', 'utf8');
   assert.match(css, /--display: var\(--body\)/);
   assert.match(css, /:root\[data-font='pixel'\][\s\S]*--display: var\(--brand\)/);
   assert.match(css, /\.wordmark-text[\s\S]*var\(--brand\)/);
+  assert.match(html, /localStorage\.getItem\('radar\.font\.v2'\)/);
+  assert.match(html, /localStorage\.removeItem\('radar\.font'\)/, 'the old Pixelify-default preference is migrated away');
   assert.match(html, /if \(f === 'pixel'\) document\.documentElement\.dataset\.font = 'pixel'/);
+  assert.match(app, /localStorage\.setItem\('radar\.font\.v2', pixel \? 'pixel' : 'fustat'\)/);
   assert.match(app, /dataset\.font === 'pixel'/);
   assert.doesNotMatch(css, /data-font='clean'/);
+});
+
+test('every large card headline uses one size regardless of story order', () => {
+  const css = readFileSync('site/styles.css', 'utf8');
+  assert.match(css, /\.headline\s*\{[\s\S]*?font:\s*600 clamp\(20px, 2vw, 24px\)\/1\.22 var\(--display\)/);
+  assert.doesNotMatch(css, /\.story(?::first-child|:first-of-type|:nth-child\([^)]*\))[^{}]*\.headline/, 'story position must never change headline size');
 });
 
 test('the News Earlier heading and filters stick on desktop only', () => {

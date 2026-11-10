@@ -1088,7 +1088,7 @@ function wireFont() {
     if (pixel) document.documentElement.dataset.font = 'pixel';
     else delete document.documentElement.dataset.font;
     try {
-      localStorage.setItem('radar.font', pixel ? 'pixel' : 'clean');
+      localStorage.setItem('radar.font.v2', pixel ? 'pixel' : 'fustat');
     } catch {}
     // Text takes a different amount of room in the other font, so the cards are drawn again.
     render();

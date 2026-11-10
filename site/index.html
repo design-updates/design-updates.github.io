@@ -24,8 +24,11 @@
       try {
         const t = localStorage.getItem('radar.theme');
         if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
-        const f = localStorage.getItem('radar.font');
+        // Font preference v2 reverses the old default: existing browsers start once in Fustat, then a new
+        // explicit Pixelify choice persists under this new key.
+        const f = localStorage.getItem('radar.font.v2');
         if (f === 'pixel') document.documentElement.dataset.font = 'pixel';
+        localStorage.removeItem('radar.font');
         const l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('radar.lang');
         if (l === 'zh') document.documentElement.lang = 'zh-CN';
       } catch {}

@@ -787,7 +787,7 @@ button {
   gap: 28px;
 }
 /* One story per card: text left, its own picture right, a black border and a hard indigo pixel shadow. Every
-   story's picture is the same size (one column width, 16:9); only the first story's headline is larger. */
+   story's picture and headline follow the same sizing rules. */
 .story {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
@@ -1688,13 +1688,7 @@ html:lang(zh-CN) .view-tab {
 
 /* ---------- identity: colour blocks, black borders, hard pixel shadows ---------- */
 
-
-/* The day's first story: the same card, a larger headline. */
-.story:first-child .headline {
-  font-size: clamp(26px, 3vw, 36px);
-  line-height: 1.12;
-}
-
+/* Every large story uses the same headline size. Its position in the edition never changes its typography. */
 
 /* Buttons and chips: black borders, solid black when on, an indigo pixel shadow when hovered. These come after
    the pressed Save button so hovering it still shows the hover border, and before the pressed chip so a pressed

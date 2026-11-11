@@ -1163,5 +1163,34 @@
       }
     ],
     "cost_usd": 0
+  },
+  {
+    "at": "2026-11-11T01:04:01.217Z",
+    "date": "2026-11-11",
+    "mode": "company",
+    "feeds_ok": 64,
+    "feeds_failed": [],
+    "candidates": 2841,
+    "sent_to_model": 200,
+    "kept": 4,
+    "added": 4,
+    "usage": [
+      {
+        "step": "curate",
+        "model": "claude-gpt-6.1-sol[1M]",
+        "input_tokens": 29512,
+        "output_tokens": 4711,
+        "web_searches": 0
+      },
+      {
+        "step": "pictures",
+        "model": "claude-gpt-6.1-sol[1M]",
+        "input_tokens": 77706,
+        "output_tokens": 318,
+        "web_searches": 0,
+        "credits": 0
+      }
+    ],
+    "cost_usd": 0
   }
 ]

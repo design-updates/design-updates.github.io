@@ -263,8 +263,8 @@
       ]
     },
     "Notion": {
-      "version": "1.7.352",
-      "date": "2026-11-06T18:12:58.000Z",
+      "version": "1.7.353",
+      "date": "2026-11-10T02:54:41.000Z",
       "notes": "Bug fixes and performance improvements.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4e/9c/7b/4e9c7b5a-4e44-af47-6389-1fce93ffc6de/NotionLabs_Notion_iOS-6.9_US_Screenshots_250924_01.png/1920x1920bb.jpg",
       "screenshots": [
@@ -278,31 +278,32 @@
       ]
     },
     "Linear": {
-      "version": "1.107.0",
-      "date": "2026-11-03T17:20:35.000Z",
+      "version": "1.108.0",
+      "date": "2026-11-10T18:14:23.000Z",
       "notes": "Bug fixes and minor improvements",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/5a/ae/ea5aaea5-37a2-f012-18e0-1b768410b871/initiatives.png/1920x1920bb.jpg",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/69/50/ac/6950ac7a-46cd-8198-089e-df8822e7475d/initiatives.png/1920x1920bb.jpg",
       "screenshots": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/5a/ae/ea5aaea5-37a2-f012-18e0-1b768410b871/initiatives.png/1920x1920bb.jpg",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a5/21/f5/a521f5e7-9758-ff3c-dfd1-d27f2830a55e/inbox.png/1920x1920bb.jpg",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d6/4c/1a/d64c1a3c-c6d4-e44d-e6a4-0eb9f99d654f/agent.png/1920x1920bb.jpg",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/65/04/4a/65044ae2-5fff-19da-5550-230bfc87e5ad/issues.png/1920x1920bb.jpg",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4c/23/62/4c236263-77bd-0934-d727-872205f672f5/notifications.png/1920x1920bb.jpg",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5c/53/d7/5c53d72c-11c9-c7e4-e1ce-e559f535faf0/projects.png/1920x1920bb.jpg"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/69/50/ac/6950ac7a-46cd-8198-089e-df8822e7475d/initiatives.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e2/f6/25/e2f62542-3220-865c-29e5-b8b641998fff/inbox.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/90/17/e6/9017e6e6-468d-826d-72f8-95942a2acb83/agent.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a3/73/52/a373520a-b8d4-f75b-a28d-6837540af7a8/issues.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/ff/a2/deffa245-684e-85cc-a102-57347d442c53/notifications.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/42/34/42/42344266-5bd6-f771-908c-14c8777e9498/projects.png/1920x1920bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1c/50/7c/1c507c1e-3db1-b923-6629-21b494754c5f/projects-2.png/1920x1920bb.jpg"
       ]
     },
     "Kayak": {
-      "version": "298.0.0",
-      "date": "2026-11-04T09:32:37.000Z",
+      "version": "298.0.1",
+      "date": "2026-11-09T10:32:28.000Z",
       "notes": "We've been busy paving the runway for your next great escape! We're excited to present the latest version of our app, tuned up and bugs squashed, providing you a smooth and seamless experience.",
-      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/97/c7/e2/97c7e280-a2f0-e8f3-c4c5-08c20a4a8a09/0_APP_IPHONE_55_0.png/1920x1920bb.png",
+      "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/30/99/53/3099538d-c30a-e171-7e56-887fb11b2aa3/0_APP_IPHONE_55_0.png/1920x1920bb.png",
       "screenshots": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/97/c7/e2/97c7e280-a2f0-e8f3-c4c5-08c20a4a8a09/0_APP_IPHONE_55_0.png/1920x1920bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/15/47/a4/1547a4ae-6e5b-946c-455f-39e184a3e2e7/1_APP_IPHONE_55_1.png/1920x1920bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/46/1f/30/461f30b7-e704-4c05-7a0e-34fd9839a461/2_APP_IPHONE_55_2.png/1920x1920bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/86/a5/a5/86a5a5bf-93f3-b0b8-4e4f-e061e0bfdb57/3_APP_IPHONE_55_3.png/1920x1920bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0d/4e/ad/0d4ead8f-cc08-2ca1-156c-b39dc1cd5578/4_APP_IPHONE_55_4.png/1920x1920bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e6/eb/c1/e6ebc18a-c476-226c-5b7d-fc48aaa505f7/5_APP_IPHONE_55_5.png/1920x1920bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/30/99/53/3099538d-c30a-e171-7e56-887fb11b2aa3/0_APP_IPHONE_55_0.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fd/70/03/fd700359-0204-035f-6904-dacc4583de7b/1_APP_IPHONE_55_1.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fe/29/12/fe2912d7-dd52-9fb3-8edf-65ff7e187e11/2_APP_IPHONE_55_2.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bc/09/b3/bc09b3e5-638f-1914-f201-9e9c4b07d14a/3_APP_IPHONE_55_3.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c5/6e/fe/c56efe22-69e7-df27-4f94-656ea7e7ad61/4_APP_IPHONE_55_4.png/1920x1920bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a0/11/56/a0115681-c3ee-16bb-4e0f-d605ca21aacc/5_APP_IPHONE_55_5.png/1920x1920bb.png"
       ]
     },
     "Tripadvisor": {
@@ -319,8 +320,8 @@
       ]
     },
     "Skyscanner": {
-      "version": "7.216",
-      "date": "2026-11-03T21:32:51.000Z",
+      "version": "7.217",
+      "date": "2026-11-10T11:00:43.000Z",
       "notes": "This just in. Drops. Our brand-new app-exclusive feature is your next travel hack to get the best deal for your next trip. Every day, we’re sifting through billions of travel prices hunting for the best flight price drops of at least 20% to anywhere in the world. Simply tell us where you like to fly from, and watch the deals roll in. Whether you’re feeling a little spontaneous or got your eye on somewhere specific, check Drops for the latest prices from your top airport.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/09/3b/84/093b84e2-4966-7102-42b2-7463bbbb5409/5595c1a1-aa72-4597-bf84-2d38c07c72b0_01-iphone5.5-Screen-Title-en-CA.png/1920x1920bb.png",
       "screenshots": [
@@ -368,8 +369,8 @@
       ]
     },
     "trivago": {
-      "version": "7.1.0",
-      "date": "2026-10-26T10:44:42.000Z",
+      "version": "7.2.0",
+      "date": "2026-11-09T12:41:11.000Z",
       "notes": "Ready to find your perfect stay? Well, good thing we’ve updated our app in this latest release. Let’s just say we’ve been busy bees implementing all sorts of bug fixes and performance improvements to give you the best app experience yet.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/6a/1a/5b6a1a2a-26fe-b494-3a24-1761fb8b4bc5/043fb1ea-e7c0-4da7-938c-196d9682135b_app_store_2008_55_AU.png/1920x1920bb.png",
       "screenshots": [
@@ -502,8 +503,8 @@
       ]
     },
     "Zomato": {
-      "version": "27.7.1",
-      "date": "2026-11-03T20:47:58.000Z",
+      "version": "27.7.2",
+      "date": "2026-11-10T13:16:14.000Z",
       "notes": "Our latest update comes with bug fixes and performance enhancements to ensure a seamless experience across our app. Update your app now and give it a spin!",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4f/ea/08/4fea08ca-ea59-3c7d-5215-b91c778a141c/5.5inch_-_1.jpg/1920x1920bb.jpg",
       "screenshots": [
@@ -519,8 +520,8 @@
       ]
     },
     "Swiggy": {
-      "version": "8.9.1",
-      "date": "2026-11-08T05:12:35.000Z",
+      "version": "8.9.2",
+      "date": "2026-11-10T05:12:57.000Z",
       "notes": "Bug fixes and improvements",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8a/56/f1/8a56f193-1d38-de5d-bb4a-1befa1140d76/IOS_Swiggy__U0028without_Giftables_U0029-.png/1920x1920bb.jpg",
       "screenshots": [
@@ -617,9 +618,9 @@
       ]
     },
     "DB Navigator": {
-      "version": "26.20.0",
-      "date": "2026-10-27T10:14:40.000Z",
-      "notes": "Süßes oder Saures? Wir haben uns für Feinschliff entschieden. Mit diesem Update haben wir die App weiter optimiert und einige Details im Hintergrund verbessert, damit du weiterhin entspannt unterwegs bist. Jetzt aktualisieren! Wir freuen uns auf dein Feedback hier im Store.",
+      "version": "26.21.0",
+      "date": "2026-11-10T10:07:29.000Z",
+      "notes": "Novemberwetter? Können wir nicht ändern. Den DB Navigator schon. Deshalb haben wir mit diesem Update wieder an verschiedenen Stellen nachgebessert und die App weiter optimiert. Jetzt aktualisieren! Wir freuen uns auf dein Feedback hier im Store.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0c/ae/73/0cae7310-a0f5-5269-1483-fcbaf9295241/Screen_2_iPhone_6.9.png/1920x1920bb.jpg",
       "screenshots": [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0c/ae/73/0cae7310-a0f5-5269-1483-fcbaf9295241/Screen_2_iPhone_6.9.png/1920x1920bb.jpg",
@@ -633,8 +634,8 @@
       ]
     },
     "FlixBus": {
-      "version": "10.11.0",
-      "date": "2026-10-28T16:56:50.000Z",
+      "version": "10.12.0",
+      "date": "2026-11-09T12:31:53.000Z",
       "notes": "Nur ein kurzes Hallo mit einigen Leistungsverbesserungen. Schönen Tag und gute Reise!",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/11/0b/a0/110ba03c-78e8-f499-370d-8bb0278ebb20/08956003-63e9-4620-8c39-accb6fd35709_1_-_iOS__U00281242_x_2208_U0029.jpg/1920x1920bb.jpg",
       "screenshots": [
@@ -646,8 +647,8 @@
       ]
     },
     "Eurostar": {
-      "version": "15.0.1284",
-      "date": "2026-11-03T09:17:44.000Z",
+      "version": "15.0.1285",
+      "date": "2026-11-10T14:11:26.000Z",
       "notes": "We’ve made behind-the-scenes improvements for a smoother, more reliable experience. This update includes bug fixes and performance enhancements to help you book tickets easily, access journeys faster, and enjoy a more seamless app experience. Thanks for travelling with Eurostar!",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3d/59/f4/3d59f4d2-3c61-a350-4ea3-05896b82a5e9/befac475-7fb9-4dd9-b1b3-0744960b1e10_iPhone-x-1242x2208-en-cover.jpg/1920x1920bb.jpg",
       "screenshots": [
@@ -747,8 +748,8 @@
       ]
     },
     "foodpanda": {
-      "version": "26.44.0",
-      "date": "2026-11-02T09:11:53.000Z",
+      "version": "26.45.0",
+      "date": "2026-11-09T11:02:05.000Z",
       "notes": "We're always working hard to optimize our app with the latest technologies and best new features. This version includes a number of UI/UX improvements as well as stability enhancements. Enjoy!",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a7/a7/53/a7a753f8-2e2c-3061-0655-fe88c8004a7e/01.png/1920x1920bb.jpg",
       "screenshots": [
@@ -872,9 +873,9 @@
       ]
     },
     "Chrome": {
-      "version": "157.0.8103.37",
-      "date": "2026-11-03T18:36:06.000Z",
-      "notes": "Thanks for choosing Chrome! This version includes: • Stability and performance improvements.",
+      "version": "158.0.8127.32",
+      "date": "2026-11-10T19:22:02.000Z",
+      "notes": "Thanks for choosing Chrome! This version includes: • You can now autofill more data types, including information from your passport, driver's license, national ID, or vehicle information. • Your new tab page customizations and address bar placement now sync automatically across your signed-in mobile devices. • Stability and performance improvements.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/20/73/58207379-b824-6361-aaf2-af9850d9c165/APP_IPHONE_65-0.png/1920x1920bb.jpg",
       "screenshots": [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/20/73/58207379-b824-6361-aaf2-af9850d9c165/APP_IPHONE_65-0.png/1920x1920bb.jpg",
@@ -921,8 +922,8 @@
       ]
     },
     "Facebook": {
-      "version": "586.0.0",
-      "date": "2026-11-04T18:21:38.000Z",
+      "version": "587.0.0",
+      "date": "2026-11-10T17:34:48.000Z",
       "notes": "Our teams have solved many crashes, fixed issues you’ve reported and made the app faster.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ec/d3/9c/ecd39c66-4b07-f453-c811-6513d6e05e8d/1-iOS-Marketplace.png/1920x1920bb.jpg",
       "screenshots": [
@@ -1008,8 +1009,8 @@
       ]
     },
     "ChatGPT": {
-      "version": "1.2026.300",
-      "date": "2026-11-03T18:55:49.000Z",
+      "version": "1.2026.307",
+      "date": "2026-11-10T17:56:25.000Z",
       "notes": "Bug fixes and small improvements.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a1/39/1d/a1391d37-04ea-8ead-62eb-d925b773ed4a/1_iPhone.jpg/1920x1920bb.jpg",
       "screenshots": [
@@ -1038,8 +1039,8 @@
       ]
     },
     "Telegram": {
-      "version": "13.2",
-      "date": "2026-11-05T13:22:09.000Z",
+      "version": "13.2.1",
+      "date": "2026-11-10T06:46:29.000Z",
       "notes": "Bug fixes, minor improvements, and more.",
       "screenshot": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/29/6c/87/296c8715-63d1-77c5-4385-f06a3c0d7627/0_APP_IPHONE_55_0.png/1920x1920bb.png",
       "screenshots": [
@@ -1086,8 +1087,8 @@
   },
   "googlePlay": {
     "Expedia": {
-      "version": "2026-10-30·13h4",
-      "date": "2026-10-30T00:00:00.000Z",
+      "version": "2026-11-10·13h4",
+      "date": "2026-11-10T00:00:00.000Z",
       "notes": "Thanks for seeing the world with Expedia, your on-the-go companion. This update contains some bug fixes and performance improvements to make your digital experience as smooth as possible. Bon voyage, traveler!",
       "screenshot": null
     },
@@ -1098,8 +1099,8 @@
       "screenshot": null
     },
     "Agoda": {
-      "version": "2026-11-03·1hr4",
-      "date": "2026-11-03T00:00:00.000Z",
+      "version": "2026-11-10·1hr4",
+      "date": "2026-11-10T00:00:00.000Z",
       "notes": "Agoda now offers flights! Your trusted accommodation partner now brings you the very best updated deals on flights to your destination. So you can book your room and your flight from one great app, knowing you'll get the lowest price on both and 24/7 customer support. Other recent improvements include: - Send messages to a property when you have a question - Easily recognize homes & apartments in search (pink stars) - Host mode for Agoda Homes hosts Explore, travel safely, and keep in touch!",
       "screenshot": null
     },
@@ -1110,9 +1111,9 @@
       "screenshot": null
     },
     "Trainline": {
-      "version": "2026-11-07·1337",
+      "version": "2026-11-07·dp6a",
       "date": "2026-11-07T00:00:00.000Z",
-      "notes": "The little things matter Some small improvements are coming down the track with this update. We’ve fixed a few bugs that were affecting our app and made some other minor changes.",
+      "notes": "The little things matter We’ve been hard at work improving our app so it’ll be ready whenever you are. This update includes some minor bug fixes and improvements for a smoother ride.",
       "screenshot": null
     },
     "Klook": {
@@ -1158,9 +1159,9 @@
       "screenshot": null
     },
     "TikTok": {
-      "version": "2026-11-05·5kpb",
+      "version": "2026-11-05·1s34",
       "date": "2026-11-05T00:00:00.000Z",
-      "notes": "Quickly find and tag your friends in comments.",
+      "notes": "We've been working on making your experience on TikTok better with updates and bug fixes.",
       "screenshot": null
     },
     "Threads": {
@@ -1200,8 +1201,8 @@
       "screenshot": null
     },
     "Skyscanner": {
-      "version": "2026-11-04·1ieg",
-      "date": "2026-11-04T00:00:00.000Z",
+      "version": "2026-11-10·1ieg",
+      "date": "2026-11-10T00:00:00.000Z",
       "notes": "This just in. Drops. Our brand-new app-exclusive feature is your next travel hack to get the best deal for your next trip. Every day, we’re sifting through billions of travel prices hunting for the best flight price drops of at least 20% to anywhere in the world. Simply tell us where you like to fly from, and watch the deals roll in. Whether you’re feeling a little spontaneous or got your eye on somewhere specific, check Drops for the latest prices from your top airport.",
       "screenshot": null
     },
@@ -1236,8 +1237,8 @@
       "screenshot": null
     },
     "DB Navigator": {
-      "version": "2026-10-23·cpd6",
-      "date": "2026-10-23T00:00:00.000Z",
+      "version": "2026-11-06·cpd6",
+      "date": "2026-11-06T00:00:00.000Z",
       "notes": "Trick or treat? We chose fine-tuning instead. With this update, we've further optimised the app and improved a few details behind the scenes, so you can continue travelling with ease. Update now! We're looking forward to your feedback here in the store.",
       "screenshot": null
     },
@@ -1296,8 +1297,8 @@
       "screenshot": null
     },
     "DoorDash": {
-      "version": "2026-11-04·3wes",
-      "date": "2026-11-04T00:00:00.000Z",
+      "version": "2026-11-11·3wes",
+      "date": "2026-11-11T00:00:00.000Z",
       "notes": "Our mission is to deliver good by connecting people and possibility. If we can play a small role in helping you spend more time with your friends and family or get ahead on your favorite projects, then we have delivered good. We’re launching a new set of initiatives to deliver good within our communities, and you’ll see a new visual identity that reflects our spirit. Thank you for making DoorDash a success — we wouldn’t be here without you. Upward and onward! Tony Xu, CEO and Co-Founder",
       "screenshot": null
     },
@@ -1314,8 +1315,8 @@
       "screenshot": null
     },
     "foodpanda": {
-      "version": "2026-11-02·17zc",
-      "date": "2026-11-02T00:00:00.000Z",
+      "version": "2026-11-10·17zc",
+      "date": "2026-11-10T00:00:00.000Z",
       "notes": "We're always working hard to optimize our app with the latest technologies and best new features. This version includes a number of UI/UX improvements as well as stability enhancements. Enjoy!",
       "screenshot": null
     },
@@ -1326,20 +1327,20 @@
       "screenshot": null
     },
     "YouTube": {
-      "version": "2026-11-07·nc0s",
-      "date": "2026-11-07T00:00:00.000Z",
+      "version": "2026-11-10·nc0s",
+      "date": "2026-11-10T00:00:00.000Z",
       "notes": "For new features, look for in-product education & notifications sharing the feature and how to use it!",
       "screenshot": null
     },
     "Gmail": {
-      "version": "2026-11-06·848h",
-      "date": "2026-11-06T00:00:00.000Z",
+      "version": "2026-11-10·848h",
+      "date": "2026-11-10T00:00:00.000Z",
       "notes": "Stay on top of the work that matters with Gmail, part of Google Workspace. With secure email as the foundation, you can also chat, collaborate with a group in spaces or make voice or video calls - all in one place.",
       "screenshot": null
     },
     "Google Maps": {
-      "version": "2026-11-04·zhd3",
-      "date": "2026-11-04T00:00:00.000Z",
+      "version": "2026-11-11·zhd3",
+      "date": "2026-11-11T00:00:00.000Z",
       "notes": "Thanks for using Google Maps! This release brings bug fixes that improve our product to help you discover new places and navigate to them. Become a beta tester: http://goo.gl/vLUcaJ",
       "screenshot": null
     },
@@ -1356,8 +1357,8 @@
       "screenshot": null
     },
     "Snapchat": {
-      "version": "2026-11-04·s6iu",
-      "date": "2026-11-04T00:00:00.000Z",
+      "version": "2026-11-11·s6iu",
+      "date": "2026-11-11T00:00:00.000Z",
       "notes": "Just a little tune-up to keep everything running smoothly! 👻",
       "screenshot": null
     },
@@ -1368,8 +1369,8 @@
       "screenshot": null
     },
     "LinkedIn": {
-      "version": "2026-11-05·19bj",
-      "date": "2026-11-05T00:00:00.000Z",
+      "version": "2026-11-10·19bj",
+      "date": "2026-11-10T00:00:00.000Z",
       "notes": "Thanks for using LinkedIn! We regularly update our app to fix bugs, improve performance and add new features to help you connect with your professional network and advance your career.",
       "screenshot": null
     },

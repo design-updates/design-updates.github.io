@@ -387,6 +387,44 @@
       "urls": [
         "https://macrumors.com/2026/11/09/meta-muse-apple-watch"
       ]
+    },
+    "google-pixel-custom-icons-widgets": {
+      "app": "Google",
+      "headline": "Google adds 10 custom icon styles and generated home-screen widgets to Pixel phones.",
+      "date": "2026-11-11",
+      "urls": [
+        "https://arstechnica.com/gadgets/2026/11/november-pixel-drop-brings-gemini-intelligence-to-pixel-10-family",
+        "https://androidauthority.com/pixel-custom-icon-expansion-3733125",
+        "https://digitaltrends.com/phones/google-november-pixel-drop-ai-widgets-icons-hilight"
+      ]
+    },
+    "nintendo-apple-google-sign-in-removal": {
+      "app": "Nintendo",
+      "headline": "Nintendo will remove Apple and Google sign-in from Nintendo Accounts.",
+      "date": "2026-11-11",
+      "urls": [
+        "https://appleinsider.com/articles/26/11/10/nintendo-wont-let-you-log-in-with-a-linked-apple-account-soon",
+        "https://9to5google.com/2026/11/10/nintendo-will-soon-discontinue-google-and-apple-sign-ins"
+      ]
+    },
+    "reddit-reviews-product-pages": {
+      "app": "Reddit",
+      "headline": "Reddit Reviews brings product discussions together on one page.",
+      "date": "2026-11-11",
+      "urls": [
+        "https://digitaltrends.com/social-media/reddits-ai-reviews-use-real-user-conversations-to-help-you-make-smarter-buying-decisions",
+        "https://androidauthority.com/reddit-reviews-ai-powered-product-reviews-3733511",
+        "https://techcrunch.com/2026/11/10/reddit-is-turning-user-conversations-into-ai-powered-product-reviews"
+      ]
+    },
+    "apple-tv-sign-language-interpretation": {
+      "app": "Apple TV",
+      "headline": "Apple TV adds on-screen sign language interpretation for supported titles.",
+      "date": "2026-11-11",
+      "urls": [
+        "https://apple.com/newsroom/2026/11/apple-tv-introduces-new-sign-language-interpretation-feature",
+        "https://macrumors.com/2026/11/10/apple-tv-sign-language-interpretation"
+      ]
     }
   }
 }

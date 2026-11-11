@@ -1,7 +1,162 @@
 {
   "version": 1,
-  "updated_at": "2026-11-10T02:00:07.060Z",
+  "updated_at": "2026-11-11T01:04:01.217Z",
   "days": [
+    {
+      "date": "2026-11-11",
+      "collected_at": "2026-11-11T01:04:01.217Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "google-pixel-custom-icons-widgets",
+          "app": "Google",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-11",
+          "published_at": "2026-11-10T19:00:17.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Google adds 10 custom icon styles and generated home-screen widgets to Pixel phones.",
+          "what": "The November Pixel Drop expands home-screen customisation with 10 new custom icon styles and AI-generated widgets. Create My Widget lets users generate widgets using natural-language commands on the Pixel 10 and 11 series, excluding the Pixel 10a.",
+          "why": "For a travel app, test whether its launcher icon remains recognisable under system customisation. Generated home-screen widgets also raise a specific question for trip management: which itinerary details should be available without opening the app?",
+          "sources": [
+            {
+              "title": "Pixel phones getting new icon styles, Create My Widget, and more in November Pixel Drop",
+              "url": "https://arstechnica.com/gadgets/2026/11/november-pixel-drop-brings-gemini-intelligence-to-pixel-10-family",
+              "publisher": "Ars Technica"
+            },
+            {
+              "title": "Pixel phones are getting 10 new custom icon styles",
+              "url": "https://androidauthority.com/pixel-custom-icon-expansion-3733125",
+              "publisher": "Android Authority"
+            },
+            {
+              "title": "Google Pixel phones are getting custom AI widgets, new icons, and a useful HiLight upgrade",
+              "url": "https://digitaltrends.com/phones/google-november-pixel-drop-ai-widgets-icons-hilight",
+              "publisher": "Digital Trends"
+            }
+          ],
+          "release": null,
+          "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2026/11/Pixel-11-Pro-Custom-Icons.jpg?resize=2000%2C1200&ssl=1",
+          "icon": "https://www.google.com/s2/favicons?domain=android.com&sz=64",
+          "collected_at": "2026-11-11T01:04:01.217Z",
+          "zh": {
+            "headline": "Google 为 Pixel 手机新增 10 种自定义图标样式和生成式主屏幕小组件。",
+            "what": "November Pixel Drop 扩展了主屏幕自定义选项，加入 10 种新图标样式和 AI 生成的小组件。Pixel 10 和 11 系列用户可以通过自然语言指令使用 Create My Widget，但 Pixel 10a 不支持。",
+            "why": "旅行 App 需要检查启动图标经过系统自定义处理后是否仍容易辨认。生成式主屏幕小组件也给行程管理提出了一个具体问题：哪些行程信息应该不用打开 App 就能看到？"
+          }
+        },
+        {
+          "id": "nintendo-apple-google-sign-in-removal",
+          "app": "Nintendo",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-11",
+          "published_at": "2026-11-10T16:28:05.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Nintendo will remove Apple and Google sign-in from Nintendo Accounts.",
+          "what": "From January 26, 2027, users will no longer be able to sign in to or create a Nintendo Account using a linked Apple or Google account. Existing users need to change their sign-in method; passkeys are presented as an alternative.",
+          "why": "Removing a sign-in route requires a migration journey, not just deleting a button. A travel app must help users preserve access to existing bookings before a login method stops working.",
+          "sources": [
+            {
+              "title": "Nintendo won't let you log in with a linked Apple account soon",
+              "url": "https://appleinsider.com/articles/26/11/10/nintendo-wont-let-you-log-in-with-a-linked-apple-account-soon",
+              "publisher": "AppleInsider"
+            },
+            {
+              "title": "Nintendo will soon discontinue Google and Apple sign-ins",
+              "url": "https://9to5google.com/2026/11/10/nintendo-will-soon-discontinue-google-and-apple-sign-ins",
+              "publisher": "9to5Google"
+            }
+          ],
+          "release": null,
+          "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/11/nitendo-switch-app-google-apple-signin.jpg",
+          "icon": "https://www.google.com/s2/favicons?domain=nintendo.com&sz=64",
+          "collected_at": "2026-11-11T01:04:01.217Z",
+          "zh": {
+            "headline": "Nintendo 将取消 Nintendo Account 的 Apple 和 Google 登录方式。",
+            "what": "从 2027 年 1 月 26 日起，用户将无法通过关联的 Apple 或 Google 账号登录或创建 Nintendo Account。现有用户需要更换登录方式，passkey 是提供的替代选项之一。",
+            "why": "取消登录方式需要设计迁移流程，而不只是删掉按钮。旅行 App 应在旧登录方式失效前，帮助用户确保仍能访问已有订单。"
+          }
+        },
+        {
+          "id": "reddit-reviews-product-pages",
+          "app": "Reddit",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-11",
+          "published_at": "2026-11-10T16:20:00.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Reddit Reviews brings product discussions together on one page.",
+          "what": "Reddit Reviews gathers conversations about a product from across Reddit into a single page. The new review experience lets users see what people like and dislike without searching through separate discussions.",
+          "why": "Hotel and train results often require users to compare comments scattered across reviews. A consolidated view of praise and complaints is worth considering, provided travellers can still distinguish the underlying experiences.",
+          "sources": [
+            {
+              "title": "Reddit’s new AI review feature uses real user conversations to help you figure out whether a product is worth buying",
+              "url": "https://digitaltrends.com/social-media/reddits-ai-reviews-use-real-user-conversations-to-help-you-make-smarter-buying-decisions",
+              "publisher": "Digital Trends"
+            },
+            {
+              "title": "Reddit Reviews want to turn user discussions into easily digestible product reviews",
+              "url": "https://androidauthority.com/reddit-reviews-ai-powered-product-reviews-3733511",
+              "publisher": "Android Authority"
+            },
+            {
+              "title": "Reddit is turning user conversations into AI-powered product reviews",
+              "url": "https://techcrunch.com/2026/11/10/reddit-is-turning-user-conversations-into-ai-powered-product-reviews",
+              "publisher": "TechCrunch"
+            }
+          ],
+          "release": null,
+          "image": "https://techcrunch.com/wp-content/uploads/2026/11/Shopping_Reviews_Headphones_1850x1000.png",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/da/74/af/da74aff1-df6b-851c-0bde-b50fd50ef659/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-11T01:04:01.217Z",
+          "zh": {
+            "headline": "Reddit Reviews 将分散的产品讨论汇集到一个页面。",
+            "what": "Reddit Reviews 把 Reddit 各处关于同一产品的讨论集中展示。用户可以在一个页面查看大家喜欢和不喜欢的地方，不必逐个寻找讨论帖。",
+            "why": "比较酒店或列车服务时，用户常需要从多条评价中整理优缺点。可以考虑集中展示好评和投诉，但仍需让旅客区分这些意见所对应的实际体验。"
+          }
+        },
+        {
+          "id": "apple-tv-sign-language-interpretation",
+          "app": "Apple TV",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-11",
+          "published_at": "2026-11-10T16:00:26.015Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Apple TV adds on-screen sign language interpretation for supported titles.",
+          "what": "Viewers can enable sign language interpretation for supported movies and shows in the Apple TV app. An interpreter appears in the bottom-right corner of the screen; the feature launches November 13, beginning with Being Heumann.",
+          "why": "For travel apps that use video to explain boarding or check-in, this offers a concrete accessibility pattern: place interpretation within the viewing experience rather than requiring a separate video. The overlay also needs space that does not obscure essential instructions.",
+          "sources": [
+            {
+              "title": "Apple TV introduces new Sign Language interpretation feature",
+              "url": "https://apple.com/newsroom/2026/11/apple-tv-introduces-new-sign-language-interpretation-feature",
+              "publisher": "Apple Newsroom"
+            },
+            {
+              "title": "New Apple TV Sign Language Feature Announced",
+              "url": "https://macrumors.com/2026/11/10/apple-tv-sign-language-interpretation",
+              "publisher": "MacRumors"
+            }
+          ],
+          "release": null,
+          "image": "https://images.macrumors.com/t/nVhVnhAh4DwRmQPXDN9dCBW1Sro=/2500x0/filters:no_upscale()/article-new/2026/11/Apple-TV-Sign-Language-Interpretation.jpg?lossy",
+          "icon": "https://www.google.com/s2/favicons?domain=apple.com&sz=64",
+          "collected_at": "2026-11-11T01:04:01.217Z",
+          "zh": {
+            "headline": "Apple TV 为部分影片加入屏幕内手语翻译。",
+            "what": "用户可以在 Apple TV App 中为支持的电影和节目开启手语翻译，译员会出现在画面右下角。该功能于 11 月 13 日上线，首批包括 Being Heumann。",
+            "why": "如果旅行 App 用视频说明登车或值机流程，可以参考这种无障碍方式：在播放体验中直接提供手语翻译，而不是让用户另找一个视频版本。叠加区域也应避开关键操作说明。"
+          }
+        }
+      ]
+    },
     {
       "date": "2026-11-10",
       "collected_at": "2026-11-09T23:02:33.578Z",

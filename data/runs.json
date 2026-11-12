@@ -1192,5 +1192,36 @@
       }
     ],
     "cost_usd": 0
+  },
+  {
+    "at": "2026-11-12T02:00:06.323Z",
+    "date": "2026-11-12",
+    "mode": "company",
+    "feeds_ok": 63,
+    "feeds_failed": [
+      "Duolingo Blog"
+    ],
+    "candidates": 2826,
+    "sent_to_model": 200,
+    "kept": 4,
+    "added": 4,
+    "usage": [
+      {
+        "step": "curate",
+        "model": "claude-gpt-6.1-sol[1M]",
+        "input_tokens": 29391,
+        "output_tokens": 5674,
+        "web_searches": 0
+      },
+      {
+        "step": "pictures",
+        "model": "claude-gpt-6.1-sol[1M]",
+        "input_tokens": 66380,
+        "output_tokens": 573,
+        "web_searches": 0,
+        "credits": 0
+      }
+    ],
+    "cost_usd": 0
   }
 ]

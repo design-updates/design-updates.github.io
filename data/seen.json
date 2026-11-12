@@ -425,6 +425,40 @@
         "https://apple.com/newsroom/2026/11/apple-tv-introduces-new-sign-language-interpretation-feature",
         "https://macrumors.com/2026/11/10/apple-tv-sign-language-interpretation"
       ]
+    },
+    "google-gemini-carplay-app": {
+      "app": "Google",
+      "headline": "Google brings a dedicated Gemini app to CarPlay with synced conversations.",
+      "date": "2026-11-12",
+      "urls": [
+        "https://macrumors.com/2026/11/11/google-gemini-apple-carplay",
+        "https://droid-life.com/2026/11/11/gemini-carplay"
+      ]
+    },
+    "giffgaff-signpost-rebrand": {
+      "app": "Giffgaff",
+      "headline": "Giffgaff introduces a greener identity built around a signpost motif.",
+      "date": "2026-11-11",
+      "urls": [
+        "https://creativeboom.com/news/koto-points-giffgaff-towards-its-next-chapter-with-an-arrow-led-rebrand"
+      ]
+    },
+    "linkedin-frequent-viewer-label": {
+      "app": "LinkedIn",
+      "headline": "LinkedIn tests a label identifying frequent profile viewers.",
+      "date": "2026-11-11",
+      "urls": [
+        "https://wired.com/story/linkedin-is-testing-a-feature-that-lets-you-see-your-profile-stalkers",
+        "https://digitaltrends.com/social-media/linkedin-is-testing-a-frequent-viewer-tool-to-snitch-on-professional-stalkers"
+      ]
+    },
+    "threads-advanced-search-filters": {
+      "app": "Threads",
+      "headline": "Threads adds search filters for dates, topics and other criteria.",
+      "date": "2026-11-11",
+      "urls": [
+        "https://socialmediatoday.com/news/threads-adds-advanced-search-filters/874339"
+      ]
     }
   }
 }

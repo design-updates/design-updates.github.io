@@ -1,7 +1,142 @@
 {
   "version": 1,
-  "updated_at": "2026-11-11T01:04:01.217Z",
+  "updated_at": "2026-11-12T02:00:06.323Z",
   "days": [
+    {
+      "date": "2026-11-12",
+      "collected_at": "2026-11-12T02:00:06.323Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "google-gemini-carplay-app",
+          "app": "Google",
+          "category": "platform",
+          "kind": "ux",
+          "date": "2026-11-12",
+          "published_at": "2026-11-11T19:30:29.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Google brings a dedicated Gemini app to CarPlay with synced conversations.",
+          "what": "A dedicated Gemini app is rolling out on CarPlay worldwide in several languages. Drivers tap its app icon to start a hands-free conversation, and Gemini conversations on iPhone automatically sync to CarPlay.",
+          "why": "For travel journeys spanning phone and car, preserve context rather than making users restart a task. The explicit app entry point also separates starting a voice interaction from the hands-free interaction that follows.",
+          "sources": [
+            {
+              "title": "Google Says Gemini App Rolling Out on Apple CarPlay Starting Today",
+              "url": "https://macrumors.com/2026/11/11/google-gemini-apple-carplay",
+              "publisher": "MacRumors"
+            },
+            {
+              "title": "Gemini Comes to Apple CarPlay",
+              "url": "https://droid-life.com/2026/11/11/gemini-carplay",
+              "publisher": "Droid Life"
+            }
+          ],
+          "release": null,
+          "image": "https://www.droid-life.com/wp-content/uploads/2026/11/Gemini-CarPlay-2048x1152.jpg",
+          "icon": "https://www.google.com/s2/favicons?domain=android.com&sz=64",
+          "collected_at": "2026-11-12T02:00:06.323Z",
+          "zh": {
+            "headline": "Google 将独立 Gemini App 带到 CarPlay，并同步 iPhone 上的对话。",
+            "what": "独立 Gemini App 开始在全球 CarPlay 上推出，支持多种语言。驾驶者点击 App 图标后即可进行免手持对话，iPhone 上的 Gemini 对话也会自动同步到 CarPlay。",
+            "why": "设计跨手机和车载屏幕的旅行流程时，应保留上下文，避免用户重新开始任务。明确的 App 入口也将启动语音交互与后续免手持操作区分开。"
+          }
+        },
+        {
+          "id": "giffgaff-signpost-rebrand",
+          "app": "Giffgaff",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-11",
+          "published_at": "2026-11-11T07:00:00.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Giffgaff introduces a greener identity built around a signpost motif.",
+          "what": "Giffgaff’s rebrand by Koto centres on a simple signpost motif. The identity uses a stronger green visual treatment.",
+          "why": "A directional motif is relevant to a travel brand system, but it must remain distinct from functional navigation arrows. Define where it acts as brand expression and where an arrow means an actual action.",
+          "sources": [
+            {
+              "title": "Koto points Giffgaff towards its next chapter with a signpost-led rebrand",
+              "url": "https://creativeboom.com/news/koto-points-giffgaff-towards-its-next-chapter-with-an-arrow-led-rebrand",
+              "publisher": "Creative Boom"
+            }
+          ],
+          "release": null,
+          "image": "https://media.creativeboom.com/4f65ec68-9090-4951-b27a-072e666ad48e/conversions/14e4f4cda141f601d5a633fd942b521b42fb7b5d-medium.webp",
+          "icon": "https://www.google.com/s2/favicons?domain=giffgaff.com&sz=64",
+          "collected_at": "2026-11-12T02:00:06.323Z",
+          "zh": {
+            "headline": "Giffgaff 推出以路标图形为核心、强化绿色的新品牌形象。",
+            "what": "Koto 为 Giffgaff 设计的新品牌形象以简洁的路标图形为核心。新视觉体系强化了绿色的使用。",
+            "why": "方向性图形适合旅行品牌，但需要与界面中的导航箭头区分。应明确哪些场景用于品牌表达，哪些箭头代表真实操作。"
+          }
+        },
+        {
+          "id": "linkedin-frequent-viewer-label",
+          "app": "LinkedIn",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-11",
+          "published_at": "2026-11-11T10:00:00.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "LinkedIn tests a label identifying frequent profile viewers.",
+          "what": "LinkedIn is testing a “frequent viewer” label that identifies people who repeatedly visit a profile. The label is appearing for some Premium users.",
+          "why": "Behaviour-based labels can add context to saved hotels or recently viewed results. Decide whether exposing that behaviour helps the user and whether the label’s meaning is clear without extra explanation.",
+          "sources": [
+            {
+              "title": "LinkedIn Is Testing a Feature That Lets You See Your Profile Stalkers",
+              "url": "https://wired.com/story/linkedin-is-testing-a-feature-that-lets-you-see-your-profile-stalkers",
+              "publisher": "Wired"
+            },
+            {
+              "title": "LinkedIn is testing a Frequent Viewer tool to snitch on professional stalkers",
+              "url": "https://digitaltrends.com/social-media/linkedin-is-testing-a-frequent-viewer-tool-to-snitch-on-professional-stalkers",
+              "publisher": "Digital Trends"
+            }
+          ],
+          "release": null,
+          "image": "https://i0.wp.com/cdn.dtmg.xyz/uploads/2026/11/Screenshot-2026-11-11-at-11.25.28-PM.jpg?w=756&ssl=1",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/81/62/17/81621741-aef5-e3e0-c20d-645b83902669/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-12T02:00:06.323Z",
+          "zh": {
+            "headline": "LinkedIn 测试标识反复访问个人资料的“frequent viewer”标签。",
+            "what": "LinkedIn 正在测试“frequent viewer”标签，用于标识多次访问同一份个人资料的人。部分 Premium 用户已经看到该标签。",
+            "why": "基于行为的标签可以为收藏酒店或最近浏览的结果补充信息。需要判断展示这些行为是否真正有用，以及用户能否直接理解标签的含义。"
+          }
+        },
+        {
+          "id": "threads-advanced-search-filters",
+          "app": "Threads",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-11",
+          "published_at": "2026-11-10T23:04:59.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Threads adds search filters for dates, topics and other criteria.",
+          "what": "Threads adds advanced search filters. Users can narrow searches for posts and people by date, topic and other criteria.",
+          "why": "For destination content or travel reviews, date and topic filters can help users narrow a broad query. Make the active criteria visible so users understand why the results changed.",
+          "sources": [
+            {
+              "title": "Threads adds advanced search filters",
+              "url": "https://socialmediatoday.com/news/threads-adds-advanced-search-filters/874339",
+              "publisher": "Social Media Today"
+            }
+          ],
+          "release": null,
+          "image": "https://imgproxy.divecdn.com/n-Bi34PqzKuLjGVLjXO2tJqQxjFngg9nVcy058q345E/g:ce/rs:fit:1600:0/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS90aHJlYWRzX3NlYXJjaF9maWx0ZXJzLnBuZw==.webp",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/41/ae/77/41ae77b4-ea15-2bbf-dc7d-3b67e887209e/Prod-0-0-1x_U007ephone-0-0-0-1-0-0-sRGB-85-220.png/128x128bb.png",
+          "collected_at": "2026-11-12T02:00:06.323Z",
+          "zh": {
+            "headline": "Threads 增加日期、主题等高级搜索筛选条件。",
+            "what": "Threads 加入高级搜索筛选。用户可以按日期、主题等条件缩小帖子和用户的搜索范围。",
+            "why": "目的地内容或旅行评价搜索可以通过日期和主题筛选来缩小范围。应清楚展示已启用的条件，让用户理解结果为何发生变化。"
+          }
+        }
+      ]
+    },
     {
       "date": "2026-11-11",
       "collected_at": "2026-11-11T01:04:01.217Z",

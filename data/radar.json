@@ -1,0 +1,3018 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-21T03:40:48.816Z",
+  "days": [
+    {
+      "date": "2026-11-21",
+      "collected_at": "2026-11-21T03:40:48.816Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "uber-kids-rides-pilot",
+          "app": "Uber",
+          "category": "delivery",
+          "kind": "ux",
+          "date": "2026-11-20",
+          "published_at": "2026-11-20T06:27:26.000Z",
+          "beta": true,
+          "importance": 3,
+          "headline": "Uber tests a booking flow that lets parents book rides for children aged 10 to 12.",
+          "what": "The test runs in three US cities for a limited time. Parents book the trip, then follow it with live tracking and a pickup PIN. Drivers are qualified for these rides and paid more for them.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Uber is testing rides for kids as young as 10",
+              "url": "https://mashable.com/tech/uber-kids-pilot-rides-how-it-works",
+              "publisher": "Mashable",
+              "favicon": "icons/d164877d3dbc.jpg"
+            },
+            {
+              "title": "Uber Kids will let parents book trips for their children aged 10 to 12 years old",
+              "url": "https://engadget.com/2322650/uber-kids-rides-children-aged-10-to-12-years-old",
+              "publisher": "Engadget",
+              "favicon": "icons/539dba3cb88c.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/a844601bb1c4.jpg",
+          "icon": "icons/d06bd91764ce.png",
+          "collected_at": "2026-11-21T03:40:48.816Z",
+          "zh": {
+            "headline": "Uber 测试让家长为 10 至 12 岁儿童预约行程的流程。",
+            "what": "该测试在美国三个城市限时进行。家长负责预约，并可通过实时追踪和接送 PIN 码跟进行程。这类行程由符合资格的司机承接，报酬更高。",
+            "why": null
+          },
+          "icon_large": "icons/158ecb752823.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "collected_at": "2026-11-20T03:46:59.966Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "google-search-homepage-gemini-sidebar",
+          "app": "Google Search",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-20",
+          "published_at": "2026-11-19T22:25:00.000Z",
+          "beta": false,
+          "importance": 4,
+          "headline": "Google Search homepage is rolling out a redesign with a Gemini chat history sidebar.",
+          "what": "9to5Google reports that the Google Search homepage now has a sidebar that puts your Gemini chat history one click away. The redesign is described as AI-focused and is rolling out now. The summary gives no further layout detail.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Google homepage rolling out AI-focused redesign that includes your Gemini chats [Video]",
+              "url": "https://9to5google.com/2026/11/19/google-search-homepage-gemini-sidebar-update",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/5705001f384a.jpg",
+          "icon": "icons/7c4a4bcc62a5.png",
+          "collected_at": "2026-11-20T03:46:59.966Z",
+          "zh": {
+            "headline": "Google 搜索首页开始推送改版，新增 Gemini 聊天记录侧边栏。",
+            "what": "9to5Google 报道称，Google 搜索首页新增一个侧边栏，点一下就能看到 Gemini 的聊天记录。这次改版以 AI 为重点，目前正在推送。报道摘要没有提供更多布局细节。",
+            "why": null
+          },
+          "icon_large": "icons/2162e30197ef.png"
+        },
+        {
+          "id": "threads-live-chat-qa",
+          "app": "Threads",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-20",
+          "published_at": "2026-11-19T22:28:50.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "Threads tests a Q&A option in live chats.",
+          "what": "Social Media Today reports Threads is testing a format in which a live chat host can ask for questions and participants vote on which ones to ask. It is an experiment, and the report gives no screen detail.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Threads tests new Q&A option in live chats",
+              "url": "https://socialmediatoday.com/news/threads-tests-new-qa-option-in-live-chats/875287",
+              "publisher": "Social Media Today",
+              "favicon": "icons/f54f79fd5651.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/51388d5ed2f5.webp",
+          "icon": "icons/9f275eb96047.png",
+          "collected_at": "2026-11-20T03:46:59.966Z",
+          "zh": {
+            "headline": "Threads 测试在实时聊天中加入问答功能。",
+            "what": "Social Media Today 报道称，Threads 正在测试一种形式：实时聊天的主持人可以征集问题，参与者投票决定先问哪些。这仍是实验阶段，报道没有给出界面细节。",
+            "why": null
+          },
+          "icon_large": "icons/10e758638cda.png"
+        },
+        {
+          "id": "chatgpt-live-dictation",
+          "app": "ChatGPT",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-20",
+          "published_at": "2026-11-19T17:13:39.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "ChatGPT dictation now streams transcribed words live and drops the 10-minute limit.",
+          "what": "Digital Trends reports that ChatGPT's Live Dictation shows transcribed words in real time as you speak. The previous 10-minute recording cap is removed. It applies to all plans and platforms.",
+          "why": null,
+          "sources": [
+            {
+              "title": "ChatGPT now supports live dictation, and the 10-minute recording limit is gone as well",
+              "url": "https://digitaltrends.com/computing/chatgpt-now-supports-live-dictation-openai-removes-the-10-minute-recording-limit",
+              "publisher": "Digital Trends",
+              "favicon": "icons/69ac518cba29.jpg"
+            },
+            {
+              "title": "Live Dictation rolling out globally in ChatGPT",
+              "url": "https://thetechoutlook.com/new-release/software-apps/live-dictation-rolling-out-globally-in-chatgpt",
+              "publisher": "The Tech Outlook",
+              "favicon": "icons/40f9c6a6343a.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/73cdcf10df9e.jpg",
+          "icon": "icons/8df2aa8a3f0b.png",
+          "collected_at": "2026-11-20T03:46:59.966Z",
+          "zh": {
+            "headline": "ChatGPT 听写改为实时显示转写文字，并取消 10 分钟录音上限。",
+            "what": "Digital Trends 报道称，ChatGPT 的实时听写会在你说话时同步显示转写出的文字，之前 10 分钟的录音上限也已取消。所有套餐和平台都适用。",
+            "why": null
+          },
+          "icon_large": "icons/053b0926cb1b.png"
+        },
+        {
+          "id": "google-fi-floating-toolbar",
+          "app": "Google Fi",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-19",
+          "published_at": "2026-11-19T15:30:00.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Google Fi's app moves to a floating toolbar and adds Ask Fi.",
+          "what": "9to5Google describes the Google Fi Wireless app redesign as a small navigation change that adopts a floating toolbar, as other first-party Google apps have. The update also brings Ask Fi.",
+          "why": "Google Fi adopts a floating toolbar for navigation, as Google Photos did in July and other first-party Google apps have. A floating bottom bar is becoming a shared navigation pattern across Google's products.",
+          "sources": [
+            {
+              "title": "Google Fi app redesign brings floating toolbar & Ask Fi",
+              "url": "https://9to5google.com/2026/11/19/google-fi-floating-toolbar",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/c40ef09954c5.jpg",
+          "icon": "icons/3cfdf1f2be8b.png",
+          "collected_at": "2026-11-20T03:46:59.966Z",
+          "zh": {
+            "headline": "Google Fi 应用改用悬浮工具栏，并加入 Ask Fi。",
+            "what": "9to5Google 称，Google Fi Wireless 应用的这次改版是一次小幅导航调整，采用了悬浮工具栏，和 Google 其他自家应用的做法一致。更新同时带来 Ask Fi。",
+            "why": "Google Fi 采用悬浮工具栏做导航，Google Photos 在 7 月已这样做，Google 其他自家应用也是如此。悬浮底部栏正成为 Google 各产品共用的导航模式。"
+          },
+          "icon_large": "icons/054243237ea9.png"
+        },
+        {
+          "id": "instagram-apple-music-save-songs",
+          "app": "Instagram",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-19",
+          "published_at": "2026-11-19T01:19:31.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Instagram lets you connect Apple Music and save songs to a playlist.",
+          "what": "MacRumors reports that tapping a song link on a post or Story now shows a prompt to connect an Apple Music account. Once connected, songs you come across can be saved to an Apple Music playlist. It appeared in the last week or two without an announcement.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Instagram Now Lets You Save Songs to Apple Music",
+              "url": "https://macrumors.com/2026/11/18/apple-music-instagram-playlist",
+              "publisher": "MacRumors",
+              "favicon": "icons/4c58e1f5c9db.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/3b24ddf278bc.jpg",
+          "icon": "icons/4335fa864294.png",
+          "collected_at": "2026-11-20T03:46:59.966Z",
+          "zh": {
+            "headline": "Instagram 支持连接 Apple Music，并把歌曲保存到歌单。",
+            "what": "MacRumors 报道称，在帖子或 Story 里点击歌曲链接，会弹出连接 Apple Music 账号的提示。连接后，刷到的歌曲可以直接存入 Apple Music 歌单。该功能在最近一两周内悄悄出现，没有公告。",
+            "why": null
+          },
+          "icon_large": "icons/4d935697e1f3.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "collected_at": "2026-11-19T14:30:07.312Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "google-play-adaptive-foldable-requirements",
+          "app": "Google",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-19",
+          "published_at": "2026-11-18T18:00:00.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Google Play will require adaptive layouts for foldables from April 2027.",
+          "what": "Google Play is introducing new adaptive app and game quality requirements next year, aimed at improving the Android foldable experience. 9to5Google's headline sets the deadline at April 2027. The summary gives no list of the specific requirements.",
+          "why": "Google Play will make adaptive layouts a quality requirement for foldables from April 2027. Responsive design for varied screen sizes shifts from good practice to a store condition on Android.",
+          "sources": [
+            {
+              "title": "Google Play wants Android apps to nail foldable basics by April 2027",
+              "url": "https://9to5google.com/2026/11/18/android-foldable-apps-google-play",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/e59dedd41974.jpg",
+          "icon": "icons/197f01d794f3.png",
+          "collected_at": "2026-11-19T14:30:07.312Z",
+          "zh": {
+            "headline": "Google Play 将从 2027 年 4 月起要求应用支持折叠屏自适应布局。",
+            "what": "Google Play 将于明年推出新的自适应应用和游戏质量要求，目的是提升 Android 折叠屏体验。9to5Google 的标题给出的期限是 2027 年 4 月。摘要没有列出具体要求。",
+            "why": "从 2027 年 4 月起，Google Play 将把折叠屏的自适应布局列为质量要求。针对不同屏幕尺寸的响应式设计，在 Android 上从最佳实践变成上架条件。"
+          },
+          "compare": {
+            "before": null,
+            "after": "icons/b8a9e4ac7a97.jpg",
+            "combined": true,
+            "from": "article"
+          },
+          "icon_large": "icons/12b9c9d59aab.png"
+        },
+        {
+          "id": "ios-27-3-apple-health-redesign",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-18",
+          "published_at": "2026-11-17T20:19:51.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "iOS 27.3 brings an all-new Apple Health experience, limited to AI-compatible iPhones.",
+          "what": "9to5Mac reports that iOS 27.3 will introduce a redesigned Apple Health when it ships next month. The new experience requires an iPhone that supports Apple's AI features. The summary does not describe the new screens.",
+          "why": null,
+          "sources": [
+            {
+              "title": "iOS 27.3’s redesigned Apple Health app requires newer iPhone model",
+              "url": "https://9to5mac.com/2026/11/17/ios-27-3s-redesigned-apple-health-app-requires-newer-iphone-model",
+              "publisher": "9to5Mac",
+              "favicon": "icons/a61f8950b97e.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/ec673f1dfe02.jpg",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-11-19T14:30:07.312Z",
+          "zh": {
+            "headline": "iOS 27.3 带来全新的 Apple Health，仅限支持 AI 的 iPhone。",
+            "what": "9to5Mac 报道，iOS 27.3 将于下月发布，并带来重新设计的 Apple Health。新体验需要支持 Apple AI 功能的 iPhone。摘要没有描述具体的新界面。",
+            "why": null
+          },
+          "icon_large": "icons/484365c976bf.png"
+        },
+        {
+          "id": "maker-s-mark-turner-duckworth-identity",
+          "app": "Maker's Mark",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-19",
+          "published_at": "2026-11-19T10:00:00.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Maker's Mark gets a new global identity from Turner Duckworth, built around red wax.",
+          "what": "The Kentucky bourbon went back to the London agency five years after its last refresh. Creative Boom describes the identity as dipped in red wax and pressed from the farm the bourbon comes from. The article summary gives no further detail on the logo or type.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Turner Duckworth dips Maker's Mark's new identity in red wax",
+              "url": "https://creativeboom.com/news/turner-duckworth-dips-makers-marks-new-identity-in-red-wax",
+              "publisher": "Creative Boom",
+              "favicon": "icons/7f065b47451e.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/5eb08959f3ff.webp",
+          "icon": "icons/e6ebb28a2f0f.png",
+          "collected_at": "2026-11-19T14:30:07.312Z",
+          "zh": {
+            "headline": "Maker's Mark 请 Turner Duckworth 打造全球新品牌形象，核心是红蜡。",
+            "what": "这家肯塔基波本威士忌在上一次焕新五年后，再次找到这家伦敦设计公司。Creative Boom 称新形象以浸红蜡为概念，并取材自酿造波本的农场。文章摘要没有给出标志和字体的更多细节。",
+            "why": null
+          },
+          "icon_large": "icons/7e4a9a3c6921.png"
+        },
+        {
+          "id": "instagram-edit-stories-after-posting",
+          "app": "Instagram",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-19",
+          "published_at": "2026-11-18T19:14:19.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Instagram lets users edit a Story after posting, within a 15-minute window.",
+          "what": "Users can now change text, music, stickers and drawings on a published Story instead of deleting it. The edit keeps the views and replies the Story already has. Engadget reports a 15-minute window for changes.",
+          "why": null,
+          "sources": [
+            {
+              "title": "You can finally edit an Instagram Story without deleting it",
+              "url": "https://engadget.com/2320953/you-can-finally-edit-an-instagram-story-without-deleting-it",
+              "publisher": "Engadget",
+              "favicon": "icons/539dba3cb88c.png"
+            },
+            {
+              "title": "You can finally fix a typo on your Instagram Story without losing your likes",
+              "url": "https://digitaltrends.com/social-media/you-can-finally-fix-a-typo-on-your-instagram-story-without-losing-your-likes",
+              "publisher": "Digital Trends",
+              "favicon": "icons/69ac518cba29.jpg"
+            }
+          ],
+          "release": null,
+          "image": null,
+          "icon": "icons/4335fa864294.png",
+          "collected_at": "2026-11-19T14:30:07.312Z",
+          "zh": {
+            "headline": "Instagram 允许用户在发布后 15 分钟内编辑快拍。",
+            "what": "用户现在可以修改已发布快拍中的文字、音乐、贴纸和涂鸦，而不必删除重发。编辑后，快拍已有的浏览和回复会保留。Engadget 报道称修改窗口为 15 分钟。",
+            "why": null
+          },
+          "compare": {
+            "before": null,
+            "after": "assets/verified/instagram-edit-story.jpg",
+            "combined": true,
+            "from": "article"
+          },
+          "icon_large": "icons/4d935697e1f3.png"
+        },
+        {
+          "id": "youtube-music-ask-music-gemini-button",
+          "app": "YouTube",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-19",
+          "published_at": "2026-11-18T16:49:55.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "YouTube Music adds a Gemini icon in the top-right corner to open Ask Music.",
+          "what": "YouTube Music on Android and iOS is rolling out a Gemini icon in the top-right corner that opens Ask Music directly. Ask Music was previously tucked away in the Home feed. The change arrives alongside the removal of the Samples tab.",
+          "why": "Gemini and other AI assistants are getting their own persistent entry points, such as the top-right icon in YouTube Music, the Google Search sidebar and the CarPlay app. Designers now have to decide where an assistant sits in the navigation and how visible it should be.",
+          "sources": [
+            {
+              "title": "YouTube Music rolling out corner Gemini icon to launch Ask Music",
+              "url": "https://9to5google.com/2026/11/18/youtube-music-ask-gemini-2",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            },
+            {
+              "title": "YouTube Music is making Ask Music easier to access with a dedicated Gemini button",
+              "url": "https://androidauthority.com/youtube-music-ask-music-gemini-shortcut-3736815",
+              "publisher": "Android Authority",
+              "favicon": "icons/59ead5f8dc80.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/da43ee16bfec.jpg",
+          "icon": "icons/e7072f8fb80f.png",
+          "collected_at": "2026-11-19T14:30:07.312Z",
+          "zh": {
+            "headline": "YouTube Music 在右上角加入 Gemini 图标，直接打开 Ask Music。",
+            "what": "YouTube Music 的 Android 和 iOS 版正在推出右上角的 Gemini 图标，点击即可直接进入 Ask Music。此前 Ask Music 藏在首页信息流里。这一改动与 Samples 标签页的移除同时出现。",
+            "why": "Gemini 等 AI 助手正获得固定的入口，例如 YouTube Music 右上角的图标、Google 搜索侧边栏和 CarPlay 应用。设计师需要决定助手在导航中的位置以及显眼程度。"
+          },
+          "icon_large": "icons/aa8bf029bece.png"
+        },
+        {
+          "id": "ios-27-3-liquid-glass-softer-beta",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-18",
+          "published_at": "2026-11-18T12:07:01.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "iOS 27.3 developer beta tests a slightly softer Liquid Glass.",
+          "what": "AppleInsider reports that code in the latest iOS 27.3 developer beta shows Apple experimenting with a faintly softer Liquid Glass design. The difference is subtle and is visible near the top of the screen and behind the clock.",
+          "why": null,
+          "sources": [
+            {
+              "title": "More Liquid Glass refinements being tested in iOS 27.3 beta",
+              "url": "https://appleinsider.com/articles/26/11/18/more-liquid-glass-refinements-being-tested-in-ios-273-beta",
+              "publisher": "AppleInsider",
+              "favicon": "icons/94df03c7ac2a.png"
+            }
+          ],
+          "release": null,
+          "image": "assets/verified/ios-27-3-liquid-glass-settings.jpg",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-11-19T14:30:07.312Z",
+          "zh": {
+            "headline": "iOS 27.3 开发者测试版试验更柔和的 Liquid Glass。",
+            "what": "AppleInsider 报道称，最新 iOS 27.3 开发者测试版的代码显示，Apple 正在试验略微柔和的 Liquid Glass 设计。差异很细微，主要出现在屏幕顶部和时钟后方。",
+            "why": null
+          },
+          "icon_large": "icons/484365c976bf.png"
+        },
+        {
+          "id": "insomnia-cookies-walsh-refresh",
+          "app": "Insomnia Cookies",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-19",
+          "published_at": "2026-11-19T09:00:00.000Z",
+          "beta": false,
+          "importance": 1,
+          "headline": "Insomnia Cookies refreshes its identity with &Walsh around a bite taken out of the moon.",
+          "what": "Jessica Walsh's studio built the refresh on the promise the late-night bakery has made since 2003: a warm cookie at any hour. The moon-with-a-bite idea carries the new look. The source gives no more detail on type or colour.",
+          "why": null,
+          "sources": [
+            {
+              "title": "&Walsh takes a bite out of the moon for Insomnia Cookies",
+              "url": "https://creativeboom.com/news/walsh-takes-a-bite-out-of-the-moon-for-insomnia-cookies",
+              "publisher": "Creative Boom",
+              "favicon": "icons/7f065b47451e.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/7f0fe4829d84.webp",
+          "icon": "icons/062ab27bfcd5.png",
+          "collected_at": "2026-11-19T14:30:07.312Z",
+          "zh": {
+            "headline": "Insomnia Cookies 与 &Walsh 合作焕新品牌，以被咬了一口的月亮为核心。",
+            "what": "Jessica Walsh 的团队以这家深夜烘焙店自 2003 年起的承诺为基础：任何时间都能吃到热乎的饼干。新形象由带缺口的月亮这一创意贯穿。来源没有提供字体或色彩的更多细节。",
+            "why": null
+          },
+          "icon_large": "icons/be97c975920f.png"
+        },
+        {
+          "id": "watchos-27-3-siri-modular-styles",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-19",
+          "published_at": "2026-11-19T00:49:22.000Z",
+          "beta": true,
+          "importance": 1,
+          "headline": "watchOS 27.3 beta adds two more styles to the Siri Modular watch face.",
+          "what": "The Siri Modular face, new in watchOS 27, gets two extra style options in the 27.3 beta. That makes five options for choosing what type of information appears on the face.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Siri Modular Apple Watch face gains two new styles with watchOS 27.3",
+              "url": "https://9to5mac.com/2026/11/18/siri-modular-apple-watch-face-gains-two-new-styles-with-watchos-27-3",
+              "publisher": "9to5Mac",
+              "favicon": "icons/a61f8950b97e.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/f9d257ef6570.png",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-11-19T14:30:07.312Z",
+          "zh": {
+            "headline": "watchOS 27.3 测试版为 Siri Modular 表盘新增两种样式。",
+            "what": "watchOS 27 新推出的 Siri Modular 表盘，在 27.3 测试版中增加了两种样式。这样用户共有五种选项，用来决定表盘上显示哪类信息。",
+            "why": null
+          },
+          "icon_large": "icons/484365c976bf.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "collected_at": "2026-11-18T14:30:06.774Z",
+      "quiet": false,
+      "pattern": "Google Earth, Pixel Watch's Media Controls and Phone by Google have all moved to gradient designs in the past two weeks.",
+      "pattern_zh": "过去两周，Google Earth、Pixel Watch 的媒体控制应用和 Phone by Google 都转向了渐变风格的设计。",
+      "items": [
+        {
+          "id": "samsung-one-ui-9-5-beta",
+          "app": "Samsung",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-18",
+          "published_at": "2026-11-18T10:31:41.000Z",
+          "beta": true,
+          "importance": 3,
+          "headline": "Samsung's One UI 9.5 beta reworks the Camera controls, lock screen wallpaper and quick panel search.",
+          "what": "The Camera app gets a cleaner layout for quick controls, with more customisation in Pro and Pro video modes. The lock screen gains a Live effect that shifts wallpaper elements as you tilt the phone. The quick panel can now be searched when adding controls, and a native App Lock arrives. The beta is open on Galaxy S26 phones in selected markets.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Here’s everything new in Samsung One UI 9.5 beta",
+              "url": "https://androidauthority.com/samsung-one-ui-9-5-changelog-3736494",
+              "publisher": "Android Authority",
+              "favicon": "icons/59ead5f8dc80.png"
+            },
+            {
+              "title": "One UI 9.5 makes Samsung’s Camera app easier to use and customize",
+              "url": "https://sammobile.com/news/one-ui-9-5-samsung-camera-app-easier-to-use-customize",
+              "publisher": "SamMobile",
+              "favicon": "icons/e75ad0121cb4.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/01b7c5980564.jpg",
+          "icon": "icons/08023ad0c6f0.png",
+          "collected_at": "2026-11-18T14:30:06.774Z",
+          "zh": {
+            "headline": "三星 One UI 9.5 测试版调整了相机控制、锁屏壁纸和快捷面板搜索。",
+            "what": "相机应用的快捷控制布局更简洁，Pro 和专业视频模式的自定义选项更多。锁屏新增“动态效果”，倾斜手机时壁纸中的元素会随之移动。快捷面板在添加控件时可以搜索，并新增系统自带的应用锁。该测试版面向部分市场的 Galaxy S26 开放。",
+            "why": null
+          },
+          "icon_large": "icons/1e05f7c670da.png"
+        },
+        {
+          "id": "material-3-expressive-time-picker",
+          "app": "Google",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-18",
+          "published_at": "2026-11-17T23:03:51.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Material 3 Expressive redesigns the time picker and adds a scrolling variant.",
+          "what": "Google has given the time picker component a Material 3 Expressive redesign. It also adds a new scrolling variant of the picker.",
+          "why": "Google is continuing to roll Material 3 Expressive into individual components, here the time picker with a new scrolling variant. Component-level updates in a platform design system are what app teams end up adopting.",
+          "sources": [
+            {
+              "title": "Material 3 Expressive adds scrolling time picker, AI Studio upgrades Android app creation",
+              "url": "https://9to5google.com/2026/11/17/material-3-expressive-scrolling-time-picker",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/724b2a87e67e.png",
+          "icon": "icons/197f01d794f3.png",
+          "collected_at": "2026-11-18T14:30:06.774Z",
+          "zh": {
+            "headline": "Material 3 Expressive 重新设计时间选择器，并新增滚动式样。",
+            "what": "Google 对时间选择器组件做了 Material 3 Expressive 风格的重新设计，同时新增了滚动式的选择器变体。",
+            "why": "Google 继续把 Material 3 Expressive 推进到各个组件，这次是带有新滚动样式的时间选择器。平台设计系统在组件层面的更新，最终会被各应用团队采用。"
+          },
+          "compare": {
+            "before": "icons/421bf96410fe.jpg",
+            "after": "icons/8a43081ee636.jpg",
+            "from": "article"
+          },
+          "icon_large": "icons/12b9c9d59aab.png"
+        },
+        {
+          "id": "instagram-direct-standalone-app",
+          "app": "Instagram",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-18",
+          "published_at": "2026-11-17T22:50:50.000Z",
+          "beta": true,
+          "importance": 3,
+          "headline": "Meta tests Direct, a standalone chat app for Instagram DMs.",
+          "what": "Direct pulls Instagram's direct messages into a separate app. It is available only in Thailand and Turkey for now.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Meta Tests Direct, a Standalone Chat App Just for Your Instagram DMs",
+              "url": "https://cnet.com/tech/mobile/meta-direct-standalone-chat-app-instagram-dms",
+              "publisher": "CNET",
+              "favicon": "icons/1530dafddbfe.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/4a4415eabe5b.png",
+          "icon": "icons/4335fa864294.png",
+          "collected_at": "2026-11-18T14:30:06.774Z",
+          "zh": {
+            "headline": "Meta 测试独立聊天应用 Direct，专门处理 Instagram 私信。",
+            "what": "Direct 把 Instagram 的私信拆分成一个单独的应用，目前仅在泰国和土耳其提供。",
+            "why": null
+          },
+          "icon_large": "icons/4d935697e1f3.png"
+        },
+        {
+          "id": "youtube-music-samples-tab-removed",
+          "app": "YouTube",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-18",
+          "published_at": "2026-11-17T21:03:20.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "YouTube Music removes the Samples tab from its bottom bar on Android and iOS.",
+          "what": "The app is simplifying its core navigation by dropping the Samples tab from the bottom bar. The vertical video format stays in the app.",
+          "why": null,
+          "sources": [
+            {
+              "title": "YouTube Music removing Samples tab on Android & iOS",
+              "url": "https://9to5google.com/2026/11/17/youtube-music-no-samples-tab",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            },
+            {
+              "title": "YouTube Music removes Samples tab from its bottom bar on Android and iOS",
+              "url": "https://androidauthority.com/youtube-music-removes-samples-tab-3736439",
+              "publisher": "Android Authority",
+              "favicon": "icons/59ead5f8dc80.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/9fe54b575d07.jpg",
+          "icon": "icons/e7072f8fb80f.png",
+          "collected_at": "2026-11-18T14:30:06.774Z",
+          "zh": {
+            "headline": "YouTube Music 在安卓和 iOS 上移除底部栏的“Samples”标签页。",
+            "what": "应用通过取消底部栏的 Samples 标签页来简化核心导航，竖屏视频形式仍保留在应用中。",
+            "why": null
+          },
+          "icon_large": "icons/aa8bf029bece.png"
+        },
+        {
+          "id": "google-voice-android-redesign",
+          "app": "Google Voice",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-17",
+          "published_at": "2026-11-17T14:30:00.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Google Voice on Android gets a redesign that hints at coming RCS support.",
+          "what": "The Android app is being redesigned and the update is rolling out now. Both reports say the new look points to RCS arriving, though neither describes specific screens in the text provided.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Google Voice app gets a redesign on Android, and it screams RCS [Gallery]",
+              "url": "https://9to5google.com/2026/11/17/google-voice-redesign-rcs-coming",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            },
+            {
+              "title": "Google Voice on Android gets redesign, hints at future RCS support",
+              "url": "https://androidauthority.com/google-voice-android-redesign-rcs-support-3736431",
+              "publisher": "Android Authority",
+              "favicon": "icons/59ead5f8dc80.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/bf1fb2d9d5e3.jpg",
+          "icon": "icons/4b6d1a78b902.png",
+          "collected_at": "2026-11-18T14:30:06.774Z",
+          "zh": {
+            "headline": "Google Voice 安卓版改版，界面暗示即将支持 RCS。",
+            "what": "安卓应用正在改版，更新已开始推送。两篇报道都认为新界面预示 RCS 即将到来，但提供的文本没有描述具体页面。",
+            "why": null
+          },
+          "icon_large": "icons/1106dbdb4ffd.png"
+        },
+        {
+          "id": "apple-maps-india-redesign",
+          "app": "Apple Maps",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-18",
+          "published_at": "2026-11-18T12:23:29.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Apple rolls out its redesigned Apple Maps to India for the first time.",
+          "what": "The new map shows more detailed roads, buildings, parks and shopping centres. India also gets Natural Language Guidance, lane guidance, multi-stop routing, Look Around and route sync. Dual-language labels follow the language the device is set to.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Apple Rolls Out All-New Maps Experience Across India",
+              "url": "https://macrumors.com/2026/11/18/apple-rolls-out-all-new-maps-across-india",
+              "publisher": "MacRumors",
+              "favicon": "icons/4c58e1f5c9db.png"
+            },
+            {
+              "title": "India gets all-new Apple Maps experience",
+              "url": "https://appleinsider.com/articles/26/11/18/india-gets-all-new-apple-maps-experience",
+              "publisher": "AppleInsider",
+              "favicon": "icons/94df03c7ac2a.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/efc66df48af6.jpg",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-11-18T14:30:06.774Z",
+          "zh": {
+            "headline": "Apple 首次在印度推出全新设计的 Apple 地图。",
+            "what": "新地图显示更详细的道路、建筑、公园和购物中心。印度用户同时获得自然语言导航、车道指引、多站点路线、Look Around 和路线同步。双语标注会根据设备语言设置显示。",
+            "why": null
+          },
+          "icon_large": "icons/484365c976bf.png"
+        },
+        {
+          "id": "phone-by-google-gradient-icon",
+          "app": "Phone by Google",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-17",
+          "published_at": "2026-11-16T19:54:00.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "Phone by Google rolls out a redesigned gradient icon in its beta channel.",
+          "what": "Version 246 of Phone by Google brings the redesigned gradient icon to the beta channel on Android. It follows the same icon change in the Messages app earlier this week.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Phone by Google 246 rolls out gradient icon redesign on Android [U]",
+              "url": "https://9to5google.com/2026/11/16/phone-by-google-246-new-icon",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/1bc5f8c4eb24.jpg",
+          "icon": "icons/7c4a4bcc62a5.png",
+          "collected_at": "2026-11-18T14:30:06.774Z",
+          "zh": {
+            "headline": "Phone by Google 在测试渠道推出渐变风格的新图标。",
+            "what": "Phone by Google 246 版在安卓测试渠道带来重新设计的渐变图标，本周早些时候 Messages 应用已经做了同样的图标改动。",
+            "why": null
+          },
+          "compare": {
+            "before": "icons/2257184a5e3e.jpg",
+            "after": "icons/3844fb92646e.jpg",
+            "from": "article"
+          },
+          "icon_large": "icons/2162e30197ef.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "collected_at": "2026-11-16T13:30:05.741Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "mlb-mother-design-brand-refresh",
+          "app": "MLB",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-16",
+          "published_at": "2026-11-16T09:00:00.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Major League Baseball gets a brand refresh from Mother Design built on five bespoke typefaces.",
+          "what": "Mother Design has refreshed MLB's branding, with a type system of five custom typefaces at its centre. The agency says the aim is to show what keeps fans watching. The source gives no further detail on logo or colour changes.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Mother Design bats Major League Baseball into the future with five bespoke typefaces",
+              "url": "https://itsnicethat.com/articles/mother-design-major-league-baseball-brand-refresh-graphic-design-project-161126",
+              "publisher": "It's Nice That",
+              "favicon": "icons/03aa1e19dc07.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/be74eb6569bb.png",
+          "icon": "icons/9088e07e7944.png",
+          "collected_at": "2026-11-16T13:30:05.741Z",
+          "zh": {
+            "headline": "Mother Design 为美国职业棒球大联盟（MLB）做品牌更新，核心是五套定制字体。",
+            "what": "Mother Design 更新了 MLB 的品牌形象，以五套定制字体组成的字体系统为核心。设计公司表示，目标是呈现球迷持续关注比赛的原因。来源未提供 logo 或色彩变化的更多细节。",
+            "why": null
+          },
+          "icon_large": "icons/bf2705aabc38.png"
+        },
+        {
+          "id": "apple-tv-video-podcasts-section",
+          "app": "Apple TV",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-16",
+          "published_at": "2026-11-16T11:51:36.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Apple TV adds a dedicated video podcasts section to the Apple TV app.",
+          "what": "The Apple TV app gets a separate video podcasts section, which will also appear in the Apple TV app on other devices such as smart TVs, reaching more than a billion devices. Access is free and does not need an Apple TV subscription. MacRumors expects it to show up first in the iOS 27.3 beta 2.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Video podcasts coming soon to Apple TV and other devices",
+              "url": "https://9to5mac.com/2026/11/16/video-podcasts-coming-soon-to-apple-tv-and-other-devices",
+              "publisher": "9to5Mac",
+              "favicon": "icons/a61f8950b97e.png"
+            },
+            {
+              "title": "Apple TV is getting a dedicated video podcasts section, and you won’t need a subscription",
+              "url": "https://digitaltrends.com/home-theater/apple-brings-video-podcasts-to-apple-tv-without-a-subscription",
+              "publisher": "Digital Trends",
+              "favicon": "icons/69ac518cba29.jpg"
+            }
+          ],
+          "release": null,
+          "image": "icons/8a8985d5f54f.jpg",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-11-16T13:30:05.741Z",
+          "zh": {
+            "headline": "Apple TV 应用新增独立的视频播客板块。",
+            "what": "Apple TV 应用将新增一个单独的视频播客板块，其他设备（如智能电视）上的 Apple TV 应用也会同步出现，覆盖超过 10 亿台设备。该板块免费，无需订阅 Apple TV。MacRumors 预计它会先出现在 iOS 27.3 beta 2 中。",
+            "why": null
+          },
+          "icon_large": "icons/484365c976bf.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "collected_at": "2026-11-15T01:00:32.578Z",
+      "quiet": false,
+      "pattern": "Google Earth, Google Messages, Phone and Contacts, and the Pixel Watch Media Controls app have all moved to gradient styling in the past two weeks.",
+      "pattern_zh": "过去两周，Google Earth、Google Messages、电话和通讯录，以及 Pixel Watch 的媒体控制应用都转向了渐变风格。",
+      "items": [
+        {
+          "id": "chatgpt-wallet-agent-checkout",
+          "app": "ChatGPT",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-13",
+          "published_at": "2026-11-13T15:46:54.000Z",
+          "beta": true,
+          "importance": 3,
+          "headline": "ChatGPT Wallet lets Dots AI agents complete purchases on the user's behalf.",
+          "what": "Users add a card to ChatGPT Wallet, and Dots agents can then check out for them. OpenAI says the seller never sees the actual card details. It was built with American Express, Mastercard and Visa. It starts as a limited rollout to ChatGPT Pro subscribers in the US.",
+          "why": "ChatGPT Wallet lets AI agents complete purchases for the user, with sellers never seeing card details. Delegated checkout raises new design questions about consent, confirmation and trust when software acts for the user.",
+          "sources": [
+            {
+              "title": "OpenAI launches ChatGPT Wallet, enabling ‘dot’ agents to make purchases",
+              "url": "https://9to5mac.com/2026/11/13/openai-launches-chatgpt-wallet-enabling-dot-agents-to-make-purchases",
+              "publisher": "9to5Mac",
+              "favicon": "icons/a61f8950b97e.png"
+            },
+            {
+              "title": "ChatGPT’s new Wallet lets AI agents shop and check out for you",
+              "url": "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you",
+              "publisher": "TechCrunch",
+              "favicon": "icons/08edf43b34e8.jpg"
+            },
+            {
+              "title": "ChatGPT Wallet lets OpenAI's agents buy things for you",
+              "url": "https://gsmarena.com/chatgpt_wallet_lets_openais_agents_buy_things_for_you-news-75481.php",
+              "publisher": "GSMArena",
+              "favicon": "icons/9c2eaf45e360.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/553483483f21.jpg",
+          "icon": "icons/8df2aa8a3f0b.png",
+          "collected_at": "2026-11-15T10:00:54.687Z",
+          "zh": {
+            "headline": "ChatGPT Wallet 让 Dots AI 代理替用户完成购买。",
+            "what": "用户先在 ChatGPT Wallet 中添加银行卡，之后 Dots 代理即可代为结账。OpenAI 称卖家看不到真实卡信息。该功能与 American Express、Mastercard 和 Visa 合作开发，首先限量推送给美国的 ChatGPT Pro 订阅用户。",
+            "why": "ChatGPT Wallet 让 AI 代理替用户完成购买，卖家看不到卡片信息。委托式结账带来了新的设计问题：当软件代替用户行动时，如何设计授权、确认与信任。"
+          },
+          "icon_large": "icons/053b0926cb1b.png"
+        },
+        {
+          "id": "pixel-watch-media-controls-redesign",
+          "app": "Pixel Watch",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-13",
+          "published_at": "2026-11-13T15:55:00.000Z",
+          "beta": false,
+          "importance": 1,
+          "headline": "Pixel Watch's Media Controls app gets a gradient redesign.",
+          "what": "An update has brought a redesigned Media Controls app to the Pixel Watch. The source says it continues Google's recent gradient-based redesigns. It gives few other details on the screens.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Pixel Watch update brings a sweet redesign I wish was on more apps",
+              "url": "https://9to5google.com/2026/11/13/google-pixel-watch-media-controls-redesign-update",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/70d9355e967f.jpg",
+          "icon": "icons/7c4a4bcc62a5.png",
+          "collected_at": "2026-11-15T10:00:54.687Z",
+          "zh": {
+            "headline": "Pixel Watch 的媒体控制应用换上渐变风格的新设计。",
+            "what": "一次更新为 Pixel Watch 带来了重新设计的媒体控制应用。报道称这延续了 Google 近期的渐变式改版，除此之外没有提供更多界面细节。",
+            "why": null
+          },
+          "icon_large": "icons/2162e30197ef.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "collected_at": "2026-11-14T02:05:00.842Z",
+      "quiet": true,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": []
+    },
+    {
+      "date": "2026-11-12",
+      "collected_at": "2026-11-12T02:00:06.323Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "google-gemini-carplay-app",
+          "app": "Google",
+          "category": "platform",
+          "kind": "ux",
+          "date": "2026-11-12",
+          "published_at": "2026-11-11T19:30:29.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Google brings a dedicated Gemini app to CarPlay with synced conversations.",
+          "what": "A dedicated Gemini app is rolling out on CarPlay worldwide in several languages. Drivers tap its app icon to start a hands-free conversation, and Gemini conversations on iPhone automatically sync to CarPlay.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Google Says Gemini App Rolling Out on Apple CarPlay Starting Today",
+              "url": "https://macrumors.com/2026/11/11/google-gemini-apple-carplay",
+              "publisher": "MacRumors",
+              "favicon": "icons/4c58e1f5c9db.png"
+            },
+            {
+              "title": "Gemini Comes to Apple CarPlay",
+              "url": "https://droid-life.com/2026/11/11/gemini-carplay",
+              "publisher": "Droid Life",
+              "favicon": "icons/58e1ef64bbc3.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/666879f60153.jpg",
+          "icon": "icons/197f01d794f3.png",
+          "collected_at": "2026-11-12T02:00:06.323Z",
+          "zh": {
+            "headline": "Google 将独立 Gemini App 带到 CarPlay，并同步 iPhone 上的对话。",
+            "what": "独立 Gemini App 开始在全球 CarPlay 上推出，支持多种语言。驾驶者点击 App 图标后即可进行免手持对话，iPhone 上的 Gemini 对话也会自动同步到 CarPlay。",
+            "why": null
+          },
+          "icon_large": "icons/12b9c9d59aab.png"
+        },
+        {
+          "id": "giffgaff-signpost-rebrand",
+          "app": "Giffgaff",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-11",
+          "published_at": "2026-11-11T07:00:00.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Giffgaff introduces a greener identity built around a signpost motif.",
+          "what": "Giffgaff’s rebrand by Koto centres on a simple signpost motif. The identity uses a stronger green visual treatment.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Koto points Giffgaff towards its next chapter with a signpost-led rebrand",
+              "url": "https://creativeboom.com/news/koto-points-giffgaff-towards-its-next-chapter-with-an-arrow-led-rebrand",
+              "publisher": "Creative Boom",
+              "favicon": "icons/7f065b47451e.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/d4a46c03a672.webp",
+          "icon": "icons/b9bff0f4a770.png",
+          "collected_at": "2026-11-12T02:00:06.323Z",
+          "zh": {
+            "headline": "Giffgaff 推出以路标图形为核心、强化绿色的新品牌形象。",
+            "what": "Koto 为 Giffgaff 设计的新品牌形象以简洁的路标图形为核心。新视觉体系强化了绿色的使用。",
+            "why": null
+          },
+          "icon_large": "icons/c937b8ce0b6a.png"
+        },
+        {
+          "id": "linkedin-frequent-viewer-label",
+          "app": "LinkedIn",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-11",
+          "published_at": "2026-11-11T10:00:00.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "LinkedIn tests a label identifying frequent profile viewers.",
+          "what": "LinkedIn is testing a “frequent viewer” label that identifies people who repeatedly visit a profile. The label is appearing for some Premium users.",
+          "why": null,
+          "sources": [
+            {
+              "title": "LinkedIn Is Testing a Feature That Lets You See Your Profile Stalkers",
+              "url": "https://wired.com/story/linkedin-is-testing-a-feature-that-lets-you-see-your-profile-stalkers",
+              "publisher": "Wired",
+              "favicon": "icons/f908872d0896.png"
+            },
+            {
+              "title": "LinkedIn is testing a Frequent Viewer tool to snitch on professional stalkers",
+              "url": "https://digitaltrends.com/social-media/linkedin-is-testing-a-frequent-viewer-tool-to-snitch-on-professional-stalkers",
+              "publisher": "Digital Trends",
+              "favicon": "icons/69ac518cba29.jpg"
+            }
+          ],
+          "release": null,
+          "image": "icons/6e4e7a11ae17.jpg",
+          "icon": "icons/3284a055f670.png",
+          "collected_at": "2026-11-12T02:00:06.323Z",
+          "zh": {
+            "headline": "LinkedIn 测试标识反复访问个人资料的“frequent viewer”标签。",
+            "what": "LinkedIn 正在测试“frequent viewer”标签，用于标识多次访问同一份个人资料的人。部分 Premium 用户已经看到该标签。",
+            "why": null
+          },
+          "icon_large": "icons/f1106e0c3a9b.png"
+        },
+        {
+          "id": "threads-advanced-search-filters",
+          "app": "Threads",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-11",
+          "published_at": "2026-11-10T23:04:59.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Threads adds search filters for dates, topics and other criteria.",
+          "what": "Threads adds advanced search filters. Users can narrow searches for posts and people by date, topic and other criteria.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Threads adds advanced search filters",
+              "url": "https://socialmediatoday.com/news/threads-adds-advanced-search-filters/874339",
+              "publisher": "Social Media Today",
+              "favicon": "icons/f54f79fd5651.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/eb2993063424.webp",
+          "icon": "icons/9f275eb96047.png",
+          "collected_at": "2026-11-12T02:00:06.323Z",
+          "zh": {
+            "headline": "Threads 增加日期、主题等高级搜索筛选条件。",
+            "what": "Threads 加入高级搜索筛选。用户可以按日期、主题等条件缩小帖子和用户的搜索范围。",
+            "why": null
+          },
+          "icon_large": "icons/10e758638cda.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "collected_at": "2026-11-11T01:04:01.217Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "google-pixel-custom-icons-widgets",
+          "app": "Google",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-11",
+          "published_at": "2026-11-10T19:00:17.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Google adds 10 custom icon styles and generated home-screen widgets to Pixel phones.",
+          "what": "The November Pixel Drop expands home-screen customisation with 10 new custom icon styles and AI-generated widgets. Create My Widget lets users generate widgets using natural-language commands on the Pixel 10 and 11 series, excluding the Pixel 10a.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Pixel phones getting new icon styles, Create My Widget, and more in November Pixel Drop",
+              "url": "https://arstechnica.com/gadgets/2026/11/november-pixel-drop-brings-gemini-intelligence-to-pixel-10-family",
+              "publisher": "Ars Technica",
+              "favicon": "icons/33bac5088b4d.png"
+            },
+            {
+              "title": "Pixel phones are getting 10 new custom icon styles",
+              "url": "https://androidauthority.com/pixel-custom-icon-expansion-3733125",
+              "publisher": "Android Authority",
+              "favicon": "icons/59ead5f8dc80.png"
+            },
+            {
+              "title": "Google Pixel phones are getting custom AI widgets, new icons, and a useful HiLight upgrade",
+              "url": "https://digitaltrends.com/phones/google-november-pixel-drop-ai-widgets-icons-hilight",
+              "publisher": "Digital Trends",
+              "favicon": "icons/69ac518cba29.jpg"
+            }
+          ],
+          "release": null,
+          "image": "icons/5d3aca784333.jpg",
+          "icon": "icons/197f01d794f3.png",
+          "collected_at": "2026-11-11T01:04:01.217Z",
+          "zh": {
+            "headline": "Google 为 Pixel 手机新增 10 种自定义图标样式和生成式主屏幕小组件。",
+            "what": "November Pixel Drop 扩展了主屏幕自定义选项，加入 10 种新图标样式和 AI 生成的小组件。Pixel 10 和 11 系列用户可以通过自然语言指令使用 Create My Widget，但 Pixel 10a 不支持。",
+            "why": null
+          },
+          "icon_large": "icons/12b9c9d59aab.png"
+        },
+        {
+          "id": "nintendo-apple-google-sign-in-removal",
+          "app": "Nintendo",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-11",
+          "published_at": "2026-11-10T16:28:05.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Nintendo will remove Apple and Google sign-in from Nintendo Accounts.",
+          "what": "From January 26, 2027, users will no longer be able to sign in to or create a Nintendo Account using a linked Apple or Google account. Existing users need to change their sign-in method; passkeys are presented as an alternative.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Nintendo won't let you log in with a linked Apple account soon",
+              "url": "https://appleinsider.com/articles/26/11/10/nintendo-wont-let-you-log-in-with-a-linked-apple-account-soon",
+              "publisher": "AppleInsider",
+              "favicon": "icons/94df03c7ac2a.png"
+            },
+            {
+              "title": "Nintendo will soon discontinue Google and Apple sign-ins",
+              "url": "https://9to5google.com/2026/11/10/nintendo-will-soon-discontinue-google-and-apple-sign-ins",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/010e2777e390.jpg",
+          "icon": "icons/7d630f51ce6d.png",
+          "collected_at": "2026-11-11T01:04:01.217Z",
+          "zh": {
+            "headline": "Nintendo 将取消 Nintendo Account 的 Apple 和 Google 登录方式。",
+            "what": "从 2027 年 1 月 26 日起，用户将无法通过关联的 Apple 或 Google 账号登录或创建 Nintendo Account。现有用户需要更换登录方式，passkey 是提供的替代选项之一。",
+            "why": null
+          },
+          "icon_large": "icons/8d5a5d9fa0a3.png"
+        },
+        {
+          "id": "reddit-reviews-product-pages",
+          "app": "Reddit",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-11",
+          "published_at": "2026-11-10T16:20:00.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Reddit Reviews brings product discussions together on one page.",
+          "what": "Reddit Reviews gathers conversations about a product from across Reddit into a single page. The new review experience lets users see what people like and dislike without searching through separate discussions.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Reddit’s new AI review feature uses real user conversations to help you figure out whether a product is worth buying",
+              "url": "https://digitaltrends.com/social-media/reddits-ai-reviews-use-real-user-conversations-to-help-you-make-smarter-buying-decisions",
+              "publisher": "Digital Trends",
+              "favicon": "icons/69ac518cba29.jpg"
+            },
+            {
+              "title": "Reddit Reviews want to turn user discussions into easily digestible product reviews",
+              "url": "https://androidauthority.com/reddit-reviews-ai-powered-product-reviews-3733511",
+              "publisher": "Android Authority",
+              "favicon": "icons/59ead5f8dc80.png"
+            },
+            {
+              "title": "Reddit is turning user conversations into AI-powered product reviews",
+              "url": "https://techcrunch.com/2026/11/10/reddit-is-turning-user-conversations-into-ai-powered-product-reviews",
+              "publisher": "TechCrunch",
+              "favicon": "icons/08edf43b34e8.jpg"
+            }
+          ],
+          "release": null,
+          "image": "assets/verified/reddit-reviews-product-page.png",
+          "icon": "icons/3b90a2d6dc8a.png",
+          "collected_at": "2026-11-11T01:04:01.217Z",
+          "zh": {
+            "headline": "Reddit Reviews 将分散的产品讨论汇集到一个页面。",
+            "what": "Reddit Reviews 把 Reddit 各处关于同一产品的讨论集中展示。用户可以在一个页面查看大家喜欢和不喜欢的地方，不必逐个寻找讨论帖。",
+            "why": null
+          },
+          "icon_large": "icons/611ca1812234.png"
+        },
+        {
+          "id": "apple-tv-sign-language-interpretation",
+          "app": "Apple TV",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-11",
+          "published_at": "2026-11-10T16:00:26.015Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Apple TV adds on-screen sign language interpretation for supported titles.",
+          "what": "Viewers can enable sign language interpretation for supported movies and shows in the Apple TV app. An interpreter appears in the bottom-right corner of the screen; the feature launches November 13, beginning with Being Heumann.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Apple TV introduces new Sign Language interpretation feature",
+              "url": "https://apple.com/newsroom/2026/11/apple-tv-introduces-new-sign-language-interpretation-feature",
+              "publisher": "Apple Newsroom",
+              "favicon": "icons/863dc6e47974.png"
+            },
+            {
+              "title": "New Apple TV Sign Language Feature Announced",
+              "url": "https://macrumors.com/2026/11/10/apple-tv-sign-language-interpretation",
+              "publisher": "MacRumors",
+              "favicon": "icons/4c58e1f5c9db.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/c638daf7e4b8.jpg",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-11-11T01:04:01.217Z",
+          "zh": {
+            "headline": "Apple TV 为部分影片加入屏幕内手语翻译。",
+            "what": "用户可以在 Apple TV App 中为支持的电影和节目开启手语翻译，译员会出现在画面右下角。该功能于 11 月 13 日上线，首批包括 Being Heumann。",
+            "why": null
+          },
+          "icon_large": "icons/484365c976bf.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "collected_at": "2026-11-09T23:02:33.578Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "instagram-effect-builder",
+          "app": "Instagram",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-10",
+          "published_at": "2026-11-09T18:07:23.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Instagram adds a prompt-based Effect Builder for creating custom Stories filters.",
+          "what": "Instagram’s new Effect Builder includes a prompt box where users describe a filter idea to a chatbot. It generates custom filters for Stories and is available now to US residents over 18.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Instagram’s Effect Builder makes new filters from AI prompts",
+              "url": "https://theverge.com/tech/1030061/instagram-ai-effect-builder-filters",
+              "publisher": "The Verge",
+              "favicon": "icons/ef2a1bdec569.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/88fee91e70b0.jpg",
+          "icon": "icons/4335fa864294.png",
+          "collected_at": "2026-11-10T02:00:07.060Z",
+          "zh": {
+            "headline": "Instagram 推出 Effect Builder，通过文字描述创建 Stories 自定义滤镜。",
+            "what": "Instagram 新增的 Effect Builder 提供提示词输入框，用户可以向聊天机器人描述想要的滤镜。工具会生成 Stories 自定义滤镜，目前面向美国 18 岁以上用户开放。",
+            "why": null
+          },
+          "icon_large": "icons/4d935697e1f3.png"
+        },
+        {
+          "id": "amazon-mobile-navigation-redesign",
+          "app": "Amazon",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-10",
+          "published_at": "2026-11-09T17:58:10.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Amazon updates its mobile design to make key shopping destinations easier to access.",
+          "what": "Amazon’s App Store version notes for 27.20.0 describe a new design covering access to the homepage, account and order information, cart, and department browsing. The notes do not specify the layout or individual component changes.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Amazon 27.20.0 version notes: Our new design provides easier access to the features you use most while on the go. This includes the homepage,…",
+              "url": "https://apps.apple.com/us/app/id297606951?version=27.20.0",
+              "publisher": "App Store notes",
+              "favicon": "icons/355a1c310d75.png"
+            }
+          ],
+          "release": {
+            "store": "app-store",
+            "version": "27.20.0"
+          },
+          "image": "icons/cec406098309.png",
+          "icon": "icons/cb3d546ae53c.png",
+          "collected_at": "2026-11-10T02:00:07.060Z",
+          "zh": {
+            "headline": "Amazon 更新移动端设计，让常用购物页面更容易进入。",
+            "what": "Amazon 的 App Store 27.20.0 版本说明提到，新设计调整了首页、账户与订单信息、购物车，以及品类浏览等功能的访问方式。说明没有交代具体布局或组件变化。",
+            "why": null
+          },
+          "icon_large": "icons/63700ccfc6be.png"
+        },
+        {
+          "id": "google-gemini-memory-summary",
+          "app": "Google",
+          "category": "platform",
+          "kind": "ux",
+          "date": "2026-11-10",
+          "published_at": "2026-11-09T16:47:45.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Google adds a Memory summary in Gemini for reviewing and changing remembered information.",
+          "what": "Gemini is rolling out a “Memory summary” that shows what it understands about the user. Users can view, edit and delete that information.",
+          "why": "Gemini now shows users what it remembers about them and lets them edit or delete it. As AI products store personal context, letting people inspect and control that memory is becoming a design pattern others are likely to adopt.",
+          "sources": [
+            {
+              "title": "Google Gemini rolling out ‘Memory summary’ with everything it remembers about you",
+              "url": "https://9to5google.com/2026/11/09/google-gemini-memory-summary",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/b3520eb44985.jpg",
+          "icon": "icons/197f01d794f3.png",
+          "collected_at": "2026-11-10T02:00:07.060Z",
+          "zh": {
+            "headline": "Google 在 Gemini 中加入 Memory summary，让用户查看和修改被记住的信息。",
+            "what": "Gemini 正在推出 Memory summary，展示它对用户的了解。用户可以查看、编辑和删除这些信息。",
+            "why": "Gemini 现在向用户展示它记住了什么，并允许编辑或删除。随着 AI 产品保存个人上下文，让用户查看并控制这些记忆正成为其他产品可能跟进的设计模式。"
+          },
+          "icon_large": "icons/12b9c9d59aab.png"
+        },
+        {
+          "id": "muse-apple-watch-app",
+          "app": "Muse",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-10",
+          "published_at": "2026-11-09T21:55:26.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Muse adds an Apple Watch app with text, dictation and call entry points.",
+          "what": "Meta’s Muse iOS update adds an Apple Watch app displaying the Muse character. Users can text it, dictate a message or call it, and a watch complication provides quick access.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Meta's Muse AI Agent Comes to Apple Watch",
+              "url": "https://macrumors.com/2026/11/09/meta-muse-apple-watch",
+              "publisher": "MacRumors",
+              "favicon": "icons/4c58e1f5c9db.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/e0fe061d7a7a.jpg",
+          "icon": "icons/34e1c869f5b7.png",
+          "collected_at": "2026-11-10T02:00:07.060Z",
+          "zh": {
+            "headline": "Muse 新增 Apple Watch App，提供文字、语音输入和通话入口。",
+            "what": "Meta 更新 Muse iOS App，加入显示 Muse 角色的 Apple Watch App。用户可以发送文字、听写消息或发起通话，也可以通过表盘复杂功能快捷进入。",
+            "why": null
+          },
+          "icon_large": "icons/993d88fa6855.jpg"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "collected_at": "2026-11-09T00:01:05.955Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "windows-11-beta-search-redesign",
+          "app": "Windows",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-08",
+          "published_at": "2026-11-07T20:05:52.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "Windows 11 introduces a redesigned Search interface in its latest beta.",
+          "what": "Windows 11’s latest beta changes the Search interface. The candidate does not describe the new layout or components, so the visual details remain unspecified.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Windows 11 is getting redesigned Search and improved facial recognition in its latest beta",
+              "url": "https://digitaltrends.com/computing/windows-11-beta-redesigned-search-improved-facial-recognition",
+              "publisher": "Digital Trends",
+              "favicon": "icons/69ac518cba29.jpg"
+            }
+          ],
+          "release": null,
+          "image": "icons/47c475ca7c25.jpg",
+          "icon": "icons/a6a1a82e8373.png",
+          "collected_at": "2026-11-09T02:00:04.513Z",
+          "zh": {
+            "headline": "Windows 11 在最新 beta 中更新了 Search 界面。",
+            "what": "Windows 11 最新 beta 带来了重新设计的 Search 界面。候选报道没有说明新的布局或组件，暂时无法判断具体的视觉变化。",
+            "why": null
+          },
+          "icon_large": "icons/5526529938ec.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "collected_at": "2026-11-08T05:00:06.673Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "chatgpt-interactive-tools",
+          "app": "ChatGPT",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-07",
+          "published_at": "2026-11-07T09:00:00.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "ChatGPT can generate interactive tools directly inside a conversation.",
+          "what": "ChatGPT can now create an interactive tool in the chat instead of responding only with text. TechRadar reports using the new Intelligent UI to create six custom apps, without stating rollout limits.",
+          "why": "ChatGPT can now answer with a generated interactive tool instead of text alone, and Instagram's Effect Builder and Pixel's Create My Widget also generate interface from prompts. Interfaces assembled on demand change what designers specify: fewer fixed screens and more components and constraints.",
+          "sources": [
+            {
+              "title": "ChatGPT can now create interactive tools instead of just answering questions",
+              "url": "https://techradar.com/ai-platforms-assistants/chatgpt/chatgpt-can-now-build-custom-apps-for-you-in-seconds-without-any-coding-i-tried-making-6-of-my-own-and-the-results-surprised-me",
+              "publisher": "TechRadar",
+              "favicon": "icons/424f2a24eb6b.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/0d3b886af9f4.jpg",
+          "icon": "icons/8df2aa8a3f0b.png",
+          "collected_at": "2026-11-08T05:00:06.673Z",
+          "zh": {
+            "headline": "ChatGPT 可直接在对话中生成交互工具。",
+            "what": "ChatGPT 现在可以在对话中生成交互工具，而不只是返回文字回答。TechRadar 使用新的 Intelligent UI 创建了 6 个自定义应用，报道未说明适用范围或上线限制。",
+            "why": "ChatGPT 现在可以用生成的交互式工具代替纯文字回答，Instagram 的 Effect Builder 和 Pixel 的 Create My Widget 也能根据提示生成界面。按需生成的界面改变了设计师的交付内容：固定页面减少，组件与约束增多。"
+          },
+          "icon_large": "icons/053b0926cb1b.png"
+        },
+        {
+          "id": "chrome-android-settings-color-icons",
+          "app": "Chrome",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-07",
+          "published_at": "2026-11-06T18:07:34.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Chrome for Android adds colourful icons to its Settings screen in Canary.",
+          "what": "Chrome for Android is reworking its Settings screen in the Canary channel with colourful, iOS-style icons beside settings categories. The available report does not give a public-release date.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Google is bringing iOS-style Settings icons to Chrome for Android",
+              "url": "https://androidauthority.com/chrome-android-colorful-settings-icons-redesign-3732624",
+              "publisher": "Android Authority",
+              "favicon": "icons/59ead5f8dc80.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/86757dc5f1e8.jpg",
+          "icon": "icons/76dd8fc380b3.png",
+          "collected_at": "2026-11-08T05:00:06.673Z",
+          "zh": {
+            "headline": "Chrome for Android 在 Canary 版的设置页加入彩色图标。",
+            "what": "Chrome for Android 正在 Canary 渠道调整设置页，为设置分类加入类似 iOS 风格的彩色图标。现有报道未说明正式版上线时间。",
+            "why": null
+          },
+          "icon_large": "icons/11b0e85dc1c5.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "collected_at": "2026-11-07T08:00:04.954Z",
+      "quiet": false,
+      "pattern": "Google Messages, Phone by Google and Google Earth all moved to gradient app icons this week.",
+      "pattern_zh": "Google Messages、Phone by Google 和 Google Earth 本周都换用了渐变风格的 App 图标。",
+      "items": [
+        {
+          "id": "airbnb-redesigned-app",
+          "app": "Airbnb",
+          "category": "ota",
+          "kind": "ux",
+          "date": "2026-11-05",
+          "published_at": "2026-11-05T14:51:35.000Z",
+          "beta": false,
+          "importance": 4,
+          "headline": "Airbnb’s redesigned app combines homes, experiences and services in one booking journey.",
+          "what": "Airbnb’s version notes describe a redesigned app with personalised recommendations across homes, experiences and services. The update also adds a day-by-day trip view, new messaging features, a revamped profile, and host tools for listings, reservations and scheduling.",
+          "why": "Airbnb is combining homes, experiences and services into a single booking journey with personalised recommendations. Merging separate product lines into one flow is a major structural redesign for a widely used app.",
+          "sources": [
+            {
+              "title": "Airbnb 26.45 version notes: Now you can book homes, experiences, and services—all in one app. Our redesigned app includes personalized…",
+              "url": "https://apps.apple.com/us/app/id401626263?version=26.45",
+              "publisher": "App Store notes",
+              "favicon": "icons/355a1c310d75.png"
+            }
+          ],
+          "release": {
+            "store": "app-store",
+            "version": "26.45"
+          },
+          "image": "assets/verified/airbnb-redesigned-app.jpg",
+          "icon": "icons/af58f1dff8f7.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Airbnb 改版 App，将房源、体验和服务整合到同一预订旅程中。",
+            "what": "Airbnb 的版本说明显示，改版后的 App 会在房源、体验和服务之间提供个性化推荐。更新还加入按天查看的行程、新的消息功能、改版后的个人主页，以及供房东管理发布、预订和排期的工具。",
+            "why": "Airbnb 把住宿、体验和服务整合进同一条预订流程，并加入个性化推荐。把原本分开的产品线合并为一个流程，对这款广泛使用的应用来说是一次重大的结构性改版。"
+          },
+          "icon_large": "icons/625c0a751451.png"
+        },
+        {
+          "id": "apple-music-classical-refresh",
+          "app": "Apple Music Classical",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-06",
+          "published_at": "2026-11-06T13:19:47.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Apple Music Classical adopts Apple Music’s black-and-white icon and refreshed interface.",
+          "what": "Apple Music Classical 4.1 replaces its previous icon with a shaded black treble clef on white. Apple also refreshed the iPhone and iPad interface to align the Classical app with the wider Apple Music rebrand.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Apple Music Classical Updated With New Icon and Refreshed Design",
+              "url": "https://macrumors.com/2026/11/06/apple-music-classical-updated",
+              "publisher": "MacRumors",
+              "favicon": "icons/4c58e1f5c9db.png"
+            },
+            {
+              "title": "New Apple Music Classical update matches wider Music rebrand",
+              "url": "https://appleinsider.com/articles/26/11/06/new-apple-music-classical-update-matches-wider-music-rebrand",
+              "publisher": "AppleInsider",
+              "favicon": "icons/94df03c7ac2a.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/474ddfd662a9.jpg",
+          "icon": "icons/b628c3ca43a9.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Apple Music Classical 换用与 Apple Music 一致的黑白图标，并更新界面。",
+            "what": "Apple Music Classical 4.1 将原有图标改为白底上的黑色渐变高音谱号。Apple 同时更新了 iPhone 和 iPad 界面，使其与 Apple Music 整体改版后的视觉保持一致。",
+            "why": null
+          },
+          "icon_large": "icons/438c802ea2e3.png"
+        },
+        {
+          "id": "apple-ios-suggested-actions",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ux",
+          "date": "2026-11-06",
+          "published_at": "2026-11-06T09:00:00.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "iOS 27.2 adds Suggested Actions that turn messages into one-tap tasks.",
+          "what": "iOS 27.2 can scan message context and show one-tap Suggested Actions for Calendar, Reminders, Notes and Maps. The shortcuts turn information in a conversation into an action without requiring users to manually copy it between apps.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Apple just added Suggested Actions to iOS 27.2 — Apple Intelligence upgrade scans your texts to create one-tap buttons for Calendar, Reminders, Notes, and Maps",
+              "url": "https://tomsguide.com/phones/iphones/the-hidden-ios-27-2-upgrade-that-turns-messages-into-one-tap-actions",
+              "publisher": "Tom's Guide",
+              "favicon": "icons/5676a14f4ae4.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/45b2fc520371.jpg",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "iOS 27.2 新增 Suggested Actions，可将消息内容转为一键任务。",
+            "what": "iOS 27.2 可根据消息上下文，为 Calendar、Reminders、Notes 和 Maps 显示一键 Suggested Actions。用户无需手动复制信息到其他 App，即可把对话中的内容转为操作。",
+            "why": null
+          },
+          "icon_large": "icons/484365c976bf.png"
+        },
+        {
+          "id": "whatsapp-events-home-shareable-invites",
+          "app": "WhatsApp",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-05",
+          "published_at": "2026-11-05T15:00:45.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "WhatsApp adds an Events home and invitations that work outside WhatsApp.",
+          "what": "WhatsApp is adding an Events home for managing events beyond individual chats. Event creators can add a cover photo and share an invitation link with people who do not have WhatsApp, letting recipients view details and RSVP without installing the app.",
+          "why": null,
+          "sources": [
+            {
+              "title": "WhatsApp Events Brings People Together Beyond the Group Chat",
+              "url": "https://about.fb.com/news/2026/11/whatsapp-events-brings-people-together-beyond-the-group-chat",
+              "publisher": "Meta Newsroom",
+              "favicon": "icons/68e19db261a3.png"
+            },
+            {
+              "title": "WhatsApp announces Events Home and shareable event invites",
+              "url": "https://gsmarena.com/whatsapp_events_home-news-75382.php",
+              "publisher": "GSMArena",
+              "favicon": "icons/9c2eaf45e360.png"
+            },
+            {
+              "title": "WhatsApp adds shareable event invites and a new Events hub",
+              "url": "https://9to5mac.com/2026/11/05/whatsapp-adds-shareable-event-invites-and-a-new-events-hub",
+              "publisher": "9to5Mac",
+              "favicon": "icons/a61f8950b97e.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/b409ade0df04.png",
+          "icon": "icons/8a5ac141d75b.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "WhatsApp 新增 Events 首页，并支持向非 WhatsApp 用户分享邀请。",
+            "what": "WhatsApp 新增了集中管理活动的 Events 首页，不再只依附于单个聊天。创建者可添加封面图并分享邀请链接，即使对方未安装 WhatsApp，也能查看活动详情并回复是否参加。",
+            "why": null
+          },
+          "icon_large": "icons/d2f48c4678ab.png"
+        },
+        {
+          "id": "spotify-library-pins-carousel",
+          "app": "Spotify",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-06",
+          "published_at": "2026-11-06T09:12:59.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "Spotify tests a Pins carousel to separate saved items from the rest of Your Library.",
+          "what": "Spotify is testing a dedicated Pins carousel in Your Library on mobile. The new shelf separates pinned content from the rest of the library instead of mixing it into one list.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Spotify tests dedicated ‘Pins’ carousel to declutter Your Library on mobile",
+              "url": "https://androidauthority.com/spotify-your-library-pins-shelf-test-3732365",
+              "publisher": "Android Authority",
+              "favicon": "icons/59ead5f8dc80.png"
+            },
+            {
+              "title": "New Layout for Pinned Items",
+              "url": "https://www.reddit.com/r/truespotify/comments/1xoxwdx/new_layout_for_pinned_items/",
+              "publisher": "r/truespotify",
+              "favicon": "icons/6bfb473ebcb9.png"
+            }
+          ],
+          "release": null,
+          "image": null,
+          "icon": "icons/9b1ed65ef9ae.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Spotify 测试 Pins 轮播区，将置顶内容从 Your Library 中分离出来。",
+            "what": "Spotify 正在移动端 Your Library 中测试独立的 Pins 轮播区。新的内容架将置顶内容与其余收藏内容分开，不再全部混在同一列表中。",
+            "why": null
+          },
+          "compare": {
+            "before": null,
+            "after": "assets/verified/spotify-pins-before-after.webp",
+            "combined": true,
+            "from": "article"
+          },
+          "icon_large": "icons/1a892f8fbfda.png"
+        },
+        {
+          "id": "whatsapp-android-chat-previews",
+          "app": "WhatsApp",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-06",
+          "published_at": "2026-11-05T23:31:02.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "WhatsApp brings iOS-style chat previews to Android.",
+          "what": "WhatsApp is adding chat previews on Android for users who have read receipts enabled. The interaction lets users inspect a message without opening the chat and triggering a read receipt.",
+          "why": null,
+          "sources": [
+            {
+              "title": "WhatsApp is bringing iOS-style chat previews to Android",
+              "url": "https://gsmarena.com/whatsapp_is_bringing_iosstyle_chat_previews_to_android-news-75371.php",
+              "publisher": "GSMArena",
+              "favicon": "icons/9c2eaf45e360.png"
+            },
+            {
+              "title": "WhatsApp Could Soon Let Android Users Read Messages Without Blue Ticks",
+              "url": "https://gadgets.beebom.com/news/whatsapp-testing-chat-previews-on-android",
+              "publisher": "Beebom",
+              "favicon": "icons/b62a2943779b.png"
+            }
+          ],
+          "release": null,
+          "image": "assets/verified/whatsapp-chat-preview.jpg",
+          "icon": "icons/8a5ac141d75b.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "WhatsApp 将 iOS 风格的聊天预览带到 Android。",
+            "what": "WhatsApp 正在为已开启已读回执的 Android 用户加入聊天预览。用户可以查看消息内容，而无需打开聊天并触发已读回执。",
+            "why": null
+          },
+          "compare": null,
+          "icon_large": "icons/d2f48c4678ab.png"
+        },
+        {
+          "id": "youtube-ambient-watch-page-design",
+          "app": "YouTube",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-06",
+          "published_at": "2026-11-05T22:09:53.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "YouTube tests a split light-and-dark watch page treatment.",
+          "what": "YouTube confirmed that the half-dark, half-light appearance on some watch pages is an active design test rather than a bug. The test changes the visual treatment around video playback for selected users.",
+          "why": null,
+          "sources": [
+            {
+              "title": "YouTube confirms your half-dark, half-light viewing experience is a test",
+              "url": "https://androidauthority.com/youtube-ambient-watch-page-design-test-3732286",
+              "publisher": "Android Authority",
+              "favicon": "icons/59ead5f8dc80.png"
+            },
+            {
+              "title": "What's with the forced dark mode on every video now?",
+              "url": "https://www.reddit.com/r/youtube/comments/1xja5n1/whats_with_the_forced_dark_mode_on_every_video_now/",
+              "publisher": "r/youtube",
+              "favicon": "icons/6bfb473ebcb9.png"
+            }
+          ],
+          "release": null,
+          "image": "assets/verified/youtube-mixed-theme.webp",
+          "icon": "icons/e7072f8fb80f.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "YouTube 正在测试明暗分区的视频观看页。",
+            "what": "YouTube 确认，部分观看页同时呈现深色和浅色区域并非故障，而是一项面向部分用户的设计测试。该测试改变了视频播放页周边区域的视觉处理方式。",
+            "why": null
+          },
+          "compare": null,
+          "icon_large": "icons/aa8bf029bece.png"
+        },
+        {
+          "id": "google-find-hub-left-behind-alerts",
+          "app": "Find Hub",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-06",
+          "published_at": "2026-11-05T21:30:00.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Google Find Hub adds alerts when users leave a tracker behind.",
+          "what": "Google is rolling out a “Notify when left behind” option for Find Hub tags and trackers on Android. The notification flow alerts users when a tracked item is no longer nearby.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Google Find Hub rolls out ‘Notify when left behind’ tracker alerts on Android",
+              "url": "https://9to5google.com/2026/11/05/google-find-hub-tracker-alerts",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            },
+            {
+              "title": "Google Find Hub is catching up to Apple Find My with left-behind alerts",
+              "url": "https://androidauthority.com/google-find-hub-left-behind-reminders-rolling-out-3732383",
+              "publisher": "Android Authority",
+              "favicon": "icons/59ead5f8dc80.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/74025f6c5179.jpg",
+          "icon": "icons/7c4a4bcc62a5.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Google Find Hub 在 Android 推出遗落物品提醒。",
+            "what": "Google 正在为 Android 上的 Find Hub 标签和追踪器推出“离开时通知”选项。当用户与被追踪物品相距较远时，系统会发出提醒。",
+            "why": null
+          },
+          "icon_large": "icons/2162e30197ef.png"
+        },
+        {
+          "id": "instagram-edits-mac-app",
+          "app": "Instagram",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-06",
+          "published_at": "2026-11-05T18:38:44.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Instagram brings its Edits video editor to Mac with a multi-track timeline.",
+          "what": "Instagram’s Edits video editor is now available on Mac. The desktop app includes a multi-track timeline, colour controls and direct publishing to Instagram, extending the editing workflow beyond iPhone.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Instagram's Edits moves beyond the iPhone with Mac app",
+              "url": "https://appleinsider.com/articles/26/11/05/instagrams-edits-moves-beyond-the-iphone-with-mac-app",
+              "publisher": "AppleInsider",
+              "favicon": "icons/94df03c7ac2a.png"
+            },
+            {
+              "title": "Instagram launches Edits for Mac with multi-track video editing and 4K exports",
+              "url": "https://9to5mac.com/2026/11/05/instagram-launches-edits-for-mac-with-multi-track-video-editing-and-4k-exports",
+              "publisher": "9to5Mac",
+              "favicon": "icons/a61f8950b97e.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/e0ec70245c82.jpg",
+          "icon": "icons/5516eed62774.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Instagram 将 Edits 视频编辑器带到 Mac，并加入多轨时间线。",
+            "what": "Instagram 的 Edits 视频编辑器现已推出 Mac 版。桌面端提供多轨时间线、色彩控制和直接发布到 Instagram 的功能，将编辑流程从 iPhone 延伸到桌面。",
+            "why": null
+          },
+          "icon_large": "icons/e6ec1f4c18dc.png"
+        },
+        {
+          "id": "linear-mobile-diffs",
+          "app": "Linear",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-06",
+          "published_at": "2026-11-05T17:49:55.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Linear brings its Diffs review flow to iOS and Android.",
+          "what": "Linear’s Diffs review experience is now available on mobile. Users can start Guided Reviews on a phone, see items awaiting review in the inbox, open preview links, and continue a review later on desktop.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Mobile Diffs",
+              "url": "https://linear.app/changelog/2026-11-04-mobile-diffs",
+              "publisher": "Linear Changelog",
+              "favicon": "icons/db4c9b3de594.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/d8fb0eab5b14.avif",
+          "icon": "icons/db4c9b3de594.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Linear 将 Diffs 评审流程带到 iOS 和 Android。",
+            "what": "Linear 的 Diffs 评审体验现已支持移动端。用户可以在手机上开始 Guided Reviews、在收件箱查看待评审内容、打开预览链接，并在桌面端继续处理。",
+            "why": null
+          },
+          "icon_large": "icons/97ab437a497f.jpg"
+        },
+        {
+          "id": "google-earth-gradient-logo",
+          "app": "Google Earth",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-06",
+          "published_at": "2026-11-06T10:47:25.000Z",
+          "beta": false,
+          "importance": 1,
+          "headline": "Google Earth gets a gradient logo.",
+          "what": "Google Earth has adopted a new logo as part of Google’s wider gradient icon treatment. The update changes the product’s visible brand mark.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Google Earth gets a new logo with Google’s gradient makeover",
+              "url": "https://androidauthority.com/google-earth-gradient-icon-redesign-3732345",
+              "publisher": "Android Authority",
+              "favicon": "icons/59ead5f8dc80.png"
+            },
+            {
+              "title": "From 5 Layers to 4: Google Earth icon refresh",
+              "url": "https://jetstream.blog/en/google-earth-icon-refresh-november-2026/",
+              "publisher": "Jetstream",
+              "favicon": "icons/5186cd52939b.png"
+            }
+          ],
+          "release": null,
+          "image": null,
+          "icon": "icons/5fab6a2fa714.png",
+          "collected_at": "2026-11-07T08:00:04.954Z",
+          "zh": {
+            "headline": "Google Earth 换用了渐变风格的新 Logo。",
+            "what": "Google Earth 采用了新的 Logo，延续 Google 正在推进的渐变图标风格。这次更新改变了产品对用户可见的品牌标识。",
+            "why": null
+          },
+          "compare": {
+            "before": "assets/verified/google-earth-old.jpg",
+            "after": "assets/verified/google-earth-new.webp",
+            "from": "article"
+          },
+          "icon_large": "icons/56dbf2fb1c1a.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "collected_at": "2026-11-04T23:01:04.007Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "youtube-subscriptions-tab",
+          "app": "YouTube",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-04",
+          "published_at": "2026-11-04T15:03:26.000Z",
+          "beta": false,
+          "importance": 4,
+          "headline": "YouTube's latest redesign moves Subscriptions out of the bottom tab bar.",
+          "what": "In YouTube's latest app redesign, Subscriptions is no longer in the bottom bar. Shorts and the Upload button stay there. Android Authority reports that users are complaining because they say they use Subscriptions more than either of those.",
+          "why": "YouTube's redesign removes Subscriptions from the bottom bar while Shorts and Upload stay, and YouTube Music also dropped its Samples tab. Bottom-bar slots are being reallocated by platform priorities, and the complaints show the cost when that conflicts with how people actually use the app.",
+          "sources": [
+            {
+              "title": "Where’s my Subscriptions tab? Users are furious about YouTube’s latest redesign",
+              "url": "https://androidauthority.com/youtube-subscriptions-tab-redesign-3731679",
+              "publisher": "Android Authority",
+              "favicon": "icons/59ead5f8dc80.png"
+            },
+            {
+              "title": "YouTube removing ‘Subscriptions’ bottom bar tab on Android, iOS after nearly a decade",
+              "url": "https://9to5google.com/2026/10/22/youtube-subscriptions-android-ios",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "release": null,
+          "image": null,
+          "icon": "icons/e7072f8fb80f.png",
+          "collected_at": "2026-11-05T03:33:13.536Z",
+          "zh": {
+            "headline": "YouTube 最新改版把「订阅」移出了底部标签栏。",
+            "what": "YouTube 最新改版后，「订阅」不再出现在底部栏，Shorts 和上传按钮仍保留在底部栏。据 Android Authority 报道，不少用户表示自己使用「订阅」的频率高于这两个入口，因此对改版不满。",
+            "why": "YouTube 改版把订阅从底部栏移除，而 Shorts 和上传按钮保留，YouTube Music 也撤掉了 Samples 标签。底部栏的位置正按平台优先级重新分配，用户的抱怨则显示了这与实际使用习惯冲突时的代价。"
+          },
+          "compare": {
+            "before": "icons/d7c9250fd6b7.jpg",
+            "after": "icons/3110831395ec.jpg",
+            "from": "article"
+          },
+          "icon_large": "icons/aa8bf029bece.png"
+        },
+        {
+          "id": "apple-macos-live-activities-menu-bar",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-05",
+          "published_at": "2026-11-04T18:43:01.000Z",
+          "beta": true,
+          "importance": 3,
+          "headline": "macOS 27.3 shows Live Activities in the menu bar on Macs without a Dynamic Island.",
+          "what": "The new touchscreen MacBook Pro shows Live Activities in its Dynamic Island. In the macOS 27.3 beta, other Apple silicon Macs show Live Activities in the menu bar instead, for apps such as Apple Music.",
+          "why": null,
+          "sources": [
+            {
+              "title": "macOS 27.3 Brings Live Activities to Macs Without Dynamic Island",
+              "url": "https://macrumors.com/2026/11/04/macos-27-3-live-activities-in-menu-bar",
+              "publisher": "MacRumors",
+              "favicon": "icons/4c58e1f5c9db.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/f552feb766d1.jpg",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-11-05T01:55:48.107Z",
+          "zh": {
+            "headline": "macOS 27.3 在没有灵动岛的 Mac 上，把实时活动放进菜单栏显示。",
+            "what": "新款触屏 MacBook Pro 在灵动岛中显示实时活动（Live Activities）。macOS 27.3 测试版让其他 Apple 芯片 Mac 在菜单栏显示实时活动，Apple Music 等应用已支持。",
+            "why": null
+          },
+          "icon_large": "icons/484365c976bf.png"
+        },
+        {
+          "id": "apple-app-store-subscription-retention-messages",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ux",
+          "date": "2026-11-05",
+          "published_at": "2026-11-04T16:00:56.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Apple adds retention messages to the App Store subscription cancellation flow.",
+          "what": "When a subscriber starts to cancel, the cancellation flow can now show a message from the app that reminds them what the subscription gives them. The message can include text, images or a special offer. Developers set these messages up in App Store Connect.",
+          "why": "Apple is putting developer-written retention messages inside the system cancellation flow. Designers now have to consider how persuasive content fits into a step that users expect to be neutral.",
+          "sources": [
+            {
+              "title": "Now available: Retention messages for subscriptions",
+              "url": "https://developer.apple.com/news?id=fk9ps3gv",
+              "publisher": "Apple Developer News",
+              "favicon": "icons/eaae6aa75569.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/d54dd030937e.jpg",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-11-04T23:01:04.007Z",
+          "zh": {
+            "headline": "Apple 在 App Store 订阅取消流程中加入挽留信息。",
+            "what": "用户开始取消订阅时，取消流程里会出现一条由 App 提供的信息，提醒用户这项订阅的价值。信息可以包含文字、图片或专属优惠。开发者在 App Store Connect 中配置这些内容。",
+            "why": "Apple 允许开发者在系统的取消订阅流程中加入挽留信息。设计师需要考虑，劝说性内容如何放进用户期待保持中立的步骤里。"
+          },
+          "compare": null,
+          "icon_large": "icons/484365c976bf.png"
+        },
+        {
+          "id": "chrome-menu-search",
+          "app": "Chrome",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-04",
+          "published_at": "2026-11-04T13:27:05.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Chrome adds a search box to its redesigned three-dot menu.",
+          "what": "Chrome's redesigned three-dot menu now has a working search box. As you type, it shows matching settings, bookmarks and recently visited sites, so you no longer have to dig through nested menu items.",
+          "why": "Chrome adds a search box to its three-dot menu so people find settings, bookmarks and sites by typing, and Samsung's quick panel also gained search. Searchable menus are replacing deep nested navigation as feature sets grow.",
+          "sources": [
+            {
+              "title": "Google is finally fixing Google Chrome’s cluttered three-dot menu with a handy search feature",
+              "url": "https://digitaltrends.com/computing/chromes-new-menu-search-makes-settings-and-bookmarks-easier-to-find",
+              "publisher": "Digital Trends",
+              "favicon": "icons/69ac518cba29.jpg"
+            }
+          ],
+          "release": null,
+          "image": "icons/d6e3d630338d.jpg",
+          "icon": "icons/76dd8fc380b3.png",
+          "collected_at": "2026-11-05T04:10:23.374Z",
+          "zh": {
+            "headline": "Chrome 在改版后的三点菜单中加入搜索框。",
+            "what": "Chrome 改版后的三点菜单新增可用的搜索框，输入时即时列出匹配的设置项、书签和最近访问的网站，不必再逐层翻找菜单。",
+            "why": "Chrome 在三点菜单中加入搜索框，用户可以通过输入查找设置、书签和网站，三星的快捷面板也新增了搜索。随着功能增多，可搜索的菜单正在取代层层嵌套的导航。"
+          },
+          "icon_large": "icons/11b0e85dc1c5.png"
+        },
+        {
+          "id": "google-maps-iphone-duo-dual-display",
+          "app": "Google Maps",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-04",
+          "published_at": "2026-11-04T13:28:43.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Google Maps now fills both displays on the iPhone Duo.",
+          "what": "Google Maps version 26.44.4 adds full support for the iPhone Duo. The app now uses the whole of both the inner and outer displays instead of a layout built for a single screen. Many iOS apps have not yet been adapted to the device's two displays.",
+          "why": null,
+          "sources": [
+            {
+              "title": "What Google Maps looks like on both iPhone Duo displays, after upgrade",
+              "url": "https://appleinsider.com/articles/26/11/04/what-google-maps-looks-like-on-both-iphone-duo-displays-after-upgrade",
+              "publisher": "AppleInsider",
+              "favicon": "icons/94df03c7ac2a.png"
+            },
+            {
+              "title": "Google Maps Updated to Fully Support iPhone Duo Displays",
+              "url": "https://www.macrumors.com/2026/11/04/latest-google-maps-update-iphone-duo-support/",
+              "publisher": "MacRumors",
+              "favicon": "icons/4c58e1f5c9db.png"
+            }
+          ],
+          "release": null,
+          "image": "assets/verified/google-maps-iphone-duo.jpg",
+          "icon": "icons/557ae27c9974.png",
+          "collected_at": "2026-11-05T04:10:23.374Z",
+          "zh": {
+            "headline": "Google Maps 在 iPhone Duo 上实现双屏全屏显示。",
+            "what": "Google Maps 26.44.4 版完整适配 iPhone Duo，地图可以铺满内屏和外屏，不再沿用单屏布局。目前不少 iOS App 还没有针对这款设备的双屏做适配。",
+            "why": null
+          },
+          "compare": null,
+          "icon_large": "icons/95765b27234b.png"
+        },
+        {
+          "id": "whatsapp-chat-media-suggestions",
+          "app": "WhatsApp",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-11-04",
+          "published_at": "2026-11-04T06:01:02.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "WhatsApp starts suggesting your latest photos and videos inside chats.",
+          "what": "When you open a chat, WhatsApp can now suggest recent photos and videos to send. This extends the sticker suggestions it already shows above the keyboard on Android, which are based on the emojis you type. The feature is reaching some users on Android and iOS in the latest app versions.",
+          "why": null,
+          "sources": [
+            {
+              "title": "WhatsApp starts suggesting your latest photos and videos right in your chats",
+              "url": "https://gsmarena.com/whatsapp_starts_suggesting_your_latest_photos_and_videos_right_in_your_chats-news-75335.php",
+              "publisher": "GSMArena",
+              "favicon": "icons/9c2eaf45e360.png"
+            },
+            {
+              "title": "WhatsApp Can Now Suggest Your Latest Gallery Photos in Chats",
+              "url": "https://techjuice.pk/whatsapp-can-now-suggest-your-latest-gallery-photos-in-chats",
+              "publisher": "TechJuice",
+              "favicon": "icons/14a90039e44a.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/f207d2d41603.jpg",
+          "icon": "icons/8a5ac141d75b.png",
+          "collected_at": "2026-11-05T04:10:23.374Z",
+          "zh": {
+            "headline": "WhatsApp 开始在聊天中推荐最近拍摄的照片和视频。",
+            "what": "打开聊天时，WhatsApp 会推荐最近的照片和视频供直接发送。此前它已在 Android 键盘上方根据输入的表情推荐贴纸，这次把推荐扩展到了媒体。目前在 Android 和 iOS 最新版本中向部分用户开放。",
+            "why": null
+          },
+          "compare": null,
+          "icon_large": "icons/d2f48c4678ab.png"
+        },
+        {
+          "id": "google-messages-pinned-chats-redesign",
+          "app": "Google Messages",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-04",
+          "published_at": "2026-11-04T03:59:50.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "Google Messages starts testing a redesigned pinned chats area in beta.",
+          "what": "Google Messages is rolling out a new design for pinned chats at the top of the conversation list. The change is currently limited to beta users.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Google Messages’ pinned chats UI makeover is finally landing for users",
+              "url": "https://androidauthority.com/google-messages-pinned-chats-redesign-beta-rollout-3731406",
+              "publisher": "Android Authority",
+              "favicon": "icons/59ead5f8dc80.png"
+            },
+            {
+              "title": "Google Messages pinned chats are getting a big iMessage-style makeover",
+              "url": "https://androidpolice.com/google-messages-pinned-chats-now-showing-up",
+              "publisher": "Android Police",
+              "favicon": "icons/328c69f005f8.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/060b98f1440f.jpg",
+          "icon": "icons/fa9fc7ed2c8b.png",
+          "collected_at": "2026-11-05T03:33:13.536Z",
+          "zh": {
+            "headline": "Google Messages 在测试版中上线重新设计的置顶聊天区域。",
+            "what": "Google Messages 正在推送置顶聊天的新设计，置顶聊天位于会话列表顶部。目前只有测试版用户能看到这一改动。",
+            "why": null
+          },
+          "compare": null,
+          "icon_large": "icons/b1af6e492eec.png"
+        },
+        {
+          "id": "google-android-family-hub-settings",
+          "app": "Google",
+          "category": "platform",
+          "kind": "ux",
+          "date": "2026-11-03",
+          "published_at": "2026-11-03T14:45:00.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Google confirms a new Family Hub section in Android Settings.",
+          "what": "Google has confirmed a Family Hub feature that will appear in the Android Settings menu. The rollout has not started yet, and 9to5Google published an early gallery of the screens.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Google confirms Android’s new ‘Family Hub’ feature, and this is what it looks like [Gallery]",
+              "url": "https://9to5google.com/2026/11/03/google-android-family-hub-feature",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/9a232c07bf7e.jpg",
+          "icon": "icons/197f01d794f3.png",
+          "collected_at": "2026-11-05T01:55:48.107Z",
+          "zh": {
+            "headline": "Google 确认 Android 设置中将新增「Family Hub」入口。",
+            "what": "Google 确认 Android 设置菜单将加入 Family Hub 功能，目前尚未开始推送。9to5Google 提前发布了界面截图。",
+            "why": null
+          },
+          "icon_large": "icons/12b9c9d59aab.png"
+        },
+        {
+          "id": "samsung-galaxy-z-flip-cover-screen-one-ui-9",
+          "app": "Samsung",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-03",
+          "published_at": "2026-11-03T12:43:12.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Samsung's One UI 9 redesigns the Galaxy Z Flip cover screen, and many owners are unhappy.",
+          "what": "The One UI 9 update, based on Android 17, changes how the Galaxy Z Flip's cover screen looks and works. Android Authority reports a wave of complaints from owners after the update.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Samsung changed Galaxy Z Flip’s cover screen with One UI 9, and a lot of owners are not happy",
+              "url": "https://androidauthority.com/galaxy-z-flip-one-ui-9-cover-screen-backlash-3731117",
+              "publisher": "Android Authority",
+              "favicon": "icons/59ead5f8dc80.png"
+            },
+            {
+              "title": "Some Galaxy Z Flip Users aren’t Impressed with One UI 9’s Cover Screen Overhaul",
+              "url": "https://sammyguru.com/galaxy-z-flip-users-arent-impressed-with-one-ui-9-cover-screen-overhaul",
+              "publisher": "SammyGuru",
+              "favicon": "icons/6d46cede92fc.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/ab7d6f9bf243.webp",
+          "icon": "icons/08023ad0c6f0.png",
+          "collected_at": "2026-11-05T03:33:13.536Z",
+          "zh": {
+            "headline": "三星 One UI 9 重新设计了 Galaxy Z Flip 的外屏，不少用户不满。",
+            "what": "基于 Android 17 的 One UI 9 更新改变了 Galaxy Z Flip 外屏的样式和交互方式。据 Android Authority 报道，更新后大量用户提出了抱怨。",
+            "why": null
+          },
+          "compare": null,
+          "icon_large": "icons/1e05f7c670da.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "collected_at": "2026-11-03T23:04:28.914Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "safari-vertical-tabs-adaptive-dark-mode",
+          "app": "Safari",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-04",
+          "published_at": "2026-11-03T18:51:53.000Z",
+          "beta": true,
+          "importance": 3,
+          "headline": "Safari adds a Vertical Tabs layout and Adaptive Dark Mode in the iOS 27.3, iPadOS 27.3 and macOS 27.3 betas.",
+          "what": "Users can choose Vertical Tabs instead of the standard horizontal tab bar. MacRumors says the layout suits the iPhone Duo's larger display but is not limited to that device. The betas also add Adaptive Dark Mode and Siri AI Custom Actions to Safari.",
+          "why": null,
+          "sources": [
+            {
+              "title": "iOS 27.3 Adds Vertical Tabs and Adaptive Dark Mode to Safari",
+              "url": "https://macrumors.com/2026/11/03/ios-27-3-safari",
+              "publisher": "MacRumors",
+              "favicon": "icons/4c58e1f5c9db.png"
+            },
+            {
+              "title": "iOS 27.3 and macOS 27.3 add Vertical Tabs, Adaptive Dark Mode, and more to Safari",
+              "url": "https://9to5mac.com/2026/11/03/ios-27-3-and-macos-27-3-add-vertical-tabs-adaptive-dark-mode-and-more-to-safari",
+              "publisher": "9to5Mac",
+              "favicon": "icons/a61f8950b97e.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/07a825e8ddc1.png",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-11-03T23:04:28.914Z",
+          "zh": {
+            "headline": "Safari 在 iOS 27.3、iPadOS 27.3 和 macOS 27.3 beta 中新增竖向标签页布局和 Adaptive Dark Mode。",
+            "what": "用户可以用 Vertical Tabs 代替原来的横向标签栏。据 MacRumors，这个布局适合 iPhone Duo 的大屏，但不限于这款机型。这批 beta 还为 Safari 加入了 Adaptive Dark Mode 和 Siri AI Custom Actions。",
+            "why": null
+          },
+          "icon_large": "icons/484365c976bf.png"
+        },
+        {
+          "id": "apple-health-app-redesign",
+          "app": "Apple Health",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-11-04",
+          "published_at": "2026-11-03T18:24:58.012Z",
+          "beta": true,
+          "importance": 3,
+          "headline": "Apple's redesigned Health app returns in the iOS 27.3 beta, with new Insights and Longevity tabs.",
+          "what": "Apple previewed the redesign in September and tested it in the iOS 27.2 beta, then removed it before that update shipped. iOS 27.3 beta 1 brings it back with new Insights and Longevity tabs that show more information about the user's health. Apple also announced expanded language support for the redesigned app.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Redesigned Health app expands language support",
+              "url": "https://apple.com/newsroom/2026/11/redesigned-health-app-expands-language-support",
+              "publisher": "Apple Newsroom",
+              "favicon": "icons/863dc6e47974.png"
+            },
+            {
+              "title": "iOS 27.3 Beta Brings Back Apple's Redesigned Health App",
+              "url": "https://macrumors.com/2026/11/03/ios-27-3-health-app",
+              "publisher": "MacRumors",
+              "favicon": "icons/4c58e1f5c9db.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/0f25f93458a3.jpg",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-11-03T23:04:28.914Z",
+          "zh": {
+            "headline": "Apple 重新设计的健康 App 在 iOS 27.3 beta 中回归，新增 Insights 和 Longevity 两个标签页。",
+            "what": "这次改版在 9 月预览，曾在 iOS 27.2 beta 中测试，但正式版发布前被撤下。iOS 27.3 beta 1 重新加入了新版健康 App，新增的 Insights 和 Longevity 标签页展示更多健康信息。Apple 同时宣布新版 App 支持更多语言。",
+            "why": null
+          },
+          "icon_large": "icons/484365c976bf.png"
+        },
+        {
+          "id": "apple-ios-standby-redesign-expansion",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-11-04",
+          "published_at": "2026-11-03T20:14:38.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "iOS 27.3 brings the iPhone Duo's redesigned StandBy to iPhone 11 and newer.",
+          "what": "StandBy shows information at a glance when an iPhone is charging in landscape. Apple says the redesigned StandBy, first introduced on the iPhone Duo, comes to every iPhone that can run iOS 27.3, which is now in beta.",
+          "why": null,
+          "sources": [
+            {
+              "title": "iOS 27.3 Adding New StandBy Mode Features to iPhone 11 and Newer",
+              "url": "https://macrumors.com/2026/11/03/ios-27-3-new-standby-features-on-more-iphones",
+              "publisher": "MacRumors",
+              "favicon": "icons/4c58e1f5c9db.png"
+            },
+            {
+              "title": "iOS 27.3 brings the iPhone Duo’s revamped StandBy to other iPhones",
+              "url": "https://9to5mac.com/2026/11/03/ios-27-3-brings-the-iphone-duos-revamped-standby-to-other-iphones",
+              "publisher": "9to5Mac",
+              "favicon": "icons/a61f8950b97e.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/219c9d2dc1c9.jpg",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-11-03T23:04:28.914Z",
+          "zh": {
+            "headline": "iOS 27.3 把 iPhone Duo 上重新设计的 StandBy 带到 iPhone 11 及更新机型。",
+            "what": "StandBy 在 iPhone 横放充电时显示一目了然的信息。Apple 表示，最早在 iPhone Duo 上推出的新版 StandBy，将覆盖所有支持 iOS 27.3 的 iPhone，目前处于 beta 阶段。",
+            "why": null
+          },
+          "icon_large": "icons/484365c976bf.png"
+        },
+        {
+          "id": "apple-iphone-duo-reachability",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ux",
+          "date": "2026-11-04",
+          "published_at": "2026-11-03T19:09:11.000Z",
+          "beta": true,
+          "importance": 2,
+          "headline": "iOS 27.3 adds Reachability to the iPhone Duo for one-handed use.",
+          "what": "On the iPhone Duo's outer screen, Reachability shifts the content on the left or right side toward the user's thumb. It is in the first iOS 27.3 beta and is switched on or off in Settings > Accessibility > Touch.",
+          "why": null,
+          "sources": [
+            {
+              "title": "iPhone Duo Gets Reachability in iOS 27.3 Beta",
+              "url": "https://macrumors.com/2026/11/03/iphone-duo-reachability-ios-27-3",
+              "publisher": "MacRumors",
+              "favicon": "icons/4c58e1f5c9db.png"
+            },
+            {
+              "title": "iOS 27.3 introduces new iPhone Duo feature for one-handed use",
+              "url": "https://9to5mac.com/2026/11/03/ios-27-3-introduces-new-iphone-duo-feature-for-one-handed-use",
+              "publisher": "9to5Mac",
+              "favicon": "icons/a61f8950b97e.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/f7edbca7fa7d.jpg",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-11-03T23:04:28.914Z",
+          "zh": {
+            "headline": "iOS 27.3 为 iPhone Duo 加入 Reachability，方便单手操作。",
+            "what": "在 iPhone Duo 的外屏上，Reachability 可以把左侧或右侧的内容移到拇指附近。该功能出现在首个 iOS 27.3 beta 中，可在 设置 > 辅助功能 > 触控 中开关。",
+            "why": null
+          },
+          "icon_large": "icons/484365c976bf.png"
+        },
+        {
+          "id": "tabby-identity-ragged-edge",
+          "app": "Tabby",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-03",
+          "published_at": "2026-11-03T09:15:08.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Middle Eastern fintech app Tabby gets a new identity from Ragged Edge.",
+          "what": "Branding studio Ragged Edge has created a new identity for Tabby, which BP&O describes as playful. Tabby was founded in 2019 and now calls itself \"the money app that lets you spend, send, save and boss money around\".",
+          "why": null,
+          "sources": [
+            {
+              "title": "Ragged Edge creates a playful new identity for Middle Eastern fintech app Tabby",
+              "url": "https://bpando.org/2026/11/03/ragged-edge-tabby-branding-identity-design",
+              "publisher": "BP&O",
+              "favicon": "icons/c276a008a417.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/43a89b178080.png",
+          "icon": "icons/7637ac22b3bf.png",
+          "collected_at": "2026-11-03T23:04:28.914Z",
+          "zh": {
+            "headline": "中东金融科技 App Tabby 启用 Ragged Edge 设计的新品牌形象。",
+            "what": "品牌设计工作室 Ragged Edge 为 Tabby 设计了新形象，BP&O 评价其风格轻松活泼。Tabby 成立于 2019 年，现在自称“让你消费、转账、储蓄、掌控钱的理财 App”。",
+            "why": null
+          },
+          "icon_large": "icons/d4ea5e7e6d9a.png"
+        },
+        {
+          "id": "swiss-post-custom-typeface",
+          "app": "Swiss Post",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-02",
+          "published_at": "2026-11-02T06:15:00.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Swiss Post gets a custom typeface from Swiss Typefaces.",
+          "what": "Swiss Typefaces spent three years on the font, which Creative Boom describes as warmer and friendlier.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Swiss Typefaces crafts a warmer, friendlier custom font for Swiss Post",
+              "url": "https://creativeboom.com/inspiration/swiss-typefaces-crafts-a-warmer-friendlier-custom-font-for-swiss-post",
+              "publisher": "Creative Boom",
+              "favicon": "icons/7f065b47451e.png"
+            }
+          ],
+          "release": null,
+          "image": "assets/verified/swiss-post-typeface.jpg",
+          "icon": "icons/688bd7026f0b.png",
+          "collected_at": "2026-11-03T23:04:28.914Z",
+          "zh": {
+            "headline": "Swiss Post 启用 Swiss Typefaces 定制的新字体。",
+            "what": "Swiss Typefaces 用了三年时间设计这款字体，Creative Boom 称其更温暖、更亲切。",
+            "why": null
+          },
+          "compare": null,
+          "icon_large": "icons/4b2690f3763d.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "collected_at": "2026-11-02T23:00:54.923Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "google-messages-phone-contacts-gradient-icons",
+          "app": "Google Messages",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-02",
+          "published_at": "2026-11-02T13:35:00.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Google is rolling out gradient app icons for Messages, Phone and Contacts.",
+          "what": "Google is replacing the icons for its Contacts, Messages and Phone apps with gradient versions. The new Messages icon arrives in the app's latest update. This follows Google's gradient redesigns of its Workspace and Pixel app icons earlier this year.",
+          "why": "Google is applying gradient icons across Messages, Phone, Contacts, Workspace, Pixel apps and more, including Earth and Pixel Watch. A shared icon treatment across a whole product family is a visible, coordinated brand move that other teams may follow.",
+          "sources": [
+            {
+              "title": "Google rolling out gradient icon redesigns for Contacts, Messages, and Phone",
+              "url": "https://9to5google.com/2026/11/02/google-messages-phone-icon-gradient-redesign",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            },
+            {
+              "title": "Google Messages update rolling out new app icon with gradient design",
+              "url": "https://9to5google.com/2026/11/02/google-messages-gradient-icon-beta",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/8d3f66c3c55a.jpg",
+          "icon": "icons/fa9fc7ed2c8b.png",
+          "collected_at": "2026-11-02T23:00:54.923Z",
+          "zh": {
+            "headline": "Google 为 Messages、Phone 和 Contacts 推出渐变风格应用图标。",
+            "what": "Google 正在将 Contacts、Messages 和 Phone 三款应用的图标替换为渐变版本，Messages 的新图标已随最新版本更新出现。此前，Google 已在今年早些时候把 Workspace 和 Pixel 系列应用图标改为渐变风格。",
+            "why": "Google 正在为 Messages、Phone、Contacts、Workspace 和 Pixel 应用等统一换上渐变图标，Earth 和 Pixel Watch 也在跟进。整个产品家族采用同一种图标处理，是一次协调一致、肯定会被留意的品牌动作，其他团队也可能效仿。"
+          },
+          "icon_large": "icons/b1af6e492eec.png"
+        },
+        {
+          "id": "x-ios-alternate-app-icons",
+          "app": "X",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-11-03",
+          "published_at": "2026-11-02T18:34:37.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "X replaces its alternative app icon set on iPhone and iPad with more than a dozen new options.",
+          "what": "Today's update to X for iPhone and iPad overhauls the alternative app icons that users can pick in place of the default icon. The new set has more than a dozen options. The app has offered alternative icons since it was called Twitter.",
+          "why": null,
+          "sources": [
+            {
+              "title": "X for iPhone and iPad just added over a dozen new app icon options",
+              "url": "https://9to5mac.com/2026/11/02/x-for-iphone-and-ipad-just-dropped-a-dozen-new-app-icon-options",
+              "publisher": "9to5Mac",
+              "favicon": "icons/a61f8950b97e.png"
+            }
+          ],
+          "release": null,
+          "image": "icons/7f00f91defd7.jpg",
+          "icon": "icons/d834126c15b9.png",
+          "collected_at": "2026-11-02T23:00:54.923Z",
+          "zh": {
+            "headline": "X 在 iPhone 和 iPad 上更新了可替换图标，新增十余款选项。",
+            "what": "X 的 iPhone 和 iPad 版本在今天的更新中重做了可替换应用图标，用户可用它们替代默认图标。新图标组共有十余款。这项功能从应用还叫 Twitter 时就已存在。",
+            "why": null
+          },
+          "compare": null,
+          "icon_large": "icons/25cc6cc204a5.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "collected_at": "2026-11-02T03:27:04.617Z",
+      "quiet": true,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": []
+    },
+    {
+      "date": "2026-11-01",
+      "collected_at": "2026-10-31T23:00:29.023Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "apple-music-android-liquid-glass",
+          "app": "Apple Music",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-10-31",
+          "published_at": "2026-10-30T17:27:24.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Apple Music 7.0 for Android brings the Liquid Glass design and the new app icon.",
+          "what": "Apple Music 7.0 is rolling out on Android with a redesign in Liquid Glass, the visual style Apple introduced on its own platforms. The update also brings the new Apple Music icon from this year's rebrand to Android. It arrives after a month of beta testing.",
+          "why": "Apple is taking Liquid Glass to Android with Apple Music 7.0, so its visual language now appears on a competing platform. Designers building cross-platform apps will see Apple's style sit next to Material design on the same device.",
+          "sources": [
+            {
+              "title": "Apple Music 7.0 for Android rolls out with Liquid Glass redesign",
+              "url": "https://9to5google.com/2026/10/30/apple-music-7-0-redesign",
+              "publisher": "9to5Mac",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "image": "icons/58177911c984.jpg",
+          "icon": "icons/b628c3ca43a9.png",
+          "collected_at": "2026-10-31T23:00:29.023Z",
+          "zh": {
+            "headline": "Apple Music 7.0 安卓版换上 Liquid Glass 设计和新应用图标。",
+            "what": "Apple Music 7.0 安卓版正在陆续推送，界面改用 Liquid Glass 风格，也就是苹果在自家系统上推出的视觉语言。这次更新同时把今年品牌焕新后的新图标带到了安卓端。正式版推出前已经过一个月的 Beta 测试。",
+            "why": "Apple Music 7.0 把 Liquid Glass 带到了 Android，Apple 的视觉语言开始出现在竞争平台上。做跨平台应用的设计师会看到 Apple 风格与 Material 设计在同一台设备上并存。"
+          },
+          "compare": {
+            "before": "icons/70f32d73383a.jpg",
+            "after": "icons/76e1d9242c02.jpg",
+            "from": "article"
+          },
+          "icon_large": "icons/438c802ea2e3.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "collected_at": "2026-10-30T23:01:01.247Z",
+      "quiet": true,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": []
+    },
+    {
+      "date": "2026-10-30",
+      "collected_at": "2026-10-30T15:45:10.721Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "nytimes-175-identity",
+          "app": "The New York Times",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-10-30",
+          "published_at": "2026-10-30T11:25:26.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "The New York Times marks its 175th anniversary with a custom 175 mark and identity system.",
+          "what": "The anniversary identity is built around a custom 175 mark. It is designed to work across editorial, opinion, advertising, events and marketing, and it accompanies a set of events and a campaign.",
+          "why": null,
+          "sources": [
+            {
+              "title": "The New York Times turns 175",
+              "url": "https://the-brandidentity.com/project/the-new-york-times-turns-175-with-an-identity-events-and-a-campaign",
+              "publisher": "Sidebar",
+              "favicon": "icons/ae065826493f.png"
+            }
+          ],
+          "image": "icons/68fe873a9863.jpg",
+          "icon": "icons/a0c28d3c8d28.png",
+          "collected_at": "2026-10-30T15:45:10.721Z",
+          "zh": {
+            "headline": "《纽约时报》为创刊 175 周年推出定制 175 标志和整套视觉识别。",
+            "what": "这套周年识别以一个定制的 175 标志为核心，可用于编辑内容、评论版、广告、活动和营销等场景，并配合一系列活动和广告宣传一起推出。",
+            "why": null
+          },
+          "icon_large": "icons/d9f537f7f9ff.png"
+        },
+        {
+          "id": "youtube-google-tv-youtube-music-red-logo",
+          "app": "YouTube",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-10-30",
+          "published_at": "2026-10-30T11:30:00.000Z",
+          "beta": true,
+          "importance": 1,
+          "headline": "YouTube on Google TV starts showing YouTube Music with a red logo.",
+          "what": "9to5Google reports that an update to the YouTube app on Google TV, either rolling out or still in testing, gives YouTube Music a red logo. The reviewer says the logo stands out sharply from the rest of the interface.",
+          "why": null,
+          "sources": [
+            {
+              "title": "YouTube for Google TV update gives YouTube Music a distracting red logo I can’t stand",
+              "url": "https://9to5google.com/2026/10/30/youtube-google-tv-music-update-change",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "image": "icons/37ef75948dbd.png",
+          "icon": "icons/bc7ae3fe891a.png",
+          "collected_at": "2026-10-30T15:45:10.721Z",
+          "zh": {
+            "headline": "Google TV 上的 YouTube 开始用红色标志显示 YouTube Music。",
+            "what": "据 9to5Google 报道，Google TV 版 YouTube 应用的一次更新（可能正在推送，也可能仍在测试）给 YouTube Music 换上了红色标志。作者认为它和界面其他部分反差过大。",
+            "why": null
+          },
+          "compare": null,
+          "icon_large": "icons/c2d4e903d367.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "collected_at": "2026-10-29T15:45:10.721Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "apple-macos-touch-macbook-pro",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-10-29",
+          "published_at": "2026-10-28T17:00:55.000Z",
+          "beta": false,
+          "importance": 4,
+          "headline": "Apple brings touch input to the Mac and publishes guidance for adapting apps to it.",
+          "what": "Apple announced its first touchscreen Mac, the MacBook Pro with PROLED XDR Display, on October 28. Alongside it, Apple released developer videos, articles and resources on preparing apps for touch on Mac, with live Group Labs sessions starting in November.",
+          "why": "Apple's first touchscreen Mac comes with official guidance for adapting apps to touch. Desktop interfaces built for pointer and keyboard now have to account for touch targets and hybrid input.",
+          "sources": [
+            {
+              "title": "Say hello to Touch on Mac",
+              "url": "https://developer.apple.com/news?id=i9boeiqc",
+              "publisher": "Apple Developer News",
+              "favicon": "icons/eaae6aa75569.png"
+            },
+            {
+              "title": "Apple releases touchscreen Mac developer videos, with live sessions coming in November",
+              "url": "https://9to5mac.com/2026/10/28/apple-releases-touchscreen-mac-developer-videos-with-live-sessions-coming-in-november",
+              "publisher": "9to5Mac",
+              "favicon": "icons/a61f8950b97e.png"
+            }
+          ],
+          "image": "icons/b28f03a48a67.jpg",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-10-29T15:45:10.721Z",
+          "zh": {
+            "headline": "Apple 让 Mac 支持触控，并发布了应用适配指南。",
+            "what": "Apple 于 10 月 28 日发布首款触屏 Mac，即配备 PROLED XDR 显示屏的 MacBook Pro。同时，Apple 推出了一批开发者视频、文章和资源，介绍如何让应用适配 Mac 触控，11 月起还会举办 Group Labs 线上答疑。",
+            "why": "Apple 推出首款触控屏 Mac，并发布了适配触控的官方指南。为鼠标和键盘设计的桌面界面，现在需要考虑触控目标和混合输入。"
+          },
+          "compare": null,
+          "icon_large": "icons/484365c976bf.png"
+        },
+        {
+          "id": "chrome-suggested-by-gemini-autofill",
+          "app": "Chrome",
+          "category": "consumer",
+          "kind": "ux",
+          "date": "2026-10-29",
+          "published_at": "2026-10-28T17:00:00.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Chrome rolls out \"Suggested by Gemini\" autofill, which fills in more information on web forms.",
+          "what": "Chrome can now use Gemini and Personal Intelligence to autofill more information than standard autofill handles. Autofill suggestions from Gemini carry the \"Suggested by Gemini\" name. Google first previewed the feature in May.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Google Chrome rolling out ‘Suggested by Gemini’ autofill",
+              "url": "https://9to5google.com/2026/10/28/chrome-autofill-gemini",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "image": "icons/03c9028aab90.jpg",
+          "icon": "icons/7c4a4bcc62a5.png",
+          "collected_at": "2026-10-29T15:45:10.721Z",
+          "zh": {
+            "headline": "Chrome 推出“Suggested by Gemini”自动填充，可以在网页表单里填入更多信息。",
+            "what": "Chrome 现在可以借助 Gemini 和 Personal Intelligence，自动填写比原有自动填充更多的信息。这类建议以“Suggested by Gemini”的名义出现。该功能今年 5 月曾预告过。",
+            "why": null
+          },
+          "icon_large": "icons/2162e30197ef.png"
+        },
+        {
+          "id": "microsoft-copilot-identity",
+          "app": "Copilot",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-10-29",
+          "published_at": "2026-10-29T07:24:37.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Microsoft gives Copilot a new identity that positions it as a work tool.",
+          "what": "The Brand Identity reports that the new Copilot identity is built on dynamic motion geometry. The identity is aimed at enterprise productivity. The source gives no further detail on the logo or the rollout.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Microsoft’s identity for Copilot positions it as a tool for work",
+              "url": "https://the-brandidentity.com/project/microsofts-identity-for-copilot-positions-it-as-a-tool-for-work",
+              "publisher": "Sidebar",
+              "favicon": "icons/ae065826493f.png"
+            }
+          ],
+          "image": "icons/82a49405b886.jpg",
+          "icon": "icons/a6a1a82e8373.png",
+          "collected_at": "2026-10-29T15:45:10.721Z",
+          "zh": {
+            "headline": "Microsoft 为 Copilot 推出新品牌形象，定位为工作工具。",
+            "what": "据 The Brand Identity 报道，新的 Copilot 品牌形象以动态几何图形为基础，面向企业办公场景。报道没有提供更多关于标志和上线安排的细节。",
+            "why": null
+          },
+          "compare": null,
+          "icon_large": "icons/5526529938ec.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "collected_at": "2026-10-28T15:45:10.721Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "google-photos-collections-tab-redesign",
+          "app": "Google Photos",
+          "category": "consumer",
+          "kind": "ui",
+          "date": "2026-10-28",
+          "published_at": "2026-10-27T16:23:35.000Z",
+          "beta": false,
+          "importance": 3,
+          "headline": "Google Photos redesigns its Collections tab so users can customise it.",
+          "what": "Google Photos is rolling out a redesign of the Collections tab on Android and iOS that lets users customise the tab. It follows the floating navigation bar the app introduced in July.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Google Photos rolls out customizable redesign of your ‘Collections’ tab",
+              "url": "https://9to5google.com/2026/10/26/google-photos-collections-redesign",
+              "publisher": "9to5Mac",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "image": "icons/3c55dd7ed62c.jpg",
+          "icon": "icons/3c1f30be248b.png",
+          "collected_at": "2026-10-28T15:45:10.721Z",
+          "zh": {
+            "headline": "Google Photos 改版「Collections」标签页，支持用户自定义。",
+            "what": "Google Photos 正在 Android 和 iOS 上推出「Collections」标签页的改版，用户可以自定义这个标签页。此前该应用在 7 月已改用悬浮导航栏。",
+            "why": null
+          },
+          "compare": {
+            "before": "icons/d4a39d39f6e7.jpg",
+            "after": "icons/459c57901d4a.jpg",
+            "from": "article"
+          },
+          "icon_large": "icons/74539092d826.jpg"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "collected_at": "2026-10-27T15:45:10.721Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "apple-ios-27-2-selfie-age-verification",
+          "app": "Apple",
+          "category": "platform",
+          "kind": "ux",
+          "date": "2026-10-27",
+          "published_at": "2026-10-27T15:21:41.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "iOS 27.2 adds age verification by selfie.",
+          "what": "iOS 27.2 introduces a feature that lets iPhone users verify their age by taking a selfie. The candidate text does not describe the screens or where the check appears.",
+          "why": null,
+          "sources": [
+            {
+              "title": "iOS 27.2 introduces new age verification feature using selfie",
+              "url": "https://9to5mac.com/2026/10/27/ios-27-2-introduces-new-age-verification-feature-using-selfie",
+              "publisher": "9to5Mac",
+              "favicon": "icons/a61f8950b97e.png"
+            }
+          ],
+          "image": "icons/f543505c59b7.jpg",
+          "icon": "icons/863dc6e47974.png",
+          "collected_at": "2026-10-27T15:45:10.721Z",
+          "zh": {
+            "headline": "iOS 27.2 新增自拍年龄验证。",
+            "what": "iOS 27.2 推出了通过自拍验证年龄的功能。现有资料没有说明具体界面，也没有说明验证入口出现在哪里。",
+            "why": null
+          },
+          "icon_large": "icons/484365c976bf.png"
+        },
+        {
+          "id": "google-gemini-live-plus-menu-redesign",
+          "app": "Google",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-10-27",
+          "published_at": "2026-10-26T19:00:50.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Google redesigns the plus button in Gemini Live on Android to make adding photos and files easier.",
+          "what": "Google is rolling out a small redesign of the 'plus' control in Gemini Live on Android, so users can attach photos and files to a live conversation more easily. It follows several other Gemini interface updates this month.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Gemini Live redesign makes it easier to add context to chats",
+              "url": "https://9to5google.com/2026/10/26/gemini-live-plus-redesign",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "image": "icons/472382b89ae6.jpg",
+          "icon": "icons/197f01d794f3.png",
+          "collected_at": "2026-10-27T15:45:10.721Z",
+          "zh": {
+            "headline": "Google 在 Android 版 Gemini Live 中重新设计了加号按钮，添加照片和文件更方便。",
+            "what": "Google 正在为 Android 版 Gemini Live 推送一次小幅改版，调整了“加号”入口，用户在实时对话中添加照片和文件更顺手。这是本月 Gemini 一系列界面更新中的又一项。",
+            "why": null
+          },
+          "compare": null,
+          "icon_large": "icons/12b9c9d59aab.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "collected_at": "2026-10-26T15:45:10.721Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "apple-music-rebrand-2026",
+          "app": "Apple Music",
+          "category": "consumer",
+          "kind": "brand",
+          "date": "2026-10-26",
+          "published_at": "2026-10-26T09:00:00.000Z",
+          "beta": false,
+          "importance": 4,
+          "headline": "Apple Music gets its first rebrand since launching in 2015, with a new logo made from sound.",
+          "what": "Apple made the new Apple Music logo with musician Fred Again by passing sound waves through a pool of oil. The resulting mark has a wave-like form. This is the service's first rebrand since it launched in 2015.",
+          "why": "Apple Music's first rebrand since 2015 changes the icon of a major platform service, and the new look has already carried over to Apple Music Classical and Android. Platform-owner brand changes tend to set the reference point for icon and identity work elsewhere.",
+          "sources": [
+            {
+              "title": "Apple Music unveils logo that was physically \"made by sound\"",
+              "url": "https://dezeen.com/2026/10/26/apple-music-logo-physically-made-by-sound",
+              "publisher": "Dezeen",
+              "favicon": "icons/003f05595eaa.png"
+            }
+          ],
+          "image": "icons/d1043e576039.jpg",
+          "icon": "icons/b628c3ca43a9.png",
+          "collected_at": "2026-10-26T15:45:10.721Z",
+          "zh": {
+            "headline": "Apple Music 推出 2015 年上线以来的首次品牌焕新，新 logo 由声音“制作”而成。",
+            "what": "Apple 与音乐人 Fred Again 合作，让声波穿过一池油，由此生成新的 Apple Music logo，整体呈波浪形态。这是该服务自 2015 年上线以来的第一次品牌升级。",
+            "why": "Apple Music 自 2015 年以来的首次品牌重塑更换了一项主流平台服务的图标，新风格已延伸到 Apple Music Classical 和 Android 版。平台方的品牌调整往往会成为其他图标与识别设计的参照。"
+          },
+          "icon_large": "icons/438c802ea2e3.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "collected_at": "2026-10-25T15:45:10.721Z",
+      "quiet": true,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": []
+    },
+    {
+      "date": "2026-10-24",
+      "collected_at": "2026-10-24T15:45:10.721Z",
+      "quiet": false,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": [
+        {
+          "id": "gemini-android-side-panel-settings-redesign",
+          "app": "Google",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-10-24",
+          "published_at": "2026-10-23T22:02:00.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "Google redesigns the side panel and settings in the Gemini app for Android.",
+          "what": "The Gemini app on Android has rolled out new designs for its side panel and its settings screens. The change follows the earlier Spark-to-Task update to the app.",
+          "why": null,
+          "sources": [
+            {
+              "title": "Gemini for Android rolls out side panel and settings redesign",
+              "url": "https://9to5google.com/2026/10/23/gemini-settings-redesign-android",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "image": "icons/cdab1a199fe1.jpg",
+          "icon": "icons/197f01d794f3.png",
+          "collected_at": "2026-10-24T15:45:10.721Z",
+          "zh": {
+            "headline": "Google 为 Android 版 Gemini 应用重新设计了侧边栏和设置页。",
+            "what": "Android 版 Gemini 应用已上线新的侧边栏和设置页设计。这次改版是在此前的 Spark-to-Task 更新之后推出的。",
+            "why": null
+          },
+          "compare": {
+            "before": "icons/c0f0080d3fbb.jpg",
+            "after": "icons/5da8960b9248.jpg",
+            "from": "article"
+          },
+          "icon_large": "icons/12b9c9d59aab.png"
+        },
+        {
+          "id": "oneplus-oxygenos-to-coloros",
+          "app": "OnePlus",
+          "category": "platform",
+          "kind": "ui",
+          "date": "2026-10-23",
+          "published_at": "2026-10-23T14:15:00.000Z",
+          "beta": false,
+          "importance": 2,
+          "headline": "OnePlus phones move from OxygenOS to ColorOS with the stable Android 17 update.",
+          "what": "OnePlus has started rolling out stable Android 17 to the OnePlus 15 and OnePlus Pad 4, and the update switches these devices from OxygenOS to ColorOS. They are the first OnePlus devices to make the change, which ends OxygenOS.",
+          "why": null,
+          "sources": [
+            {
+              "title": "OnePlus starts rolling out stable Android 17 updates early, marking the end of OxygenOS",
+              "url": "https://9to5google.com/2026/10/23/oneplus-stable-android-17-rollout-begins",
+              "publisher": "9to5Google",
+              "favicon": "icons/85137d4d4a4c.png"
+            }
+          ],
+          "image": "icons/08e9303188e2.jpg",
+          "icon": "icons/4dc64a94e27a.png",
+          "collected_at": "2026-10-24T15:45:10.721Z",
+          "zh": {
+            "headline": "OnePlus 随 Android 17 正式版从 OxygenOS 切换到 ColorOS。",
+            "what": "OnePlus 开始向 OnePlus 15 和 OnePlus Pad 4 推送 Android 17 正式版，系统随之从 OxygenOS 换成 ColorOS。这两款是首批切换的设备，OxygenOS 将就此停用。",
+            "why": null
+          },
+          "icon_large": "icons/f89d15b10a2c.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "collected_at": "2026-10-23T15:45:10.721Z",
+      "quiet": true,
+      "pattern": null,
+      "pattern_zh": null,
+      "items": []
+    }
+  ]
+}

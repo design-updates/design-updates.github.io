@@ -1,0 +1,227 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-16T13:32:10.997Z",
+  "weeks": [
+    {
+      "week": "2026-11-16",
+      "from": "2026-11-09T13:32:10.997Z",
+      "to": "2026-11-16T13:32:10.997Z",
+      "checked": 63,
+      "picks": [
+        {
+          "id": "checking-whether-an-ai-builder-uses-your-real-design-system-",
+          "title": "Checking whether an AI builder uses your real design system components, and prototyping with real components through an MCP setup",
+          "post_title": "AI Prototyping inside your design system. A hands-on guide for design & product teams.",
+          "url": "https://uxdesign.cc/ai-prototyping-inside-your-design-system-a-hands-on-guide-for-design-product-teams-44825904c08d?source=rss----138adf9c44c---4",
+          "source": "UX Collective",
+          "domain": "uxdesign.cc",
+          "author": "Christine Vallaure",
+          "author_role": null,
+          "published_at": "2026-11-10T23:34:58.000Z",
+          "tools": [
+            "Lovable",
+            "Bolt",
+            "Claude Design"
+          ],
+          "stage": "prototyping",
+          "type": "workflow",
+          "process": "After two days of struggling with prototyping in code, she compared what AI builders produce against the real design system. She found that builders connected to a design system build their own lookalike, usually on shadcn and Tailwind, rather than importing the real components. To test any builder, she asks it to show the code for the primary button on a generated screen, name the file it is imported from and the props it set, change nothing, and compare it to the original design system button. She then describes an MCP setup that works with the real components.",
+          "result": "She ended with a prototyping process that uses the real design system components, so developers do not have to rebuild the prototype from scratch.",
+          "catch": "Prompting harder or adding more markdown files such as DESIGN.md does not fix a builder that generates lookalike components.",
+          "try_if": "your AI prototypes look right but developers rebuild them with the real design system",
+          "score": 8,
+          "minutes": null,
+          "image": "icons/be8e0db5c027.jpg",
+          "icon": "icons/48ea5a701969.png",
+          "zh": {
+            "title": "检查AI构建工具是否真的使用了你的设计系统组件，并通过MCP配置用真实组件做原型",
+            "process": "在用代码做原型挣扎了两天之后，她对比了AI构建工具的输出和真实的设计系统。她发现，连接了设计系统的构建工具会自己搭一个相似的版本，通常基于shadcn和Tailwind，而不是引入真实组件。要测试任何一个构建工具，她会让它展示生成界面上主按钮的代码，说明该组件从哪个文件引入、设置了哪些属性，并且不做任何修改，再与设计系统中原始的按钮对比。随后她介绍了一套使用真实组件的MCP配置。",
+            "result": "她得到了一套基于设计系统真实组件的原型流程，开发不必再从头重做原型。",
+            "catch": "如果构建工具生成的是相似组件，再怎么加强提示词或增加DESIGN.md之类的markdown文件也解决不了问题。",
+            "try_if": "你的AI原型看起来没问题，但开发总要用真实设计系统重做一遍"
+          },
+          "icon_large": "icons/cb042514c002.png"
+        },
+        {
+          "id": "moving-a-prototype-between-code-and-figma-with-real-design-s",
+          "title": "Moving a prototype between code and Figma with real design system components using an agent",
+          "post_title": "In-system design: from code to Figma and back. Prototyping in your real design system",
+          "url": "https://uxdesign.cc/in-system-design-from-code-to-figma-and-back-prototyping-in-your-real-design-system-7372b128de9a?source=rss----138adf9c44c---4",
+          "source": "UX Collective",
+          "domain": "uxdesign.cc",
+          "author": "Christine Vallaure",
+          "author_role": null,
+          "published_at": "2026-11-11T22:08:32.000Z",
+          "tools": [
+            "Figma",
+            "Storybook"
+          ],
+          "stage": "systems",
+          "type": "workflow",
+          "process": "She prototypes in code with real design system components, then brings the screen into Figma as library components, pulls it apart on the canvas, tries versions side by side, and sends it back to code. This only works if the Figma components carry the code's exact names and properties, for example a Button with variant primary, secondary, ghost or danger, in the same spelling and lowercase. When names match, moving a screen is a lookup, not a translation. She does not chase tiny pixel differences between Figma and CSS and uses checks to catch real mismatches such as a wrong colour.",
+          "result": "An agent rebuilt a booking flow from Storybook in Figma and placed 21 library components without making a single visual decision.",
+          "catch": "If names do not match, such as Size = Medium in Figma and size=\"md\" in code, someone has to interpret, and an AI interprets with great confidence.",
+          "try_if": "you have a design system with code and Figma versions and want to move screens between them",
+          "score": 8,
+          "minutes": null,
+          "image": "icons/12a1dc665be8.jpg",
+          "icon": "icons/48ea5a701969.png",
+          "zh": {
+            "title": "用智能体在代码和Figma之间往返移动原型，全程使用设计系统的真实组件",
+            "process": "她先用设计系统的真实组件在代码中做原型，再把界面作为库组件带入Figma，在画布上拆解、并排尝试多个版本，然后再送回代码。这样做的前提是Figma组件使用与代码完全一致的名称和属性，例如Button的variant取primary、secondary、ghost或danger，拼写和小写都要一致。名称一致时，移动界面就是一次查找，而不是翻译。她不纠结Figma和CSS之间细微的像素差异，而是用检查来发现真正的不一致，比如颜色错误。",
+            "result": "一个智能体根据Storybook在Figma中重建了预订流程，放置了21个库组件，没有做任何视觉决策。",
+            "catch": "如果名称不一致，比如Figma中是Size = Medium而代码中是size=\"md\"，就需要有人去解读，而AI会非常自信地去解读。",
+            "try_if": "你有带代码和Figma两个版本的设计系统，想在两者之间来回移动界面"
+          },
+          "icon_large": "icons/cb042514c002.png"
+        }
+      ],
+      "collected_at": "2026-11-16T13:32:10.997Z"
+    },
+    {
+      "week": "2026-11-09",
+      "from": "2026-11-02T02:02:12.585Z",
+      "to": "2026-11-09T02:02:12.585Z",
+      "checked": 66,
+      "picks": [
+        {
+          "id": "correcting-ai-built-interfaces-with-design-system-instructio",
+          "title": "Correcting AI-built interfaces with design-system instructions and visual feedback in Intent.",
+          "post_title": "Design Feedback for AI Agents",
+          "url": "https://lukew.com/ff/2170/design-feedback-for-ai-agents",
+          "source": "Luke Wroblewski",
+          "domain": "lukew.com",
+          "author": "Luke Wroblewski",
+          "author_role": null,
+          "published_at": "2026-11-03T14:00:00.000Z",
+          "tools": [
+            "Intent"
+          ],
+          "stage": "ui",
+          "type": "workflow",
+          "process": "The team gives agents design-system specifications and instructions for the first implementation pass. They then point out layout and component-combination problems through Figma comments, annotated screenshots, or chat instructions, asking agents to correct each issue. After trying these feedback formats, they integrated screen annotation, screenshots, video, and typed or spoken instructions into Intent for the final UI corrections.",
+          "result": "The author estimates that the design-system-driven first pass now gets 90% of the way there, compared with 50–60% with earlier models.",
+          "catch": "Current models tend to over-document when allowed to update the design system themselves, so designers still decide which feedback should become a shared pattern.",
+          "try_if": "your agents follow the design system but still miss layout details and edge cases",
+          "score": 8,
+          "minutes": 2,
+          "image": "icons/1da734298cb1.png",
+          "icon": "icons/5b3b88ab8769.png",
+          "zh": {
+            "title": "用设计系统指令和 Intent 中的视觉反馈修正 AI 生成的界面。",
+            "process": "团队先向智能体提供设计系统规范和指令，让它完成第一轮实现。随后通过 Figma 评论、截图标注或聊天指令，指出布局和组件组合中的问题，要求智能体逐项修正。在试过这些反馈形式后，团队将屏幕标注、截图、视频以及文字和语音指令整合进 Intent，用于最后一轮界面修正。",
+            "result": "作者估计，现在由设计系统指导的第一轮实现能完成约 90% 的工作，而早期模型只能达到 50%–60%。",
+            "catch": "目前的模型在自行更新设计系统时容易堆积文档，因此哪些反馈应当沉淀为共享模式，仍需设计师判断。",
+            "try_if": "你的智能体能遵循设计系统，但仍会遗漏布局细节和边界情况"
+          },
+          "icon_large": "icons/9dcedc8f95dd.png"
+        },
+        {
+          "id": "designing-and-stress-testing-an-interface-explanation-skill-",
+          "title": "Designing and stress-testing an interface explanation skill with an AI agent.",
+          "post_title": "Designing a skill",
+          "url": "https://iamnoman.com/writing/designing-a-skill",
+          "source": "Sidebar",
+          "domain": "iamnoman.com",
+          "author": null,
+          "author_role": null,
+          "published_at": "2026-11-05T09:48:02.000Z",
+          "tools": [],
+          "stage": "ux",
+          "type": "workflow",
+          "process": "The author iterated interface-bts from an overlay showing components, annotations, and a curve graph into poster-like pages that freeze interactions mid-action. They shortened the explanatory copy and used a small set of typography, spacing, and colour tokens for the visual elements. They asked the agent to put multiple posters on one horizontally scrolling page, added a configurator for customising the output, and replaced vague styling instructions with precise rules. They tested the skill across projects, components, and settings, then asked the agent to stress-test it in a fresh session.",
+          "result": "The skill generates configurable interface-explanation posters and keeps multiple posters on a single page rather than creating a page for each.",
+          "catch": "Early visualisations used about three times as many words as needed, and vague instructions such as “clean” or “minimal” did not get the author far.",
+          "try_if": "you are building an agent skill whose output people need to read and customise",
+          "score": 8,
+          "minutes": 3,
+          "image": "icons/4b077113df33.png",
+          "icon": "icons/421561c985ba.png",
+          "zh": {
+            "title": "用 AI 智能体设计并压力测试一个界面讲解技能。",
+            "process": "作者将 interface-bts 从展示组件、标注和曲线图的浮层，迭代成海报式页面，把交互定格在进行中的某一刻。随后精简讲解文案，并用一小组字体、间距和颜色令牌统一视觉元素。作者要求智能体将多张海报放在同一个横向滚动页面中，加入输出样式配置器，并用明确规则替代模糊的风格指令。最后在不同项目、组件和设置下测试，再让智能体在全新会话中进行压力测试。",
+            "result": "这个技能能生成可自定义的界面讲解海报，并将多张海报集中在一个页面，而不是每张新建一页。",
+            "catch": "早期可视化的文字量约为实际所需的三倍，而“干净”“极简”这类模糊指令也没有带来多少帮助。",
+            "try_if": "你正在制作一个智能体技能，其输出需要让人阅读和自定义"
+          },
+          "icon_large": "icons/4478f4f36178.png"
+        },
+        {
+          "id": "testing-whether-explicit-platform-instructions-make-claude-g",
+          "title": "Testing whether explicit platform instructions make Claude generate current iPhone UI conventions.",
+          "post_title": "Native is a floor, not a ceiling",
+          "url": "https://uxdesign.cc/native-is-a-floor-not-a-ceiling-09bc4f27ddce?source=rss----138adf9c44c---4",
+          "source": "UX Collective",
+          "domain": "uxdesign.cc",
+          "author": "Mathieu Poli",
+          "author_role": null,
+          "published_at": "2026-11-06T04:12:29.000Z",
+          "tools": [
+            "Claude"
+          ],
+          "stage": "ui",
+          "type": "study",
+          "process": "The author asked several AI models to design app screens, comparing generic mobile requests with requests that explicitly named iPhone. They then added “Follow the current design conventions of the platform” to see whether the models represented newer iOS patterns. The post shows two daycare-app home screens generated with Claude Opus 5.5: one requested as an iPhone app, and one with the additional platform-conventions instruction.",
+          "result": "In the shown comparison, the extra instruction changed an old full-width tab bar into an iOS 26 floating tab bar, but across the study that pattern appeared only with the instruction and in a minority of mockups.",
+          "catch": "The models mostly drew older iOS conventions even a year after iOS 26 shipped, and naming the platform only corrected some visible details.",
+          "try_if": "you use AI-generated screens to explore native mobile layouts",
+          "score": 7,
+          "minutes": null,
+          "image": "icons/228774bb220b.jpg",
+          "icon": "icons/48ea5a701969.png",
+          "zh": {
+            "title": "测试明确的平台指令能否让 Claude 生成符合当前 iPhone 规范的界面。",
+            "process": "作者让多个 AI 模型设计应用界面，对比泛泛的移动应用请求与明确指定 iPhone 的请求。随后加入“Follow the current design conventions of the platform”，观察模型是否会呈现较新的 iOS 模式。文章展示了 Claude Opus 5.5 生成的两张托育应用首页：一张只要求设计 iPhone 应用，另一张额外加入了遵循当前平台规范的指令。",
+            "result": "在展示的对比中，额外指令让旧式通栏标签栏变成了 iOS 26 的悬浮标签栏，但在整个测试中，这种模式只在加入该指令后出现，而且仅见于少数界面稿。",
+            "catch": "即使 iOS 26 已发布一年，模型仍主要绘制旧版 iOS 样式，明确平台也只能修正部分可见细节。",
+            "try_if": "你用 AI 生成的界面稿探索原生移动应用布局"
+          },
+          "icon_large": "icons/cb042514c002.png"
+        }
+      ],
+      "collected_at": "2026-11-09T02:02:12.585Z"
+    },
+    {
+      "week": "2026-11-02",
+      "from": "2026-10-26T13:52:24.528Z",
+      "to": "2026-11-02T13:52:24.528Z",
+      "checked": 52,
+      "picks": [
+        {
+          "id": "building-production-like-prototypes-from-real-reddit-data-wi",
+          "title": "Building production-like prototypes from real Reddit data with Cursor and a design-system MCP, and turning Figma files into PRDs for handoff",
+          "post_title": "🎙️ How I AI: Claude Duet honest review + Why Reddit built its own AI prototyping tool",
+          "url": "https://lennysnewsletter.com/p/how-i-ai-claude-duet-honest-review",
+          "source": "Lenny's Newsletter",
+          "domain": "lennysnewsletter.com",
+          "author": "Blair Metcalf",
+          "author_role": "Principal UX engineer at Reddit",
+          "published_at": "2026-10-26T15:00:53.000Z",
+          "tools": [
+            "Cursor",
+            "Reddit Proto"
+          ],
+          "stage": "prototyping",
+          "type": "workflow",
+          "process": "Reddit's team built Reddit Proto, an internal desktop app that handles repositories, branches and scaffolding in the background, so designers and product managers never touch Git. People sign in to prototypes with their real Reddit accounts, so feeds, search and communities show familiar content instead of placeholders. Each annotation a designer leaves is attached to the relevant component, design-system guidance and the user's intent before it goes to Cursor, and a custom design-system MCP maps Reddit's tokens, components and workflows to production code so Cursor picks the right component. For handoff, a designer submits a Figma link and the system maps each element to production components, adds earlier engineering feedback, and generates a structured PRD with acceptance criteria.",
+          "result": "Reddit's teams have built about 700 prototypes with 100% adoption across UX and product, and the strongest users include a visual designer and an animator with no engineering background.",
+          "catch": null,
+          "try_if": "your team prototypes in code and wants prototypes built from production components and real data",
+          "score": 7,
+          "minutes": 5,
+          "image": "icons/b2f2ebec9d67.png",
+          "icon": "icons/fb7be369707e.png",
+          "zh": {
+            "title": "在 Reddit 用 Cursor 和设计系统 MCP 基于真实数据搭建接近生产环境的原型，并把 Figma 文件转成 PRD 用于交付",
+            "process": "Reddit 团队开发了内部桌面应用 Reddit Proto，由它在后台处理代码仓库、分支和脚手架，设计师和产品经理无需接触 Git。原型可以用真实的 Reddit 账号登录，信息流、搜索和社区里显示的是熟悉的真实内容，而不是占位数据。设计师写下的每条批注都会附带对应组件、设计系统规范和用户意图，再发送给 Cursor；自定义的设计系统 MCP 把 Reddit 的 token、组件和工作流程映射到生产代码，让 Cursor 选对组件。交付时，设计师提交一个 Figma 链接，系统把每个元素对应到生产组件，结合以往的工程反馈，生成带验收标准的结构化 PRD。",
+            "result": "Reddit 团队已做了约 700 个原型，UX 和产品团队的采用率达到 100%，用得最好的人里包括一位视觉设计师和一位没有工程背景的动效设计师。",
+            "catch": null,
+            "try_if": "你的团队用代码做原型，希望原型直接使用生产组件和真实数据。"
+          },
+          "icon_large": "icons/15c44078f941.png"
+        }
+      ],
+      "collected_at": "2026-11-02T13:52:24.528Z"
+    }
+  ]
+}

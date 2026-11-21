@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Design Lately · keeping you with the latest design</title>
+    <meta name="description" content="A one-person morning paper of design, flow and feature changes in popular apps." />
+    <link rel="canonical" href="https://design-updates.github.io/" />
+    <meta property="og:title" content="Design Lately · keeping you with the latest design" />
+    <meta property="og:description" content="A one-person morning paper of design, flow and feature changes in popular apps." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://design-updates.github.io/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Design Lately · keeping you with the latest design" />
+    <meta name="twitter:description" content="A one-person morning paper of design, flow and feature changes in popular apps." />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Fustat:wght@400..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=ff58691205" />
+    <script>
+      // Set the theme, font and language before first paint so none of them flashes.
+      try {
+        const t = localStorage.getItem('radar.theme');
+        if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+        // Font preference v2 reverses the old default: existing browsers start once in Fustat, then a new
+        // explicit Pixelify choice persists under this new key.
+        const f = localStorage.getItem('radar.font.v2');
+        if (f === 'pixel') document.documentElement.dataset.font = 'pixel';
+        localStorage.removeItem('radar.font');
+        const l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('radar.lang');
+        if (l === 'zh') document.documentElement.lang = 'zh-CN';
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#today">Skip to today</a>
+    <div class="page">
+      <header class="masthead">
+        <div class="masthead-row">
+          <a class="wordmark" href="./" aria-label="Design Lately, home">
+            <span class="logo" id="logo" aria-hidden="true"></span>
+            <span class="wordmark-text">Design Lately</span>
+          </a>
+          <p class="masthead-meta" id="issue"></p>
+          <button class="digest-btn" id="digest" type="button"><span class="star" aria-hidden="true"></span><span class="label">Saved</span><span class="n" hidden></span></button>
+          <button class="lang-toggle" id="lang" type="button" aria-label="切换到中文" lang="zh-CN">中</button>
+          <button class="lang-toggle font-toggle" id="font" type="button" aria-label="Switch to a simpler font">Aa</button>
+          <button class="theme-toggle" id="theme" type="button" aria-label="Switch to light mode"></button>
+        </div>
+        <div class="rule rule-heavy" aria-hidden="true"></div>
+        <nav class="views" id="views" aria-label="Pages" hidden>
+          <a class="view-tab" href="#news" data-view="news" aria-current="page">News</a>
+          <a class="view-tab" href="#cases" data-view="cases">Case studies</a>
+          <a class="view-tab" href="#workflows" data-view="workflows">AI workflows</a>
+          <a class="view-tab" href="#games" data-view="games">Games</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hello news-only" aria-labelledby="greeting">
+          <h1 id="greeting" class="hello-title"></h1>
+          <p id="summary" class="hello-summary" aria-live="polite"></p>
+        </section>
+
+        <section id="today" class="today news-only" aria-label="Today"></section>
+
+        <section class="archive news-only" aria-labelledby="archive-title">
+          <div class="archive-head">
+            <h2 id="archive-title" class="section-title">Earlier</h2>
+            <div class="filters" id="filters" role="group" aria-label="Filter earlier changes"></div>
+          </div>
+          <div id="archive"></div>
+        </section>
+
+        <section class="page-view cases" id="cases" aria-labelledby="cs-title">
+          <div class="hello">
+            <h1 id="cs-title" class="hello-title"></h1>
+            <p id="cs-summary" class="hello-summary" aria-live="polite"></p>
+          </div>
+          <div class="archive-head">
+            <h2 id="cs-list-title" class="section-title"></h2>
+            <div class="filters" id="cs-filters" role="group"></div>
+          </div>
+          <div id="cs-list"></div>
+        </section>
+
+        <section class="page-view workflows" id="workflows" aria-labelledby="wf-title">
+          <div class="hello">
+            <h1 id="wf-title" class="hello-title"></h1>
+            <p id="wf-summary" class="hello-summary" aria-live="polite"></p>
+          </div>
+          <div class="archive-head">
+            <h2 id="wf-list-title" class="section-title"></h2>
+            <div class="filters" id="wf-filters" role="group"></div>
+          </div>
+          <div id="wf-list"></div>
+        </section>
+
+        <section class="page-view games" id="games" aria-labelledby="gm-title">
+          <div class="hello">
+            <h1 id="gm-title" class="hello-title"></h1>
+            <p id="gm-summary" class="hello-summary"></p>
+          </div>
+          <div id="gm-box"></div>
+        </section>
+      </main>
+
+      <footer class="footer" id="footer"></footer>
+    </div>
+    <dialog id="digest-dialog" class="digest" aria-labelledby="digest-title"><div id="digest-box"></div></dialog>
+    <dialog id="image-dialog" class="image-dialog" aria-labelledby="image-title">
+      <header class="image-dialog-top"><h2 id="image-title"></h2><button class="act" id="image-close" data-image-close type="button">Close</button></header>
+      <div id="image-view" class="image-view"></div>
+    </dialog>
+    <script type="module" src="app.js?v=5ac3243d51"></script>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-16T13:32:42.404Z",
+  "weeks": [
+    {
+      "week": "2026-11-16",
+      "from": "2026-11-02T13:32:42.404Z",
+      "to": "2026-11-16T13:32:42.404Z",
+      "checked": 103,
+      "picks": [
+        {
+          "id": "how-nubank-and-koto-rebuilt-the-brand-system-around-its-exis",
+          "title": "How Nubank and Koto rebuilt the brand system around its existing logo ahead of the US launch",
+          "post_title": "Nubank unveils global brand refresh by Koto ahead of US launch",
+          "url": "https://designweek.co.uk/nubank-unveils-global-brand-refresh-by-koto-ahead-of-us-launch",
+          "source": "Design Week",
+          "domain": "designweek.co.uk",
+          "company": "Nubank",
+          "by": "Koto with Nubank's in-house team",
+          "maker": "agency",
+          "area": "brand",
+          "published_at": "2026-11-03T06:00:24.000Z",
+          "problem": "Nubank serves over 140 million customers across Brazil, Mexico and Colombia and was about to launch in the US and release Nu Global. It needed one brand system that could hold very different sub-brands and markets and still look unmistakably Nu.",
+          "approach": "Koto kept the assets that carried real equity, the logo and wordmark, and rebuilt the system around them instead of adding more rules. They refined the signature purple into a wider palette that includes secondary, illustration and sub-brand colours. The system stretches to the premium Ultravioleta and the colourful Croma sub-brands. They also added the Nu Sans Display and Nu Sans Text typefaces for legibility across markets, a first global photography library of more than 50 photos and films, and an illustration library animated in Rive so it works directly in the app. Koto also wrote the voice for the conversational UI and private AI banker, and redesigned nu.com as a responsive global site.",
+          "outcome": "The refreshed identity debuted at Nubank's US launch event at Nu Stadium in Miami; the post gives no performance numbers.",
+          "lesson": "When a brand grows across markets, keep the assets people already recognise and put the effort into a system that flexes around them.",
+          "score": 7,
+          "minutes": 2,
+          "image": "icons/cdaa1a994018.jpg",
+          "icon": "icons/a93a3bb45640.jpg",
+          "zh": {
+            "title": "Nubank 与 Koto 如何在进入美国市场前,围绕现有标志重建品牌体系",
+            "problem": "Nubank 在巴西、墨西哥和哥伦比亚拥有超过 1.4 亿客户,即将在美国上线并推出 Nu Global。它需要一套能容纳多个差异很大的子品牌和市场、同时仍然一眼就能认出是 Nu 的品牌系统。",
+            "approach": "Koto 保留了真正有品牌资产的元素,即标志和字标,并围绕它们重建体系,而不是增加更多规则。他们把标志性的紫色优化后纳入更宽的色板,其中包括辅助色、插画色和子品牌色。这套体系可以延伸到高端的 Ultravioleta 和色彩鲜明的 Croma 等子品牌。他们还加入了 Nu Sans Display 和 Nu Sans Text 字体以保证跨市场的可读性,建立了首个包含 50 多张照片和影片的全球摄影库,并制作了用 Rive 做成动画、可直接用于应用内的插画库。Koto 还为对话式界面和私人 AI 银行助手撰写了语气风格,并把 nu.com 重新设计为响应式全球网站。",
+            "outcome": "新的品牌形象在 Nubank 于迈阿密 Nu Stadium 举办的美国发布会上首次亮相,文章没有给出效果数据。",
+            "lesson": "品牌扩展到多个市场时,保留人们已经认得的元素,把精力放在能围绕它们灵活延展的系统上。"
+          },
+          "icon_large": "icons/048480789436.jpg"
+        }
+      ],
+      "collected_at": "2026-11-16T13:32:42.404Z"
+    },
+    {
+      "week": "2026-11-09",
+      "from": "2026-10-26T00:19:37.199Z",
+      "to": "2026-11-09T00:19:37.199Z",
+      "checked": 121,
+      "picks": [
+        {
+          "id": "how-mlb-built-a-five-typeface-identity-for-stadiums-apps-and",
+          "title": "How MLB built a five-typeface identity for stadiums, apps and social channels",
+          "post_title": "Major League Baseball’s new look pays homage to the sport’s history",
+          "url": "https://fastcompany.com/91632355/major-league-baseballs-new-look-pays-homage-to-the-sports-history",
+          "source": "Fast Company Design",
+          "domain": "fastcompany.com",
+          "company": "MLB",
+          "by": "Mother Design with five type designers and foundries",
+          "maker": "agency",
+          "area": "brand",
+          "published_at": "2026-11-03T03:30:00.000Z",
+          "problem": "MLB wanted a unified visual identity that could help it expand baseball’s fandom and talent. Its historic lettering needed to work on smartphone screens and in small spaces as well as at stadium scale.",
+          "approach": "Mother Design kept the silhouetted batter logo and updated the wordmark within a broader brand architecture. It commissioned five typefaces based on styles present in early-20th-century baseball, choosing specialists for each. The designs included a script with underline flags, a warm handlettering style honoring baseball’s Latin American connections, and adaptations of historic scoreboard and slab-serif lettering.",
+          "outcome": "Introduced progressively from 2024 and now complete, the identity appears across the Ballpark app, venues, social channels and special events, with MLB Franklin visible on recent World Series scoreboards.",
+          "lesson": "Adapt heritage lettering to real screen sizes rather than simply reproducing its old appearance.",
+          "score": 8,
+          "minutes": 3,
+          "image": "icons/d4e2a8132005.jpg",
+          "icon": "icons/9088e07e7944.png",
+          "zh": {
+            "title": "MLB 如何用五款字体构建覆盖球场、应用和社交渠道的品牌识别",
+            "problem": "MLB 希望统一视觉识别，帮助棒球吸引更多球迷和人才。历史悠久的棒球字体既要适用于手机屏幕和狭小空间，也要适用于球场中的大型展示。",
+            "approach": "Mother Design 保留了击球手剪影标志，并在更完整的品牌架构中更新了文字标志。工作室以 20 世纪初棒球中出现过的字体风格为基础，委托不同领域的专家制作五款字体。其中包括带有下划线旗形延伸的手写体、体现棒球与拉丁美洲文化联系的温暖手绘字体，以及对历史记分牌字体和粗衬线字体的改造。",
+            "outcome": "这套识别系统从 2024 年起逐步推出，目前已完成，应用于 Ballpark 应用、球场、社交渠道和特别活动；MLB Franklin 也出现在近期 World Series 的记分牌上。",
+            "lesson": "让历史字体适应真实的屏幕尺寸，而不只是复刻旧有外观。"
+          },
+          "icon_large": "icons/bf2705aabc38.png"
+        },
+        {
+          "id": "how-nubank-rebuilt-its-global-brand-system-while-keeping-its",
+          "title": "How Nubank rebuilt its global brand system while keeping its logo and wordmark",
+          "post_title": "Nubank unveils global brand refresh by Koto ahead of US launch",
+          "url": "https://designweek.co.uk/nubank-unveils-global-brand-refresh-by-koto-ahead-of-us-launch",
+          "source": "Design Week",
+          "domain": "designweek.co.uk",
+          "company": "Nubank",
+          "by": "Koto with Nubank’s in-house team",
+          "maker": "agency",
+          "area": "brand",
+          "published_at": "2026-11-03T06:00:24.000Z",
+          "problem": "International growth meant Nubank needed one brand system to accommodate different markets, products and sub-brands. Those expressions needed their own personalities while remaining recognizably Nu.",
+          "approach": "Koto and Nubank’s in-house team retained the logo and wordmark, refined the signature purple, and expanded the palette to support sub-brands including Ultravioleta and Croma. Two proprietary typefaces addressed legibility across markets, products and channels. Koto also created a global photography library and hand-painted illustrations animated in Rive for the app, developed the voice for conversational UI and the private AI banker, and redesigned nu.com as a responsive global platform.",
+          "outcome": "The refreshed identity debuted at Nubank’s US launch event in Miami, with a global photography library of more than 50 photos and films and an illustration library designed to integrate into the app.",
+          "lesson": "Keep recognizable brand assets and build flexibility around them as products and markets multiply.",
+          "score": 8,
+          "minutes": 2,
+          "image": "icons/cdaa1a994018.jpg",
+          "icon": "icons/a93a3bb45640.jpg",
+          "zh": {
+            "title": "Nubank 如何保留标志与文字标志，重建全球品牌系统",
+            "problem": "国际业务增长要求 Nubank 用一套品牌系统容纳不同市场、产品和子品牌。这些表达既要保有各自的个性，也要让人一眼认出 Nu。",
+            "approach": "Koto 与 Nubank 内部团队保留了标志和文字标志，调整标志性的紫色，并扩展色板以支持 Ultravioleta 和 Croma 等子品牌。两款专属字体用于满足不同市场、产品和渠道的可读性需求。Koto 还建立了全球摄影素材库，制作可通过 Rive 动画直接融入应用的手绘插画，制定对话式界面和私人 AI 银行助理的语言风格，并将 nu.com 重新设计为响应式全球网站。",
+            "outcome": "新品牌识别在迈阿密的 Nubank 美国业务发布活动上首次亮相，配套的全球摄影素材库包含超过 50 张照片及影片，插画库则面向应用内使用。",
+            "lesson": "保留用户熟悉的品牌资产，再围绕它们建立适应更多产品和市场的灵活系统。"
+          },
+          "icon_large": "icons/048480789436.jpg"
+        },
+        {
+          "id": "how-trustpilot-turned-its-rating-star-into-a-visual-system-f",
+          "title": "How Trustpilot turned its rating star into a visual system for customer reviews",
+          "post_title": "Trustpilot reveals new brand identity by Further",
+          "url": "https://designweek.co.uk/trustpilot-reveals-new-brand-identity-by-further",
+          "source": "Design Week",
+          "domain": "designweek.co.uk",
+          "company": "Trustpilot",
+          "by": "Further",
+          "maker": "agency",
+          "area": "brand",
+          "published_at": "2026-10-30T06:00:07.000Z",
+          "problem": "Trustpilot wanted its identity to represent the individual customer experiences behind its ratings, rather than rely on a static quality badge. It needed a more expressive system without overwhelming review interfaces.",
+          "approach": "Further broke the familiar five-point star into modular shapes, framing devices and motion behaviors, using its angles to structure review content on desktop and embedded merchant widgets. Graphic signal devices highlighted standout quotes and verified details through color and geometric framing. The studio paired candid photography with Trustpilot Sans, a bespoke typeface serving both dense mobile review feeds and display headlines, and introduced conversational site copy.",
+          "outcome": "Trustpilot unveiled the refreshed identity with a star-derived visual system, bespoke typography and updated verbal identity and site copy.",
+          "lesson": "Use a familiar brand symbol to organize content, not just mark ownership.",
+          "score": 7,
+          "minutes": 2,
+          "image": "icons/6aea058b46a7.jpg",
+          "icon": "icons/190490f028e7.png",
+          "zh": {
+            "title": "Trustpilot 如何把评分星形变成呈现用户评价的视觉系统",
+            "problem": "Trustpilot 希望品牌识别能呈现评分背后的个人消费经历，而不只是依赖一个静态的质量徽章。新系统需要更有表现力，同时不能干扰评价界面的使用。",
+            "approach": "Further 将熟悉的五角星拆解为模块化形状、框架元素和动态行为，并用星形的角度组织桌面端及商家嵌入式组件中的评价内容。图形提示元素通过色彩和几何框架突出重点引文及已验证信息。工作室将纪实感的生活摄影与专属字体 Trustpilot Sans 配合使用，让字体同时适用于信息密集的移动端评价列表和展示标题，并引入更口语化的网站文案。",
+            "outcome": "Trustpilot 发布了更新后的品牌识别，包括源于星形的视觉系统、专属字体，以及新的语言风格和网站文案。",
+            "lesson": "让熟悉的品牌符号参与内容组织，而不只是标示归属。"
+          },
+          "icon_large": "icons/9c3b96d3f837.png"
+        }
+      ],
+      "collected_at": "2026-11-09T00:19:37.199Z"
+    },
+    {
+      "week": "2026-11-02",
+      "from": "2026-10-20T10:11:56.778Z",
+      "to": "2026-11-03T10:11:56.778Z",
+      "checked": 72,
+      "picks": [
+        {
+          "id": "how-koto-refreshed-the-nubank-brand-for-its-us-launch-as-nu",
+          "title": "How Koto refreshed the Nubank brand for its US launch as Nu",
+          "post_title": "Brazil’s most popular bank brings its vibrant brand to the U.S.",
+          "url": "https://fastcompany.com/91631436/purple-is-everywhere-in-fintech-nu-bank-redesign",
+          "source": "Fast Company Design",
+          "domain": "fastcompany.com",
+          "company": "Nubank",
+          "by": "Koto with Nu",
+          "maker": "agency",
+          "area": "brand",
+          "published_at": "2026-10-29T07:00:00.000Z",
+          "problem": "Nubank was preparing to launch in the US and expand further abroad, but its brand attributes, especially its purple, had become common across fintech. The identity no longer set the bank apart.",
+          "approach": "Koto kept the purple but refined it, and added a secondary palette to work alongside it. They designed a proprietary typeface, Nu Sans, that works as an expressive headline font and stays legible at small sizes in the app. They added whimsical, optimistic illustrations and motion with bounce for kinetic type and app UX. They chose not to Americanize the brand and aimed for a global look instead.",
+          "outcome": "The new identity launched with Nu's US debut in September through partner bank Lead Bank, across the app, motion and a welcome kit with metal cards; the post gives no performance numbers.",
+          "lesson": "When your signature colour becomes the category's colour, keep it and stand out through type, illustration and motion.",
+          "score": 7,
+          "minutes": 2,
+          "image": "icons/5d480af8f101.jpg",
+          "icon": "icons/a93a3bb45640.jpg",
+          "zh": {
+            "title": "Koto 如何为 Nubank 以 Nu 之名进入美国市场更新品牌形象",
+            "problem": "Nubank 准备进入美国市场并进一步拓展海外业务，但它的品牌特征，尤其是紫色，已经在金融科技行业里随处可见，品牌不再具有辨识度。",
+            "approach": "Koto 保留了紫色并加以调整，同时增加了一套与之搭配的辅助色板。团队设计了专属字体 Nu Sans，既能用作富有表现力的大标题，在应用内的小字号下也清晰易读。插画风格轻松、乐观，动效带有弹性，用于动态文字和应用交互。团队有意不让品牌“美国化”，而是追求全球化的面貌。",
+            "outcome": "新品牌形象随 Nu 于 9 月通过合作银行 Lead Bank 在美国上线，覆盖应用、动效以及装有金属卡的欢迎礼盒；文章没有给出效果数据。",
+            "lesson": "当你的标志色变成了整个品类的颜色，可以保留它，再用字体、插画和动效建立区分度。"
+          },
+          "icon_large": "icons/048480789436.jpg"
+        },
+        {
+          "id": "how-discord-merged-its-separate-video-players-into-one-share",
+          "title": "How Discord merged its separate video players into one shared player for 90 million daily users",
+          "post_title": "Modernizing the Video Playback Experience at Discord",
+          "url": "https://discord.com/blog/modernizing-the-video-playback-experience-at-discord",
+          "source": "Discord",
+          "domain": "discord.com",
+          "company": "Discord",
+          "by": "Discord Media Infrastructure team",
+          "maker": "team",
+          "area": "system",
+          "published_at": "2026-11-02T00:00:00.000Z",
+          "problem": "Discord had four separate video player implementations. The two largest, the attachments player and the Quest player, shared no code and had no tests, so every feature had to be built twice and every bug fixed twice. The team wanted to modernize the viewing experience and make one player that any team could change safely.",
+          "approach": "The team audited every place Discord plays video, and gave silent background videos a lightweight effect component instead of the full player. They started with the Quest player because it had the richest features (reward markers, end cards, progress rings, animations) and was a more contained surface than videos shared in chats. Before rebuilding anything, they wrote 60 unit tests and 7 Playwright end-to-end tests, and put the player in a component playground to separate shared behavior from Quest-specific parts.",
+          "outcome": "The two main players became one shared player, the player code each product maintained dropped by up to 94%, and the first version was swapped in without users noticing.",
+          "lesson": "Map every variant of a component and pin down its current behavior before you redesign it.",
+          "score": 7,
+          "minutes": null,
+          "image": "icons/ce2e141dd15e.png",
+          "icon": "icons/45e991d4f899.png",
+          "zh": {
+            "title": "Discord 如何为 9000 万日活用户把多个视频播放器合并为一个共享播放器",
+            "problem": "Discord 内部有四套独立的视频播放器。其中最大的两套，附件播放器和 Quest 播放器，没有任何共用代码，也没有任何测试，每个新功能都要做两遍，每个问题都要修两遍。团队希望更新观看体验，并做出一个任何团队都能放心修改的播放器。",
+            "approach": "团队梳理了 Discord 中所有播放视频的位置，并为无声的背景视频单独做了一个轻量的视频效果组件，不再套用完整播放器。他们选择从 Quest 播放器入手，因为它功能最丰富（奖励标记、片尾卡片、进度环、动画），而且影响范围比聊天中的视频更小。在重建之前，他们先写了 60 个单元测试和 7 个 Playwright 端到端测试，并把播放器放进组件预览环境，以区分通用行为和 Quest 专属部分。",
+            "outcome": "两套主要播放器合并为一个共享播放器，各产品需要维护的播放器代码最多减少了 94%，第一个版本替换上线时用户没有察觉。",
+            "lesson": "重新设计一个组件之前，先找出它的所有变体，并把现有行为固定下来。"
+          },
+          "icon_large": "icons/160edce23b44.png"
+        }
+      ],
+      "collected_at": "2026-11-03T10:11:56.778Z"
+    }
+  ]
+}

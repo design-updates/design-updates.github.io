@@ -1,0 +1,16 @@
+{
+  "reader": "",
+  "timezone": "Asia/Shanghai",
+  "feeds": 64,
+  "search": false,
+  "ai": "Claude",
+  "categories": {
+    "ota": "OTAs",
+    "rail": "Rail and ground",
+    "delivery": "Delivery and rides",
+    "platform": "Platforms",
+    "consumer": "Consumer apps known for design"
+  },
+  "workflows": true,
+  "cases": true
+}

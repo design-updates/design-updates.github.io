@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Design Lately has moved</title>
+<meta name="robots" content="noindex" />
+<link rel="canonical" href="https://design-lately.github.io/" />
+<script>
+  // Design Lately moved from design-updates.github.io to design-lately.github.io (November 2026). This page sends
+  // every old link to the same place on the new address. On the first visit it also hands over this browser's saved
+  // Design Lately items (stars, notes, theme, font, language), which browsers keep per address.
+  (function () {
+    var target = 'https://design-lately.github.io' + location.pathname + location.search;
+    var hash = location.hash.slice(1);
+    try {
+      var saved = {};
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (/^radar\.[\w.-]+$/.test(k) && k !== 'radar.moved') saved[k] = localStorage.getItem(k);
+      }
+      if (!localStorage.getItem('radar.moved') && Object.keys(saved).length) {
+        var b64 = btoa(unescape(encodeURIComponent(JSON.stringify(saved)))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+        localStorage.setItem('radar.moved', '1');
+        location.replace(target + '#import=' + b64 + (hash ? '&then=' + encodeURIComponent(hash) : ''));
+        return;
+      }
+    } catch (e) {}
+    location.replace(target + (hash ? '#' + hash : ''));
+  })();
+</script>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #000; color: #e9fea3; font: 18px/1.5 system-ui, sans-serif; }
+  a { color: #e9fea3; }
+</style>
+</head>
+<body>
+<p>Design Lately has moved to <a href="https://design-lately.github.io/">design-lately.github.io</a>.</p>
+</body>
+</html>
